@@ -1,0 +1,27 @@
+{
+  "source": "cutwork/tools/treatment.py as of 2026-08-05, extracted 2026-08-11 (tool moves to tools/stylize-frames.py in Task 8)",
+  "note": "Defaults are the 2026-07-02 'washed-out verdict' corrections — the knobs exist because the first treatment was too weak. Blender 5.x compositor node group; every frame gets the identical graph (no diffusion boil).",
+  "graph": "MovieClip ─┬─ Kuwahara ─ Blur ─ Glare(Bloom) ─ HueSat(desat) ─ Curves(tonal) ─┐ └─ Filter(Sobel) ─ Curves(threshold) ─ Blur ─ Invert ─ Mix(MULTIPLY ink) ─ [paper Mix] ─ GroupOut",
+  "knobs": {
+    "ink": { "value": 0.7, "flag": "--ink", "meaning": "contour-multiply mix factor" },
+    "shadow": { "value": 0.14, "flag": "--shadow", "meaning": "shadow-crush target at input 0.30 (lower = blacker floor)" },
+    "edge": { "value": 0.8, "flag": "--edge", "meaning": "Sobel filter strength" }
+  },
+  "nodes": {
+    "blur.size": 2.0,
+    "glare.type": "Bloom",
+    "glare.threshold": 0.85,
+    "glare.strength": 0.15,
+    "huesat.saturation": 0.0,
+    "curves.upperMidPoint": [0.62, 0.92],
+    "filter.type": "Sobel",
+    "edgeBlur.size": 1.5,
+    "inkMix.blendType": "MULTIPLY",
+    "paperScale.type": "Render Size"
+  },
+  "gotchas": {
+    "menuSockets": "Blender 5.x menu sockets take title-case labels ('Bloom', 'Sobel', 'Render Size') — lowercase silently falls through set_socket's except and the knob is NEVER APPLIED, which is a silent look change.",
+    "vectorSockets": "Blur 'Size' is a vector socket; set via set_socket's component handling, not a scalar assign.",
+    "audio": "Blender drops audio. Mux the source back: ffmpeg -i OUT.mp4 -i INPUT.mov -c:v copy -map 0:v:0 -map 1:a:0 -shortest OUT_av.mp4"
+  }
+}

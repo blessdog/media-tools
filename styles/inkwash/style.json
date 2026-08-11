@@ -1,0 +1,16 @@
+{
+  "name": "inkwash",
+  "prompt": "Traditional Chinese ink painting (shuimo): heavy confident ink-brush linework, bold ink masses for shadows and clothing, near-monochromatic — ink and bare cream paper dominate, with selective warm skin tone only. Figures dissolve into atmospheric mist at the edges, generous negative space, cream paper showing through. Realistic face rendering. Nothing glossy, nothing photographic, no red seal stamp, no Chinese characters.",
+  "objectPrompt": "Brush-and-ink painting of a single object on blank paper. Heavy confident ink-brush linework, bold ink masses for shadow and weight, monochrome black ink on bare unmarked cream paper. Decisive silhouette, dry-brush texture along the edges, wide areas of completely empty untouched paper surrounding the subject. Matte, hand-painted, unlettered, wordless.",
+  "platePrompt": "Photographic character reference portrait, head to waist, three-quarter view facing camera, calm neutral resting expression. Plain seamless light-gray studio background, soft even diffuse light, no props, no scenery. Natural skin texture, documentary realism, not retouched.",
+  "notes": {
+    "negationTrap": "NEGATION DOES NOT WORK. Naming a forbidden thing summons it — the model weights the token, not the negation. flux-2-dev returned a wall of calligraphy with a red seal after a prompt ending 'no red seal stamp, no Chinese characters' (S5-B-030, keyframes-v1). Describe the paper POSITIVELY as blank and unmarked. Dropping the word 'Chinese' also helped: it pulled calligraphy and seals along with the brushwork.",
+    "KNOWN_BUG": "`prompt` above is carried over VERBATIM from cutwork/config/creative.js:39 and STILL ENDS WITH THE NEGATION ('no red seal stamp, no Chinese characters') that negationTrap says fails. Only `objectPrompt` was ever corrected. Fixing the figure prompt is a creative decision for Ryan — it changes the look — so the salvage preserved it as-is. Candidate fix: end at 'Realistic face rendering.' and describe the paper positively.",
+    "decoupling": "2026-06-09: identity plates are PHOTOREAL and scene-free (`platePrompt`). The plate anchors WHO; the LOOK enters at the keyframe/restyle step via the style channel, never at genesis. This is what makes the style swappable."
+  },
+  "image": {
+    "model": "replicate/black-forest-labs/flux-2-dev",
+    "params": { "output_format": "png" }
+  },
+  "source": "cutwork/config/creative.js lines 36-62, extracted 2026-08-11"
+}
