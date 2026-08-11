@@ -36,22 +36,26 @@ job, hard edge.
   .env                      all provider keys, one place, never committed
   tools/
     transcribe.mjs          media file → diarized transcript.json (Deepgram nova-3)
-    generate-image.mjs      prompt (+ --style) → image (Replicate)
+    describe-video.mjs      video → shot-by-shot written script (vision via OpenRouter)
+    generate-image.mjs      scene text + style → image
+    restyle-image.mjs       image + style → repainted image
     image-to-video.mjs      still + prompt → motion clip (seedance default)
-    restyle-video.mjs       clip + style → restyled clip (luma/wan/kling adapters)
+    restyle-video.mjs       clip + style → restyled clip (luma/wan/kling/aleph)
     stylize-frames.py       clip → deterministically styled frames (Blender compositor)
     stitch.mjs              clip list (+ audio) → one video (ffmpeg)
     gpu-box.mjs             rent / provision / kill Vast.ai box
+    _uso.mjs                USO ComfyUI graph builder (style/identity/scene channels)
     _replicate.mjs          vendor adapter (internal; _-prefix = not a tool)
     _comfy.mjs              vendor adapter
     _fleet.mjs              vendor adapter
     workflows/              proven ComfyUI graphs (LTX json salvaged from clipsmith)
   styles/
     inkwash/
-      style.json            prompt string, model params, negation-trap notes
-      fusion-theme.json     media-studio's representation (adopted on its next touch)
+      style.json            renderer recipe, channel map, prompts, rejected models
       treatment-params.json Blender recipe values
-      reference/            images that DEFINE the look — approved by Ryan's eyes
+      reference/            LOCKED-inkwash-texture-1.png (the face-free style
+                            swatch — the actual definition of the look) + plates
+      fusion-theme.json     media-studio's representation (adopted on its next touch)
   jobs/                     gitignored scratch; one-off compositions run here
   docs/
     specs/                  this file
@@ -176,3 +180,38 @@ No transcription ran — none was asked for. The lane died; the look survived.
 - **Style SSOT ignored under deadline** ("just paste the prompt string") →
   `--style` flag makes the right way the easy way; creative.js copy deleted in
   phase 2 so there is nothing else to paste from.
+
+
+## 12. Amendments (2026-08-11, from live testing)
+
+Written into the spec because live runs contradicted it. Testing on real
+footage — a Charlie Sheen Parliament ad and two of Ryan's own photos — changed
+three things:
+
+**12.1 Two tools were missing.** `restyle-image` (photo → repainted photo; the
+still sibling of restyle-video) and `describe-video` (footage → a shot-by-shot
+written script). The second exists because that clip has loud audio (-9 dB) and
+ZERO speech: Deepgram returned 0 words. Music videos, b-roll and archive have no
+transcript to recover, so the script must come from the frames. It is the
+counterpart to transcribe: that turns AUDIO into words, this turns PICTURES into
+words. Both obey the contract; nothing runs implicitly.
+
+**12.2 A style is a RENDERER RECIPE, not a prompt string.** §5 described
+`styles/` as prompt text plus supporting data. Wrong. The approved ink-wash look
+comes from `uso-inkwash` (bongpot creative.js:77, the 2026-06-09 winner): USO
+dual-channel on ComfyUI on a Vast box — flux1-dev-fp8 + USO dit-lora +
+projector, with **three separate channels**: a face-free style swatch through
+CLIPVision sigclip, an identity plate on a ReferenceLatent conditioning channel,
+and content-only text. `style.json` therefore records the renderer, the channel
+map, the locked swatch, a hosted fallback, and explicitly REJECTED models.
+
+**12.3 Rejected models must be recorded, not just unused.** `nano-banana-pro`
+was a character-DRIFT TEST (`nano-banana-test.mjs`), never the style renderer. I
+rebuilt the style around its outputs because they were the most recent artefacts
+on disk, and burned API spend before Ryan caught it. Any file whose name says
+"test" is evidence of an experiment, not of a decision. `style.json.rejected`
+now carries the model and the reason so no future session re-derives it.
+
+**Consequence for §4:** the tool contract gains an implication — a tool reads
+its style's `renderer` block and routes accordingly (comfy vs hosted), rather
+than hardcoding a provider.
