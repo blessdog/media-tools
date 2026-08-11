@@ -59,12 +59,16 @@ const variant = usePlate ? 'platePrompt' : 'prompt';
 
 // Resolve the style's reference image (repo-relative) unless suppressed. A
 // plate is by definition style-free, so it never rides with a reference.
-let refPath = flag('--reference');
-if (!refPath && style && !usePlate && !args.includes('--no-reference') && style.reference) {
-  refPath = join(repoRoot(), 'styles', styleKey, style.reference);
+let refPaths = [];
+const refFlag = flag('--reference');
+if (refFlag) refPaths = [refFlag];
+else if (style && !usePlate && !args.includes('--no-reference')) {
+  const list = style.references || (style.styleSwatch ? [style.styleSwatch] : (style.reference ? [style.reference] : []));
+  refPaths = list.map((r) => join(repoRoot(), 'styles', styleKey, r));
 }
-const useRef = !!refPath && existsSync(refPath);
-if (refPath && !useRef) { console.error(`reference not found: ${refPath}`); process.exit(2); }
+const missing = refPaths.filter((r) => !existsSync(r));
+if (missing.length) { console.error(`reference not found:\n  ${missing.join('\n  ')}`); process.exit(2); }
+const useRef = refPaths.length > 0;
 
 // With a reference, the referencePrompt template names it explicitly ("the same
 // style as the reference") — that phrasing is what produced the approved plates.
@@ -79,18 +83,24 @@ const stylePrefix = style ? style[variant] : '';
 const fullPrompt = raw ? prompt
   : template ? template.replace('{SCENE}', prompt)
   : `${stylePrefix} ${prompt}`;
-const model = flag('--model', style?.image?.model || 'replicate/black-forest-labs/flux-2-dev');
+const model = flag('--model', style?.fallback?.model || style?.image?.model || 'replicate/black-forest-labs/flux-kontext-pro');
 
 const input = {
   prompt: fullPrompt,
   aspect_ratio: flag('--aspect', '16:9'),
-  ...(style?.image?.params || { output_format: 'png' }),
+  ...(style?.fallback?.params || style?.image?.params || { output_format: 'png' }),
 };
 const seed = flag('--seed');
 if (seed) input.seed = parseInt(seed, 10);
-if (useRef) input.image_input = [`data:image/png;base64,${readFileSync(refPath).toString('base64')}`];
+if (useRef) {
+  const uris = refPaths.map((r) => `data:image/png;base64,${readFileSync(r).toString('base64')}`);
+  // Each family names its reference input differently (schemas verified 2026-08-11).
+  if (model.includes('kontext')) input.input_image = uris[0];
+  else if (model.includes('flux-2')) input.input_images = uris;
+  else input.image_input = uris;
+}
 
-console.error(`generate-image: ${model}${useRef ? ` · ref ${basename(refPath)}` : ' · TEXT ONLY'} → ${out}`);
+console.error(`generate-image: ${model}${useRef ? ` · ${refPaths.length} ref(s): ${refPaths.map((r) => basename(r)).join(', ')}` : ' · TEXT ONLY'} → ${out}`);
 console.error(`prompt: ${fullPrompt}`);
 const token = envKey('REPLICATE_API_TOKEN');
 // nano-banana-pro is model-scoped; flux-2-dev 404s there and needs the version
