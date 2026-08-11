@@ -1,16 +1,32 @@
 {
   "name": "inkwash",
-  "prompt": "Traditional Chinese ink painting (shuimo): heavy confident ink-brush linework, bold ink masses for shadows and clothing, near-monochromatic — ink and bare cream paper dominate, with selective warm skin tone only. Figures dissolve into atmospheric mist at the edges, generous negative space, cream paper showing through. Realistic face rendering. Nothing glossy, nothing photographic, no red seal stamp, no Chinese characters.",
-  "objectPrompt": "Brush-and-ink painting of a single object on blank paper. Heavy confident ink-brush linework, bold ink masses for shadow and weight, monochrome black ink on bare unmarked cream paper. Decisive silhouette, dry-brush texture along the edges, wide areas of completely empty untouched paper surrounding the subject. Matte, hand-painted, unlettered, wordless.",
+  "summary": "Traditional Chinese ink-and-watercolour painting. Ink linework plus soft bleeding colour washes, full rendered environments, visible paper grain.",
+
+  "reference": "reference/plate-00.png",
+  "referenceNote": "THE STYLE IS THE IMAGE. This plate — bongpot/outputs/flux2-probe/plate_00_reference.png, called 'the proven ink-wash man' and 'the loved ink-wash look' in nano-banana-test.mjs:8 — is what actually produced the results Ryan approves (reference/scene-counter.png, reference/scene-payphone.png, both rendered FROM it via nano-banana-pro image_input). Prompt text alone has never reproduced this. Always pass the reference; the prompt below is the secondary channel, not the definition.",
+
+  "prompt": "Rendered in traditional Chinese ink-and-watercolour painting style: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Nothing photographic.",
+
+  "styleOnlyPrompt": "Use the reference image ONLY as a painting-technique guide: copy its medium, brushwork, ink density, colour-wash behaviour and paper grain. Do NOT copy its subject, face, people, or composition. Paint a completely new picture showing: {SCENE}. Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Nothing photographic.",
+
+  "referencePrompt": "The same subject from the reference image — keep the exact face and identity — now {SCENE}. Rendered in the same traditional Chinese ink-and-watercolour painting style as the reference: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Nothing photographic.",
+
+  "referencePromptNote": "TWO DIFFERENT JOBS, do not confuse them. styleOnlyPrompt (the DEFAULT) borrows the medium and leaves the subject alone — for rendering new scenes in this style. referencePrompt (--identity) additionally locks the reference's face, which is what bongpot wanted when carrying ONE character across many shots; used by mistake it paints that man into every scene. Proven 2026-08-11: regenerating a Charlie Sheen ad shot with referencePrompt produced the plate's bald bearded man sitting in Sheen's car. The right long-term fix is a genuinely face-free swatch in reference/ — none exists yet; both bongpot 'swatches' are portraits.",
+
   "platePrompt": "Photographic character reference portrait, head to waist, three-quarter view facing camera, calm neutral resting expression. Plain seamless light-gray studio background, soft even diffuse light, no props, no scenery. Natural skin texture, documentary realism, not retouched.",
+
   "notes": {
-    "negationTrap": "NEGATION DOES NOT WORK. Naming a forbidden thing summons it — the model weights the token, not the negation. flux-2-dev returned a wall of calligraphy with a red seal after a prompt ending 'no red seal stamp, no Chinese characters' (S5-B-030, keyframes-v1). Describe the paper POSITIVELY as blank and unmarked. Dropping the word 'Chinese' also helped: it pulled calligraphy and seals along with the brushwork.",
-    "KNOWN_BUG": "`prompt` above is carried over VERBATIM from cutwork/config/creative.js:39 and STILL ENDS WITH THE NEGATION ('no red seal stamp, no Chinese characters') that negationTrap says fails. Only `objectPrompt` was ever corrected. Fixing the figure prompt is a creative decision for Ryan — it changes the look — so the salvage preserved it as-is. Candidate fix: end at 'Realistic face rendering.' and describe the paper positively.",
-    "decoupling": "2026-06-09: identity plates are PHOTOREAL and scene-free (`platePrompt`). The plate anchors WHO; the LOOK enters at the keyframe/restyle step via the style channel, never at genesis. This is what makes the style swappable."
+    "whatChanged2026-08-11": "This file previously carried cutwork/config/creative.js:39 INK_WASH_STYLE verbatim. Live testing showed that string is WRONG for this look and actively harmful: it says 'near-monochromatic' and 'ink and bare cream paper dominate, generous negative space' — so restyling real footage DELETED the environment (a Sheen shot in a car came back floating on blank paper), and stills came out drained of the colour that defines the approved plates. It also ended in a negation clause ('no red seal stamp, no Chinese characters') that the same file documents as failing. The approved plates HAVE a red seal. Replaced with the short prompt from nano-banana-test.mjs that actually produced them.",
+    "negationTrap": "NEGATION DOES NOT WORK. Naming a forbidden thing summons it — the model weights the token, not the negation. Documented in creative.js:54-59 after flux-2-dev returned a wall of calligraphy plus a red seal from a prompt ending 'no red seal stamp, no Chinese characters'. The prompt above contains no negation except 'Nothing photographic', which is a positive medium statement.",
+    "twoChannels": "Content and style are separate inputs and must stay separate: the SCENE (what happens) comes from text — a shot description, e.g. from describe-video's shots.json; the LOOK comes from the reference image. This is the same decoupling creative.js:41-46 records for identity plates, and the USO graph (bongpot/tools/_uso.mjs) implements it a third way: identity plate + face-free style SWATCH through CLIPVision + content-only text, three channels, one graph.",
+    "footageCaveat": "For restyling REAL footage, do not add negative-space or bare-paper language — it instructs the model to erase the room. Keep the environment; change only the medium."
   },
+
   "image": {
-    "model": "replicate/black-forest-labs/flux-2-dev",
-    "params": { "output_format": "png" }
+    "model": "replicate/google/nano-banana-pro",
+    "params": { "output_format": "png", "safety_filter_level": "block_only_high" },
+    "note": "nano-banana-pro with image_input is the proven path for this style (33M runs, strongest identity coherence across reference angles). flux-2-dev via the VERSION endpoint also works but has not reproduced the plate look from text alone."
   },
-  "source": "cutwork/config/creative.js lines 36-62, extracted 2026-08-11"
+
+  "source": "Style definition rebuilt 2026-08-11 from bongpot's proven artefacts, replacing the text-only extraction from cutwork/config/creative.js."
 }

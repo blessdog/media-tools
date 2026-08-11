@@ -8,25 +8,31 @@
 // Uses predict() — the VERSION-based endpoint. flux-2-dev 404s on the
 // model-scoped one (proven in cutwork config.js:41); do not "simplify" this.
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { dirname, join, basename } from 'node:path';
 import { envKey, repoRoot } from './_env.mjs';
-import { predict, fetchBytes } from './_replicate.mjs';
+import { predict, predictModel, fetchBytes } from './_replicate.mjs';
 
-const HELP = `generate-image — text prompt (+ optional style) to one image via Replicate
+const HELP = `generate-image — a scene description (+ a style) to one image via Replicate
+
+The style's REFERENCE IMAGE is the look; --prompt is the content. Both are sent
+unless you pass --no-reference. Text alone has never reproduced the inkwash look.
 
 usage: node generate-image.mjs --prompt "..." --out path.png [flags]
 
 flags:
-  --prompt TEXT   (required) content description
-  --out PATH      (required) output image path
-  --style KEY     style from styles/KEY/style.json, prepended (default: inkwash)
-  --object        use the style's objectPrompt variant (apparatus, not figures)
-  --plate         use the style's platePrompt variant (photoreal identity plate)
-  --raw           no style prefix; --prompt verbatim
-  --aspect R      16:9 | 3:4 | 1:1  (default 16:9)
-  --seed N        reproducible generation
-  --model M       override model (default: the style's image.model)
+  --prompt TEXT    (required) what is in the scene — the content channel
+  --out PATH       (required) output image path
+  --style KEY      style from styles/KEY/style.json (default: inkwash)
+  --no-reference   text-only; skip the style's reference image
+  --reference PATH override the style's reference image
+  --identity       ALSO copy the reference's face/identity, not just its medium
+                   (for carrying one character across shots; off by default)
+  --plate          use the style's platePrompt variant (photoreal identity plate)
+  --raw            no style at all; --prompt verbatim
+  --aspect R       16:9 | 3:4 | 1:1  (default 16:9)
+  --seed N         reproducible generation
+  --model M        override model (default: the style's image.model)
 
 example:
   node ~/projects/media-tools/tools/generate-image.mjs \\
@@ -48,12 +54,31 @@ if (!raw) {
   try { style = JSON.parse(readFileSync(p, 'utf8')); }
   catch { console.error(`unknown --style '${styleKey}' (no ${p})`); process.exit(2); }
 }
-const variant = args.includes('--object') ? 'objectPrompt'
-  : args.includes('--plate') ? 'platePrompt'
-  : 'prompt';
+const usePlate = args.includes('--plate');
+const variant = usePlate ? 'platePrompt' : 'prompt';
+
+// Resolve the style's reference image (repo-relative) unless suppressed. A
+// plate is by definition style-free, so it never rides with a reference.
+let refPath = flag('--reference');
+if (!refPath && style && !usePlate && !args.includes('--no-reference') && style.reference) {
+  refPath = join(repoRoot(), 'styles', styleKey, style.reference);
+}
+const useRef = !!refPath && existsSync(refPath);
+if (refPath && !useRef) { console.error(`reference not found: ${refPath}`); process.exit(2); }
+
+// With a reference, the referencePrompt template names it explicitly ("the same
+// style as the reference") — that phrasing is what produced the approved plates.
+// --identity locks the reference's FACE too (bongpot's one-character-many-shots
+// case). Default borrows only the medium: without this, the reference plate's
+// man gets painted into every scene (proven 2026-08-11).
+const lockIdentity = args.includes('--identity');
+const template = useRef
+  ? (lockIdentity ? style?.referencePrompt : style?.styleOnlyPrompt)
+  : null;
 const stylePrefix = style ? style[variant] : '';
-if (style && !stylePrefix) { console.error(`style '${styleKey}' has no ${variant}`); process.exit(2); }
-const fullPrompt = raw ? prompt : `${stylePrefix} ${prompt}`;
+const fullPrompt = raw ? prompt
+  : template ? template.replace('{SCENE}', prompt)
+  : `${stylePrefix} ${prompt}`;
 const model = flag('--model', style?.image?.model || 'replicate/black-forest-labs/flux-2-dev');
 
 const input = {
@@ -63,10 +88,16 @@ const input = {
 };
 const seed = flag('--seed');
 if (seed) input.seed = parseInt(seed, 10);
+if (useRef) input.image_input = [`data:image/png;base64,${readFileSync(refPath).toString('base64')}`];
 
-console.error(`generate-image: ${model} → ${out}`);
+console.error(`generate-image: ${model}${useRef ? ` · ref ${basename(refPath)}` : ' · TEXT ONLY'} → ${out}`);
 console.error(`prompt: ${fullPrompt}`);
-const url = await predict(model, input, { token: envKey('REPLICATE_API_TOKEN'), label: 'generate-image' });
+const token = envKey('REPLICATE_API_TOKEN');
+// nano-banana-pro is model-scoped; flux-2-dev 404s there and needs the version
+// endpoint (cutwork config.js:41). Route on which model was actually chosen.
+const url = model.includes('nano-banana')
+  ? await predictModel(model.replace(/^replicate\//, ''), input, { token, label: 'generate-image' })
+  : await predict(model, input, { token, label: 'generate-image' });
 const bytes = await fetchBytes(url);
 mkdirSync(dirname(out), { recursive: true });
 writeFileSync(out, bytes);
