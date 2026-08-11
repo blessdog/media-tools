@@ -121,9 +121,10 @@ const PROVISION_URL = flag('provision-url', WAN
 // --clips-only: provision a lean render SHARD (LTX fp8 set only, ~44GB instead of ~62GB)
 // for fan-out clip rendering via tools/shard-clips.mjs. Skips Director/lipdub extras.
 const CLIPS_ONLY = has('clips-only');
-const HF_TOKEN = (env.match(/^HF_TOKEN=(.+)$/m) || [])[1]?.trim() || process.env.HF_TOKEN;
+const optKey = (n) => { try { return envKey(n); } catch { return undefined; } };
+const HF_TOKEN = optKey('HF_TOKEN');
 // Civitai token (optional): unlocks the token-gated alt claymation LoRA on --wan boxes.
-const CIVITAI_TOKEN = (env.match(/^CIVITAI_TOKEN=(.+)$/m) || [])[1]?.trim() || process.env.CIVITAI_TOKEN;
+const CIVITAI_TOKEN = optKey('CIVITAI_TOKEN');
 
 const fmt$ = (n) => `$${Number(n).toFixed(3)}`;
 
