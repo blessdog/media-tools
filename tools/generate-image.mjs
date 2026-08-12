@@ -37,6 +37,9 @@ flags:
   --host URL       ComfyUI base url (default http://127.0.0.1:8189)
   --plate-image P  photoreal identity plate for the comfy IDENTITY channel
                    (omit for inserts/empty rooms — style + text only)
+  --plate-size N   how strongly the plate holds (default 512). At 512 it locks
+                   the plate's FRAMING onto every shot, not just the face;
+                   lower (320, 256) returns composition to your description
   --width N        comfy: frame width  (default: style renderer.dims)
   --height N       comfy: frame height (default: style renderer.dims)
   --lora F         comfy: USO style-lora strength (default: the style's, 1.0)
@@ -145,6 +148,10 @@ if (wantComfy) {
     const guidance = parseFloat(flag('--guidance', String(r.guidance ?? 3.5)));
     const steps = parseInt(flag('--steps', String(r.steps ?? 20)), 10);
     const ckpt = r.checkpoint || 'flux1-dev-fp8.safetensors';
+    // How large the identity plate enters the reference latent. At 512 it locks
+    // framing as well as face; lower it to let the shot description own the
+    // composition again.
+    const plateSize = parseInt(flag('--plate-size', String(r.plateSize ?? 512)), 10);
 
     // Every input that determines the output, in one object. --explain prints it
     // and renders NOTHING; a render writes it beside the image as <out>.json so a
@@ -158,7 +165,7 @@ if (wantComfy) {
       frame: { width, height },
       channels: {
         style: { file: refPaths[0], sha256: sha(refPaths[0]) },
-        identity: plate ? { file: plate, sha256: sha(plate) } : null,
+        identity: plate ? { file: plate, sha256: sha(plate), plateSize } : null,
         scene: { text: scene, stylePrefix: style?.prompt || null, yourPrompt: prompt },
       },
       out,
@@ -176,7 +183,7 @@ if (wantComfy) {
     const plateName = plate ? await uploadInput(HOST, readFileSync(plate), basename(plate)) : null;
     const graph = buildUsoGraph({
       plateImage: plateName, swatchImage: swatchName, prompt: scene, seed,
-      lora, guidance, width, height, steps,
+      lora, guidance, width, height, steps, plateSize,
       prefix: basename(out).replace(/\.[^.]+$/, ''),
       ckpt,
     });

@@ -23,6 +23,11 @@ export function buildUsoGraph({
   steps = 20,
   prefix = 'uso',           // SaveImage filename_prefix (keep legible — Ryan peeks at the box)
   ckpt = 'flux1-dev-fp8.safetensors',
+  plateSize = 512,          // how large the identity plate enters the reference latent.
+                            // 512 carries the FACE and the plate's framing with it —
+                            // proven 2026-08-12, three different shot descriptions all
+                            // collapsed to the plate's head-and-shoulders composition.
+                            // Smaller = weaker hold on both likeness and framing.
 }) {
   const g = {
     1: { class_type: 'CheckpointLoaderSimple', inputs: { ckpt_name: ckpt } },
@@ -44,7 +49,7 @@ export function buildUsoGraph({
   let positiveFrom = ['11', 0];
   if (plateImage) {
     g[8] = { class_type: 'LoadImage', inputs: { image: plateImage } };
-    g[9] = { class_type: 'ImageScaleToMaxDimension', inputs: { image: ['8', 0], upscale_method: 'area', largest_size: 512 } };
+    g[9] = { class_type: 'ImageScaleToMaxDimension', inputs: { image: ['8', 0], upscale_method: 'area', largest_size: plateSize } };
     g[10] = { class_type: 'VAEEncode', inputs: { pixels: ['9', 0], vae: ['1', 2] } };
     g[12] = { class_type: 'ReferenceLatent', inputs: { conditioning: ['11', 0], latent: ['10', 0] } };
     g[13] = { class_type: 'FluxKontextMultiReferenceLatentMethod', inputs: { conditioning: ['12', 0], reference_latents_method: 'uxo/uno' } };

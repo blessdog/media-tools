@@ -31,6 +31,15 @@
   "styleSwatch": "reference/LOCKED-inkwash-texture-1.png",
   "styleSwatchNote": "LOCKED 2026-06-09 by Ryan — committed asset, NEVER regenerate. Face-free by design: pure watercolour behaviour (blooms, backruns, granulation, cream paper) with no subject in it, which is what lets it carry medium without dragging an identity along. Style candidates are probed separately and do not overwrite this file.",
 
+  "identityFindings2026_08_12": {
+    "status": "PARKED — Ryan: 'stick with flux, I don't give a fuck about locking in the character for this. Nano will have its place. It's about the overall aesthetic.'",
+    "itWorks": "The identity channel fires and carries a real likeness across shots.",
+    "plateSource": "A frame grabbed from footage drags its own framing in. A photoreal SCENE-FREE studio plate is what the channel wants — as this file always said.",
+    "plateGenerator": "nano-banana-pro HOLDS the likeness; flux-kontext-pro drifts into a generic man. That is nano's one job here — character, never the look.",
+    "plateSize": "512 locks the plate's FRAMING onto every shot (three different shot descriptions all collapsed to head-and-shoulders). 288 restores the described composition and keeps the likeness. Use --plate-size 288 when identity is wanted.",
+    "cost": "Identity flattens skin — less brushwork on the face than a style-only render."
+  },
+
   "identityPlate": "reference/plate-00.png",
   "identityPlateNote": "An ink-wash rendered plate kept for reference. For the USO identity channel proper, plates are PHOTOREAL and scene-free (the 2026-06-09 decoupling, creative.js:41) — generate them with --plate, which uses platePrompt. The look enters at the style channel, never at genesis; that is what makes the style swappable.",
 
