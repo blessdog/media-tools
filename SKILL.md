@@ -37,8 +37,10 @@ the same command that creates the file.
 | `describe-video.mjs` | video → shot-by-shot written script (vision via OpenRouter) |
 | `stitch.mjs` | clip-list file (+ music) → one normalized video (ffmpeg, no API) |
 | `gpu-box.mjs` | rent / provision / kill a Vast.ai GPU box |
+| `plan-gpu.mjs` | workload → which card to rent, ranked by cost PER JOB (rents nothing) |
+| `fetch-artwork.mjs` | open-access museum collection → images + metadata sidecars |
 
-Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso`.
+Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`.
 Related standalone tool: `rectum` (URL → clip on disk) at
 `~/projects/mediaStudio/rectum/`, its own CLI.
