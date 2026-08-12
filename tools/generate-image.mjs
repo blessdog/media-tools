@@ -9,6 +9,7 @@
 // model-scoped one (proven in cutwork config.js:41); do not "simplify" this.
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { dirname, join, basename } from 'node:path';
 import { envKey, repoRoot } from './_env.mjs';
 import { predict, predictModel, fetchBytes } from './_replicate.mjs';
@@ -50,6 +51,14 @@ flags:
   --aspect R       replicate only: 16:9 | 3:4 | 1:1  (default 16:9)
   --seed N         reproducible generation (echoed in the JSON either way)
   --model M        replicate only: override model
+  --explain        print every resolved input as JSON and render NOTHING.
+                   Costs no GPU time and no API spend. Use it to see exactly
+                   what a command will send before you send it.
+
+Every render also writes <out>.json beside the image: model, checkpoint, lora
+strength, guidance, steps, seed, frame size, the final prompt text, and the
+sha256 of each reference image — plus the submitted ComfyUI graph. A frame you
+like months from now can still say what made it.
 
 example:
   node ~/projects/media-tools/tools/generate-image.mjs \\
@@ -58,6 +67,10 @@ example:
 const args = process.argv.slice(2);
 if (args.includes('--help') || args.length === 0) { console.log(HELP); process.exit(0); }
 const flag = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
+// Reference images are the load-bearing inputs and they live outside git history
+// (LOCKED swatch, plates). Hash them so a manifest proves WHICH bytes were used,
+// not just which path.
+const sha = (p) => createHash('sha256').update(readFileSync(p)).digest('hex').slice(0, 16);
 const prompt = flag('--prompt');
 const out = flag('--out');
 if (!prompt || !out) { console.error(HELP); process.exit(2); }
@@ -106,13 +119,17 @@ async function comfyUp(url) {
 const seedFlag = flag('--seed');
 const seed = seedFlag ? parseInt(seedFlag, 10) : Math.floor(Math.random() * 1e6);
 
+const explain = args.includes('--explain');
+
 if (wantComfy) {
+  // --explain must work with no box up — the whole point is inspecting a command
+  // BEFORE spending on the hardware to run it.
   const alive = await comfyUp(HOST);
-  if (!alive && askedProvider === 'comfy') {
+  if (!alive && !explain && askedProvider === 'comfy') {
     console.error(`--provider comfy but no ComfyUI at ${HOST}\n  node ${join(repoRoot(), 'tools/gpu-box.mjs')} up --rent   (then: wait, forward --port 8189)`);
     process.exit(3);
   }
-  if (alive) {
+  if (alive || explain) {
     if (!useRef) { console.error('comfy route needs the style swatch (the style channel) — do not pass --no-reference'); process.exit(2); }
     const r = style?.renderer || {};
     const width = parseInt(flag('--width', String(r.dims?.width || 1152)), 10);
@@ -124,21 +141,44 @@ if (wantComfy) {
     // (style.json promptNote) — the opposite of the hosted path, where style text
     // is load-bearing.
     const scene = `${style?.prompt || ''} ${prompt}`.trim();
-    console.error(`generate-image: comfy ${HOST} · USO ${width}x${height} seed ${seed}`
-      + ` · style ${basename(refPaths[0])}${plate ? ` · identity ${basename(plate)}` : ' · NO identity channel'} → ${out}`);
+    const lora = parseFloat(flag('--lora', String(r.lora || '').match(/@\s*([0-9.]+)/)?.[1] ?? '1.0'));
+    const guidance = parseFloat(flag('--guidance', String(r.guidance ?? 3.5)));
+    const steps = parseInt(flag('--steps', String(r.steps ?? 20)), 10);
+    const ckpt = r.checkpoint || 'flux1-dev-fp8.safetensors';
+
+    // Every input that determines the output, in one object. --explain prints it
+    // and renders NOTHING; a render writes it beside the image as <out>.json so a
+    // frame you like six months from now can still say what made it.
+    const manifest = {
+      tool: 'generate-image', provider: 'comfy', host: HOST,
+      renderer: r.winner || null, style: styleKey,
+      model: { checkpoint: ckpt, lora: 'uso-flux1-dit-lora-v1.safetensors', loraStrength: lora,
+        modelPatch: 'uso-flux1-projector-v1.safetensors', clipVision: 'sigclip_vision_patch14_384.safetensors' },
+      sampler: { seed, steps, guidance, cfg: 1.0, sampler: 'euler', scheduler: 'simple', denoise: 1.0 },
+      frame: { width, height },
+      channels: {
+        style: { file: refPaths[0], sha256: sha(refPaths[0]) },
+        identity: plate ? { file: plate, sha256: sha(plate) } : null,
+        scene: { text: scene, stylePrefix: style?.prompt || null, yourPrompt: prompt },
+      },
+      out,
+    };
+    if (explain) {
+      console.log(JSON.stringify({ ...manifest, boxUp: alive, wouldRender: true, spent: 'nothing' }, null, 2));
+      process.exit(0);
+    }
+    console.error(`generate-image: comfy ${HOST} · ${ckpt} · USO lora ${lora} · guidance ${guidance} · ${steps} steps`);
+    console.error(`  ${width}x${height} · seed ${seed} · style ${basename(refPaths[0])}`
+      + `${plate ? ` · identity ${basename(plate)}` : ' · NO identity channel'} → ${out}`);
     console.error(`prompt: ${scene}`);
 
     const swatchName = await uploadInput(HOST, readFileSync(refPaths[0]), basename(refPaths[0]));
     const plateName = plate ? await uploadInput(HOST, readFileSync(plate), basename(plate)) : null;
     const graph = buildUsoGraph({
       plateImage: plateName, swatchImage: swatchName, prompt: scene, seed,
-      // renderer.lora reads "uso-flux1-dit-lora-v1.safetensors @ 1.0" — the file is
-      // hardcoded in the graph, so only the strength after the @ is wanted here.
-      lora: parseFloat(flag('--lora', String(r.lora || '').match(/@\s*([0-9.]+)/)?.[1] ?? '1.0')),
-      guidance: parseFloat(flag('--guidance', String(r.guidance ?? 3.5))),
-      width, height, steps: parseInt(flag('--steps', String(r.steps ?? 20)), 10),
+      lora, guidance, width, height, steps,
       prefix: basename(out).replace(/\.[^.]+$/, ''),
-      ckpt: r.checkpoint || 'flux1-dev-fp8.safetensors',
+      ckpt,
     });
     const { outputs, promptId } = await runWorkflow(HOST, graph, {
       clientId: 'media-tools', onStatus: (s) => s === 'running' && process.stderr.write('.'),
@@ -147,7 +187,8 @@ if (wantComfy) {
     const bytes = await fetchOutput(HOST, outputs[0]);
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, bytes);
-    console.log(JSON.stringify({ out, bytes: bytes.length, provider: 'comfy', renderer: r.winner || null, style: styleKey, seed, width, height, identity: plateName, promptId }));
+    writeFileSync(`${out}.json`, JSON.stringify({ ...manifest, promptId, bytes: bytes.length, graph }, null, 2));
+    console.log(JSON.stringify({ out, manifest: `${out}.json`, bytes: bytes.length, provider: 'comfy', renderer: r.winner || null, style: styleKey, seed, lora, guidance, steps, width, height, identity: plateName, promptId }));
     process.exit(0);
   }
   console.error(`no ComfyUI at ${HOST} — falling back to the hosted renderer (expect a step down from ${style?.renderer?.winner || 'the real one'})`);
@@ -163,8 +204,12 @@ const template = useRef
   ? (lockIdentity ? style?.referencePrompt : style?.styleOnlyPrompt)
   : null;
 const stylePrefix = style ? style[variant] : '';
+// The scene often arrives already ending in a period (it is prose, not a
+// fragment); the template supplies its own. Two periods is a token the model has
+// to interpret — drop one.
+const scenePart = prompt.replace(/\s*\.\s*$/, '');
 const fullPrompt = raw ? prompt
-  : template ? template.replace('{SCENE}', prompt)
+  : template ? template.replace('{SCENE}', scenePart)
   : `${stylePrefix} ${prompt}`;
 const model = flag('--model', style?.fallback?.model || style?.image?.model || 'replicate/black-forest-labs/flux-kontext-pro');
 
@@ -182,6 +227,26 @@ if (useRef) {
   else input.image_input = uris;
 }
 
+// Same manifest contract as the comfy path. `input` carries base64 data URIs —
+// they are replaced by path+hash so the file stays readable and the bytes are
+// still provable.
+const manifest = {
+  tool: 'generate-image', provider: 'replicate', model,
+  style: raw ? null : styleKey, variant: raw ? null : variant,
+  fallbackOf: style?.renderer?.winner || null,
+  sampler: { seed: seedFlag ? seed : 'unset (model default)' },
+  channels: {
+    references: refPaths.map((p) => ({ file: p, sha256: sha(p) })),
+    identityLocked: lockIdentity,
+    scene: { text: fullPrompt, template: template ? (lockIdentity ? 'referencePrompt' : 'styleOnlyPrompt') : null, yourPrompt: prompt },
+  },
+  input: { ...input, input_image: undefined, input_images: undefined, image_input: undefined },
+  out,
+};
+if (args.includes('--explain')) {
+  console.log(JSON.stringify({ ...manifest, wouldRender: true, spent: 'nothing' }, null, 2));
+  process.exit(0);
+}
 console.error(`generate-image: ${model}${useRef ? ` · ${refPaths.length} ref(s): ${refPaths.map((r) => basename(r)).join(', ')}` : ' · TEXT ONLY'} → ${out}`);
 console.error(`prompt: ${fullPrompt}`);
 const token = envKey('REPLICATE_API_TOKEN');
@@ -193,4 +258,5 @@ const url = model.includes('nano-banana')
 const bytes = await fetchBytes(url);
 mkdirSync(dirname(out), { recursive: true });
 writeFileSync(out, bytes);
-console.log(JSON.stringify({ out, bytes: bytes.length, model, style: raw ? null : styleKey, variant: raw ? null : variant }));
+writeFileSync(`${out}.json`, JSON.stringify({ ...manifest, sourceUrl: url, bytes: bytes.length }, null, 2));
+console.log(JSON.stringify({ out, manifest: `${out}.json`, bytes: bytes.length, model, style: raw ? null : styleKey, variant: raw ? null : variant }));
