@@ -1,0 +1,53 @@
+{
+  "_note": "MEASURED render throughput. Every number here came off a real run — never estimate into this file. The planner (plan-gpu.mjs) prefers these over its priors, so one honest measurement beats any amount of spec-sheet math. Add a row whenever a render is timed on a new card or workload.",
+  "gpuPerf": {
+    "_note": "Relative throughput prior, used ONLY when no measurement exists for a card. Roughly tracks memory bandwidth x tensor throughput for diffusion sampling. RTX_6000Ada = 1.0 by definition.",
+    "RTX_3090": 0.55,
+    "RTX_4090": 1.15,
+    "RTX_5090": 1.7,
+    "RTX_6000Ada": 1.0,
+    "L40S": 1.05,
+    "A100_PCIE": 1.2,
+    "A100_SXM4": 1.4,
+    "H100_PCIE": 2.4,
+    "H100_SXM": 3.1,
+    "H100_NVL": 2.8,
+    "H200": 3.6,
+    "B200": 6.0,
+    "RTX_PRO_6000": 2.2
+  },
+  "gpuVram": {
+    "_note": "GB of VRAM per card, for ruling out offload-thrashing before renting.",
+    "RTX_3090": 24, "RTX_4090": 24, "RTX_5090": 32, "RTX_6000Ada": 48,
+    "L40S": 48, "A100_PCIE": 80, "A100_SXM4": 80, "H100_PCIE": 80,
+    "H100_SXM": 80, "H100_NVL": 94, "H200": 141, "B200": 180,
+    "RTX_PRO_6000": 96
+  },
+  "workloads": {
+    "hunyuan-1.5-i2v-720p-fp16": {
+      "vramGB": 46,
+      "vramNote": "16.65GB fp16 unet + 9.4GB text encoder + 2.5GB vae + activations for 121 frames at 1280x720. MEASURED at 43.3/49GB on a 6000 Ada — already offloading, so 48GB is the floor, not comfortable.",
+      "measured": [
+        {
+          "gpu": "RTX_6000Ada",
+          "date": "2026-08-12",
+          "secondsPerStep": 135,
+          "steps": 20,
+          "cfg": 6,
+          "frames": 121,
+          "resolution": "1280x720",
+          "secondsPerClip": 2700,
+          "note": "cfg 6 = two model evaluations per step. VRAM 43.3/49GB with dynamic offload, which is part of why it is this slow."
+        }
+      ]
+    },
+    "uso-inkwash-still": {
+      "vramGB": 24,
+      "vramNote": "flux1-dev-fp8 (17GB) + USO lora/projector + sigclip at 1152x640.",
+      "measured": [
+        { "gpu": "RTX_6000Ada", "date": "2026-08-12", "secondsPerClip": 40, "steps": 20,
+          "note": "one still, 1152x640, lora 1.35. Includes no model load (warm)." }
+      ]
+    }
+  }
+}
