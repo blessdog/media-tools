@@ -38,6 +38,10 @@ flags:
                    (omit for inserts/empty rooms — style + text only)
   --width N        comfy: frame width  (default: style renderer.dims)
   --height N       comfy: frame height (default: style renderer.dims)
+  --lora F         comfy: USO style-lora strength (default: the style's, 1.0)
+  --guidance F     comfy: flux guidance (default: the style's, 3.5) — lower is
+                   looser and more painterly, higher is more literal
+  --steps N        comfy: sampler steps (default: the style's, 20)
   --no-reference   text-only; skip the style's reference image
   --reference PATH override the style's reference image (= the style swatch)
   --identity       replicate only: ALSO copy the reference's face/identity
@@ -130,9 +134,9 @@ if (wantComfy) {
       plateImage: plateName, swatchImage: swatchName, prompt: scene, seed,
       // renderer.lora reads "uso-flux1-dit-lora-v1.safetensors @ 1.0" — the file is
       // hardcoded in the graph, so only the strength after the @ is wanted here.
-      lora: parseFloat(String(r.lora || '').match(/@\s*([0-9.]+)/)?.[1] ?? '1.0'),
-      guidance: r.guidance ?? 3.5,
-      width, height, steps: r.steps ?? 20,
+      lora: parseFloat(flag('--lora', String(r.lora || '').match(/@\s*([0-9.]+)/)?.[1] ?? '1.0')),
+      guidance: parseFloat(flag('--guidance', String(r.guidance ?? 3.5))),
+      width, height, steps: parseInt(flag('--steps', String(r.steps ?? 20)), 10),
       prefix: basename(out).replace(/\.[^.]+$/, ''),
       ckpt: r.checkpoint || 'flux1-dev-fp8.safetensors',
     });
