@@ -39,6 +39,7 @@ the same command that creates the file.
 | `gpu-box.mjs` | rent / provision / kill a Vast.ai GPU box |
 | `plan-gpu.mjs` | workload → which card to rent, ranked by cost PER JOB (rents nothing) |
 | `fetch-artwork.mjs` | open-access museum collection → images + metadata sidecars |
+| `crop-tiles.mjs` | artwork scans → square training tiles, mount silk and blank paper removed |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`.
