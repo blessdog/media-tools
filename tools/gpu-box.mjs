@@ -328,7 +328,7 @@ function sshArgs(id, extra = []) {
 }
 const pickId = () => flag('id') || listInstances()[0]?.id;
 
-// run a remote command: node tools/vast.mjs run --cmd 'du -sh /ComfyUI/models'
+// run a remote command: node tools/gpu-box.mjs run --cmd 'du -sh /ComfyUI/models'
 async function runCmd() {
   const id = pickId(); if (!id) { console.error('no instance'); process.exit(1); }
   const cmd = flag('cmd'); if (!cmd || cmd === true) { console.error('usage: run --cmd "<remote command>"'); process.exit(1); }
@@ -372,7 +372,7 @@ async function stop() {
     const st = inst.actual_status;
     if (st === 'exited' || st === 'stopped') {
       console.log(`✓ VERIFIED stopped (actual_status=${st}) — GPU billing stopped; storage-only ~${fmt$(inst.storage_total_cost || 0)}/hr, disk retained.`);
-      console.log(`  resume: node tools/vast.mjs start   (~1-2 min, no re-download)`);
+      console.log(`  resume: node tools/gpu-box.mjs start   (~1-2 min, no re-download)`);
       return;
     }
     console.log(`  …actual_status=${st}; STILL BILLING until it exits`);
@@ -385,7 +385,7 @@ async function start() {
   vast(['start', 'instance', String(id)]);
   console.log(`✓ start sent for ${id} — resuming (GPU billing resumes). Waiting for READY:`);
   const r = await waitReady(id, { timeoutMin: 6 });
-  console.log(r === 'ready' ? '✓ READY — ComfyUI on :8188 (forward it: node tools/vast.mjs forward)' : `✗ ${r}`);
+  console.log(r === 'ready' ? '✓ READY — ComfyUI on :8188 (forward it: node tools/gpu-box.mjs forward)' : `✗ ${r}`);
 }
 
 const run = { up, status, down, wait, run: runCmd, forward, stop, start }[cmd];

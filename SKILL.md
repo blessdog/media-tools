@@ -59,10 +59,15 @@ Footage with no dialogue → a script you can direct from:
     node $T/describe-video.mjs --video source.mp4 --out shots.json --threshold 0.15 --every 4
 
 Regenerate from that script (the description is the CONTENT channel; the style
-supplies the LOOK):
+supplies the LOOK). With a box up this runs the real USO renderer; without one
+it degrades to the hosted fallback and says so:
 
-    node $T/generate-image.mjs --style inkwash --prompt "$(cat regen/shot-02.txt)" --out regen/shot-02.png
+    node $T/gpu-box.mjs up --rent && node $T/gpu-box.mjs forward --port 8189 &
+    node $T/generate-image.mjs --style inkwash --provider comfy \
+      --prompt "$(cat regen/shot-02.txt)" --out regen/shot-02.png
     open regen/shot-02.png
+    node $T/gpu-box.mjs stop      # GPU billing off, weights kept (~$0.03/hr)
+    node $T/gpu-box.mjs down      # DESTROY — the only thing that stops billing entirely
 
 Restyle a real photo, composition preserved:
 
@@ -89,3 +94,10 @@ Transcription ONLY when asked for a transcript:
 - Negation summons what it forbids. Describe positively.
 - A file named `*-test.mjs` is evidence of an experiment, not of a decision.
   Do not rebuild a style around its outputs.
+- `gpu-box stop` ends GPU billing and keeps the weights; only `down` (destroy)
+  ends billing entirely. Provisioning pulls LTX's 29GB checkpoint before the USO
+  models — for a stills-only job, pull the four USO files directly instead of
+  paying to wait for the whole manifest.
+- Shell-quoting a prompt out of a file: strip a `Shot N — 12 s` header only if
+  it's actually there, and BSD `sed` needs `d` inside braces terminated (`{...;}`).
+  Put anything with a loop in a script file, not a one-liner.

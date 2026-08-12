@@ -1,6 +1,35 @@
 # STATUS — media-tools
 
-## 2026-08-11 — phases 1–4 shipped, phase 5 is next
+## 2026-08-12 — PHASE 5 DONE: the real renderer is wired and proven
+
+`generate-image --provider comfy` runs the USO graph on a Vast box. Nine
+inkwash frames rendered from `jobs/sheen-inkwash/regen/*.txt` through
+`uso-inkwash` — the 2026-06-09 renderer, not an approximation of it.
+Contact sheet: `jobs/sheen-inkwash/renders/contact-sheet.png`.
+
+What the live run settled:
+
+- **The gist risk is closed.** The pinned URL in `gpu-box.mjs` is byte-identical
+  to `tools/provision/provision-ltx.sh` and carries the USO block.
+- **`.vast/ssh_key.pub` never came across in the salvage.** It now holds
+  `~/.ssh/id_ed25519.pub` (matching `SSH_KEY` at `gpu-box.mjs:318`). Without it
+  `forward` cannot open the tunnel.
+- **Provisioning pulls LTX's 29GB checkpoint BEFORE the USO block**, so a
+  stills-only job pays ~30 min for weights it never loads. Pulling the four USO
+  files directly in parallel (same paths, so the provisioner skips them) had the
+  box rendering in ~12 min instead. A `--stills-only` provisioning path is the
+  obvious next economy.
+- **Routing degrades, it does not fail.** No box → hosted fallback with a
+  warning; `--provider comfy` explicitly → exit 3 naming the box command.
+- Box `47503264` is **STOPPED, not destroyed** — storage-only ~$0.033/hr, weights
+  retained, `gpu-box start` resumes in ~1-2 min. **`gpu-box down` when the look
+  is settled**, or it keeps trickling.
+
+Open: **the identity channel has never been exercised.** Every frame so far is
+style + text, so the men are generic. `--plate-image` is wired and untested, and
+nothing yet extracts a photoreal plate from source footage.
+
+## 2026-08-11 — phases 1–4 shipped
 
 Read `CLAUDE.md` (the tool contract) and `docs/specs/2026-08-11-media-tools-design.md`
 (especially **§12 Amendments**, written after live testing contradicted the
