@@ -14,6 +14,12 @@ Invoke by absolute path from any directory.
 authoritative contract; read it before calling. Compose tools in a job script
 (`jobs/<name>/run.sh`), one line per step, so the human can read and re-run it.
 
+**Never ship slop.** Cheap+fast diffusion is not a shortcut to a result, it is a
+different and worthless result — Ryan can see it instantly. Anything he will look
+at gets the best renderer available from the first frame, even if that means
+renting a GPU box and waiting. Never fall back to a cheap hosted model silently;
+say the good path is down and stop. See CLAUDE.md.
+
 **Always `open` what you produce.** Rendering an image or video into the
 assistant's own context does NOT put it on Ryan's screen. Run `open <path>` in
 the same command that creates the file.

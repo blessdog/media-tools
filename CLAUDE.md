@@ -25,6 +25,22 @@ Verb-noun tools (`generate-image.mjs`) · `_`-prefix vendor adapters
 (`_replicate.mjs`) · plain-noun data dirs (`styles/`, `jobs/`).
 Names state what the thing does; cleverness in a name is a cost.
 
+## NEVER SHIP SLOP (Ryan, 2026-08-12 — law, not preference)
+Cheap + fast diffusion = slop, and **slop is worthless trash**. His words, after
+I animated approved inkwash stills with a cheap hosted i2v model: *"running a
+video through this cheap replicate video model is basically taking a shit
+directly in my eyes. That would actually be preferable to what this shit pumps
+out."* It is instantly apparent — three hands, impossible motion, a painting
+turning photographic.
+
+So: **anything Ryan will LOOK at gets the best renderer available, from the
+first frame.** Rent the box, wait the 15 minutes. Never substitute a fast hosted
+model to "prove the pipeline" — a pipeline proven with slop proves nothing he
+cares about. If the good path is unavailable, say so and STOP; do not silently
+fall back. `generate-image`'s hosted fallback is for plumbing checks he is not
+being asked to look at, never for a deliverable.
+Stills = USO/flux on the box. Motion = a real model on the box, never Replicate.
+
 ## Locked decisions
 - Deepgram ALWAYS for transcription (nova-3, diarized). Never Whisper.
 - Salvage, not rewrite: logic moved from cutwork/clipsmith stays as proven.
