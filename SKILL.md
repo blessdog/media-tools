@@ -46,6 +46,9 @@ the same command that creates the file.
 | `segment-regions.py` | image → non-overlapping regions, auto (objects, never big planes) |
 | `segment-points.py` | clicked points + depths → cut RGBA depth planes |
 | `crop-tiles.mjs` | artwork scans → square training tiles, mount silk and blank paper removed |
+| `mask-bare-ground.py` | box → mask of the UNPAINTED ground (留白), cut by material not contour |
+| `animate-strokes.py` | still + mask → looping clip; the painter's own ink displaced, never redrawn |
+| `composite-shot.py` | still plate + N animated regions → one shot; everything else stays frozen |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`. Renderer recipes in `models/` —

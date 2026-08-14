@@ -1,5 +1,5 @@
 {
- "_note": "MEASURED render throughput. Every number here came off a real run — never estimate into this file. The planner (plan-gpu.mjs) prefers these over its priors, so one honest measurement beats any amount of spec-sheet math. Add a row whenever a render is timed on a new card or workload.",
+ "_note": "MEASURED render throughput. Every number here came off a real run \u2014 never estimate into this file. The planner (plan-gpu.mjs) prefers these over its priors, so one honest measurement beats any amount of spec-sheet math. Add a row whenever a render is timed on a new card or workload.",
  "gpuPerf": {
   "_note": "Relative throughput prior, used ONLY when no measurement exists for a card. Roughly tracks memory bandwidth x tensor throughput for diffusion sampling. RTX_6000Ada = 1.0 by definition.",
   "RTX_3090": 0.55,
@@ -35,7 +35,7 @@
  "workloads": {
   "hunyuan-1.5-i2v-720p-fp16": {
    "vramGB": 46,
-   "vramNote": "16.65GB fp16 unet + 9.4GB text encoder + 2.5GB vae + activations for 121 frames at 1280x720. MEASURED at 43.3/49GB on a 6000 Ada — already offloading, so 48GB is the floor, not comfortable.",
+   "vramNote": "16.65GB fp16 unet + 9.4GB text encoder + 2.5GB vae + activations for 121 frames at 1280x720. MEASURED at 43.3/49GB on a 6000 Ada \u2014 already offloading, so 48GB is the floor, not comfortable.",
    "measured": [
     {
      "gpu": "RTX_6000Ada",
@@ -57,7 +57,29 @@
      "frames": 121,
      "resolution": "720x1280",
      "secondsPerClip": 1340,
-     "note": "80GB variant. 31.7/80GB used — NO offload, unlike the 6000 Ada row, which is most of why it is 2x faster at ~half the nominal throughput prior. Vertical 720x1280 framing, same pixel count as 1280x720."
+     "note": "80GB variant. 31.7/80GB used \u2014 NO offload, unlike the 6000 Ada row, which is most of why it is 2x faster at ~half the nominal throughput prior. Vertical 720x1280 framing, same pixel count as 1280x720."
+    },
+    {
+     "gpu": "A100_SXM4",
+     "date": "2026-08-14",
+     "secondsPerStep": 28,
+     "steps": 20,
+     "cfg": 3,
+     "frames": 73,
+     "resolution": "720x1280",
+     "secondsPerClip": 600,
+     "note": "73 frames (3s @24fps) instead of 121. 22.6/80GB used, no offload. 28 s/step vs 67 for 121 frames on the same card: cost scales with frame count roughly linearly, so quote clips in frames, not seconds. secondsPerClip includes ~25s model init on the first run of a session. cfg 3 costs the same as cfg 6 \u2014 both evaluate cond and uncond; only cfg 1 halves the work."
+    },
+    {
+     "gpu": "A100_SXM4",
+     "date": "2026-08-14",
+     "secondsPerStep": 9,
+     "steps": 20,
+     "cfg": 6,
+     "frames": 73,
+     "resolution": "704x640",
+     "secondsPerClip": 205,
+     "note": "CROP workload: 704x640 is 0.49x the pixels of 720x1280 and ran 3.1x faster per step. Crops are cheap, which matters because cropping is what makes a strong prompt safe on a painting (see jobs/wang-meng/motion)."
     }
    ]
   },
