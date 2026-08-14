@@ -39,7 +39,35 @@ model to "prove the pipeline" — a pipeline proven with slop proves nothing he
 cares about. If the good path is unavailable, say so and STOP; do not silently
 fall back. `generate-image`'s hosted fallback is for plumbing checks he is not
 being asked to look at, never for a deliverable.
-Stills = USO/flux on the box. Motion = a real model on the box, never Replicate.
+
+### AMENDED 2026-08-12 (Ryan): judge the OUTPUT, not the architecture
+The original rule banned distilled and hosted models outright. That is too
+blunt and it was already wrong twice in one day:
+
+- Hosted `flux-2-dev` produced a frame Ryan called *"decent… looks like someone
+  actually painted"* — the blanket "hosted = slop" would have refused to make it.
+- The Krea-2 ink-wash LoRAs he wants are trained on **Krea-2-Turbo**, a
+  distilled base. Vetoing them on the word "turbo" would have thrown away the
+  best-matching style found so far.
+
+Ryan: *"shouldn't be outright banning a distilled model. Silly. Should be on a
+case by case basis."*
+
+So the rule is: **slop is a property of pixels, not of a model's category.**
+Distillation, quantisation and hosted inference are all legitimate until the
+output says otherwise. What survives unchanged:
+
+- **His eyes are the verdict.** `open` the file; never declare it good unread.
+- **Never silently downgrade.** Substituting a lesser renderer without saying so
+  is the actual sin — that is what "taking a shit directly in my eyes" was about.
+- **Name the trade.** "turbo, distilled, 8 steps" goes in the manifest so a bad
+  frame is diagnosable instead of mysterious.
+- **A/B rather than assume.** Turbo vs raw, fp8 vs bf16 — same seed, both
+  rendered, he picks.
+
+Note the distinction that matters: **distillation** changes what the model does
+(fewer steps, altered behaviour) and must be judged. **Quantisation** (fp8, int8)
+is a precision trade on the same model and is normally free. Do not conflate them.
 
 ## Locked decisions
 - Deepgram ALWAYS for transcription (nova-3, diarized). Never Whisper.
@@ -53,3 +81,13 @@ Pressure-test before agreeing. Mentor mode: name the principle and the
 industry term. His eyes are the verdict on anything visual — `open` the file,
 never declare it good unread. Report WHERE work landed by exact path. Small
 commits with search-bait subjects.
+
+**Prose hides errors (2026-08-14, bible §4.7).** This bites hardest in a media
+repo, because nearly every claim here is a claim about pixels. Never describe
+what an image or clip *would* show — render it and `open` it. Never use "it" as
+a sentence subject without naming the referent. And before believing any
+measurement of a rendered result, BUILD THE NULL: a static control, a synthetic
+flat version, an untreated frame. Measured this session — a parallax claim
+survived an hour in prose and died 90 seconds after being rendered beside a
+synthetic pure zoom. Two different metrics had "proved" it; controls explained
+away both. A metric with a plausible story attached is not evidence.
