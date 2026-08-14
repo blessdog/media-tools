@@ -1,0 +1,34 @@
+{
+  "id": "krea2-linen-scroll",
+  "summary": "Krea-2 + the chinese-ink-linen-scroll LoRA. Muted colour on a woven linen ground — the substrate texture is what makes it read as a real scroll rather than a digital painting. Ryan 2026-08-12: 'stunning.'",
+  "engine": "comfy",
+  "graph": "tools/workflows/krea2.json",
+  "graphStatus": "NOT WRITTEN YET — shares the Krea-2 graph with krea2-darkbrush; only the LoRA and trigger change.",
+  "triggerPhrase": "chinese ink linen scroll style",
+  "lora": { "file": "chinese-ink-linen-scroll-comfy.safetensors", "strength": 1.0 },
+  "loraNote": "Author recommends 1.0–1.25. The '-comfy' file is already in ComfyUI's LoRA layout — do NOT take the plain .safetensors, that one is diffusers format.",
+  "inputs": {
+    "image":  { "class": "LoadImage",           "field": "image" },
+    "prompt": { "class": "CLIPTextEncode",      "field": "text"  },
+    "seed":   { "class": "KSampler",            "field": "seed"  },
+    "lora":   { "class": "LoraLoaderModelOnly", "field": "lora_name" }
+  },
+  "vramGB": 22,
+  "vramNote": "ESTIMATE, same stack as krea2-darkbrush. Measure and replace.",
+  "gpu": "RTX_4090",
+  "weightsGB": 17.6,
+  "weights": [
+    { "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_fp8_scaled.safetensors", "dest": "diffusion_models", "gb": 12.24 },
+    { "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors", "dest": "text_encoders", "gb": 4.88 },
+    { "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors", "dest": "vae", "gb": 0.24 },
+    { "url": "https://huggingface.co/ilkerzgi/krea-2-chinese-ink-linen-scroll-lora/resolve/main/chinese-ink-linen-scroll-comfy.safetensors", "dest": "loras", "gb": 0.22 }
+  ],
+  "baseNote": "Tagged base_model:krea/Krea-2-Turbo, so TURBO is the default here — unlike darkbrush, this one's card and tags agree. Try raw as the A/B, not as the default.",
+  "unknowns": [
+    "Every published sample is a SCENE. No close portrait exists, and close portraiture is where scroll styles usually break — which is exactly what the narration use case needs.",
+    "The linen weave is high-frequency texture. Beautiful in a still; the most likely thing to crawl frame-to-frame in video.",
+    "Two of three samples carry red seal stamps. Native and correct in this idiom — but Ryan has spent months treating seals as an artefact to suppress."
+  ],
+  "licence": "krea-2-community-license",
+  "source": "https://huggingface.co/ilkerzgi/krea-2-chinese-ink-linen-scroll-lora · 292 downloads, community"
+}

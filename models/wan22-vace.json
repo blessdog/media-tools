@@ -1,0 +1,19 @@
+{
+  "id": "wan22-vace",
+  "summary": "Wan 2.2 Fun VACE — the control-conditioning route. Depth / pose / edges / trajectory drive the render while the look comes from reference images. This is section 4-6 of the architecture doc, self-hosted.",
+  "engine": "comfy",
+  "graph": "tools/workflows/wan22-vace.json",
+  "graphStatus": "NOT WRITTEN YET — manifest only.",
+  "vramGB": 60,
+  "vramNote": "ESTIMATE and deliberately pessimistic. VACE is a two-expert MoE: high_noise AND low_noise are 32.29GB EACH in bf16. Holding both plus activations is why this is the biggest job in the catalog. An fp8 pair exists in the same repo and should be preferred — check before renting an 80GB card.",
+  "gpu": "RTX_PRO_6000",
+  "weightsGB": 72.2,
+  "weights": [
+    { "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_fun_vace_high_noise_14B_bf16.safetensors", "dest": "diffusion_models", "gb": 32.29 },
+    { "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/diffusion_models/wan2.2_fun_vace_low_noise_14B_bf16.safetensors", "dest": "diffusion_models", "gb": 32.29 },
+    { "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors", "dest": "text_encoders", "gb": 6.27 },
+    { "url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files/vae/wan2.2_vae.safetensors", "dest": "vae", "gb": 1.31 }
+  ],
+  "siblings": "Same repo also carries wan2.2_animate_14B, wan2.2_s2v_14B (+ wav2vec2 audio encoder, for audio-driven talking), fun_control and fun_camera. One download destination for the entire conditioning toolkit.",
+  "note": "Rent this LAST. It is the most expensive thing in the catalog and it only earns its cost once the stills look is locked."
+}

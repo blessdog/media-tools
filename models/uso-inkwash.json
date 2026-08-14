@@ -1,0 +1,12 @@
+{
+  "id": "uso-inkwash",
+  "summary": "Flux1-dev-fp8 + USO dual-channel. The 2026-06-09 winner — style arrives as the LOCKED swatch through CLIPVision, not as adjectives.",
+  "engine": "comfy",
+  "builder": "uso",
+  "vramGB": 24,
+  "gpu": "RTX_5090",
+  "gpuNote": "24GB is the measured floor (benchmarks.json uso-inkwash-still). A 24GB card sits exactly on it and offloads; 32GB is the first comfortable size.",
+  "weightsGB": 17.3,
+  "params": { "lora": 1.35, "guidance": 3.5, "steps": 20, "width": 1152, "height": 640 },
+  "measured": "40s per still on an RTX 6000 Ada, warm (2026-08-12)"
+}

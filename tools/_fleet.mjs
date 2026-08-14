@@ -1,14 +1,24 @@
-// Bongpot — fleet plumbing shared by shard-clips.mjs / shard-stills.mjs.
+// media-tools — fleet plumbing shared by the shard-* tools.
 //
-// Discover running Vast boxes, open one SSH tunnel per box (via vast.mjs forward —
-// the proven no-shell-footgun path), wait until each ComfyUI answers, hand the
-// caller a per-box local port, and guarantee tunnel teardown.
+// Discover running Vast boxes, open one SSH tunnel per box (via gpu-box.mjs
+// forward — the proven no-shell-footgun path), wait until each ComfyUI answers,
+// hand the caller a per-box local port, and guarantee tunnel teardown.
+//
+// SALVAGED FROM BONGPOT 2026-08-12 and repaired for this repo. Two things were
+// broken by the move and would have failed on first use:
+//   1. it read `.env` from process.cwd() — the foreign-cwd rule (CLAUDE.md §7)
+//      says resolve via import.meta.url, or every call from a jobs/ dir breaks.
+//   2. it spawned `tools/vast.mjs`, which is bongpot's name for this repo's
+//      gpu-box.mjs, by a cwd-relative path. Nothing would have forwarded.
 
-import { readFileSync } from 'node:fs';
 import { execFileSync, spawn } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+import { envKey } from './_env.mjs';
 
-const env = (() => { try { return readFileSync('.env', 'utf8'); } catch { return ''; } })();
-const VAST_API_KEY = (env.match(/^VAST_API_KEY=(.+)$/m) || [])[1]?.trim() || process.env.VAST_API_KEY;
+const TOOLS = dirname(fileURLToPath(import.meta.url));
+const GPU_BOX = join(TOOLS, 'gpu-box.mjs');
+const VAST_API_KEY = envKey('VAST_API_KEY');
 
 // Running instances, optionally filtered to an id allow-list.
 export function discoverRunning(onlyIds) {
@@ -29,7 +39,7 @@ async function waitComfy(port, instId, child, timeoutMs = 45000) {
     } catch {}
     await new Promise((r) => setTimeout(r, 1500));
   }
-  throw new Error(`ComfyUI on instance ${instId} (local :${port}) never answered — provisioning finished? (vast.mjs run --id ${instId} --cmd 'cat /var/log/prov.marker /var/log/models.marker')`);
+  throw new Error(`ComfyUI on instance ${instId} (local :${port}) never answered — provisioning finished?\n  node ${GPU_BOX} run --id ${instId} --cmd 'cat /var/log/prov.marker /var/log/models.marker'`);
 }
 
 // Open a tunnel per instance (local ports base, base+1, …), wait for every ComfyUI,
@@ -40,7 +50,7 @@ export async function withTunnels(instances, basePort, fn) {
   process.on('SIGINT', () => { kill(); process.exit(130); });
   const boxes = instances.map((inst, i) => {
     const port = basePort + i;
-    tunnels.push(spawn('node', ['tools/vast.mjs', 'forward', '--id', String(inst.id), '--port', String(port)], { stdio: 'ignore' }));
+    tunnels.push(spawn('node', [GPU_BOX, 'forward', '--id', String(inst.id), '--port', String(port)], { stdio: 'ignore' }));
     return { inst, port };
   });
   try {

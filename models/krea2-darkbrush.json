@@ -1,0 +1,36 @@
+{
+  "id": "krea2-darkbrush",
+  "summary": "Krea-2 + the first-party darkbrush LoRA. Monochrome ink wash: near-black masses on near-white paper, ink spatter, silhouette-driven. Ryan 2026-08-12: 'this one could translate really well to video.'",
+  "engine": "comfy",
+  "graph": "tools/workflows/krea2.json",
+  "graphStatus": "NOT WRITTEN YET — export from ComfyUI's official Krea-2 template on the first box.",
+  "triggerPhrase": "monochrome ink wash style",
+  "triggerNote": "Krea LoRAs are trigger-phrase driven. Append it to the END of the scene text, per the model card's own examples ('A deer grazing in the forest, monochrome ink wash style').",
+  "lora": { "file": "darkbrush.safetensors", "strength": 1.0 },
+  "inputs": {
+    "image":  { "class": "LoadImage",           "field": "image" },
+    "prompt": { "class": "CLIPTextEncode",      "field": "text"  },
+    "seed":   { "class": "KSampler",            "field": "seed"  },
+    "lora":   { "class": "LoraLoaderModelOnly", "field": "lora_name" }
+  },
+  "vramGB": 22,
+  "vramNote": "ESTIMATE. 12.2GB model + 4.9GB text encoder + activations. Measure on first run and replace.",
+  "gpu": "RTX_4090",
+  "weightsGB": 17.8,
+  "weights": [
+    { "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_fp8_scaled.safetensors", "dest": "diffusion_models", "gb": 12.24 },
+    { "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors", "dest": "text_encoders", "gb": 4.88 },
+    { "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors", "dest": "vae", "gb": 0.24 },
+    { "url": "https://huggingface.co/krea/Krea-2-LoRA-darkbrush/resolve/main/darkbrush.safetensors", "dest": "loras", "gb": 0.45 }
+  ],
+  "baseNote": "TURBO is the default, on evidence: the LoRA's HF tags say base_model:krea/Krea-2-Turbo and every published preview is named *_turbo. The model card TEXT claims Krea-2-Raw — the card and the tags disagree, and the tags plus the preview filenames are the stronger signal. Which base it was actually trained against remains UNVERIFIED.",
+  "rawVariant": {
+    "note": "The A/B. Same seed, raw vs turbo, Ryan picks. Sharing the turbo base with krea2-linen-scroll also puts both LoRAs on ONE box; switching this to raw splits them across two.",
+    "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_raw_fp8_scaled.safetensors",
+    "gb": 12.24
+  },
+  "whyVideo": "Temporal stability comes from the style's shape, not from the video model: value extremes rather than mid-tones (less to flicker), almost no high-frequency texture (nothing to re-derive per frame), stochastic spatter (variation reads as intentional), silhouette compositions, and monochrome (colour drift cannot occur). The style enters at the KEYFRAME and Wan follows it — there is no video LoRA involved.",
+  "costs": "Monochrome. keyframes-v10's approved look carries muted colour with one saturated accent; this drops all of it. And the sample mood is dramatic (samurai, wraiths, lightning) against Ryan's deadpan material — tonal mismatch is the risk samples cannot reveal.",
+  "licence": "krea-2-community-license — LICENSE.pdf ships in the LoRA repo. Read before monetising.",
+  "source": "https://huggingface.co/krea/Krea-2-LoRA-darkbrush · 3862 downloads, 24 likes, first-party"
+}

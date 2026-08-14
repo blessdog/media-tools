@@ -1,0 +1,19 @@
+{
+  "id": "flux2-dev",
+  "summary": "FLUX.2 dev. Ryan on its hosted output, 2026-08-12: 'It looks like someone actually painted' it. Open weights — but the most expensive still renderer in this catalog by a wide margin.",
+  "engine": "comfy",
+  "graph": "tools/workflows/flux2-dev.json",
+  "graphStatus": "NOT WRITTEN YET — manifest only.",
+  "vramGB": 56,
+  "vramNote": "ESTIMATE. 33GB model + 16.8GB text encoder is 50GB of weights BEFORE activations. This does NOT fit a 32GB card. THE SURPRISE: FLUX.2's text encoder is Mistral-3-Small, 16.8GB in fp8 — flux1-dev-fp8 bundled its encoders into a single 16GB file, so the whole FLUX.2 stack is ~3x the older one.",
+  "gpu": "RTX_PRO_6000",
+  "weightsGB": 50.1,
+  "weights": [
+    { "url": "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/diffusion_models/flux2_dev_fp8mixed.safetensors", "dest": "diffusion_models", "gb": 33.02 },
+    { "url": "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/text_encoders/mistral_3_small_flux2_fp8.safetensors", "dest": "text_encoders", "gb": 16.80 },
+    { "url": "https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors", "dest": "vae", "gb": 0.31 }
+  ],
+  "cheaperVariant": "mistral_3_small_flux2_fp4_mixed.safetensors is 11.43GB, taking the stack to 44.8GB. Try it before renting a bigger card — the encoder is the swing factor, not the model.",
+  "note": "LICENCE: FLUX.2 dev is non-commercial. Fine for testing and for Ryan's own films; NOT fine if this ever becomes a paid product. flux1-dev + USO (17.3GB total) remains the cheap proven path and is what rendered every frame Ryan has approved.",
+  "decision": "Hosted flux-2-dev on Replicate costs cents per image and needs no box. Self-hosting it only pays off at volume, and at 50GB it is the LAST model worth self-hosting, not the first."
+}

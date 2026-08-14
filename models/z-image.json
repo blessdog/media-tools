@@ -1,0 +1,22 @@
+{
+  "id": "z-image",
+  "summary": "Z-Image (Alibaba, 6B). The cheap-iteration card. Whole stack is 17GB bf16 / 9.3GB int8 — runs on a 24GB consumer card, so a hundred candidate frames cost pennies.",
+  "engine": "comfy",
+  "graph": "tools/workflows/z-image.json",
+  "graphStatus": "NOT WRITTEN YET — manifest only.",
+  "inputs": {
+    "image":  { "class": "LoadImage",      "field": "image" },
+    "prompt": { "class": "CLIPTextEncode", "field": "text"  },
+    "seed":   { "class": "KSampler",       "field": "seed"  }
+  },
+  "vramGB": 20,
+  "vramNote": "ESTIMATE. 11.5GB model + 5.3GB encoder + activations. Measure and replace.",
+  "gpu": "RTX_4090",
+  "weightsGB": 17.0,
+  "weights": [
+    { "url": "https://huggingface.co/Comfy-Org/z_image/resolve/main/split_files/diffusion_models/z_image_bf16.safetensors", "dest": "diffusion_models", "gb": 11.46 },
+    { "url": "https://huggingface.co/Comfy-Org/z_image/resolve/main/split_files/text_encoders/qwen_3_4b_fp8_mixed.safetensors", "dest": "text_encoders", "gb": 5.25 },
+    { "url": "https://huggingface.co/Comfy-Org/z_image/resolve/main/split_files/vae/ae.safetensors", "dest": "vae", "gb": 0.31 }
+  ],
+  "note": "Take z_image_bf16, NOT z_image_turbo — turbo is the distilled variant and 5M of its downloads are people shipping slop. int8_convrot (5.78GB) is quantisation, not distillation, and is a legitimate fallback if VRAM is tight."
+}

@@ -36,13 +36,20 @@ the same command that creates the file.
 | `transcribe.mjs` | audio/video → diarized transcript.json (Deepgram nova-3, ALWAYS Deepgram) |
 | `describe-video.mjs` | video → shot-by-shot written script (vision via OpenRouter) |
 | `stitch.mjs` | clip-list file (+ music) → one normalized video (ffmpeg, no API) |
+| `shard-models.mjs` | one image → N renderers on N boxes in parallel (the bake-off) |
 | `gpu-box.mjs` | rent / provision / kill a Vast.ai GPU box |
 | `plan-gpu.mjs` | workload → which card to rent, ranked by cost PER JOB (rents nothing) |
 | `fetch-artwork.mjs` | open-access museum collection → images + metadata sidecars |
+| `fetch-image.mjs` | one image (URL or local file) → library + provenance sidecar |
+| `find-page-image.mjs` | web page → the images in it, ranked (downloads nothing) |
+| `estimate-depth.py` | image → depth map (works on PHOTOS; fails on ink painting — see its docs) |
+| `segment-regions.py` | image → non-overlapping regions, auto (objects, never big planes) |
+| `segment-points.py` | clicked points + depths → cut RGBA depth planes |
 | `crop-tiles.mjs` | artwork scans → square training tiles, mount silk and blank paper removed |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
-Proven ComfyUI graphs in `tools/workflows/`.
+Proven ComfyUI graphs in `tools/workflows/`. Renderer recipes in `models/` —
+one JSON per model, read by `shard-models`; never in tool code.
 Related standalone tool: `rectum` (URL → clip on disk) at
 `~/projects/mediaStudio/rectum/`, its own CLI.
 

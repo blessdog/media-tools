@@ -1,0 +1,22 @@
+{
+  "id": "qwen-image-edit-2511",
+  "summary": "Qwen-Image-Edit 2511 (Alibaba). Open weights, no moderation layer, native ink-wash training. The self-hostable answer to seedream-5-pro, which is closed and cannot be run on a box at all.",
+  "engine": "comfy",
+  "graph": "tools/workflows/qwen-image-edit.json",
+  "graphStatus": "NOT WRITTEN YET — this entry is the manifest, not a working renderer.",
+  "inputs": {
+    "image":  { "class": "LoadImage",      "field": "image" },
+    "prompt": { "class": "CLIPTextEncode", "field": "text"  },
+    "seed":   { "class": "KSampler",       "field": "seed"  }
+  },
+  "vramGB": 30,
+  "vramNote": "ESTIMATE, not measured — 19.1GB model + 8.7GB text encoder + activations. Measure it on the first run and replace this number.",
+  "gpu": "RTX_5090",
+  "weightsGB": 28.1,
+  "weights": [
+    { "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_2511_fp8mixed.safetensors", "dest": "diffusion_models", "gb": 19.12 },
+    { "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors", "dest": "text_encoders", "gb": 8.74 },
+    { "url": "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors", "dest": "vae", "gb": 0.24 }
+  ],
+  "note": "2511 supersedes 2509. Both are in the repo at identical size; take the newer."
+}

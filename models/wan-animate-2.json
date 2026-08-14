@@ -1,0 +1,19 @@
+{
+  "id": "wan-animate-2",
+  "summary": "Wan Animate 2 (Alibaba) — motion transfer. A driving video's CHOREOGRAPHY is copied onto a character image; the driving pixels never appear. This is the cure for the invented-smoke failure, because there is no vacuum for the model to fill.",
+  "engine": "comfy",
+  "graph": "tools/workflows/wan-animate-2.json",
+  "graphStatus": "NOT WRITTEN YET — manifest only.",
+  "vramGB": 40,
+  "vramNote": "ESTIMATE and probably LOW. Weights are 23GB in int8, but video VRAM is dominated by ACTIVATIONS, not weights — the measured hunyuan-1.5 run peaked at 46GB off a 16.65GB unet. Measure before trusting.",
+  "gpu": "RTX_5090",
+  "weightsGB": 23.2,
+  "weights": [
+    { "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/main/diffusion_models/wan_animate_2_int8_convrot.safetensors", "dest": "diffusion_models", "gb": 15.51 },
+    { "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/main/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors", "dest": "text_encoders", "gb": 6.27 },
+    { "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/main/clip_vision/clip_vision_h.safetensors", "dest": "clip_vision", "gb": 1.18 },
+    { "url": "https://huggingface.co/Comfy-Org/Wan-Animate-2/resolve/main/vae/Wan2_1_VAE_bf16.safetensors", "dest": "vae", "gb": 0.24 }
+  ],
+  "bf16Alternative": "wan_animate_2_bf16.safetensors is 30.54GB (total stack 38GB). Take it if the int8 shows artefacts — quantisation is a precision trade, and Ryan's eyes decide whether it cost anything.",
+  "note": "Published to Comfy-Org with 0 downloads as of 2026-08-12 — brand new, so expect thin community documentation. The older wan2.2_animate_14B_bf16 (32.18GB) in Wan_2.2_ComfyUI_Repackaged is the proven-by-volume fallback."
+}

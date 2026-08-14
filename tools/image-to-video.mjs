@@ -24,6 +24,8 @@ import { uploadImage as ltxUpload, imageToVideo as ltxI2V, fetchVideo as ltxFetc
   LTX_RESOLUTIONS, estimateCost } from './_ltx.mjs';
 import { dataUri, buzzBalance, buildLtxFlfJob, priceJob, submitAndWait,
   fetchVideo as civitaiFetch } from './_civitai.mjs';
+import { toUrl as falToUrl, balance as falBalance, submitAndWait as falSubmitAndWait,
+  findVideoUrl as falFindVideo, fetchVideo as falFetch, estimateCost as falEstimate } from './_fal.mjs';
 
 const HELP = `image-to-video — animate one still into one motion clip
 
@@ -37,13 +39,29 @@ flags:
   --image PATH     (required) source still
   --prompt TEXT    (required) motion description ("mist drifts, water ripples")
   --out PATH       (required) output clip
-  --provider P     comfy (default, HunyuanVideo 1.5 on the box) | ltx | replicate
+  --provider P     comfy (default) | seedance | ltx | civitai | fal | replicate
+                   seedance bytedance/seedance-2.0 on Replicate. The only route
+                            carrying EVERY conditioning channel at once: first
+                            frame, --last-frame, --style-ref (style guidance)
+                            and --motion-video (motion transfer). Hand it real
+                            choreography and it stops inventing smoke.
+                   civitai  LTX 2.5 22b-dev on owned buzz. 35 buzz per 5s/720p.
+                            Accepts ONLY firstLastFrameToVideo — keyframes are
+                            its whole control surface, verified by probe.
+                   fal      Wan 2.2 A14B. The only affordable door to control
+                            conditioning (depth/pose/flow), which CivitAI does
+                            not carry under any engine name. Costs dollars.
                    ltx      LTX 2.5 Pro on api.ltx.io. The full first-party
                             model, no box, ~$0.09/s at 720p. The ONLY route
                             that takes --last-frame.
                    replicate is SLOP — see the header. Ask for it explicitly.
-  --last-frame P   ltx only: an END frame. The model interpolates from --image
-                   to this. Ink blot in, finished painting out.
+  --last-frame P   ltx, seedance: an END frame. The model interpolates from
+                   --image to this.
+  --motion-video P seedance only: a video whose MOTION is copied. Its pixels
+                   never appear — only its choreography. This is the cure for
+                   invented nonsense; phone footage is fine.
+  --style-ref P    seedance only: a reference image for style guidance. Put the
+                   look here, never in --prompt.
   --model M        ltx only: ltx-2-5-pro (default) | ltx-2-3-pro | ltx-2-pro.
                    The '-fast' distilled variants are deliberately unavailable.
   --resolution R   ltx: 720p (default) | 1080p | 1440p | 4k
@@ -96,6 +114,65 @@ async function comfyUp(url) {
     const r = await fetch(`${url.replace(/\/$/, '')}/system_stats`, { signal: AbortSignal.timeout(4000) });
     return r.ok;
   } catch { return false; }
+}
+
+// ─── fal (Wan 2.2 A14B) ─────────────────────────────────────────────────────
+// The point of this route is NOT that it is another hosted I2V. It is the only
+// affordable door to Wan's control conditioning, and rung 1 of that ladder is
+// this: does Wan hold the ink look AT ALL, before a line of control tooling
+// gets written. $0.20 answers it.
+if (provider === 'fal') {
+  const model = flag('--model', 'fal-ai/wan/v2.2-a14b/image-to-video');
+  if (/turbo|fast|distill/i.test(model)) {
+    console.error(`'${model}' is a distilled/turbo tier. Use the full A14B weights (CLAUDE.md).`);
+    process.exit(2);
+  }
+  const resolution = flag('--resolution', '480p');
+  if (!['480p', '580p', '720p'].includes(resolution)) {
+    console.error(`--resolution must be 480p | 580p | 720p (got ${resolution})`);
+    process.exit(2);
+  }
+  const fps = parseInt(flag('--fps', '16'), 10);
+  const estimate = falEstimate(model, resolution, duration);
+
+  const manifest = {
+    tool: 'image-to-video', provider: 'fal', renderer: model,
+    api: `https://queue.fal.run/${model}`,
+    frame: { resolution, seconds: duration, fps },
+    start: { file: image, sha256: sha(image) },
+    motionPrompt: prompt, seed,
+    costEstimateUsd: estimate, costIsEstimate: true,
+    out,
+  };
+  if (explain) { console.log(JSON.stringify({ ...manifest, wouldRender: true, spent: 'nothing' }, null, 2)); process.exit(0); }
+
+  const before = await falBalance().catch(() => null);
+  if (before !== null && estimate !== null && before < estimate) {
+    console.error(`fal balance $${before} is below the ~$${estimate} estimate for this render. Top up at fal.ai/dashboard/billing.`);
+    process.exit(3);
+  }
+  console.error(`image-to-video: fal ${model} · ${resolution} · ${duration}s @ ${fps}`);
+  console.error(`  ~$${estimate ?? '?'} (estimate)   balance $${before ?? '?'}`);
+  console.error(`motion: ${prompt}`);
+
+  const { id, result } = await falSubmitAndWait(model, {
+    image_url: await falToUrl(image), prompt, resolution,
+    num_frames: Math.round(duration * fps) + 1, frames_per_second: fps, seed,
+  }, { onTick: (s, q) => process.stderr.write(`\r  ${s}${q != null ? ` q${q}` : ''}      `) });
+  process.stderr.write('\n');
+
+  const url = falFindVideo(result);
+  if (!url) { console.error(`no video in result: ${JSON.stringify(result).slice(0, 400)}`); process.exit(1); }
+  const bytes = await falFetch(url);
+  mkdirSync(dirname(out), { recursive: true });
+  writeFileSync(out, bytes);
+  const after = await falBalance().catch(() => null);
+  writeFileSync(`${out}.json`, JSON.stringify({ ...manifest, requestId: id, videoUrl: url,
+    bytes: bytes.length, balanceBefore: before, balanceAfter: after,
+    actuallySpentUsd: before != null && after != null ? +(before - after).toFixed(4) : null }, null, 2));
+  console.log(JSON.stringify({ out, manifest: `${out}.json`, bytes: bytes.length, provider: 'fal',
+    renderer: model, requestId: id, balanceAfter: after }));
+  process.exit(0);
 }
 
 // ─── civitai (orchestrator, LTX 2.3 22b-dev) ────────────────────────────────
@@ -270,6 +347,106 @@ if (provider === 'comfy') {
   process.exit(0);
 }
 
+// ─── seedance (bytedance/seedance-2.0) ──────────────────────────────────────
+// The one model that carries every conditioning channel this project needs:
+// first frame, last frame, up to 9 style/character reference images, up to 3
+// reference VIDEOS for motion transfer, and reference audio. Schema verified
+// live 2026-08-12.
+//
+// Why it is here and not in the slop block below: the failure Ryan named is a
+// video model INVENTING — smoke clouds, nonsense transitions — because a still
+// plus a duration is a vacuum and the model fills it. `reference_videos` is the
+// cure. You hand it real choreography and it has nothing left to invent.
+//
+// And the prompt must NOT describe the medium. On a still model words like
+// "blooms", "bleeds", "pools", "spreads" read as texture; on a VIDEO model they
+// read as tense-carrying verbs and get animated — which is precisely how the
+// ink ends up crawling. The look belongs in reference_images. The prompt gets
+// subject motion only.
+if (provider === 'seedance') {
+  const motionVideo = flag('--motion-video');
+  const styleRef = flag('--style-ref');
+  const lastFrame = flag('--last-frame');
+  const model = flag('--model', 'bytedance/seedance-2.0');
+  const resolution = flag('--resolution', '1080p');
+  const wantAudio = args.includes('--audio');
+
+  for (const [lbl, p] of [['--motion-video', motionVideo], ['--style-ref', styleRef], ['--last-frame', lastFrame]]) {
+    if (p && !existsSync(p)) { console.error(`${lbl} not found: ${p}`); process.exit(2); }
+  }
+
+  if (explain) {
+    console.log(JSON.stringify({ tool: 'image-to-video', provider: 'seedance', model, resolution, duration,
+      start: { file: image, sha256: sha(image) },
+      motionVideo: motionVideo ? { file: motionVideo, sha256: sha(motionVideo) } : null,
+      styleRef: styleRef ? { file: styleRef, sha256: sha(styleRef) } : null,
+      lastFrame: lastFrame ? { file: lastFrame, sha256: sha(lastFrame) } : null,
+      generate_audio: wantAudio, motionPrompt: prompt, out, spent: 'nothing' }, null, 2));
+    process.exit(0);
+  }
+
+  const tok = envKey('REPLICATE_API_TOKEN');
+  console.error(`image-to-video: seedance ${model} · ${resolution} · ${duration}s → ${out}`);
+  console.error(`  first frame:   ${basename(image)}`);
+  console.error(`  motion video:  ${motionVideo ? basename(motionVideo) : 'NONE — the model will invent the motion'}`);
+  console.error(`  style ref:     ${styleRef ? basename(styleRef) : 'none'}`);
+  console.error(`  last frame:    ${lastFrame ? basename(lastFrame) : 'none'}`);
+  console.error(`  prompt:        ${prompt}`);
+
+  // HARD CONSTRAINT, learned from a live E006 on 2026-08-12:
+  //   "Reference images, videos, and audios cannot be used together with first
+  //    or last frame images."
+  // Seedance has TWO mutually exclusive modes, and the tool picks by intent:
+  //   FRAME mode      --image (+ --last-frame)  → i2v / FLF2V
+  //   REFERENCE mode  --motion-video / --style-ref → --image demotes to a
+  //                   reference image, and there is no first frame at all.
+  // Reference mode is the one that stops the model inventing, so any request
+  // carrying choreography wins the tie.
+  const referenceMode = Boolean(motionVideo || styleRef);
+  if (referenceMode && lastFrame) {
+    console.error(`seedance: --last-frame cannot be combined with --motion-video/--style-ref (model E006).`);
+    console.error(`  Drop --last-frame for motion transfer, or drop the references for FLF2V.`);
+    process.exit(2);
+  }
+  console.error(`  mode:          ${referenceMode ? 'REFERENCE (image demoted to a style/character reference)' : 'FRAME'}`);
+
+  const input = {
+    prompt,
+    duration, resolution,
+    aspect_ratio: 'adaptive',
+    generate_audio: wantAudio,
+    ...(seed ? { seed } : {}),
+    ...(referenceMode
+      ? {
+          reference_images: [
+            await uploadImage(image, tok),
+            ...(styleRef ? [await uploadImage(styleRef, tok)] : []),
+          ],
+          ...(motionVideo ? { reference_videos: [await uploadImage(motionVideo, tok, 'video/mp4')] } : {}),
+        }
+      : {
+          image: await uploadImage(image, tok),
+          ...(lastFrame ? { last_frame_image: await uploadImage(lastFrame, tok) } : {}),
+        }),
+  };
+
+  const url = await predictModel(model, input, { token: tok, label: 'seedance', interval: 5000, maxPolls: 400 });
+  const bytes = await fetchBytes(url);
+  mkdirSync(dirname(out), { recursive: true });
+  writeFileSync(out, bytes);
+  writeFileSync(`${out}.json`, JSON.stringify({
+    tool: 'image-to-video', provider: 'seedance', renderer: model,
+    resolution, duration, generate_audio: wantAudio, seed: seed ?? null,
+    start: { file: image, sha256: sha(image) },
+    ...(motionVideo ? { motionVideo: { file: motionVideo, sha256: sha(motionVideo) } } : {}),
+    ...(styleRef ? { styleRef: { file: styleRef, sha256: sha(styleRef) } } : {}),
+    ...(lastFrame ? { end: { file: lastFrame, sha256: sha(lastFrame) } } : {}),
+    motionPrompt: prompt, out, bytes: bytes.length,
+  }, null, 2));
+  console.log(JSON.stringify({ out, manifest: `${out}.json`, bytes: bytes.length, provider: 'seedance', renderer: model }));
+  process.exit(0);
+}
+
 // ─── replicate (slop; opt-in only) ──────────────────────────────────────────
 const resolution = flag('--resolution', '720p');
 const model = flag('--model', 'bytedance/seedance-1-lite');
@@ -293,9 +470,9 @@ if (!build) throw new Error(`unknown --model '${model}' (known: ${Object.keys(MO
 
 // Wan/Seedance fetch `image` server-side and reject data: URIs with a bare
 // "E002" that names nothing (i2v-replicate.mjs, verified) — upload first.
-async function uploadImage(path, tok) {
+async function uploadImage(path, tok, mime = 'image/png') {
   const body = new FormData();
-  body.append('content', new Blob([readFileSync(path)], { type: 'image/png' }), basename(path));
+  body.append('content', new Blob([readFileSync(path)], { type: mime }), basename(path));
   const r = await fetch('https://api.replicate.com/v1/files', {
     method: 'POST', headers: { Authorization: `Bearer ${tok}` }, body,
   });
