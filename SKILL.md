@@ -49,6 +49,7 @@ the same command that creates the file.
 | `mask-bare-ground.py` | box → mask of the UNPAINTED ground (留白), cut by material not contour |
 | `animate-strokes.py` | still + mask → looping clip; the painter's own ink displaced, never redrawn |
 | `composite-shot.py` | still plate + N animated regions → one shot; everything else stays frozen |
+| `walk-figure.py` | clean plate + figure mask → a cut-out walk cycle (travel, bob, lean, hem swing) |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`. Renderer recipes in `models/` —

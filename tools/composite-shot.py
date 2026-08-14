@@ -64,7 +64,7 @@ for spec in a.layer:
 n = min(f.shape[0] for f, _ in layers)
 enc = subprocess.Popen(
     ['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24',
-     '-s', f'{W}x{H}', '-r', str(a.fps), '-i', '-', '-c:v', 'libx264', '-crf', '15',
+     '-s', f'{W}x{H}', '-r', str(a.fps), '-i', '-', '-vf', 'crop=trunc(iw/2)*2:trunc(ih/2)*2', '-c:v', 'libx264', '-crf', '15',
      '-pix_fmt', 'yuv420p', a.out], stdin=subprocess.PIPE)
 for i in range(n):
     out = plate.copy()
