@@ -20,6 +20,7 @@
 //   node gpu-box.mjs up   [--gpu RTX_5090] [--max-price 1.00] [--min-reliability 0.99] [--disk 100] [--retries 3] [--rent]
 //                            [--count N] rent N boxes (a shard fleet)  [--clips-only] lean LTX-render manifest
 //                            [--wan] Wan 2.2 + LongCat-Avatar probe stack (provision-wan.sh) instead of LTX
+//                            [--hyworld] HY-Pano-2.0 Backend 2 image→panorama stack (needs a 45GB+ card)
 //        with --rent it AUTO-CYCLES hosts: rents → waits → on a dead host destroys
 //        it, remembers the machine, rolls to the next. No babysitting a bad drive.
 //   node gpu-box.mjs status            # honest state: READY / loading / ERROR + accrued cost
@@ -106,6 +107,7 @@ const DISK = parseInt(flag('disk', '120'), 10);   // fp8 22B set (~45GB) + Comfy
 // into 30+ min and makes port-forwarded viewing laggy. Default to US, fast downlink.
 const REGION = flag('region', 'US');              // 'any' to disable the geo filter
 const MIN_DOWN = parseInt(flag('min-down', '500'), 10); // min host downlink Mbps
+const MIN_VRAM = parseInt(flag('min-vram', '0'), 10);   // GB floor; 0 = no filter (see up())
 // Official PyTorch base on CUDA 12.8 (the tier LTX-2.3 fp8 needs; ai-dock's 12.1.1 is
 // too old). We provision it ourselves from tools/provision-ltx.sh (hosted as a gist,
 // pulled by the onstart below): ComfyUI + ComfyUI-LTXVideo + kornia patch + the LTX-2.3
@@ -115,8 +117,18 @@ const IMAGE = flag('image', 'pytorch/pytorch:2.11.0-cuda12.8-cudnn9-runtime');
 // ~63GB — the call-2 probe rig) instead of the LTX stack. Each stack's script is
 // hosted as a pinned gist (re-gist + update the URL if you edit the script).
 const WAN = has('wan');
-const PROVISION_URL = flag('provision-url', WAN
-  ? 'https://gist.githubusercontent.com/blessdog/3b2ef4b87f66b88239858dac50b9ba9d/raw/fe379e5ced2f7d4697fede99bf34fd6433a4e920/provision-wan.sh'
+// --hyworld: provision HY-Pano-2.0 Backend 2 (tools/provision/provision-hyworld.sh,
+// ~40GB — Qwen-Image-Edit-2509 + the panorama LoRA) for the image→360°-panorama
+// gate. Wants a 45GB+ card; Backend 1 is an 80B MoE and is NOT single-GPU.
+const HYWORLD = has('hyworld');
+// --hunyuan: ComfyUI + HunyuanVideo 1.5 I2V 720p fp16 (tools/provision/provision-hunyuan.sh,
+// ~30GB) — the motion renderer image-to-video.mjs talks to by default. Wants an
+// 80GB card: benchmarks.json measures 43.3/49GB on a 6000 Ada, already offloading.
+const HUNYUAN = has('hunyuan');
+const PROVISION_URL = flag('provision-url',
+  HUNYUAN ? 'https://gist.githubusercontent.com/blessdog/4038026f9b615168f51f10955ba04aa0/raw/7489e6dc7cc1992760c91604fc7b26508a6e52f9/provision-hunyuan.sh'
+  : HYWORLD ? 'https://gist.githubusercontent.com/blessdog/900bb8a83d810fb494eb43fc34bc3e28/raw/6bdd5c9975587886966ccf5ae31c1e3acaa3f156/provision-hyworld.sh'
+  : WAN ? 'https://gist.githubusercontent.com/blessdog/3b2ef4b87f66b88239858dac50b9ba9d/raw/fe379e5ced2f7d4697fede99bf34fd6433a4e920/provision-wan.sh'
   : 'https://gist.githubusercontent.com/blessdog/9785796184aab22543d0211b30b9f85d/raw/9f21030e0bf0df410bf41f6484bf52229e662471/provision-ltx.sh');
 // --clips-only: provision a lean render SHARD (LTX fp8 set only, ~44GB instead of ~62GB)
 // for fan-out clip rendering via tools/shard-clips.mjs. Skips Director/lipdub extras.
@@ -130,8 +142,19 @@ const fmt$ = (n) => `$${Number(n).toFixed(3)}`;
 
 // ─── up ─────────────────────────────────────────────────────────────────────
 async function up() {
-  const query = `gpu_name=${GPU} num_gpus=1 verified=true rentable=true disk_space>=${DISK} dph_total<=${MAX_PRICE} reliability>=${MIN_REL} inet_down>=${MIN_DOWN}`;
-  console.log(`searching: ${GPU}, ≤${fmt$(MAX_PRICE)}/hr, reliability ≥${MIN_REL}, disk ≥${DISK}GB, downlink ≥${MIN_DOWN}Mbps, region ${REGION}\n`);
+  // --min-vram is not a nicety. Several card NAMES ship in two memory sizes on
+  // Vast (A100_SXM4 is listed at both 40GB and 80GB; RTX_6000Ada at 48GB only,
+  // but H100_NVL at 94GB), and sorting on dph_total alone happily picks the
+  // 40GB variant of an 80GB card name. That silently puts a workload with a
+  // measured 53GB floor onto a card that must offload — a downgrade nobody
+  // asked for and nobody would see until the render crawled. Measured
+  // 2026-08-13 while renting for hunyuan 1.5 i2v.
+  // Units trap (measured 2026-08-13): the SEARCH QUERY takes gpu_ram in GB,
+  // while the returned offer FIELD is in MB (an 80GB card reports 81920).
+  // Multiplying by 1024 here silently matches nothing.
+  const vramClause = MIN_VRAM ? ` gpu_ram>=${MIN_VRAM}` : '';
+  const query = `gpu_name=${GPU} num_gpus=1 verified=true rentable=true disk_space>=${DISK} dph_total<=${MAX_PRICE} reliability>=${MIN_REL} inet_down>=${MIN_DOWN}${vramClause}`;
+  console.log(`searching: ${GPU}, ≤${fmt$(MAX_PRICE)}/hr, reliability ≥${MIN_REL}, disk ≥${DISK}GB, downlink ≥${MIN_DOWN}Mbps${MIN_VRAM ? `, VRAM ≥${MIN_VRAM}GB` : ''}, region ${REGION}\n`);
   const offers = vast(['search', 'offers', query, '-o', 'dph_total', '--raw'], { json: true });
   if (!Array.isArray(offers) || !offers.length) {
     console.log('no offers match. loosen --max-price / --min-reliability / --gpu and retry.'); return;
