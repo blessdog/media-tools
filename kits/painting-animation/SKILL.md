@@ -111,15 +111,37 @@ the shot: 13 planes, σ 0.394. Always run `plan-planes --review` afterwards — 
 first pass left 26.5% unclaimed, concentrated in the mid-ground where the action
 was, and the pack animal got no plane at all.
 
-**A plane stack cannot give you a Z-push.** This is the one that closes off a
-whole direction. Blurring plane boundaries feathers seams but does not make a
-surface: across 13 planes every plane INTERIOR stayed 0.0% from its nominal
-depth. A graded map and explicit 3-level cards uncovered the same area and looked
-identical. Tilting planes was tried and rejected — they read as skewing cutouts
-and worsen the seams. So piecewise-constant depth IS cards, DepthFlow inherits
-this exactly (it consumes a depth map, it does not produce one), and the Z-push
-into conventional space stays unsolved. Relief inside a region has to come from
-somewhere that is not a plane.
+**A Z-push needs `render-parallax --plane-fit`, or it is a zoom. REWRITTEN
+2026-08-16 — the previous entry here blamed the wrong thing.** It said a plane
+stack "cannot give you a Z-push" and pointed at plane interiors being
+piecewise-constant. That was a true observation attached to a false cause. The
+actual cause was a single global focal length taken at mid-depth: separating
+planes in z changed their PAINTED size, so the composition came apart at frame
+zero, so `--z-step` had been throttled to 0.035 to hide it. On wang-meng's
+11-plane shot stack that left z spanning 1.000..1.315 and a 0.22 dolly producing
+1.201x of common magnification against **6.8% of differential — 96% of the
+motion identical for every pixel, which is the definition of a zoom.** No tilt
+value fixes that, because tilt adds gradient WITHIN a plane on top of a BETWEEN-
+plane budget of nothing.
+
+`--plane-fit` scales every world point by `zr/(zr-camZ)` using its own rest
+depth, which is exactly 1.0 at camZ=0 for any depth. So frame zero is the
+painting pixel-for-pixel however far apart the planes are — measured: z-step
+0.035 → 0.30 (8.6x the depth) changed **zero** pixels at frame zero, where
+without the flag it changed 56.4% of them. Depth separation becomes free and
+z-step 0.15–0.30 is the useful range. Measured differential near/far scale at
+60% of a 0.45 dolly: control 1.000, old settings 1.067, `--plane-fit` 1.183.
+
+Two corrections that follow. **Tilt was never fairly tested** — the rejection
+ran at x4 ("deliberately exaggerated… dial back once proven", never dialled
+back) on the scroll-scale stack. At 1x with `--plane-fit` tilt is rest-
+normalised, so a tilted plane lands on its painted rectangle at rest and only
+keystones as the camera moves. And **figures never take a tilt entry**: the
+skewing-cutout artefact is a tilted GROUND plane painted after a figure and
+riding over it, measured as 6.9% of the figure's window at x4 versus 1.9% at 1x.
+
+Still true: DepthFlow consumes a depth map and does not produce one, and relief
+INSIDE a region still has to come from somewhere that is not a plane.
 
 **HY-World stages 2–5 are unusable on a vertical painting.** Its world
 representation is a sphere and `split_panorama_image` maps spherical UV over
