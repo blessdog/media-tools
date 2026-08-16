@@ -1,5 +1,6 @@
 .env
 jobs/
+!kits/
 outputs/
 node_modules/
 .DS_Store

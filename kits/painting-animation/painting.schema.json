@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "painting.json",
+  "description": "Everything true of ONE painting and nothing true of any other. Lives in jobs/<name>/. The kit's procedure and the tools in tools/ are both instance-free; this file is where the instance goes. If you find yourself wanting to hardcode a number in a tool, it belongs here.",
+  "type": "object",
+  "required": ["name", "master", "shot"],
+  "properties": {
+    "name": { "type": "string", "description": "job slug, e.g. wang-meng" },
+    "title": { "type": "string", "description": "the work, as it should be credited" },
+    "master": { "type": "string", "description": "path to the full-resolution scan" },
+    "provenance": { "type": "string", "description": "where the scan came from; verify before shipping" },
+
+    "shot": {
+      "type": "object",
+      "description": "the working frame cut out of the master",
+      "required": ["image", "size"],
+      "properties": {
+        "image": { "type": "string" },
+        "size": { "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2 },
+        "crop": { "type": "string", "description": "crop.json written by locate-crop — the master<->shot transform" }
+      }
+    },
+
+    "space": {
+      "type": "object",
+      "description": "what was MEASURED about this painting's depth, not what was assumed",
+      "properties": {
+        "depthRowVariance": { "type": "number", "description": "fraction of estimate-depth variance explained by image row alone. High (~0.55) means a ramp: landscape depth must be authored" },
+        "hasStationPoint": { "type": "boolean", "description": "true only if measured. If true, photographic depth and projection mapping are available and better than planes" },
+        "planes": { "type": "string", "description": "dir from segment-points, planned at SHOT scale" }
+      }
+    },
+
+    "figures": {
+      "type": "array",
+      "description": "things that move as a body",
+      "items": {
+        "type": "object",
+        "required": ["name", "masks"],
+        "properties": {
+          "name": { "type": "string" },
+          "masks": { "type": "string", "description": "mask dir in shot coordinates" },
+          "robed": { "type": "boolean", "description": "true = legs are hidden, so a walk is hem swing + bob + travel and nothing is invented" },
+          "limbs": { "type": "string", "description": "cut-stroke dir; required when robed is false" },
+          "reliefDepth": { "type": "string", "description": "estimate-depth map of this figure at MASTER resolution. Trust it on a body, never on thin limbs" },
+          "gait": {
+            "type": "object",
+            "properties": {
+              "strides": { "type": "number" },
+              "bob": { "type": "number" },
+              "lean": { "type": "number" },
+              "swing": { "type": "number" },
+              "stance": { "type": "number", "description": "fraction of the cycle a foot is planted" }
+            }
+          }
+        }
+      }
+    },
+
+    "shots": {
+      "type": "array",
+      "description": "camera moves. Travel equal to pan is walking in place",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "region": { "type": "object", "description": "crop-region sides in shot px",
+            "properties": { "left": {"type":"integer"}, "right": {"type":"integer"},
+                            "up": {"type":"integer"}, "down": {"type":"integer"} } },
+          "window": { "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2 },
+          "start": { "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2 },
+          "pan": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+          "travel": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+          "over": { "type": "string", "description": "mask dir laid back on top: the overlay cel, so a puppet passes behind painted foreground" },
+          "frames": { "type": "integer" },
+          "pathEvidence": { "type": "string", "description": "where the travel numbers came from IN THE PAINTING. A path read off the picture, not invented" }
+        }
+      }
+    },
+
+    "regions": {
+      "type": "array",
+      "description": "water and foliage, animated by displacing the painter's own ink",
+      "items": {
+        "type": "object",
+        "required": ["name", "field"],
+        "properties": {
+          "name": { "type": "string" },
+          "field": { "enum": ["wave", "sway"] },
+          "mode": { "enum": ["lift", "warp"], "description": "lift needs inpaintable ground behind; warp when it is textured" },
+          "pivot": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+          "masks": { "type": "string" }
+        }
+      }
+    }
+  }
+}

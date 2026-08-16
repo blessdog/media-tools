@@ -49,13 +49,67 @@ the same command that creates the file.
 | `mask-bare-ground.py` | box → mask of the UNPAINTED ground (留白), cut by material not contour |
 | `animate-strokes.py` | still + mask → looping clip; the painter's own ink displaced, never redrawn |
 | `composite-shot.py` | still plate + N animated regions → one shot; everything else stays frozen |
-| `walk-figure.py` | clean plate + figure mask → a cut-out walk cycle (travel, bob, lean, hem swing) |
+| `walk-figure.py` | clean plate + figure mask → a cut-out walk cycle + a pan bar + hinged limbs |
+| `clean-plate.py` | still + mask → the masked thing removed by patch synthesis, texture intact |
+| `cut-stroke.py` | stated paths + image → one mask per painted STROKE (a limb, branch, rope, rail) |
+| `locate-crop.py` | a crop + the image it came from → crop.json, the transform everything else reads |
+| `crop-region.py` | big image + crop.json → a working region, the mask offset recorded |
+| `compose-depth.py` | labelled planes (+ per-object relief) → one depth map |
+| `probe-parallax.py` | image + depth → does this move carry depth? measures against a built-in null |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`. Renderer recipes in `models/` —
 one JSON per model, read by `shard-models`; never in tool code.
 Related standalone tool: `rectum` (URL → clip on disk) at
 `~/projects/mediaStudio/rectum/`, its own CLI.
+
+## Reach for this when
+
+The catalog says what each tool DOES. This says which one a problem wants —
+agents arrive with a situation, not a capability.
+
+| the situation | the route |
+|---|---|
+| "the water should move" / "the leaves should stir" | `animate-strokes` — displaces the painter's own ink, and it loops. Never a video model |
+| "a thin painted thing should swing" — a limb, branch, rope, rail | `cut-stroke` → `walk-figure --limbs` |
+| "a figure should cross the frame" | `crop-region` → `clean-plate` → `walk-figure --window/--pan` |
+| "the figure moved and left a hole" | `clean-plate` (and the plate must lose the WHOLE thing that moves) |
+| "where did this crop come from?" | `locate-crop` → crop.json, then every tool reads it |
+| "I want to fly into the picture" | `compose-depth` → `render-parallax`; verify with `probe-parallax --null` FIRST |
+| "does this camera move actually carry depth?" | `probe-parallax --null`. Never quote a number without it |
+| "which GPU, and is it worth renting?" | `plan-gpu` (rents nothing) → `gpu-box` |
+| "animate a painting" — the whole job | read `kits/painting-animation/SKILL.md` before anything |
+
+## Naming conventions
+
+The verb states the job, so an unfamiliar tool is guessable from its name alone.
+
+| verb | produces | e.g. |
+|---|---|---|
+| `fetch-` `find-` | source material | `fetch-artwork`, `find-page-image` |
+| `crop-` | a subset of an image | `crop-region`, `crop-tiles` |
+| `segment-` `mask-` `cut-` | masks | `segment-points`, `mask-bare-ground`, `cut-stroke` |
+| `estimate-` `locate-` `plan-` | information, no pixels | `estimate-depth`, `locate-crop`, `plan-gpu` |
+| `generate-` `restyle-` `compose-` | new pixels | `generate-image`, `compose-depth` |
+| `animate-` `walk-` | motion | `animate-strokes`, `walk-figure` |
+| `render-` `composite-` `stitch-` | the deliverable | `render-parallax`, `stitch` |
+| `probe-` | **a measurement that can only falsify** | `probe-parallax` |
+
+`probe-` is its own class on purpose. Those tools never produce a deliverable —
+they exist to kill a claim before it reaches the screen, which is this repo's
+whole discipline. If you find yourself quoting a number a `probe-` tool produced
+without also quoting its null, you have not measured anything.
+
+## Kits
+
+A kit is the golden path through the toolbox for one class of job: the ordered
+procedure, the decision points, and the measured dead ends. Tools stay general
+and reusable; the kit is where domain knowledge lives; `jobs/<name>/painting.json`
+holds what is true of one instance only.
+
+| kit | for |
+|---|---|
+| `kits/painting-animation/` | making a still painting move — camera, water, foliage, walking figures |
 
 ## Styles
 
