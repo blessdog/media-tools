@@ -25,7 +25,8 @@ usage:
 example:
   locate-crop.py --master scroll.png --shot shot-real.png --out jobs/x/crop.json
 """
-import argparse, json
+import argparse, json, os
+from pathlib import Path
 import numpy as np, cv2
 from PIL import Image
 
@@ -89,7 +90,12 @@ for kk in np.linspace(k * 0.9, k * 1.1, 21):
 if fine is None:
     raise SystemExit('no scale in the search range produced a match; widen --kmin/--kmax')
 
-out = {'tool': 'locate-crop', 'master': a.master, 'shot': a.shot, 'shotSize': [SW, SH],
+# Paths in the file are relative to the FILE, not to whatever cwd this ran
+# from — a crop.json that only resolves from its creation directory has
+# already bitten once (extend-planes, 2026-08-17).
+_base = Path(a.out).resolve().parent if a.out else Path.cwd()
+_rel = lambda p: os.path.relpath(Path(p).resolve(), _base)
+out = {'tool': 'locate-crop', 'master': _rel(a.master), 'shot': _rel(a.shot), 'shotSize': [SW, SH],
        'masterSize': [MW, MH], 'coarse': best,
        'crop': {'x': int(fine['x']), 'y': int(fine['y']),
                 'w': int(SW * fine['k']), 'h': int(SH * fine['k']),
