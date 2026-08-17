@@ -38,7 +38,22 @@ usage:
                  (default 100). Set it from the measured hole width, not taste:
                  probe the render, take the widest hole, use that.
   --pad F        synthesis box as a multiple of the work box (default 1.3)
-  --method M     shiftmap (default) | telea | ns
+  --method M     shiftmap (default) | telea | ns | flux
+                 flux = black-forest-labs/flux-fill-pro on Replicate. Ryan
+                 judged it better than shiftmap on wang-meng 2026-08-17: on the
+                 widest hole shiftmap left a grey smeared band with a visible
+                 seam, and flux continued the dry-brush hatching across it.
+                 It costs cents per plane and needs REPLICATE_API_TOKEN.
+                 IT INVENTS. On the same test it hallucinated a second red
+                 flower beside a real one. That is bounded here in a way it
+                 cannot be in frame space: only the requested band is kept, and
+                 the band is a few percent of the plane.
+  --fill-prompt T  flux only: what the model is told it is painting. The
+                 default names 解索皴 dry-brush texture on xuan paper, NOT the
+                 `inkwash` style string — that string describes WESTERN
+                 watercolour (cold-press rag, blooms, backruns, granulation)
+                 and would aim the model at the wrong picture (Ryan, 2026-08-17,
+                 distinguishing 山水 / 水墨 / 工笔).
   --min-band N   skip a plane whose revealed band is under N px (default 200)
   --max-ratio F  never ask a plane to synthesise more than F times its own
                  known area (default 2.0); --behind shrinks per plane until
@@ -59,6 +74,112 @@ from PIL import Image
 Image.MAX_IMAGE_PIXELS = None
 UNCLAIMED = -1
 
+DEFAULT_FILL_PROMPT = (
+    "A Yuan dynasty Chinese shan shui landscape painting on aged xuan paper. "
+    "Dense dry-brush texture strokes build the rock and earth: fine repeated "
+    "hair-like linear strokes layered over pale grey ink wash. Continue the "
+    "surrounding brushwork and the tone of the aged paper exactly.")
+
+
+def repo_key(name: str) -> str:
+    """Read one key out of the repo's .env.
+
+    Resolved from __file__, never cwd — tools here are invoked by absolute path
+    from arbitrary directories (CLAUDE.md, the foreign-cwd rule).
+    """
+    env = Path(__file__).resolve().parent.parent / ".env"
+    if not env.exists():
+        raise SystemExit(f"no {env}")
+    for line in env.read_text().splitlines():
+        if line.startswith(f"{name}="):
+            return line.split("=", 1)[1].strip()
+    raise SystemExit(f"{name} not in {env}")
+
+
+def flux_fill(rgb: np.ndarray, band: np.ndarray, prompt: str, seed: int) -> np.ndarray:
+    """Fill `band` in `rgb` with flux-fill-pro. Returns RGB, same shape.
+
+    The model sees the real surrounding painting as context and a mask of the
+    band, which is exactly the arrangement Ryan approved in the frame-space
+    gate. Restricting its context to the plane's own texture (as SHIFTMAP's
+    `known` does) was considered and rejected: SHIFTMAP needs that because it
+    COPIES patches, and a generative model continues texture semantically
+    instead, so starving it of context buys invention rather than preventing it.
+    """
+    # stdlib only, deliberately. cv2 and httpx live in DIFFERENT interpreters on
+    # this machine (system python3 has cv2, .venv has httpx), so any third-party
+    # HTTP client makes this tool unrunnable on the one interpreter that can
+    # import cv2 at the top of the file.
+    import io
+    import json as _json
+    import urllib.request as _u
+    import uuid
+
+    tok = repo_key("REPLICATE_API_TOKEN")
+
+    def req(url: str, data=None, headers=None, method=None):
+        # This tool fires 11 predictions and 22 uploads back to back and the
+        # API rate-limits it (a live 429 on the first run). Backoff is not
+        # optional here, it is the normal path.
+        import urllib.error
+        delay = 2.0
+        for attempt in range(8):
+            r = _u.Request(url, data=data, method=method,
+                           headers={"Authorization": f"Bearer {tok}",
+                                    **(headers or {})})
+            try:
+                with _u.urlopen(r, timeout=600) as resp:
+                    return resp.read()
+            except urllib.error.HTTPError as e:
+                if e.code not in (429, 502, 503, 504) or attempt == 7:
+                    raise SystemExit(
+                        f"replicate {e.code} on {url.split('/')[-1]}: "
+                        f"{e.read()[:200].decode(errors='replace')}")
+                wait = float(e.headers.get("retry-after") or delay)
+                print(f"    {e.code}, retrying in {wait:.0f}s", file=sys.stderr)
+                time.sleep(wait)
+                delay = min(delay * 2, 60)
+        raise SystemExit("unreachable")
+
+    def upload(arr: np.ndarray, name: str) -> str:
+        buf = io.BytesIO()
+        Image.fromarray(arr).save(buf, format="PNG")
+        bound = uuid.uuid4().hex
+        body = (f"--{bound}\r\nContent-Disposition: form-data; name=\"content\"; "
+                f"filename=\"{name}\"\r\nContent-Type: image/png\r\n\r\n"
+                ).encode() + buf.getvalue() + f"\r\n--{bound}--\r\n".encode()
+        out = _json.loads(req("https://api.replicate.com/v1/files", data=body,
+                              headers={"Content-Type":
+                                       f"multipart/form-data; boundary={bound}"}))
+        return out["urls"]["get"]
+
+    body = _json.dumps({"input": {
+        "image": upload(rgb, "plane.png"),
+        "mask": upload((band * 255).astype(np.uint8), "band.png"),
+        "prompt": prompt, "steps": 50, "guidance": 30, "seed": seed,
+        "output_format": "png"}}).encode()
+    j = _json.loads(req("https://api.replicate.com/v1/models/black-forest-labs/"
+                        "flux-fill-pro/predictions", data=body,
+                        headers={"Content-Type": "application/json",
+                                 "Prefer": "wait"}))
+    for _ in range(120):
+        if j.get("status") in ("succeeded", "failed", "canceled"):
+            break
+        time.sleep(3)
+        j = _json.loads(req(j["urls"]["get"]))
+    if j.get("status") != "succeeded":
+        raise SystemExit(f"flux-fill {j.get('status')}: "
+                         f"{str(j.get('error'))[:200]}")
+    out = j["output"]
+    url = out[0] if isinstance(out, list) else out
+    with _u.urlopen(url, timeout=300) as resp:
+        png = resp.read()
+    got = np.asarray(Image.open(io.BytesIO(png)).convert("RGB"))
+    if got.shape != rgb.shape:                      # the API pads to its grid
+        got = np.asarray(Image.fromarray(got).resize(
+            (rgb.shape[1], rgb.shape[0]), Image.Resampling.LANCZOS))
+    return got
+
 
 def main() -> int:
     if "-h" in sys.argv[1:] or "--help" in sys.argv[1:] or len(sys.argv) == 1:
@@ -72,7 +193,13 @@ def main() -> int:
     ap.add_argument("--method", default="shiftmap")
     ap.add_argument("--min-band", type=int, default=200)
     ap.add_argument("--max-ratio", type=float, default=2.0)
+    ap.add_argument("--fill-prompt", default=DEFAULT_FILL_PROMPT)
+    ap.add_argument("--seed", type=int, default=42)
     a = ap.parse_args()
+    if a.method not in ("shiftmap", "telea", "ns", "flux"):
+        print(f"--method must be shiftmap|telea|ns|flux (got {a.method})",
+              file=sys.stderr)
+        return 2
 
     lay = Path(a.layers)
     meta = json.loads((lay / "layers.json").read_text())
@@ -129,7 +256,13 @@ def main() -> int:
         while True:
             kk = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (behind * 2 + 1,) * 2)
             band = (cv2.dilate(m.astype(np.uint8), kk) > 0) & untouched & hidden[i]
-            if behind <= 8 or band.sum() <= a.max_ratio * max(int(m.sum()), 1):
+            # --max-ratio exists because SHIFTMAP COPIES: ask a 20k-px bridge
+            # for 116k and a third comes back unfilled. Flux GENERATES, so the
+            # constraint is not its constraint and shrinking the reach would
+            # cost depth range for nothing.
+            if a.method == "flux" or behind <= 8:
+                break
+            if band.sum() <= a.max_ratio * max(int(m.sum()), 1):
                 break
             behind = int(behind * 0.7)
         nf = 0
@@ -150,7 +283,11 @@ def main() -> int:
             # patch source is how the pine gets pasted into the cliff.
             known = (m[y0:y1, x0:x1].astype(np.uint8)) * 255
             t = time.time()
-            if a.method == "shiftmap":
+            if a.method == "flux":
+                sub_rgb = flux_fill(img[y0:y1, x0:x1], band[y0:y1, x0:x1],
+                                    a.fill_prompt, a.seed + i)
+                dst = cv2.cvtColor(sub_rgb, cv2.COLOR_RGB2BGR)
+            elif a.method == "shiftmap":
                 dst = np.zeros_like(crop)
                 cv2.xphoto.inpaint(crop, known, dst, cv2.xphoto.INPAINT_SHIFTMAP)
             else:
@@ -165,7 +302,11 @@ def main() -> int:
             # and black is not a colour in this painting — it would ship as a
             # hole that does not even read as a hole. Carry the nearest pixel it
             # DID solve into them: still real silk, never a smear, never 0,0,0.
-            unfilled = bsub & (sub.max(2) < 8)
+            # SHIFTMAP's give-up signal is exact black. Flux never returns it,
+            # and real ink DOES go near-black, so running this on a flux result
+            # would corrupt the darkest strokes it just painted.
+            unfilled = (bsub & (sub.max(2) < 8)) if a.method != "flux" \
+                else np.zeros_like(bsub)
             nf = int(unfilled.sum())
             if nf:
                 # distanceTransformWithLabels seeds on ZERO pixels, so the SOLVED
