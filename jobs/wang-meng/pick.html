@@ -1,0 +1,220 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>place depth points — 葛稚川移居圖</title>
+<!--
+  Twenty dots, zero typing (Pissjug, 2026-08-17: "give me twenty dots and I
+  will put them… once I make the manual pass, you can then go through and
+  label everything").
+
+  CLICK ORDER IS DEPTH ORDER. Click objects nearest → farthest; each click
+  places the next numbered dot. 1 = nearest (warm), 20 = farthest (cool).
+  Drag a dot to adjust. Double-click a dot to take it back (its number and
+  colour return to the queue). No names, no windows, no depth keys here —
+  Claude's labelling pass fills name/window/why and merges same-plane dots
+  after the manual pass is saved.
+
+  Export remaps to the pipeline's convention (depth 0 = farthest), so
+  segment-points.py sees what it always saw. Coordinates stay NORMALISED
+  (0..1): the proxy can be any size and points land on the 6586x15923 master.
+
+  No server: media-tools' CLAUDE.md locks "no daemon, no server, no plugin
+  system". This page collects intent; the CLI does the work.
+-->
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #101010; color: #e9e5dd;
+         font: 13px/1.5 -apple-system, system-ui, sans-serif; display: flex; height: 100vh; }
+  #stage { flex: 1; overflow: hidden; position: relative; cursor: crosshair; background: #0a0a0a; }
+  #wrap { position: absolute; transform-origin: 0 0; }
+  #wrap img { display: block; }
+  .pt { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%;
+        border: 2px solid #000; display: grid; place-items: center; font-weight: 700; font-size: 12px;
+        color: #000; cursor: grab; box-shadow: 0 0 0 1px rgba(255,255,255,.55); }
+  aside { width: 250px; border-left: 1px solid #262626; padding: 14px; overflow: auto; background: #141414;
+          display: flex; flex-direction: column; }
+  h1 { font-size: 14px; margin: 0 0 4px; }
+  p.hint { color: #8a847b; font-size: 12px; margin: 0 0 12px; }
+  kbd { background: #262626; border: 1px solid #3a3a3a; border-radius: 3px; padding: 0 4px; font-size: 11px; }
+  #next { display: flex; align-items: center; gap: 10px; padding: 10px; border: 1px solid #262626;
+          border-radius: 6px; background: #0d0d0d; margin-bottom: 10px; }
+  #next .big { width: 34px; height: 34px; border-radius: 50%; border: 2px solid #000;
+               box-shadow: 0 0 0 1px rgba(255,255,255,.55); display: grid; place-items: center;
+               font-weight: 700; color: #000; flex: none; }
+  #next .lbl { font-size: 12px; color: #8a847b; }
+  #next .lbl b { color: #e9e5dd; font-size: 13px; }
+  #queue { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+  #queue .q { width: 18px; height: 18px; border-radius: 50%; border: 1px solid #000; display: grid;
+              place-items: center; font-size: 9px; font-weight: 700; color: #000; }
+  #queue .q.done { opacity: .18; }
+  button { background: #2a2a2a; color: #e9e5dd; border: 1px solid #3d3d3d; border-radius: 4px;
+           padding: 7px 10px; font: inherit; cursor: pointer; width: 100%; margin-top: 8px; }
+  button:hover { background: #343434; }
+  button.ghost { background: transparent; }
+  #out { width: 100%; height: 110px; background: #0d0d0d; border: 1px solid #262626; color: #7fa3c9;
+         font: 10px/1.35 ui-monospace, Menlo, monospace; margin-top: 8px; border-radius: 4px; padding: 6px; }
+  .spacer { flex: 1; }
+</style>
+
+<div id="stage"><div id="wrap"><img id="im" src="proxy.jpg" alt=""></div></div>
+
+<aside>
+  <h1>Depth dots</h1>
+  <p class="hint">
+    Click objects <b>nearest → farthest</b>; each click places the next dot.
+    Drag to adjust. Double-click a dot to take it back.
+    <kbd>⌫</kbd> undo last · <kbd>f</kbd> fit · scroll = zoom · drag bg = pan.
+  </p>
+
+  <div id="next">
+    <div class="big" id="nextDot"></div>
+    <div class="lbl" id="nextLbl"></div>
+  </div>
+  <div id="queue"></div>
+
+  <div class="spacer"></div>
+  <button id="copy">Copy JSON</button>
+  <button id="save" class="ghost">Download points.json</button>
+  <textarea id="out" readonly spellcheck="false"></textarea>
+</aside>
+
+<script>
+const N = 20;                                  // the twenty dots
+const stage = document.getElementById('stage'), wrap = document.getElementById('wrap'),
+      im = document.getElementById('im'), out = document.getElementById('out'),
+      queueEl = document.getElementById('queue'),
+      nextDot = document.getElementById('nextDot'), nextLbl = document.getElementById('nextLbl');
+
+// Fixed ramp over 1..N so colours never reshuffle mid-pass.
+// 1 = nearest = warm, N = farthest = cool.
+const hue = n => {
+  const t = (n - 1) / (N - 1);
+  return `hsl(${30 + t * 180} 78% ${58 - t * 6}%)`;
+};
+
+let pts = [], zoom = 1, panX = 0, panY = 0, drag = null, moving = null, lastClickN = [];
+const used = () => new Set(pts.map(p => p.n));
+const nextN = () => { const u = used(); for (let i = 1; i <= N; i++) if (!u.has(i)) return i; return null; };
+
+function fit() {
+  zoom = Math.min(stage.clientWidth / im.naturalWidth, stage.clientHeight / im.naturalHeight);
+  panX = (stage.clientWidth - im.naturalWidth * zoom) / 2; panY = 0; apply();
+}
+function apply() {
+  wrap.style.transform = `translate(${panX}px,${panY}px) scale(${zoom})`;
+  for (const el of wrap.querySelectorAll('.pt')) el.style.scale = 1 / zoom;
+}
+im.onload = fit;
+addEventListener('resize', fit);
+
+stage.addEventListener('wheel', e => {
+  e.preventDefault();
+  const r = stage.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+  const f = Math.exp(-e.deltaY * 0.0016), z = Math.min(20, Math.max(0.05, zoom * f));
+  panX = mx - (mx - panX) * (z / zoom); panY = my - (my - panY) * (z / zoom);
+  zoom = z; apply();
+}, { passive: false });
+
+stage.addEventListener('pointerdown', e => {
+  if (e.target.classList.contains('pt')) {
+    moving = { n: +e.target.dataset.n, moved: false };
+    e.target.setPointerCapture(e.pointerId);
+    return;
+  }
+  drag = { x: e.clientX, y: e.clientY, px: panX, py: panY, moved: false };
+});
+addEventListener('pointermove', e => {
+  if (moving) {
+    const r = stage.getBoundingClientRect();
+    const p = pts.find(p => p.n === moving.n);
+    p.x = ((e.clientX - r.left - panX) / zoom) / im.naturalWidth;
+    p.y = ((e.clientY - r.top - panY) / zoom) / im.naturalHeight;
+    moving.moved = true; render(); return;
+  }
+  if (!drag) return;
+  panX = drag.px + (e.clientX - drag.x); panY = drag.py + (e.clientY - drag.y);
+  if (Math.hypot(e.clientX - drag.x, e.clientY - drag.y) > 3) drag.moved = true;
+  apply();
+});
+addEventListener('pointerup', e => {
+  if (moving) { moving = null; return; }
+  if (drag && !drag.moved) {
+    const n = nextN();
+    if (n !== null) {
+      const r = stage.getBoundingClientRect();
+      const x = ((e.clientX - r.left - panX) / zoom) / im.naturalWidth;
+      const y = ((e.clientY - r.top - panY) / zoom) / im.naturalHeight;
+      if (x >= 0 && x <= 1 && y >= 0 && y <= 1) {
+        pts.push({ n, x, y }); lastClickN.push(n); render();
+      }
+    }
+  }
+  drag = null;
+});
+
+// Double-click a dot: back to the queue.
+wrap.addEventListener('dblclick', e => {
+  if (!e.target.classList.contains('pt')) return;
+  const n = +e.target.dataset.n;
+  pts = pts.filter(p => p.n !== n);
+  lastClickN = lastClickN.filter(v => v !== n);
+  render();
+});
+
+addEventListener('keydown', e => {
+  if ((e.key === 'Backspace' || e.key === 'Delete') && lastClickN.length) {
+    const n = lastClickN.pop();
+    pts = pts.filter(p => p.n !== n); render();
+  }
+  if (e.key === 'f') fit();
+});
+
+function render() {
+  for (const el of wrap.querySelectorAll('.pt')) el.remove();
+  for (const p of pts) {
+    const d = document.createElement('div');
+    d.className = 'pt'; d.dataset.n = p.n; d.textContent = p.n;
+    d.style.cssText += `left:${p.x * im.naturalWidth}px;top:${p.y * im.naturalHeight}px;background:${hue(p.n)}`;
+    wrap.append(d);
+  }
+  const n = nextN(), u = used();
+  if (n !== null) {
+    nextDot.style.background = hue(n); nextDot.textContent = n; nextDot.style.display = 'grid';
+    nextLbl.innerHTML = `next: <b>dot ${n}</b> — ${n === 1 ? 'nearest object' : n === N ? 'farthest object' : 'farther than ' + (n - 1)}<br>${pts.length} / ${N} placed`;
+  } else {
+    nextDot.style.display = 'none';
+    nextLbl.innerHTML = `<b>all ${N} placed</b> — save, then Claude labels`;
+  }
+  queueEl.innerHTML = '';
+  for (let i = 1; i <= N; i++) {
+    const q = document.createElement('div');
+    q.className = 'q' + (u.has(i) ? ' done' : '');
+    q.style.background = hue(i); q.textContent = i;
+    queueEl.append(q);
+  }
+  apply(); dump();
+}
+
+// Export in the pipeline's convention: depth 0 = farthest. Highest placed
+// number (farthest click) → 0; dot 1 (nearest click) → max. name/window are
+// left for Claude's labelling pass; window defaults to 2500 until then.
+const json = () => {
+  const M = Math.max(0, ...pts.map(p => p.n));
+  return JSON.stringify({
+    image: 'corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png',
+    mode: 'manual-dots',
+    note: 'x,y normalised 0..1. depth 0 = farthest (remapped from click order, 1 = nearest). name/window pending labelling pass.',
+    points: [...pts].sort((a, b) => a.n - b.n).map(p =>
+      ({ id: p.n, x: +p.x.toFixed(5), y: +p.y.toFixed(5), depth: M - p.n, window: 2500, name: '' })),
+  }, null, 2);
+};
+
+function dump() { out.value = json(); }
+document.getElementById('copy').onclick = () => navigator.clipboard.writeText(json());
+document.getElementById('save').onclick = () => {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([json()], { type: 'application/json' }));
+  a.download = 'points.json'; a.click();
+};
+render();
+</script>

@@ -1,0 +1,7 @@
+{
+  "master": "../../../corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png",
+  "masterSize": [6586, 15923],
+  "k": 2.34,
+  "frame": [720, 1280],
+  "note": "k = master px per rendered px, proven on the pilot shot. All journey coordinates are master px."
+}

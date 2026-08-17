@@ -1,0 +1,154 @@
+{
+  "image": "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png",
+  "size": [
+    6586,
+    15923
+  ],
+  "model": "anthropic/claude-opus-4-5",
+  "planned": 14,
+  "mode": "initial",
+  "notes": null,
+  "note": "x,y normalised 0..1. depth 0 = farthest. window in native px; a mask cannot exceed it.",
+  "points": [
+    {
+      "id": 1,
+      "x": 0.35,
+      "y": 0.06,
+      "depth": 0,
+      "window": 5000,
+      "name": "far-peaks-top",
+      "pick": "whole",
+      "why": "farthest peaks at top with mist band below separating from mid-ground"
+    },
+    {
+      "id": 2,
+      "x": 0.45,
+      "y": 0.12,
+      "depth": 1,
+      "window": 3000,
+      "name": "far-blue-peaks",
+      "pick": "whole",
+      "why": "blue-tinted distant peaks glimpsed through gap, contour shows they sit behind main massif"
+    },
+    {
+      "id": 3,
+      "x": 0.25,
+      "y": 0.1,
+      "depth": 2,
+      "window": 6000,
+      "name": "main-summit-left",
+      "pick": "whole",
+      "why": "large central peak mass with ink contours occluding far peaks behind"
+    },
+    {
+      "id": 4,
+      "x": 0.75,
+      "y": 0.12,
+      "depth": 2,
+      "window": 5000,
+      "name": "main-summit-right",
+      "pick": "whole",
+      "why": "right cliff face at same elevation as main summit, continuous ridge line"
+    },
+    {
+      "id": 5,
+      "x": 0.18,
+      "y": 0.23,
+      "depth": 3,
+      "window": 3500,
+      "name": "temple-compound",
+      "pick": "whole",
+      "why": "pavilions nestled in valley, ink lines show cliffs above and behind"
+    },
+    {
+      "id": 6,
+      "x": 0.5,
+      "y": 0.28,
+      "depth": 3,
+      "window": 5000,
+      "name": "mid-cliff-center",
+      "pick": "whole",
+      "why": "central rocky mass with autumn trees, contours place it behind lower ledges"
+    },
+    {
+      "id": 7,
+      "x": 0.78,
+      "y": 0.3,
+      "depth": 3,
+      "window": 4000,
+      "name": "mid-trees-right",
+      "pick": "whole",
+      "why": "autumn foliage grove on right slope at same level as temple compound"
+    },
+    {
+      "id": 8,
+      "x": 0.25,
+      "y": 0.52,
+      "depth": 4,
+      "window": 5500,
+      "name": "waterfall-cliff",
+      "pick": "whole",
+      "why": "vertical cliff with waterfall, ink edge shows it behind foreground pines"
+    },
+    {
+      "id": 9,
+      "x": 0.12,
+      "y": 0.42,
+      "depth": 5,
+      "window": 4000,
+      "name": "mid-ledge-left",
+      "pick": "whole",
+      "why": "rocky ledge with figure on bridge, contour separates from cliff behind"
+    },
+    {
+      "id": 10,
+      "x": 0.55,
+      "y": 0.5,
+      "depth": 5,
+      "window": 5000,
+      "name": "mid-plateau-trees",
+      "pick": "whole",
+      "why": "broad rocky plateau with pine clusters, overlaps distant waterfall cliff"
+    },
+    {
+      "id": 11,
+      "x": 0.75,
+      "y": 0.58,
+      "depth": 6,
+      "window": 5000,
+      "name": "lower-cliff-right",
+      "pick": "whole",
+      "why": "pale cliff face with scattered trees, contours show it nearer than mid-plateau"
+    },
+    {
+      "id": 12,
+      "x": 0.35,
+      "y": 0.78,
+      "depth": 7,
+      "window": 4500,
+      "name": "stream-rocks",
+      "pick": "whole",
+      "why": "stepping stones and stream bed, ink lines place behind figures"
+    },
+    {
+      "id": 13,
+      "x": 0.38,
+      "y": 0.82,
+      "depth": 8,
+      "window": 3000,
+      "name": "figures-path",
+      "pick": "whole",
+      "why": "scholar figure, servants and ox on path, contours in front of stream rocks"
+    },
+    {
+      "id": 14,
+      "x": 0.72,
+      "y": 0.88,
+      "depth": 9,
+      "window": 5500,
+      "name": "foreground-trees-right",
+      "pick": "whole",
+      "why": "large gnarled pines and dense foliage at bottom right, nearest plane with clear trunk contours"
+    }
+  ]
+}

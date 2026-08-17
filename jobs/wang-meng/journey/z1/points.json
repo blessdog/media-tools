@@ -1,0 +1,124 @@
+{
+ "image": "jobs/wang-meng/journey/z1/plate.png",
+ "note": "Z1 subset of the labelled global dots, remapped master->plate. depth 0 = farthest. bank-ledge-below-bridge and porter-ledge dropped as SAM points 2026-08-17: continuous wash has no contour for SAM (mask leaked across the valley); their territory is sealed by proximity (complete-planes) and their figures pinned whole (pin-objects). Ryan's d15 intent survives via share-your-ground on bank-path.",
+ "points": [
+  {
+   "id": 2,
+   "x": 0.63799,
+   "y": 0.92037,
+   "depth": 18,
+   "window": 1495,
+   "name": "foreground-rock-mass",
+   "why": "big bottom-centre rock group in the water"
+  },
+  {
+   "id": 3,
+   "x": 0.91604,
+   "y": 0.78272,
+   "depth": 17,
+   "window": 1495,
+   "name": "great-trees-knoll",
+   "why": "rock knoll the two great trees grow from"
+  },
+  {
+   "id": 4,
+   "x": 0.45688,
+   "y": 0.7116,
+   "depth": 16,
+   "window": 1495,
+   "name": "bank-path",
+   "why": "yellow bank the ox party walks"
+  },
+  {
+   "id": 6,
+   "x": 0.27093,
+   "y": 0.53809,
+   "depth": 14,
+   "window": 500,
+   "name": "trestle-bridge-ge",
+   "why": "bridge deck at Ge's feet; Ge + deer ride this plane"
+  },
+  {
+   "id": 8,
+   "x": 0.06582,
+   "y": 0.41923,
+   "depth": 12,
+   "window": 350,
+   "name": "left-bank-rocks",
+   "why": "dark stream-edge rocks, left bank"
+  },
+  {
+   "id": 9,
+   "x": 0.13174,
+   "y": 0.35913,
+   "depth": 11,
+   "window": 1068,
+   "name": "resting-ledge",
+   "why": "ledge of the seated resting group with baskets"
+  },
+  {
+   "id": 21,
+   "x": 0.92365,
+   "y": 0.51428,
+   "depth": 15,
+   "window": 1495,
+   "name": "right-hill-front-trees",
+   "why": "big blue-green trees on the hillside front - largest = nearest"
+  },
+  {
+   "id": 23,
+   "x": 0.96144,
+   "y": 0.29586,
+   "depth": 12,
+   "window": 400,
+   "name": "right-bluff-crown-pines",
+   "why": "pines on the bluff crown, mid-size",
+   "pick": "whole"
+  },
+  {
+   "id": 27,
+   "x": 0.28187,
+   "y": 0.83826,
+   "depth": 16,
+   "window": 900,
+   "name": "water",
+   "why": "the water sheet; shares the bank's z - flat grounds meet at the shore"
+  },
+  {
+   "id": 28,
+   "x": 0.05421,
+   "y": 0.15867,
+   "depth": 9,
+   "window": 3418,
+   "name": "left-cliff-wall",
+   "why": "cliff face rising behind the left-bank ledges"
+  },
+  {
+   "id": 29,
+   "x": 0.36859,
+   "y": 0.06384,
+   "depth": 9,
+   "window": 3418,
+   "name": "gorge-wall-right",
+   "why": "pale wall flanking the upper stream, behind the rapids rocks"
+  },
+  {
+   "id": 30,
+   "x": 0.38052,
+   "y": 0.39941,
+   "depth": 13,
+   "window": 700,
+   "name": "pine-over-bridge",
+   "why": "the pine bough over the bridge; grows behind the deck (pilot: pine behind bridge)"
+  },
+  {
+   "id": 32,
+   "x": 0.23338,
+   "y": 0.1997,
+   "depth": 10,
+   "window": 500,
+   "name": "upper-stream-water",
+   "why": "the upper stream pool is disjoint from the lower sheet"
+  }
+ ]
+}

@@ -1,0 +1,177 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>place depth points — 葛稚川移居圖</title>
+<!--
+  Place a point on each depth plane, give it a depth, copy the JSON.
+  segment-points.py then cuts every plane in one pass at native resolution.
+
+  No server: media-tools' CLAUDE.md locks "no daemon, no server, no plugin
+  system", so this page does not call SAM. It collects intent; the CLI does work.
+
+  Coordinates are stored NORMALISED (0..1), so this proxy can be any size and
+  the points still land correctly on the 6586x15923 master.
+-->
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #101010; color: #e9e5dd;
+         font: 13px/1.5 -apple-system, system-ui, sans-serif; display: flex; height: 100vh; }
+  #stage { flex: 1; overflow: hidden; position: relative; cursor: crosshair; background: #0a0a0a; }
+  #wrap { position: absolute; transform-origin: 0 0; }
+  #wrap img { display: block; }
+  .pt { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%;
+        border: 2px solid #000; display: grid; place-items: center; font-weight: 700; font-size: 12px;
+        color: #000; cursor: grab; box-shadow: 0 0 0 1px rgba(255,255,255,.55); }
+  aside { width: 310px; border-left: 1px solid #262626; padding: 14px; overflow: auto; background: #141414; }
+  h1 { font-size: 14px; margin: 0 0 4px; }
+  p.hint { color: #8a847b; font-size: 12px; margin: 0 0 12px; }
+  kbd { background: #262626; border: 1px solid #3a3a3a; border-radius: 3px; padding: 0 4px; font-size: 11px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { text-align: left; color: #8a847b; font-weight: 500; border-bottom: 1px solid #262626; padding: 4px 2px; }
+  td { padding: 3px 2px; border-bottom: 1px solid #1d1d1d; }
+  td.sw { width: 16px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  input[type=text] { width: 100%; background: #1c1c1c; border: 1px solid #333; color: #e9e5dd;
+                     border-radius: 3px; padding: 2px 5px; font: inherit; font-size: 12px; }
+  select { background: #1c1c1c; color: #e9e5dd; border: 1px solid #333; border-radius: 3px; font-size: 12px; }
+  button { background: #2a2a2a; color: #e9e5dd; border: 1px solid #3d3d3d; border-radius: 4px;
+           padding: 7px 10px; font: inherit; cursor: pointer; width: 100%; margin-top: 10px; }
+  button:hover { background: #343434; }
+  button.ghost { background: transparent; }
+  .del { color: #b06060; cursor: pointer; }
+  #out { width: 100%; height: 120px; background: #0d0d0d; border: 1px solid #262626; color: #7fa3c9;
+         font: 10px/1.35 ui-monospace, Menlo, monospace; margin-top: 8px; border-radius: 4px; padding: 6px; }
+</style>
+
+<div id="stage"><div id="wrap"><img id="im" src="proxy.jpg" alt=""></div></div>
+
+<aside>
+  <h1>Depth points</h1>
+  <p class="hint">
+    Click the picture to drop a point on a plane. Type <kbd>0</kbd>–<kbd>9</kbd> to set the
+    depth of the last point — <b>0 = farthest</b>, 9 = nearest. Drag a point to move it.
+    Scroll to zoom, drag the background to pan.
+  </p>
+
+  <table>
+    <thead><tr><th></th><th>#</th><th>depth</th><th>window</th><th>name</th><th></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <button id="copy">Copy JSON</button>
+  <button id="save" class="ghost">Download points.json</button>
+  <textarea id="out" readonly spellcheck="false"></textarea>
+</aside>
+
+<script>
+const stage = document.getElementById('stage'), wrap = document.getElementById('wrap'),
+      im = document.getElementById('im'), rows = document.getElementById('rows'),
+      out = document.getElementById('out');
+
+// depth 0 (far) → cool, 9 (near) → warm. The ramp is the point of the colour.
+const hue = d => `hsl(${210 - d * 22} 78% ${52 + d * 3}%)`;
+let pts = [], zoom = 1, panX = 0, panY = 0, drag = null, moving = null;
+
+function fit() {
+  zoom = Math.min(stage.clientWidth / im.naturalWidth, stage.clientHeight / im.naturalHeight);
+  panX = (stage.clientWidth - im.naturalWidth * zoom) / 2; panY = 0; apply();
+}
+function apply() {
+  wrap.style.transform = `translate(${panX}px,${panY}px) scale(${zoom})`;
+  // Counter-scale the markers so they stay legible at any zoom.
+  for (const el of wrap.querySelectorAll('.pt')) el.style.scale = 1 / zoom;
+}
+im.onload = fit;
+addEventListener('resize', fit);
+
+stage.addEventListener('wheel', e => {
+  e.preventDefault();
+  const r = stage.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+  const f = Math.exp(-e.deltaY * 0.0016), z = Math.min(20, Math.max(0.05, zoom * f));
+  panX = mx - (mx - panX) * (z / zoom); panY = my - (my - panY) * (z / zoom);
+  zoom = z; apply();
+}, { passive: false });
+
+stage.addEventListener('pointerdown', e => {
+  if (e.target.classList.contains('pt')) {
+    moving = { id: +e.target.dataset.id, moved: false };
+    e.target.setPointerCapture(e.pointerId);
+    return;
+  }
+  drag = { x: e.clientX, y: e.clientY, px: panX, py: panY, moved: false };
+});
+addEventListener('pointermove', e => {
+  if (moving) {
+    const r = stage.getBoundingClientRect();
+    const p = pts.find(p => p.id === moving.id);
+    p.x = ((e.clientX - r.left - panX) / zoom) / im.naturalWidth;
+    p.y = ((e.clientY - r.top - panY) / zoom) / im.naturalHeight;
+    moving.moved = true; render(); return;
+  }
+  if (!drag) return;
+  panX = drag.px + (e.clientX - drag.x); panY = drag.py + (e.clientY - drag.y);
+  if (Math.hypot(e.clientX - drag.x, e.clientY - drag.y) > 3) drag.moved = true;
+  apply();
+});
+addEventListener('pointerup', e => {
+  if (moving) { moving = null; return; }
+  if (drag && !drag.moved) {
+    const r = stage.getBoundingClientRect();
+    const x = ((e.clientX - r.left - panX) / zoom) / im.naturalWidth;
+    const y = ((e.clientY - r.top - panY) / zoom) / im.naturalHeight;
+    if (x >= 0 && x <= 1 && y >= 0 && y <= 1) {
+      pts.push({ id: (pts.at(-1)?.id ?? 0) + 1, x, y, depth: 0, window: 2500, name: '' });
+      render();
+    }
+  }
+  drag = null;
+});
+
+addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (/^[0-9]$/.test(e.key) && pts.length) { pts.at(-1).depth = +e.key; render(); }
+  if ((e.key === 'Backspace' || e.key === 'Delete') && pts.length) { pts.pop(); render(); }
+  if (e.key === 'f') fit();
+});
+
+function render() {
+  for (const el of wrap.querySelectorAll('.pt')) el.remove();
+  rows.innerHTML = '';
+  for (const p of pts) {
+    const d = document.createElement('div');
+    d.className = 'pt'; d.dataset.id = p.id; d.textContent = p.depth;
+    d.style.cssText += `left:${p.x * im.naturalWidth}px;top:${p.y * im.naturalHeight}px;background:${hue(p.depth)}`;
+    wrap.append(d);
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td class="sw"><span class="dot" style="background:${hue(p.depth)}"></span></td>
+      <td>${p.id}</td>
+      <td><select>${[...Array(10).keys()].map(i => `<option ${i === p.depth ? 'selected' : ''}>${i}</option>`).join('')}</select></td>
+      <td><select class="w">${[1200, 2000, 2500, 3500, 5000, 8000].map(v => `<option ${v === p.window ? 'selected' : ''}>${v}</option>`).join('')}</select></td>
+      <td><input type="text" value="${p.name}" placeholder="cliff"></td>
+      <td class="del">✕</td>`;
+    tr.querySelector('select').onchange = e => { p.depth = +e.target.value; render(); };
+    tr.querySelector('.w').onchange = e => { p.window = +e.target.value; dump(); };
+    tr.querySelector('input').oninput = e => { p.name = e.target.value; dump(); };
+    tr.querySelector('.del').onclick = () => { pts = pts.filter(q => q !== p); render(); };
+    rows.append(tr);
+  }
+  apply(); dump();
+}
+
+const json = () => JSON.stringify({
+  image: 'corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png',
+  note: 'x,y are normalised 0..1. depth 0 = farthest. window = native px around the point given to SAM.',
+  points: pts.map(({ id, x, y, depth, window, name }) =>
+    ({ id, x: +x.toFixed(5), y: +y.toFixed(5), depth, window, name })),
+}, null, 2);
+
+function dump() { out.value = json(); }
+document.getElementById('copy').onclick = () => navigator.clipboard.writeText(json());
+document.getElementById('save').onclick = () => {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([json()], { type: 'application/json' }));
+  a.download = 'points.json'; a.click();
+};
+render();
+</script>

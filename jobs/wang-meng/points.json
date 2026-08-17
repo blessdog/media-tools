@@ -1,0 +1,286 @@
+{
+ "image": "corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+ "mode": "manual-dots+labelled",
+ "note": "x,y normalised 0..1. depth 0 = farthest. Ryan's 20 manual dots labelled by Claude 2026-08-17; ids 21-25 added per Ryan's right-hillside instruction (front d15 -> d10, tree size = depth cue). Top-quarter peaks DEFERRED to Z6's own pass. No same-plane merges needed.",
+ "points": [
+  {
+   "id": 1,
+   "x": 0.86432,
+   "y": 0.98757,
+   "depth": 19,
+   "window": 3500,
+   "name": "shore-rocks-right",
+   "why": "dark rocky shore at the great trees' feet, nearest right"
+  },
+  {
+   "id": 2,
+   "x": 0.44678,
+   "y": 0.96838,
+   "depth": 18,
+   "window": 3500,
+   "name": "foreground-rock-mass",
+   "why": "big bottom-centre rock group in the water"
+  },
+  {
+   "id": 3,
+   "x": 0.6415,
+   "y": 0.91368,
+   "depth": 17,
+   "window": 3500,
+   "name": "great-trees-knoll",
+   "why": "rock knoll the two great trees grow from"
+  },
+  {
+   "id": 4,
+   "x": 0.31995,
+   "y": 0.88542,
+   "depth": 16,
+   "window": 3500,
+   "name": "bank-path",
+   "why": "yellow bank the ox party walks"
+  },
+  {
+   "id": 5,
+   "x": 0.28329,
+   "y": 0.8551,
+   "depth": 15,
+   "window": 3500,
+   "name": "bank-ledge-below-bridge",
+   "why": "rocky ledge under the bridge's near end; walking servants stand on it"
+  },
+  {
+   "id": 6,
+   "x": 0.2038,
+   "y": 0.8113,
+   "depth": 14,
+   "window": 3500,
+   "name": "trestle-bridge-ge",
+   "why": "bridge deck at Ge's feet; Ge + deer ride this plane"
+  },
+  {
+   "id": 7,
+   "x": 0.07376,
+   "y": 0.80503,
+   "depth": 13,
+   "window": 2000,
+   "name": "porter-ledge",
+   "why": "ledge under the back-basket porter, figure shares it"
+  },
+  {
+   "id": 8,
+   "x": 0.04609,
+   "y": 0.76924,
+   "depth": 12,
+   "window": 2500,
+   "name": "left-bank-rocks",
+   "why": "dark stream-edge rocks, left bank"
+  },
+  {
+   "id": 9,
+   "x": 0.09226,
+   "y": 0.74536,
+   "depth": 11,
+   "window": 2500,
+   "name": "resting-ledge",
+   "why": "ledge of the seated resting group with baskets"
+  },
+  {
+   "id": 10,
+   "x": 0.16104,
+   "y": 0.69722,
+   "depth": 10,
+   "window": 3500,
+   "name": "upper-stream-rocks",
+   "why": "mid-stream rocks in the rapids above the bridge"
+  },
+  {
+   "id": 11,
+   "x": 0.22306,
+   "y": 0.51956,
+   "depth": 9,
+   "window": 3500,
+   "name": "gorge-cliff-nose",
+   "why": "dark cliff nose below the red-foliage shelf"
+  },
+  {
+   "id": 12,
+   "x": 0.07825,
+   "y": 0.42885,
+   "depth": 8,
+   "window": 2500,
+   "name": "fenced-cliff-path",
+   "why": "railed cliff path; standing traveler shares it"
+  },
+  {
+   "id": 13,
+   "x": 0.27985,
+   "y": 0.40864,
+   "depth": 7,
+   "window": 2500,
+   "name": "gully-footbridge",
+   "why": "railed footbridge across the gully"
+  },
+  {
+   "id": 14,
+   "x": 0.28813,
+   "y": 0.38266,
+   "depth": 6,
+   "window": 2500,
+   "name": "compound-approach-path",
+   "why": "pale trail climbing to the compound gate"
+  },
+  {
+   "id": 15,
+   "x": 0.32507,
+   "y": 0.33508,
+   "depth": 5,
+   "window": 2500,
+   "name": "compound-fence-autumn-trees",
+   "why": "autumn trees at the bamboo fence, figure beside"
+  },
+  {
+   "id": 16,
+   "x": 0.32603,
+   "y": 0.31831,
+   "depth": 4,
+   "window": 3500,
+   "name": "compound-lower-hall",
+   "why": "lower hall + veranda, waiting figure"
+  },
+  {
+   "id": 17,
+   "x": 0.25514,
+   "y": 0.29756,
+   "depth": 3,
+   "window": 2500,
+   "name": "compound-court",
+   "why": "pine court terrace, walking figure"
+  },
+  {
+   "id": 18,
+   "x": 0.35065,
+   "y": 0.28759,
+   "depth": 2,
+   "window": 3500,
+   "name": "compound-main-hall",
+   "why": "main hall on the upper terrace"
+  },
+  {
+   "id": 19,
+   "x": 0.25442,
+   "y": 0.26842,
+   "depth": 1,
+   "window": 3500,
+   "name": "compound-rear-pines",
+   "why": "rear building among the pines"
+  },
+  {
+   "id": 20,
+   "x": 0.35477,
+   "y": 0.24486,
+   "depth": 0,
+   "window": 5000,
+   "name": "mist-slope-above",
+   "why": "bare misty slope above the compound"
+  },
+  {
+   "id": 21,
+   "x": 0.64683,
+   "y": 0.80701,
+   "depth": 15,
+   "window": 3500,
+   "name": "right-hill-front-trees",
+   "why": "big blue-green trees on the hillside front - largest = nearest"
+  },
+  {
+   "id": 22,
+   "x": 0.744,
+   "y": 0.76619,
+   "depth": 13,
+   "window": 5000,
+   "name": "right-hill-bluff",
+   "why": "the pale bluff face behind the front trees"
+  },
+  {
+   "id": 23,
+   "x": 0.66808,
+   "y": 0.71595,
+   "depth": 12,
+   "window": 3500,
+   "name": "right-bluff-crown-pines",
+   "why": "pines on the bluff crown, mid-size"
+  },
+  {
+   "id": 24,
+   "x": 0.85029,
+   "y": 0.59662,
+   "depth": 11,
+   "window": 5000,
+   "name": "right-gorge-wall",
+   "why": "right gorge wall, trees clearly smaller"
+  },
+  {
+   "id": 25,
+   "x": 0.78955,
+   "y": 0.43962,
+   "depth": 10,
+   "window": 5000,
+   "name": "right-gorge-wall-high",
+   "why": "upper right wall with the autumn shelf, smallest trees"
+  },
+  {
+   "id": 26,
+   "x": 0.80474,
+   "y": 0.88551,
+   "depth": 18,
+   "window": 5000,
+   "name": "great-trees",
+   "why": "the two giant foreground trees themselves; canopy point, own plane"
+  },
+  {
+   "id": 27,
+   "x": 0.19739,
+   "y": 0.93575,
+   "depth": 16,
+   "window": 8000,
+   "name": "water",
+   "why": "the water sheet; shares the bank's z - flat grounds meet at the shore"
+  },
+  {
+   "id": 28,
+   "x": 0.03796,
+   "y": 0.6657,
+   "depth": 9,
+   "window": 8000,
+   "name": "left-cliff-wall",
+   "why": "cliff face rising behind the left-bank ledges"
+  },
+  {
+   "id": 29,
+   "x": 0.25812,
+   "y": 0.62802,
+   "depth": 9,
+   "window": 8000,
+   "name": "gorge-wall-right",
+   "why": "pale wall flanking the upper stream, behind the rapids rocks"
+  },
+  {
+   "id": 30,
+   "x": 0.28849,
+   "y": 0.76619,
+   "depth": 13,
+   "window": 3500,
+   "name": "pine-over-bridge",
+   "why": "the pine bough over the bridge; grows behind the deck (pilot: pine behind bridge)"
+  },
+  {
+   "id": 31,
+   "x": 0.17461,
+   "y": 0.83841,
+   "depth": 13,
+   "window": 2300,
+   "name": "rapids-under-bridge",
+   "why": "white water seen through the trestles, behind the deck"
+  }
+ ]
+}

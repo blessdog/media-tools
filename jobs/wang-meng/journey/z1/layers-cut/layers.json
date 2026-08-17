@@ -1,0 +1,716 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/journey/z1/plate.png",
+  "size": [
+    1971,
+    2704
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 13,
+  "unclaimedFraction": 0.3522,
+  "overlay": "jobs/wang-meng/journey/z1/layers-cut/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 4.0,
+  "inferSeconds": 72.1,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 28,
+      "name": "left-cliff-wall",
+      "depth": 9,
+      "point": [
+        107,
+        429
+      ],
+      "window": 3418,
+      "windowRequested": 3418,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 3418,
+          "clipped": false,
+          "imageFraction": 0.0739,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1971,
+        2704
+      ],
+      "pick": "whole",
+      "score": 0.9378,
+      "candidateAreas": [
+        253835,
+        392562,
+        393886
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 393881,
+      "windowFraction": 0.0739,
+      "areaFinal": 393202,
+      "bbox": [
+        0,
+        0,
+        642,
+        848
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "layer": "layers/901-left-cliff-wall.png"
+    },
+    {
+      "n": 2,
+      "id": 29,
+      "name": "gorge-wall-right",
+      "depth": 9,
+      "point": [
+        726,
+        173
+      ],
+      "window": 3418,
+      "windowRequested": 3418,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 3418,
+          "clipped": false,
+          "imageFraction": 0.0494,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1971,
+        2704
+      ],
+      "pick": "whole",
+      "score": 0.8881,
+      "candidateAreas": [
+        77151,
+        90399,
+        263329
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 263322,
+      "windowFraction": 0.0494,
+      "areaFinal": 263322,
+      "bbox": [
+        519,
+        0,
+        1731,
+        546
+      ],
+      "offset": [
+        519,
+        0
+      ],
+      "layer": "layers/902-gorge-wall-right.png"
+    },
+    {
+      "n": 3,
+      "id": 32,
+      "name": "upper-stream-water",
+      "depth": 10,
+      "point": [
+        460,
+        540
+      ],
+      "window": 2000,
+      "windowRequested": 500,
+      "grewTo": 2000,
+      "attempts": [
+        {
+          "window": 500,
+          "clipped": true,
+          "imageFraction": 0.0164,
+          "rejected": false
+        },
+        {
+          "window": 1000,
+          "clipped": true,
+          "imageFraction": 0.0942,
+          "rejected": false
+        },
+        {
+          "window": 2000,
+          "clipped": false,
+          "imageFraction": 0.0519,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1971,
+        2000
+      ],
+      "pick": "whole",
+      "score": 0.5921,
+      "candidateAreas": [
+        31900,
+        77329,
+        277128
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 276804,
+      "windowFraction": 0.0702,
+      "areaFinal": 170162,
+      "bbox": [
+        47,
+        505,
+        912,
+        1725
+      ],
+      "offset": [
+        47,
+        505
+      ],
+      "layer": "layers/1003-upper-stream-water.png"
+    },
+    {
+      "n": 4,
+      "id": 9,
+      "name": "resting-ledge",
+      "depth": 11,
+      "point": [
+        260,
+        971
+      ],
+      "window": 1068,
+      "windowRequested": 1068,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1068,
+          "clipped": false,
+          "imageFraction": 0.0163,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        437,
+        1068,
+        1505
+      ],
+      "pick": "whole",
+      "score": 0.6361,
+      "candidateAreas": [
+        56018,
+        71687,
+        86987
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 87087,
+      "windowFraction": 0.0764,
+      "areaFinal": 84205,
+      "bbox": [
+        0,
+        735,
+        527,
+        1061
+      ],
+      "offset": [
+        0,
+        735
+      ],
+      "layer": "layers/1104-resting-ledge.png"
+    },
+    {
+      "n": 5,
+      "id": 8,
+      "name": "left-bank-rocks",
+      "depth": 12,
+      "point": [
+        130,
+        1134
+      ],
+      "window": 350,
+      "windowRequested": 350,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 350,
+          "clipped": false,
+          "imageFraction": 0.0012,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        959,
+        350,
+        1309
+      ],
+      "pick": "whole",
+      "score": 0.5613,
+      "candidateAreas": [
+        2093,
+        2180,
+        6751
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 6495,
+      "windowFraction": 0.053,
+      "areaFinal": 3248,
+      "bbox": [
+        109,
+        1063,
+        274,
+        1166
+      ],
+      "offset": [
+        109,
+        1063
+      ],
+      "layer": "layers/1205-left-bank-rocks.png"
+    },
+    {
+      "n": 6,
+      "id": 23,
+      "name": "right-bluff-crown-pines",
+      "depth": 12,
+      "point": [
+        1895,
+        800
+      ],
+      "window": 1600,
+      "windowRequested": 400,
+      "grewTo": 1600,
+      "attempts": [
+        {
+          "window": 400,
+          "clipped": true,
+          "imageFraction": 0.0228,
+          "rejected": false
+        },
+        {
+          "window": 800,
+          "clipped": true,
+          "imageFraction": 0.1154,
+          "rejected": false
+        },
+        {
+          "window": 1600,
+          "clipped": true,
+          "imageFraction": 0.0837,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        371,
+        0,
+        1971,
+        1600
+      ],
+      "pick": "whole",
+      "score": 0.7199,
+      "candidateAreas": [
+        92742,
+        130497,
+        445826
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 445921,
+      "windowFraction": 0.1742,
+      "areaFinal": 28712,
+      "bbox": [
+        1347,
+        302,
+        1971,
+        1600
+      ],
+      "offset": [
+        1347,
+        302
+      ],
+      "layer": "layers/1206-right-bluff-crown-pines.png"
+    },
+    {
+      "n": 7,
+      "id": 30,
+      "name": "pine-over-bridge",
+      "depth": 13,
+      "point": [
+        750,
+        1080
+      ],
+      "window": 700,
+      "windowRequested": 700,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 700,
+          "clipped": false,
+          "imageFraction": 0.0042,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        400,
+        730,
+        1100,
+        1430
+      ],
+      "pick": "whole",
+      "score": 0.7373,
+      "candidateAreas": [
+        2165,
+        5671,
+        22564
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 22576,
+      "windowFraction": 0.0461,
+      "areaFinal": 20470,
+      "bbox": [
+        700,
+        920,
+        897,
+        1164
+      ],
+      "offset": [
+        700,
+        920
+      ],
+      "layer": "layers/1307-pine-over-bridge.png"
+    },
+    {
+      "n": 8,
+      "id": 6,
+      "name": "trestle-bridge-ge",
+      "depth": 14,
+      "point": [
+        534,
+        1455
+      ],
+      "window": 2000,
+      "windowRequested": 500,
+      "grewTo": 2000,
+      "attempts": [
+        {
+          "window": 500,
+          "clipped": true,
+          "imageFraction": 0.0095,
+          "rejected": false
+        },
+        {
+          "window": 1000,
+          "clipped": true,
+          "imageFraction": 0.0562,
+          "rejected": false
+        },
+        {
+          "window": 2000,
+          "clipped": false,
+          "imageFraction": 0.0739,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        455,
+        1971,
+        2455
+      ],
+      "pick": "whole",
+      "score": 0.5692,
+      "candidateAreas": [
+        84857,
+        110126,
+        395427
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 394058,
+      "windowFraction": 0.1,
+      "areaFinal": 303051,
+      "bbox": [
+        0,
+        620,
+        1333,
+        1959
+      ],
+      "offset": [
+        0,
+        620
+      ],
+      "layer": "layers/1408-trestle-bridge-ge.png"
+    },
+    {
+      "n": 9,
+      "id": 21,
+      "name": "right-hill-front-trees",
+      "depth": 15,
+      "point": [
+        1821,
+        1391
+      ],
+      "window": 2704,
+      "windowRequested": 1495,
+      "grewTo": 2704,
+      "attempts": [
+        {
+          "window": 1495,
+          "clipped": true,
+          "imageFraction": 0.194,
+          "rejected": false
+        },
+        {
+          "window": 2704,
+          "clipped": false,
+          "imageFraction": 0.0988,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1971,
+        2704
+      ],
+      "pick": "whole",
+      "score": 0.9203,
+      "candidateAreas": [
+        200426,
+        405771,
+        526536
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 526590,
+      "windowFraction": 0.0988,
+      "areaFinal": 95816,
+      "bbox": [
+        1352,
+        337,
+        1971,
+        1675
+      ],
+      "offset": [
+        1352,
+        337
+      ],
+      "layer": "layers/1509-right-hill-front-trees.png"
+    },
+    {
+      "n": 10,
+      "id": 4,
+      "name": "bank-path",
+      "depth": 16,
+      "point": [
+        901,
+        1924
+      ],
+      "window": 1495,
+      "windowRequested": 1495,
+      "grewTo": 1495,
+      "attempts": [
+        {
+          "window": 1495,
+          "clipped": true,
+          "imageFraction": 0.1347,
+          "rejected": false
+        },
+        {
+          "window": 2704,
+          "clipped": false,
+          "imageFraction": 0.8576,
+          "rejected": true
+        }
+      ],
+      "cropBox": [
+        154,
+        1177,
+        1649,
+        2672
+      ],
+      "pick": "whole",
+      "score": 0.7434,
+      "candidateAreas": [
+        127993,
+        229841,
+        716421
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 718079,
+      "windowFraction": 0.3213,
+      "areaFinal": 694872,
+      "bbox": [
+        174,
+        1177,
+        1649,
+        2378
+      ],
+      "offset": [
+        174,
+        1177
+      ],
+      "layer": "layers/1610-bank-path.png"
+    },
+    {
+      "n": 11,
+      "id": 27,
+      "name": "water",
+      "depth": 16,
+      "point": [
+        556,
+        2267
+      ],
+      "window": 900,
+      "windowRequested": 900,
+      "grewTo": 900,
+      "attempts": [
+        {
+          "window": 900,
+          "clipped": true,
+          "imageFraction": 0.0814,
+          "rejected": false
+        },
+        {
+          "window": 1800,
+          "clipped": true,
+          "imageFraction": 0.3573,
+          "rejected": true
+        }
+      ],
+      "cropBox": [
+        106,
+        1804,
+        1006,
+        2704
+      ],
+      "pick": "whole",
+      "score": 0.8966,
+      "candidateAreas": [
+        269722,
+        380710,
+        433482
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 433582,
+      "windowFraction": 0.5353,
+      "areaFinal": 433582,
+      "bbox": [
+        106,
+        1804,
+        1006,
+        2704
+      ],
+      "offset": [
+        106,
+        1804
+      ],
+      "layer": "layers/1611-water.png"
+    },
+    {
+      "n": 12,
+      "id": 3,
+      "name": "great-trees-knoll",
+      "depth": 17,
+      "point": [
+        1806,
+        2116
+      ],
+      "window": 2704,
+      "windowRequested": 1495,
+      "grewTo": 2704,
+      "attempts": [
+        {
+          "window": 1495,
+          "clipped": true,
+          "imageFraction": 0.1188,
+          "rejected": false
+        },
+        {
+          "window": 2704,
+          "clipped": false,
+          "imageFraction": 0.0963,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1971,
+        2704
+      ],
+      "pick": "whole",
+      "score": 0.8487,
+      "candidateAreas": [
+        17320,
+        74541,
+        512827
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 513079,
+      "windowFraction": 0.0963,
+      "areaFinal": 513079,
+      "bbox": [
+        1354,
+        320,
+        1971,
+        2213
+      ],
+      "offset": [
+        1354,
+        320
+      ],
+      "layer": "layers/1712-great-trees-knoll.png"
+    },
+    {
+      "n": 13,
+      "id": 2,
+      "name": "foreground-rock-mass",
+      "depth": 18,
+      "point": [
+        1257,
+        2489
+      ],
+      "window": 1495,
+      "windowRequested": 1495,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1495,
+          "clipped": false,
+          "imageFraction": 0.0842,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        476,
+        1209,
+        1971,
+        2704
+      ],
+      "pick": "whole",
+      "score": 0.8063,
+      "candidateAreas": [
+        130426,
+        221036,
+        448889
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 448965,
+      "windowFraction": 0.2009,
+      "areaFinal": 448965,
+      "bbox": [
+        605,
+        2201,
+        1971,
+        2704
+      ],
+      "offset": [
+        605,
+        2201
+      ],
+      "layer": "layers/1813-foreground-rock-mass.png"
+    }
+  ]
+}

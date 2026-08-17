@@ -1,0 +1,16 @@
+{
+  "draft": true,
+  "stations": [
+    {"id": 1,  "name": "river entry",        "mx": 3186, "my": 15342},
+    {"id": 2,  "name": "ox party, bank",     "mx": 3186, "my": 13059},
+    {"id": 3,  "name": "bridge, Ge + deer",  "mx": 1593, "my": 12528},
+    {"id": 4,  "name": "porters climb",      "mx": 849,  "my": 11679},
+    {"id": 5,  "name": "rapids, left bank",  "mx": 956,  "my": 10511},
+    {"id": 6,  "name": "fenced cliff path",  "mx": 531,  "my": 6795},
+    {"id": 7,  "name": "gorge traverse",     "mx": 2655, "my": 7326},
+    {"id": 8,  "name": "under the waterfall","mx": 4141, "my": 5733},
+    {"id": 9,  "name": "the compound",       "mx": 1805, "my": 4724},
+    {"id": 10, "name": "mist release",       "mx": 3186, "my": 2761},
+    {"id": 11, "name": "summit, far blue",   "mx": 3504, "my": 1380}
+  ]
+}
