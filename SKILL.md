@@ -59,6 +59,7 @@ the same command that creates the file.
 | `probe-zoom.py` | rendered frames → is this move a ZOOM or a FLIGHT? fits one global scale and reports the leftover, against a flat-still control |
 | `probe-planes.py` | plane stack → is it OBJECT-COMPLETE? finds painted things straddling two depths |
 | `complete-planes.py` | plane stack with gaps → every pixel claimed, by nearest-plane proximity |
+| `inpaint-planes.py` | plane stack → each plane painted on BEHIND its occluders, so a dolly opens no holes |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`. Renderer recipes in `models/` —
@@ -82,6 +83,7 @@ agents arrive with a situation, not a capability.
 | "the figure moved and left a hole" | `clean-plate` (and the plate must lose the WHOLE thing that moves) |
 | "where did this crop come from?" | `locate-crop` → crop.json, then every tool reads it |
 | "I want to fly into the picture" | `render-parallax --plane-fit --z-step 0.15`. WITHOUT `--plane-fit` a dolly is a zoom — see below |
+| "the camera move opens holes / white gaps" | `inpaint-planes` — fill in LAYER space once, never per frame. Frame 0 must stay byte-identical |
 | "the camera move is deforming the painting" | `probe-planes` first. An object split across two depths is magnified at two rates at once; `complete-planes` seals the gaps |
 | "the push looks like a zoom, not a flight" | `--plane-fit`. One global focal makes depth separation resize the planes, so z-step gets throttled to keep the composition and the parallax budget collapses (measured: 6.8%) |
 | "does this camera move actually carry depth?" | `probe-zoom --control` for a rendered move, `probe-parallax --null` for a depth map. Never quote a number without the control |
