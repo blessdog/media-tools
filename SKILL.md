@@ -60,6 +60,7 @@ the same command that creates the file.
 | `probe-planes.py` | plane stack → is it OBJECT-COMPLETE? finds painted things straddling two depths |
 | `complete-planes.py` | plane stack with gaps → every pixel claimed, by nearest-plane proximity |
 | `inpaint-planes.py` | plane stack → each plane painted on BEHIND its occluders, so a dolly opens no holes |
+| `pin-objects.py` | plane stack + object masks → no painted object straddles two depths |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`. Renderer recipes in `models/` —
@@ -83,6 +84,7 @@ agents arrive with a situation, not a capability.
 | "the figure moved and left a hole" | `clean-plate` (and the plate must lose the WHOLE thing that moves) |
 | "where did this crop come from?" | `locate-crop` → crop.json, then every tool reads it |
 | "I want to fly into the picture" | `render-parallax --plane-fit --z-step 0.15`. WITHOUT `--plane-fit` a dolly is a zoom — see below |
+| "an object shears / is cut in half by the camera move" | `segment-regions` for objects, then `pin-objects`. An object across two depths is magnified at two rates |
 | "the camera move opens holes / white gaps" | `inpaint-planes` — fill in LAYER space once, never per frame. Frame 0 must stay byte-identical |
 | "the camera move is deforming the painting" | `probe-planes` first. An object split across two depths is magnified at two rates at once; `complete-planes` seals the gaps |
 | "the push looks like a zoom, not a flight" | `--plane-fit`. One global focal makes depth separation resize the planes, so z-step gets throttled to keep the composition and the parallax budget collapses (measured: 6.8%) |
@@ -103,7 +105,7 @@ The verb states the job, so an unfamiliar tool is guessable from its name alone.
 | `generate-` `restyle-` `compose-` | new pixels | `generate-image`, `compose-depth` |
 | `animate-` `walk-` | motion | `animate-strokes`, `walk-figure` |
 | `render-` `composite-` `stitch-` | the deliverable | `render-parallax`, `stitch` |
-| `complete-` | makes an existing artifact whole | `complete-planes` |
+| `complete-` `pin-` | makes an existing artifact whole / consistent | `complete-planes`, `pin-objects` |
 | `probe-` | **a measurement that can only falsify** | `probe-parallax`, `probe-zoom`, `probe-planes` |
 
 `probe-` is its own class on purpose. Those tools never produce a deliverable —
