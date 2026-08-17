@@ -61,6 +61,7 @@ the same command that creates the file.
 | `complete-planes.py` | plane stack with gaps → every pixel claimed, by nearest-plane proximity |
 | `inpaint-planes.py` | plane stack → each plane painted on BEHIND its occluders, so a dolly opens no holes |
 | `pin-objects.py` | plane stack + object masks → no painted object straddles two depths |
+| `render-warp.py` | objects + depths + camera path → frames, as ONE continuous warp; rigid objects, strain in the wash, no holes, NO occlusion |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`. Renderer recipes in `models/` —
@@ -83,6 +84,7 @@ agents arrive with a situation, not a capability.
 | "a figure should cross the frame" | `crop-region` → `clean-plate` → `walk-figure --window/--pan` |
 | "the figure moved and left a hole" | `clean-plate` (and the plate must lose the WHOLE thing that moves) |
 | "where did this crop come from?" | `locate-crop` → crop.json, then every tool reads it |
+| "the seams/cards still show, or I never want a hole" | `render-warp` — one continuous sheet instead of layers. Trade: it cannot occlude, so nothing passes behind anything |
 | "I want to fly into the picture" | `render-parallax --plane-fit --z-step 0.15`. WITHOUT `--plane-fit` a dolly is a zoom — see below |
 | "an object shears / is cut in half by the camera move" | `segment-regions` for objects, then `pin-objects`. An object across two depths is magnified at two rates |
 | "the camera move opens holes / white gaps" | `inpaint-planes` — fill in LAYER space once, never per frame. Frame 0 must stay byte-identical |
