@@ -70,12 +70,17 @@ Overlaps are the handoff corridors, parked on painted seams.
 
 | zone | region | master rect (x0,y0,x1,y1) | 散点 eye | corridor with next |
 |---|---|---|---|---|
-| Z1 | river + bridge | 425, 11466, 6586, 15923 | 平遠 level glide | resting ledge (~y 11500–12100) |
+| Z1 | river + bridge | 0, 9596, 4613, 15923 | 平遠 level glide | resting ledge (~y 11500–12100) |
 | Z2 | left-bank climb | 0, 9449, 4248, 12104 | climbing, level-to-tilted | rapids (~y 9450–10100) |
 | Z3 | gorge + fenced cliff path | 0, 5945, 4566, 10086 | 深遠 through stacked screens | autumn shelf (~y 5950–8050 east side) |
 | Z4 | waterfall traverse | 1593, 4565, 6586, 8069 | 深遠→rising | compound tree line (~y 4570–5950) |
 | Z5 | compound arrival | 637, 3503, 4990, 5945 | slightly-above, settling | mist band above compound (~y 3500–4250) |
 | Z6 | peaks + mist release | 637, 0, 6586, 4247 | 高遠 looking up | — (ends the piece) |
+
+Z1 rect finalized 2026-08-17 (Pissjug-approved) by the camera-world rule:
+route-leg bbox dilated by frame/2 + 250 region px reach
+(`jobs/wang-meng/journey/zone-rect.py`). The other zone rects remain content
+boxes and get the same treatment at their turn.
 
 ## Stations (journey spline knots, master px, DRAFT)
 
