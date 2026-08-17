@@ -114,3 +114,33 @@ Two renderers, ONE data source, per segment of the journey:
 - 1080×1920 re-render: available later from same worlds; not now.
 - Zone rects Z2–Z6 are content boxes; each gets the camera-world dilation
   at its turn.
+
+## 2026-08-17 late — mask refix + research pointers (Ryan's links)
+
+- Overlay bug found + fixed: quick overlay placed layers by `cropBox` (SAM
+  search window) instead of `bbox` (true position). New INVARIANT adopted:
+  **every plane's click point must lie inside its own mask** — this check
+  caught two genuinely bad masks the coverage table missed
+  (right-bluff-crown-pines, right-hill-front-trees: auto-grow doubled their
+  windows until SAM grabbed off-point masses). Both re-segmented with
+  --max-grow 0 (front-trees 19.4%; crown-pines re-clicked onto the pale
+  TRUNK at plate (1857,657) w700 → 1.52%). 13/13 verified, unclaimed 28.4%.
+- Palace Museum page (dpm.org.cn/collection/paint/234561.html): curatorial
+  read confirms the journey design — "waterfalls and mountain paths guide
+  the viewer's eye progressively deeper." 139×58 cm. No high-res there; our
+  105MP master stands.
+- World Labs: Marble = image→persistent 3D world (Gaussian splat/mesh
+  export, camera-path video). Ryan's verdict: NOT the answer, glean
+  technique. No papers; RTFM blog = autoregressive diffusion transformer,
+  posed frames as spatial memory, no explicit 3D. Transferable principle:
+  geometry answers what it can, the model only completes what geometry
+  cannot — which our layer-space flux fill already implements statically.
+- **HunyuanWorld-Voyager (Tencent) — Ryan's pointer, TOP CANDIDATE for a
+  gate test.** Single image + user camera trajectory → world-consistent
+  RGB-D video; conditions on partial renders of an accumulated point cloud.
+  Why it matters HERE: it may resolve the measured tension "Hunyuan holds
+  the ink but has no control input; Wan has the control ecosystem but a
+  hostile prior" — Voyager is Hunyuan-family WITH trajectory control.
+  Gate test (like GATE1): Z1 720×1280 crop + simple push trajectory on a
+  rented box; judge with silk-survival vs static control + figures intact.
+  Ryan's framing: flux dev for style + Hunyuan World for fly-through.

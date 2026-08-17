@@ -11,7 +11,7 @@
   "unclaimedFraction": 0.3522,
   "overlay": "jobs/wang-meng/journey/z1/layers-cut/overlay.png",
   "feather": 2,
-  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset. | 2026-08-17 evening: right-bluff-crown-pines + right-hill-front-trees re-segmented (auto-grow had grabbed off-point masses; point-in-mask check added), layers swapped in place.",
   "loadSeconds": 4.0,
   "inferSeconds": 72.1,
   "planeList": [
@@ -278,54 +278,42 @@
       "name": "right-bluff-crown-pines",
       "depth": 12,
       "point": [
-        1895,
-        800
+        1857,
+        657
       ],
-      "window": 1600,
-      "windowRequested": 400,
-      "grewTo": 1600,
+      "window": 700,
+      "windowRequested": 700,
+      "grewTo": null,
       "attempts": [
         {
-          "window": 400,
+          "window": 700,
           "clipped": true,
-          "imageFraction": 0.0228,
-          "rejected": false
-        },
-        {
-          "window": 800,
-          "clipped": true,
-          "imageFraction": 0.1154,
-          "rejected": false
-        },
-        {
-          "window": 1600,
-          "clipped": true,
-          "imageFraction": 0.0837,
+          "imageFraction": 0.0152,
           "rejected": false
         }
       ],
       "cropBox": [
-        371,
-        0,
+        1271,
+        307,
         1971,
-        1600
+        1007
       ],
       "pick": "whole",
-      "score": 0.7199,
+      "score": 0.6807,
       "candidateAreas": [
-        92742,
-        130497,
-        445826
+        1826,
+        20439,
+        80899
       ],
       "clippedByWindow": true,
-      "areaInWindow": 445921,
-      "windowFraction": 0.1742,
-      "areaFinal": 28712,
+      "areaInWindow": 80997,
+      "windowFraction": 0.1653,
+      "areaFinal": 80997,
       "bbox": [
-        1347,
-        302,
-        1971,
-        1600
+        1532,
+        626,
+        1968,
+        1007
       ],
       "offset": [
         1347,
@@ -452,45 +440,39 @@
         1821,
         1391
       ],
-      "window": 2704,
+      "window": 1495,
       "windowRequested": 1495,
-      "grewTo": 2704,
+      "grewTo": null,
       "attempts": [
         {
           "window": 1495,
           "clipped": true,
           "imageFraction": 0.194,
           "rejected": false
-        },
-        {
-          "window": 2704,
-          "clipped": false,
-          "imageFraction": 0.0988,
-          "rejected": false
         }
       ],
       "cropBox": [
-        0,
-        0,
+        476,
+        644,
         1971,
-        2704
+        2139
       ],
       "pick": "whole",
-      "score": 0.9203,
+      "score": 0.87,
       "candidateAreas": [
-        200426,
-        405771,
-        526536
+        242207,
+        367793,
+        1035581
       ],
-      "clippedByWindow": false,
-      "areaInWindow": 526590,
-      "windowFraction": 0.0988,
-      "areaFinal": 95816,
+      "clippedByWindow": true,
+      "areaInWindow": 1034058,
+      "windowFraction": 0.4627,
+      "areaFinal": 1034058,
       "bbox": [
-        1352,
-        337,
+        476,
+        644,
         1971,
-        1675
+        2139
       ],
       "offset": [
         1352,
