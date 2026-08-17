@@ -451,6 +451,9 @@ if (provider === 'seedance') {
 const resolution = flag('--resolution', '720p');
 const model = flag('--model', 'bytedance/seedance-1-lite');
 const fixed = !args.includes('--moving');
+// Each provider block scopes its own --fps default; wan-2.2-a14b bills per
+// second and takes num_frames, so it needs one here too. 16 is the model's own.
+const fps = parseInt(flag('--fps', '16'), 10);
 
 const MODELS = {
   'bytedance/seedance-1-lite': ({ url, prompt, duration, resolution, fixed }) => ({
@@ -464,7 +467,24 @@ const MODELS = {
     negative_prompt: 'text, lettering, writing, watermark, signature, photographic, glossy, 3d render, camera shake, jump cut, flicker, morphing, warping',
     enable_prompt_expansion: false,
   }),
+  // NOT slop: the full Wan 2.2 A14B weights, same tier the fal route reaches.
+  // Schema read live off the Replicate API 2026-08-17 — this model takes
+  // num_frames/frames_per_second, NOT `duration`, and has no negative_prompt.
+  // go_fast=false and the full 40 sample_steps are the whole point of coming
+  // here rather than to wan-2.2-i2v-fast, which is the PrunaAI distill.
+  'wan-video/wan-2.2-i2v-a14b': ({ url, prompt, duration, resolution, fps, seed }) => ({
+    image: url, prompt, resolution,
+    num_frames: Math.round(duration * fps) + 1,
+    frames_per_second: fps,
+    go_fast: false, sample_steps: 40, sample_shift: 5,
+    ...(seed ? { seed } : {}),
+  }),
 };
+// Everything in this block is hosted, but not everything hosted is slop — the
+// banner has to tell the truth about which one is being run, or it trains you
+// to ignore it.
+const SLOP = new Set(['bytedance/seedance-1-lite', 'bytedance/seedance-1-pro',
+  'wan-video/wan-2.5-i2v-fast']);
 const build = MODELS[model];
 if (!build) throw new Error(`unknown --model '${model}' (known: ${Object.keys(MODELS).join(', ')})`);
 
@@ -486,14 +506,18 @@ async function uploadImage(path, tok, mime = 'image/png') {
 if (explain) {
   console.log(JSON.stringify({ tool: 'image-to-video', provider: 'replicate', model, duration, resolution,
     camera_fixed: fixed, start: { file: image, sha256: sha(image) }, motionPrompt: prompt, out,
-    warning: 'hosted i2v models produce slop — see CLAUDE.md', wouldRender: true, spent: 'nothing' }, null, 2));
+    warning: SLOP.has(model) ? 'hosted i2v models produce slop — see CLAUDE.md'
+      : 'full weights, not a distilled tier — judge the output, not the host',
+    wouldRender: true, spent: 'nothing' }, null, 2));
   process.exit(0);
 }
 const tok = envKey('REPLICATE_API_TOKEN');
-console.error(`image-to-video: SLOP PATH — ${model} · ${resolution} ${duration}s · camera_fixed=${fixed} → ${out}`);
+console.error(SLOP.has(model)
+  ? `image-to-video: SLOP PATH — ${model} · ${resolution} ${duration}s · camera_fixed=${fixed} → ${out}`
+  : `image-to-video: replicate ${model} · ${resolution} · ${duration}s · full weights → ${out}`);
 console.error(`prompt: ${prompt}`);
 const imageUrl = await uploadImage(image, tok);
-const input = build({ url: imageUrl, prompt, duration, resolution, fixed });
+const input = build({ url: imageUrl, prompt, duration, resolution, fixed, fps, seed });
 const url = await predictModel(model, input, { token: tok, label: 'quick-i2v', interval: 4000, maxPolls: 300 });
 const bytes = await fetchBytes(url);
 mkdirSync(dirname(out), { recursive: true });
