@@ -63,6 +63,9 @@ the same command that creates the file.
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`. Renderer recipes in `models/` —
 one JSON per model, read by `shard-models`; never in tool code.
+**`models/` is mostly MANIFESTS, not renderers — 1 of 8 can currently render
+(`uso-inkwash`). Read `models/README.md` and run its check before planning
+around any model.** A memory of having run something once is not a capability.
 Related standalone tool: `rectum` (URL → clip on disk) at
 `~/projects/mediaStudio/rectum/`, its own CLI.
 
