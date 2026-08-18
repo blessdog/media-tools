@@ -5,7 +5,7 @@
     "A_artwork": "ink wash painting on paper, handmade artwork, visible brush texture and granular pigment, uneven graphite line where the tooth of the paper catches the pencil, muted mineral palette, soft paper grain",
     "B_realistic": "weathered natural landscape, matte stone and water, atmospheric haze, muted palette, film grain",
     "neg": "cartoon, cel shading, flat colors, anime, video game render, 3d render, smooth plastic surfaces, saturated colors, glossy highlights",
-    "locked": null
+    "locked": "B_realistic (Ryan's pick, S1 A/B on screen, 2026-08-18)"
   },
   "segments": [
     {"id": "S1", "route": "river entry -> ox party, bank", "class": "beat",
