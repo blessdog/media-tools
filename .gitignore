@@ -17,3 +17,6 @@ jobs/**
 !jobs/**/*.html
 !jobs/**/evidence*/**
 !jobs/**/checkpoint-*/**
+# wild-journey working set: everything pulled from the box is curated by
+# construction (chain inputs, A/B clips, checkpoint renders) — track it all.
+!jobs/wang-meng/journey/wild/**
