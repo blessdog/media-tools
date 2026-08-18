@@ -340,3 +340,14 @@ machine) for parallax pans; occlusion teases — "peer around the corner but
 can't quite look past it… we don't need to build the world behind the rocks."
 Everything is Wang Meng's pixels or one generation from them. Box PARKS (stop,
 not down) after queue-v2 — Ryan kills it explicitly, never by default.
+
+## 2026-08-18 ~15:45 — S2-v2 STATION-ANCHORED: FAIL (Ryan: "failed. i hate it")
+Gen-1 from real pixels at station 2 (ox party). Style held (ink, silk tone,
+painted world) but CONTENT redrawn: family's faces changed, red gate invented,
+leaves decorative. Mechanism: repaint tax invisible on texture (S1 = rocks/
+water, passed), unbearable on figures. Voyager verdict FINAL: unusable wherever
+figures or fidelity matter — S1-B is the only surviving Voyager asset, cameo at
+most. Film proceeds with classical lane per the v2 vision: multiplane pans,
+animate-strokes water/leaves, walk-figure figures — $0, local, Wang Meng's own
+pixels. Box 48042658 PARKED (storage ~$0.033/hr) awaiting Ryan's explicit kill.
+Evidence: journey/wild/S2/S2-v2.mp4 + stills + input-station.png (committed).
