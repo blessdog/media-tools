@@ -1,0 +1,39 @@
+{
+  "tool": "range-planes",
+  "image": "corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+  "reference": "ox-leader",
+  "referenceClass": "servant",
+  "referenceHeightPx": 515.0,
+  "planes": [
+    {
+      "plane": "Z1-bank (station 2, d16)",
+      "z": 1.0,
+      "marks": 1
+    },
+    {
+      "plane": "Z3-fenced-path (station 6)",
+      "z": 2.02,
+      "marks": 1
+    },
+    {
+      "plane": "Z5-compound (station 9)",
+      "z": 3.029,
+      "marks": 1
+    }
+  ],
+  "excluded": [
+    {
+      "name": "ge-hong",
+      "class": "protagonist",
+      "heightPx": 760.0,
+      "why": "protagonist: status scale, not distance"
+    },
+    {
+      "name": "resting-porter",
+      "class": "servant-seated",
+      "heightPx": 560.4,
+      "why": "class 'servant-seated' shares no plane with reference class 'servant'"
+    }
+  ],
+  "law": "h \u221d 1/z within one class; protagonists are status-scaled (Ge = 1.48x servant on this scroll) and never calibrate"
+}

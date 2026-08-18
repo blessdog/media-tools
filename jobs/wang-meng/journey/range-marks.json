@@ -1,0 +1,22 @@
+{
+  "image": "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png",
+  "reference": "ox-leader",
+  "note": "heights measured 2026-08-17 off gridded crops (master px). Z1 plate figures converted at k=2.34. Seated factor 0.53 is a posture estimate — resting-porter is LOW CONFIDENCE, recorded for completeness, not used for zone scale.",
+  "marks": [
+    { "name": "ox-leader", "class": "servant", "plane": "Z1-bank (station 2, d16)",
+      "top": 13316, "bottom": 13831, "factor": 1.0,
+      "note": "walking man leading the ox; 220 plate px = 515 master px" },
+    { "name": "cliffpath-traveler", "class": "servant", "plane": "Z3-fenced-path (station 6)",
+      "top": 6525, "bottom": 6780, "factor": 1.0,
+      "note": "standing traveler on the railed cliff path" },
+    { "name": "compound-figure", "class": "servant", "plane": "Z5-compound (station 9)",
+      "top": 4885, "bottom": 5055, "factor": 1.0,
+      "note": "figure standing at the compound veranda" },
+    { "name": "ge-hong", "class": "protagonist", "plane": "Z1-bridge (station 3, d14)",
+      "top": 11106, "bottom": 11866, "factor": 1.0,
+      "note": "325 plate px = 760 master px; 1.48x servant height while FARTHER — hierarchical scale, excluded" },
+    { "name": "resting-porter", "class": "servant-seated", "plane": "Z1-resting-ledge (station 4, d11)",
+      "top": 9885, "bottom": 10182, "factor": 0.53,
+      "note": "seated; posture factor uncertain; within-Z1 depth below instrument resolution" }
+  ]
+}
