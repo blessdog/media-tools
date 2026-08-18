@@ -1,0 +1,124 @@
+{
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [
+    720,
+    1280
+  ],
+  "model": "anthropic/claude-opus-4-5",
+  "planned": 11,
+  "mode": "initial",
+  "notes": "This is ONE 720x1280 SHOT cropped from a much larger Wang Meng hanging scroll, not the whole scroll. Plan depth planes for THIS view only: the trestle bridge and its near ledge, the figures on it, the pine crossing the frame, the rocks in the stream, the receding river, the cliff wall behind. Use as many planes as this view actually contains and no more - do not pad to a target count. Space is encoded by overlap, contour and unpainted silk, not by perspective.",
+  "note": "x,y normalised 0..1. depth 0 = farthest. window in native px; a mask cannot exceed it.",
+  "points": [
+    {
+      "id": 1,
+      "x": 0.75,
+      "y": 0.12,
+      "depth": 0,
+      "window": 1280,
+      "name": "far-cliff-wall",
+      "pick": "whole",
+      "why": "uppermost rock mass with no overlapping forms, farthest recession"
+    },
+    {
+      "id": 2,
+      "x": 0.25,
+      "y": 0.08,
+      "depth": 1,
+      "window": 1280,
+      "name": "far-river-rocks",
+      "pick": "whole",
+      "why": "small rocks in upper left river separated by water ripple contours from cliff"
+    },
+    {
+      "id": 3,
+      "x": 0.82,
+      "y": 0.28,
+      "depth": 2,
+      "window": 1280,
+      "name": "mid-cliff-right",
+      "pick": "whole",
+      "why": "large cliff face overlapped by river rocks and vegetation below"
+    },
+    {
+      "id": 4,
+      "x": 0.35,
+      "y": 0.3,
+      "depth": 3,
+      "window": 1280,
+      "name": "mid-stream-rocks",
+      "pick": "whole",
+      "why": "boulders in stream with water contour lines surrounding them"
+    },
+    {
+      "id": 5,
+      "x": 0.18,
+      "y": 0.42,
+      "depth": 4,
+      "window": 1280,
+      "name": "mid-left-foliage",
+      "pick": "whole",
+      "why": "dense tree mass on left bank, contour separates it from stream"
+    },
+    {
+      "id": 6,
+      "x": 0.62,
+      "y": 0.52,
+      "depth": 5,
+      "window": 1280,
+      "name": "pine-trunk-branch",
+      "pick": "whole",
+      "why": "pine crossing frame, overlaps cliff behind and stream below"
+    },
+    {
+      "id": 7,
+      "x": 0.72,
+      "y": 0.58,
+      "depth": 6,
+      "window": 1280,
+      "name": "right-bank-rocks",
+      "pick": "whole",
+      "why": "rocky ledge under pine, contour separates from cliff mass behind"
+    },
+    {
+      "id": 8,
+      "x": 0.3,
+      "y": 0.72,
+      "depth": 7,
+      "window": 1280,
+      "name": "trestle-bridge",
+      "pick": "whole",
+      "why": "wooden bridge structure with explicit ink contours, sits below figures"
+    },
+    {
+      "id": 9,
+      "x": 0.32,
+      "y": 0.6,
+      "depth": 8,
+      "window": 1280,
+      "name": "scholar-and-deer",
+      "pick": "whole",
+      "why": "robed figure and deer stand on bridge, overlap its surface"
+    },
+    {
+      "id": 10,
+      "x": 0.55,
+      "y": 0.82,
+      "depth": 8,
+      "window": 1280,
+      "name": "foreground-path-ledge",
+      "pick": "whole",
+      "why": "earthen ledge at same depth as bridge deck, shares ground plane"
+    },
+    {
+      "id": 11,
+      "x": 0.62,
+      "y": 0.9,
+      "depth": 9,
+      "window": 1200,
+      "name": "servant-figure",
+      "pick": "tight",
+      "why": "figure with bundle at lowest position, overlaps path behind him"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+ "fps": 24,
+ "duration": 8,
+ "_note": "A MEANDER, not a push. The straight dolly (path-push-deep) holds x,y at 0.5 and only advances z, so every revealed pixel streaks radially from one fixed focus of expansion. Here x and y move too \u2014 the camera drifts left, crosses back right past the pine, and rises as it advances, which is what walking a trail through the scene actually is. The point of this file is to make the focus of expansion MOVE, because lateral motion produces far more parallax per second than axial motion does, and that is what sets the --behind budget.",
+ "keys": [
+  {
+   "t": 0,
+   "x": 0.4298701298701299,
+   "y": 0.6571428571428571,
+   "z": 0.0,
+   "fov": 1.0
+  },
+  {
+   "t": 2,
+   "x": 0.38311688311688313,
+   "y": 0.5714285714285714,
+   "z": 0.12,
+   "fov": 1.0
+  },
+  {
+   "t": 4,
+   "x": 0.48831168831168825,
+   "y": 0.4714285714285715,
+   "z": 0.24,
+   "fov": 1.0
+  },
+  {
+   "t": 6,
+   "x": 0.5701298701298702,
+   "y": 0.38571428571428573,
+   "z": 0.34,
+   "fov": 1.0
+  },
+  {
+   "t": 8,
+   "x": 0.5292207792207793,
+   "y": 0.3,
+   "z": 0.45,
+   "fov": 1.0
+  }
+ ]
+}

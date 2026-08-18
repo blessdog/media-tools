@@ -1,0 +1,215 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [
+    720,
+    1280
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 4,
+  "unclaimedFraction": 0.9149,
+  "overlay": "jobs/wang-meng/motion/mask/protect/overlay.png",
+  "feather": 3,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 5.1,
+  "inferSeconds": 12.9,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 1,
+      "name": "ge-hong",
+      "depth": 5,
+      "point": [
+        270,
+        826
+      ],
+      "window": 700,
+      "windowRequested": 700,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 700,
+          "clipped": false,
+          "imageFraction": 0.0433,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        476,
+        700,
+        1176
+      ],
+      "pick": "whole",
+      "score": 0.983,
+      "candidateAreas": [
+        23780,
+        39763,
+        40001
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 39947,
+      "windowFraction": 0.0815,
+      "areaFinal": 39947,
+      "bbox": [
+        163,
+        638,
+        329,
+        1006
+      ],
+      "offset": [
+        163,
+        638
+      ],
+      "layer": null
+    },
+    {
+      "n": 2,
+      "id": 2,
+      "name": "deer",
+      "depth": 5,
+      "point": [
+        112,
+        851
+      ],
+      "window": 600,
+      "windowRequested": 600,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 600,
+          "clipped": false,
+          "imageFraction": 0.0157,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        551,
+        600,
+        1151
+      ],
+      "pick": "whole",
+      "score": 0.9304,
+      "candidateAreas": [
+        5221,
+        10927,
+        14502
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 14445,
+      "windowFraction": 0.0401,
+      "areaFinal": 14445,
+      "bbox": [
+        65,
+        741,
+        173,
+        1001
+      ],
+      "offset": [
+        65,
+        741
+      ],
+      "layer": null
+    },
+    {
+      "n": 3,
+      "id": 3,
+      "name": "servant-bearer",
+      "depth": 5,
+      "point": [
+        508,
+        1146
+      ],
+      "window": 450,
+      "windowRequested": 450,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 450,
+          "clipped": false,
+          "imageFraction": 0.0167,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        270,
+        830,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.6784,
+      "candidateAreas": [
+        2239,
+        2904,
+        15374
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 15384,
+      "windowFraction": 0.076,
+      "areaFinal": 15384,
+      "bbox": [
+        428,
+        1048,
+        567,
+        1280
+      ],
+      "offset": [
+        428,
+        1048
+      ],
+      "layer": null
+    },
+    {
+      "n": 4,
+      "id": 4,
+      "name": "servant-front",
+      "depth": 5,
+      "point": [
+        630,
+        1197
+      ],
+      "window": 400,
+      "windowRequested": 400,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 400,
+          "clipped": false,
+          "imageFraction": 0.0094,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        320,
+        880,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.938,
+      "candidateAreas": [
+        391,
+        1635,
+        8685
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 8666,
+      "windowFraction": 0.0542,
+      "areaFinal": 8666,
+      "bbox": [
+        579,
+        1131,
+        665,
+        1280
+      ],
+      "offset": [
+        579,
+        1131
+      ],
+      "layer": null
+    }
+  ]
+}

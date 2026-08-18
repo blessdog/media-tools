@@ -1,0 +1,24 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "route": "style-reference",
+  "refSet": "bongpot3",
+  "references": [
+    "references/s05-SCENE-uso-inkwash-v1.png",
+    "references/s06-FORESHADOW-uso-inkwash-v1.png",
+    "references/s37-INSERT-uso-inkwash-v1.png"
+  ],
+  "refLora": "krea2_style_reference.safetensors",
+  "refLoraStrength": 1,
+  "styleLora": "chinese-ink-linen-scroll-comfy.safetensors",
+  "styleLoraStrength": 0.8,
+  "subject": "A large bloodhound lies on a broad boulder at the edge of a green river, looking off to one side",
+  "prompt": "A large bloodhound lies on a broad boulder at the edge of a green river, looking off to one side",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "base": "krea2_turbo_fp8_scaled.safetensors",
+  "promptId": "69167f24-c852-4ef8-aa5b-269b136d729c",
+  "seconds": 25.4,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders-ref/bongpot3--ref+linenscroll--hound.png"
+}

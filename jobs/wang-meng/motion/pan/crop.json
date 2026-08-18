@@ -1,0 +1,28 @@
+{
+  "tool": "locate-crop",
+  "master": "../../../../corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+  "shot": "../shot-real.png",
+  "shotSize": [
+    720,
+    1280
+  ],
+  "masterSize": [
+    6586,
+    15923
+  ],
+  "coarse": {
+    "score": 0.6359833478927612,
+    "k": 2.25,
+    "x": 933.1293634496919,
+    "y": 10660.428207306712
+  },
+  "crop": {
+    "x": 901,
+    "y": 10604,
+    "w": 1684,
+    "h": 2995,
+    "masterPxPerShotPx": 2.34,
+    "score": 0.9576
+  },
+  "note": "master = crop.x + masterPxPerShotPx * shot_x. Below ~0.9 the match is not trustworthy; confirm by re-cutting the box and diffing it."
+}

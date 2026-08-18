@@ -1,0 +1,57 @@
+{
+  "name": "wang-meng",
+  "title": "Wang Meng 王蒙, 葛稚川移居圖 (Ge Zhichuan Moving to the Mountains)",
+  "master": "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png",
+  "provenance": "Wikimedia Commons, filed under 葛洪 not 葛稚川 — 6586x15923, verified",
+
+  "shot": {
+    "image": "jobs/wang-meng/motion/shot-real.png",
+    "size": [720, 1280],
+    "crop": "jobs/wang-meng/motion/pan/crop.json"
+  },
+
+  "space": {
+    "depthRowVariance": 0.55,
+    "hasStationPoint": false,
+    "planes": "jobs/wang-meng/motion/pan/layers-shot2",
+    "_note": "measured, not assumed: 55% of estimate-depth's variance is image row alone, and the bridge is absent from its map entirely. Landscape depth is authored. Planes were re-planned at SHOT scale after the scroll-scale stack gave 3 planes with 69.6% of pixels on one of them."
+  },
+
+  "figures": [
+    {
+      "name": "ge-hong",
+      "masks": "jobs/wang-meng/motion/mask/walker",
+      "robed": true,
+      "reliefDepth": "jobs/wang-meng/motion/pan/depth-native.png",
+      "gait": { "strides": 1.1, "bob": 4, "lean": 0.9, "swing": 5 },
+      "_note": "robe reaches the ground, so no leg is ever drawn and the walk is displacement of painted ink. relief 0.0698 vs a flat-card null of 0; corr(depth, ink) -0.064"
+    },
+    {
+      "name": "pack-deer",
+      "masks": "jobs/wang-meng/motion/pan/mask-deerbody",
+      "robed": false,
+      "limbs": "jobs/wang-meng/motion/pan/mask-legs2",
+      "gait": { "strides": 2, "bob": 2, "lean": 0, "swing": 0, "stance": 0.6 },
+      "_note": "four legs cut with cut-stroke from jobs/wang-meng/motion/pan/legs.json. Depth refused this animal's legs and inverted them, so the corridors are hand-placed. KNOWN GAP: the SAM body mask misses parts of the pack harness, which stay behind in the plate."
+    }
+  ],
+
+  "shots": [
+    {
+      "name": "ledge-climb",
+      "region": { "right": 350, "up": 100 },
+      "window": [720, 1280],
+      "start": [0, 100],
+      "pan": [326, -81],
+      "travel": [326, -81],
+      "over": "jobs/wang-meng/motion/mask/canopy",
+      "frames": 72,
+      "pathEvidence": "his feet at master (1452,12907); the ledge climbs right to the cliff at master (2214,12717) = +326,-81 in shot px. Stamped at five points in pan/walk-path.png — every footfall on painted ground, the last at the tree roots where the ledge ends."
+    }
+  ],
+
+  "regions": [
+    { "name": "upper-river", "field": "wave", "mode": "lift", "masks": "jobs/wang-meng/motion/mask/water" },
+    { "name": "pine-canopy", "field": "sway", "mode": "warp", "pivot": [640, 470], "masks": "jobs/wang-meng/motion/mask/canopy" }
+  ]
+}

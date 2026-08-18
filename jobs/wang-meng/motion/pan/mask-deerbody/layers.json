@@ -1,0 +1,16 @@
+{
+  "size": [
+    390,
+    747
+  ],
+  "planeList": [
+    {
+      "n": 1,
+      "name": "deer-body",
+      "offset": [
+        70,
+        71
+      ]
+    }
+  ]
+}

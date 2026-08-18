@@ -1,0 +1,68 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [
+    720,
+    1280
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 13,
+  "unclaimedFraction": 0.2472,
+  "overlay": "jobs/wang-meng/motion/pan/layers-shot2/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 2.8,
+  "inferSeconds": 48.7,
+  "planeList": [
+    {
+      "n": 12,
+      "id": 12,
+      "name": "foreground-path-ledge",
+      "depth": 9,
+      "point": [
+        396,
+        1126
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.0837,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.6284,
+      "candidateAreas": [
+        600,
+        1933,
+        76919
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 77110,
+      "windowFraction": 0.0837,
+      "areaFinal": 77110,
+      "bbox": [
+        0,
+        1021,
+        471,
+        1280
+      ],
+      "offset": [
+        0,
+        1021
+      ],
+      "layer": "layers/912-foreground-path-ledge.png"
+    }
+  ]
+}

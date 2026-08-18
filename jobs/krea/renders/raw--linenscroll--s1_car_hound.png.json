@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "raw",
+  "unet": "krea2_raw_fp8_scaled.safetensors",
+  "stepsNote": "steps GUESSED — no official reference for raw inference",
+  "lora": "chinese-ink-linen-scroll-comfy.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "chinese ink linen scroll style",
+  "subject": "A man with a heavy moustache and round tinted glasses sits in a car passenger seat, a large bloodhound filling the seat beside him, the dog's long ears hanging down, grey upholstery behind them",
+  "prompt": "A man with a heavy moustache and round tinted glasses sits in a car passenger seat, a large bloodhound filling the seat beside him, the dog's long ears hanging down, grey upholstery behind them, chinese ink linen scroll style",
+  "seed": 20260812,
+  "steps": 20,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "7185a39d-8f2e-4a76-8ed6-f7533c4e52fd",
+  "seconds": 12.8,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/raw--linenscroll--s1_car_hound.png"
+}

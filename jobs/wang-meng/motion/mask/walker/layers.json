@@ -1,0 +1,106 @@
+{
+ "size": [
+  720,
+  1280
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "id": 1,
+   "name": "ge-hong",
+   "depth": 5,
+   "point": [
+    270,
+    826
+   ],
+   "window": 700,
+   "windowRequested": 700,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 700,
+     "clipped": false,
+     "imageFraction": 0.0433,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    476,
+    700,
+    1176
+   ],
+   "pick": "whole",
+   "score": 0.983,
+   "candidateAreas": [
+    23780,
+    39763,
+    40001
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 39947,
+   "windowFraction": 0.0815,
+   "areaFinal": 39947,
+   "bbox": [
+    163,
+    638,
+    329,
+    1006
+   ],
+   "offset": [
+    163,
+    638
+   ],
+   "layer": null
+  },
+  {
+   "n": 2,
+   "id": 1,
+   "name": "fan",
+   "depth": 5,
+   "point": [
+    306,
+    723
+   ],
+   "window": 220,
+   "windowRequested": 220,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 220,
+     "clipped": false,
+     "imageFraction": 0.0017,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    196,
+    613,
+    416,
+    833
+   ],
+   "pick": "tight",
+   "score": 0.9524,
+   "candidateAreas": [
+    1560,
+    2537,
+    13616
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 1546,
+   "windowFraction": 0.0319,
+   "areaFinal": 1546,
+   "bbox": [
+    271,
+    701,
+    338,
+    748
+   ],
+   "offset": [
+    271,
+    701
+   ],
+   "layer": null
+  }
+ ]
+}

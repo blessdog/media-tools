@@ -15,13 +15,18 @@ set -euo pipefail
 mkdir -p /workspace && cd /workspace
 
 echo "=== [0/5] base tools (pytorch docker image is minimal: no git/wget) ==="
-apt-get update -q && apt-get install -y -q git wget
+# libgl1+libglib2.0-0: cv2 needs libGL.so.1 even headless (hit on attempt 3)
+apt-get update -q && apt-get install -y -q git wget libgl1 libglib2.0-0
 
 echo "=== [1/5] weights download starts immediately (parallel long pole) ==="
 pip install -q "huggingface_hub[cli]"
 mkdir -p /workspace/ckpts
-nohup huggingface-cli download tencent/HunyuanWorld-Voyager \
-  --local-dir /workspace/ckpts > /workspace/weights.log 2>&1 &
+# huggingface_hub >=1.0 removed the huggingface-cli shim (it prints a "use hf"
+# hint and exits without downloading — burned attempt 3's first 8 minutes).
+# WEIGHTS-OK in weights.log is the completion signal wait-loops must key on.
+nohup sh -c 'hf download tencent/HunyuanWorld-Voyager \
+  --local-dir /workspace/ckpts && echo WEIGHTS-OK' \
+  > /workspace/weights.log 2>&1 &
 WPID=$!
 
 echo "=== [2/5] repo + inference deps (torch lines filtered out) ==="
@@ -46,6 +51,9 @@ cd data_engine
 test -d MoGe || git clone --depth 1 https://github.com/microsoft/MoGe.git
 pip install -q click scipy matplotlib trimesh \
   "git+https://github.com/EasternJournalist/utils3d.git@3fab839f0be9931dac7c8488eb0e1600c236e183"
+# something above drags numpy to 2.x; the image's cv2 binary is built against
+# 1.x (AttributeError: _ARRAY_API). Pin LAST so nothing re-upgrades it.
+pip install -q "numpy<2"
 cd ..
 
 echo "=== [5/5] wait for weights + smoke ==="

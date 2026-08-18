@@ -1,0 +1,50 @@
+{
+ "image": "jobs/wang-meng/motion/gehong-hi.png",
+ "size": [
+  588,
+  1113
+ ],
+ "note": "Ge Hong cut into puppet parts, not depth planes. Each part gets its own pivot at the joint it hangs from. Nothing here is invented — every part is ink Wang Meng already painted, so this is displacement, not generation. pick=tight, not whole: 'whole' takes SAM's largest candidate, which is right for a depth plane and wrong for a body part — it returned four blobs filling 86-93% of their windows.",
+ "points": [
+  {
+   "id": 1,
+   "x": 0.76,
+   "y": 0.235,
+   "depth": 3,
+   "window": 230,
+   "name": "fan",
+   "pick": "tight",
+   "why": "the feather fan in his raised hand — a flap on a wrist, the single most legible thing to catch a breeze"
+  },
+  {
+   "id": 2,
+   "x": 0.7,
+   "y": 0.32,
+   "depth": 3,
+   "window": 260,
+   "name": "sleeve",
+   "pick": "tight",
+   "why": "the wide pale sleeve of the raised arm, hinged at the shoulder"
+  },
+  {
+   "id": 3,
+   "x": 0.5,
+   "y": 0.74,
+   "depth": 3,
+   "window": 340,
+   "name": "hem",
+   "pick": "tight",
+   "why": "the long skirt of the robe below the waist — the heaviest, slowest flap"
+  },
+  {
+   "id": 4,
+   "x": 0.5,
+   "y": 0.095,
+   "depth": 3,
+   "window": 220,
+   "name": "head",
+   "pick": "tight",
+   "why": "head and cap, hinged at the neck. Tiny amplitude or it reads as a nod."
+  }
+ ]
+}

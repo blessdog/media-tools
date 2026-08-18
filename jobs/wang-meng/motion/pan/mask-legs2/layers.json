@@ -1,0 +1,101 @@
+{
+  "tool": "cut-stroke",
+  "image": "pan/deer-native.png",
+  "size": [
+    390,
+    747
+  ],
+  "grow": 4,
+  "feather": 1,
+  "note": "ink inside a stated corridor; pivot is the anchored end of the path",
+  "planeList": [
+    {
+      "name": "near-hind",
+      "phase": 0.0,
+      "behind": false,
+      "n": 1,
+      "offset": [
+        108,
+        448
+      ],
+      "pivot": [
+        19,
+        18
+      ],
+      "pivotAbs": [
+        127,
+        466
+      ],
+      "lengthPx": 212,
+      "inkPx": 4423,
+      "otsu": 122,
+      "corridorWidth": 26
+    },
+    {
+      "name": "near-fore",
+      "phase": 0.5,
+      "behind": false,
+      "n": 2,
+      "offset": [
+        153,
+        445
+      ],
+      "pivot": [
+        19,
+        18
+      ],
+      "pivotAbs": [
+        172,
+        463
+      ],
+      "lengthPx": 200,
+      "inkPx": 4382,
+      "otsu": 126,
+      "corridorWidth": 26
+    },
+    {
+      "name": "far-hind",
+      "phase": 0.25,
+      "behind": true,
+      "n": 3,
+      "offset": [
+        190,
+        449
+      ],
+      "pivot": [
+        37,
+        7
+      ],
+      "pivotAbs": [
+        227,
+        456
+      ],
+      "lengthPx": 118,
+      "inkPx": 3149,
+      "otsu": 129,
+      "corridorWidth": 26
+    },
+    {
+      "name": "far-fore",
+      "phase": 0.75,
+      "behind": true,
+      "n": 4,
+      "offset": [
+        232,
+        436
+      ],
+      "pivot": [
+        38,
+        16
+      ],
+      "pivotAbs": [
+        270,
+        452
+      ],
+      "lengthPx": 137,
+      "inkPx": 2824,
+      "otsu": 127,
+      "corridorWidth": 26
+    }
+  ]
+}

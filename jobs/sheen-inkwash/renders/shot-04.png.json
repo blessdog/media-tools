@@ -1,0 +1,46 @@
+{
+  "reconstructed": true,
+  "reconstructedNote": "Written after the fact from the run stdout. Seed is exact; settings are that run's style.json defaults. Not machine-recorded.",
+  "tool": "generate-image",
+  "provider": "comfy",
+  "renderer": "uso-inkwash",
+  "style": "inkwash",
+  "model": {
+    "checkpoint": "flux1-dev-fp8.safetensors",
+    "lora": "uso-flux1-dit-lora-v1.safetensors",
+    "loraStrength": 1.35,
+    "modelPatch": "uso-flux1-projector-v1.safetensors",
+    "clipVision": "sigclip_vision_patch14_384.safetensors"
+  },
+  "sampler": {
+    "seed": 660730,
+    "steps": 20,
+    "guidance": 3.5,
+    "cfg": 1,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1
+  },
+  "frame": {
+    "width": 1152,
+    "height": 640
+  },
+  "channels": {
+    "style": {
+      "file": "/Users/SSDrive/projects/media-tools/styles/inkwash/reference/LOCKED-inkwash-texture-1.png",
+      "sha256": "c940bca3b66ef641"
+    },
+    "identity": null,
+    "scene": {
+      "text": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted. Wide shot looking upward at the upper portion of a neoclassical building with tall Corinthian columns and an ornate entablature, occupying the right half of the frame, set against a deep solid blue sky. A large, billowing red fabric or flag sweeps across the lower-left portion of the frame in a bold curved shape, partially obscuring the base of the composition. The building is rendered in cool grey-white tones.",
+      "stylePrefix": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted.",
+      "yourPrompt": "Wide shot looking upward at the upper portion of a neoclassical building with tall Corinthian columns and an ornate entablature, occupying the right half of the frame, set against a deep solid blue sky. A large, billowing red fabric or flag sweeps across the lower-left portion of the frame in a bold curved shape, partially obscuring the base of the composition. The building is rendered in cool grey-white tones."
+    }
+  },
+  "source": {
+    "describedFrom": "source.mp4",
+    "shotScript": "regen/shot-04.txt",
+    "filteredBy": "dephoto.sh"
+  },
+  "out": "renders/shot-04.png"
+}

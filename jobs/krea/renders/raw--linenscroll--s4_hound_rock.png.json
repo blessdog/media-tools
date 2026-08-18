@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "raw",
+  "unet": "krea2_raw_fp8_scaled.safetensors",
+  "stepsNote": "steps GUESSED — no official reference for raw inference",
+  "lora": "chinese-ink-linen-scroll-comfy.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "chinese ink linen scroll style",
+  "subject": "A large bloodhound lies on a broad boulder at the edge of a green river, looking off to one side, scrub and rocks along the far bank",
+  "prompt": "A large bloodhound lies on a broad boulder at the edge of a green river, looking off to one side, scrub and rocks along the far bank, chinese ink linen scroll style",
+  "seed": 20260812,
+  "steps": 20,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "0ae02467-ed13-4e41-beda-91227f10685b",
+  "seconds": 12.9,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/raw--linenscroll--s4_hound_rock.png"
+}

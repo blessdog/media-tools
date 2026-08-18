@@ -1,0 +1,48 @@
+{
+  "tool": "image-to-video",
+  "provider": "civitai",
+  "renderer": "ltx2.3:22b-dev",
+  "api": "https://orchestration.civitai.com/v2/consumer/workflows",
+  "frame": {
+    "width": 1280,
+    "height": 720,
+    "seconds": 5,
+    "fps": 24
+  },
+  "sampler": {
+    "frameGuideStrength": 1
+  },
+  "start": {
+    "file": "frames/painting-end.png",
+    "sha256": "53b06508d80c24dd"
+  },
+  "end": {
+    "file": "../sheen-inkwash/renders/shot-07.png",
+    "sha256": "ff4d7c4740a8ac5e"
+  },
+  "motionPrompt": "The washes flow and rearrange on the paper, wet pigment running from one composition into the next, edges bleeding and re-drying as the new picture settles. Everything stays ink and watercolour on cream paper throughout.",
+  "interpolates": true,
+  "buzzQuoted": {
+    "green": 39
+  },
+  "buzzBefore": {
+    "blue": 0,
+    "green": 9261,
+    "yellow": 0
+  },
+  "insufficientBuzz": false,
+  "out": "clips/D-scene-to-scene.mp4",
+  "workflowId": "12293736-20260812204517404",
+  "videoUrl": "https://orchestration-new.civitai.com/v2/consumer/blobs/SETGDQYD3GD2V4T4E3B8HFD6F0.mp4?sig=CfDJ8OhuHddet6VHsmTPdSCkBZTU4A2H5pGsq6A6C8jJN7KXbTfebE46nFlAMTBWL-98WEdT-3FGFPtnN9Dy7edpV0J8axb9NmQanbfMewim2Hf36c6RzHTQ5DsbXZqiPC5o8Vfykyn8e0p9LBDCcWxdVtYWbOInEv7HMFnfU6jjMteXMvSXKHMQ7fdnAlxIHa9vcVydjFM-NwVdffnSI2kYww2UfFTU6tF7bMZkWX90J2DP884OH_I1UcGRKeLLeeKyIbig6QknSnDEaEHQw7h5mkhgqBKNEoxPwSYH8X2YWlKf&exp=2027-08-12T20:48:40.7924049Z",
+  "bytes": 1189746,
+  "buzzAfter": {
+    "blue": 0,
+    "green": 9222,
+    "yellow": 0
+  },
+  "buzzActuallySpent": {
+    "blue": 0,
+    "green": 39,
+    "yellow": 0
+  }
+}

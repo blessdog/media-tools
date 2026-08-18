@@ -1,0 +1,184 @@
+{
+  "image": "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png",
+  "size": [
+    6586,
+    15923
+  ],
+  "model": "anthropic/claude-opus-4-5",
+  "planned": 17,
+  "mode": "review",
+  "notes": null,
+  "note": "x,y normalised 0..1. depth 0 = farthest. window in native px; a mask cannot exceed it.",
+  "points": [
+    {
+      "id": 1,
+      "x": 0.38,
+      "y": 0.045,
+      "depth": 0,
+      "window": 7000,
+      "name": "far-peaks-top",
+      "pick": "whole",
+      "why": "topmost peaks silhouetted against sky, no overlapping forms"
+    },
+    {
+      "id": 2,
+      "x": 0.85,
+      "y": 0.12,
+      "depth": 0,
+      "window": 2500,
+      "name": "far-blue-peaks-right",
+      "pick": "whole",
+      "why": "blue-tinted distant peaks at upper right, behind all middle-ground forms"
+    },
+    {
+      "id": 3,
+      "x": 0.27,
+      "y": 0.11,
+      "depth": 1,
+      "window": 6000,
+      "name": "main-summit-left",
+      "pick": "whole",
+      "why": "large central mountain mass overlapped by nothing except far peaks behind"
+    },
+    {
+      "id": 4,
+      "x": 0.78,
+      "y": 0.14,
+      "depth": 1,
+      "window": 6000,
+      "name": "main-summit-right",
+      "pick": "whole",
+      "why": "right mountain mass at same depth as left summit, behind temple trees"
+    },
+    {
+      "id": 5,
+      "x": 0.22,
+      "y": 0.24,
+      "depth": 2,
+      "window": 4000,
+      "name": "temple-compound",
+      "pick": "whole",
+      "why": "temple buildings on ledge, ink contours show them in front of summit rock"
+    },
+    {
+      "id": 6,
+      "x": 0.55,
+      "y": 0.3,
+      "depth": 2,
+      "window": 4500,
+      "name": "mid-cliff-trees-center",
+      "pick": "whole",
+      "why": "central forested cliff band below summits, overlaps lower ravine"
+    },
+    {
+      "id": 7,
+      "x": 0.82,
+      "y": 0.35,
+      "depth": 3,
+      "window": 4500,
+      "name": "mid-cliff-right",
+      "pick": "whole",
+      "why": "right-side cliff with autumn trees, contour overlaps deeper ravine"
+    },
+    {
+      "id": 8,
+      "x": 0.12,
+      "y": 0.52,
+      "depth": 4,
+      "window": 5000,
+      "name": "waterfall-cliff-left",
+      "pick": "whole",
+      "why": "tall cliff face with waterfall, ink line shows it behind mid-ledge pines"
+    },
+    {
+      "id": 9,
+      "x": 0.08,
+      "y": 0.42,
+      "depth": 5,
+      "window": 3500,
+      "name": "mid-ledge-pines-left",
+      "pick": "whole",
+      "why": "pines on rocky ledge left edge, overlapping waterfall cliff behind"
+    },
+    {
+      "id": 10,
+      "x": 0.58,
+      "y": 0.52,
+      "depth": 4,
+      "window": 6000,
+      "name": "mid-plateau-trees",
+      "pick": "whole",
+      "why": "large forested plateau center-right, contours show it behind lower cliff"
+    },
+    {
+      "id": 11,
+      "x": 0.35,
+      "y": 0.62,
+      "depth": 5,
+      "window": 5000,
+      "name": "ravine-cliff-center",
+      "pick": "whole",
+      "why": "rocky ravine cliff face center, overlapped by stream rocks below"
+    },
+    {
+      "id": 12,
+      "x": 0.8,
+      "y": 0.62,
+      "depth": 5,
+      "window": 5500,
+      "name": "lower-cliff-right",
+      "pick": "whole",
+      "why": "lower right cliff mass with trees, behind foreground pines"
+    },
+    {
+      "id": 13,
+      "x": 0.35,
+      "y": 0.82,
+      "depth": 6,
+      "window": 4000,
+      "name": "stream-rocks",
+      "pick": "whole",
+      "why": "rocky stream bed with small waterfall, contour overlapped by figures path"
+    },
+    {
+      "id": 14,
+      "x": 0.38,
+      "y": 0.87,
+      "depth": 7,
+      "window": 3500,
+      "name": "figures-path",
+      "pick": "whole",
+      "why": "figures with horse on path, in front of stream rocks"
+    },
+    {
+      "id": 15,
+      "x": 0.1,
+      "y": 0.75,
+      "depth": 8,
+      "window": 4000,
+      "name": "foreground-trees-left",
+      "pick": "whole",
+      "why": "large gnarled tree left edge, overlaps all behind including waterfall cliff"
+    },
+    {
+      "id": 16,
+      "x": 0.78,
+      "y": 0.92,
+      "depth": 8,
+      "window": 5500,
+      "name": "foreground-trees-right",
+      "pick": "whole",
+      "why": "blue-green pine mass lower right, nearest plane overlapping all behind"
+    },
+    {
+      "id": 17,
+      "x": 0.5,
+      "y": 0.96,
+      "depth": 9,
+      "window": 3500,
+      "name": "foreground-rocks-bottom",
+      "pick": "whole",
+      "why": "rocks and vegetation at very bottom edge, nearest to viewer"
+    }
+  ]
+}

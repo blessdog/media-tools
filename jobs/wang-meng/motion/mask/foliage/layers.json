@@ -1,0 +1,117 @@
+{
+ "tool": "segment-points",
+ "image": "jobs/wang-meng/motion/shot-real.png",
+ "size": [
+  720,
+  1280
+ ],
+ "model": "facebook/sam-vit-huge",
+ "device": "mps",
+ "planes": 4,
+ "unclaimedFraction": 0.8791,
+ "overlay": "jobs/wang-meng/motion/mask/enable/overlay.png",
+ "feather": 4,
+ "note": "SAM cut the foliage well and failed on water; the two water planes it returned (two rocks IN the river, and the bridge trestle) are dropped here. Water comes from mask-liubai instead.",
+ "loadSeconds": 3.8,
+ "inferSeconds": 16.1,
+ "planeList": [
+  {
+   "n": 1,
+   "id": 3,
+   "name": "pine-canopy",
+   "depth": 2,
+   "point": [
+    560,
+    540
+   ],
+   "window": 520,
+   "windowRequested": 520,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 520,
+     "clipped": false,
+     "imageFraction": 0.0196,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    200,
+    280,
+    720,
+    800
+   ],
+   "pick": "whole",
+   "score": 0.745,
+   "candidateAreas": [
+    500,
+    2224,
+    17741
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 18087,
+   "windowFraction": 0.0669,
+   "areaFinal": 18087,
+   "bbox": [
+    506,
+    430,
+    685,
+    658
+   ],
+   "offset": [
+    506,
+    430
+   ],
+   "layer": null
+  },
+  {
+   "n": 2,
+   "id": 4,
+   "name": "broadleaf-branch",
+   "depth": 2,
+   "point": [
+    420,
+    560
+   ],
+   "window": 480,
+   "windowRequested": 480,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 480,
+     "clipped": false,
+     "imageFraction": 0.0086,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    180,
+    320,
+    660,
+    800
+   ],
+   "pick": "whole",
+   "score": 0.6213,
+   "candidateAreas": [
+    619,
+    4214,
+    8274
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 7911,
+   "windowFraction": 0.0343,
+   "areaFinal": 7911,
+   "bbox": [
+    355,
+    490,
+    501,
+    695
+   ],
+   "offset": [
+    355,
+    490
+   ],
+   "layer": null
+  }
+ ]
+}

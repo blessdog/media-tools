@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "turbo",
+  "unet": "krea2_turbo_fp8_scaled.safetensors",
+  "stepsNote": "official template settings",
+  "lora": "chinese-ink-linen-scroll-comfy.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "chinese ink linen scroll style",
+  "subject": "A cluster of pale poppy seed pods on tall stems in a front garden, a residential street behind them with a parked car and a low brick house",
+  "prompt": "A cluster of pale poppy seed pods on tall stems in a front garden, a residential street behind them with a parked car and a low brick house, chinese ink linen scroll style",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "006cb0df-2c0b-4625-853d-dd2dcb3faf48",
+  "seconds": 6.7,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/turbo--linenscroll--s6_poppy_stand.png"
+}

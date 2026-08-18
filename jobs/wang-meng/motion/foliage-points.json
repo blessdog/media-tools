@@ -1,0 +1,12 @@
+{
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [720, 1280],
+  "note": "The whole tree, not just the two clusters the first pass caught. Sway needs the entire canopy or half the branch moves and half does not, which reads worse than no motion at all.",
+  "points": [
+    {"id":1,"x":0.778,"y":0.422,"depth":2,"window":520,"name":"canopy-upper","pick":"whole","why":"densest needles, upper right"},
+    {"id":2,"x":0.583,"y":0.437,"depth":2,"window":480,"name":"branch-near","pick":"whole","why":"near broadleaf branch crossing centre, red-tipped cones"},
+    {"id":3,"x":0.861,"y":0.547,"depth":2,"window":460,"name":"canopy-right","pick":"whole","why":"heavy needle mass at frame right"},
+    {"id":4,"x":0.694,"y":0.625,"depth":2,"window":420,"name":"pine-lower","pick":"whole","why":"lower pine cluster below the main branch"},
+    {"id":5,"x":0.542,"y":0.547,"depth":2,"window":380,"name":"branch-tip","pick":"whole","why":"leftmost leaves, farthest from the trunk — largest sway"}
+  ]
+}

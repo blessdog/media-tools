@@ -1,0 +1,68 @@
+{
+ "tool": "segment-points",
+ "image": "jobs/wang-meng/motion/gehong-hi.png",
+ "size": [
+  588,
+  1113
+ ],
+ "model": "facebook/sam-vit-huge",
+ "device": "mps",
+ "planes": 4,
+ "unclaimedFraction": 0.9493,
+ "overlay": "jobs/wang-meng/motion/mask/gehong/overlay.png",
+ "feather": 3,
+ "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+ "loadSeconds": 3.6,
+ "inferSeconds": 13.4,
+ "planeList": [
+  {
+   "n": 1,
+   "id": 1,
+   "name": "fan",
+   "depth": 3,
+   "point": [
+    447,
+    262
+   ],
+   "window": 230,
+   "windowRequested": 230,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 230,
+     "clipped": false,
+     "imageFraction": 0.0128,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    332,
+    147,
+    562,
+    377
+   ],
+   "pick": "tight",
+   "score": 0.8774,
+   "candidateAreas": [
+    8398,
+    32560,
+    45692
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 8356,
+   "windowFraction": 0.158,
+   "areaFinal": 8348,
+   "bbox": [
+    360,
+    212,
+    521,
+    326
+   ],
+   "offset": [
+    360,
+    212
+   ],
+   "layer": null
+  }
+ ]
+}

@@ -1,0 +1,832 @@
+{
+  "tool": "segment-points",
+  "image": "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png",
+  "size": [
+    6586,
+    15923
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 17,
+  "unclaimedFraction": 0.0325,
+  "overlay": "jobs/wang-meng/layers-v3/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 3.3,
+  "inferSeconds": 164.9,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 1,
+      "name": "far-peaks-top",
+      "depth": 0,
+      "point": [
+        2503,
+        717
+      ],
+      "window": 7000,
+      "windowRequested": 7000,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 7000,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        6586,
+        7000
+      ],
+      "pick": "whole",
+      "score": 0.9888,
+      "candidateAreas": [
+        3548335,
+        7516001,
+        8293077
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 8293106,
+      "windowFraction": 0.1799,
+      "areaFinal": 185443,
+      "bbox": [
+        20,
+        0,
+        6570,
+        2436
+      ],
+      "offset": [
+        20,
+        0
+      ],
+      "layer": "layers/001-far-peaks-top.png"
+    },
+    {
+      "n": 2,
+      "id": 2,
+      "name": "far-blue-peaks-right",
+      "depth": 0,
+      "point": [
+        5598,
+        1911
+      ],
+      "window": 15923,
+      "windowRequested": 2500,
+      "grewTo": 15923,
+      "attempts": [
+        {
+          "window": 2500,
+          "clipped": true
+        },
+        {
+          "window": 5000,
+          "clipped": true
+        },
+        {
+          "window": 10000,
+          "clipped": true
+        },
+        {
+          "window": 15923,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.8535,
+      "candidateAreas": [
+        122994,
+        2349831,
+        87185119
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 87185385,
+      "windowFraction": 0.8314,
+      "areaFinal": 121832,
+      "bbox": [
+        96,
+        1258,
+        6453,
+        15149
+      ],
+      "offset": [
+        96,
+        1258
+      ],
+      "layer": "layers/002-far-blue-peaks-right.png"
+    },
+    {
+      "n": 3,
+      "id": 3,
+      "name": "main-summit-left",
+      "depth": 1,
+      "point": [
+        1778,
+        1752
+      ],
+      "window": 6000,
+      "windowRequested": 6000,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 6000,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        6000,
+        6000
+      ],
+      "pick": "whole",
+      "score": 0.7945,
+      "candidateAreas": [
+        1489731,
+        5433069,
+        9637890
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 9637983,
+      "windowFraction": 0.2677,
+      "areaFinal": 0,
+      "layer": null
+    },
+    {
+      "n": 4,
+      "id": 4,
+      "name": "main-summit-right",
+      "depth": 1,
+      "point": [
+        5137,
+        2229
+      ],
+      "window": 15923,
+      "windowRequested": 6000,
+      "grewTo": 15923,
+      "attempts": [
+        {
+          "window": 6000,
+          "clipped": true
+        },
+        {
+          "window": 12000,
+          "clipped": true
+        },
+        {
+          "window": 15923,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.9138,
+      "candidateAreas": [
+        1026867,
+        3421778,
+        82015156
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 82013445,
+      "windowFraction": 0.7821,
+      "areaFinal": 5609,
+      "bbox": [
+        81,
+        1016,
+        5861,
+        15146
+      ],
+      "offset": [
+        81,
+        1016
+      ],
+      "layer": "layers/104-main-summit-right.png"
+    },
+    {
+      "n": 5,
+      "id": 5,
+      "name": "temple-compound",
+      "depth": 2,
+      "point": [
+        1449,
+        3822
+      ],
+      "window": 4000,
+      "windowRequested": 4000,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 4000,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        1822,
+        4000,
+        5822
+      ],
+      "pick": "whole",
+      "score": 0.7595,
+      "candidateAreas": [
+        440393,
+        460876,
+        3338713
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 3338925,
+      "windowFraction": 0.2087,
+      "areaFinal": 0,
+      "layer": null
+    },
+    {
+      "n": 6,
+      "id": 6,
+      "name": "mid-cliff-trees-center",
+      "depth": 2,
+      "point": [
+        3622,
+        4777
+      ],
+      "window": 4500,
+      "windowRequested": 4500,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 4500,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        1372,
+        2527,
+        5872,
+        7027
+      ],
+      "pick": "whole",
+      "score": 0.8867,
+      "candidateAreas": [
+        51146,
+        172464,
+        193136
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 193136,
+      "windowFraction": 0.0095,
+      "areaFinal": 0,
+      "layer": null
+    },
+    {
+      "n": 7,
+      "id": 7,
+      "name": "mid-cliff-right",
+      "depth": 3,
+      "point": [
+        5401,
+        5573
+      ],
+      "window": 15923,
+      "windowRequested": 4500,
+      "grewTo": 15923,
+      "attempts": [
+        {
+          "window": 4500,
+          "clipped": true
+        },
+        {
+          "window": 9000,
+          "clipped": true
+        },
+        {
+          "window": 15923,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.9656,
+      "candidateAreas": [
+        1290735,
+        57325656,
+        90500109
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 90500566,
+      "windowFraction": 0.863,
+      "areaFinal": 2332323,
+      "bbox": [
+        0,
+        10421,
+        6474,
+        14974
+      ],
+      "offset": [
+        0,
+        10421
+      ],
+      "layer": "layers/307-mid-cliff-right.png"
+    },
+    {
+      "n": 8,
+      "id": 8,
+      "name": "waterfall-cliff-left",
+      "depth": 4,
+      "point": [
+        790,
+        8280
+      ],
+      "window": 5000,
+      "windowRequested": 5000,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 5000,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        5780,
+        5000,
+        10780
+      ],
+      "pick": "whole",
+      "score": 0.9586,
+      "candidateAreas": [
+        331849,
+        347516,
+        1001492
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 1001516,
+      "windowFraction": 0.0401,
+      "areaFinal": 0,
+      "layer": null
+    },
+    {
+      "n": 9,
+      "id": 10,
+      "name": "mid-plateau-trees",
+      "depth": 4,
+      "point": [
+        3820,
+        8280
+      ],
+      "window": 15923,
+      "windowRequested": 6000,
+      "grewTo": 15923,
+      "attempts": [
+        {
+          "window": 6000,
+          "clipped": true
+        },
+        {
+          "window": 12000,
+          "clipped": true
+        },
+        {
+          "window": 15923,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.8501,
+      "candidateAreas": [
+        11443,
+        1235145,
+        77877768
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 77877697,
+      "windowFraction": 0.7426,
+      "areaFinal": 99099,
+      "bbox": [
+        0,
+        1388,
+        6347,
+        15097
+      ],
+      "offset": [
+        0,
+        1388
+      ],
+      "layer": "layers/409-mid-plateau-trees.png"
+    },
+    {
+      "n": 10,
+      "id": 9,
+      "name": "mid-ledge-pines-left",
+      "depth": 5,
+      "point": [
+        527,
+        6688
+      ],
+      "window": 3500,
+      "windowRequested": 3500,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 3500,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        4938,
+        3500,
+        8438
+      ],
+      "pick": "whole",
+      "score": 0.9521,
+      "candidateAreas": [
+        15893,
+        21961,
+        24473
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 24464,
+      "windowFraction": 0.002,
+      "areaFinal": 0,
+      "layer": null
+    },
+    {
+      "n": 11,
+      "id": 11,
+      "name": "ravine-cliff-center",
+      "depth": 5,
+      "point": [
+        2305,
+        9872
+      ],
+      "window": 15923,
+      "windowRequested": 5000,
+      "grewTo": 15923,
+      "attempts": [
+        {
+          "window": 5000,
+          "clipped": true
+        },
+        {
+          "window": 10000,
+          "clipped": true
+        },
+        {
+          "window": 15923,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.5449,
+      "candidateAreas": [
+        266240,
+        775723,
+        83436017
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 83435044,
+      "windowFraction": 0.7956,
+      "areaFinal": 2010836,
+      "bbox": [
+        0,
+        0,
+        6586,
+        15143
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "layer": "layers/511-ravine-cliff-center.png"
+    },
+    {
+      "n": 12,
+      "id": 12,
+      "name": "lower-cliff-right",
+      "depth": 5,
+      "point": [
+        5269,
+        9872
+      ],
+      "window": 15923,
+      "windowRequested": 5500,
+      "grewTo": 15923,
+      "attempts": [
+        {
+          "window": 5500,
+          "clipped": true
+        },
+        {
+          "window": 11000,
+          "clipped": true
+        },
+        {
+          "window": 15923,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.9617,
+      "candidateAreas": [
+        2094131,
+        5623007,
+        77103387
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 77103018,
+      "windowFraction": 0.7352,
+      "areaFinal": 72812880,
+      "bbox": [
+        0,
+        0,
+        6586,
+        15142
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "layer": "layers/512-lower-cliff-right.png"
+    },
+    {
+      "n": 13,
+      "id": 13,
+      "name": "stream-rocks",
+      "depth": 6,
+      "point": [
+        2305,
+        13057
+      ],
+      "window": 8000,
+      "windowRequested": 4000,
+      "grewTo": 8000,
+      "attempts": [
+        {
+          "window": 4000,
+          "clipped": true
+        },
+        {
+          "window": 8000,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        7923,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.4988,
+      "candidateAreas": [
+        102904,
+        415545,
+        850532
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 850476,
+      "windowFraction": 0.0161,
+      "areaFinal": 84,
+      "bbox": [
+        2412,
+        12798,
+        2426,
+        12935
+      ],
+      "offset": [
+        2412,
+        12798
+      ],
+      "layer": "layers/613-stream-rocks.png"
+    },
+    {
+      "n": 14,
+      "id": 14,
+      "name": "figures-path",
+      "depth": 7,
+      "point": [
+        2503,
+        13853
+      ],
+      "window": 7000,
+      "windowRequested": 3500,
+      "grewTo": 7000,
+      "attempts": [
+        {
+          "window": 3500,
+          "clipped": true
+        },
+        {
+          "window": 7000,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        8923,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.5395,
+      "candidateAreas": [
+        194127,
+        930280,
+        21453486
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 21453511,
+      "windowFraction": 0.4653,
+      "areaFinal": 17886522,
+      "bbox": [
+        0,
+        9071,
+        6559,
+        15923
+      ],
+      "offset": [
+        0,
+        9071
+      ],
+      "layer": "layers/714-figures-path.png"
+    },
+    {
+      "n": 15,
+      "id": 15,
+      "name": "foreground-trees-left",
+      "depth": 8,
+      "point": [
+        659,
+        11942
+      ],
+      "window": 4000,
+      "windowRequested": 4000,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 4000,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        9942,
+        4000,
+        13942
+      ],
+      "pick": "whole",
+      "score": 0.7413,
+      "candidateAreas": [
+        91327,
+        309307,
+        696408
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 696629,
+      "windowFraction": 0.0435,
+      "areaFinal": 696629,
+      "bbox": [
+        0,
+        11314,
+        1713,
+        12078
+      ],
+      "offset": [
+        0,
+        11314
+      ],
+      "layer": "layers/815-foreground-trees-left.png"
+    },
+    {
+      "n": 16,
+      "id": 16,
+      "name": "foreground-trees-right",
+      "depth": 8,
+      "point": [
+        5137,
+        14649
+      ],
+      "window": 5500,
+      "windowRequested": 5500,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 5500,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        1086,
+        10423,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.6659,
+      "candidateAreas": [
+        89960,
+        90964,
+        4060303
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 4059967,
+      "windowFraction": 0.1342,
+      "areaFinal": 324221,
+      "bbox": [
+        2473,
+        11500,
+        6586,
+        15923
+      ],
+      "offset": [
+        2473,
+        11500
+      ],
+      "layer": "layers/816-foreground-trees-right.png"
+    },
+    {
+      "n": 17,
+      "id": 17,
+      "name": "foreground-rocks-bottom",
+      "depth": 9,
+      "point": [
+        3293,
+        15286
+      ],
+      "window": 7000,
+      "windowRequested": 3500,
+      "grewTo": 7000,
+      "attempts": [
+        {
+          "window": 3500,
+          "clipped": true
+        },
+        {
+          "window": 7000,
+          "clipped": false
+        }
+      ],
+      "cropBox": [
+        0,
+        8923,
+        6586,
+        15923
+      ],
+      "pick": "whole",
+      "score": 0.7861,
+      "candidateAreas": [
+        699328,
+        1220242,
+        4986937
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 4986724,
+      "windowFraction": 0.1082,
+      "areaFinal": 4986724,
+      "bbox": [
+        1412,
+        11504,
+        6573,
+        15923
+      ],
+      "offset": [
+        1412,
+        11504
+      ],
+      "layer": "layers/917-foreground-rocks-bottom.png"
+    }
+  ]
+}

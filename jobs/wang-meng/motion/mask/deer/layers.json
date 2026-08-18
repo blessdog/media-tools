@@ -1,0 +1,57 @@
+{
+ "size": [
+  720,
+  1280
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "id": 2,
+   "name": "deer",
+   "depth": 5,
+   "point": [
+    112,
+    851
+   ],
+   "window": 600,
+   "windowRequested": 600,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 600,
+     "clipped": false,
+     "imageFraction": 0.0157,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    551,
+    600,
+    1151
+   ],
+   "pick": "whole",
+   "score": 0.9304,
+   "candidateAreas": [
+    5221,
+    10927,
+    14502
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 14445,
+   "windowFraction": 0.0401,
+   "areaFinal": 14445,
+   "bbox": [
+    65,
+    741,
+    173,
+    1001
+   ],
+   "offset": [
+    65,
+    741
+   ],
+   "layer": null
+  }
+ ]
+}

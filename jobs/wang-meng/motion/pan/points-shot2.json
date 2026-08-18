@@ -1,0 +1,144 @@
+{
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [
+    720,
+    1280
+  ],
+  "model": "anthropic/claude-opus-4-5",
+  "planned": 13,
+  "mode": "review",
+  "notes": "26.5% of the frame is unclaimed and it is the MID-GROUND BAND that matters: the pack-deer left of the scholar got no plane, nor did the earth ledge to the right of him, nor the two servant figures at bottom right, nor the rocks at centre-right. Add planes for those and keep the ones that already cut well (pine, bridge, cliff, river). The deer stands on the same ground as the scholar and must share his depth, not the river's.",
+  "note": "x,y normalised 0..1. depth 0 = farthest. window in native px; a mask cannot exceed it.",
+  "points": [
+    {
+      "id": 1,
+      "x": 0.82,
+      "y": 0.12,
+      "depth": 0,
+      "window": 1280,
+      "name": "far-cliff-wall",
+      "pick": "whole",
+      "why": "uppermost cliff face behind mist band at top"
+    },
+    {
+      "id": 2,
+      "x": 0.28,
+      "y": 0.15,
+      "depth": 1,
+      "window": 1280,
+      "name": "far-river-water",
+      "pick": "whole",
+      "why": "water with ripple lines behind far rocks"
+    },
+    {
+      "id": 3,
+      "x": 0.22,
+      "y": 0.22,
+      "depth": 2,
+      "window": 1000,
+      "name": "far-river-rocks",
+      "pick": "whole",
+      "why": "small rocks in water, contour shows behind mid foliage"
+    },
+    {
+      "id": 4,
+      "x": 0.85,
+      "y": 0.35,
+      "depth": 3,
+      "window": 1280,
+      "name": "mid-cliff-right",
+      "pick": "whole",
+      "why": "large cliff mass on right, contour behind pine branches"
+    },
+    {
+      "id": 5,
+      "x": 0.38,
+      "y": 0.32,
+      "depth": 4,
+      "window": 1200,
+      "name": "mid-stream-rocks",
+      "pick": "whole",
+      "why": "dark rocks in stream, behind foliage and above bridge"
+    },
+    {
+      "id": 6,
+      "x": 0.15,
+      "y": 0.42,
+      "depth": 5,
+      "window": 1200,
+      "name": "mid-left-foliage",
+      "pick": "whole",
+      "why": "rounded tree mass left, ink contour overlaps stream rocks"
+    },
+    {
+      "id": 7,
+      "x": 0.52,
+      "y": 0.52,
+      "depth": 6,
+      "window": 1200,
+      "name": "pine-foliage",
+      "pick": "whole",
+      "why": "pine branch with needle clusters in front of cliff"
+    },
+    {
+      "id": 8,
+      "x": 0.72,
+      "y": 0.62,
+      "depth": 7,
+      "window": 1200,
+      "name": "right-bank-rocks",
+      "pick": "whole",
+      "why": "rocky ledge under pine, contour behind path"
+    },
+    {
+      "id": 9,
+      "x": 0.22,
+      "y": 0.62,
+      "depth": 8,
+      "window": 800,
+      "name": "deer",
+      "pick": "tight",
+      "why": "laden deer beside scholar, ink outline in front of path"
+    },
+    {
+      "id": 10,
+      "x": 0.3,
+      "y": 0.6,
+      "depth": 8,
+      "window": 900,
+      "name": "scholar-figure",
+      "pick": "tight",
+      "why": "robed figure on ledge, same plane as deer"
+    },
+    {
+      "id": 11,
+      "x": 0.22,
+      "y": 0.76,
+      "depth": 8,
+      "window": 1000,
+      "name": "trestle-bridge",
+      "pick": "whole",
+      "why": "wooden trestle structure below scholar"
+    },
+    {
+      "id": 12,
+      "x": 0.55,
+      "y": 0.88,
+      "depth": 9,
+      "window": 1280,
+      "name": "foreground-path-ledge",
+      "pick": "whole",
+      "why": "rocky path at bottom, nearest ground plane"
+    },
+    {
+      "id": 13,
+      "x": 0.62,
+      "y": 0.94,
+      "depth": 9,
+      "window": 900,
+      "name": "servant-figure",
+      "pick": "tight",
+      "why": "servant carrying item, stands on foreground path"
+    }
+  ]
+}

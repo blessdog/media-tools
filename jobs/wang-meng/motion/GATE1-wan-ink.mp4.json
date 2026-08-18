@@ -1,0 +1,15 @@
+{
+  "tool": "image-to-video",
+  "provider": "replicate",
+  "model": "wan-video/wan-2.2-i2v-a14b",
+  "duration": 5,
+  "resolution": "720p",
+  "camera_fixed": true,
+  "start": {
+    "file": "jobs/wang-meng/motion/shot-real.png",
+    "sha256": "dc38821954c48725"
+  },
+  "motionPrompt": "the camera pushes slowly and steadily forward, a smooth dolly move deeper into the scene. nothing else changes.",
+  "out": "jobs/wang-meng/motion/GATE1-wan-ink.mp4",
+  "bytes": 9979376
+}

@@ -1,0 +1,63 @@
+{
+  "_note": "TILTS x4 for the validation A/B \u2014 deliberately exaggerated to answer whether orientation reads at all. Dial back once proven.",
+  "foreground-rocks-bottom": {
+    "tiltX": -0.00044,
+    "tiltY": 8e-05
+  },
+  "foreground-trees-right": {
+    "tiltX": -0.00016,
+    "tiltY": 0.00024
+  },
+  "foreground-trees-left": {
+    "tiltX": -0.00016,
+    "tiltY": -0.00024
+  },
+  "figures-path": {
+    "tiltX": -0.0004,
+    "tiltY": 0.0
+  },
+  "stream-rocks": {
+    "tiltX": -0.0004,
+    "tiltY": 0.0
+  },
+  "lower-cliff-right": {
+    "tiltX": -0.00012,
+    "tiltY": 0.0002
+  },
+  "ravine-cliff-center": {
+    "tiltX": -0.0002,
+    "tiltY": 4e-05
+  },
+  "mid-ledge-pines-left": {
+    "tiltX": -0.00012,
+    "tiltY": -0.0002
+  },
+  "mid-plateau-trees": {
+    "tiltX": -0.0002,
+    "tiltY": 8e-05
+  },
+  "waterfall-cliff-left": {
+    "tiltX": -8e-05,
+    "tiltY": -0.0002
+  },
+  "mid-cliff-right": {
+    "tiltX": -8e-05,
+    "tiltY": 0.00016
+  },
+  "mid-cliff-trees-center": {
+    "tiltX": -0.00012,
+    "tiltY": 4e-05
+  },
+  "temple-compound": {
+    "tiltX": -8e-05,
+    "tiltY": -0.00012
+  },
+  "main-summit-right": {
+    "tiltX": -4e-05,
+    "tiltY": 8e-05
+  },
+  "main-summit-left": {
+    "tiltX": -4e-05,
+    "tiltY": -8e-05
+  }
+}

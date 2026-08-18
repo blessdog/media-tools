@@ -1,0 +1,604 @@
+<title>Through the Scroll</title>
+<style>
+  :root {
+    --ground:  #E8E9E3;
+    --surface: #F3F4EE;
+    --sunk:    #DFE1D9;
+    --ink:     #191C1A;
+    --ink-2:   #4C524D;
+    --ink-3:   #6E756F;
+    --rule:    #C7CBC1;
+    --accent:  #2C5B6D;
+    --accent-2:#7FA8B5;
+    --ok:      #2E6B4E;
+    --warn:    #8A681C;
+    --no:      #8C3A32;
+    --ok-bg:   rgba(46,107,78,.11);
+    --warn-bg: rgba(138,104,28,.13);
+    --no-bg:   rgba(140,58,50,.11);
+
+    --display: "Hoefler Text", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+    --body: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:  #131614;
+      --surface: #1B1F1D;
+      --sunk:    #0E110F;
+      --ink:     #E5E7E1;
+      --ink-2:   #A0A69F;
+      --ink-3:   #7C837C;
+      --rule:    #333935;
+      --accent:  #74B0C4;
+      --accent-2:#3E6c7c;
+      --ok:      #6DBA8D;
+      --warn:    #D4B15D;
+      --no:      #D98C82;
+      --ok-bg:   rgba(109,186,141,.13);
+      --warn-bg: rgba(212,177,93,.13);
+      --no-bg:   rgba(217,140,130,.13);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:  #131614;
+    --surface: #1B1F1D;
+    --sunk:    #0E110F;
+    --ink:     #E5E7E1;
+    --ink-2:   #A0A69F;
+    --ink-3:   #7C837C;
+    --rule:    #333935;
+    --accent:  #74B0C4;
+    --accent-2:#3E6C7C;
+    --ok:      #6DBA8D;
+    --warn:    #D4B15D;
+    --no:      #D98C82;
+    --ok-bg:   rgba(109,186,141,.13);
+    --warn-bg: rgba(212,177,93,.13);
+    --no-bg:   rgba(217,140,130,.13);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.62;
+    margin: 0;
+    padding: 0 6vw 10rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 50rem; margin: 0 auto; }
+  .wide { max-width: 62rem; margin: 0 auto; }
+
+  header.top {
+    padding: 5.5rem 0 3rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 3.5rem;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 1.4rem;
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.6rem, 7vw, 4.2rem);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+    margin: 0 0 1.2rem;
+    text-wrap: balance;
+  }
+  .standfirst {
+    font-family: var(--display);
+    font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+    line-height: 1.5;
+    color: var(--ink-2);
+    margin: 0;
+    max-width: 40rem;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+    line-height: 1.16;
+    letter-spacing: -.015em;
+    margin: 4.5rem 0 .4rem;
+    text-wrap: balance;
+  }
+  h2 + .sub {
+    font-family: var(--mono);
+    font-size: .73rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 1.6rem;
+  }
+  h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.24rem;
+    letter-spacing: -.005em;
+    margin: 2.6rem 0 .5rem;
+  }
+  p { margin: 0 0 1.15rem; }
+  strong { font-weight: 640; color: var(--ink); }
+  em { font-style: italic; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  code {
+    font-family: var(--mono);
+    font-size: .855em;
+    background: var(--sunk);
+    padding: .1em .36em;
+    border-radius: 3px;
+  }
+
+  /* status chips */
+  .chip {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: .66rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .2em .55em;
+    border-radius: 3px;
+    white-space: nowrap;
+    vertical-align: .1em;
+  }
+  .c-ok   { color: var(--ok);   background: var(--ok-bg); }
+  .c-warn { color: var(--warn); background: var(--warn-bg); }
+  .c-no   { color: var(--no);   background: var(--no-bg); }
+
+  /* tables */
+  .scroll { overflow-x: auto; margin: 1.8rem 0 2.2rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .93rem; min-width: 40rem; }
+  th, td { text-align: left; padding: .72rem .85rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  thead th {
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    border-bottom: 1px solid var(--ink-3);
+    font-weight: 500;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  td.num { font-variant-numeric: tabular-nums; font-family: var(--mono); font-size: .87rem; }
+
+  /* family blocks */
+  .family {
+    border-top: 1px solid var(--rule);
+    padding: 1.9rem 0 .4rem;
+  }
+  .family-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .5rem .9rem;
+    margin-bottom: .5rem;
+  }
+  .family-head h3 { margin: 0; }
+  .family .verdict {
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .family p { margin-bottom: .8rem; }
+  .refs {
+    font-family: var(--mono);
+    font-size: .76rem;
+    color: var(--ink-3);
+    line-height: 1.7;
+  }
+  .refs a { color: var(--ink-2); }
+
+  /* the pipeline diagram */
+  figure.diagram {
+    margin: 2.4rem 0 1rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 1.8rem 1.5rem 1.3rem;
+  }
+  .lane { margin-bottom: 1.7rem; }
+  .lane:last-of-type { margin-bottom: .4rem; }
+  .lane-label {
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: .7rem;
+  }
+  .lane-label b { color: var(--ink); font-weight: 600; }
+  .flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: .45rem; }
+  .step {
+    flex: 1 1 8.5rem;
+    min-width: 7.5rem;
+    background: var(--ground);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: .6rem .7rem;
+    font-size: .8rem;
+    line-height: 1.35;
+  }
+  .step .t { font-family: var(--mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: .2rem; }
+  .step.weak { border-color: var(--no); background: var(--no-bg); }
+  .step.strong { border-color: var(--ok); background: var(--ok-bg); }
+  .step.same { border-style: dashed; color: var(--ink-2); }
+  .arrow { align-self: center; color: var(--ink-3); font-size: .9rem; padding: 0 .1rem; }
+  figcaption { font-size: .87rem; color: var(--ink-2); margin-top: 1.2rem; line-height: 1.55; }
+
+  /* callout */
+  .callout {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 5px 5px 0;
+    padding: 1.3rem 1.5rem;
+    margin: 2.2rem 0;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout .k {
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: .55rem;
+  }
+
+  pre {
+    background: var(--sunk);
+    border: 1px solid var(--rule);
+    border-radius: 5px;
+    padding: .95rem 1.1rem;
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: .82rem;
+    line-height: 1.55;
+    margin: 1.3rem 0;
+  }
+  pre code { background: none; padding: 0; font-size: inherit; }
+
+  ol.seq { list-style: none; counter-reset: s; padding: 0; margin: 1.6rem 0; }
+  ol.seq > li {
+    counter-increment: s;
+    position: relative;
+    padding-left: 3.1rem;
+    margin-bottom: 1.6rem;
+  }
+  ol.seq > li::before {
+    content: counter(s);
+    position: absolute;
+    left: 0; top: -.1rem;
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--accent);
+    border: 1px solid var(--accent-2);
+    border-radius: 50%;
+    width: 1.9rem; height: 1.9rem;
+    display: grid; place-items: center;
+  }
+  ol.seq h3 { margin: 0 0 .35rem; font-size: 1.08rem; }
+  ol.seq p { margin-bottom: .5rem; font-size: .95rem; }
+
+  footer.end {
+    margin-top: 5rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: .74rem;
+    color: var(--ink-3);
+    line-height: 1.8;
+  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="wrap">
+<header class="top">
+  <p class="eyebrow">Landscape survey · 17 Aug 2026 · 葛稚川移居圖</p>
+  <h1>Through the Scroll</h1>
+  <p class="standfirst">Every technique available for moving a camera through a flat painting, what each one actually consumes as input, and which one fits the data we already built.</p>
+</header>
+
+<div class="callout" style="border-left-color:var(--ok)">
+  <span class="k" style="color:var(--ok)">Resolved the same day — read this first</span>
+  <p>This survey concluded that Uni3C was the answer. <strong>Testing overturned it within hours.</strong> Wan 2.2 — the model that owns the entire control ecosystem, Uni3C included — rendered <em>a 3D excavator breaker</em> into the painting and repainted the horse as a cartoon. What shipped instead was smaller and better: <strong>Flux 1 Fill, run once in layer space, hard-composited into the seams the card stack leaves behind.</strong> Ryan's verdict: <em>"flux is the way."</em> The survey below is kept intact because its reasoning is still how the decision was reached — jump to <a href="#outcome">What actually happened</a> for the result.</p>
+</div>
+
+<p>The brief: one 2D image — Wang Meng, ink and colour on paper, c. 1360, no linear perspective, no photographic cues — and a camera that travels through it on x, y and z with correct parallax. Three constraints decide everything:</p>
+
+<p><strong>Content must not change.</strong> Ge Hong stays the same man. A model that redraws his face has failed, no matter how good the move looks.<br>
+<strong>Style must not change.</strong> Ink stays ink. Any drift toward photographic rendering is a total loss.<br>
+<strong>It must be reusable.</strong> This is one painting and many shots. A technique that re-rolls the dice per shot costs more every time it's used; one that produces an asset costs once.</p>
+
+<p>Those constraints, not model quality, are what eliminate most of the field.</p>
+
+<h2>The five families</h2>
+<p class="sub">what each one actually eats</p>
+
+<div class="scroll">
+<table>
+  <thead>
+    <tr><th>Family</th><th>Input it consumes</th><th>Output</th><th>Fails on</th><th>Status here</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Layered depth + inpaint</strong></td>
+      <td>Image + hand or estimated depth</td>
+      <td>Frames, deterministic</td>
+      <td>Disocclusion seams; cards are flat, nothing rotates</td>
+      <td><span class="chip c-ok">built</span></td>
+    </tr>
+    <tr>
+      <td><strong>Continuous mesh warp</strong></td>
+      <td>Image + depth + stiffness field</td>
+      <td>Frames, deterministic</td>
+      <td>Strain reads as rubber; no holes but no rigidity</td>
+      <td><span class="chip c-no">rejected</span></td>
+    </tr>
+    <tr>
+      <td><strong>Feed-forward 3D (splats)</strong></td>
+      <td>Image alone</td>
+      <td>Reusable 3D asset</td>
+      <td>Trained on photographs; guesses geometry we already know</td>
+      <td><span class="chip c-no">wrong tool</span></td>
+    </tr>
+    <tr>
+      <td><strong>Camera-conditioned video diffusion</strong></td>
+      <td>Image + camera trajectory</td>
+      <td>Frames, sampled</td>
+      <td>Trajectory ≠ our geometry; still invents occluded content</td>
+      <td><span class="chip c-warn">partial fit</span></td>
+    </tr>
+    <tr>
+      <td><strong>Render-and-refine</strong></td>
+      <td><strong>Our render</strong> + masks + reference</td>
+      <td>Frames, sampled</td>
+      <td>Nothing structural — it repairs rather than invents</td>
+      <td><span class="chip c-ok">the answer</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>What each family is really doing</h2>
+<p class="sub">and why four of them are the wrong question</p>
+
+<div class="family">
+  <div class="family-head"><h3>Layered depth image + inpaint</h3><span class="verdict">this is our baseline</span></div>
+  <p>Cut the picture into depth planes, paint behind each occluder once in layer space, project through a pinhole camera. Shih et al.'s context-aware LDI inpainting (CVPR 2020) and Niklaus' 3D Ken Burns are this family. It is free, infinitely re-cuttable, and temporally perfect by construction because every frame is a resampling of fixed texels.</p>
+  <p>It fails in exactly one place: a card is flat and its silhouette is a hard cut, so objects straddling a seam shear, and heads get clipped. That is the defect you named — and it is the <em>only</em> defect left.</p>
+  <p class="refs"><a href="https://arxiv.org/pdf/2004.04727">3D Photography using Context-aware Layered Depth Inpainting</a></p>
+</div>
+
+<div class="family">
+  <div class="family-head"><h3>Continuous mesh warp</h3><span class="verdict">built, tested, rejected</span></div>
+  <p>Replace hard cards with one elastic sheet, stiff inside objects and compliant in bare silk. Solved to a median rigidity of 0.195 px with zero holes. You looked at it and said it distracted from the painting, and the measurement agrees with your eye: a similarity transform is a <em>linear</em> displacement field with zero Laplacian, so smoothing can never fight rigidity — the strain has to go somewhere, and where it goes is visible.</p>
+</div>
+
+<div class="family">
+  <div class="family-head"><h3>Feed-forward 3D from a single image</h3><span class="verdict">wrong tool, for a specific reason</span></div>
+  <p>TripoSplat, Apple's SHARP and Microsoft's TRELLIS turn one picture into 3D Gaussians in a single forward pass. They are <strong>object-level</strong> — the wrong scale for a landscape scroll. The scene-level ones are Flash3D, Bolt3D (under seven seconds), WonderWorld (under ten on an A6000) and FlashWorld.</p>
+  <p>Two problems. All are trained on photographs, and a painting with no perspective cues gives them nothing to reconstruct from. The published comparison notes Bolt3D produces "imprecise tree branches and needle-like leaves" — which is a fair description of the entire left half of this painting.</p>
+  <p>But the deeper problem is that this family answers a question we already answered. See below.</p>
+  <p class="refs"><a href="https://radiancefields.com/single-image-gaussian-splatting-in-2026-%E2%80%94-triposplat-vs-sharp-vs-trellis">TripoSplat vs SHARP vs TRELLIS, 2026</a> · <a href="https://arxiv.org/html/2504.10001v1">scene-level comparison</a></p>
+</div>
+
+<div class="family">
+  <div class="family-head"><h3>Camera-conditioned video diffusion</h3><span class="verdict">closer, still a vacuum</span></div>
+  <p>ViewCrafter, MultiDiff, SplatDiff, NavCrafter, CamCtrl3D, Stable Virtual Camera, and Alibaba's Wan 2.2 Fun Camera. These take a trajectory — pan up, orbit left, a pose sequence — and generate the video. Genuinely more control than plain image-to-video.</p>
+  <p>Still not enough. A trajectory tells the model where the camera goes; it does not tell the model what the scene <em>is</em>. Everything occluded is still invented, which is precisely how you get a different Ge Hong.</p>
+  <p class="refs"><a href="http://www.normanm.de/MultiDiff/">MultiDiff</a> · <a href="https://docs.comfy.org/tutorials/video/wan/wan2-2-fun-camera">Wan 2.2 Fun Camera in ComfyUI</a></p>
+</div>
+
+<div class="family">
+  <div class="family-head"><h3>Render-and-refine / control conditioning</h3><span class="verdict">the fit</span></div>
+  <p>The model never generates the scene. It receives a rendered video as a structural control signal and repairs it, with a reference image holding identity and style. VACE, Fun-Control, and — the one that matters — <strong>Uni3C</strong>.</p>
+</div>
+
+<h2>The thesis</h2>
+<p class="sub">we are not missing a 3D scene — we authored one</p>
+
+<p>Every method in family three exists to <em>estimate</em> a 3D representation from a picture, because normally nobody has one. We are not in that situation. Over the last week we built, by hand and by measurement:</p>
+
+<p>Eleven depth planes with authored z. Forty-nine segmented objects, each pinned wholly onto one depth so nothing straddles a seam — verified at exactly 1.00× shear on all eighteen objects that previously sheared. Every plane painted in behind its occluders in layer space, disocclusion holes down from 22.74% of the union to 0.00%. An exact pinhole camera with rest-normalised projection. A measured bare-silk map. A tear map.</p>
+
+<p>That <em>is</em> the 3D asset. A splat model would spend a GPU-hour guessing a worse version of it.</p>
+
+<div class="callout">
+  <span class="k">So the correct question</span>
+  <p>Not "which model can generate a flythrough of this painting" — that is a vacuum, and models fill vacuums with invention. It is: <strong>which model accepts a hand-authored 3D render as its control signal, and repairs only what the render gets wrong?</strong></p>
+</div>
+
+<h2>Uni3C</h2>
+<p class="sub">alibaba damo · siggraph asia 2025 · native in comfyui since 21 july 2026</p>
+
+<p>Uni3C's camera module, PCDController, is a lightweight 0.95B DiT trained against a frozen video backbone. <span class="chip c-ok">verified</span> It consumes exactly three things:</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>PCDController input</th><th>What it is</th><th>Do we have it</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Rendered point clouds</strong></td><td>The scene warped to each camera position and rendered to a video</td><td>Yes — <code>FLY-FINAL.mp4</code> is literally this</td></tr>
+    <tr><td><strong>Plücker rays</strong></td><td>Per-pixel camera ray encoding, i.e. the exact camera parameters</td><td>Yes — <code>render-parallax</code> writes them into the manifest</td></tr>
+    <tr><td><strong>Noisy latent</strong></td><td>Internal to the sampler</td><td>n/a</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Its own pipeline builds that point cloud by running monocular depth estimation on frame one, then warping and rendering it. <span class="chip c-ok">verified</span></p>
+
+<p><strong>That is the stage that fails us, and it is the stage we skip.</strong> Our own <code>estimate-depth.py</code> documents that monocular depth works on photographs and fails on ink painting — no shading, no texture gradient, no perspective for the network to read. Uni3C's weakest link is a step we replaced weeks ago with hand-authored geometry.</p>
+
+<figure class="diagram">
+  <div class="lane">
+    <p class="lane-label">As published — <b>depth is estimated</b></p>
+    <div class="flow">
+      <div class="step"><span class="t">input</span>One image</div>
+      <div class="arrow">→</div>
+      <div class="step weak"><span class="t">weak link</span>Monocular depth estimation</div>
+      <div class="arrow">→</div>
+      <div class="step"><span class="t">then</span>Unproject &amp; warp to point cloud</div>
+      <div class="arrow">→</div>
+      <div class="step same"><span class="t">control</span>Rendered video + Plücker rays</div>
+      <div class="arrow">→</div>
+      <div class="step"><span class="t">model</span>PCDController → Wan</div>
+    </div>
+  </div>
+  <div class="lane">
+    <p class="lane-label">Ours — <b>depth is authored</b></p>
+    <div class="flow">
+      <div class="step"><span class="t">input</span>One image</div>
+      <div class="arrow">→</div>
+      <div class="step strong"><span class="t">replaced</span>49 objects, pinned depths, sealed &amp; inpainted planes</div>
+      <div class="arrow">→</div>
+      <div class="step"><span class="t">then</span><code>render-parallax</code>, exact pinhole</div>
+      <div class="arrow">→</div>
+      <div class="step same"><span class="t">control</span>Rendered video + Plücker rays</div>
+      <div class="arrow">→</div>
+      <div class="step"><span class="t">model</span>PCDController → Wan</div>
+    </div>
+  </div>
+  <figcaption>The two pipelines converge at the dashed box — the control signal is the same object in both. The difference is that theirs is guessed from a photograph-trained network and ours is measured. We hand the model a better input than its own authors could produce for this image.</figcaption>
+</figure>
+
+<p>Two more properties matter. Uni3C reports working across domains — "real-world, text-to-image, <strong>animation</strong>" — so a non-photographic input is inside its stated envelope rather than off the end of it. <span class="chip c-ok">verified</span> And the ComfyUI implementation is a model patch that "works with all Wan model variants (2.1/2.2, T2V, I2V, <strong>VACE</strong>, Fun Camera, S2V, Humo, Animate)". <span class="chip c-ok">verified</span></p>
+
+<p>That last point is the one to hold onto. Uni3C supplies <em>camera precision</em>; VACE supplies <em>masked repair plus a reference image</em> for ink identity. They stack in one graph. We can tell the model where the camera is, exactly which pixels are broken, and what the painting looks like — three channels, all of which we generate deterministically.</p>
+
+<h2>Verification ledger</h2>
+<p class="sub">every claim above, and what it rests on</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Claim</th><th>Basis</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Uni3C merged into native ComfyUI, 21 Jul 2026, by kijai</td><td>Fetched PR #14946</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td>Nodes are <code>ModelPatchLoader</code> + <code>WanUni3CControlnetApply</code></td><td>Same PR</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td>One extra checkpoint: <code>Wan21_Uni3C_controlnet_fp16.safetensors</code> → <code>models/model_patches</code></td><td>Same PR</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td>Works with all Wan variants including VACE</td><td>Same PR, quoted</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td>PCDController eats rendered point clouds + Plücker rays + noisy latent</td><td>Project page, DAMO Academy</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td>Its point cloud comes from monocular depth on frame 1</td><td>Project page</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td>Stated to work on animation domains, not only photoreal</td><td>Project page</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td>Monocular depth fails on ink painting</td><td>Our own <code>estimate-depth.py</code> docs</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td><strong>The ComfyUI node accepts an EXTERNALLY rendered control video</strong></td><td>PR says it "accepts a render video"; also notes <code>render_mask</code> and <code>camera_embedding</code> "load but are not exposed on the node"</td><td><span class="chip c-warn">unverified — the one real risk</span></td></tr>
+    <tr><td>24 GB minimum, 48 GB recommended</td><td>Third-party tutorial, not first-party</td><td><span class="chip c-warn">reported</span></td></tr>
+    <tr><td>Wan holds Wang Meng's ink at all</td><td>Nothing. Never tested.</td><td><span class="chip c-warn">untested</span></td></tr>
+    <tr><td>Wan 2.7 open weights</td><td>Official open weights stop at 2.2; the "2.7 open source" pages appear to be SEO fabrications</td><td><span class="chip c-no">do not rely on</span></td></tr>
+    <tr><td>Every diffusion clip made on this painting so far came from Hunyuan/comfy</td><td>Read all ten <code>.mp4.json</code> manifests in <code>jobs/wang-meng/</code></td><td><span class="chip c-ok">verified</span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>The unverified row is the one that decides the plan. If <code>WanUni3CControlnetApply</code> insists on running its own depth-and-warp internally, our authored geometry never reaches the model and the whole advantage evaporates. It is answered by one <code>/object_info</code> query against a running ComfyUI — cheap, but it must happen before the 60 GB pull, not after.</p>
+
+<h2>What it costs to own</h2>
+<p class="sub">self-hosted, apache 2.0, no api</p>
+
+<div class="scroll">
+<table>
+  <thead><tr><th>Component</th><th>Licence</th><th>Size</th><th>Basis</th></tr></thead>
+  <tbody>
+    <tr><td>Wan 2.2 I2V A14B — base model</td><td><strong>Apache 2.0</strong>, commercial use permitted</td><td class="num">~17 GB fp8</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td>Uni3C / PCDController — code + weights</td><td><strong>Apache 2.0</strong></td><td class="num">0.95 B params</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td><code>Wan21_Uni3C_controlnet_fp16</code></td><td>No licence stated on kijai's mirror; upstream Apache 2.0</td><td class="num">2 GB</td><td><span class="chip c-warn">mirror unstated</span></td></tr>
+    <tr><td>umt5-xxl text encoder · clip_vision_h · Wan VAE</td><td>Apache 2.0, with the Wan release</td><td class="num">~12.5 GB</td><td><span class="chip c-ok">verified</span></td></tr>
+    <tr><td>ComfyUI</td><td>GPL-3.0</td><td class="num">—</td><td><span class="chip c-ok">verified</span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Wan's licence adds one clause worth keeping: <em>"we claim no rights over your generated contents."</em> The output is ours outright.</p>
+
+<p><strong>There is no API and no per-render fee.</strong> The only cost is GPU hours on a box we rent, control for the duration, and destroy — <code>$0</code> when it is down. No subscription, no rate limit, and no terms of service that can be rewritten under a project that will re-render this painting many times.</p>
+
+<div class="callout">
+  <span class="k">One assumption this reverses</span>
+  <p>Our own <code>models/wan22-vace.json</code> warns <em>"rent this LAST — the most expensive thing in the catalog"</em> at 72.2 GB. That figure is the bf16 two-expert MoE pair. The Uni3C stack totals roughly <strong>32 GB</strong> — less than half the pull. The warning does not apply to this route.</p>
+</div>
+
+<p>Three caveats. <strong>Gate one is the deliberate exception</strong> — it uses a hosted API for about twenty cents, because renting a box to answer one yes/no question costs more than the answer is worth. <strong>Self-hosted means a rented Linux box, not the Mac</strong>: 24 GB VRAM minimum, and ComfyUI with Wan 14B on Apple Silicon is not a viable path. <strong>The reference workflow ships a step-distill LoRA</strong> (<code>lightx2v_cfg_step_distill</code>) which we drop on sight — that is the distilled tier this repo rejects, and we pay in minutes instead of quality.</p>
+
+<p>No throughput measurement exists for Wan on our cards; <code>plan-gpu</code> knows only Hunyuan and USO. A first session on an A100 at ~$1/hr is realistically a few dollars including the download, and the honest number arrives with the first run rather than before it.</p>
+
+<h2>What I'd run, in this order</h2>
+<p class="sub">each step answers one question and gates the next</p>
+
+<ol class="seq">
+  <li>
+    <h3>Does Wan hold the ink at all?</h3>
+    <p>Hosted Wan 2.2 A14B via the fal route already wired into <code>image-to-video.mjs</code>. Roughly twenty cents. No control, no box, no downloads — this asks the single prerequisite question, and if the answer is no then nothing downstream is worth building.</p>
+    <p class="refs">cost ≈ $0.20 · no box</p>
+  </li>
+  <li>
+    <h3>Does the node take our render?</h3>
+    <p>Rent a box, pull ComfyUI, query <code>/object_info</code> for <code>WanUni3CControlnetApply</code> and read its real input signature before pulling any weights. This is the ledger's one unverified row and it costs minutes.</p>
+    <p class="refs">cost ≈ $1 · box up, no weights</p>
+  </li>
+  <li>
+    <h3>Emit the control channels</h3>
+    <p>A <code>--masks</code> flag on <code>render-parallax</code> writing per-frame hole and seam masks, plus Plücker rays from the camera we already solve. CPU, deterministic, no GPU. This is the work that makes the model's job repair rather than invention.</p>
+    <p class="refs">cost: $0 · local</p>
+  </li>
+  <li>
+    <h3>Uni3C + VACE, one graph</h3>
+    <p>Camera from Uni3C, masked repair and ink reference from VACE, our render as the control video. Then you look at it and decide.</p>
+    <p class="refs">cost: a box for a few hours</p>
+  </li>
+</ol>
+
+<p>Steps one and two are gates, not options — each is cheap and each can kill the plan before it gets expensive. Step three is free and happens regardless. Step four is the only one that spends real money, and by then both unknowns are closed.</p>
+
+<div class="callout">
+  <span class="k">What does not change</span>
+  <p>The cel stack stays. Uni3C repairs the <em>landscape</em> seams; the figures are the thing every diffusion model on this project has proven it will redraw, and <code>walk-figure</code> plus <code>composite-shot</code> already handle them deterministically at zero churn. Model for the space, cel for the figures — that division is unchanged by any of the above, and every result here strengthens it.</p>
+</div>
+
+<h2 id="outcome">What actually happened</h2>
+<p class="sub">17 aug 2026 — the gates were run, and both changed the plan</p>
+
+<h3>Gate 1 killed the premise Uni3C rests on</h3>
+<p>Same still, same camera-only prompt, against the Hunyuan clip already accepted on this painting. Wan 2.2 A14B produced a yellow-and-red 3D excavator hydraulic breaker across the top of frame and repainted the horse and rider as smooth vector cartoon. Attribution was checked: source clean, Hunyuan clean, Wan alone.</p>
+<p>Two failures, and they are not the same failure. <strong>The excavator is invention in a vacuum</strong> — control conditioning genuinely fixes that class. <strong>The cartoon horse is style collapse on content that was never occluded</strong>, and no control signal fixes that, because a control signal says where things go, not what they are drawn like.</p>
+<div class="callout">
+  <span class="k">The finding worth the whole day</span>
+  <p>The model that holds this painting's ink has no control input. The model that owns the control ecosystem has a prior hostile to this material. <strong>That tension, not model quality, is what ended the Uni3C plan</strong> — every verified fact about Uni3C above remains true and none of it matters while Wan paints like that.</p>
+</div>
+
+<h3>What replaced it is smaller and stronger</h3>
+<p>The card stack is already correct everywhere except its seams. So the model never renders a frame — it fills holes, once, in layer space, and its output is <strong>hard-composited</strong>: kept only inside our mask, everything outside copied back byte-exact.</p>
+<div class="scroll">
+<table>
+  <thead><tr><th>Claim</th><th>Measured</th><th>Control it was measured against</th></tr></thead>
+  <tbody>
+    <tr><td>The composite guarantee holds</td><td class="num">0 px changed outside the mask</td><td>Exact, by construction</td></tr>
+    <tr><td>Flux fills better than our classical patch synthesis</td><td>Ryan's eye, on <code>FILL-ZOOM.png</code></td><td>SHIFTMAP left a grey smeared band with a visible seam; flux continued the dry-brush hatching</td></tr>
+    <tr><td><strong>No added flicker across 120 frames</strong></td><td class="num">4.444 vs 4.461 → ratio 0.996</td><td>The classical clip is the FLOOR, not zero — both resample real texels through a moving camera</td></tr>
+    <tr><td>Divergence is confined to the disocclusion wake</td><td class="num">41% of frame, radial</td><td><code>fill-divergence.png</code> — streaks from the focus of expansion, dark at centre. Blobs off-pattern would mean leakage; there are none</td></tr>
+    <tr><td>Frame zero unchanged</td><td class="num">max ±1 over 77k px</td><td>The accepted SHIFTMAP stack carries the same ±1 over 79k — pre-existing bilinear rounding, not the fill</td></tr>
+  </tbody>
+</table>
+</div>
+<p>Cost: 1.29M pixels painted behind, 126 seconds, cents. Shipped as <code>inpaint-planes.py --method flux</code>, beside the existing <code>shiftmap|telea|ns</code> — the tool already owned this job.</p>
+
+<h3>Three things that would have cost a day each</h3>
+<p><strong>Flux 2 is the wrong Flux.</strong> Replicate's flux-2 dev/pro/flex take reference images but <em>no mask</em>; there is no flux-2-fill. Flux 2 re-renders the whole frame, which is the exact mechanism that cartooned the horse. <code>flux-fill-pro</code> — the Flux 1 generation — takes image and mask. A mediocre prior touching 3% of pixels beats a superb prior touching 100%.</p>
+<p><strong>Our own style spec was aimed at the wrong picture.</strong> Ryan's distinction between 山水 (genre), 水墨 (loose ink-wash) and 工笔 (fine line) exposed it: <code>styles/inkwash</code> specifies "cold-press rag paper", "wet-in-wet", "blooms", "backruns", "granulation" — Western watercolour physics. This painting is dry <strong>解索皴</strong> unravelled-rope texture strokes with flat 設色 mineral colour and fine-line figures. That file stays untouched — it is locked and correct for its own job — and the corrected prompt now ships as the fill tool's default.</p>
+<p><strong>The composite bounds where, never what.</strong> Inside the mask, Flux still hallucinated a second red flower beside a real one. In layer space that invention is baked into a plane and travels with it rather than flickering — better, and not the same as harmless.</p>
+
+<footer class="end">
+  Compiled 17 Aug 2026 · media-tools / jobs/wang-meng<br>
+  Sources: Uni3C (arXiv 2504.14899, SIGGRAPH Asia 2025) · ComfyUI PR #14946 · Shih et al. CVPR 2020 · MultiDiff CVPR 2024 · radiancefields.com single-image 3DGS survey 2026 · ComfyUI Wan 2.2 Fun Camera docs
+</footer>
+</div>

@@ -1,9 +1,19 @@
 .env
-jobs/
-!kits/
-outputs/
 node_modules/
 .DS_Store
-
 .vast/
 corpus/
+outputs/
+
+# jobs/: text, code, and curated evidence are TRACKED (git is the memory organ
+# — CLAUDE.md law 2026-08-18). Only bulk pixel intermediates stay out.
+jobs/**
+!jobs/**/
+!jobs/**/*.md
+!jobs/**/*.sh
+!jobs/**/*.py
+!jobs/**/*.mjs
+!jobs/**/*.json
+!jobs/**/*.html
+!jobs/**/evidence*/**
+!jobs/**/checkpoint-*/**

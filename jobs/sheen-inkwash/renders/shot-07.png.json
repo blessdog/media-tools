@@ -1,0 +1,46 @@
+{
+  "reconstructed": true,
+  "reconstructedNote": "Written after the fact from the run stdout. Seed is exact; settings are that run's style.json defaults. Not machine-recorded.",
+  "tool": "generate-image",
+  "provider": "comfy",
+  "renderer": "uso-inkwash",
+  "style": "inkwash",
+  "model": {
+    "checkpoint": "flux1-dev-fp8.safetensors",
+    "lora": "uso-flux1-dit-lora-v1.safetensors",
+    "loraStrength": 1.35,
+    "modelPatch": "uso-flux1-projector-v1.safetensors",
+    "clipVision": "sigclip_vision_patch14_384.safetensors"
+  },
+  "sampler": {
+    "seed": 862453,
+    "steps": 20,
+    "guidance": 3.5,
+    "cfg": 1,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1
+  },
+  "frame": {
+    "width": 1152,
+    "height": 640
+  },
+  "channels": {
+    "style": {
+      "file": "/Users/SSDrive/projects/media-tools/styles/inkwash/reference/LOCKED-inkwash-texture-1.png",
+      "sha256": "c940bca3b66ef641"
+    },
+    "identity": null,
+    "scene": {
+      "text": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted. Wide aerial shot looking steeply down from a high vantage point onto a large curved stone plaza or public building exterior, where two figures walk separately across the ground-level pavement; the figure in the foreground carries a vivid red-pink open umbrella and wears dark clothing, while the second figure a few metres behind walks without an umbrella in dark clothing. The setting features broad curved horizontal ridges or steps in grey stone, with a large white banner or flag hanging from a structure at the upper right bearing a partially visible logo or emblem.",
+      "stylePrefix": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted.",
+      "yourPrompt": "Wide aerial shot looking steeply down from a high vantage point onto a large curved stone plaza or public building exterior, where two figures walk separately across the ground-level pavement; the figure in the foreground carries a vivid red-pink open umbrella and wears dark clothing, while the second figure a few metres behind walks without an umbrella in dark clothing. The setting features broad curved horizontal ridges or steps in grey stone, with a large white banner or flag hanging from a structure at the upper right bearing a partially visible logo or emblem."
+    }
+  },
+  "source": {
+    "describedFrom": "source.mp4",
+    "shotScript": "regen/shot-07.txt",
+    "filteredBy": "dephoto.sh"
+  },
+  "out": "renders/shot-07.png"
+}

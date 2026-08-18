@@ -1,0 +1,197 @@
+{
+  "tool": "generate-image",
+  "provider": "comfy",
+  "host": "http://127.0.0.1:8189",
+  "renderer": "uso-inkwash",
+  "style": "inkwash",
+  "model": {
+    "checkpoint": "flux1-dev-fp8.safetensors",
+    "lora": "uso-flux1-dit-lora-v1.safetensors",
+    "loraStrength": 1.35,
+    "modelPatch": "uso-flux1-projector-v1.safetensors",
+    "clipVision": "sigclip_vision_patch14_384.safetensors"
+  },
+  "sampler": {
+    "seed": 7834,
+    "steps": 32,
+    "guidance": 3.5,
+    "cfg": 1,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1
+  },
+  "frame": {
+    "width": 1152,
+    "height": 640
+  },
+  "channels": {
+    "style": {
+      "file": "/Users/SSDrive/projects/media-tools/styles/inkwash/reference/LOCKED-inkwash-texture-1.png",
+      "sha256": "c940bca3b66ef641"
+    },
+    "identity": null,
+    "scene": {
+      "text": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted. Close-up on a man from roughly mid-chest upward; he holds a lit cigarette raised near his chin between the index and middle fingers of his right hand, his head tilted slightly downward so he appears to be looking slightly down and past the viewer. He wears thin wire-framed rectangular glasses, dark hair slicked back, a dark navy or black suit jacket over a white dress shirt with the collar open. The background is a loosely washed pale blue gradient suggesting an exterior or a lit cyclorama.",
+      "stylePrefix": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted.",
+      "yourPrompt": "Close-up on a man from roughly mid-chest upward; he holds a lit cigarette raised near his chin between the index and middle fingers of his right hand, his head tilted slightly downward so he appears to be looking slightly down and past the viewer. He wears thin wire-framed rectangular glasses, dark hair slicked back, a dark navy or black suit jacket over a white dress shirt with the collar open. The background is a loosely washed pale blue gradient suggesting an exterior or a lit cyclorama."
+    }
+  },
+  "out": "renders/aes-steps32.png",
+  "promptId": "d2c61574-48de-45d5-8cd1-efa11c581cd6",
+  "bytes": 1088013,
+  "graph": {
+    "1": {
+      "class_type": "CheckpointLoaderSimple",
+      "inputs": {
+        "ckpt_name": "flux1-dev-fp8.safetensors"
+      }
+    },
+    "2": {
+      "class_type": "LoraLoaderModelOnly",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "lora_name": "uso-flux1-dit-lora-v1.safetensors",
+        "strength_model": 1.35
+      }
+    },
+    "3": {
+      "class_type": "ModelPatchLoader",
+      "inputs": {
+        "name": "uso-flux1-projector-v1.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPVisionLoader",
+      "inputs": {
+        "clip_name": "sigclip_vision_patch14_384.safetensors"
+      }
+    },
+    "5": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "LOCKED-inkwash-texture-1.png"
+      }
+    },
+    "6": {
+      "class_type": "CLIPVisionEncode",
+      "inputs": {
+        "clip_vision": [
+          "4",
+          0
+        ],
+        "image": [
+          "5",
+          0
+        ],
+        "crop": "center"
+      }
+    },
+    "7": {
+      "class_type": "USOStyleReference",
+      "inputs": {
+        "model": [
+          "2",
+          0
+        ],
+        "model_patch": [
+          "3",
+          0
+        ],
+        "clip_vision_output": [
+          "6",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "1",
+          1
+        ],
+        "text": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted. Close-up on a man from roughly mid-chest upward; he holds a lit cigarette raised near his chin between the index and middle fingers of his right hand, his head tilted slightly downward so he appears to be looking slightly down and past the viewer. He wears thin wire-framed rectangular glasses, dark hair slicked back, a dark navy or black suit jacket over a white dress shirt with the collar open. The background is a loosely washed pale blue gradient suggesting an exterior or a lit cyclorama."
+      }
+    },
+    "14": {
+      "class_type": "FluxGuidance",
+      "inputs": {
+        "conditioning": [
+          "11",
+          0
+        ],
+        "guidance": 3.5
+      }
+    },
+    "15": {
+      "class_type": "ConditioningZeroOut",
+      "inputs": {
+        "conditioning": [
+          "11",
+          0
+        ]
+      }
+    },
+    "16": {
+      "class_type": "EmptySD3LatentImage",
+      "inputs": {
+        "width": 1152,
+        "height": 640,
+        "batch_size": 1
+      }
+    },
+    "17": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "7",
+          0
+        ],
+        "positive": [
+          "14",
+          0
+        ],
+        "negative": [
+          "15",
+          0
+        ],
+        "latent_image": [
+          "16",
+          0
+        ],
+        "seed": 7834,
+        "steps": 32,
+        "cfg": 1,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1
+      }
+    },
+    "18": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "17",
+          0
+        ],
+        "vae": [
+          "1",
+          2
+        ]
+      }
+    },
+    "19": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "18",
+          0
+        ],
+        "filename_prefix": "aes-steps32"
+      }
+    }
+  }
+}

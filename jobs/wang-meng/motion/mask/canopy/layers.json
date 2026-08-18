@@ -1,0 +1,264 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [
+    720,
+    1280
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 5,
+  "unclaimedFraction": 0.9232,
+  "overlay": "jobs/wang-meng/motion/mask/canopy/overlay.png",
+  "feather": 5,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 3.0,
+  "inferSeconds": 15.7,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 1,
+      "name": "canopy-upper",
+      "depth": 2,
+      "point": [
+        560,
+        540
+      ],
+      "window": 520,
+      "windowRequested": 520,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 520,
+          "clipped": false,
+          "imageFraction": 0.0197,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        200,
+        280,
+        720,
+        800
+      ],
+      "pick": "whole",
+      "score": 0.745,
+      "candidateAreas": [
+        500,
+        2224,
+        17741
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 18140,
+      "windowFraction": 0.0671,
+      "areaFinal": 3445,
+      "bbox": [
+        510,
+        431,
+        661,
+        583
+      ],
+      "offset": [
+        510,
+        431
+      ],
+      "layer": null
+    },
+    {
+      "n": 2,
+      "id": 2,
+      "name": "branch-near",
+      "depth": 2,
+      "point": [
+        420,
+        559
+      ],
+      "window": 480,
+      "windowRequested": 480,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 480,
+          "clipped": false,
+          "imageFraction": 0.0077,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        180,
+        319,
+        660,
+        799
+      ],
+      "pick": "whole",
+      "score": 0.4385,
+      "candidateAreas": [
+        560,
+        1879,
+        7158
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 7129,
+      "windowFraction": 0.0309,
+      "areaFinal": 7129,
+      "bbox": [
+        379,
+        491,
+        501,
+        625
+      ],
+      "offset": [
+        379,
+        491
+      ],
+      "layer": null
+    },
+    {
+      "n": 3,
+      "id": 3,
+      "name": "canopy-right",
+      "depth": 2,
+      "point": [
+        620,
+        700
+      ],
+      "window": 460,
+      "windowRequested": 460,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 460,
+          "clipped": true,
+          "imageFraction": 0.0469,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        260,
+        470,
+        720,
+        930
+      ],
+      "pick": "whole",
+      "score": 0.9027,
+      "candidateAreas": [
+        625,
+        10680,
+        43069
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 43245,
+      "windowFraction": 0.2044,
+      "areaFinal": 42691,
+      "bbox": [
+        490,
+        470,
+        720,
+        781
+      ],
+      "offset": [
+        490,
+        470
+      ],
+      "layer": null
+    },
+    {
+      "n": 4,
+      "id": 4,
+      "name": "pine-lower",
+      "depth": 2,
+      "point": [
+        500,
+        800
+      ],
+      "window": 420,
+      "windowRequested": 420,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 420,
+          "clipped": false,
+          "imageFraction": 0.0129,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        290,
+        590,
+        710,
+        1010
+      ],
+      "pick": "whole",
+      "score": 0.5725,
+      "candidateAreas": [
+        6007,
+        6897,
+        12897
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 11918,
+      "windowFraction": 0.0676,
+      "areaFinal": 11918,
+      "bbox": [
+        426,
+        692,
+        627,
+        890
+      ],
+      "offset": [
+        426,
+        692
+      ],
+      "layer": null
+    },
+    {
+      "n": 5,
+      "id": 5,
+      "name": "branch-tip",
+      "depth": 2,
+      "point": [
+        390,
+        700
+      ],
+      "window": 380,
+      "windowRequested": 380,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 380,
+          "clipped": false,
+          "imageFraction": 0.0061,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        200,
+        510,
+        580,
+        890
+      ],
+      "pick": "whole",
+      "score": 0.941,
+      "candidateAreas": [
+        680,
+        2101,
+        5468
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 5577,
+      "windowFraction": 0.0386,
+      "areaFinal": 5577,
+      "bbox": [
+        317,
+        623,
+        410,
+        725
+      ],
+      "offset": [
+        317,
+        623
+      ],
+      "layer": null
+    }
+  ]
+}

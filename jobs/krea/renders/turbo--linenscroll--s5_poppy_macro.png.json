@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "turbo",
+  "unet": "krea2_turbo_fp8_scaled.safetensors",
+  "stepsNote": "official template settings",
+  "lora": "chinese-ink-linen-scroll-comfy.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "chinese ink linen scroll style",
+  "subject": "A single pale green poppy seed pod fills the frame, its crown splayed open, beads of sap running down its side, foliage blurred behind",
+  "prompt": "A single pale green poppy seed pod fills the frame, its crown splayed open, beads of sap running down its side, foliage blurred behind, chinese ink linen scroll style",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "90256329-6923-40dd-b058-6799ee0a4421",
+  "seconds": 6.6,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/turbo--linenscroll--s5_poppy_macro.png"
+}

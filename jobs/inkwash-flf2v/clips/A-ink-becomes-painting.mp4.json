@@ -1,0 +1,36 @@
+{
+  "tool": "image-to-video",
+  "provider": "ltx",
+  "renderer": "ltx-2-5-pro",
+  "api": "https://api.ltx.io/v2/image-to-video",
+  "frame": {
+    "resolution": "1280x720",
+    "seconds": 6,
+    "fps": 24
+  },
+  "start": {
+    "file": "jobs/inkwash-flf2v/frames/ink-start.png",
+    "sha256": "8a3c871cb75275de"
+  },
+  "end": {
+    "file": "jobs/inkwash-flf2v/frames/painting-end.png",
+    "sha256": "53b06508d80c24dd"
+  },
+  "motionPrompt": "Wet black ink spreads outward across the cream paper from the splatter, the wash creeping and feathering into the grain. As it spreads the ink settles into the shape of a man in glasses smoking, pale blue and grey washes flooding in behind him and drying into a finished painting. The paper stays still. Only the paint moves.",
+  "camera": null,
+  "generateAudio": false,
+  "estimatedCostUSD": 0.54,
+  "interpolates": true,
+  "out": "jobs/inkwash-flf2v/clips/A-ink-becomes-painting.mp4",
+  "jobId": "60f0e5f441d94436ba82559726d050bb",
+  "bytes": 2662874,
+  "input": {
+    "image_uri": "ltx://ltxv-api-prd/uploads/019ff769-e0ed-71d9-9f98-4011ffd85d44",
+    "prompt": "Wet black ink spreads outward across the cream paper from the splatter, the wash creeping and feathering into the grain. As it spreads the ink settles into the shape of a man in glasses smoking, pale blue and grey washes flooding in behind him and drying into a finished painting. The paper stays still. Only the paint moves.",
+    "model": "ltx-2-5-pro",
+    "duration": 6,
+    "resolution": "1280x720",
+    "generate_audio": false,
+    "last_frame_uri": "ltx://ltxv-api-prd/uploads/019ff769-e30d-759f-920b-46c803a00387"
+  }
+}

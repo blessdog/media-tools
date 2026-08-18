@@ -1,0 +1,46 @@
+{
+  "reconstructed": true,
+  "reconstructedNote": "Written after the fact from the run stdout. Seed is exact; settings are that run's style.json defaults. Not machine-recorded.",
+  "tool": "generate-image",
+  "provider": "comfy",
+  "renderer": "uso-inkwash",
+  "style": "inkwash",
+  "model": {
+    "checkpoint": "flux1-dev-fp8.safetensors",
+    "lora": "uso-flux1-dit-lora-v1.safetensors",
+    "loraStrength": 1.35,
+    "modelPatch": "uso-flux1-projector-v1.safetensors",
+    "clipVision": "sigclip_vision_patch14_384.safetensors"
+  },
+  "sampler": {
+    "seed": 646239,
+    "steps": 20,
+    "guidance": 3.5,
+    "cfg": 1,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1
+  },
+  "frame": {
+    "width": 1152,
+    "height": 640
+  },
+  "channels": {
+    "style": {
+      "file": "/Users/SSDrive/projects/media-tools/styles/inkwash/reference/LOCKED-inkwash-texture-1.png",
+      "sha256": "c940bca3b66ef641"
+    },
+    "identity": null,
+    "scene": {
+      "text": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted. A medium close-up shot of the rear three-quarter section of a black stretch limousine in motion, with no human subjects visible. The vehicle is a long-body luxury sedan with chrome trim along the rocker panels, chrome multi-spoke wheels with white-wall tires, and a red tail lamp visible at the far left edge of the frame. The limousine's elongated side windows reflect warm amber/orange light in the rearmost pane and a vivid blue glow—suggesting a city nightscape or interior lighting—in the forward passenger windows. The setting is a dark roadway at night with an indistinct dark background.",
+      "stylePrefix": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted.",
+      "yourPrompt": "A medium close-up shot of the rear three-quarter section of a black stretch limousine in motion, with no human subjects visible. The vehicle is a long-body luxury sedan with chrome trim along the rocker panels, chrome multi-spoke wheels with white-wall tires, and a red tail lamp visible at the far left edge of the frame. The limousine's elongated side windows reflect warm amber/orange light in the rearmost pane and a vivid blue glow—suggesting a city nightscape or interior lighting—in the forward passenger windows. The setting is a dark roadway at night with an indistinct dark background."
+    }
+  },
+  "source": {
+    "describedFrom": "source.mp4",
+    "shotScript": "regen/shot-03.txt",
+    "filteredBy": "dephoto.sh"
+  },
+  "out": "renders/shot-03.png"
+}

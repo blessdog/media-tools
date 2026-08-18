@@ -1,0 +1,68 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [
+    720,
+    1280
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 1,
+  "unclaimedFraction": 0.9983,
+  "overlay": "jobs/wang-meng/motion/mask/fanshot/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 4.0,
+  "inferSeconds": 3.8,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 1,
+      "name": "fan",
+      "depth": 5,
+      "point": [
+        306,
+        723
+      ],
+      "window": 220,
+      "windowRequested": 220,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 220,
+          "clipped": false,
+          "imageFraction": 0.0017,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        196,
+        613,
+        416,
+        833
+      ],
+      "pick": "tight",
+      "score": 0.9524,
+      "candidateAreas": [
+        1560,
+        2537,
+        13616
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 1546,
+      "windowFraction": 0.0319,
+      "areaFinal": 1546,
+      "bbox": [
+        271,
+        701,
+        338,
+        748
+      ],
+      "offset": [
+        271,
+        701
+      ],
+      "layer": null
+    }
+  ]
+}

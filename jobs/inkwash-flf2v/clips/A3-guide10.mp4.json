@@ -1,0 +1,48 @@
+{
+  "tool": "image-to-video",
+  "provider": "civitai",
+  "renderer": "ltx2.3:22b-dev",
+  "api": "https://orchestration.civitai.com/v2/consumer/workflows",
+  "frame": {
+    "width": 1280,
+    "height": 720,
+    "seconds": 5,
+    "fps": 24
+  },
+  "sampler": {
+    "frameGuideStrength": 1
+  },
+  "start": {
+    "file": "frames/ink-start.png",
+    "sha256": "8a3c871cb75275de"
+  },
+  "end": {
+    "file": "frames/painting-end.png",
+    "sha256": "53b06508d80c24dd"
+  },
+  "motionPrompt": "Wet black ink spreads outward across the cream paper from the splatter, the wash creeping and feathering into the grain. As it spreads the ink settles into the shape of a man in glasses smoking, pale blue and grey washes flooding in behind him and drying into a finished painting. The paper stays still. Only the paint moves.",
+  "interpolates": true,
+  "buzzQuoted": {
+    "green": 39
+  },
+  "buzzBefore": {
+    "blue": 0,
+    "green": 9378,
+    "yellow": 0
+  },
+  "insufficientBuzz": false,
+  "out": "clips/A3-guide10.mp4",
+  "workflowId": "12293736-20260812204515494",
+  "videoUrl": "https://orchestration-new.civitai.com/v2/consumer/blobs/F41FBN9YPPKMJEMPHV0BN31V70.mp4?sig=CfDJ8OhuHddet6VHsmTPdSCkBZTvrkuifAJ0dMj1tKr3SgdeoZxhcZsyKictqdkraip1tCFoCIp8wEogmBFxJ9RtHOuiDMS54w-CFIudRBP6Lwqeg0q2eNz4uU0FHncV7meTRMQ1KEBBx3SmB1CVztSJug4POxD1Q3xDybPc-HjqmeXAsuziaU72IiWk1X1p3vCJ7tRVV5608vxZcsVtlvGPKdwomFovtScd1wjhTkF8dbv2tuqV2lMJcXhlFb-7TbvMmwseDvyHpreRR2GBX5kMdTUJP9U5sSXrjVzDzk4ewHLc&exp=2027-08-12T20:48:40.7937651Z",
+  "bytes": 1482734,
+  "buzzAfter": {
+    "blue": 0,
+    "green": 9222,
+    "yellow": 0
+  },
+  "buzzActuallySpent": {
+    "blue": 0,
+    "green": 156,
+    "yellow": 0
+  }
+}

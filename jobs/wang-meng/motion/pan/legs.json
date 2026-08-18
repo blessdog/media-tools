@@ -1,0 +1,8 @@
+{ "image": "pan/deer-native.png",
+  "note": "read off pan/deer-legs-zoom.png at 2x. from = the hip where the limb leaves the body.",
+  "paths": [
+    {"name":"near-hind","from":[127,466],"to":[120,678],"phase":0.00,"behind":false},
+    {"name":"near-fore","from":[172,463],"to":[185,663],"phase":0.50,"behind":false},
+    {"name":"far-hind", "from":[227,456],"to":[212,573],"phase":0.25,"behind":true},
+    {"name":"far-fore", "from":[270,452],"to":[252,588],"phase":0.75,"behind":true}
+  ] }

@@ -1,0 +1,22 @@
+{
+  "tool": "restyle-image",
+  "provider": "replicate",
+  "model": "openai/gpt-image-2",
+  "style": "inkwash",
+  "styleChannel": "image",
+  "prompt": "The FIRST image is a photograph. The SECOND image is a painting supplied only as a technique reference. Repaint the photograph using the exact medium, brushwork, ink density, colour-wash behaviour, edge quality and paper of the second image. Keep the photograph's composition, subject, pose, expression and framing unchanged. Take only the painting technique from the second image — never its subject, figures, scenery or composition.",
+  "seed": null,
+  "aspect": "match_input_image",
+  "inputs": {
+    "source": {
+      "file": "source.png",
+      "sha256": "42476e8a259ecdf0"
+    },
+    "styleRef": {
+      "file": "/Users/SSDrive/projects/media-tools/styles/inkwash/reference/LOCKED-inkwash-texture-1.png",
+      "sha256": "c940bca3b66ef641"
+    }
+  },
+  "out": "gpt-image-2.png",
+  "bytes": 2734473
+}

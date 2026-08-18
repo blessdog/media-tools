@@ -1,0 +1,558 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [
+    720,
+    1280
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 11,
+  "unclaimedFraction": 0.2648,
+  "overlay": "jobs/wang-meng/motion/pan/layers-shot/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 3.6,
+  "inferSeconds": 41.0,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 1,
+      "name": "far-cliff-wall",
+      "depth": 0,
+      "point": [
+        540,
+        154
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.209,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.9107,
+      "candidateAreas": [
+        140116,
+        167387,
+        192473
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 192592,
+      "windowFraction": 0.209,
+      "areaFinal": 442,
+      "bbox": [
+        291,
+        169,
+        720,
+        896
+      ],
+      "offset": [
+        291,
+        169
+      ],
+      "layer": "layers/001-far-cliff-wall.png"
+    },
+    {
+      "n": 2,
+      "id": 2,
+      "name": "far-river-rocks",
+      "depth": 1,
+      "point": [
+        180,
+        102
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.1455,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.6262,
+      "candidateAreas": [
+        28634,
+        73247,
+        134607
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 134129,
+      "windowFraction": 0.1455,
+      "areaFinal": 37329,
+      "bbox": [
+        0,
+        75,
+        547,
+        924
+      ],
+      "offset": [
+        0,
+        75
+      ],
+      "layer": "layers/102-far-river-rocks.png"
+    },
+    {
+      "n": 3,
+      "id": 3,
+      "name": "mid-cliff-right",
+      "depth": 2,
+      "point": [
+        590,
+        358
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.2346,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.8828,
+      "candidateAreas": [
+        10810,
+        168021,
+        216577
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 216174,
+      "windowFraction": 0.2346,
+      "areaFinal": 115299,
+      "bbox": [
+        229,
+        0,
+        720,
+        1152
+      ],
+      "offset": [
+        229,
+        0
+      ],
+      "layer": "layers/203-mid-cliff-right.png"
+    },
+    {
+      "n": 4,
+      "id": 4,
+      "name": "mid-stream-rocks",
+      "depth": 3,
+      "point": [
+        252,
+        384
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.177,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.7343,
+      "candidateAreas": [
+        35644,
+        65341,
+        164103
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 163122,
+      "windowFraction": 0.177,
+      "areaFinal": 162751,
+      "bbox": [
+        0,
+        0,
+        717,
+        888
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "layer": "layers/304-mid-stream-rocks.png"
+    },
+    {
+      "n": 5,
+      "id": 5,
+      "name": "mid-left-foliage",
+      "depth": 4,
+      "point": [
+        130,
+        538
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.0625,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.9237,
+      "candidateAreas": [
+        21435,
+        38169,
+        57608
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 57636,
+      "windowFraction": 0.0625,
+      "areaFinal": 57636,
+      "bbox": [
+        0,
+        343,
+        348,
+        616
+      ],
+      "offset": [
+        0,
+        343
+      ],
+      "layer": "layers/405-mid-left-foliage.png"
+    },
+    {
+      "n": 6,
+      "id": 6,
+      "name": "pine-trunk-branch",
+      "depth": 5,
+      "point": [
+        446,
+        666
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.0787,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.7437,
+      "candidateAreas": [
+        926,
+        3669,
+        72334
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 72555,
+      "windowFraction": 0.0787,
+      "areaFinal": 295,
+      "bbox": [
+        421,
+        443,
+        555,
+        728
+      ],
+      "offset": [
+        421,
+        443
+      ],
+      "layer": "layers/506-pine-trunk-branch.png"
+    },
+    {
+      "n": 7,
+      "id": 7,
+      "name": "right-bank-rocks",
+      "depth": 6,
+      "point": [
+        518,
+        742
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.0962,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.7195,
+      "candidateAreas": [
+        4916,
+        71298,
+        88833
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 88649,
+      "windowFraction": 0.0962,
+      "areaFinal": 88649,
+      "bbox": [
+        318,
+        7,
+        720,
+        897
+      ],
+      "offset": [
+        318,
+        7
+      ],
+      "layer": "layers/607-right-bank-rocks.png"
+    },
+    {
+      "n": 8,
+      "id": 8,
+      "name": "trestle-bridge",
+      "depth": 7,
+      "point": [
+        216,
+        922
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.047,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.8721,
+      "candidateAreas": [
+        7495,
+        38051,
+        43708
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 43329,
+      "windowFraction": 0.047,
+      "areaFinal": 2589,
+      "bbox": [
+        71,
+        639,
+        329,
+        1008
+      ],
+      "offset": [
+        71,
+        639
+      ],
+      "layer": "layers/708-trestle-bridge.png"
+    },
+    {
+      "n": 9,
+      "id": 9,
+      "name": "scholar-and-deer",
+      "depth": 8,
+      "point": [
+        230,
+        768
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.0442,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.8642,
+      "candidateAreas": [
+        6963,
+        37132,
+        40779
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 40775,
+      "windowFraction": 0.0442,
+      "areaFinal": 40775,
+      "bbox": [
+        167,
+        638,
+        329,
+        1007
+      ],
+      "offset": [
+        167,
+        638
+      ],
+      "layer": "layers/809-scholar-and-deer.png"
+    },
+    {
+      "n": 10,
+      "id": 10,
+      "name": "foreground-path-ledge",
+      "depth": 8,
+      "point": [
+        396,
+        1050
+      ],
+      "window": 1280,
+      "windowRequested": 1280,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.1616,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.8784,
+      "candidateAreas": [
+        525,
+        69330,
+        148939
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 148934,
+      "windowFraction": 0.1616,
+      "areaFinal": 148039,
+      "bbox": [
+        0,
+        902,
+        649,
+        1280
+      ],
+      "offset": [
+        0,
+        902
+      ],
+      "layer": "layers/810-foreground-path-ledge.png"
+    },
+    {
+      "n": 11,
+      "id": 11,
+      "name": "servant-figure",
+      "depth": 9,
+      "point": [
+        446,
+        1152
+      ],
+      "window": 1200,
+      "windowRequested": 1200,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1200,
+          "clipped": false,
+          "imageFraction": 0.0258,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        80,
+        720,
+        1280
+      ],
+      "pick": "tight",
+      "score": 0.782,
+      "candidateAreas": [
+        23903,
+        36726,
+        130780
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 23762,
+      "windowFraction": 0.0275,
+      "areaFinal": 23762,
+      "bbox": [
+        288,
+        1062,
+        599,
+        1280
+      ],
+      "offset": [
+        288,
+        1062
+      ],
+      "layer": "layers/911-servant-figure.png"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+ "tool": "mask-liubai",
+ "image": "shot-real.png",
+ "size": [
+  720,
+  1280
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "name": "water-cascade",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    1090,
+    340,
+    1280
+   ],
+   "offset": [
+    0,
+    1090
+   ],
+   "vmin": 0.62,
+   "busy": 0.055,
+   "coveragePctOfBox": 11.9,
+   "coveragePctOfFrame": 0.84
+  },
+  {
+   "n": 2,
+   "name": "upper-river",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    40,
+    470,
+    470
+   ],
+   "offset": [
+    0,
+    40
+   ],
+   "vmin": 0.62,
+   "busy": 0.045,
+   "coveragePctOfBox": 56.3,
+   "coveragePctOfFrame": 12.34
+  }
+ ]
+}

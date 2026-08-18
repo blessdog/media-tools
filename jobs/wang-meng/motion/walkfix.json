@@ -1,0 +1,3 @@
+{ "image":"jobs/wang-meng/motion/shot-real.png","size":[720,1280],
+  "note":"the fan, cut on the shot plate. The figure mask from protect-points stops at the robe, so the fan was left in the inpaint hole and erased.",
+  "points":[{"id":1,"x":0.425,"y":0.565,"depth":5,"window":220,"name":"fan","pick":"tight","why":"feather fan at his chest"}] }

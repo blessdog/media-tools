@@ -1,0 +1,27 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "route": "style-reference",
+  "refSet": "kontext3",
+  "references": [
+    "references-clean/s02-SCENE-kontext-pro-v1.png",
+    "references-clean/s55-SCENE-kontext-pro-v1.png",
+    "references-clean/06.png",
+    "references-clean/s05-SCENE-uso-inkwash-v1.png",
+    "references-clean/s06-FORESHADOW-uso-inkwash-v1.png",
+    "references-clean/s37-INSERT-uso-inkwash-v1.png"
+  ],
+  "refLora": "krea2_style_reference.safetensors",
+  "refLoraStrength": 1,
+  "styleLora": null,
+  "styleLoraStrength": null,
+  "subject": "A large bloodhound lies on a broad boulder at the edge of a green river, looking off to one side",
+  "prompt": "A large bloodhound lies on a broad boulder at the edge of a green river, looking off to one side",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "base": "krea2_turbo_fp8_scaled.safetensors",
+  "promptId": "0dfc01ea-119c-4ec4-a0f4-d0552c80699b",
+  "seconds": 25.3,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders-ref2/kontext3--ref-only--hound.png"
+}

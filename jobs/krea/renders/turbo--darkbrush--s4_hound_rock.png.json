@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "turbo",
+  "unet": "krea2_turbo_fp8_scaled.safetensors",
+  "stepsNote": "official template settings",
+  "lora": "darkbrush.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "monochrome ink wash style",
+  "subject": "A large bloodhound lies on a broad boulder at the edge of a green river, looking off to one side, scrub and rocks along the far bank",
+  "prompt": "A large bloodhound lies on a broad boulder at the edge of a green river, looking off to one side, scrub and rocks along the far bank, monochrome ink wash style",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "0722fee3-ca13-4622-80f3-406a6a9f420f",
+  "seconds": 6.9,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/turbo--darkbrush--s4_hound_rock.png"
+}

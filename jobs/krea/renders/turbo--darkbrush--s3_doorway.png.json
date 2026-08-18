@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "turbo",
+  "unet": "krea2_turbo_fp8_scaled.safetensors",
+  "stepsNote": "official template settings",
+  "lora": "darkbrush.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "monochrome ink wash style",
+  "subject": "A man in headphones steps through a doorway holding a large kitchen knife at his side, a washing machine and dryer behind him in a dim narrow room",
+  "prompt": "A man in headphones steps through a doorway holding a large kitchen knife at his side, a washing machine and dryer behind him in a dim narrow room, monochrome ink wash style",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "7c0365d7-3413-4dd4-8700-3a735dea33ec",
+  "seconds": 6.8,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/turbo--darkbrush--s3_doorway.png"
+}

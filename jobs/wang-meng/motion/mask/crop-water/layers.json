@@ -1,0 +1,29 @@
+{
+ "tool": "mask-liubai",
+ "image": "crop-river.png",
+ "size": [
+  704,
+  640
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "name": "crop-silk",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    0,
+    704,
+    640
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "vmin": 0.62,
+   "busy": 0.045,
+   "coveragePctOfBox": 59.1,
+   "coveragePctOfFrame": 59.08
+  }
+ ]
+}

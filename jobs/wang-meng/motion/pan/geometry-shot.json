@@ -1,0 +1,17 @@
+{
+  "_note": "Per-plane 3D orientation for the 13 shot-scale planes, assigned by ROLE, at 1x. Units are dz per SOURCE pixel; these planes are shot-scale (2.34x smaller than master), so equivalent recession needs ~2.34x the per-pixel value the master-scale geometry.json used. A ground plane ~350px tall receding 0.10 of depth is tiltX 0.000286.",
+  "_roles": {
+    "floor": "tiltX negative — pitches away as it rises up the picture. Water surfaces, paths, decks. This is the plane whose flatness a dolly exposes first.",
+    "wall": "tiltY — yaws away across width. Cliff faces turning out of frame.",
+    "billboard": "absent from this file. Figures and foliage are genuinely flat objects seen face-on; tilting them is what produced skewing cutouts."
+  },
+
+  "far-river-water":       { "tiltX": -0.00026 },
+  "mid-stream-rocks":      { "tiltX": -0.00020 },
+  "trestle-bridge":        { "tiltX": -0.00022 },
+  "foreground-path-ledge": { "tiltX": -0.00030 },
+
+  "far-cliff-wall":        { "tiltX": -0.00008, "tiltY":  0.00016 },
+  "mid-cliff-right":       { "tiltY":  0.00022 },
+  "right-bank-rocks":      { "tiltX": -0.00010, "tiltY":  0.00018 }
+}

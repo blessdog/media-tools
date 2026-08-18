@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "turbo",
+  "unet": "krea2_turbo_fp8_scaled.safetensors",
+  "stepsNote": "official template settings",
+  "lora": "darkbrush.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "monochrome ink wash style",
+  "subject": "A cluster of pale poppy seed pods on tall stems in a front garden, a residential street behind them with a parked car and a low brick house",
+  "prompt": "A cluster of pale poppy seed pods on tall stems in a front garden, a residential street behind them with a parked car and a low brick house, monochrome ink wash style",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "18f23be0-4c84-45d7-8234-82af562fa12d",
+  "seconds": 6.8,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/turbo--darkbrush--s6_poppy_stand.png"
+}

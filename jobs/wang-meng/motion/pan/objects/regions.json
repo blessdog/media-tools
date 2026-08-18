@@ -1,0 +1,1055 @@
+{
+  "tool": "segment-regions",
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "sourceSize": [
+    720,
+    1280
+  ],
+  "workSize": [
+    720,
+    1280
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "rawProposals": 112,
+  "regions": 49,
+  "unclaimedPixels": 378047,
+  "unclaimedFraction": 0.4102,
+  "minArea": 0.0008,
+  "maxRegions": 120,
+  "overlay": "jobs/wang-meng/motion/pan/objects/overlay.png",
+  "note": "depth is null on every region \u2014 assign it, 0 = farthest. Region 0 is unclaimed background.",
+  "loadSeconds": 5.0,
+  "inferSeconds": 15.9,
+  "regionList": [
+    {
+      "id": 1,
+      "area": 168663,
+      "areaFraction": 0.183011,
+      "bbox": [
+        226,
+        0,
+        719,
+        523
+      ],
+      "offset": [
+        226,
+        0
+      ],
+      "centroid": [
+        517,
+        193
+      ],
+      "mask": "masks/001.png",
+      "depth": null
+    },
+    {
+      "id": 2,
+      "area": 56080,
+      "areaFraction": 0.060851,
+      "bbox": [
+        448,
+        693,
+        719,
+        1155
+      ],
+      "offset": [
+        448,
+        693
+      ],
+      "centroid": [
+        637,
+        923
+      ],
+      "mask": "masks/002.png",
+      "depth": null
+    },
+    {
+      "id": 3,
+      "area": 40914,
+      "areaFraction": 0.044395,
+      "bbox": [
+        163,
+        638,
+        330,
+        1007
+      ],
+      "offset": [
+        163,
+        638
+      ],
+      "centroid": [
+        254,
+        848
+      ],
+      "mask": "masks/003.png",
+      "depth": null
+    },
+    {
+      "id": 4,
+      "area": 38248,
+      "areaFraction": 0.041502,
+      "bbox": [
+        40,
+        388,
+        348,
+        616
+      ],
+      "offset": [
+        40,
+        388
+      ],
+      "centroid": [
+        186,
+        511
+      ],
+      "mask": "masks/004.png",
+      "depth": null
+    },
+    {
+      "id": 5,
+      "area": 36384,
+      "areaFraction": 0.039479,
+      "bbox": [
+        286,
+        1056,
+        719,
+        1280
+      ],
+      "offset": [
+        286,
+        1056
+      ],
+      "centroid": [
+        496,
+        1205
+      ],
+      "mask": "masks/005.png",
+      "depth": null
+    },
+    {
+      "id": 6,
+      "area": 19385,
+      "areaFraction": 0.021034,
+      "bbox": [
+        0,
+        341,
+        148,
+        608
+      ],
+      "offset": [
+        0,
+        341
+      ],
+      "centroid": [
+        44,
+        505
+      ],
+      "mask": "masks/006.png",
+      "depth": null
+    },
+    {
+      "id": 7,
+      "area": 18699,
+      "areaFraction": 0.02029,
+      "bbox": [
+        0,
+        0,
+        243,
+        86
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "centroid": [
+        121,
+        38
+      ],
+      "mask": "masks/007.png",
+      "depth": null
+    },
+    {
+      "id": 8,
+      "area": 15273,
+      "areaFraction": 0.016572,
+      "bbox": [
+        243,
+        1036,
+        380,
+        1190
+      ],
+      "offset": [
+        243,
+        1036
+      ],
+      "centroid": [
+        308,
+        1103
+      ],
+      "mask": "masks/008.png",
+      "depth": null
+    },
+    {
+      "id": 9,
+      "area": 12923,
+      "areaFraction": 0.014022,
+      "bbox": [
+        83,
+        1036,
+        199,
+        1202
+      ],
+      "offset": [
+        83,
+        1036
+      ],
+      "centroid": [
+        140,
+        1108
+      ],
+      "mask": "masks/009.png",
+      "depth": null
+    },
+    {
+      "id": 10,
+      "area": 8911,
+      "areaFraction": 0.009669,
+      "bbox": [
+        451,
+        1079,
+        552,
+        1238
+      ],
+      "offset": [
+        451,
+        1079
+      ],
+      "centroid": [
+        503,
+        1170
+      ],
+      "mask": "masks/010.png",
+      "depth": null
+    },
+    {
+      "id": 11,
+      "area": 8843,
+      "areaFraction": 0.009595,
+      "bbox": [
+        400,
+        785,
+        537,
+        902
+      ],
+      "offset": [
+        400,
+        785
+      ],
+      "centroid": [
+        468,
+        841
+      ],
+      "mask": "masks/011.png",
+      "depth": null
+    },
+    {
+      "id": 12,
+      "area": 8678,
+      "areaFraction": 0.009416,
+      "bbox": [
+        179,
+        216,
+        331,
+        301
+      ],
+      "offset": [
+        179,
+        216
+      ],
+      "centroid": [
+        258,
+        261
+      ],
+      "mask": "masks/012.png",
+      "depth": null
+    },
+    {
+      "id": 13,
+      "area": 8645,
+      "areaFraction": 0.00938,
+      "bbox": [
+        578,
+        1139,
+        666,
+        1280
+      ],
+      "offset": [
+        578,
+        1139
+      ],
+      "centroid": [
+        624,
+        1221
+      ],
+      "mask": "masks/013.png",
+      "depth": null
+    },
+    {
+      "id": 14,
+      "area": 8591,
+      "areaFraction": 0.009322,
+      "bbox": [
+        0,
+        143,
+        113,
+        253
+      ],
+      "offset": [
+        0,
+        143
+      ],
+      "centroid": [
+        59,
+        209
+      ],
+      "mask": "masks/014.png",
+      "depth": null
+    },
+    {
+      "id": 15,
+      "area": 8312,
+      "areaFraction": 0.009019,
+      "bbox": [
+        0,
+        1128,
+        108,
+        1280
+      ],
+      "offset": [
+        0,
+        1128
+      ],
+      "centroid": [
+        32,
+        1223
+      ],
+      "mask": "masks/015.png",
+      "depth": null
+    },
+    {
+      "id": 16,
+      "area": 8260,
+      "areaFraction": 0.008963,
+      "bbox": [
+        354,
+        317,
+        521,
+        379
+      ],
+      "offset": [
+        354,
+        317
+      ],
+      "centroid": [
+        438,
+        351
+      ],
+      "mask": "masks/016.png",
+      "depth": null
+    },
+    {
+      "id": 17,
+      "area": 6389,
+      "areaFraction": 0.006933,
+      "bbox": [
+        158,
+        1220,
+        298,
+        1280
+      ],
+      "offset": [
+        158,
+        1220
+      ],
+      "centroid": [
+        227,
+        1253
+      ],
+      "mask": "masks/017.png",
+      "depth": null
+    },
+    {
+      "id": 18,
+      "area": 5846,
+      "areaFraction": 0.006343,
+      "bbox": [
+        316,
+        620,
+        412,
+        726
+      ],
+      "offset": [
+        316,
+        620
+      ],
+      "centroid": [
+        363,
+        674
+      ],
+      "mask": "masks/018.png",
+      "depth": null
+    },
+    {
+      "id": 19,
+      "area": 4966,
+      "areaFraction": 0.005388,
+      "bbox": [
+        551,
+        429,
+        663,
+        511
+      ],
+      "offset": [
+        551,
+        429
+      ],
+      "centroid": [
+        606,
+        466
+      ],
+      "mask": "masks/019.png",
+      "depth": null
+    },
+    {
+      "id": 20,
+      "area": 4794,
+      "areaFraction": 0.005202,
+      "bbox": [
+        0,
+        1056,
+        61,
+        1165
+      ],
+      "offset": [
+        0,
+        1056
+      ],
+      "centroid": [
+        33,
+        1104
+      ],
+      "mask": "masks/020.png",
+      "depth": null
+    },
+    {
+      "id": 21,
+      "area": 4792,
+      "areaFraction": 0.0052,
+      "bbox": [
+        226,
+        377,
+        356,
+        435
+      ],
+      "offset": [
+        226,
+        377
+      ],
+      "centroid": [
+        283,
+        410
+      ],
+      "mask": "masks/021.png",
+      "depth": null
+    },
+    {
+      "id": 22,
+      "area": 4059,
+      "areaFraction": 0.004404,
+      "bbox": [
+        543,
+        582,
+        619,
+        660
+      ],
+      "offset": [
+        543,
+        582
+      ],
+      "centroid": [
+        576,
+        617
+      ],
+      "mask": "masks/022.png",
+      "depth": null
+    },
+    {
+      "id": 23,
+      "area": 3843,
+      "areaFraction": 0.00417,
+      "bbox": [
+        192,
+        1040,
+        260,
+        1126
+      ],
+      "offset": [
+        192,
+        1040
+      ],
+      "centroid": [
+        226,
+        1076
+      ],
+      "mask": "masks/023.png",
+      "depth": null
+    },
+    {
+      "id": 24,
+      "area": 3560,
+      "areaFraction": 0.003863,
+      "bbox": [
+        374,
+        1057,
+        468,
+        1121
+      ],
+      "offset": [
+        374,
+        1057
+      ],
+      "centroid": [
+        417,
+        1083
+      ],
+      "mask": "masks/024.png",
+      "depth": null
+    },
+    {
+      "id": 25,
+      "area": 3261,
+      "areaFraction": 0.003538,
+      "bbox": [
+        0,
+        612,
+        74,
+        679
+      ],
+      "offset": [
+        0,
+        612
+      ],
+      "centroid": [
+        32,
+        647
+      ],
+      "mask": "masks/025.png",
+      "depth": null
+    },
+    {
+      "id": 26,
+      "area": 3257,
+      "areaFraction": 0.003534,
+      "bbox": [
+        494,
+        1056,
+        570,
+        1185
+      ],
+      "offset": [
+        494,
+        1056
+      ],
+      "centroid": [
+        528,
+        1117
+      ],
+      "mask": "masks/026.png",
+      "depth": null
+    },
+    {
+      "id": 27,
+      "area": 2583,
+      "areaFraction": 0.002803,
+      "bbox": [
+        421,
+        489,
+        501,
+        551
+      ],
+      "offset": [
+        421,
+        489
+      ],
+      "centroid": [
+        462,
+        517
+      ],
+      "mask": "masks/027.png",
+      "depth": null
+    },
+    {
+      "id": 28,
+      "area": 2220,
+      "areaFraction": 0.002409,
+      "bbox": [
+        505,
+        490,
+        567,
+        550
+      ],
+      "offset": [
+        505,
+        490
+      ],
+      "centroid": [
+        537,
+        518
+      ],
+      "mask": "masks/028.png",
+      "depth": null
+    },
+    {
+      "id": 29,
+      "area": 2144,
+      "areaFraction": 0.002326,
+      "bbox": [
+        331,
+        374,
+        516,
+        391
+      ],
+      "offset": [
+        331,
+        374
+      ],
+      "centroid": [
+        421,
+        382
+      ],
+      "mask": "masks/029.png",
+      "depth": null
+    },
+    {
+      "id": 30,
+      "area": 2082,
+      "areaFraction": 0.002259,
+      "bbox": [
+        92,
+        1190,
+        170,
+        1233
+      ],
+      "offset": [
+        92,
+        1190
+      ],
+      "centroid": [
+        132,
+        1211
+      ],
+      "mask": "masks/030.png",
+      "depth": null
+    },
+    {
+      "id": 31,
+      "area": 1872,
+      "areaFraction": 0.002031,
+      "bbox": [
+        449,
+        638,
+        513,
+        691
+      ],
+      "offset": [
+        449,
+        638
+      ],
+      "centroid": [
+        479,
+        666
+      ],
+      "mask": "masks/031.png",
+      "depth": null
+    },
+    {
+      "id": 32,
+      "area": 1717,
+      "areaFraction": 0.001863,
+      "bbox": [
+        190,
+        1100,
+        242,
+        1161
+      ],
+      "offset": [
+        190,
+        1100
+      ],
+      "centroid": [
+        212,
+        1124
+      ],
+      "mask": "masks/032.png",
+      "depth": null
+    },
+    {
+      "id": 33,
+      "area": 1623,
+      "areaFraction": 0.001761,
+      "bbox": [
+        585,
+        698,
+        668,
+        729
+      ],
+      "offset": [
+        585,
+        698
+      ],
+      "centroid": [
+        630,
+        713
+      ],
+      "mask": "masks/033.png",
+      "depth": null
+    },
+    {
+      "id": 34,
+      "area": 1489,
+      "areaFraction": 0.001616,
+      "bbox": [
+        114,
+        609,
+        230,
+        630
+      ],
+      "offset": [
+        114,
+        609
+      ],
+      "centroid": [
+        165,
+        621
+      ],
+      "mask": "masks/034.png",
+      "depth": null
+    },
+    {
+      "id": 35,
+      "area": 1434,
+      "areaFraction": 0.001556,
+      "bbox": [
+        236,
+        0,
+        275,
+        53
+      ],
+      "offset": [
+        236,
+        0
+      ],
+      "centroid": [
+        251,
+        20
+      ],
+      "mask": "masks/035.png",
+      "depth": null
+    },
+    {
+      "id": 36,
+      "area": 1415,
+      "areaFraction": 0.001535,
+      "bbox": [
+        221,
+        1191,
+        273,
+        1228
+      ],
+      "offset": [
+        221,
+        1191
+      ],
+      "centroid": [
+        249,
+        1209
+      ],
+      "mask": "masks/036.png",
+      "depth": null
+    },
+    {
+      "id": 37,
+      "area": 1399,
+      "areaFraction": 0.001518,
+      "bbox": [
+        143,
+        278,
+        241,
+        306
+      ],
+      "offset": [
+        143,
+        278
+      ],
+      "centroid": [
+        183,
+        294
+      ],
+      "mask": "masks/037.png",
+      "depth": null
+    },
+    {
+      "id": 38,
+      "area": 1391,
+      "areaFraction": 0.001509,
+      "bbox": [
+        382,
+        898,
+        456,
+        928
+      ],
+      "offset": [
+        382,
+        898
+      ],
+      "centroid": [
+        420,
+        910
+      ],
+      "mask": "masks/038.png",
+      "depth": null
+    },
+    {
+      "id": 39,
+      "area": 1354,
+      "areaFraction": 0.001469,
+      "bbox": [
+        0,
+        101,
+        50,
+        156
+      ],
+      "offset": [
+        0,
+        101
+      ],
+      "centroid": [
+        17,
+        136
+      ],
+      "mask": "masks/039.png",
+      "depth": null
+    },
+    {
+      "id": 40,
+      "area": 1036,
+      "areaFraction": 0.001124,
+      "bbox": [
+        523,
+        673,
+        557,
+        718
+      ],
+      "offset": [
+        523,
+        673
+      ],
+      "centroid": [
+        538,
+        693
+      ],
+      "mask": "masks/040.png",
+      "depth": null
+    },
+    {
+      "id": 41,
+      "area": 1024,
+      "areaFraction": 0.001111,
+      "bbox": [
+        0,
+        917,
+        73,
+        950
+      ],
+      "offset": [
+        0,
+        917
+      ],
+      "centroid": [
+        25,
+        931
+      ],
+      "mask": "masks/041.png",
+      "depth": null
+    },
+    {
+      "id": 42,
+      "area": 994,
+      "areaFraction": 0.001079,
+      "bbox": [
+        427,
+        698,
+        471,
+        734
+      ],
+      "offset": [
+        427,
+        698
+      ],
+      "centroid": [
+        448,
+        713
+      ],
+      "mask": "masks/042.png",
+      "depth": null
+    },
+    {
+      "id": 43,
+      "area": 977,
+      "areaFraction": 0.00106,
+      "bbox": [
+        412,
+        646,
+        508,
+        686
+      ],
+      "offset": [
+        412,
+        646
+      ],
+      "centroid": [
+        433,
+        666
+      ],
+      "mask": "masks/043.png",
+      "depth": null
+    },
+    {
+      "id": 44,
+      "area": 971,
+      "areaFraction": 0.001054,
+      "bbox": [
+        61,
+        1118,
+        99,
+        1149
+      ],
+      "offset": [
+        61,
+        1118
+      ],
+      "centroid": [
+        80,
+        1134
+      ],
+      "mask": "masks/044.png",
+      "depth": null
+    },
+    {
+      "id": 45,
+      "area": 938,
+      "areaFraction": 0.001018,
+      "bbox": [
+        112,
+        84,
+        182,
+        105
+      ],
+      "offset": [
+        112,
+        84
+      ],
+      "centroid": [
+        140,
+        93
+      ],
+      "mask": "masks/045.png",
+      "depth": null
+    },
+    {
+      "id": 46,
+      "area": 920,
+      "areaFraction": 0.000998,
+      "bbox": [
+        67,
+        1167,
+        98,
+        1211
+      ],
+      "offset": [
+        67,
+        1167
+      ],
+      "centroid": [
+        84,
+        1190
+      ],
+      "mask": "masks/046.png",
+      "depth": null
+    },
+    {
+      "id": 47,
+      "area": 855,
+      "areaFraction": 0.000928,
+      "bbox": [
+        500,
+        1042,
+        530,
+        1079
+      ],
+      "offset": [
+        500,
+        1042
+      ],
+      "centroid": [
+        514,
+        1059
+      ],
+      "mask": "masks/047.png",
+      "depth": null
+    },
+    {
+      "id": 48,
+      "area": 800,
+      "areaFraction": 0.000868,
+      "bbox": [
+        463,
+        1060,
+        491,
+        1101
+      ],
+      "offset": [
+        463,
+        1060
+      ],
+      "centroid": [
+        476,
+        1078
+      ],
+      "mask": "masks/048.png",
+      "depth": null
+    },
+    {
+      "id": 49,
+      "area": 739,
+      "areaFraction": 0.000802,
+      "bbox": [
+        0,
+        856,
+        50,
+        876
+      ],
+      "offset": [
+        0,
+        856
+      ],
+      "centroid": [
+        19,
+        866
+      ],
+      "mask": "masks/049.png",
+      "depth": null
+    }
+  ]
+}

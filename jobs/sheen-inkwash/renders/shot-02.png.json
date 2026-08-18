@@ -1,0 +1,46 @@
+{
+  "reconstructed": true,
+  "reconstructedNote": "Written after the fact from the run stdout. Seed is exact; settings are that run's style.json defaults. Not machine-recorded.",
+  "tool": "generate-image",
+  "provider": "comfy",
+  "renderer": "uso-inkwash",
+  "style": "inkwash",
+  "model": {
+    "checkpoint": "flux1-dev-fp8.safetensors",
+    "lora": "uso-flux1-dit-lora-v1.safetensors",
+    "loraStrength": 1.35,
+    "modelPatch": "uso-flux1-projector-v1.safetensors",
+    "clipVision": "sigclip_vision_patch14_384.safetensors"
+  },
+  "sampler": {
+    "seed": 13302,
+    "steps": 20,
+    "guidance": 3.5,
+    "cfg": 1,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1
+  },
+  "frame": {
+    "width": 1152,
+    "height": 640
+  },
+  "channels": {
+    "style": {
+      "file": "/Users/SSDrive/projects/media-tools/styles/inkwash/reference/LOCKED-inkwash-texture-1.png",
+      "sha256": "c940bca3b66ef641"
+    },
+    "identity": null,
+    "scene": {
+      "text": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted. Medium shot of a dark-haired man seated in the passenger or rear seat of a car, raising a small glass (appears to be a shot or whiskey glass) toward his mouth with his right hand. He wears a dark navy or black suit jacket with a white dress shirt and dark tie. The setting is the interior of a car at night, with the rear windshield visible behind him showing a dark exterior; a blurred warm orange light — possibly a street or traffic light — is visible through the side window to the left of frame.",
+      "stylePrefix": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted.",
+      "yourPrompt": "Medium shot of a dark-haired man seated in the passenger or rear seat of a car, raising a small glass (appears to be a shot or whiskey glass) toward his mouth with his right hand. He wears a dark navy or black suit jacket with a white dress shirt and dark tie. The setting is the interior of a car at night, with the rear windshield visible behind him showing a dark exterior; a blurred warm orange light — possibly a street or traffic light — is visible through the side window to the left of frame."
+    }
+  },
+  "source": {
+    "describedFrom": "source.mp4",
+    "shotScript": "regen/shot-02.txt",
+    "filteredBy": "dephoto.sh"
+  },
+  "out": "renders/shot-02.png"
+}

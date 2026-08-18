@@ -1,0 +1,252 @@
+{
+  "tool": "image-to-video",
+  "provider": "comfy",
+  "host": "http://127.0.0.1:8189",
+  "renderer": "hunyuanvideo-1.5-i2v-720p-fp16",
+  "model": {
+    "unet": "hunyuanvideo1.5_720p_i2v_fp16.safetensors",
+    "textEncoders": [
+      "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "byt5_small_glyphxl_fp16.safetensors"
+    ],
+    "vae": "hunyuanvideo15_vae_fp16.safetensors",
+    "clipVision": "sigclip_vision_patch14_384.safetensors"
+  },
+  "sampler": {
+    "seed": 42,
+    "steps": 20,
+    "cfg": 6,
+    "shift": 7,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1,
+    "easyCache": false
+  },
+  "frame": {
+    "width": 704,
+    "height": 640,
+    "length": 73,
+    "fps": 24,
+    "seconds": 3
+  },
+  "start": {
+    "file": "crop-river.png",
+    "sha256": "b16355ccfcc092f1"
+  },
+  "motionPrompt": "the painted ink current lines drift slowly downstream across the bare silk, flat ink on silk, a Yuan dynasty hanging scroll. the camera does not move.",
+  "negative": "photograph, photorealistic, real water, video footage, live action, cinematic lighting, film grain, 3d render, depth of field, motion blur, morphing, texture dissolving",
+  "out": "crop-E-medium.mp4",
+  "promptId": "972d84c1-a49c-4cbe-a524-b7565ff88ced",
+  "bytes": 199572,
+  "graph": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "hunyuanvideo1.5_720p_i2v_fp16.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "DualCLIPLoader",
+      "inputs": {
+        "clip_name1": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+        "clip_name2": "byt5_small_glyphxl_fp16.safetensors",
+        "type": "hunyuan_video_15",
+        "device": "default"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "hunyuanvideo15_vae_fp16.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPVisionLoader",
+      "inputs": {
+        "clip_name": "sigclip_vision_patch14_384.safetensors"
+      }
+    },
+    "5": {
+      "class_type": "LoadImage",
+      "inputs": {
+        "image": "crop-river.png"
+      }
+    },
+    "6": {
+      "class_type": "CLIPVisionEncode",
+      "inputs": {
+        "clip_vision": [
+          "4",
+          0
+        ],
+        "image": [
+          "5",
+          0
+        ],
+        "crop": "center"
+      }
+    },
+    "7": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "the painted ink current lines drift slowly downstream across the bare silk, flat ink on silk, a Yuan dynasty hanging scroll. the camera does not move."
+      }
+    },
+    "8": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "clip": [
+          "2",
+          0
+        ],
+        "text": "photograph, photorealistic, real water, video footage, live action, cinematic lighting, film grain, 3d render, depth of field, motion blur, morphing, texture dissolving"
+      }
+    },
+    "9": {
+      "class_type": "HunyuanVideo15ImageToVideo",
+      "inputs": {
+        "positive": [
+          "7",
+          0
+        ],
+        "negative": [
+          "8",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ],
+        "width": 704,
+        "height": 640,
+        "length": 73,
+        "batch_size": 1,
+        "start_image": [
+          "5",
+          0
+        ],
+        "clip_vision_output": [
+          "6",
+          0
+        ]
+      }
+    },
+    "10": {
+      "class_type": "ModelSamplingSD3",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "shift": 7
+      }
+    },
+    "11": {
+      "class_type": "CFGGuider",
+      "inputs": {
+        "model": [
+          "10",
+          0
+        ],
+        "positive": [
+          "9",
+          0
+        ],
+        "negative": [
+          "9",
+          1
+        ],
+        "cfg": 6
+      }
+    },
+    "12": {
+      "class_type": "RandomNoise",
+      "inputs": {
+        "noise_seed": 42
+      }
+    },
+    "13": {
+      "class_type": "KSamplerSelect",
+      "inputs": {
+        "sampler_name": "euler"
+      }
+    },
+    "14": {
+      "class_type": "BasicScheduler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "scheduler": "simple",
+        "steps": 20,
+        "denoise": 1
+      }
+    },
+    "15": {
+      "class_type": "SamplerCustomAdvanced",
+      "inputs": {
+        "noise": [
+          "12",
+          0
+        ],
+        "guider": [
+          "11",
+          0
+        ],
+        "sampler": [
+          "13",
+          0
+        ],
+        "sigmas": [
+          "14",
+          0
+        ],
+        "latent_image": [
+          "9",
+          2
+        ]
+      }
+    },
+    "16": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "15",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "17": {
+      "class_type": "CreateVideo",
+      "inputs": {
+        "images": [
+          "16",
+          0
+        ],
+        "fps": 24
+      }
+    },
+    "18": {
+      "class_type": "SaveVideo",
+      "inputs": {
+        "video": [
+          "17",
+          0
+        ],
+        "filename_prefix": "crop-E-medium",
+        "format": "auto",
+        "codec": "h264"
+      }
+    }
+  }
+}

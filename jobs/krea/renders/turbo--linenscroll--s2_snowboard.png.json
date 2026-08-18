@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "turbo",
+  "unet": "krea2_turbo_fp8_scaled.safetensors",
+  "stepsNote": "official template settings",
+  "lora": "chinese-ink-linen-scroll-comfy.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "chinese ink linen scroll style",
+  "subject": "A snowboarder in a white suit stands on a snowy slope holding a board under one arm, pointing up at a range of jagged snow-covered peaks, cloud sitting in the valley below",
+  "prompt": "A snowboarder in a white suit stands on a snowy slope holding a board under one arm, pointing up at a range of jagged snow-covered peaks, cloud sitting in the valley below, chinese ink linen scroll style",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "b34b4abc-a2b6-4f05-847d-b2eedc2c57f8",
+  "seconds": 6.7,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/turbo--linenscroll--s2_snowboard.png"
+}

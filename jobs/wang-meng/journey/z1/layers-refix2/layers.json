@@ -1,0 +1,68 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/journey/z1/plate.png",
+  "size": [
+    1971,
+    2704
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 1,
+  "unclaimedFraction": 0.9848,
+  "overlay": "jobs/wang-meng/journey/z1/layers-refix2/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 4.4,
+  "inferSeconds": 3.7,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 23,
+      "name": "right-bluff-crown-pines",
+      "depth": 12,
+      "point": [
+        1857,
+        657
+      ],
+      "window": 700,
+      "windowRequested": 700,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 700,
+          "clipped": true,
+          "imageFraction": 0.0152,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        1271,
+        307,
+        1971,
+        1007
+      ],
+      "pick": "whole",
+      "score": 0.6807,
+      "candidateAreas": [
+        1826,
+        20439,
+        80899
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 80997,
+      "windowFraction": 0.1653,
+      "areaFinal": 80997,
+      "bbox": [
+        1532,
+        626,
+        1968,
+        1007
+      ],
+      "offset": [
+        1532,
+        626
+      ],
+      "layer": "layers/1201-right-bluff-crown-pines.png"
+    }
+  ]
+}

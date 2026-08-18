@@ -22,7 +22,7 @@ if [ "$STAGE" = "infer" ]; then
     --model HYVideo-T/2 \
     --input-path /workspace/gate1 \
     --prompt "the camera pushes slowly and steadily forward, a smooth dolly move deeper into the scene. nothing else changes." \
-    --negative-prompt "photograph, photorealistic, real water, video footage, live action, cinematic lighting, film grain, 3d render, depth of field, motion blur, morphing, texture dissolving" \
+    --neg-prompt "photograph, photorealistic, real water, video footage, live action, cinematic lighting, film grain, 3d render, depth of field, motion blur, morphing, texture dissolving" \
     --i2v-stability \
     --infer-steps 50 \
     --flow-reverse \

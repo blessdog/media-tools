@@ -1,0 +1,24 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "route": "style-reference",
+  "refSet": "bongpot3",
+  "references": [
+    "references/s05-SCENE-uso-inkwash-v1.png",
+    "references/s06-FORESHADOW-uso-inkwash-v1.png",
+    "references/s37-INSERT-uso-inkwash-v1.png"
+  ],
+  "refLora": "krea2_style_reference.safetensors",
+  "refLoraStrength": 1,
+  "styleLora": null,
+  "styleLoraStrength": null,
+  "subject": "A man in headphones steps through a doorway holding a large kitchen knife at his side, a washing machine behind him in a dim narrow room",
+  "prompt": "A man in headphones steps through a doorway holding a large kitchen knife at his side, a washing machine behind him in a dim narrow room",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "base": "krea2_turbo_fp8_scaled.safetensors",
+  "promptId": "b947dda8-e433-4772-9e3b-10852bc9f210",
+  "seconds": 23.3,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders-ref/bongpot3--ref-only--doorway.png"
+}

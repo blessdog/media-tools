@@ -1,0 +1,47 @@
+{
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [720, 1280],
+  "note": "PROTECT points, not depth planes. Measured 2026-08-14: on a locked-camera i2v run at cfg 3 with a 'nothing moves' prompt, 92.3% of this frame never changed and the churn was entirely on these subjects. Faces and animals fire the model's subject priors with no prompt asking them to. depth is unused here; x,y normalised 0..1.",
+  "points": [
+    {
+      "id": 1,
+      "x": 0.375,
+      "y": 0.645,
+      "depth": 5,
+      "window": 700,
+      "name": "ge-hong",
+      "pick": "whole",
+      "why": "the protagonist. His face redraws itself into a generic frontal bearded man over 73 frames."
+    },
+    {
+      "id": 2,
+      "x": 0.155,
+      "y": 0.665,
+      "depth": 5,
+      "window": 600,
+      "name": "deer",
+      "pick": "whole",
+      "why": "antlers dissolve into crosshatch, legs stipple away"
+    },
+    {
+      "id": 3,
+      "x": 0.705,
+      "y": 0.895,
+      "depth": 5,
+      "window": 450,
+      "name": "servant-bearer",
+      "pick": "whole",
+      "why": "faintly warm in the heatmap; second face in frame"
+    },
+    {
+      "id": 4,
+      "x": 0.875,
+      "y": 0.935,
+      "depth": 5,
+      "window": 400,
+      "name": "servant-front",
+      "pick": "whole",
+      "why": "third face, bottom right corner"
+    }
+  ]
+}

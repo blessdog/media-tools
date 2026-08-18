@@ -1,0 +1,46 @@
+{
+  "reconstructed": true,
+  "reconstructedNote": "Written after the fact from the run stdout. Seed is exact; settings are that run's style.json defaults. Not machine-recorded.",
+  "tool": "generate-image",
+  "provider": "comfy",
+  "renderer": "uso-inkwash",
+  "style": "inkwash",
+  "model": {
+    "checkpoint": "flux1-dev-fp8.safetensors",
+    "lora": "uso-flux1-dit-lora-v1.safetensors",
+    "loraStrength": 1.35,
+    "modelPatch": "uso-flux1-projector-v1.safetensors",
+    "clipVision": "sigclip_vision_patch14_384.safetensors"
+  },
+  "sampler": {
+    "seed": 7834,
+    "steps": 20,
+    "guidance": 3.5,
+    "cfg": 1,
+    "sampler": "euler",
+    "scheduler": "simple",
+    "denoise": 1
+  },
+  "frame": {
+    "width": 1152,
+    "height": 640
+  },
+  "channels": {
+    "style": {
+      "file": "/Users/SSDrive/projects/media-tools/styles/inkwash/reference/LOCKED-inkwash-texture-1.png",
+      "sha256": "c940bca3b66ef641"
+    },
+    "identity": null,
+    "scene": {
+      "text": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted. Close-up on a man from roughly mid-chest upward; he holds a lit cigarette raised near his chin between the index and middle fingers of his right hand, his head tilted slightly downward so he appears to be looking slightly down and past the viewer. He wears thin wire-framed rectangular glasses, dark hair slicked back, a dark navy or black suit jacket over a white dress shirt with the collar open. The background is a loosely washed pale blue gradient suggesting an exterior or a lit cyclorama.",
+      "stylePrefix": "Traditional Chinese ink-and-watercolour painting: confident dark ink-brush linework, loose expressive brushwork, soft bleeding colour washes, visible paper grain. Faces, hands and skin are built the same way as everything else — flat washes and visible brushstrokes, edges left unresolved where the brush lifted.",
+      "yourPrompt": "Close-up on a man from roughly mid-chest upward; he holds a lit cigarette raised near his chin between the index and middle fingers of his right hand, his head tilted slightly downward so he appears to be looking slightly down and past the viewer. He wears thin wire-framed rectangular glasses, dark hair slicked back, a dark navy or black suit jacket over a white dress shirt with the collar open. The background is a loosely washed pale blue gradient suggesting an exterior or a lit cyclorama."
+    }
+  },
+  "source": {
+    "describedFrom": "source.mp4",
+    "shotScript": "regen/shot-05.txt",
+    "filteredBy": "dephoto.sh"
+  },
+  "out": "renders/shot-05.png"
+}

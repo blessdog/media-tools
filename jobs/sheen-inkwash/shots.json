@@ -1,0 +1,51 @@
+{
+  "video": "source.mp4",
+  "model": "anthropic/claude-sonnet-4-6",
+  "shots": [
+    {
+      "index": 0,
+      "start": 4,
+      "description": "Extreme close-up of a cigarette lighter — a metal flip-top lighter held between bare fingers — being ignited, with a small orange and white flame visible at the top of the mechanism. The lighter body is chrome or silver-toned metal with a visible hinge and strike wheel. The setting is indeterminate and dark, with a near-black background. Lighting is practical, sourced entirely from the lighter's flame, casting a warm orange-yellow glow upward onto the underside of the fingers and the lighter's chrome surface, with deep shadows surrounding the subject. The camera angle is low and slightly oblique, shooting upward toward the flame from just below the lighter's level, with shallow depth of field rendering the background and foreground fingers soft and blurred. No on-screen text is visible."
+    },
+    {
+      "index": 1,
+      "start": 8,
+      "description": "Close-up of a middle-aged man holding his hand up near his chin in a contemplative pose, wearing wire-rimmed glasses, a dark suit jacket, and a tie. The setting is indistinct and dark, with a blurred abstract blue-lit background featuring glowing blue particle or bubble elements on the left side. The lighting is predominantly a hard, saturated blue coming from the left side, casting cool tones across his face while leaving the right side partially in shadow; a faint specular highlight runs vertically across his glasses lens. The camera is positioned at approximately eye level, framing him slightly off-center to the right. No on-screen text is visible. TV commercial."
+    },
+    {
+      "index": 2,
+      "start": 12,
+      "description": "**Shot 2 — 12 s**\n\nMedium shot of a dark-haired man seated in the passenger or rear seat of a car, raising a small glass (appears to be a shot or whiskey glass) toward his mouth with his right hand. He wears a dark navy or black suit jacket with a white dress shirt and dark tie. The setting is the interior of a car at night, with the rear windshield visible behind him showing a dark exterior; a blurred warm orange light — possibly a street or traffic light — is visible through the side window to the left of frame. Lighting is low-key and predominantly cool blue, sourced from outside the vehicle, falling on his face from a slight front-left angle, leaving much of the frame in deep shadow. The camera is at a slight low angle, roughly eye-level, shooting straight on through what appears to be the front windshield. No on-screen text is visible."
+    },
+    {
+      "index": 3,
+      "start": 16,
+      "description": "A medium close-up shot of the rear three-quarter section of a black stretch limousine in motion, with no human subjects visible. The vehicle is a long-body luxury sedan with chrome trim along the rocker panels, chrome multi-spoke wheels with white-wall tires, and a red tail lamp visible at the far left edge of the frame. The limousine's elongated side windows reflect warm amber/orange light in the rearmost pane and a vivid blue glow—suggesting a city nightscape or interior lighting—in the forward passenger windows. The setting is a dark roadway at night with an indistinct dark background. Lighting is low-key and predominantly dark, with the strong blue reflection on the windows serving as the dominant cool light source from screen right, and the amber reflection providing secondary warm fill; overall lighting is soft with no harsh shadows visible on the bodywork. The camera angle is a slightly elevated rear three-quarter view looking forward along the driver's side of the vehicle. No on-screen text is present in this frame."
+    },
+    {
+      "index": 4,
+      "start": 20,
+      "description": "Wide shot looking upward at the upper portion of a neoclassical building with tall Corinthian columns and an ornate entablature, occupying the right half of the frame, set against a deep solid blue sky. A large, billowing red fabric or flag sweeps across the lower-left portion of the frame in a bold curved shape, partially obscuring the base of the composition. The building is rendered in cool grey-white tones. Lighting is bright and directional from the right, creating hard contrast on the column capitals and cornice detail, with the blue sky evenly lit and saturated. The camera angle is a steep low-angle upward tilt (worm's-eye view), shooting from below and to the left of the building. No on-screen text is visible."
+    },
+    {
+      "index": 5,
+      "start": 24,
+      "description": "**Shot 5 — 24s**\n\nClose-up on a man from roughly mid-chest upward; he holds a lit cigarette raised near his chin between the index and middle fingers of his right hand, his head tilted slightly downward so he appears to be looking just below the lens. He wears thin wire-framed rectangular glasses, dark hair slicked back, a dark navy or black suit jacket over a white dress shirt with the collar open. The background is a soft, out-of-focus pale blue gradient suggesting an exterior or a lit cyclorama. Lighting is a cool, blue-tinted frontal key light hitting his face directly, with minimal fill, creating slight shadow under the brow and jaw; a secondary warm fill from camera-left partially separates him from the background. The camera is at a near-straight-on angle, fractionally low, giving him a slightly authoritative placement in frame. No on-screen text is visible in this frame."
+    },
+    {
+      "index": 6,
+      "start": 28,
+      "description": "A wide shot frames two figures on a broad, pale stone staircase in front of a large neoclassical building with columns and ornate stonework. In the foreground, a woman stands with her back to camera, holding an open red umbrella above her head; she wears a sleeveless black evening gown. Several steps above and behind her, a man in a black suit and black shoes faces toward her in a slightly crouched, dynamic stance as though caught mid-movement or reacting to her presence. Lighting is cool and blue-toned, coming from multiple off-camera sources that illuminate the steps with a bluish-white wash, while the umbrella reads as a vivid red accent and a faint purple-pink hue catches the underside of the canopy. The camera sits at a low-to-eye-level angle slightly behind and to the right of the woman, looking up the staircase toward the man. On-screen text in the upper-left area reads what appears to be a partially visible logo or channel watermark (indistinct lettering). This is a TV commercial."
+    },
+    {
+      "index": 7,
+      "start": 32,
+      "description": "**Shot 7 — 32s**\n\nWide aerial shot looking steeply down from a high vantage point onto a large curved stone plaza or public building exterior, where two figures walk separately across the ground-level pavement; the figure in the foreground carries a vivid red-pink open umbrella and wears dark clothing, while the second figure a few metres behind walks without an umbrella in dark clothing. The setting features broad curved horizontal ridges or steps in grey stone, with a large white banner or flag hanging from a structure at the upper right bearing a partially visible logo or emblem. Lighting is bright directional daylight coming from the left, casting long sharp hard shadows across the stone surface, with deep blue-grey shadow areas in the ridged sections contrasting against the sunlit flat pavement. The camera angle is extreme high angle, approximately 60–70 degrees downward, likely from a building rooftop or crane. No on-screen text is visible."
+    },
+    {
+      "index": 8,
+      "start": 36,
+      "description": "A wide product shot presents an open pack of Parliament Lights cigarettes positioned in the right-center foreground on a reflective dark surface, standing upright and angled slightly toward camera. The pack is white with a blue and white diagonal graphic panel on the front face; on-screen text on the pack reads \"PARLIAMENT\" in bold uppercase at the top, with \"Lights\" in cursive script below it, and smaller text reading \"Lights\" and \"Charcoal\" further down the pack. Behind the product, the New York City skyline at night stretches across the full background, featuring the Twin Towers of the World Trade Center prominently in the center-right of the skyline; the Brooklyn Bridge spans the mid-ground from left to right, its cables outlined in lights. The sky is a deep saturated blue, and the city lights and bridge lights reflect on the water below. Lighting on the product is soft frontal studio illumination with cool-white tones, keeping the pack crisp against the dimmer background. The camera angle is at a near eye-level, slightly low, looking straight on toward the product from a front-facing position."
+    }
+  ]
+}

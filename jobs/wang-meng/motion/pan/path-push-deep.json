@@ -1,0 +1,4 @@
+{ "fps": 24, "duration": 5,
+  "_note": "the same pure dolly as path-push.json, taken to z 0.45 over 5s. Only legal with --plane-fit: without rest-normalisation the near planes would already be rendering at the wrong painted size before the camera moved. Nearest plane sits at z 1.0, so 0.45 is 45% of the way to it — approaching, never through.",
+  "keys": [ {"t":0, "x":0.5, "y":0.5, "z":0.0,  "fov":1.0},
+            {"t":5, "x":0.5, "y":0.5, "z":0.45, "fov":1.0} ] }

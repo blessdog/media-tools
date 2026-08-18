@@ -1,0 +1,91 @@
+{
+  "tool": "cut-legs",
+  "image": "pan/deer-native.png",
+  "size": [
+    390,
+    747
+  ],
+  "note": "ink inside a hand-placed corridor; pivot is where the limb leaves the body",
+  "planeList": [
+    {
+      "n": 1,
+      "name": "near-hind",
+      "offset": [
+        108,
+        448
+      ],
+      "pivot": [
+        19,
+        18
+      ],
+      "pivotAbs": [
+        127,
+        466
+      ],
+      "phase": 0.0,
+      "lengthPx": 212,
+      "inkPx": 4423,
+      "otsu": 122
+    },
+    {
+      "n": 2,
+      "name": "near-fore",
+      "offset": [
+        153,
+        445
+      ],
+      "pivot": [
+        19,
+        18
+      ],
+      "pivotAbs": [
+        172,
+        463
+      ],
+      "phase": 0.5,
+      "lengthPx": 200,
+      "inkPx": 4382,
+      "otsu": 126
+    },
+    {
+      "n": 3,
+      "name": "far-hind",
+      "offset": [
+        190,
+        449
+      ],
+      "pivot": [
+        37,
+        7
+      ],
+      "pivotAbs": [
+        227,
+        456
+      ],
+      "phase": 0.25,
+      "lengthPx": 118,
+      "inkPx": 3149,
+      "otsu": 129
+    },
+    {
+      "n": 4,
+      "name": "far-fore",
+      "offset": [
+        232,
+        436
+      ],
+      "pivot": [
+        38,
+        16
+      ],
+      "pivotAbs": [
+        270,
+        452
+      ],
+      "phase": 0.75,
+      "lengthPx": 137,
+      "inkPx": 2824,
+      "otsu": 127
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "turbo",
+  "unet": "krea2_turbo_fp8_scaled.safetensors",
+  "stepsNote": "official template settings",
+  "lora": "chinese-ink-linen-scroll-comfy.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "chinese ink linen scroll style",
+  "subject": "A man in headphones steps through a doorway holding a large kitchen knife at his side, a washing machine and dryer behind him in a dim narrow room",
+  "prompt": "A man in headphones steps through a doorway holding a large kitchen knife at his side, a washing machine and dryer behind him in a dim narrow room, chinese ink linen scroll style",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "25fd52f0-5db8-461d-b024-86d05de26665",
+  "seconds": 6.7,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/turbo--linenscroll--s3_doorway.png"
+}

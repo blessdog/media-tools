@@ -1,0 +1,21 @@
+{
+  "lane": "krea",
+  "approved": false,
+  "base": "turbo",
+  "unet": "krea2_turbo_fp8_scaled.safetensors",
+  "stepsNote": "official template settings",
+  "lora": "darkbrush.safetensors",
+  "loraStrength": 0.8,
+  "trigger": "monochrome ink wash style",
+  "subject": "A single pale green poppy seed pod fills the frame, its crown splayed open, beads of sap running down its side, foliage blurred behind",
+  "prompt": "A single pale green poppy seed pod fills the frame, its crown splayed open, beads of sap running down its side, foliage blurred behind, monochrome ink wash style",
+  "seed": 20260812,
+  "steps": 8,
+  "cfg": 1,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "size": "1024x1024",
+  "promptId": "e80d810f-82ac-4447-a7d9-5832c9543644",
+  "seconds": 6.8,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea/renders/turbo--darkbrush--s5_poppy_macro.png"
+}

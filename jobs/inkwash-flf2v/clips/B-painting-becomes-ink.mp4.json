@@ -1,0 +1,48 @@
+{
+  "tool": "image-to-video",
+  "provider": "civitai",
+  "renderer": "ltx2.3:22b-dev",
+  "api": "https://orchestration.civitai.com/v2/consumer/workflows",
+  "frame": {
+    "width": 1280,
+    "height": 720,
+    "seconds": 5,
+    "fps": 24
+  },
+  "sampler": {
+    "frameGuideStrength": 0.8
+  },
+  "start": {
+    "file": "frames/painting-end.png",
+    "sha256": "53b06508d80c24dd"
+  },
+  "end": {
+    "file": "frames/ink-start.png",
+    "sha256": "8a3c871cb75275de"
+  },
+  "motionPrompt": "The painted man dissolves. The washes lift off the paper and run back together into a single wet black splatter at the centre, colour draining away to bare cream paper. The paper stays still. Only the paint moves.",
+  "interpolates": true,
+  "buzzQuoted": {
+    "green": 39
+  },
+  "buzzBefore": {
+    "blue": 0,
+    "green": 9339,
+    "yellow": 0
+  },
+  "insufficientBuzz": false,
+  "out": "clips/B-painting-becomes-ink.mp4",
+  "workflowId": "12293736-20260812204516119",
+  "videoUrl": "https://orchestration-new.civitai.com/v2/consumer/blobs/WPZSD7HN9SS3AWYJR2N5N329P0.mp4?sig=CfDJ8OhuHddet6VHsmTPdSCkBZQFjp9lvQlBCjyNxLFy09b67Fp_U-4A_O5N3xoxvVN3z4AL1QZiRXgGWCmWKtv-S2v2eA5dOozZWtZDOX7RJ2H9RvFkc-RIaAaAdcDOqA2cXCxAIsKpLzG6gZWE5TKNhOyH-zD6qrqTO6iunJG_1UTWcz6GgOwVUfaFYELPsj1qqJmmzBLMS5JxlQvmgYgRs6IVQ3EzdeiEXFY80iLSdiBZKC5fz0cgNJ-nrhc4pSvCZc-1aVc8LjQG5SWgUhZsKFCbrrIhpOxqaV7RfBdkPL9r&exp=2027-08-12T20:47:16.1354837Z",
+  "bytes": 1059704,
+  "buzzAfter": {
+    "blue": 0,
+    "green": 9222,
+    "yellow": 0
+  },
+  "buzzActuallySpent": {
+    "blue": 0,
+    "green": 117,
+    "yellow": 0
+  }
+}

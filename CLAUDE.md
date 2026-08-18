@@ -1,5 +1,17 @@
 # CLAUDE.md — media-tools
 
+## EVIDENCE LANDS IN THE REPO (law, 2026-08-18 — Ryan: "you are too amnesic")
+Any image, video, chart, or diagnostic that is (a) opened on Ryan's screen,
+(b) cited in a claim or verdict, or (c) produced by a probe/experiment, is
+WRITTEN INTO THE REPO under `jobs/<job>/` before or at the moment it is shown
+— never left in a session scratchpad. Scratchpads are for intermediates nobody
+will ever cite. The failure this bans, measured: a displacement-grid diagnostic
+was rendered to a scratchpad on 2026-08-16, opened, argued from — and the file
+evaporated with the session; only Ryan's manual screenshot preserved it, and
+its provenance is unrecoverable. Every experiment's evidence also gets one line
+in the job's STATE.md (what it shows, where it lives) in the same session that
+made it. Research that isn't cataloged in the repo does not exist.
+
 ## What this project is
 The toolbox. Every media capability (image gen, i2v, restyle, transcription,
 stitch, GPU rental, frame stylization) is ONE single-purpose CLI in `tools/`.

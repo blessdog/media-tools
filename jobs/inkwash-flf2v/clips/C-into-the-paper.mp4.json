@@ -1,0 +1,44 @@
+{
+  "tool": "image-to-video",
+  "provider": "civitai",
+  "renderer": "ltx2.3:22b-dev",
+  "api": "https://orchestration.civitai.com/v2/consumer/workflows",
+  "frame": {
+    "width": 1280,
+    "height": 720,
+    "seconds": 5,
+    "fps": 24
+  },
+  "sampler": {
+    "frameGuideStrength": 0.8
+  },
+  "start": {
+    "file": "frames/painting-end.png",
+    "sha256": "53b06508d80c24dd"
+  },
+  "motionPrompt": "Slow steady push into the painted surface. The brushstrokes grow until they stop reading as a face and become wet ink sitting in the grain of the paper, individual bristle marks and pooled edges filling the frame. Nothing in the picture moves; the view travels into the paint.",
+  "interpolates": false,
+  "buzzQuoted": {
+    "green": 39
+  },
+  "buzzBefore": {
+    "blue": 0,
+    "green": 9339,
+    "yellow": 0
+  },
+  "insufficientBuzz": false,
+  "out": "clips/C-into-the-paper.mp4",
+  "workflowId": "12293736-20260812204515921",
+  "videoUrl": "https://orchestration-new.civitai.com/v2/consumer/blobs/23Q6BNWYBD7FJH5X1VX0AKRPT0.mp4?sig=CfDJ8OhuHddet6VHsmTPdSCkBZQi7o3tGB2JCDVONAxlOGPt1-vVOwVLaNQRcql11Jzjzen3ZLY21iQABEqr9UaO1hTpt-BT64NkaSnrWP6J2iCBZNySlIl7ui1_PFhZs6y-Emmvfsmp_qsGPYUk9BOTZoLXJtvLGaWmykD9w6e21VLduy8h4LIwPB_LP85vGtLYXrM5Vo6O41q2XXlRJuKpNIqUCZ9P0EGSr5hGu0wdNVQmcoWGyXOQzXiznU2hP0czV6-syMbGSTaUHsoZewOeBSiVRqtd0RFrKaE2aMgB_Uq4&exp=2027-08-12T20:48:40.8177987Z",
+  "bytes": 1344671,
+  "buzzAfter": {
+    "blue": 0,
+    "green": 9222,
+    "yellow": 0
+  },
+  "buzzActuallySpent": {
+    "blue": 0,
+    "green": 117,
+    "yellow": 0
+  }
+}

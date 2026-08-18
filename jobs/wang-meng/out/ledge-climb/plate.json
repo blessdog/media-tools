@@ -1,0 +1,27 @@
+{
+  "tool": "crop-region",
+  "out": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/out/ledge-climb/plate.png",
+  "size": [
+    1070,
+    1380
+  ],
+  "master": "corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+  "masterBox": [
+    901,
+    10370,
+    3404,
+    13599
+  ],
+  "masterPxPerRegionPx": 2.34,
+  "shotOffset": [
+    0,
+    100
+  ],
+  "shotWindowInRegion": [
+    0,
+    100,
+    720,
+    1380
+  ],
+  "note": "add shotOffset to any mask cut against the original shot; pass it to clean-plate / walk-figure as --mask-offset"
+}

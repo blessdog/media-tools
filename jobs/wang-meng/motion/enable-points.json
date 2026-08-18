@@ -1,0 +1,47 @@
+{
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [720, 1280],
+  "note": "ENABLE points: the regions allowed to move. Ryan's brief is moving water and stirring foliage, and naming either substance in a full-frame prompt replaces the painting with photographic footage of it. The wager here is that inside a stencil the word is safe, because there is no Ge Hong in the region for the prior to dissolve. depth unused; x,y normalised 0..1.",
+  "points": [
+    {
+      "id": 1,
+      "x": 0.208,
+      "y": 0.9375,
+      "depth": 1,
+      "window": 420,
+      "name": "water-under-bridge",
+      "pick": "whole",
+      "why": "the only cascading water in frame: 留白 silk broken by ink dashes, running over rocks below the trestle"
+    },
+    {
+      "id": 2,
+      "x": 0.278,
+      "y": 0.195,
+      "depth": 1,
+      "window": 700,
+      "name": "upper-river",
+      "pick": "whole",
+      "why": "flat river with drawn ripple lines. Unpainted silk, so SAM may refuse it — that refusal is itself worth knowing"
+    },
+    {
+      "id": 3,
+      "x": 0.778,
+      "y": 0.422,
+      "depth": 2,
+      "window": 520,
+      "name": "pine-canopy",
+      "pick": "whole",
+      "why": "densest needles at frame right"
+    },
+    {
+      "id": 4,
+      "x": 0.583,
+      "y": 0.4375,
+      "depth": 2,
+      "window": 480,
+      "name": "broadleaf-branch",
+      "pick": "whole",
+      "why": "the near branch crossing the centre, with red-tipped cones — the most legible foliage to judge motion on"
+    }
+  ]
+}

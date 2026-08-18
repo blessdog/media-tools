@@ -1,0 +1,25 @@
+{
+  "out": "pan/strip.png",
+  "size": [
+    1070,
+    1380
+  ],
+  "masterBox": [
+    901,
+    10370,
+    3404,
+    13599
+  ],
+  "masterPxPerStripPx": 2.34,
+  "shotOffset": [
+    0,
+    100
+  ],
+  "note": "add shotOffset to any mask offset cut against shot-real.png to place it on this strip",
+  "shotWindowInStrip": [
+    0,
+    100,
+    720,
+    1380
+  ]
+}

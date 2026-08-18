@@ -1,0 +1,14 @@
+{
+  "model": "krea/krea-2-large",
+  "input": {
+    "prompt": "A heavy-set warehouse foreman sits at a desk facing the camera, an open ledger under his right hand. A long fluorescent tube runs across the ceiling above him. Through a wide window behind him, two workers push hand trucks loaded with cardboard boxes.",
+    "aspect_ratio": "16:9",
+    "seed": 4242,
+    "creativity": "raw",
+    "style_reference_images": "3 image(s)",
+    "style_reference_strength": 0.7
+  },
+  "predictionId": "wwqqdx8medrmt0czz34rrkavc0",
+  "seconds": 33,
+  "out": "/Users/SSDrive/projects/media-tools/jobs/krea-probe/large-own-frames.png"
+}

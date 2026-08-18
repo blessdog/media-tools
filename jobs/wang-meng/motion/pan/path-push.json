@@ -1,0 +1,4 @@
+{ "fps": 24, "duration": 3,
+  "_note": "a pure dolly in. x,y held so nothing but Z changes — any differential motion in the frame is parallax and not a pan.",
+  "keys": [ {"t":0, "x":0.5, "y":0.5, "z":0.0,  "fov":1.0},
+            {"t":3, "x":0.5, "y":0.5, "z":0.22, "fov":1.0} ] }

@@ -1,0 +1,221 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/motion/shot-real.png",
+  "size": [
+    720,
+    1280
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 4,
+  "unclaimedFraction": 0.8791,
+  "overlay": "jobs/wang-meng/motion/mask/enable/overlay.png",
+  "feather": 4,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 3.8,
+  "inferSeconds": 16.1,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 1,
+      "name": "water-under-bridge",
+      "depth": 1,
+      "point": [
+        150,
+        1200
+      ],
+      "window": 420,
+      "windowRequested": 420,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 420,
+          "clipped": false,
+          "imageFraction": 0.0724,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        860,
+        420,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.6334,
+      "candidateAreas": [
+        748,
+        2122,
+        66362
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 66698,
+      "windowFraction": 0.3781,
+      "areaFinal": 66698,
+      "bbox": [
+        0,
+        1014,
+        374,
+        1280
+      ],
+      "offset": [
+        0,
+        1014
+      ],
+      "layer": null
+    },
+    {
+      "n": 2,
+      "id": 2,
+      "name": "upper-river",
+      "depth": 1,
+      "point": [
+        200,
+        250
+      ],
+      "window": 1280,
+      "windowRequested": 700,
+      "grewTo": 1280,
+      "attempts": [
+        {
+          "window": 700,
+          "clipped": true,
+          "imageFraction": 0.2019,
+          "rejected": false
+        },
+        {
+          "window": 1280,
+          "clipped": false,
+          "imageFraction": 0.0203,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        720,
+        1280
+      ],
+      "pick": "whole",
+      "score": 0.7932,
+      "candidateAreas": [
+        4668,
+        8708,
+        19016
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 18734,
+      "windowFraction": 0.0203,
+      "areaFinal": 18734,
+      "bbox": [
+        178,
+        217,
+        523,
+        379
+      ],
+      "offset": [
+        178,
+        217
+      ],
+      "layer": null
+    },
+    {
+      "n": 3,
+      "id": 3,
+      "name": "pine-canopy",
+      "depth": 2,
+      "point": [
+        560,
+        540
+      ],
+      "window": 520,
+      "windowRequested": 520,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 520,
+          "clipped": false,
+          "imageFraction": 0.0196,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        200,
+        280,
+        720,
+        800
+      ],
+      "pick": "whole",
+      "score": 0.745,
+      "candidateAreas": [
+        500,
+        2224,
+        17741
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 18087,
+      "windowFraction": 0.0669,
+      "areaFinal": 18087,
+      "bbox": [
+        506,
+        430,
+        685,
+        658
+      ],
+      "offset": [
+        506,
+        430
+      ],
+      "layer": null
+    },
+    {
+      "n": 4,
+      "id": 4,
+      "name": "broadleaf-branch",
+      "depth": 2,
+      "point": [
+        420,
+        560
+      ],
+      "window": 480,
+      "windowRequested": 480,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 480,
+          "clipped": false,
+          "imageFraction": 0.0086,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        180,
+        320,
+        660,
+        800
+      ],
+      "pick": "whole",
+      "score": 0.6213,
+      "candidateAreas": [
+        619,
+        4214,
+        8274
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 7911,
+      "windowFraction": 0.0343,
+      "areaFinal": 7911,
+      "bbox": [
+        355,
+        490,
+        501,
+        695
+      ],
+      "offset": [
+        355,
+        490
+      ],
+      "layer": null
+    }
+  ]
+}
