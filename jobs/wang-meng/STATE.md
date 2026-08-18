@@ -207,7 +207,7 @@ no tilts, no warp, no relief. Now measured on the bridge push
 ## 2026-08-18 overnight — VOYAGER GATE RUNNING AUTONOMOUSLY (Ryan asleep)
 Standing orders: complete the gate test by morning; DESTROY the box
 (instance 47992868, $1.303/hr, `node tools/gpu-box.mjs down`) on every exit
-path. Budget cap $10. Checkpoints judged by Claude against pre-registered
+path. Budget cap $5 (Ryan, tightened before bed). Check `gpu-box status` accrued cost before run 2; skip run 2 if projected total > $5. Checkpoints judged by Claude against pre-registered
 criteria (dossier §07), all evidence saved for morning review. Run 2
 (authored depth) only if run 1 ink holds. Provisioning attempt 2 in
 progress (attempt 1 died: box image lacked python3-venv — fixed; default
