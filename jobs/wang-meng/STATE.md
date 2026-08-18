@@ -351,3 +351,7 @@ most. Film proceeds with classical lane per the v2 vision: multiplane pans,
 animate-strokes water/leaves, walk-figure figures — $0, local, Wang Meng's own
 pixels. Box 48042658 PARKED (storage ~$0.033/hr) awaiting Ryan's explicit kill.
 Evidence: journey/wild/S2/S2-v2.mp4 + stills + input-station.png (committed).
+Addendum (Ryan): Voyager also fails on RESOLUTION — 768×512 output, "pixel
+poor". Scroll is 6586×15923 native; classical lane crops/renders at full res.
+Third independent kill: fidelity (faces), fabrication (prompts/prior), and
+resolution. NEXT PHASE: assemble the film from the toolbox — classical only.
