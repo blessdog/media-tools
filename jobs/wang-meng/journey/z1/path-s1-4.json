@@ -1,0 +1,49 @@
+{
+ "fps": 24,
+ "duration": 24,
+ "_note": "Z1 stations 1-4: river entry glide -> ox party -> push on Ge at the bridge (pause) -> rise to the porters. \u5e73\u9060 level eye, z-pushes at stations per spec choreography. Entry y clamped to 0.760 so the 1280px window never leaves the painting (was 0.908: 392px of blank paper in frame 0).",
+ "keys": [
+  {
+   "t": 0,
+   "x": 0.691,
+   "y": 0.76,
+   "z": 0.0,
+   "fov": 1.0
+  },
+  {
+   "t": 8,
+   "x": 0.691,
+   "y": 0.547,
+   "z": 0.05,
+   "fov": 1.0
+  },
+  {
+   "t": 10.5,
+   "x": 0.6,
+   "y": 0.52,
+   "z": 0.1,
+   "fov": 1.0
+  },
+  {
+   "t": 14,
+   "x": 0.345,
+   "y": 0.463,
+   "z": 0.22,
+   "fov": 1.0
+  },
+  {
+   "t": 17,
+   "x": 0.345,
+   "y": 0.463,
+   "z": 0.24,
+   "fov": 1.0
+  },
+  {
+   "t": 24,
+   "x": 0.184,
+   "y": 0.329,
+   "z": 0.12,
+   "fov": 1.0
+  }
+ ]
+}
