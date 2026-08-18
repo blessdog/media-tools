@@ -12,7 +12,10 @@
 #   - create_input.py needs only MoGe (+ numpy renderer); VGGT/Metric3D are
 #     training-engine-only, skipped entirely
 set -euo pipefail
-cd /workspace
+mkdir -p /workspace && cd /workspace
+
+echo "=== [0/5] base tools (pytorch docker image is minimal: no git/wget) ==="
+apt-get update -q && apt-get install -y -q git wget
 
 echo "=== [1/5] weights download starts immediately (parallel long pole) ==="
 pip install -q "huggingface_hub[cli]"
