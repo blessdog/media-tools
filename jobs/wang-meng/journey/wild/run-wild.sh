@@ -47,8 +47,8 @@ if [ "$STAGE" = "conditions" ]; then
     --image_path "$WILD/$SEG/input.png" \
     --render_output_dir "$WILD/$SEG" \
     --type forward \
-    --end-pos "$(jget end_pos)" \
-    --target-end "$(jget target_end)"
+    --end-pos="$(jget end_pos)" \
+    --target-end="$(jget target_end)"
   echo "CONDITIONS-DONE $SEG: $(ls $WILD/$SEG/video_input/ | head -3)"
 fi
 
