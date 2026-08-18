@@ -176,3 +176,12 @@ Synthesis for the flythrough (the forest, not the trees):
   renders the station pushes (figure relief visible ∝ 1/distance).
 - Camera speed defined in figure-heights/sec; 平遠 altitude = eye height
   above the water plane.
+
+## 2026-08-17 night — FIRST FLIGHT RENDERED
+`journey/z1/FLY-S1-4.mp4` (z-step 0.035) and `FLY-S1-4-DEEP.mp4` (0.30,
+the proven setting) — stations 1–4, 24s, 720×1280, --plane-fit --no-base,
+filled stack. Entry key clamped to y=0.760 (0.908 hung the window 392px
+past the scroll bottom → blank paper; the zone-rect rule guards STATIONS,
+the path author must guard FRAMES). Frame zero identical across z-steps as
+plane-fit guarantees. AWAITING: Ryan's watchability verdict = the Z1 gate.
+Then: warp A/B on the bridge push, figure reliefs, Z2.
