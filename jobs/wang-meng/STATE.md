@@ -144,3 +144,35 @@ Two renderers, ONE data source, per segment of the journey:
   Gate test (like GATE1): Z1 720×1280 crop + simple push trajectory on a
   rented box; judge with silk-survival vs static control + figures intact.
   Ryan's framing: flux dev for style + Hunyuan World for fly-through.
+
+## 2026-08-17 night — GO given: seal chain run + THE RANGEFINDER
+
+Chain state (all under `journey/z1/`):
+- `complete-planes`: unclaimed 28.4% → 0.0%, max expansion 253.6 px → `layers-sealed/`
+- `segment-regions` at native size (41 objects) → `objects/`
+- `pin-objects --min-majority 0.4`: 29 pinned, 0 ambiguous, torn ink
+  30.1% → 23.9% (pilot's accepted floor was 20.3%) → `layers-pinned/`.
+  The 3 ambiguous rocks (8: outcrop behind Ge → d14; 11: shore boulder →
+  d16; 32: resting-ledge rock → d11) resolved by plurality = their ground.
+- `inpaint-planes --behind 100 --method flux` → `layers-filled/` (13 planes)
+- NEXT: frame-zero control (0 px changed), then stations 1–4 path + render.
+- Swap gotcha for the record: a plane entry's `offset` field (not just bbox)
+  must be patched when swapping layers — complete-planes reads `offset`.
+
+**RANGE-PLANES (new tool, Ryan-approved, committed `5e0f394`).** Painted
+figure size IS distance (h ∝ 1/z within one class). First reading of the
+scroll, servant class, master px: ox-leader 515px (Z1 bank, z≡1) →
+cliff-path traveler 255px (Z3, z=2.02) → compound figure 170px (Z5,
+z=3.03). The journey is spaced in clean multiples. TWO SCALES AT ONCE:
+Ge Hong = 760px, 1.48× a NEARER servant — hierarchical (status) scale;
+protagonists never calibrate. Within-zone spacing is below instrument
+resolution (class spread > z separation) — author by eye; use the
+rangefinder ACROSS zones. Files: `tools/range-planes.py`,
+`journey/range-marks.json`, `journey/journey-scale.json`.
+
+Synthesis for the flythrough (the forest, not the trees):
+- Zone worlds get METRIC spacing from journey-scale.json (z 1→2→3).
+- Cards render the wide legs (occlusion); warp + compose-depth field
+  renders the station pushes (figure relief visible ∝ 1/distance).
+- Camera speed defined in figure-heights/sec; 平遠 altitude = eye height
+  above the water plane.
