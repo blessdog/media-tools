@@ -3,7 +3,7 @@
 # operator can pull samples between them (checkpoint B: conditions; C: output).
 # Prompt is camera-only per Law 5. Full-weight fp16, 50 steps — no shortcuts.
 set -euo pipefail
-source /workspace/venv/bin/activate
+# no venv — the box's docker image (pytorch/pytorch:2.4.0-cuda12.4) IS the env
 cd /workspace/HunyuanWorld-Voyager
 
 STAGE="${1:-conditions}"
@@ -25,7 +25,11 @@ if [ "$STAGE" = "infer" ]; then
     --negative-prompt "photograph, photorealistic, real water, video footage, live action, cinematic lighting, film grain, 3d render, depth of field, motion blur, morphing, texture dissolving" \
     --i2v-stability \
     --infer-steps 50 \
+    --flow-reverse \
+    --flow-shift 7.0 \
     --seed 0 \
+    --embedded-cfg-scale 6.0 \
+    --use-cpu-offload \
     --save-path /workspace/gate1/results
   echo "INFER-DONE: $(ls /workspace/gate1/results/ 2>/dev/null | head -3)"
 fi
