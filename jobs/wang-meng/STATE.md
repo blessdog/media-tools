@@ -329,3 +329,14 @@ ratchet toward the training prior. Consequence: wild journey v2 = station-anchor
 (every segment generation-1 from a real crop at one of Ryan's 11 stations; joined
 as cuts). Evidence: jobs/wang-meng/journey/wild/S1/ S2/ (committed). S3 (gen-2,
 launched pre-verdict) kept as drift-curve data.
+
+## 2026-08-18 late — THE V2 VISION (Ryan, verbatim intent): explore the artwork, don't replace it
+"Some of the best cartoons ever are not photorealistic, they're unbelievably
+simple… staying true to the artwork. That's what I want to do." The film:
+scenes + cut-throughs + pans along the 11 stations; Voyager gen-1 flights for
+camera moves; animate-strokes for water/leaves (painter's own ink displaced);
+walk-figure for background figures; tilted-cards multiplane (the Disney-1930s
+machine) for parallax pans; occlusion teases — "peer around the corner but
+can't quite look past it… we don't need to build the world behind the rocks."
+Everything is Wang Meng's pixels or one generation from them. Box PARKS (stop,
+not down) after queue-v2 — Ryan kills it explicitly, never by default.
