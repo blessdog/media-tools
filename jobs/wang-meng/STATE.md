@@ -203,3 +203,14 @@ no tilts, no warp, no relief. Now measured on the bridge push
   intra-figure relief yet (cards = one z/plane; warp holds objects rigid).
   Missing piece = a displacement pass on a figure's card for close-ups.
   PUSH-CARDS-VS-WARP.mp4 is the side-by-side evidence.
+
+## 2026-08-18 overnight — VOYAGER GATE RUNNING AUTONOMOUSLY (Ryan asleep)
+Standing orders: complete the gate test by morning; DESTROY the box
+(instance 47992868, $1.303/hr, `node tools/gpu-box.mjs down`) on every exit
+path. Budget cap $10. Checkpoints judged by Claude against pre-registered
+criteria (dossier §07), all evidence saved for morning review. Run 2
+(authored depth) only if run 1 ink holds. Provisioning attempt 2 in
+progress (attempt 1 died: box image lacked python3-venv — fixed; default
+manifest's downloader also had to be killed twice). Known deps issue:
+repo's pinned pandas has no py3.12 wheel — patch modern pandas into venv
+during the weights download, extend smoke test to import create_input deps.
