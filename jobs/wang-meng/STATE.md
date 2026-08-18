@@ -314,3 +314,18 @@ Judged by eye against pre-registered criteria (dossier §07), Ryan's screen + mi
 RUN 2 DOES NOT FIRE (pre-registered: better geometry can't fix a style prior).
 Box 48031012 destroyed immediately after pull. Total attempt-3 cost ≈ $1.40.
 Tilted cards remain the path (FLY-S1-4-DEEP, PUSH-GE-TILT unharmed).
+
+## 2026-08-18 evening — WILD JOURNEY PILOT: chained-world FAILS at S2 (one-generation rule)
+Box 48042658 (parked, not destroyed, per Ryan). Style A/B on S1: BOTH treatments
+held ink (style block + anti-cartoon neg-prompt — the morning gate's collapse was
+partly a prompting artifact). Ryan picked B_realistic. THE LAW MEASURED:
+- S1 (conditions = real painting pixels): ink holds. Ryan: "i fw that for sure."
+- S2 (conditions = Voyager's own S1 output): game prior surfaces immediately —
+  red-pagoda game asset, smoothed shading. Ryan: "the slop was just right around
+  the corner. As soon as you pushed it past S1."
+Rule: Voyager holds style for EXACTLY ONE GENERATION from real pixels. The style
+prompt is a one-generation stabilizer, not a lock. Chained self-feeding is a
+ratchet toward the training prior. Consequence: wild journey v2 = station-anchored
+(every segment generation-1 from a real crop at one of Ryan's 11 stations; joined
+as cuts). Evidence: jobs/wang-meng/journey/wild/S1/ S2/ (committed). S3 (gen-2,
+launched pre-verdict) kept as drift-curve data.
