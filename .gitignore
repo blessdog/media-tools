@@ -17,6 +17,9 @@ jobs/**
 !jobs/**/*.html
 !jobs/**/evidence*/**
 !jobs/**/checkpoint-*/**
+# cited in STATUS.md 2026-08-12 as the Phase-5 verdict evidence — must be in git
+!jobs/sheen-inkwash/renders/contact-sheet.png
 # wild-journey working set: everything pulled from the box is curated by
 # construction (chain inputs, A/B clips, checkpoint renders) — track it all.
 !jobs/wang-meng/journey/wild/**
+__pycache__/

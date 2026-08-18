@@ -1,5 +1,20 @@
 # STATUS — media-tools
 
+## 2026-08-18 — corrections + where the story moved
+
+- **The 2026-08-12 line "`jobs/sheen-inkwash/` (gitignored — scratch)" is
+  superseded.** The jobs tree is tracked per the evidence law (CLAUDE.md,
+  2026-08-18): text/code/JSON whitelisted in `.gitignore`, plus
+  `evidence*/` and `checkpoint-*/` dirs. The Phase-5 contact sheet
+  (`jobs/sheen-inkwash/renders/contact-sheet.png`) is now explicitly
+  whitelisted — it was still ignored despite being cited below as the
+  verdict evidence.
+- **Box 47503264 is DESTROYED** (confirmed by Ryan, 2026-08-18). No trickle.
+- **Everything after 2026-08-12 lives in `docs/journal/` and git log**, not
+  here: the wang-meng wild journey (one-generation rule, station-anchored v2,
+  Voyager's three kills) and the output-contract gate in `gpu-box.mjs`.
+  Start at `docs/journal/2026-08-18-voyager-gate-and-the-amnesia-fix.md`.
+
 ## 2026-08-12 — PHASE 5 DONE: the real renderer is wired and proven
 
 `generate-image --provider comfy` runs the USO graph on a Vast box. Nine
