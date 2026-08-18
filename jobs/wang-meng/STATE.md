@@ -296,3 +296,21 @@ THE AMNESIA FIX (Ryan: "you are too amnesic… make Git a default"):
   z-step/plane-fit experiment frames that back the FLY verdicts).
 - claude-code-guide agent researching @import + hook mechanics for
   harness-level enforcement (SessionStart/Stop hook, bible @import).
+
+## 2026-08-18 ~09:30 — VOYAGER GATE VERDICT: FAIL (style collapse), GATE CLOSED AT ~$1.40
+Run 1 completed (45 frames, 768×1024 RGB-D stacked, seed 0, 50 steps fp16).
+Evidence: journey/voyager-gate/results-run1/ (VOYAGER-RUN1.mp4 + stills, committed).
+Judged by eye against pre-registered criteria (dossier §07), Ryan's screen + mine:
+- FRAME 0 IS ALREADY A REPAINT: model redrew the whole painting as clean
+  vector-cartoon (flat fills, smooth shading); 皴 texture + silk grain gone.
+- Figures redrawn (Ge's face changed, porters cartooned) → hard fail.
+- POSITIVE FINDING: trajectory control WORKS — camera executes exactly the
+  conditioned push, composition tracks the partial renders, depth channel
+  coherent. Voyager obeyed our geometry and repainted our pixels.
+- Measured tension now closed on both ends: Hunyuan-I2V holds ink/no control;
+  Voyager has control/hostile prior (same family, different training data —
+  its RGB-D corpus is photoreal+game renders, and that prior wins over the
+  reference image even at frame 0).
+RUN 2 DOES NOT FIRE (pre-registered: better geometry can't fix a style prior).
+Box 48031012 destroyed immediately after pull. Total attempt-3 cost ≈ $1.40.
+Tilted cards remain the path (FLY-S1-4-DEEP, PUSH-GE-TILT unharmed).
