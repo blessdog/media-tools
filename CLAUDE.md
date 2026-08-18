@@ -81,6 +81,16 @@ Note the distinction that matters: **distillation** changes what the model does
 (fewer steps, altered behaviour) and must be judged. **Quantisation** (fp8, int8)
 is a precision trade on the same model and is normally free. Do not conflate them.
 
+## THE OUTPUT CONTRACT (law, 2026-08-18 — enforced in gpu-box.mjs)
+Before ANY model campaign or GPU rent, state in one line what the output
+physically is — resolution, frame count, fps — against what the deliverable
+needs. The spec is on the model card, free. If it fails the deliverable, KILL
+before architecture, before cost estimates, before enthusiasm. Measured
+failure: three A100 rentals (~$9, 1.5 days) for Voyager before anyone said
+"768×512 against a 105-megapixel scroll." `gpu-box.mjs up --rent` now refuses
+without `--contract "<spec — verdict>"`. Env checks ask "will it run"; the
+contract asks "can the output survive Ryan's eyes" (see NEVER SHIP SLOP).
+
 ## Locked decisions
 - Deepgram ALWAYS for transcription (nova-3, diarized). Never Whisper.
 - Salvage, not rewrite: logic moved from cutwork/clipsmith stays as proven.

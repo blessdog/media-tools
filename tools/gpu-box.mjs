@@ -142,6 +142,23 @@ const fmt$ = (n) => `$${Number(n).toFixed(3)}`;
 
 // ─── up ─────────────────────────────────────────────────────────────────────
 async function up() {
+  // OUTPUT-CONTRACT GATE (law, 2026-08-18). Renting requires --contract
+  // "<WxH@fps, N frames — deliverable X>": the output spec of the thing being
+  // rented FOR, stated before money moves. Measured failure this gate bans:
+  // three A100 rentals (~$9, a day and a half) for Voyager before anyone said
+  // out loud that it outputs 768×512 against a 105-megapixel scroll — a spec
+  // that was public, free, and disqualifying on day one. Ryan: "This would
+  // have saved me a day and a half and about twenty bucks." An env check asks
+  // "will it run"; the contract asks "can the output survive his eyes."
+  // (has(), not flag(): a bare trailing `--rent` makes flag() return undefined —
+  // measured 2026-08-18 when this very gate silently passed and rented a box.)
+  if (has('rent') && !has('contract')) {
+    console.error('✗ REFUSING to rent: no --contract given.');
+    console.error('  State the output contract first: --contract "768x512@24, 49 frames — deliverable needs 1080p+: KILL"');
+    console.error('  Read the model card; if the spec already fails the deliverable, do not rent at all.');
+    process.exit(1);
+  }
+  if (flag('contract')) console.log(`output contract: ${flag('contract')}`);
   // --min-vram is not a nicety. Several card NAMES ship in two memory sizes on
   // Vast (A100_SXM4 is listed at both 40GB and 80GB; RTX_6000Ada at 48GB only,
   // but H100_NVL at 94GB), and sorting on dph_total alone happily picks the
