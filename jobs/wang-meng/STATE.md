@@ -185,3 +185,21 @@ past the scroll bottom → blank paper; the zone-rect rule guards STATIONS,
 the path author must guard FRAMES). Frame zero identical across z-steps as
 plane-fit guarantees. AWAITING: Ryan's watchability verdict = the Z1 gate.
 Then: warp A/B on the bridge push, figure reliefs, Z2.
+
+## 2026-08-17 late night — THE DIMENSIONAL PIECES, WIRED AND JUDGED
+Ryan called the first flight Ken Burns — correct: it had cards+parallax but
+no tilts, no warp, no relief. Now measured on the bridge push
+(`path-push-ge.json`, lateral approach + 0.30-separation dolly on Ge):
+- `geometry.json` (平遠 roles from pilot values; trestle-bridge-ge stays
+  BILLBOARD — Ge rides it, figures never take tilt): stills + motion clean.
+  `PUSH-GE-TILT.mp4` = the keeper.
+- `render-warp` on the SAME path: COLLAPSED — central smear, structures
+  dissolved (f190/f287). Mechanism, not mystery: the path is a big lateral
+  move + deep push; warp's own contract says lateral is where it is wrong,
+  and the strain budget (silk 13%, pockets ≤66px) cannot absorb a 1.4x
+  differential. Ryan's earlier verdict ("the chop off looks better") stands
+  measured. Warp remains viable ONLY for small pure dollies, if anywhere.
+- Figure relief: compose-depth builds the map but NO renderer consumes
+  intra-figure relief yet (cards = one z/plane; warp holds objects rigid).
+  Missing piece = a displacement pass on a figure's card for close-ups.
+  PUSH-CARDS-VS-WARP.mp4 is the side-by-side evidence.
