@@ -142,3 +142,18 @@ session ends — regardless of outcome.
 - No custom camera pose authoring beyond preset mapping.
 - No audio beyond a single music bed at stitch time.
 - No changes to museum-lane assets, styles/, or locked surfaces.
+
+## V2 AMENDMENT (2026-08-18 evening, Ryan): station-anchored — "we can't leave the actual painting"
+
+Pilot measured the one-generation rule: S1 (real pixels in) held ink; S2
+(Voyager's own pixels in) surfaced the game prior immediately. Ryan: "S1 was
+fine. S2 was the slop hiding around the corner. As soon as you pushed it past
+S1… I would rather stay true to the ancient artist."
+
+V2 therefore: NO chaining, ever. Every segment is generation-1 — a real
+2560x1440 scroll crop at its starting station (make-station-crops.py), the
+proven authored trajectory, locked B_realistic treatment. The film is a
+10-shot montage cut on motion, not one continuous flight. S1-B is shot 1;
+queue-v2.sh renders S2..S10 back to back. Style bar = S1 (style-true; gen-1
+Voyager still redraws contours — judged good by Ryan on screen). The chained
+S2/S3 outputs are retained as drift-curve evidence only.
