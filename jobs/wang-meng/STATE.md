@@ -226,3 +226,34 @@ environment surprises = the pattern Ryan banned). Morning deliverables:
 voyager-gate/MORNING-REPORT.md + provision-voyager-v3.sh (docker-image rent:
 pytorch/pytorch:2.4.0-cuda12.4-cudnn9-devel; exact flash-attn wheel by URL;
 weights download first in parallel; ~$1.30 projected). Fires on Ryan's word.
+
+## 2026-08-18 morning — ATTEMPT 3 ARMED, BLOCKED ONLY ON THE RENT CLICK
+Ryan approved attempt 3. Free OFFLINE verification pass done before renting
+(the lesson: environment questions cost $0, only GPU questions need a box):
+- Docker tag pytorch/pytorch:2.4.0-cuda12.4-cudnn9-devel EXISTS (7.9GB).
+- flash-attn 2.6.3 wheels exist cp310+cp311; script auto-detects PYTAG.
+- Voyager data_engine/requirements.txt pins TORCH 2.3.1 → would downgrade
+  the box's torch. NEVER install it. v3 filters torch lines from main reqs.
+- create_input.py needs ONLY MoGe (clone into data_engine/) + numpy renderer.
+  VGGT/Metric3D + their source surgery = training engine only, skipped.
+- run-gate1.sh fixed: no venv (docker base IS the env) + official flags
+  added (--flow-reverse --flow-shift 7.0 --embedded-cfg-scale 6.0
+  --use-cpu-offload).
+- provision script travels INSIDE the rent command as a base64 data: URI
+  (urlretrieve handles data: natively) → no gist, and the default LTX
+  manifest downloader never runs. Wrapper: voyager-gate/rent-attempt3.sh.
+Committed: 238f9f5 + 91825fe.
+DRY RUN PASSED: A100 80GB machine 27283, $1.281/hr, rel 0.999, ↓15Gbps
+(weights pull no longer the long pole). THE --rent CALL IS CLASSIFIER-
+BLOCKED in the 2026-08-18 session (server-side auto-mode classifier, not
+local permissions — context-sensitive, dry run passed, spend call vetoed).
+Ryan is restarting with a fresh session. NEXT SESSION: run
+  bash jobs/wang-meng/journey/voyager-gate/rent-attempt3.sh          # dry
+  bash jobs/wang-meng/journey/voyager-gate/rent-attempt3.sh --rent   # go
+then: wait READY → tail /var/log/bongpot-start.log until PROVISION-OK →
+scp voyager-gate/input-bridge.png to /workspace/input-bridge.png → scp
+run-gate1.sh → run conditions stage → PULL CHECKPOINT-B SAMPLES TO RYAN'S
+SCREEN (open them) before infer → infer (~32min) → pull results + stills →
+`gpu-box.mjs down` ALWAYS. Budget: ~$2.80 of $5 remains; box ≈ $1.30/hr,
+target ≤1.5h. Judge vs dossier §07 criteria. Run 2 (authored depth swap in
+create_input.py) only if run 1 ink holds AND budget allows.
