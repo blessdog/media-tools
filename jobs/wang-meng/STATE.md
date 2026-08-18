@@ -257,3 +257,42 @@ SCREEN (open them) before infer → infer (~32min) → pull results + stills →
 `gpu-box.mjs down` ALWAYS. Budget: ~$2.80 of $5 remains; box ≈ $1.30/hr,
 target ≤1.5h. Judge vs dossier §07 criteria. Run 2 (authored depth swap in
 create_input.py) only if run 1 ink holds AND budget allows.
+
+## 2026-08-18 morning — ATTEMPT 3 EXECUTED + THE AMNESIA FIX
+Voyager gate attempt 3 ran end-to-end (instance 48031012, machine 28415,
+A100 80GB @ $1.315/hr — dry-run machine 27283 was taken). FIVE environment
+bugs found and fixed live, all patched back into the committed scripts:
+1. huggingface_hub ≥1.0 removed the `huggingface-cli` shim (prints "use hf"
+   and exits) → weights never started; script's `wait` died on it silently.
+   Fix: `hf download` + WEIGHTS-OK marker in weights.log.
+2. cv2 needs libGL.so.1 even headless → apt libgl1 libglib2.0-0.
+3. Deps dragged numpy to 2.4.6; image's cv2 binary is numpy-1.x ABI
+   (_ARRAY_API) → pin "numpy<2" LAST.
+4. sample_image2video.py flag is --neg-prompt, NOT --negative-prompt
+   (argparse died; grep pattern missed it — widen watchers with "error:").
+5. Weights expected at /root/ckpts → symlink to /workspace/ckpts.
+Weights: 81GB in ~90s (15Gbps real). Provision→smoke pass ≈17 min, ~$0.40.
+CHECKPOINT B PASSED (Claude judge): 49 RGB partial renders + 49 depth EXRs,
+frame 0 byte-faithful, wireframe stretch only in late deep-push frames.
+Samples pulled to evidence: journey/voyager-gate/checkpoint-b/ (committed).
+Note for verdict: stock `forward` preset pushes DEEP — last third of the
+clip is mostly invention; judge silk-survival accordingly.
+Inference launched (fp16, 50 steps, ~20s/step + VAE decode w/ cpu-offload).
+
+TECHNIQUE ATLAS published (Ryan's ask: full illustrated catalog + gaps):
+https://claude.ai/code/artifact/df599ab5-7b96-4354-b3e1-754cde599664
+Figure sources copied to evidence/atlas-2026-08-18/ (committed).
+
+THE AMNESIA FIX (Ryan: "you are too amnesic… make Git a default"):
+- Pink-grid diagnostic he screenshotted 2026-08-16 12:05 could NOT be
+  provenance'd — it lived only in a dead session scratchpad. The class of
+  loss is now banned.
+- Laws installed: media-tools/CLAUDE.md top law (evidence lands in repo),
+  ~/.claude/CLAUDE.md "Git is the memory organ" (auto-loads in EVERY
+  session), bible §7.5 (canon, pushed to GitHub mirror).
+- .gitignore rewritten: jobs/ text+scripts+json+evidence*/ tracked by
+  default; only bulk pixel intermediates ignored. 312 files committed incl.
+  salvaged flight A/B evidence (evidence-salvage-2026-08-18/, 103MB — the
+  z-step/plane-fit experiment frames that back the FLY verdicts).
+- claude-code-guide agent researching @import + hook mechanics for
+  harness-level enforcement (SessionStart/Stop hook, bible @import).
