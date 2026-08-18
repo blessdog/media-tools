@@ -1,0 +1,236 @@
+<title>The Wang Meng Dossier</title>
+<style>
+  :root {
+    --paper: #f5f0e4;
+    --paper-deep: #ece5d3;
+    --ink: #22201b;
+    --ink-soft: #55503f;
+    --ink-faint: #8a8371;
+    --seal: #a33b2a;
+    --mineral: #3f6f63;
+    --rule: #d8cfba;
+    --card: #faf6ec;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --serif: "Spectral", "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #171512; --paper-deep: #100f0d; --ink: #e8e2d2;
+      --ink-soft: #b5ad97; --ink-faint: #7d7663; --seal: #d0604b;
+      --mineral: #6fa595; --rule: #333028; --card: #1e1c18;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #171512; --paper-deep: #100f0d; --ink: #e8e2d2;
+    --ink-soft: #b5ad97; --ink-faint: #7d7663; --seal: #d0604b;
+    --mineral: #6fa595; --rule: #333028; --card: #1e1c18;
+  }
+  body { background: var(--paper); color: var(--ink); font-family: var(--serif);
+         font-size: 17px; line-height: 1.65; margin: 0; }
+  main { max-width: 46rem; margin: 0 auto; padding: 3rem 1.4rem 6rem; }
+  header.hero { border-bottom: 3px double var(--rule); padding-bottom: 2rem; margin-bottom: 2.5rem; }
+  .eyebrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .14em;
+             text-transform: uppercase; color: var(--seal); }
+  h1 { font-size: 2.5rem; line-height: 1.12; margin: .4rem 0 .6rem; font-weight: 600;
+       text-wrap: balance; }
+  .hanzi { color: var(--ink-soft); font-weight: 400; }
+  .standfirst { font-size: 1.06rem; color: var(--ink-soft); max-width: 40rem; }
+  h2 { font-size: 1.45rem; margin: 3rem 0 .8rem; font-weight: 600;
+       border-bottom: 1px solid var(--rule); padding-bottom: .35rem; text-wrap: balance; }
+  h2 .n { font-family: var(--mono); font-size: .8rem; color: var(--seal); margin-right: .6rem; }
+  h3 { font-size: 1.05rem; margin: 1.8rem 0 .5rem; font-weight: 600; }
+  p { margin: .7rem 0; }
+  strong { font-weight: 600; }
+  .law { background: var(--card); border-left: 3px solid var(--seal);
+         padding: .8rem 1rem; margin: 1rem 0; }
+  .law b { color: var(--seal); font-family: var(--mono); font-size: .78rem;
+           letter-spacing: .06em; display: block; margin-bottom: .25rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .86rem; margin: 1rem 0;
+          font-variant-numeric: tabular-nums; }
+  .tablewrap { overflow-x: auto; }
+  th { text-align: left; font-family: var(--mono); font-size: .7rem; letter-spacing: .08em;
+       text-transform: uppercase; color: var(--ink-faint); border-bottom: 2px solid var(--rule);
+       padding: .45rem .6rem .45rem 0; }
+  td { border-bottom: 1px solid var(--rule); padding: .5rem .6rem .5rem 0; vertical-align: top; }
+  td.v-pass { color: var(--mineral); font-weight: 600; }
+  td.v-fail { color: var(--seal); font-weight: 600; }
+  code, .mono { font-family: var(--mono); font-size: .84em; background: var(--paper-deep);
+                padding: .08em .35em; border-radius: 3px; }
+  .trace { margin: 1.1rem 0; padding: .75rem 1rem; background: var(--card);
+           border: 1px solid var(--rule); }
+  .trace .g { font-weight: 600; }
+  .trace .b { display: block; font-size: .84rem; color: var(--ink-soft); margin-top: .2rem; }
+  .trace .b::before { content: "← "; color: var(--seal); font-family: var(--mono); }
+  .verdict { font-family: var(--mono); font-size: .75rem; padding: .1em .5em;
+             border-radius: 3px; white-space: nowrap; }
+  .win  { background: var(--mineral); color: var(--paper); }
+  .dead { background: var(--seal); color: var(--paper); }
+  .open { border: 1px solid var(--ink-faint); color: var(--ink-soft); }
+  ul { padding-left: 1.2rem; } li { margin: .35rem 0; }
+  .footer { margin-top: 4rem; border-top: 3px double var(--rule); padding-top: 1rem;
+            font-size: .85rem; color: var(--ink-faint); font-family: var(--mono); }
+  pre.mermaid { background: var(--card); border: 1px solid var(--rule); padding: 1rem;
+                overflow-x: auto; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<main>
+<header class="hero">
+  <div class="eyebrow">Dossier · media-tools · 2026-08-17</div>
+  <h1>The Wang Meng Dossier <span class="hanzi">葛稚川移居圖</span></h1>
+  <p class="standfirst">Everything measured, killed, and proven in the campaign to fly a drone
+  camera through a 14th-century hanging scroll — and how each finding constrains the next
+  move. Written so no session, compaction, or API kill can lose the thread again.
+  Companion to the always-current <code>jobs/wang-meng/STATE.md</code>.</p>
+</header>
+
+<h2><span class="n">01</span>The mission</h2>
+<p>One continuous vertical video. The camera enters Wang Meng's scroll at the river mouth and
+travels the route Ge Hong's procession takes — eleven stations, bottom to top — experiencing the
+painting as terrain: z-axis travel, parallax, each region seen from the eye the painter gave it
+(散点透視: the river level, the gorge looked <em>through</em>, the peaks looked <em>up at</em>).
+Every rendered pixel is Wang Meng's. Depth is authored, never estimated. The Zhangjiajie drone
+footage is a feel reference only.</p>
+<p>The master asset is a 6586×15923 (105&nbsp;MP) scan. The world speaks master pixels;
+k&nbsp;=&nbsp;2.34 master px per rendered px; output 720×1280.</p>
+
+<h2><span class="n">02</span>The laws — each one paid for</h2>
+<div class="law"><b>LAW 1 · DEPTH IS AUTHORED, NEVER ESTIMATED</b>
+Monocular depth on this painting explains 55% of its variance with image <em>row</em> alone —
+it reads height-on-page, not distance; the cliff, gorge, and the entire trestle bridge are absent
+from its map. Exception, measured: pointed at a <em>figure</em> at native crop, the same model
+sculpts real volume (Ge relief 0.0698 vs a flat-card null of 0; corr with ink −0.064 — completing
+shape, not tracing brushwork). Depth where the object has a strong shape prior; convention where
+it does not.</div>
+<div class="law"><b>LAW 2 · PLAN PLANES AT SHOT SCALE</b>
+A scroll-scale stack seen through one 720×1280 window collapses to 3 planes with depth σ 0.098.
+Planned at shot scale the same window holds 13 planes, σ 0.394. Scroll stacks encode depth
+<em>between</em> shots, not within one.</div>
+<div class="law"><b>LAW 3 · FRAME-ZERO CONTROL</b>
+Every fill or extension must change 0 pixels with the camera at rest. Tonight's Z1 chain passed
+exactly: the flux fill's rest delta is 0&nbsp;px (a 534-px hairline floor belongs to the card
+renderer itself and pre-exists the fill).</div>
+<div class="law"><b>LAW 4 · NULL BEFORE ANY MOTION METRIC</b>
+Three parallax "proofs" died to controls. The static control loses 11% on silk-survival — quote
+every result against that floor, never against 100%. A metric with a plausible story attached is
+not evidence.</div>
+<div class="law"><b>LAW 5 · NAMING A SUBSTANCE REQUESTS FOOTAGE OF IT</b>
+At cfg&nbsp;6, "waterfall" replaced the painting with photographic water in ~2 seconds. The
+recipe that holds: camera-only positive prompt, photographic failure modes in the negative,
+cfg&nbsp;2–3. Inside a mask that contains only water, the word "water" becomes safe.</div>
+<div class="law"><b>LAW 6 · GRADING IS NOT GEOMETRY</b>
+Blurring a plane stack feathers its seams; it does not make a surface. A card with a soft edge is
+still a card — measured: graded and flat maps opened identical holes under a push.</div>
+<div class="law"><b>LAW 7 · SEAL, PIN, AND SHARE YOUR GROUND</b>
+Unclaimed ink lands on the base plane one step past the farthest card and is magnified at two
+rates at once — Ge was split 81/13 and visibly tore. Seal by proximity (never by component: one
+ink component is 17.7% of all ink), pin objects whole, and every figure rides its supporting
+surface's depth. Each rule is checkable as code, and tonight the point-in-mask invariant caught
+two masks the coverage numbers had blessed.</div>
+<div class="law"><b>LAW 8 · JUDGE THE OUTPUT, NOT THE ARCHITECTURE</b>
+Slop is a property of pixels, not of a model's category — but never silently downgrade, name the
+trade in the manifest, and the eyes on the file are the verdict. Corollary from tonight: a
+deterministic tool outside its stated contract produces garbage as surely as a cheap model
+(see warp, §05).</div>
+
+<h2><span class="n">03</span>The model roster — every verdict on this painting</h2>
+<div class="tablewrap"><table>
+<tr><th>Model</th><th>Asked to do</th><th>Verdict</th><th>Why</th></tr>
+<tr><td>Depth Anything V2</td><td>scene depth</td><td class="v-fail">FAIL scene / <span style="color:var(--mineral)">PASS figures</span></td><td>row-reading on landscape; real volume on figures at native crop (Law 1)</td></tr>
+<tr><td>SAM ViT-H auto</td><td>find planes</td><td class="v-fail">FAIL</td><td>objects, never planes; 66% unclaimed at any density</td></tr>
+<tr><td>SAM ViT-H pointed</td><td>cut clicked planes</td><td class="v-pass">WORKHORSE</td><td>one click + window = one plane; trunks not canopies; window is the resolution knob</td></tr>
+<tr><td>Qwen-Edit-2509 + HY-Pano LoRA</td><td>高遠 panorama stills</td><td class="v-pass">one good run</td><td>canvas aspect is the 高遠 lever; NOT an editor — panorama-only pipeline</td></tr>
+<tr><td>HY-World stages 2–5</td><td>walkable world</td><td class="v-fail">DEAD</td><td>sphere representation silently smears a vertical painting</td></tr>
+<tr><td>HunyuanVideo 1.5 I2V</td><td>camera motion</td><td class="v-pass">THE SURVIVOR</td><td>holds the ink under Law 5's recipe; no camera-control input</td></tr>
+<tr><td>Wan 2.2 A14B</td><td>same, with control ecosystem</td><td class="v-fail">DEAD</td><td>painted an excavator into the sky; cartooned the ox rider; killed the Uni3C plan</td></tr>
+<tr><td>flux-fill-pro (Flux 1)</td><td>fill occlusion bands</td><td class="v-pass">ADOPTED</td><td>fills once in layer space; 0.996× the classical flicker floor; bounded by hard-composite</td></tr>
+<tr><td>Flux 2 (all tiers)</td><td>same fills</td><td class="v-fail">REJECTED</td><td>no mask input exists — would re-render the whole frame</td></tr>
+<tr><td>HunyuanWorld-Voyager</td><td>trajectory-controlled RGB-D video</td><td><span class="verdict open">UNTESTED</span></td><td>the open gate — §06</td></tr>
+</table></div>
+<p>The pattern across the roster: <strong>the model that holds this ink has no camera control;
+the models that own camera control have priors hostile to this material.</strong> Voyager is the
+first candidate that could hold both ends — Hunyuan-family prior <em>with</em> a user-supplied
+trajectory.</p>
+
+<h2><span class="n">04</span>The pipeline — where the world data comes from</h2>
+<pre class="mermaid">
+flowchart LR
+  A[master 105MP] --> B[crop-region --rect<br/>zone plate at k]
+  B --> C[pick.html<br/>Ryan's depth dots]
+  C --> D[segment-points<br/>SAM planes]
+  D --> E[complete-planes<br/>seal wash 28.4%→0]
+  E --> F[pin-objects<br/>figures whole]
+  F --> G[inpaint-planes --flux<br/>2.71M px behind edges]
+  G --> H[render-parallax<br/>--plane-fit + geometry]
+  G -.-> I[render-warp<br/>small dollies only]
+</pre>
+<p>Z1 (river + bridge) is through this entire chain as of tonight: 13 planes, all verified to
+contain their own click point, sealed to 0% unclaimed, 29 objects pinned, flux fill passed its
+frame-zero control. The stack is <em>finished world data</em> — every renderer downstream, ours
+or a model's, draws from this one source.</p>
+
+<h2><span class="n">05</span>Renderer verdicts — measured tonight on the same shot</h2>
+<div class="tablewrap"><table>
+<tr><th>Renderer</th><th>Verdict</th><th>Evidence</th></tr>
+<tr><td><strong>Tilted cards</strong> — <code>render-parallax --plane-fit</code> + 平遠 geometry (ground pitched away, cliffs yawed, figures never tilted)</td><td><span class="verdict win">KEEPER</span></td><td><code>PUSH-GE-TILT.mp4</code>: full 0.30-separation dolly onto Ge, composition and ink intact</td></tr>
+<tr><td><strong>Warp</strong> — one continuous sheet, rigid objects</td><td><span class="verdict dead">DEAD for traverses</span></td><td>collapsed into smear on the lateral approach — its own contract says lateral is where it is wrong; silk (13%, ≤66px pockets) cannot absorb a 1.4× differential. Ryan: unwatchable.</td></tr>
+<tr><td><strong>Figure relief</strong> — compose-depth per-figure volume</td><td><span class="verdict open">UNWIRED</span></td><td>the map exists; no renderer spends within-figure relief yet (cards: one z per plane; warp: rigid by construction). Missing piece: a displacement pass on the figure's card at close range.</td></tr>
+</table></div>
+
+<h2><span class="n">06</span>The rangefinder — the painter measured the journey for us</h2>
+<p>Wang Meng paints one class of person at near-constant real size, so painted height <em>is</em>
+distance: h&nbsp;∝&nbsp;1/z. Reading the servants across the scroll
+(<code>tools/range-planes.py</code>, committed):</p>
+<div class="tablewrap"><table>
+<tr><th>Witness</th><th>Station</th><th>Height, master px</th><th>z (bank ≡ 1)</th></tr>
+<tr><td>ox-leader on the bank</td><td>2 · Z1</td><td>515</td><td>1.00</td></tr>
+<tr><td>traveler on the fenced cliff path</td><td>6 · Z3</td><td>255</td><td>2.02</td></tr>
+<tr><td>figure at the compound</td><td>9 · Z5</td><td>170</td><td>3.03</td></tr>
+</table></div>
+<p>The journey is spaced in clean multiples — the cliff path twice the entry distance, the
+compound three times. And the instrument caught its own trap: Ge measures 1.48× a servant
+standing <em>nearer</em> than him. <strong>Two scales at once</strong> — hierarchical (status)
+scale rides on top of optical scale, so protagonists never calibrate. Within one zone the class
+height spread exceeds the z separation; the rangefinder is a cross-zone instrument. These three
+numbers price the zone worlds' spacing and define camera speed in real units.</p>
+
+<h2><span class="n">07</span>The Voyager gate — every guard traced to its source</h2>
+<p>HunyuanWorld-Voyager: single image + user camera trajectory → world-consistent RGB-D video,
+conditioned on partial renders of a point cloud. Architecturally it is our own loop — render the
+known, complete only the unknown — run inside the one model family measured to like this ink.
+Recon findings and the design each one forces:</p>
+
+<div class="trace"><span class="g">Landscape bridge crop, composed from the master</span>
+<span class="b">Voyager force-resizes input to 1280×720 landscape; feeding a vertical crop would squash the painting before the model ever sees it.</span></div>
+<div class="trace"><span class="g">Swap MoGe's estimated depth for our authored composed depth in <code>create_input.py</code></span>
+<span class="b">Law 1: estimated depth on this painting is a row-reading ramp — garbage conditions in, invention out. The script is plain Python; the depth tensor is substitutable. Run 1 still establishes the stock baseline first.</span></div>
+<div class="trace"><span class="g">Camera-only positive prompt, standard negative list, default guidance</span>
+<span class="b">Law 5: naming a substance requests footage of it.</span></div>
+<div class="trace"><span class="g">Full-weight official fp16 checkpoints, 50 steps, no substitution on failure — stop and report</span>
+<span class="b">Law 8 and the never-ship-slop covenant: silent downgrade is the sin; a pipeline proven with slop proves nothing.</span></div>
+<div class="trace"><span class="g">Pre-registered pass/fail before rendering: silk-survival ≥ the Hunyuan-fix1 band (~65% against the 11% control floor), no invented objects, figures not redrawn; judged on a side-by-side evidence page against the source and the tilted-cards render of the same push</span>
+<span class="b">Law 4: build the null first. The Wan excavator was caught exactly this way.</span></div>
+<div class="trace"><span class="g">Dry-run rent quote first; $2.20/hr cap; $10 total budget; provision script committed before renting; 45-minute provisioning kill criterion; destroy on completion</span>
+<span class="b">gpu-box's cost-safe design plus the evening's directive: no diving in headfirst with someone else's money.</span></div>
+<div class="trace"><span class="g">Run 2 (authored-depth conditions) fires only if Run 1's ink holds</span>
+<span class="b">Stop-fix-verify: never buy the second experiment on hope for the first.</span></div>
+
+<p><strong>What a pass buys:</strong> Voyager takes over the camera pushes with true
+model-rendered dimensionality, fed by our authored world. <strong>What a fail buys:</strong> a
+clean boundary, ~$5, and the tilted-cards path continues unharmed — it is already watchable.</p>
+
+<h2><span class="n">08</span>Open gaps, so nothing is silently dropped</h2>
+<ul>
+<li><strong>Figure-relief consumer</strong> — small displacement pass on a figure's card; makes the pause on Ge breathe.</li>
+<li><strong>Z1↔Z2 handoff gate</strong> — render the shared corridor from both stacks; crossfade vs cut-under-whiteout decided by the pair.</li>
+<li><strong>Zones 2–6</strong> — same chain per zone; rects get the camera-world dilation at their turn; top-quarter peaks get their own dot pass at Z6.</li>
+<li><strong>Life pass</strong> — animate-strokes water/foliage and walk-figure cycles on the locked camera, phase 7.</li>
+<li><strong>Warp's remaining lane</strong> — small pure dollies only, if anywhere; retest never precedes need.</li>
+</ul>
+
+<div class="footer">
+STATE.md is the living memory; this dossier is the map. Committed in media-tools ·
+prepared by the porter 阿簍 for Pissjug · no model was trusted without a control.
+</div>
+</main>
