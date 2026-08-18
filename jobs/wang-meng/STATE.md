@@ -214,3 +214,15 @@ progress (attempt 1 died: box image lacked python3-venv — fixed; default
 manifest's downloader also had to be killed twice). Known deps issue:
 repo's pinned pandas has no py3.12 wheel — patch modern pandas into venv
 during the weights download, extend smoke test to import create_input deps.
+
+
+## 2026-08-18 ~23:00 — GATE ABORTED AT $2.20, BOX DESTROYED, READY FOR ATTEMPT 3
+The Voyager gate DID NOT RUN: two provisioning failures (missing python3-venv;
+then py3.12 wheel mismatches + flash-attn source-compile tar pit — my
+--find-links pointed at a GitHub releases PAGE, not a pip index). Both caught
+by the 45-min kill criterion. Box 47992868 destroyed, $0 burning, ~$2.20 of
+the $5 cap spent. NO third rent overnight (unsupervised retries after two
+environment surprises = the pattern Ryan banned). Morning deliverables:
+voyager-gate/MORNING-REPORT.md + provision-voyager-v3.sh (docker-image rent:
+pytorch/pytorch:2.4.0-cuda12.4-cudnn9-devel; exact flash-attn wheel by URL;
+weights download first in parallel; ~$1.30 projected). Fires on Ryan's word.
