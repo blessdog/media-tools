@@ -1,10 +1,9 @@
 {
  "fps": 24,
  "duration": 16,
- "_note": "Ensemble probe (render-living): the Old Mill test. Start on the rapids under the trestle bridge, float up and right to end on Ge and the pine leaning over him; the k-corrected current streams the whole take, the gust envelope passes through the pine twice (8s loop). Window edges checked vs master; centers in master-normalised x,y.",
+ "_note": "Ensemble probe v2. LESSON from v1: view scale is part of the proven recipe -- living-both-final viewed at k=2.34 (5.5x more painting per frame), so the moving ink FILLED the frame; at fov 1.15 the same water is a sliver of a 2MP window. v2 shoots the whole bridge theater at the proven scale: slow push from fov 2.30 (rapids + bridge + Ge + deer + pine + porters) to fov 1.70. 28px master current = 12-16 display px, the approved amplitude. Centers keep the window off the master edge (no clamp-stick).",
  "keys": [
-  {"t": 0,  "x": 0.1746, "y": 0.8259, "fov": 1.15},
-  {"t": 8,  "x": 0.1850, "y": 0.8080, "fov": 1.18},
-  {"t": 16, "x": 0.1974, "y": 0.7851, "fov": 1.25}
+  {"t": 0,  "x": 0.3352, "y": 0.7976, "fov": 2.30},
+  {"t": 16, "x": 0.2478, "y": 0.8133, "fov": 1.70}
  ]
 }
