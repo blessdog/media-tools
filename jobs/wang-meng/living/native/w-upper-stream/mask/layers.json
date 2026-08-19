@@ -1,0 +1,30 @@
+{
+ "tool": "mask-liubai",
+ "image": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/living/native/w-upper-stream/plate.png",
+ "size": [
+  1900,
+  950
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "name": "w-upper-stream",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    0,
+    1900,
+    950
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "vmin": 0.66,
+   "busy": 0.055,
+   "sealRed": 22,
+   "coveragePctOfBox": 6.4,
+   "coveragePctOfFrame": 6.38
+  }
+ ]
+}

@@ -61,6 +61,14 @@ if a.stage == "masks":
         cov = json.loads(lj.read_text())["planeList"][0]["coveragePctOfBox"]
         plate = Image.open(d / "plate.png").convert("RGB")
         m = Image.open(d / "mask" / "masks" / "001.png").convert("L")
+        # figures and their goods are sacred: carve out the region's
+        # "exclude" rects (master px — e.g. the resting porter and his
+        # woven baskets inside w-midstream, caught moving 2026-08-19)
+        if r.get("exclude"):
+            dr0 = ImageDraw.Draw(m)
+            for ex0, ey0, ex1, ey1 in r["exclude"]:
+                dr0.rectangle([ex0 - x0, ey0 - y0, ex1 - x0, ey1 - y0], fill=0)
+            m.save(d / "mask" / "masks" / "001.png")
         tint = Image.new("RGB", plate.size, (30, 90, 200))
         over = Image.composite(Image.blend(plate, tint, 0.45), plate, m)
         over.save(d / "mask-overlay.png")

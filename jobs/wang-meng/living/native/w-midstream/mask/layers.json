@@ -1,0 +1,30 @@
+{
+ "tool": "mask-liubai",
+ "image": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/living/native/w-midstream/plate.png",
+ "size": [
+  2900,
+  1750
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "name": "w-midstream",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    0,
+    2900,
+    1750
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "vmin": 0.66,
+   "busy": 0.055,
+   "sealRed": 22,
+   "coveragePctOfBox": 13.0,
+   "coveragePctOfFrame": 13.03
+  }
+ ]
+}

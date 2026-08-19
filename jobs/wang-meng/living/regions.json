@@ -1,40 +1,429 @@
 {
- "master": "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png",
- "masterSize": [6586, 15923],
- "note": "The living layer inventory — every animatable region, authored 2026-08-19 from a 6-band gridded read of the scroll. Boxes are master px [x0,y0,x1,y1], generous; the MASK inside each box is what animates (P2). class params start from measured winners: wave/sway from the cel sweeps + living-both-final; fall is wave rotated vertical (semi-proven, look-waterfall probe exists); drift (mist) is UNPROVEN — control-first, cut from v1 if it smears; figure regions reuse the proven GEHONG-alive and deer walk cycles. cycle=null until P2 computes it.",
+ "master": "corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+ "masterSize": [
+  6586,
+  15923
+ ],
+ "note": "The living layer inventory \u2014 every animatable region, authored 2026-08-19 from a 6-band gridded read of the scroll. Boxes are master px [x0,y0,x1,y1], generous; the MASK inside each box is what animates (P2). class params start from measured winners: wave/sway from the cel sweeps + living-both-final; fall is wave rotated vertical (semi-proven, look-waterfall probe exists); drift (mist) is UNPROVEN \u2014 control-first, cut from v1 if it smears; figure regions reuse the proven GEHONG-alive and deer walk cycles. cycle=null until P2 computes it.",
  "classes": {
-  "wave":   {"field": "wave", "mode": "lift", "keep": "thin", "on": 2, "wobble": 4, "drift": 12, "wavelength": 250},
-  "fall":   {"field": "wave", "mode": "lift", "keep": "thin", "on": 2, "wobble": 3, "drift": 26, "wavelength": 150, "angle": 90},
-  "sway":   {"field": "sway", "mode": "warp", "keep": "all", "stiffness": 3, "wobble": 3, "drift": 5},
-  "drift":  {"field": "sway", "mode": "warp", "keep": "all", "stiffness": 1, "wobble": 2, "drift": 3, "wavelength": 600},
-  "figure": {"note": "reuse proven cycles only; never generate a new figure cycle without a verdict"}
+  "wave": {
+   "field": "wave",
+   "mode": "lift",
+   "keep": "thin",
+   "on": 2,
+   "wobble": 4,
+   "drift": 12,
+   "wavelength": 250
+  },
+  "fall": {
+   "field": "wave",
+   "mode": "lift",
+   "keep": "thin",
+   "on": 2,
+   "wobble": 3,
+   "drift": 26,
+   "wavelength": 150,
+   "angle": 90
+  },
+  "sway": {
+   "field": "sway",
+   "mode": "warp",
+   "keep": "all",
+   "stiffness": 3,
+   "wobble": 3,
+   "drift": 5
+  },
+  "drift": {
+   "field": "sway",
+   "mode": "warp",
+   "keep": "all",
+   "stiffness": 1,
+   "wobble": 2,
+   "drift": 3,
+   "wavelength": 600
+  },
+  "figure": {
+   "note": "reuse proven cycles only; never generate a new figure cycle without a verdict"
+  }
  },
  "regions": [
-  {"id": "w-river-entry",      "class": "wave", "box": [0, 13800, 3200, 15250], "note": "open water + ripple lines around entry rocks (shots 1-2)"},
-  {"id": "w-river-foreground", "class": "wave", "box": [400, 14900, 3400, 15700], "note": "lowest water lines by the foreground rocks"},
-  {"id": "w-bridge-rapids",    "class": "wave", "box": [400, 13000, 1900, 13850], "note": "white rapids under the trestle bridge (shot 5 hold)"},
-  {"id": "w-midstream",        "class": "wave", "box": [300, 10400, 3200, 12150], "note": "stream runs + pools between resting ledge and bridge"},
-  {"id": "w-upper-stream",     "class": "wave", "box": [800, 9700, 2700, 10650], "note": "upper stream, Z2 territory"},
-  {"id": "f-left-tall-fall",   "class": "fall", "box": [980, 8650, 1330, 10100], "note": "the long double-thread fall left of the gorge (shot 7 candidate)"},
-  {"id": "f-station8-fall",    "class": "fall", "box": [4180, 4980, 4700, 5950], "note": "the waterfall under the compound — station 8 'under the waterfall'"},
-  {"id": "s-great-trees-upper","class": "sway", "box": [4300, 10400, 6586, 12450], "note": "great-trees knoll, upper canopy mass"},
-  {"id": "s-great-trees-lower","class": "sway", "box": [4400, 12450, 6586, 15250], "note": "great-trees knoll, lower trees to the river"},
-  {"id": "s-pine-over-bridge", "class": "sway", "box": [2400, 11650, 3450, 12750], "note": "the pine leaning over Ge at the bridge"},
-  {"id": "s-gorge-big-canopy", "class": "sway", "box": [2700, 7950, 4650, 9350], "note": "big teal canopies mid-gorge"},
-  {"id": "s-left-pines-z2",    "class": "sway", "box": [1280, 9150, 2450, 10150], "note": "needle pines beside the tall fall"},
-  {"id": "s-left-clifftop-pine","class": "sway", "box": [0, 7950, 850, 8850], "note": "pine on the left cliff top"},
-  {"id": "s-gorge-belt",       "class": "sway", "box": [2800, 5850, 4350, 6850], "note": "teal+red foliage belt across the gorge"},
-  {"id": "s-gorge-foreground", "class": "sway", "box": [800, 7250, 3250, 8150], "note": "big mixed cluster at the gorge foreground"},
-  {"id": "s-right-rust-tree",  "class": "sway", "box": [5350, 6550, 6586, 7450], "note": "rust-leaf tree on the right wall"},
-  {"id": "s-autumn-shelf",     "class": "sway", "box": [0, 5550, 1250, 6450], "note": "autumn shelf, left side above the cliff path"},
-  {"id": "s-compound-autumn",  "class": "sway", "box": [1900, 3850, 3450, 5050], "note": "red autumn trees at the compound"},
-  {"id": "s-compound-canopies","class": "sway", "box": [3300, 4050, 5350, 5350], "note": "teal+orange canopies right of the compound"},
-  {"id": "s-right-edge-autumn","class": "sway", "box": [5350, 4150, 6586, 5350], "note": "autumn mass at the right edge, compound level"},
-  {"id": "s-tall-cliff-pines", "class": "sway", "box": [0, 4250, 850, 5700], "note": "pine cluster on the tall left cliff"},
-  {"id": "m-far-peaks-blue",   "class": "drift", "box": [0, 1350, 950, 2950], "note": "blue distant peaks, left — EXPERIMENTAL"},
-  {"id": "m-summit-pocket",    "class": "drift", "box": [3850, 1850, 4850, 2650], "note": "blue mist pocket right of the summit — EXPERIMENTAL"},
-  {"id": "m-compound-band",    "class": "drift", "box": [1300, 3350, 5350, 4100], "note": "pale mist band above the compound — EXPERIMENTAL"},
-  {"id": "g-ge-fan",           "class": "figure", "box": [1150, 12150, 1700, 12980], "note": "Ge's fan/robe stir — reuse the GEHONG-alive cycle recipe"},
-  {"id": "g-deer",             "class": "figure", "box": [600, 12200, 1150, 13100], "note": "the deer — reuse the proven deer-walk cycle (or hold static in v1 if the walk fights subtlety)"}
+  {
+   "id": "w-river-entry",
+   "class": "wave",
+   "box": [
+    0,
+    13800,
+    3200,
+    15250
+   ],
+   "note": "open water + ripple lines around entry rocks (shots 1-2)",
+   "cycle": {
+    "dir": "native/w-river-entry/cycle",
+    "pattern": "dr-%03d.png",
+    "box": [
+     0,
+     13800,
+     3200,
+     15250
+    ],
+    "n": 36,
+    "on": 2
+   }
+  },
+  {
+   "id": "w-river-foreground",
+   "class": "wave",
+   "box": [
+    400,
+    14900,
+    3400,
+    15700
+   ],
+   "note": "lowest water lines by the foreground rocks",
+   "cycle": {
+    "dir": "native/w-river-foreground/cycle",
+    "pattern": "dr-%03d.png",
+    "box": [
+     400,
+     14900,
+     3400,
+     15700
+    ],
+    "n": 36,
+    "on": 2
+   }
+  },
+  {
+   "id": "w-bridge-rapids",
+   "class": "wave",
+   "box": [
+    400,
+    13000,
+    1900,
+    13850
+   ],
+   "note": "white rapids under the trestle bridge (shot 5 hold)",
+   "cycle": {
+    "dir": "native/w-bridge-rapids/cycle",
+    "pattern": "dr-%03d.png",
+    "box": [
+     400,
+     13000,
+     1900,
+     13850
+    ],
+    "n": 36,
+    "on": 2
+   }
+  },
+  {
+   "id": "w-midstream",
+   "class": "wave",
+   "box": [
+    300,
+    10400,
+    3200,
+    12150
+   ],
+   "note": "stream runs + pools between resting ledge and bridge EXCLUDE: seated porter + woven baskets on the ledge (his weave read as water lines)",
+   "exclude": [
+    [
+     300,
+     11440,
+     800,
+     11930
+    ]
+   ],
+   "cycle": {
+    "dir": "native/w-midstream/cycle",
+    "pattern": "dr-%03d.png",
+    "box": [
+     300,
+     10400,
+     3200,
+     12150
+    ],
+    "n": 36,
+    "on": 2
+   }
+  },
+  {
+   "id": "w-upper-stream",
+   "class": "wave",
+   "box": [
+    800,
+    9700,
+    2700,
+    10650
+   ],
+   "note": "upper stream, Z2 territory",
+   "cycle": {
+    "dir": "native/w-upper-stream/cycle",
+    "pattern": "dr-%03d.png",
+    "box": [
+     800,
+     9700,
+     2700,
+     10650
+    ],
+    "n": 36,
+    "on": 2
+   }
+  },
+  {
+   "id": "f-left-tall-fall",
+   "class": "fall",
+   "box": [
+    980,
+    8650,
+    1330,
+    10100
+   ],
+   "note": "the long double-thread fall left of the gorge (shot 7 candidate)",
+   "cycle": {
+    "dir": "native/f-left-tall-fall/cycle",
+    "pattern": "dr-%03d.png",
+    "box": [
+     980,
+     8650,
+     1330,
+     10100
+    ],
+    "n": 36,
+    "on": 2
+   }
+  },
+  {
+   "id": "f-station8-fall",
+   "class": "fall",
+   "box": [
+    4180,
+    4980,
+    4700,
+    5950
+   ],
+   "note": "the waterfall under the compound \u2014 station 8 'under the waterfall'",
+   "cycle": {
+    "dir": "native/f-station8-fall/cycle",
+    "pattern": "dr-%03d.png",
+    "box": [
+     4180,
+     4980,
+     4700,
+     5950
+    ],
+    "n": 36,
+    "on": 2
+   }
+  },
+  {
+   "id": "s-great-trees-upper",
+   "class": "sway",
+   "box": [
+    4300,
+    10400,
+    6586,
+    12450
+   ],
+   "note": "great-trees knoll, upper canopy mass"
+  },
+  {
+   "id": "s-great-trees-lower",
+   "class": "sway",
+   "box": [
+    4400,
+    12450,
+    6586,
+    15250
+   ],
+   "note": "great-trees knoll, lower trees to the river"
+  },
+  {
+   "id": "s-pine-over-bridge",
+   "class": "sway",
+   "box": [
+    2400,
+    11650,
+    3450,
+    12750
+   ],
+   "note": "the pine leaning over Ge at the bridge"
+  },
+  {
+   "id": "s-gorge-big-canopy",
+   "class": "sway",
+   "box": [
+    2700,
+    7950,
+    4650,
+    9350
+   ],
+   "note": "big teal canopies mid-gorge"
+  },
+  {
+   "id": "s-left-pines-z2",
+   "class": "sway",
+   "box": [
+    1280,
+    9150,
+    2450,
+    10150
+   ],
+   "note": "needle pines beside the tall fall"
+  },
+  {
+   "id": "s-left-clifftop-pine",
+   "class": "sway",
+   "box": [
+    0,
+    7950,
+    850,
+    8850
+   ],
+   "note": "pine on the left cliff top"
+  },
+  {
+   "id": "s-gorge-belt",
+   "class": "sway",
+   "box": [
+    2800,
+    5850,
+    4350,
+    6850
+   ],
+   "note": "teal+red foliage belt across the gorge"
+  },
+  {
+   "id": "s-gorge-foreground",
+   "class": "sway",
+   "box": [
+    800,
+    7250,
+    3250,
+    8150
+   ],
+   "note": "big mixed cluster at the gorge foreground"
+  },
+  {
+   "id": "s-right-rust-tree",
+   "class": "sway",
+   "box": [
+    5350,
+    6550,
+    6586,
+    7450
+   ],
+   "note": "rust-leaf tree on the right wall"
+  },
+  {
+   "id": "s-autumn-shelf",
+   "class": "sway",
+   "box": [
+    0,
+    5550,
+    1250,
+    6450
+   ],
+   "note": "autumn shelf, left side above the cliff path"
+  },
+  {
+   "id": "s-compound-autumn",
+   "class": "sway",
+   "box": [
+    1900,
+    3850,
+    3450,
+    5050
+   ],
+   "note": "red autumn trees at the compound"
+  },
+  {
+   "id": "s-compound-canopies",
+   "class": "sway",
+   "box": [
+    3300,
+    4050,
+    5350,
+    5350
+   ],
+   "note": "teal+orange canopies right of the compound"
+  },
+  {
+   "id": "s-right-edge-autumn",
+   "class": "sway",
+   "box": [
+    5350,
+    4150,
+    6586,
+    5350
+   ],
+   "note": "autumn mass at the right edge, compound level"
+  },
+  {
+   "id": "s-tall-cliff-pines",
+   "class": "sway",
+   "box": [
+    0,
+    4250,
+    850,
+    5700
+   ],
+   "note": "pine cluster on the tall left cliff"
+  },
+  {
+   "id": "m-far-peaks-blue",
+   "class": "drift",
+   "box": [
+    0,
+    1350,
+    950,
+    2950
+   ],
+   "note": "blue distant peaks, left \u2014 EXPERIMENTAL"
+  },
+  {
+   "id": "m-summit-pocket",
+   "class": "drift",
+   "box": [
+    3850,
+    1850,
+    4850,
+    2650
+   ],
+   "note": "blue mist pocket right of the summit \u2014 EXPERIMENTAL"
+  },
+  {
+   "id": "m-compound-band",
+   "class": "drift",
+   "box": [
+    1300,
+    3350,
+    5350,
+    4100
+   ],
+   "note": "pale mist band above the compound \u2014 EXPERIMENTAL"
+  },
+  {
+   "id": "g-ge-fan",
+   "class": "figure",
+   "box": [
+    1150,
+    12150,
+    1700,
+    12980
+   ],
+   "note": "Ge's fan/robe stir \u2014 reuse the GEHONG-alive cycle recipe"
+  },
+  {
+   "id": "g-deer",
+   "class": "figure",
+   "box": [
+    600,
+    12200,
+    1150,
+    13100
+   ],
+   "note": "the deer \u2014 reuse the proven deer-walk cycle (or hold static in v1 if the walk fights subtlety)"
+  }
  ]
 }

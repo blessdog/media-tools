@@ -1,0 +1,30 @@
+{
+ "tool": "mask-liubai",
+ "image": "jobs/wang-meng/living/native/w-river-entry/plate.png",
+ "size": [
+  3200,
+  1450
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "name": "t",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    0,
+    3200,
+    1450
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "vmin": 0.66,
+   "busy": 0.055,
+   "sealRed": 22,
+   "coveragePctOfBox": 40.8,
+   "coveragePctOfFrame": 40.77
+  }
+ ]
+}

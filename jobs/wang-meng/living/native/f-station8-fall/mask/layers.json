@@ -1,0 +1,29 @@
+{
+ "tool": "mask-liubai",
+ "image": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/living/native/f-station8-fall/plate.png",
+ "size": [
+  520,
+  970
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "name": "f-station8-fall",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    0,
+    520,
+    970
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "vmin": 0.62,
+   "busy": 0.055,
+   "coveragePctOfBox": 22.1,
+   "coveragePctOfFrame": 22.09
+  }
+ ]
+}

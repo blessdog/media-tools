@@ -1,0 +1,30 @@
+{
+ "tool": "mask-liubai",
+ "image": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/living/native/w-river-foreground/plate.png",
+ "size": [
+  3000,
+  800
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "name": "w-river-foreground",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    0,
+    3000,
+    800
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "vmin": 0.66,
+   "busy": 0.055,
+   "sealRed": 22,
+   "coveragePctOfBox": 31.5,
+   "coveragePctOfFrame": 31.52
+  }
+ ]
+}

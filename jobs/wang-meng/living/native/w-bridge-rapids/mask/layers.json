@@ -1,0 +1,30 @@
+{
+ "tool": "mask-liubai",
+ "image": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/living/native/w-bridge-rapids/plate.png",
+ "size": [
+  1500,
+  850
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "name": "w-bridge-rapids",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    0,
+    1500,
+    850
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "vmin": 0.66,
+   "busy": 0.055,
+   "sealRed": 22,
+   "coveragePctOfBox": 12.2,
+   "coveragePctOfFrame": 12.21
+  }
+ ]
+}

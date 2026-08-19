@@ -1,0 +1,29 @@
+{
+ "tool": "mask-liubai",
+ "image": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/living/native/f-left-tall-fall/plate.png",
+ "size": [
+  350,
+  1450
+ ],
+ "planeList": [
+  {
+   "n": 1,
+   "name": "f-left-tall-fall",
+   "source": "mask-liubai",
+   "box": [
+    0,
+    0,
+    350,
+    1450
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "vmin": 0.62,
+   "busy": 0.055,
+   "coveragePctOfBox": 20.3,
+   "coveragePctOfFrame": 20.32
+  }
+ ]
+}
