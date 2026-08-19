@@ -1,0 +1,11 @@
+{
+ "fps": 24,
+ "duration": 20,
+ "_note": "SEQ shot 4 — rise from the bridge to the porters, long take. Same proven envelope as path-s1-4; gentle z relax at the end so the arrival settles instead of ramming.",
+ "keys": [
+  {"t": 0,  "x": 0.345, "y": 0.463, "z": 0.22, "fov": 1.0},
+  {"t": 6,  "x": 0.300, "y": 0.440, "z": 0.16, "fov": 1.0},
+  {"t": 13, "x": 0.220, "y": 0.380, "z": 0.18, "fov": 1.0},
+  {"t": 20, "x": 0.184, "y": 0.329, "z": 0.12, "fov": 1.0}
+ ]
+}

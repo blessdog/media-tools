@@ -1,0 +1,12 @@
+{
+ "fps": 24,
+ "duration": 22,
+ "_note": "SEQ shot 1 — river entry, long take. Stays inside path-s1-4's proven key envelope (x .184-.691, y .329-.760, z<=.24) so no frame leaves the painting. Lateral sweep t11-t22 is the parallax showcase leg.",
+ "keys": [
+  {"t": 0,  "x": 0.691, "y": 0.760, "z": 0.00, "fov": 1.0},
+  {"t": 6,  "x": 0.691, "y": 0.620, "z": 0.04, "fov": 1.0},
+  {"t": 11, "x": 0.600, "y": 0.547, "z": 0.10, "fov": 1.0},
+  {"t": 16, "x": 0.450, "y": 0.500, "z": 0.16, "fov": 1.0},
+  {"t": 22, "x": 0.345, "y": 0.463, "z": 0.20, "fov": 1.0}
+ ]
+}

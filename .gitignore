@@ -29,3 +29,4 @@ jobs/**
 !jobs/wang-meng/journey/z*/points-overlay.png
 !jobs/wang-meng/journey/z*-rect-overlay.png
 __pycache__/
+!jobs/**/*.txt
