@@ -1,0 +1,16 @@
+{
+ "film": "chowder-julius",
+ "audio": "../music/chowder-julius.mp3",
+ "size": [1920, 1080],
+ "fps": 24,
+ "note": "The 42s shot list. in/out are audio seconds from music/beats.json. Engine B = render-parallax zone world; A = render-living window. status: built | rendering | pending-zone.",
+ "shots": [
+  {"n": 1, "in": 0.0,  "out": 4.6,  "engine": "B", "zone": "z1", "path": "path-shot1-entry.json",  "status": "rendering", "leg": "river entry glide, ox party, living water"},
+  {"n": 2, "in": 4.6,  "out": 11.0, "engine": "B", "zone": "z1", "path": "path-shot2-bridge.json", "status": "rendering", "leg": "sweep onto Ge at the bridge - rapids, pine, fan"},
+  {"n": 3, "in": 11.0, "out": 16.7, "engine": "B", "zone": "z2", "path": null, "status": "pending-zone", "leg": "rising traverse past the porters"},
+  {"n": 4, "in": 16.7, "out": 21.6, "engine": "B", "zone": "z3", "path": null, "status": "pending-zone", "leg": "深遠 push through the gorge screens"},
+  {"n": 5, "in": 21.6, "out": 26.6, "engine": "A/B", "zone": "z4", "path": null, "status": "pending-zone", "leg": "THE SILENCE: locked hold under the waterfall"},
+  {"n": 6, "in": 26.6, "out": 33.9, "engine": "B", "zone": "z5", "path": null, "status": "pending-zone", "leg": "compound arrival under the explosion"},
+  {"n": 7, "in": 33.9, "out": 41.96, "engine": "B", "zone": "z6", "path": null, "status": "pending-zone", "leg": "rise into mist, release to the far blue peaks"}
+ ]
+}

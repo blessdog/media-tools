@@ -1,0 +1,10 @@
+{
+ "fps": 24,
+ "duration": 6.4,
+ "_note": "Shot 2 (4.6-11.0, clerk denials): sweep from the ox party onto Ge at the bridge - rapids, pine sway, fan stir, real dolly. Keys reuse the verified hero-landscape envelope.",
+ "keys": [
+  {"t": 0,   "x": 0.600, "y": 0.600, "z": 0.04, "fov": 1.30},
+  {"t": 3.2, "x": 0.500, "y": 0.550, "z": 0.13, "fov": 1.26},
+  {"t": 6.4, "x": 0.410, "y": 0.515, "z": 0.22, "fov": 1.21}
+ ]
+}

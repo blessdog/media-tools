@@ -1,0 +1,9 @@
+{
+ "fps": 24,
+ "duration": 4.6,
+ "_note": "Shot 1 (0.0-4.6, 'Orange Julius' + green Julius): Z1 river entry glide up to the ox party, living water. Edge-checked: fov 1.30 half-window (738,415) keeps x<=0.626, y<=0.846 on the 1971x2704 plate.",
+ "keys": [
+  {"t": 0,   "x": 0.620, "y": 0.840, "z": 0.00, "fov": 1.30},
+  {"t": 4.6, "x": 0.620, "y": 0.648, "z": 0.06, "fov": 1.28}
+ ]
+}
