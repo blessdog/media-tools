@@ -448,3 +448,17 @@ living/AB-GUST-VS-SWAY.mp4 (left constant / right gust),
 living/evidence-gust-vs-constant-sway.png, plane-cycles/gust-activity.json.
 peakDisplacementPx metric fixed to running max (was last-drawing-only).
 NEXT (queue item 2): native-res water/fall cycles for ALL water regions.
+
+## 2026-08-19 late II — NATIVE WATER LAYER LIVE (prep queue item 2 done)
+
+All 7 water regions (5 wave + 2 fall) have native-res 36-drawing cycles
+registered in living/regions.json; render-living plays them held on twos.
+The what-moves audit (living/heat-native-cycles.py) caught and fixed two
+trespasses: rippling collector seals (mask-bare-ground --seal-red) and a
+rippling porter's basket weave (per-region exclude rects). vmin 0.66 for
+wave boxes with toned banks. First grammar probe SHIPPED:
+film/FLOAT-MIDSTREAM.mp4 (14s native float, living-vs-static control
+1.4-1.7% pixels differ = water only). Evidence:
+living/evidence-native-water-motion.png, native/*/motion-heat.png.
+NEXT (queue item 3): more float/pan idiom paths through unvisited
+territory; gust verdict pending Ryan's eyes on AB-GUST-VS-SWAY.mp4.
