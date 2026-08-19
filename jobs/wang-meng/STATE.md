@@ -378,3 +378,15 @@ Two moves, both blocked only on Ryan's eyes:
    segmenting. Then: segment → seal → pin → fill → frame-zero control →
    geometry (climbing eye) → handoff-gate render-off vs Z1.
 Note: gpu-box status = no instances, $0 burning (wild-journey box gone).
+
+## 2026-08-19 midday — PHASE-1 GATE PASSED; SEQ-Z1-v1 SHIPPED (63s)
+Ryan on FLY-S1-4-TILT: "the zoomed-in zigzag looks fine" = Z1 watchable,
+phase 1 closed. First minute-long cut assembled same session:
+journey/z1/SEQ-Z1-v1.mp4 — river entry 22s (new render, lateral parallax
+leg) → living bridge hold 9.1s (cel loop ×3, seam delta 0.82) → PUSH-GE-TILT
+12s (keeper, as-is) → rise to porters 20s (new render). Controls: shot-1
+frame zero 0px vs approved flight; spot strip z1/evidence-seq-v1-shots.png.
+Full step log: reports/2026-08-19-seq-z1.md (Ryan wants a report per build —
+standing practice from here). Music: none yet — when a track lands, retime
+paths to it (durations are JSON fields) and stitch --music. Next: his SEQ
+verdict → then Z2 dots top-up (z2/pick.html seeded) → Z2 chain → handoff gate.
