@@ -436,3 +436,15 @@ layer: native water/fall cycles for every water region (regions.json
 inventory stands), gust-envelope sway (intermittent, needs an envelope
 feature in animate-strokes — currently continuous); (3) exploration
 camera language across ALL zones, far from the bridge.
+
+## 2026-08-19 late — gust envelope SHIPPED (prep queue item 1 done)
+
+animate-strokes gained `--gust A,H,D` (+ --gust-travel/-rest/-push/
+-flutter): wind as an EVENT that sweeps downwind and leaves calm air,
+loop still closes exactly. Proven on pine-over-bridge (Z1): calm floor
+0.07 for 60% of an 8s loop, front peaks at the old sway's full energy,
+seam 0.079 = no pop, leakage 0.00. Evidence:
+living/AB-GUST-VS-SWAY.mp4 (left constant / right gust),
+living/evidence-gust-vs-constant-sway.png, plane-cycles/gust-activity.json.
+peakDisplacementPx metric fixed to running max (was last-drawing-only).
+NEXT (queue item 2): native-res water/fall cycles for ALL water regions.

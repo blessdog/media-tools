@@ -32,6 +32,12 @@ strokes and quietly changes how many there are.
     [--field wave|sway]  wave = water surface · sway = foliage on a branch
     [--pivot X,Y]    sway only: where the branch meets the trunk
     [--stiffness 1.6] sway only: taper exponent toward the tip
+    [--gust A,H,D]   sway only: wind as an EVENT — attack/hold/decay as
+                     fractions of the cycle; calm air fills the rest
+    [--gust-travel 1500] px the gust front travels per cycle (along --angle)
+    [--gust-rest 0.15]   idle sway between gusts (fraction of --wobble)
+    [--gust-push 0]      px of downwind bow at gust peak
+    [--gust-flutter 2]   flutter oscillations inside the gust
 """
 import argparse, json, sys
 from pathlib import Path
@@ -66,6 +72,22 @@ p.add_argument('--pivot', default=None, help='sway: X,Y where branch meets trunk
 p.add_argument('--stiffness', type=float, default=1.6,
                help='sway: taper exponent. 1 = a rope, 3 = a stiff limb that only '
                     'the tips of move.')
+p.add_argument('--gust', default=None,
+               help='sway only: wind as an EVENT, not a state. A,H,D = '
+                    'attack,hold,decay as fractions of the cycle '
+                    '(0.10,0.08,0.22 = a gust filling 40%% of the loop, calm '
+                    'air the rest). The front sweeps downwind along --angle.')
+p.add_argument('--gust-travel', type=float, default=1500.0,
+               help='px the gust front travels in one full cycle; smaller = '
+                    'the wave of bending crosses the frame faster')
+p.add_argument('--gust-rest', type=float, default=0.15,
+               help='residual sway between gusts as a fraction of --wobble '
+                    '(0 = dead still air, which reads as a freeze)')
+p.add_argument('--gust-push', type=float, default=0.0,
+               help='px of downwind bow at gust peak, tapered like the sway; '
+                    'this is the base-first bend that sells a gust')
+p.add_argument('--gust-flutter', type=float, default=2.0,
+               help='flutter oscillations inside one gust window')
 p.add_argument('--keep', choices=['thin', 'all'], default=None,
                help="which ink to move. 'thin' keeps only strokes (water lines, "
                     "default for wave); 'all' keeps filled shapes too, which is "
@@ -193,25 +215,63 @@ if a.field == 'sway':
     tx, ty = -ry / np.maximum(d, 1e-3), rx / np.maximum(d, 1e-3)   # unit tangent
     lag = 2 * np.pi * d / max(a.wavelength, 1e-3)
 
+# A GUST, not a metronome (The Old Mill, 1937: wind is an event -- it
+# arrives, bends things base-first, passes, and the air goes calm). Each
+# pixel runs the attack/hold/decay envelope on its own clock, delayed by
+# its distance ALONG the wind, so the bending visibly travels across the
+# frame. The envelope is zero at both ends of its window, so the cycle
+# still closes exactly; between gusts the ordinary swing idles at
+# --gust-rest amplitude so the foliage never reads as frozen.
+gust = False
+if a.gust:
+    if a.field != 'sway':
+        sys.exit('--gust is sway-only: water waves already travel; gusts are for foliage')
+    ga, gh, gd = (float(q) for q in a.gust.split(','))
+    gwin = ga + gh + gd
+    if gwin >= 0.95:
+        sys.exit('--gust A+H+D must leave calm air in the loop: keep the sum under 0.95')
+    delay = (along - float(along[R].min())) / max(a.gust_travel, 1e-3)
+    gust = True
+
 drawings = []
+peak_disp = 0.0
 for k in range(ndraw):
     t = 2 * np.pi * k / ndraw                   # closes the loop exactly
     if a.field == 'sway':
-        # a gust, not a metronome: one dominant swing plus a weaker second
-        # harmonic, so the canopy breathes unevenly the way wind actually is
+        # one dominant swing plus a weaker second harmonic, so the canopy
+        # breathes unevenly the way wind actually is
         swing = (np.sin(t - lag) + 0.32 * np.sin(2 * (t - lag) + 1.1)) / 1.32
-        amp = a.wobble * taper * swing
+        if gust:
+            u = (k / ndraw - delay) % 1.0
+            e = np.zeros_like(u)
+            r = u < ga
+            e[r] = u[r] / max(ga, 1e-6)
+            r = (u >= ga) & (u < ga + gh)
+            e[r] = 1.0
+            r = (u >= ga + gh) & (u < gwin)
+            e[r] = 1.0 - (u[r] - ga - gh) / max(gd, 1e-6)
+            e = e * e * (3 - 2 * e)             # smoothstep the ramps
+            flut = np.sin(2 * np.pi * a.gust_flutter * u / max(gwin, 1e-6))
+            amp = a.wobble * taper * (a.gust_rest * swing + e * flut)
+            act = a.gust_rest + (1 - a.gust_rest) * e
+        else:
+            amp = a.wobble * taper * swing
+            act = 1.0
         mx = tx * amp + jit[k, 0] * taper
         my = ty * amp + jit[k, 1] * taper
         # a little radial breathing so leaves nod as well as swing
-        mx += (rx / np.maximum(d, 1e-3)) * a.drift * taper * np.cos(t - lag)
-        my += (ry / np.maximum(d, 1e-3)) * a.drift * taper * np.cos(t - lag)
+        mx += (rx / np.maximum(d, 1e-3)) * a.drift * taper * np.cos(t - lag) * act
+        my += (ry / np.maximum(d, 1e-3)) * a.drift * taper * np.cos(t - lag) * act
+        if gust:
+            mx += fx * a.gust_push * taper * e   # the base-first downwind bow
+            my += fy * a.gust_push * taper * e
     else:
         ph = phase2 - t                         # wave crest moves along the flow
         w_perp = a.wobble * np.sin(ph) + 0.35 * a.wobble * np.sin(2.3 * phase + 1.7 * t)
         w_along = a.drift * np.cos(ph)
         mx = fx * w_along + px * w_perp + jit[k, 0]
         my = fy * w_along + py * w_perp + jit[k, 1]
+    peak_disp = max(peak_disp, float(np.sqrt(mx * mx + my * my)[R].max()))
     mapx = (xx - mx).astype(np.float32); mapy = (yy - my).astype(np.float32)
     wa = cv2.remap(alpha, mapx, mapy, cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
     wa = wa * R                                  # ink never leaves the water
@@ -242,7 +302,6 @@ else:
     errs = [np.abs(d - img).mean(-1)[outside].max() for d in drawings]
     rt_mean = float(np.mean(errs)); rt_p99 = float(np.max(errs))
     rt_what = 'leakage outside the feathered region, worst frame'
-peak_disp = float(np.sqrt(mx * mx + my * my)[R].max())
 
 if a.out_frames:
     fd = Path(a.out_frames)
@@ -266,6 +325,10 @@ print(json.dumps({'out': a.out, 'masks': names, 'frames': a.frames,
                   'effectiveDrawingsPerSecond': round(a.fps / a.on, 1),
                   'inkPctOfRegion': round(float(ink[R].mean()) * 100, 2),
                   'field': a.field, 'mode': mode, 'keepRule': keep_rule, 'massesLeftAlone': dropped,
+                  'gust': ({'attack': ga, 'hold': gh, 'decay': gd,
+                            'travelPx': a.gust_travel, 'rest': a.gust_rest,
+                            'pushPx': a.gust_push, 'flutter': a.gust_flutter}
+                           if gust else None),
                   'inkColour': [round(float(x)) for x in C],
                   'roundTripMeanErr': round(rt_mean, 2),
                   'roundTripP99Err': round(rt_p99, 2),
