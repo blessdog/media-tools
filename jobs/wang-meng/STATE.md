@@ -417,3 +417,22 @@ native-px close-ups (board: film/evidence-native-closeup-board.png —
 water / family-on-ox / Ge+fan / deer), walk cycles, ffmpeg cuts on
 beats.json, parallax reserved for true travel moments. Zones Z2-Z6 all
 staged. Do NOT render another authored camera path before his answer.
+
+## 2026-08-19 night — THE REAL FILM, from Ryan directly (supersedes Chowder Julius)
+An ART HISTORY YOUTUBE CHANNEL piece. His words: explore the ENTIRE
+artwork — pan between details, zoom in/back out, float around; water
+moving in EVERY shot the entire shot; foliage moves only when "little
+gusts of wind blow through"; subtle; "1930s Disney with all of their
+clever techniques" (The Old Mill 1937 = the multiplane template; our
+tilted cards ARE a multiplane camera). He is writing the narration script
+(Ge Hong history, e.g. the fashion anecdote); visuals will follow its
+beats — zoom/focus on what the script discusses, occasional 3D
+peek-arounds at held shots. ENHANCE with our data richness + FFmpeg +
+local tools; NEVER regenerate pixels with AI (museum pitch). DEAD: the
+fixated Ge bridge crop, z-push paths as film grammar, LPC audio here.
+WHILE HE SCRIPTS, my prep queue: (1) research actual 1930s Disney
+techniques -> mapping doc technique->our tools; (2) whole-scroll living
+layer: native water/fall cycles for every water region (regions.json
+inventory stands), gust-envelope sway (intermittent, needs an envelope
+feature in animate-strokes — currently continuous); (3) exploration
+camera language across ALL zones, far from the bridge.
