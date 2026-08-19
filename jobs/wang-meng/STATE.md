@@ -404,3 +404,16 @@ Plan (approved): 7-shot Chowder Julius journey, all proven tech, plan file
   5-7/7-8/8-9/9-11), plates, remapped dot drafts + overlays (z3:13, z4:10,
   z5:10, z6:8 dots). Z6 top quarter (y<0.24) still needs Ryan's click pass.
 - RYAN'S QUEUE: (1) watch FILM-0-11s; (2) Z2 dot top-up in z2/pick.html.
+
+## 2026-08-19 late — SHOT GRAMMAR CONDEMNED; FILM BLOCKED ON RYAN'S SHOT DESCRIPTION
+Ryan's verdict on FILM-0-11s and every camera so far: the z-push TEST
+grammar wearing a film costume — "same pan over a still shot," scrapped.
+Root cause named: I authored cinematography instead of asking the
+director. BLOCKED ON: Ryan describing the first ~10s as HE'D shoot it
+(what's in frame on "Orange Julius," what happens on the cut, when if
+ever the camera moves, what's alive). Machinery is NOT condemned and sits
+ready: locked living frames direct from animate-strokes drawings,
+native-px close-ups (board: film/evidence-native-closeup-board.png —
+water / family-on-ox / Ge+fan / deer), walk cycles, ffmpeg cuts on
+beats.json, parallax reserved for true travel moments. Zones Z2-Z6 all
+staged. Do NOT render another authored camera path before his answer.

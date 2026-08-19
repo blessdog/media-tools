@@ -33,3 +33,4 @@ __pycache__/
 !jobs/wang-meng/living/*.mp4
 !jobs/wang-meng/living/inventory-overlay.png
 !jobs/wang-meng/film/*.mp4
+!jobs/wang-meng/film/evidence-*.png
