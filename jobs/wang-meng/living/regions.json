@@ -242,12 +242,24 @@
    "id": "s-pine-over-bridge",
    "class": "sway",
    "box": [
-    2400,
-    11650,
-    3450,
-    12750
+    1590,
+    11700,
+    2150,
+    12370
    ],
-   "note": "the pine leaning over Ge at the bridge"
+   "note": "the pine leaning over Ge at the bridge. Box CORRECTED 2026-08-19 from the proven Z1 plane (plate bbox x2.34 + z1 masterBox); the old box [2400,11650,3450,12750] was bare cliff. Pivot master (1867,12310) = trunk base.",
+   "cycle": {
+    "dir": "native/s-pine-over-bridge/cycle",
+    "pattern": "dr-%03d.png",
+    "box": [
+     1590,
+     11700,
+     2150,
+     12370
+    ],
+    "n": 96,
+    "on": 2
+   }
   },
   {
    "id": "s-gorge-big-canopy",

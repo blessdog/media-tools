@@ -1,0 +1,10 @@
+{
+ "fps": 24,
+ "duration": 16,
+ "_note": "Ensemble probe (render-living): the Old Mill test. Start on the rapids under the trestle bridge, float up and right to end on Ge and the pine leaning over him; the k-corrected current streams the whole take, the gust envelope passes through the pine twice (8s loop). Window edges checked vs master; centers in master-normalised x,y.",
+ "keys": [
+  {"t": 0,  "x": 0.1746, "y": 0.8259, "fov": 1.15},
+  {"t": 8,  "x": 0.1850, "y": 0.8080, "fov": 1.18},
+  {"t": 16, "x": 0.1974, "y": 0.7851, "fov": 1.25}
+ ]
+}

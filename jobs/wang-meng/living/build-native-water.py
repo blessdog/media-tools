@@ -96,11 +96,20 @@ elif a.stage == "cycle":
     cls = R["classes"][r["class"]]
     d = HERE / "native" / r["id"]
     angle = a.angle if a.angle is not None else cls.get("angle", 8)
+    # MOTION PARAMS ARE SHOT-SCALE QUANTITIES (law, 2026-08-19). The class
+    # values are 720-space pixels — the space the water was PROVEN in
+    # (living-both-final: drift 12/720 = 1.7% of frame). At native master
+    # resolution every px-dimensioned param is multiplied by k=2.34, or
+    # the current shrinks to a third of its approved amplitude and reads
+    # as an error (FLOAT-MIDSTREAM regression, Ryan's verdict).
+    K = 2.34
     cmd = ["python3", str(ROOT / "tools/animate-strokes.py"),
            "--image", str(d / "plate.png"), "--masks", str(d / "mask"),
            "--field", cls["field"], "--mode", cls["mode"], "--keep", cls["keep"],
-           "--on", str(cls["on"]), "--wobble", str(cls["wobble"]),
-           "--drift", str(cls["drift"]), "--wavelength", str(cls["wavelength"]),
+           "--on", str(cls["on"]), "--wobble", str(cls["wobble"] * K),
+           "--drift", str(cls["drift"] * K),
+           "--wavelength", str(cls["wavelength"] * K),
+           "--scale", str(90 * K), "--max-thick", str(3.0 * K),
            "--angle", str(angle), "--frames", "72",
            "--out", str(d / "preview.mp4"), "--out-frames", str(d / "cycle")]
     out = subprocess.run(cmd, check=True, cwd=ROOT, capture_output=True, text=True)
