@@ -1,0 +1,11 @@
+{
+ "fps": 24,
+ "duration": 16,
+ "_note": "The landscape ceiling shot: lateral sweep from the great-trees side across the living water, arriving on Ge at the bridge, with a real dolly the whole way. fov here ZOOMS (output px per plate px); every key checked against the plate edges: half-window at each fov stays inside 1971x2704. z max .24 inside the proven envelope.",
+ "keys": [
+  {"t": 0,  "x": 0.630, "y": 0.620, "z": 0.00, "fov": 1.35},
+  {"t": 6,  "x": 0.520, "y": 0.565, "z": 0.10, "fov": 1.30},
+  {"t": 11, "x": 0.445, "y": 0.530, "z": 0.19, "fov": 1.25},
+  {"t": 16, "x": 0.410, "y": 0.515, "z": 0.24, "fov": 1.21}
+ ]
+}

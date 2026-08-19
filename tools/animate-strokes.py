@@ -42,6 +42,10 @@ from PIL import Image, ImageFilter
 p = argparse.ArgumentParser()
 p.add_argument('--image', required=True); p.add_argument('--masks', required=True, action='append')
 p.add_argument('--only', default=None);   p.add_argument('--out', required=True)
+p.add_argument('--out-frames', default=None,
+               help='also write the UNIQUE drawings as lossless PNGs here '
+                    '(dr-%%03d.png + cycle.json) for compositors that need '
+                    'exact pixels; the mp4 stays the preview artifact')
 p.add_argument('--frames', type=int, default=72); p.add_argument('--fps', type=float, default=24)
 p.add_argument('--on', type=int, default=2)
 p.add_argument('--drift', type=float, default=6.0)
@@ -239,6 +243,15 @@ else:
     rt_mean = float(np.mean(errs)); rt_p99 = float(np.max(errs))
     rt_what = 'leakage outside the feathered region, worst frame'
 peak_disp = float(np.sqrt(mx * mx + my * my)[R].max())
+
+if a.out_frames:
+    fd = Path(a.out_frames)
+    fd.mkdir(parents=True, exist_ok=True)
+    for di, d in enumerate(drawings):
+        Image.fromarray(d.astype(np.uint8)).save(fd / f"dr-{di:03d}.png")
+    (fd / 'cycle.json').write_text(json.dumps(
+        {'drawings': ndraw, 'on': a.on, 'fps': a.fps, 'image': a.image,
+         'masks': names, 'field': a.field}))
 
 import subprocess
 enc = subprocess.Popen(['ffmpeg', '-y', '-v', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24',

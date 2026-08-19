@@ -140,6 +140,13 @@ def main() -> int:
     ap.add_argument("--plane-fit", action="store_true")
     ap.add_argument("--no-base", action="store_true")
     ap.add_argument("--geometry")
+    ap.add_argument("--living",
+                    help='JSON map {plane-name: {"dir": textures dir of '
+                         '%%03d.png sized like the plane, "n": count, "on": '
+                         'hold}} — the plane\'s texture is swapped per frame '
+                         '(index = frame//on %% n) so its ink moves while its '
+                         'depth, footprint, and tilt stay authored. Off = '
+                         'every plane static, old renders reproduce.')
     ap.add_argument("--fill", default="paper")
     ap.add_argument("--preview", type=int, default=1)
     ap.add_argument("--stills", action="store_true")
@@ -252,6 +259,16 @@ def main() -> int:
         idx = [0, n_frames // 2, max(0, n_frames - 1)]
     print(f"  {len(idx)} frames @ {args.width}x{args.height}  {fps}fps  {duration}s", file=sys.stderr)
 
+    living = json.loads(Path(args.living).read_text()) if args.living else {}
+    if living:
+        known = {p.get("name") for p in planes}
+        for lname in living:
+            if lname not in known:
+                print(f"--living names unknown plane '{lname}' — ignored", file=sys.stderr)
+        living = {k: v for k, v in living.items() if k in known}
+        print(f"  living planes: {sorted(living)}", file=sys.stderr)
+    living_cache = {}
+
     t0 = time.time()
     for n, i in enumerate(idx):
         t = i / fps
@@ -260,6 +277,15 @@ def main() -> int:
         canvas = Image.new("RGBA", (args.width, args.height), bg)
 
         for p in planes:
+            lv = living.get(p.get("name"))
+            if lv:
+                ti = (i // lv.get("on", 1)) % lv["n"]
+                held = living_cache.get(p["name"])
+                if held is None or held[0] != ti:
+                    held = (ti, Image.open(
+                        Path(lv["dir"]) / f"{ti:03d}.png").convert("RGBA"))
+                    living_cache[p["name"]] = held   # one texture per plane
+                p["img"] = held[1]
             eff = p["z"] - camZ
             if eff <= 0.05:
                 continue                        # camera has passed through it
