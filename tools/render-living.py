@@ -19,9 +19,10 @@ fov 1.0 at --k 1.0 meaning native pixels.
 
 Regions JSON: see jobs/wang-meng/living/regions.json. A region animates
 only when it has "cycle": {"dir": <frames dir, %05d.png>, "box":
-[x0,y0,x1,y1 master px], "n": <frame count>}. Tiles are resized to the box
-if recorded at another scale. Cycle frame index = output frame mod n
-(cycles are authored at the output fps).
+[x0,y0,x1,y1 master px], "n": <frame count>, "on": <hold, default 1>}.
+Tiles are resized to the box if recorded at another scale. Cycle frame
+index = (output frame // on) mod n — "on": 2 plays a 36-drawing cycle
+on twos, the cel idiom animate-strokes authors.
 
 usage:
   render-living.py --master IMG --regions REGIONS.json --path PATH.json \
@@ -87,7 +88,8 @@ for r in R["regions"]:
         continue
     d = Path(a.regions).parent / c["dir"] if not Path(c["dir"]).is_absolute() else Path(c["dir"])
     x0, y0, x1, y1 = c["box"]
-    cycles.append({"id": r["id"], "dir": d, "n": c["n"], "box": (x0, y0, x1, y1)})
+    cycles.append({"id": r["id"], "dir": d, "n": c["n"], "on": c.get("on", 1),
+                   "box": (x0, y0, x1, y1)})
 print(f"living regions with cycles: {[c['id'] for c in cycles]}", file=sys.stderr)
 
 out = Path(a.out)
@@ -113,7 +115,7 @@ for i in todo:
         bx0, by0, bx1, by1 = c["box"]
         if bx1 <= ix0 or bx0 >= ix0 + iw or by1 <= iy0 or by0 >= iy0 + ih:
             continue
-        fi = i % c["n"]
+        fi = (i // c["on"]) % c["n"]   # cycles authored on twos hold each drawing
         key = (c["id"], fi)
         if key not in tile_cache:
             tile = Image.open(c["dir"] / f"{fi:05d}.png").convert("RGB")

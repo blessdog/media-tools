@@ -84,8 +84,9 @@ p.add_argument('--gust-rest', type=float, default=0.15,
                help='residual sway between gusts as a fraction of --wobble '
                     '(0 = dead still air, which reads as a freeze)')
 p.add_argument('--gust-push', type=float, default=0.0,
-               help='px of downwind bow at gust peak, tapered like the sway; '
-                    'this is the base-first bend that sells a gust')
+               help='px of downwind bow at gust peak — a rotation about the '
+                    'pivot toward downwind, never a bodily slide (a sliding '
+                    'canopy is the 2.5D decal tell)')
 p.add_argument('--gust-flutter', type=float, default=2.0,
                help='flutter oscillations inside one gust window')
 p.add_argument('--keep', choices=['thin', 'all'], default=None,
@@ -251,8 +252,15 @@ for k in range(ndraw):
             r = (u >= ga + gh) & (u < gwin)
             e[r] = 1.0 - (u[r] - ga - gh) / max(gd, 1e-6)
             e = e * e * (3 - 2 * e)             # smoothstep the ramps
-            flut = np.sin(2 * np.pi * a.gust_flutter * u / max(gwin, 1e-6))
-            amp = a.wobble * taper * (a.gust_rest * swing + e * flut)
+            # flutter keeps the cantilever's tip LAG — without it the whole
+            # canopy flaps in phase, which reads as rigid flapping
+            flut = np.sin(2 * np.pi * a.gust_flutter * u / max(gwin, 1e-6) - lag)
+            # the bow is a ROTATION about the pivot toward downwind, i.e. a
+            # tangent displacement weighted by how downwind the tangent
+            # points. Never a translation: sliding the canopy bodily is the
+            # decal tell this file already bans for the base sway.
+            bow = a.gust_push * (tx * fx + ty * fy) * e
+            amp = a.wobble * taper * (a.gust_rest * swing + e * flut) + bow * taper
             act = a.gust_rest + (1 - a.gust_rest) * e
         else:
             amp = a.wobble * taper * swing
@@ -262,9 +270,6 @@ for k in range(ndraw):
         # a little radial breathing so leaves nod as well as swing
         mx += (rx / np.maximum(d, 1e-3)) * a.drift * taper * np.cos(t - lag) * act
         my += (ry / np.maximum(d, 1e-3)) * a.drift * taper * np.cos(t - lag) * act
-        if gust:
-            mx += fx * a.gust_push * taper * e   # the base-first downwind bow
-            my += fy * a.gust_push * taper * e
     else:
         ph = phase2 - t                         # wave crest moves along the flow
         w_perp = a.wobble * np.sin(ph) + 0.35 * a.wobble * np.sin(2.3 * phase + 1.7 * t)
