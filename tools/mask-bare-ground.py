@@ -21,6 +21,10 @@ box the operator draws, and the cut follows the painting's own logic.
                       current reads as one body of water rather than confetti
     [--feather 6]     blur the edge, px
     [--min-area 200]  drop islands smaller than this, px
+    [--seal-red 22]   exclude collectors' seals: reject pixels whose red
+                      chroma (R - max(G,B)) exceeds this, dilated so the
+                      feather can't leak back onto the seal script. Seals
+                      sit ON the water silk and must never move. 0 = off.
 
 Writes DIR/masks/NNN.png (cropped) + appends to DIR/layers.json in the same
 shape segment-points.py writes, so composite-protect.py consumes either.
@@ -39,6 +43,7 @@ p.add_argument('--busy', type=float, default=0.055)
 p.add_argument('--close', type=int, default=5)
 p.add_argument('--feather', type=int, default=6)
 p.add_argument('--min-area', type=int, default=200)
+p.add_argument('--seal-red', type=float, default=22)
 a = p.parse_args()
 
 img = np.array(Image.open(a.image).convert('RGB'))
@@ -55,6 +60,19 @@ m = ((v >= a.vmin) & (busy <= a.busy)).astype(np.uint8) * 255
 if a.close:
     k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (a.close * 2 + 1,) * 2)
     m = cv2.morphologyEx(m, cv2.MORPH_CLOSE, k)
+# cinnabar seal paste is the one MID-VALUE material on the silk: dark enough
+# for the ink detector downstream, thin enough to pass the stroke rule — a
+# rippling seal was measured on w-river-entry 2026-08-19. Reject by red
+# chroma AFTER the close (so closing can't bridge back over it) and dilate
+# well past the feather radius.
+if a.seal_red > 0:
+    c = crop.astype(np.float32)
+    seal = (c[..., 0] - np.maximum(c[..., 1], c[..., 2])) > a.seal_red
+    if seal.any():
+        grow = a.feather * 2 + 9
+        seal = cv2.dilate(seal.astype(np.uint8),
+                          cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (grow, grow))) > 0
+        m[seal] = 0
 n, lab, stats, _ = cv2.connectedComponentsWithStats((m > 0).astype(np.uint8), 8)
 for i in range(1, n):
     if stats[i, cv2.CC_STAT_AREA] < a.min_area:
@@ -70,7 +88,7 @@ nn = max([q['n'] for q in meta['planeList']], default=0) + 1
 Image.fromarray(m).save(out / 'masks' / f'{nn:03d}.png')
 meta['planeList'].append({
     'n': nn, 'name': a.name, 'source': 'mask-liubai', 'box': [x0, y0, x1, y1],
-    'offset': [x0, y0], 'vmin': a.vmin, 'busy': a.busy,
+    'offset': [x0, y0], 'vmin': a.vmin, 'busy': a.busy, 'sealRed': a.seal_red,
     'coveragePctOfBox': round(float((m > 127).mean()) * 100, 1),
     'coveragePctOfFrame': round(float((m > 127).sum()) / (W * H) * 100, 2)})
 json.dump(meta, open(lj, 'w'), indent=1)

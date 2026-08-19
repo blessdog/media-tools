@@ -30,6 +30,10 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--stage", required=True, choices=["masks", "cycle", "register"])
 ap.add_argument("--id", default=None)
 ap.add_argument("--busy", type=float, default=0.055)
+ap.add_argument("--vmin", type=float, default=0.62,
+                help="masks stage: 0.66 measured right for wave boxes that "
+                     "include toned banks (w-river-entry vmin-compare.png); "
+                     "0.62 for falls on darker cliff")
 ap.add_argument("--min-area", type=int, default=200,
                 help="masks stage: drop silk islands smaller than this — "
                      "kills the speckle gaps inside stippled canopies")
@@ -51,7 +55,7 @@ if a.stage == "masks":
         subprocess.run(["python3", str(ROOT / "tools/mask-bare-ground.py"),
                         "--image", str(d / "plate.png"), "--box", f"0,0,{w},{h}",
                         "--name", r["id"], "--busy", str(a.busy),
-                        "--min-area", str(a.min_area),
+                        "--vmin", str(a.vmin), "--min-area", str(a.min_area),
                         "--out", str(d / "mask")], check=True, cwd=ROOT,
                        capture_output=True)
         cov = json.loads(lj.read_text())["planeList"][0]["coveragePctOfBox"]
