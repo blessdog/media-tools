@@ -1,0 +1,11 @@
+{
+ "fps": 24,
+ "duration": 20,
+ "_note": "P3 proto: 20s landscape Ken Burns push from a wide river view into the living bridge. k=2.34 at render; fov max 1.40 keeps the window (6290px) inside the 6586px master width.",
+ "keys": [
+  {"t": 0,  "x": 0.500, "y": 0.855, "fov": 1.40},
+  {"t": 8,  "x": 0.420, "y": 0.820, "fov": 1.25},
+  {"t": 14, "x": 0.340, "y": 0.785, "fov": 1.10},
+  {"t": 20, "x": 0.300, "y": 0.760, "fov": 1.00}
+ ]
+}

@@ -62,6 +62,7 @@ the same command that creates the file.
 | `inpaint-planes.py` | plane stack → each plane painted on BEHIND its occluders, so a dolly opens no holes |
 | `pin-objects.py` | plane stack + object masks → no painted object straddles two depths |
 | `render-warp.py` | objects + depths + camera path → frames, as ONE continuous warp; rigid objects, strain in the wash, no holes, NO occlusion |
+| `render-living.py` | master + per-region animation cycles + camera path → frames; 2D Ken Burns window over a LIVING painting (cycles composited per frame, cost O(window)) |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
 Proven ComfyUI graphs in `tools/workflows/`. Renderer recipes in `models/` —

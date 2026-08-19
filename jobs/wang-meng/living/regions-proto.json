@@ -1,0 +1,8 @@
+{
+ "note": "P3 PROTOTYPE ONLY — one region, its cycle salvaged from the proven living-both-final.mp4 (73 frames @24, tile 720x1280 at k=2.34, located in the master by locate-crop score 0.9576). Real cycles arrive in P2 at native res; this file proves the engine with zero new compute. Because the tile is k=2.34, proto shots must render at --k >= 2.34 so the tile is never upscaled in the output.",
+ "regions": [
+  {"id": "bridge-living-proto", "class": "wave",
+   "box": [901, 10604, 2585, 13599],
+   "cycle": {"dir": "cycles/bridge-proto", "box": [901, 10604, 2585, 13599], "n": 73}}
+ ]
+}
