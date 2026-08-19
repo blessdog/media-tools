@@ -1,0 +1,16 @@
+{
+  "tool": "crop-region",
+  "out": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5/plate.png",
+  "size": [
+    2218,
+    2212
+  ],
+  "master": "/Users/SSDrive/projects/media-tools/corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+  "masterBox": [
+    378,
+    2641,
+    5568,
+    7816
+  ],
+  "masterPxPerRegionPx": 2.34
+}

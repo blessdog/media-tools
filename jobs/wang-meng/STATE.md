@@ -390,3 +390,17 @@ Full step log: reports/2026-08-19-seq-z1.md (Ryan wants a report per build —
 standing practice from here). Music: none yet — when a track lands, retime
 paths to it (durations are JSON fields) and stitch --music. Next: his SEQ
 verdict → then Z2 dots top-up (z2/pick.html seeded) → Z2 chain → handoff gate.
+
+## 2026-08-19 evening — FULL-FILM PLAN APPROVED; FILM 0-11s EXISTS; ALL ZONES STAGED
+Plan (approved): 7-shot Chowder Julius journey, all proven tech, plan file
+~/.claude/plans/effervescent-wobbling-dove.md; shot SSOT film/shots.json.
+- P1 DONE pending verdict: film/FILM-0-11s.mp4 — shots 1-2 (river entry;
+  sweep onto Ge) with FOUR living planes (water, upper-stream, pine, FAN —
+  fanonly mask remapped shot->plate at +385,+431) against the real audio.
+- render-parallax --living + animate-strokes --out-frames shipped (a371a4f).
+- Deer walk DEFERRED with mechanism: loops snap back, walks aren't loops;
+  needs non-looping per-shot plane sequences (shot-5 era).
+- Z3-Z6 STAGED by journey/stage-zone.py: rects (camera-world rule, ids
+  5-7/7-8/8-9/9-11), plates, remapped dot drafts + overlays (z3:13, z4:10,
+  z5:10, z6:8 dots). Z6 top quarter (y<0.24) still needs Ryan's click pass.
+- RYAN'S QUEUE: (1) watch FILM-0-11s; (2) Z2 dot top-up in z2/pick.html.

@@ -1,0 +1,123 @@
+{
+ "image": "jobs/wang-meng/journey/z3/plate.png",
+ "note": "z3 subset of the global labelled dots, remapped master->plate (rect 0,4712,4082,12594, camera-world rule). depth 0 = farthest. DRAFT: windows=global/k, untested vs SAM; wash-flagged dots seal by proximity. Top-up pass in pick.html before segmenting.",
+ "points": [
+  {
+   "id": 30,
+   "x": 0.46546,
+   "y": 0.95002,
+   "depth": 13,
+   "window": 1496,
+   "name": "pine-over-bridge",
+   "why": "the pine bough over the bridge; grows behind the deck (pilot: pine behind bridge)"
+  },
+  {
+   "id": 8,
+   "x": 0.07436,
+   "y": 0.95618,
+   "depth": 12,
+   "window": 1068,
+   "name": "left-bank-rocks",
+   "why": "dark stream-edge rocks, left bank"
+  },
+  {
+   "id": 9,
+   "x": 0.14885,
+   "y": 0.90794,
+   "depth": 11,
+   "window": 1068,
+   "name": "resting-ledge",
+   "why": "ledge of the seated resting group with baskets"
+  },
+  {
+   "id": 10,
+   "x": 0.25983,
+   "y": 0.81069,
+   "depth": 10,
+   "window": 1496,
+   "name": "upper-stream-rocks",
+   "why": "mid-stream rocks in the rapids above the bridge"
+  },
+  {
+   "id": 11,
+   "x": 0.35989,
+   "y": 0.45178,
+   "depth": 9,
+   "window": 1496,
+   "name": "gorge-cliff-nose",
+   "why": "dark cliff nose below the red-foliage shelf"
+  },
+  {
+   "id": 28,
+   "x": 0.06125,
+   "y": 0.74701,
+   "depth": 9,
+   "window": 3419,
+   "name": "left-cliff-wall",
+   "why": "cliff face rising behind the left-bank ledges"
+  },
+  {
+   "id": 29,
+   "x": 0.41646,
+   "y": 0.67089,
+   "depth": 9,
+   "window": 3419,
+   "name": "gorge-wall-right",
+   "why": "pale wall flanking the upper stream, behind the rapids rocks"
+  },
+  {
+   "id": 12,
+   "x": 0.12625,
+   "y": 0.26853,
+   "depth": 8,
+   "window": 1068,
+   "name": "fenced-cliff-path",
+   "why": "railed cliff path; standing traveler shares it"
+  },
+  {
+   "id": 13,
+   "x": 0.45152,
+   "y": 0.22771,
+   "depth": 7,
+   "window": 1068,
+   "name": "gully-footbridge",
+   "why": "railed footbridge across the gully"
+  },
+  {
+   "id": 14,
+   "x": 0.46488,
+   "y": 0.17522,
+   "depth": 6,
+   "window": 1068,
+   "name": "compound-approach-path",
+   "why": "pale trail climbing to the compound gate"
+  },
+  {
+   "id": 15,
+   "x": 0.52448,
+   "y": 0.0791,
+   "depth": 5,
+   "window": 1068,
+   "name": "compound-fence-autumn-trees",
+   "why": "autumn trees at the bamboo fence, figure beside"
+  },
+  {
+   "id": 16,
+   "x": 0.52602,
+   "y": 0.04522,
+   "depth": 4,
+   "window": 1496,
+   "name": "compound-lower-hall",
+   "why": "lower hall + veranda, waiting figure"
+  },
+  {
+   "id": 17,
+   "x": 0.41165,
+   "y": 0.0033,
+   "depth": 3,
+   "window": 1068,
+   "name": "compound-court",
+   "why": "pine court terrace, walking figure"
+  }
+ ]
+}
