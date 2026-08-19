@@ -355,3 +355,26 @@ Addendum (Ryan): Voyager also fails on RESOLUTION — 768×512 output, "pixel
 poor". Scroll is 6586×15923 native; classical lane crops/renders at full res.
 Third independent kill: fidelity (faces), fabrication (prompts/prior), and
 resolution. NEXT PHASE: assemble the film from the toolbox — classical only.
+
+## 2026-08-19 — ASSEMBLY PHASE OPENED: Z1 tilt flight + Z2 groundwork ($0, local)
+Two moves, both blocked only on Ryan's eyes:
+1. **FLY-S1-4-TILT.mp4** (journey/z1/) — the stations 1–4 flight re-rendered
+   WITH geometry.json. The 08-17 DEEP flight predates the tilts (that is why
+   it read as Ken Burns); same recipe otherwise (path-s1-4.json, filled stack,
+   z-step 0.30 --plane-fit --no-base). Controls: frame zero 0/921600 px vs
+   DEEP (plane-fit guarantee holds under tilt); f200/f336/f480 differ on
+   35–44% of px, so the tilts are live. Evidence:
+   journey/z1/evidence-tilt-vs-deep-f336.png. HIS VERDICT = the phase-1 gate.
+2. **Z2 cut by the camera-world rule** (zone-rect.py --ids 4-5; the rule
+   reproduces Z1's approved rect exactly on ids 1-4, so it is trusted):
+   rect [0,8428,2383,13762], plate 1018×2279 at k → journey/z2/plate.png.
+   journey/z2-rect-overlay.png shows Z2 vs Z1 + the resting-ledge gate
+   corridor (S4 sits inside it). 10 global dots fall in-rect, remapped
+   master→plate by journey/z2/remap-points.py → z2/points.json (windows =
+   global/k, DRAFT) + z2/points-overlay.png. Wash-flagged (Z1's measured SAM
+   failures, red rings): bank-ledge-below-bridge, porter-ledge. Upper band
+   y<0.30 (rapids-corridor approach: waterfall, big pines, right-bank masses)
+   is thin — top-up in z2/pick.html (seeded with the 10 dots) before
+   segmenting. Then: segment → seal → pin → fill → frame-zero control →
+   geometry (climbing eye) → handoff-gate render-off vs Z1.
+Note: gpu-box status = no instances, $0 burning (wild-journey box gone).

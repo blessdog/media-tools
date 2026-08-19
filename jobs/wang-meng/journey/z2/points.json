@@ -1,0 +1,96 @@
+{
+ "image": "jobs/wang-meng/journey/z2/plate.png",
+ "note": "Z2 subset of the labelled global dots, remapped master->plate (rect 0,8428,2383,13762 = camera-world rule on stations 4-5). depth 0 = farthest. DRAFT: windows are global/k, untested against SAM. Wash-flagged dots (bank-ledge-below-bridge, porter-ledge) kept for depth intent but expected to seal by proximity, not segment \u2014 Z1 measured wash has no contour. Upper band y<0.30 (approach to the rapids corridor) is thin \u2014 top-up pass in pick.html before segmenting.",
+ "points": [
+  {
+   "id": 5,
+   "x": 0.78294,
+   "y": 0.97258,
+   "depth": 15,
+   "window": 1496,
+   "name": "bank-ledge-below-bridge",
+   "why": "rocky ledge under the bridge's near end; walking servants stand on it"
+  },
+  {
+   "id": 6,
+   "x": 0.56325,
+   "y": 0.84183,
+   "depth": 14,
+   "window": 1496,
+   "name": "trestle-bridge-ge",
+   "why": "bridge deck at Ge's feet; Ge + deer ride this plane"
+  },
+  {
+   "id": 7,
+   "x": 0.20385,
+   "y": 0.82311,
+   "depth": 13,
+   "window": 855,
+   "name": "porter-ledge",
+   "why": "ledge under the back-basket porter, figure shares it"
+  },
+  {
+   "id": 30,
+   "x": 0.79731,
+   "y": 0.70717,
+   "depth": 13,
+   "window": 1496,
+   "name": "pine-over-bridge",
+   "why": "the pine bough over the bridge; grows behind the deck (pilot: pine behind bridge)"
+  },
+  {
+   "id": 31,
+   "x": 0.48258,
+   "y": 0.92276,
+   "depth": 13,
+   "window": 983,
+   "name": "rapids-under-bridge",
+   "why": "white water seen through the trestles, behind the deck"
+  },
+  {
+   "id": 8,
+   "x": 0.12738,
+   "y": 0.71627,
+   "depth": 12,
+   "window": 1068,
+   "name": "left-bank-rocks",
+   "why": "dark stream-edge rocks, left bank"
+  },
+  {
+   "id": 9,
+   "x": 0.25498,
+   "y": 0.64499,
+   "depth": 11,
+   "window": 1068,
+   "name": "resting-ledge",
+   "why": "ledge of the seated resting group with baskets"
+  },
+  {
+   "id": 10,
+   "x": 0.44507,
+   "y": 0.50128,
+   "depth": 10,
+   "window": 1496,
+   "name": "upper-stream-rocks",
+   "why": "mid-stream rocks in the rapids above the bridge"
+  },
+  {
+   "id": 28,
+   "x": 0.10491,
+   "y": 0.40719,
+   "depth": 9,
+   "window": 3419,
+   "name": "left-cliff-wall",
+   "why": "cliff face rising behind the left-bank ledges"
+  },
+  {
+   "id": 29,
+   "x": 0.71338,
+   "y": 0.29471,
+   "depth": 9,
+   "window": 3419,
+   "name": "gorge-wall-right",
+   "why": "pale wall flanking the upper stream, behind the rapids rocks"
+  }
+ ]
+}

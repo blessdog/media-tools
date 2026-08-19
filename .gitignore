@@ -26,5 +26,6 @@ jobs/**
 # Frame dumps (fly-*/, push-*/) stay out — the mp4 is the citable artifact.
 !jobs/wang-meng/journey/z*/*.mp4
 !jobs/wang-meng/journey/z*/evidence-*.png
+!jobs/wang-meng/journey/z*/points-overlay.png
 !jobs/wang-meng/journey/z*-rect-overlay.png
 __pycache__/
