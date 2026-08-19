@@ -1,0 +1,26 @@
+{
+ "track": "chowder-julius.mp3",
+ "duration": 41.96,
+ "fps": 24,
+ "_note": "Beat map from the diarized transcript (transcript.json). Diarization swaps speakers around 13.9-21.6 (caller asks, clerk answers 'No') — timings are trustworthy, speaker labels there are not. Shot boundaries cut on line starts; the 21.6-26.6 silence is the tension hold before the punchline.",
+ "beats": [
+  {"t": 0.08, "label": "clerk answers: 'Orange Julius.'"},
+  {"t": 2.24, "label": "caller: 'when does that green Julius come out?'"},
+  {"t": 5.52, "label": "clerk denials"},
+  {"t": 13.86, "label": "raisin Julius / No"},
+  {"t": 18.09, "label": "grapefruit Julius / No"},
+  {"t": 21.61, "label": "SILENCE — 5.0s of dead air"},
+  {"t": 26.62, "label": "'How about Chowder Julius?' -> clerk explodes"},
+  {"t": 33.90, "label": "rant peak ('beat you with a motherfucking blender')"},
+  {"t": 41.96, "label": "end"}
+ ],
+ "shots_draft": [
+  {"n": 1, "in": 0.0,  "out": 4.6,  "engine": "A", "idea": "open inside the river at native px, water already flowing, near-static drift"},
+  {"n": 2, "in": 4.6,  "out": 11.0, "engine": "A", "idea": "slow pull revealing the ox party on the clerk's denials"},
+  {"n": 3, "in": 11.0, "out": 16.7, "engine": "B", "idea": "Z1 lateral parallax sweep (landscape re-key) — raisin Julius"},
+  {"n": 4, "in": 16.7, "out": 21.6, "engine": "B", "idea": "arrive at the bridge, slow push toward Ge — grapefruit Julius"},
+  {"n": 5, "in": 21.6, "out": 26.6, "engine": "A/B", "idea": "THE SILENCE: locked hold on Ge, fan stirring, rapids running"},
+  {"n": 6, "in": 26.6, "out": 33.9, "engine": "B", "idea": "'Chowder Julius' + explosion — rise toward the porters as the rant builds"},
+  {"n": 7, "in": 33.9, "out": 41.96, "engine": "A", "idea": "living waterfall/rapids hold for the rant peak, end on falling water"}
+ ]
+}

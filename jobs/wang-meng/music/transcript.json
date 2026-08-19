@@ -1,0 +1,926 @@
+{
+  "words": [
+    {
+      "word": "orange",
+      "start": 0.08,
+      "end": 0.64,
+      "confidence": 0.88964844,
+      "speaker": 0,
+      "speaker_confidence": 0.4391666,
+      "punctuated_word": "Orange"
+    },
+    {
+      "word": "julius",
+      "start": 0.64,
+      "end": 1.44,
+      "confidence": 0.81640625,
+      "speaker": 0,
+      "speaker_confidence": 0.4391666,
+      "punctuated_word": "Julius."
+    },
+    {
+      "word": "yeah",
+      "start": 2.24,
+      "end": 2.56,
+      "confidence": 0.96606445,
+      "speaker": 1,
+      "speaker_confidence": 0.33002496,
+      "punctuated_word": "Yeah."
+    },
+    {
+      "word": "when",
+      "start": 2.56,
+      "end": 2.8,
+      "confidence": 0.99609375,
+      "speaker": 1,
+      "speaker_confidence": 0.33002496,
+      "punctuated_word": "When"
+    },
+    {
+      "word": "does",
+      "start": 2.8,
+      "end": 2.96,
+      "confidence": 0.98828125,
+      "speaker": 1,
+      "speaker_confidence": 0.33002496,
+      "punctuated_word": "does"
+    },
+    {
+      "word": "that",
+      "start": 2.96,
+      "end": 3.12,
+      "confidence": 0.9970703,
+      "speaker": 1,
+      "speaker_confidence": 0.33002496,
+      "punctuated_word": "that"
+    },
+    {
+      "word": "green",
+      "start": 3.12,
+      "end": 3.4399998,
+      "confidence": 0.9404297,
+      "speaker": 1,
+      "speaker_confidence": 0.33002496,
+      "punctuated_word": "green"
+    },
+    {
+      "word": "julius",
+      "start": 3.4399998,
+      "end": 3.84,
+      "confidence": 0.9995117,
+      "speaker": 1,
+      "speaker_confidence": 0.33002496,
+      "punctuated_word": "Julius"
+    },
+    {
+      "word": "come",
+      "start": 3.84,
+      "end": 4.08,
+      "confidence": 0.99902344,
+      "speaker": 1,
+      "speaker_confidence": 0.33002496,
+      "punctuated_word": "come"
+    },
+    {
+      "word": "out",
+      "start": 4.08,
+      "end": 4.64,
+      "confidence": 0.9970703,
+      "speaker": 1,
+      "speaker_confidence": 0.33002496,
+      "punctuated_word": "out?"
+    },
+    {
+      "word": "actually",
+      "start": 5.52,
+      "end": 6.16,
+      "confidence": 0.9367676,
+      "speaker": 0,
+      "speaker_confidence": 0.62936103,
+      "punctuated_word": "Actually,"
+    },
+    {
+      "word": "i",
+      "start": 6.16,
+      "end": 6.3199997,
+      "confidence": 1,
+      "speaker": 0,
+      "speaker_confidence": 0.62936103,
+      "punctuated_word": "I"
+    },
+    {
+      "word": "have",
+      "start": 6.3199997,
+      "end": 6.56,
+      "confidence": 0.6503906,
+      "speaker": 0,
+      "speaker_confidence": 0.62936103,
+      "punctuated_word": "have"
+    },
+    {
+      "word": "heard",
+      "start": 6.56,
+      "end": 6.8799996,
+      "confidence": 0.9980469,
+      "speaker": 0,
+      "speaker_confidence": 0.62936103,
+      "punctuated_word": "heard"
+    },
+    {
+      "word": "no",
+      "start": 6.8799996,
+      "end": 7.2,
+      "confidence": 0.99902344,
+      "speaker": 0,
+      "speaker_confidence": 0.62936103,
+      "punctuated_word": "no"
+    },
+    {
+      "word": "such",
+      "start": 7.2,
+      "end": 7.44,
+      "confidence": 1,
+      "speaker": 0,
+      "speaker_confidence": 0.62936103,
+      "punctuated_word": "such"
+    },
+    {
+      "word": "thing",
+      "start": 7.44,
+      "end": 8.16,
+      "confidence": 0.99609375,
+      "speaker": 0,
+      "speaker_confidence": 0.62936103,
+      "punctuated_word": "thing."
+    },
+    {
+      "word": "yeah",
+      "start": 9.12,
+      "end": 9.44,
+      "confidence": 0.9875488,
+      "speaker": 0,
+      "speaker_confidence": 0.43005586,
+      "punctuated_word": "Yeah."
+    },
+    {
+      "word": "i",
+      "start": 9.44,
+      "end": 9.599999,
+      "confidence": 1,
+      "speaker": 0,
+      "speaker_confidence": 0.43005586,
+      "punctuated_word": "I"
+    },
+    {
+      "word": "haven't",
+      "start": 9.599999,
+      "end": 9.84,
+      "confidence": 1,
+      "speaker": 0,
+      "speaker_confidence": 0.43005586,
+      "punctuated_word": "haven't"
+    },
+    {
+      "word": "heard",
+      "start": 9.84,
+      "end": 10,
+      "confidence": 0.99902344,
+      "speaker": 0,
+      "speaker_confidence": 0.43005586,
+      "punctuated_word": "heard"
+    },
+    {
+      "word": "anything",
+      "start": 10,
+      "end": 10.4,
+      "confidence": 1,
+      "speaker": 0,
+      "speaker_confidence": 0.43005586,
+      "punctuated_word": "anything"
+    },
+    {
+      "word": "about",
+      "start": 10.4,
+      "end": 10.639999,
+      "confidence": 1,
+      "speaker": 0,
+      "speaker_confidence": 0.43005586,
+      "punctuated_word": "about"
+    },
+    {
+      "word": "that",
+      "start": 10.639999,
+      "end": 10.96,
+      "confidence": 0.99902344,
+      "speaker": 0,
+      "speaker_confidence": 0.43005586,
+      "punctuated_word": "that."
+    },
+    {
+      "word": "do",
+      "start": 13.855,
+      "end": 14.014999,
+      "confidence": 0.9970703,
+      "speaker": 1,
+      "speaker_confidence": 0.26793814,
+      "punctuated_word": "Do"
+    },
+    {
+      "word": "you",
+      "start": 14.014999,
+      "end": 14.174999,
+      "confidence": 0.9970703,
+      "speaker": 1,
+      "speaker_confidence": 0.26793814,
+      "punctuated_word": "you"
+    },
+    {
+      "word": "have",
+      "start": 14.174999,
+      "end": 14.254999,
+      "confidence": 1,
+      "speaker": 1,
+      "speaker_confidence": 0.26793814,
+      "punctuated_word": "have"
+    },
+    {
+      "word": "raisin",
+      "start": 14.254999,
+      "end": 14.815,
+      "confidence": 0.95373535,
+      "speaker": 1,
+      "speaker_confidence": 0.26793814,
+      "punctuated_word": "raisin,"
+    },
+    {
+      "word": "julius",
+      "start": 14.815,
+      "end": 15.535,
+      "confidence": 0.99902344,
+      "speaker": 1,
+      "speaker_confidence": 0.26793814,
+      "punctuated_word": "Julius?"
+    },
+    {
+      "word": "no",
+      "start": 15.535,
+      "end": 16.255,
+      "confidence": 0.99902344,
+      "speaker": 0,
+      "speaker_confidence": 0.22557294,
+      "punctuated_word": "No."
+    },
+    {
+      "word": "do",
+      "start": 16.735,
+      "end": 17.535,
+      "confidence": 0.9873047,
+      "speaker": 0,
+      "speaker_confidence": 0.22557294,
+      "punctuated_word": "Do"
+    },
+    {
+      "word": "you",
+      "start": 18.095,
+      "end": 18.175,
+      "confidence": 0.9970703,
+      "speaker": 0,
+      "speaker_confidence": 0.18227541,
+      "punctuated_word": "you"
+    },
+    {
+      "word": "have",
+      "start": 18.175,
+      "end": 18.335,
+      "confidence": 0.99902344,
+      "speaker": 0,
+      "speaker_confidence": 0.18227541,
+      "punctuated_word": "have"
+    },
+    {
+      "word": "grapefruit",
+      "start": 18.335,
+      "end": 19.055,
+      "confidence": 0.9835612,
+      "speaker": 0,
+      "speaker_confidence": 0.18227541,
+      "punctuated_word": "grapefruit,"
+    },
+    {
+      "word": "julius",
+      "start": 19.055,
+      "end": 19.615,
+      "confidence": 0.99934894,
+      "speaker": 0,
+      "speaker_confidence": 0.18227541,
+      "punctuated_word": "Julius?"
+    },
+    {
+      "word": "no",
+      "start": 19.615,
+      "end": 20.015,
+      "confidence": 0.9482422,
+      "speaker": 0,
+      "speaker_confidence": 0.5857843,
+      "punctuated_word": "No."
+    },
+    {
+      "word": "we",
+      "start": 20.015,
+      "end": 20.175,
+      "confidence": 0.99902344,
+      "speaker": 0,
+      "speaker_confidence": 0.5857843,
+      "punctuated_word": "We"
+    },
+    {
+      "word": "don't",
+      "start": 20.175,
+      "end": 20.335,
+      "confidence": 1,
+      "speaker": 0,
+      "speaker_confidence": 0.5857843,
+      "punctuated_word": "don't"
+    },
+    {
+      "word": "have",
+      "start": 20.335,
+      "end": 20.494999,
+      "confidence": 0.99902344,
+      "speaker": 0,
+      "speaker_confidence": 0.5857843,
+      "punctuated_word": "have"
+    },
+    {
+      "word": "grapefruit",
+      "start": 20.494999,
+      "end": 21.375,
+      "confidence": 0.99039716,
+      "speaker": 0,
+      "speaker_confidence": 0.5857843,
+      "punctuated_word": "grapefruit,"
+    },
+    {
+      "word": "julius",
+      "start": 21.375,
+      "end": 21.615,
+      "confidence": 0.99934894,
+      "speaker": 0,
+      "speaker_confidence": 0.5857843,
+      "punctuated_word": "Julius."
+    },
+    {
+      "word": "how",
+      "start": 26.62,
+      "end": 26.86,
+      "confidence": 0.94921875,
+      "speaker": 0,
+      "speaker_confidence": 0.1706667,
+      "punctuated_word": "How"
+    },
+    {
+      "word": "about",
+      "start": 26.86,
+      "end": 27.34,
+      "confidence": 0.8935547,
+      "speaker": 0,
+      "speaker_confidence": 0.1706667,
+      "punctuated_word": "about"
+    },
+    {
+      "word": "chowder",
+      "start": 27.34,
+      "end": 27.82,
+      "confidence": 0.7702637,
+      "speaker": 0,
+      "speaker_confidence": 0.1706667,
+      "punctuated_word": "Chowder"
+    },
+    {
+      "word": "julius",
+      "start": 27.82,
+      "end": 28.62,
+      "confidence": 0.9905599,
+      "speaker": 0,
+      "speaker_confidence": 0.1706667,
+      "punctuated_word": "Julius?"
+    },
+    {
+      "word": "dude",
+      "start": 28.86,
+      "end": 29.42,
+      "confidence": 0.9580078,
+      "speaker": 0,
+      "speaker_confidence": 0.48136997,
+      "punctuated_word": "Dude,"
+    },
+    {
+      "word": "shut",
+      "start": 29.42,
+      "end": 29.740002,
+      "confidence": 0.99609375,
+      "speaker": 0,
+      "speaker_confidence": 0.48136997,
+      "punctuated_word": "shut"
+    },
+    {
+      "word": "the",
+      "start": 29.740002,
+      "end": 29.98,
+      "confidence": 0.99902344,
+      "speaker": 0,
+      "speaker_confidence": 0.48136997,
+      "punctuated_word": "the"
+    },
+    {
+      "word": "fuck",
+      "start": 29.98,
+      "end": 30.14,
+      "confidence": 0.99902344,
+      "speaker": 0,
+      "speaker_confidence": 0.48136997,
+      "punctuated_word": "fuck"
+    },
+    {
+      "word": "up",
+      "start": 30.14,
+      "end": 30.54,
+      "confidence": 0.93774414,
+      "speaker": 0,
+      "speaker_confidence": 0.48136997,
+      "punctuated_word": "up."
+    },
+    {
+      "word": "you're",
+      "start": 30.54,
+      "end": 30.7,
+      "confidence": 0.99853516,
+      "speaker": 0,
+      "speaker_confidence": 0.48136997,
+      "punctuated_word": "You're"
+    },
+    {
+      "word": "a",
+      "start": 30.7,
+      "end": 30.86,
+      "confidence": 0.93603516,
+      "speaker": 0,
+      "speaker_confidence": 0.48136997,
+      "punctuated_word": "a"
+    },
+    {
+      "word": "fucking",
+      "start": 30.86,
+      "end": 31.1,
+      "confidence": 0.9741211,
+      "speaker": 0,
+      "speaker_confidence": 0.48136997,
+      "punctuated_word": "fucking"
+    },
+    {
+      "word": "idiot",
+      "start": 31.1,
+      "end": 31.740002,
+      "confidence": 0.99853516,
+      "speaker": 0,
+      "speaker_confidence": 0.48136997,
+      "punctuated_word": "idiot."
+    },
+    {
+      "word": "i'm",
+      "start": 31.740002,
+      "end": 31.98,
+      "confidence": 0.92700195,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "I'm"
+    },
+    {
+      "word": "gonna",
+      "start": 31.98,
+      "end": 32.22,
+      "confidence": 0.9790039,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "gonna"
+    },
+    {
+      "word": "fucking",
+      "start": 32.22,
+      "end": 32.46,
+      "confidence": 0.7817383,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "fucking"
+    },
+    {
+      "word": "kick",
+      "start": 32.46,
+      "end": 32.7,
+      "confidence": 0.9970703,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "kick"
+    },
+    {
+      "word": "your",
+      "start": 32.7,
+      "end": 32.86,
+      "confidence": 0.9951172,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "your"
+    },
+    {
+      "word": "ass",
+      "start": 32.86,
+      "end": 33.02,
+      "confidence": 0.9255371,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "ass,"
+    },
+    {
+      "word": "dude",
+      "start": 33.02,
+      "end": 33.18,
+      "confidence": 0.9897461,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "dude."
+    },
+    {
+      "word": "i",
+      "start": 33.18,
+      "end": 33.34,
+      "confidence": 0.9980469,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "I"
+    },
+    {
+      "word": "wish",
+      "start": 33.34,
+      "end": 33.5,
+      "confidence": 0.9970703,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "wish"
+    },
+    {
+      "word": "you'd",
+      "start": 33.5,
+      "end": 33.66,
+      "confidence": 0.87597656,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "you'd"
+    },
+    {
+      "word": "cut",
+      "start": 33.66,
+      "end": 33.74,
+      "confidence": 0.68603516,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "cut"
+    },
+    {
+      "word": "them",
+      "start": 33.74,
+      "end": 33.9,
+      "confidence": 0.6948242,
+      "speaker": 1,
+      "speaker_confidence": 0.56142664,
+      "punctuated_word": "them"
+    },
+    {
+      "word": "up",
+      "start": 33.9,
+      "end": 33.98,
+      "confidence": 0.9951172,
+      "speaker": 1,
+      "speaker_confidence": 0.5556254,
+      "punctuated_word": "up"
+    },
+    {
+      "word": "here",
+      "start": 33.98,
+      "end": 34.22,
+      "confidence": 0.9699707,
+      "speaker": 1,
+      "speaker_confidence": 0.5556254,
+      "punctuated_word": "here,"
+    },
+    {
+      "word": "dude",
+      "start": 34.22,
+      "end": 34.46,
+      "confidence": 0.77856445,
+      "speaker": 1,
+      "speaker_confidence": 0.5556254,
+      "punctuated_word": "dude,"
+    },
+    {
+      "word": "and",
+      "start": 34.46,
+      "end": 34.54,
+      "confidence": 0.97509766,
+      "speaker": 1,
+      "speaker_confidence": 0.5556254,
+      "punctuated_word": "and"
+    },
+    {
+      "word": "order",
+      "start": 34.54,
+      "end": 34.78,
+      "confidence": 0.99316406,
+      "speaker": 1,
+      "speaker_confidence": 0.5556254,
+      "punctuated_word": "order"
+    },
+    {
+      "word": "a",
+      "start": 34.78,
+      "end": 34.940002,
+      "confidence": 0.97998047,
+      "speaker": 1,
+      "speaker_confidence": 0.5556254,
+      "punctuated_word": "a"
+    },
+    {
+      "word": "julius",
+      "start": 34.940002,
+      "end": 35.18,
+      "confidence": 1,
+      "speaker": 1,
+      "speaker_confidence": 0.5556254,
+      "punctuated_word": "Julius"
+    },
+    {
+      "word": "because",
+      "start": 35.18,
+      "end": 35.34,
+      "confidence": 0.5776367,
+      "speaker": 1,
+      "speaker_confidence": 0.51236326,
+      "punctuated_word": "because"
+    },
+    {
+      "word": "i'll",
+      "start": 35.34,
+      "end": 35.58,
+      "confidence": 0.98583984,
+      "speaker": 1,
+      "speaker_confidence": 0.51236326,
+      "punctuated_word": "I'll"
+    },
+    {
+      "word": "recognize",
+      "start": 35.58,
+      "end": 35.82,
+      "confidence": 0.9980469,
+      "speaker": 1,
+      "speaker_confidence": 0.51236326,
+      "punctuated_word": "recognize"
+    },
+    {
+      "word": "your",
+      "start": 35.82,
+      "end": 35.98,
+      "confidence": 0.9951172,
+      "speaker": 1,
+      "speaker_confidence": 0.51236326,
+      "punctuated_word": "your"
+    },
+    {
+      "word": "fucking",
+      "start": 35.98,
+      "end": 36.3,
+      "confidence": 0.9921875,
+      "speaker": 1,
+      "speaker_confidence": 0.51236326,
+      "punctuated_word": "fucking"
+    },
+    {
+      "word": "voice",
+      "start": 36.3,
+      "end": 36.7,
+      "confidence": 0.77563477,
+      "speaker": 1,
+      "speaker_confidence": 0.51236326,
+      "punctuated_word": "voice,"
+    },
+    {
+      "word": "and",
+      "start": 36.7,
+      "end": 36.86,
+      "confidence": 0.9760742,
+      "speaker": 1,
+      "speaker_confidence": 0.51236326,
+      "punctuated_word": "and"
+    },
+    {
+      "word": "i'm",
+      "start": 36.86,
+      "end": 37.02,
+      "confidence": 0.939209,
+      "speaker": 1,
+      "speaker_confidence": 0.51236326,
+      "punctuated_word": "I'm"
+    },
+    {
+      "word": "a",
+      "start": 37.02,
+      "end": 37.1,
+      "confidence": 0.83935547,
+      "speaker": 1,
+      "speaker_confidence": 0.5549124,
+      "punctuated_word": "a"
+    },
+    {
+      "word": "fucking",
+      "start": 37.1,
+      "end": 37.34,
+      "confidence": 0.99316406,
+      "speaker": 1,
+      "speaker_confidence": 0.5549124,
+      "punctuated_word": "fucking"
+    },
+    {
+      "word": "straight",
+      "start": 37.34,
+      "end": 37.58,
+      "confidence": 0.9970703,
+      "speaker": 1,
+      "speaker_confidence": 0.5549124,
+      "punctuated_word": "straight"
+    },
+    {
+      "word": "beat",
+      "start": 37.58,
+      "end": 37.82,
+      "confidence": 0.9921875,
+      "speaker": 1,
+      "speaker_confidence": 0.5549124,
+      "punctuated_word": "beat"
+    },
+    {
+      "word": "you",
+      "start": 37.82,
+      "end": 37.98,
+      "confidence": 0.99902344,
+      "speaker": 1,
+      "speaker_confidence": 0.5549124,
+      "punctuated_word": "you"
+    },
+    {
+      "word": "with",
+      "start": 37.98,
+      "end": 38.14,
+      "confidence": 0.9980469,
+      "speaker": 1,
+      "speaker_confidence": 0.5549124,
+      "punctuated_word": "with"
+    },
+    {
+      "word": "a",
+      "start": 38.14,
+      "end": 38.22,
+      "confidence": 0.90625,
+      "speaker": 1,
+      "speaker_confidence": 0.26022917,
+      "punctuated_word": "a"
+    },
+    {
+      "word": "motherfucking",
+      "start": 38.22,
+      "end": 38.78,
+      "confidence": 0.9611003,
+      "speaker": 1,
+      "speaker_confidence": 0.26022917,
+      "punctuated_word": "motherfucking"
+    },
+    {
+      "word": "blender",
+      "start": 38.667564,
+      "end": 39.067566,
+      "confidence": 0.9202474,
+      "speaker": 1,
+      "speaker_confidence": 0.26022917,
+      "punctuated_word": "blender,"
+    },
+    {
+      "word": "you",
+      "start": 39.067566,
+      "end": 39.227566,
+      "confidence": 0.99609375,
+      "speaker": 1,
+      "speaker_confidence": 0.26022917,
+      "punctuated_word": "you"
+    },
+    {
+      "word": "little",
+      "start": 39.227566,
+      "end": 39.387566,
+      "confidence": 0.9980469,
+      "speaker": 1,
+      "speaker_confidence": 0.26022917,
+      "punctuated_word": "little"
+    },
+    {
+      "word": "hulk",
+      "start": 39.387566,
+      "end": 40.027565,
+      "confidence": 0.8616536,
+      "speaker": 1,
+      "speaker_confidence": 0.24169695,
+      "punctuated_word": "hulk."
+    },
+    {
+      "word": "speak",
+      "start": 40.507565,
+      "end": 40.827564,
+      "confidence": 0.5751953,
+      "speaker": 1,
+      "speaker_confidence": 0.24169695,
+      "punctuated_word": "Speak"
+    },
+    {
+      "word": "a",
+      "start": 40.827564,
+      "end": 40.987564,
+      "confidence": 0.6689453,
+      "speaker": 1,
+      "speaker_confidence": 0.24169695,
+      "punctuated_word": "a"
+    },
+    {
+      "word": "little",
+      "start": 40.987564,
+      "end": 41.147564,
+      "confidence": 0.984375,
+      "speaker": 1,
+      "speaker_confidence": 0.24169695,
+      "punctuated_word": "little."
+    }
+  ],
+  "utterances": [
+    {
+      "start": 0.08,
+      "end": 1.44,
+      "text": "Orange Julius.",
+      "speaker": 0,
+      "confidence": 0.85302734
+    },
+    {
+      "start": 2.24,
+      "end": 4.64,
+      "text": "Yeah. When does that green Julius come out?",
+      "speaker": 1,
+      "confidence": 0.9854431
+    },
+    {
+      "start": 5.52,
+      "end": 8.16,
+      "text": "Actually, I have heard no such thing.",
+      "speaker": 0,
+      "confidence": 0.940046
+    },
+    {
+      "start": 9.12,
+      "end": 10.96,
+      "text": "Yeah. I haven't heard anything about that.",
+      "speaker": 0,
+      "confidence": 0.99794227
+    },
+    {
+      "start": 13.855,
+      "end": 16.255,
+      "text": "Do you have raisin, Julius? No.",
+      "speaker": 1,
+      "confidence": 0.9909871
+    },
+    {
+      "start": 16.735,
+      "end": 17.535,
+      "text": "Do",
+      "speaker": 0,
+      "confidence": 0.9873047
+    },
+    {
+      "start": 18.095,
+      "end": 21.615,
+      "text": "you have grapefruit, Julius? No. We don't have grapefruit, Julius.",
+      "speaker": 0,
+      "confidence": 0.9915039
+    },
+    {
+      "start": 26.62,
+      "end": 41.147564,
+      "text": "How about Chowder Julius? Dude, shut the fuck up. You're a fucking idiot. I'm gonna fucking kick your ass, dude. I wish you'd cut them up here, dude, and order a Julius because I'll recognize your fucking voice, and I'm a fucking straight beat you with a motherfucking blender, you little hulk. Speak a little.",
+      "speaker": 1,
+      "confidence": 0.9249141
+    }
+  ]
+}

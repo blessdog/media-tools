@@ -176,3 +176,22 @@ the 11 pilot planes, the measured wander envelopes (0.3–0.5 wander needs
   cut, against the master, with Pissjug's eyes on the overlay.
 - Whether the piece ends before or at the inscription/seal (real calligraphy,
   allowed) — decided at Z6 authoring.
+
+## AMENDMENT 2026-08-19 (Ryan): landscape YouTube output; living layer first
+
+- **Output frame is 16:9 landscape** — iterate 1920×1080@24, final master
+  3840×2160@24 ("this should be full screen on my Mac, YouTube formatted").
+  The 720×1280 vertical frame above is SUPERSEDED for deliverables; all
+  zone worlds, authored depth, paths-as-data, and controls carry unchanged
+  (the frame is a render flag, not world data). A 3840-wide window is
+  native master pixels — no upscaling exists anywhere in the pipeline.
+- **Compute order inverted**: first bring the whole painting subtly to
+  life (per-region animation cycles — the living layer), THEN camera moves
+  through it. Two shot engines over one living layer: `render-living.py`
+  (window sampler, Ken Burns grammar) and `render-parallax.py` (zone-world
+  3D, extended to take living plane textures).
+- **The painting is never shown whole** (Ryan's pick, 2026-08-19): the
+  camera always lives inside it, as a handscroll is actually read.
+- Film #1: LPC "Chowder Julius" (42.0s), beat map from the diarized
+  transcript. Plan: ~/.claude/plans/effervescent-wobbling-dove.md; living
+  layer + shot list under jobs/wang-meng/{living,music,film}/.
