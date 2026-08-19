@@ -22,4 +22,9 @@ jobs/**
 # wild-journey working set: everything pulled from the box is curated by
 # construction (chain inputs, A/B clips, checkpoint renders) — track it all.
 !jobs/wang-meng/journey/wild/**
+# zone verdict evidence cited in STATE.md: keeper flights + control strips.
+# Frame dumps (fly-*/, push-*/) stay out — the mp4 is the citable artifact.
+!jobs/wang-meng/journey/z*/*.mp4
+!jobs/wang-meng/journey/z*/evidence-*.png
+!jobs/wang-meng/journey/z*-rect-overlay.png
 __pycache__/
