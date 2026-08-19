@@ -89,6 +89,7 @@ for r in R["regions"]:
     d = Path(a.regions).parent / c["dir"] if not Path(c["dir"]).is_absolute() else Path(c["dir"])
     x0, y0, x1, y1 = c["box"]
     cycles.append({"id": r["id"], "dir": d, "n": c["n"], "on": c.get("on", 1),
+                   "pattern": c.get("pattern", "%05d.png"),
                    "box": (x0, y0, x1, y1)})
 print(f"living regions with cycles: {[c['id'] for c in cycles]}", file=sys.stderr)
 
@@ -118,7 +119,7 @@ for i in todo:
         fi = (i // c["on"]) % c["n"]   # cycles authored on twos hold each drawing
         key = (c["id"], fi)
         if key not in tile_cache:
-            tile = Image.open(c["dir"] / f"{fi:05d}.png").convert("RGB")
+            tile = Image.open(c["dir"] / (c["pattern"] % fi)).convert("RGB")
             if tile.size != (bx1 - bx0, by1 - by0):
                 tile = tile.resize((bx1 - bx0, by1 - by0), Image.Resampling.LANCZOS)
             tile_cache.clear()  # hold one frame's tiles at a time; masters are big

@@ -33,5 +33,7 @@ __pycache__/
 !jobs/wang-meng/living/*.mp4
 !jobs/wang-meng/living/inventory-overlay.png
 !jobs/wang-meng/living/evidence-*.png
+!jobs/wang-meng/living/native/*/mask-overlay.png
+!jobs/wang-meng/living/native/*/motion-heat.png
 !jobs/wang-meng/film/*.mp4
 !jobs/wang-meng/film/evidence-*.png

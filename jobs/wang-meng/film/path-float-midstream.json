@@ -1,0 +1,10 @@
+{
+ "fps": 24,
+ "duration": 14,
+ "_note": "Exploration grammar probe #1 (render-living, 2D): a slow float across the midstream pools between the resting ledge and the bridge -- territory no render has ever visited. Native k=1 (1 master px per output px), fov eases 1.15->1.0, drift right and slightly down with the stream. Window stays inside w-midstream [300,10400,3200,12150] so the living water fills the frame; subpixel pan by construction (float centers).",
+ "keys": [
+  {"t": 0,  "x": 0.175, "y": 0.690, "fov": 1.15},
+  {"t": 7,  "x": 0.240, "y": 0.697, "fov": 1.06},
+  {"t": 14, "x": 0.310, "y": 0.706, "fov": 1.00}
+ ]
+}
