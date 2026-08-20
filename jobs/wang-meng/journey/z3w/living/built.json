@@ -946,118 +946,10 @@
   "n": 96,
   "on": 2,
   "ownPx": 155223,
-  "movedPx": 153198,
+  "movedPx": 98686,
   "crop": [
    1786,
    2265
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-gorge-big-canopy",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy",
-  "box": [
-   1116,
-   1426
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 144362,
-  "movedPx": 142705,
-  "crop": [
-   1116,
-   1426
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-left-pines-z2",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-pines-z2",
-  "box": [
-   452,
-   1717
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 24563,
-  "movedPx": 23738,
-  "crop": [
-   452,
-   1717
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "gorge-wall-right",
-  "region": "s-left-pines-z2",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/gorge-wall-right__s-left-pines-z2",
-  "box": [
-   0,
-   3
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 69959,
-  "movedPx": 69705,
-  "crop": [
-   452,
-   1717
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-left-clifftop-pine",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-clifftop-pine",
-  "box": [
-   0,
-   1290
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 44728,
-  "movedPx": 44010,
-  "crop": [
-   0,
-   1290
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-gorge-foreground",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground",
-  "box": [
-   282,
-   1051
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 147292,
-  "movedPx": 144569,
-  "crop": [
-   282,
-   1051
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-right-rust-tree",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-rust-tree",
-  "box": [
-   2654,
-   679
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 14555,
-  "movedPx": 14192,
-  "crop": [
-   2654,
-   679
   ],
   "class": "foliage"
  },
@@ -1072,7 +964,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 5036,
-  "movedPx": 1483,
+  "movedPx": 1068,
   "crop": [
    636,
    2802
@@ -1090,10 +982,118 @@
   "n": 96,
   "on": 2,
   "ownPx": 67017,
-  "movedPx": 55449,
+  "movedPx": 45967,
   "crop": [
    636,
    2802
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "s-gorge-big-canopy",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy",
+  "box": [
+   1116,
+   1426
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 144362,
+  "movedPx": 46937,
+  "crop": [
+   1116,
+   1426
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "s-left-pines-z2",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-pines-z2",
+  "box": [
+   452,
+   1717
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 24563,
+  "movedPx": 6773,
+  "crop": [
+   452,
+   1717
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "s-left-pines-z2",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/gorge-wall-right__s-left-pines-z2",
+  "box": [
+   0,
+   3
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 69959,
+  "movedPx": 34733,
+  "crop": [
+   452,
+   1717
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "s-left-clifftop-pine",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-clifftop-pine",
+  "box": [
+   0,
+   1290
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 44728,
+  "movedPx": 31255,
+  "crop": [
+   0,
+   1290
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "s-gorge-foreground",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground",
+  "box": [
+   282,
+   1051
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 147292,
+  "movedPx": 56845,
+  "crop": [
+   282,
+   1051
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "s-right-rust-tree",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-rust-tree",
+  "box": [
+   2654,
+   679
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 14555,
+  "movedPx": 3313,
+  "crop": [
+   2654,
+   679
   ],
   "class": "foliage"
  }

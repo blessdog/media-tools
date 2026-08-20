@@ -883,3 +883,14 @@ free.
   ordering, not a ban — Ryan: "we're still doing parallax lightly and
   tastefully." Test for a leg: would this move be worth watching with the
   living layer switched off? If yes, it is too much camera.
+- ⛔ THE ZERO-DEGREE CONTROL. `swing 0` changed 26,293px before the fix; it must
+  be bit-exact. Three leaks: base was the clean plate (54.2% of the canopy
+  deleted), feather blurred inward, and the hole was the feathered extent.
+  Now 0px / max 0 / mean 0.0000. Law: `knowledge/hinge-rest-is-a-noop.md`.
+  Swing dropped 15->6 because 15 was compensating for missing paint.
+  Evidence: `evidence-pine-swing-sweep.png`, `evidence-pine-ink-conserved.png`.
+- All four zones rebuilt on the fixed rig. Holds: pinebridge static 0.0000 /
+  living 0.3535, bigcanopy 0.0000 / 0.1440.
+- BOOKMARKED: `knowledge/the-camera-has-one-move-and-repeats-it.md` — every
+  authored path is push-in/hold/pull-back. Needs a shot vocabulary before any
+  more legs.
