@@ -1,0 +1,10 @@
+{
+ "fps": 24,
+ "duration": 16,
+ "_note": "The GORGE PUSH -- first shot to stack ALL locked elements: full dolly, rotation into the travel, living upper-stream water, and the walls' relief (band 0.6). Frames the gorge mouth between left-cliff-wall and gorge-wall-right (both tilted, both relief-mapped, both figure-free), pushing in as the camera tilts gently up into the cleft. Edge-checked: t0 window fov 1.32 = x 297..1752, y 402..1220; t16 wall-plane window (zr 3.7) = y 242..1056 -- inside 1971x2704. Rotations zero at t0.",
+ "keys": [
+  {"t": 0,  "x": 0.520, "y": 0.300, "z": 0.00, "fov": 1.32, "rx": 0.0,  "ry": 0.0,  "rz": 0.0},
+  {"t": 8,  "x": 0.510, "y": 0.270, "z": 0.12, "fov": 1.28, "rx": -0.3, "ry": 0.25, "rz": -0.1},
+  {"t": 16, "x": 0.500, "y": 0.240, "z": 0.24, "fov": 1.24, "rx": -0.6, "ry": 0.5,  "rz": -0.2}
+ ]
+}
