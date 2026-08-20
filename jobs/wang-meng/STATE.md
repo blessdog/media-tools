@@ -462,3 +462,15 @@ film/FLOAT-MIDSTREAM.mp4 (14s native float, living-vs-static control
 living/evidence-native-water-motion.png, native/*/motion-heat.png.
 NEXT (queue item 3): more float/pan idiom paths through unvisited
 territory; gust verdict pending Ryan's eyes on AB-GUST-VS-SWAY.mp4.
+
+## 2026-08-19 night — REGRESSION FIXED: three scale laws, ensemble shipped
+
+Ryan condemned FLOAT-MIDSTREAM (correct). Mechanisms found and fixed:
+(1) motion px params are SHOT-SCALE — class values are 720-space, ×2.34
+at native (peak 28.3px = proven 1.67% current); (2) max-thick 3 dropped
+native water lines as masses (midstream ink 6→16.7%); (3) VIEW SCALE is
+part of the recipe — cel water carries at k≈2.0-2.4 (the proven clip's
+scale), fov≈1 native is for detail holds only. Pine inventory box was
+bare cliff — corrected from the Z1 plane; native gust cycle registered.
+SHIPPED: film/BRIDGE-ENSEMBLE.mp4 (fov 2.3→1.7 push, whole bridge cast,
+water streaming, pine gusting twice). Awaiting verdict.
