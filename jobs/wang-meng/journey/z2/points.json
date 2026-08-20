@@ -22,12 +22,12 @@
   },
   {
    "id": 7,
-   "x": 0.20385,
-   "y": 0.82311,
+   "x": 0.2829076620825147,
+   "y": 0.8494953927161035,
    "depth": 13,
    "window": 855,
    "name": "porter-ledge",
-   "why": "ledge under the back-basket porter, figure shares it"
+   "why": "ledge under the back-basket porter, figure shares it [dot moved off the porter's leg onto open ledge grass 2026-08-19, z1 crown-pines pattern: click the surface, not the figure]"
   },
   {
    "id": 30,
@@ -58,12 +58,12 @@
   },
   {
    "id": 9,
-   "x": 0.25498,
-   "y": 0.64499,
+   "x": 0.19155206286836934,
+   "y": 0.660377358490566,
    "depth": 11,
    "window": 1068,
    "name": "resting-ledge",
-   "why": "ledge of the seated resting group with baskets"
+   "why": "ledge of the seated resting group with baskets [dot moved off the seated child's foot onto open ledge 2026-08-19]"
   },
   {
    "id": 10,

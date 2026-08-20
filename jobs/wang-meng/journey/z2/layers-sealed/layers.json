@@ -1,0 +1,536 @@
+{
+ "tool": "complete-planes",
+ "image": "jobs/wang-meng/journey/z2/plate.png",
+ "size": [
+  1018,
+  2279
+ ],
+ "model": "facebook/sam-vit-huge",
+ "device": "mps",
+ "planes": 10,
+ "unclaimedFraction": 0.0,
+ "overlay": "jobs/wang-meng/journey/z2/layers-cut/overlay.png",
+ "feather": 2,
+ "note": "sealed by nearest-plane proximity; coverage is total, so RENDER WITH --no-base \u2014 the backing plane is what made unclaimed ink render at the wrong depth.",
+ "loadSeconds": 3.5,
+ "inferSeconds": 40.2,
+ "planeList": [
+  {
+   "n": 1,
+   "id": 28,
+   "name": "left-cliff-wall",
+   "depth": 9,
+   "point": [
+    107,
+    928
+   ],
+   "window": 3419,
+   "windowRequested": 3419,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 3419,
+     "clipped": false,
+     "imageFraction": 0.4471,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    0,
+    1018,
+    2279
+   ],
+   "pick": "whole",
+   "score": 0.9475,
+   "candidateAreas": [
+    397518,
+    749177,
+    1036979
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 1037374,
+   "windowFraction": 0.4471,
+   "areaFinal": 879018,
+   "bbox": [
+    4,
+    0,
+    1018,
+    1346
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "layer": "layers/901-left-cliff-wall.png",
+   "sealedFrom": 879018,
+   "sealedTo": 916967
+  },
+  {
+   "n": 2,
+   "id": 29,
+   "name": "gorge-wall-right",
+   "depth": 9,
+   "point": [
+    726,
+    672
+   ],
+   "window": 3419,
+   "windowRequested": 3419,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 3419,
+     "clipped": false,
+     "imageFraction": 0.1227,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    0,
+    1018,
+    2279
+   ],
+   "pick": "whole",
+   "score": 0.7167,
+   "candidateAreas": [
+    83424,
+    96119,
+    283685
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 284773,
+   "windowFraction": 0.1227,
+   "areaFinal": 243912,
+   "bbox": [
+    520,
+    389,
+    1014,
+    1365
+   ],
+   "offset": [
+    518,
+    389
+   ],
+   "layer": "layers/902-gorge-wall-right.png",
+   "sealedFrom": 243912,
+   "sealedTo": 258728
+  },
+  {
+   "n": 3,
+   "id": 10,
+   "name": "upper-stream-rocks",
+   "depth": 10,
+   "point": [
+    453,
+    1142
+   ],
+   "window": 1496,
+   "windowRequested": 1496,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1496,
+     "clipped": false,
+     "imageFraction": 0.0565,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    394,
+    1018,
+    1890
+   ],
+   "pick": "whole",
+   "score": 0.8025,
+   "candidateAreas": [
+    5123,
+    12657,
+    132216
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 131124,
+   "windowFraction": 0.0861,
+   "areaFinal": 120958,
+   "bbox": [
+    36,
+    968,
+    1016,
+    1496
+   ],
+   "offset": [
+    31,
+    968
+   ],
+   "layer": "layers/1003-upper-stream-rocks.png",
+   "sealedFrom": 120958,
+   "sealedTo": 189709
+  },
+  {
+   "n": 4,
+   "id": 9,
+   "name": "resting-ledge",
+   "depth": 11,
+   "point": [
+    195,
+    1505
+   ],
+   "window": 1068,
+   "windowRequested": 1068,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": false,
+     "imageFraction": 0.0411,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    971,
+    1018,
+    2039
+   ],
+   "pick": "whole",
+   "score": 0.6881,
+   "candidateAreas": [
+    55437,
+    69896,
+    95194
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 95400,
+   "windowFraction": 0.0877,
+   "areaFinal": 88729,
+   "bbox": [
+    0,
+    1233,
+    530,
+    1556
+   ],
+   "offset": [
+    0,
+    1226
+   ],
+   "layer": "layers/1104-resting-ledge.png",
+   "sealedFrom": 68920,
+   "sealedTo": 80780
+  },
+  {
+   "n": 5,
+   "id": 8,
+   "name": "left-bank-rocks",
+   "depth": 12,
+   "point": [
+    130,
+    1632
+   ],
+   "window": 1068,
+   "windowRequested": 1068,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": false,
+     "imageFraction": 0.0122,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    1098,
+    1018,
+    2166
+   ],
+   "pick": "whole",
+   "score": 0.5728,
+   "candidateAreas": [
+    2279,
+    2342,
+    28792
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 28337,
+   "windowFraction": 0.0261,
+   "areaFinal": 14067,
+   "bbox": [
+    0,
+    1440,
+    166,
+    1784
+   ],
+   "offset": [
+    0,
+    1438
+   ],
+   "layer": "layers/1205-left-bank-rocks.png",
+   "sealedFrom": 2170,
+   "sealedTo": 2287
+  },
+  {
+   "n": 6,
+   "id": 7,
+   "name": "porter-ledge",
+   "depth": 13,
+   "point": [
+    288,
+    1936
+   ],
+   "window": 1710,
+   "windowRequested": 855,
+   "grewTo": 1710,
+   "attempts": [
+    {
+     "window": 855,
+     "clipped": true,
+     "imageFraction": 0.1695,
+     "rejected": false
+    },
+    {
+     "window": 1710,
+     "clipped": false,
+     "imageFraction": 0.1719,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    569,
+    1018,
+    2279
+   ],
+   "pick": "whole",
+   "score": 0.6046,
+   "candidateAreas": [
+    78848,
+    127496,
+    400896
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 398799,
+   "windowFraction": 0.2291,
+   "areaFinal": 53115,
+   "bbox": [
+    0,
+    1424,
+    855,
+    2178
+   ],
+   "offset": [
+    0,
+    1373
+   ],
+   "layer": "layers/1301-porter-ledge.png",
+   "sealedFrom": 144263,
+   "sealedTo": 191366
+  },
+  {
+   "n": 7,
+   "id": 30,
+   "name": "pine-over-bridge",
+   "depth": 13,
+   "point": [
+    812,
+    1612
+   ],
+   "window": 1496,
+   "windowRequested": 1496,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1496,
+     "clipped": false,
+     "imageFraction": 0.0368,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    783,
+    1018,
+    2279
+   ],
+   "pick": "whole",
+   "score": 0.8334,
+   "candidateAreas": [
+    3536,
+    63952,
+    85004
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 85383,
+   "windowFraction": 0.0561,
+   "areaFinal": 85321,
+   "bbox": [
+    700,
+    1359,
+    1018,
+    1862
+   ],
+   "offset": [
+    694,
+    1359
+   ],
+   "layer": "layers/1307-pine-over-bridge.png",
+   "sealedFrom": 85321,
+   "sealedTo": 110532
+  },
+  {
+   "n": 8,
+   "id": 31,
+   "name": "rapids-under-bridge",
+   "depth": 13,
+   "point": [
+    491,
+    2103
+   ],
+   "window": 983,
+   "windowRequested": 983,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 983,
+     "clipped": false,
+     "imageFraction": 0.0175,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    1296,
+    983,
+    2279
+   ],
+   "pick": "whole",
+   "score": 0.7322,
+   "candidateAreas": [
+    2271,
+    12799,
+    40623
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 40625,
+   "windowFraction": 0.042,
+   "areaFinal": 4305,
+   "bbox": [
+    259,
+    1964,
+    765,
+    2133
+   ],
+   "offset": [
+    485,
+    1974
+   ],
+   "layer": "layers/1302-rapids-under-bridge.png",
+   "sealedFrom": 4305,
+   "sealedTo": 4387
+  },
+  {
+   "n": 9,
+   "id": 6,
+   "name": "trestle-bridge-ge",
+   "depth": 14,
+   "point": [
+    573,
+    1919
+   ],
+   "window": 1496,
+   "windowRequested": 1496,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1496,
+     "clipped": false,
+     "imageFraction": 0.0175,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    783,
+    1018,
+    2279
+   ],
+   "pick": "whole",
+   "score": 0.9125,
+   "candidateAreas": [
+    1718,
+    4294,
+    40591
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 40577,
+   "windowFraction": 0.0266,
+   "areaFinal": 40577,
+   "bbox": [
+    550,
+    1569,
+    713,
+    1935
+   ],
+   "offset": [
+    548,
+    1569
+   ],
+   "layer": "layers/1409-trestle-bridge-ge.png",
+   "sealedFrom": 40577,
+   "sealedTo": 41304
+  },
+  {
+   "n": 10,
+   "id": 5,
+   "name": "bank-ledge-below-bridge",
+   "depth": 15,
+   "point": [
+    797,
+    2217
+   ],
+   "window": 1496,
+   "windowRequested": 1496,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1496,
+     "clipped": false,
+     "imageFraction": 0.203,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    783,
+    1018,
+    2279
+   ],
+   "pick": "whole",
+   "score": 0.6506,
+   "candidateAreas": [
+    44485,
+    65291,
+    471248
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 470977,
+   "windowFraction": 0.3093,
+   "areaFinal": 470977,
+   "bbox": [
+    0,
+    995,
+    1007,
+    2279
+   ],
+   "offset": [
+    0,
+    992
+   ],
+   "layer": "layers/1510-bank-ledge-below-bridge.png",
+   "sealedFrom": 470977,
+   "sealedTo": 523962
+  }
+ ],
+ "sealedFrom": "jobs/wang-meng/journey/z2/layers-cut"
+}
