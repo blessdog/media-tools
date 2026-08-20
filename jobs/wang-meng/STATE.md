@@ -561,3 +561,13 @@ later). Shot framings verified by stills before render: Ge hold (shot 5)
 is dead-on — fan raised, deer beside. shots.json + paths/ + render
 script in film/. v3 upgrades: deer walk composite, Z2-Z6 zone worlds
 for shots 3/6/7, 4K master.
+
+## 2026-08-19 night IX — ONESHOT-42: the continuous take
+Ryan rejected the 7-cut structure ("violent, abrupt shifts... should be
+one smooth, long, continuous shot"). film/ONESHOT-42.mp4: one 42s
+camera, six keys at beat times, bottom-to-top through Z1 — river open,
+rise past the ox party, land tight on Ge for the 5s silence (identical
+keys = true full stop, living ink only), lift into the gorge on the
+explosion, settle by the falls. Full stack throughout. Path:
+film/paths/oneshot-42.json. The camera LANDS on beats instead of
+cutting on them. Cuts-on-beats structure retired for this film.
