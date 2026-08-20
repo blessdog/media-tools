@@ -38,6 +38,37 @@ strokes and quietly changes how many there are.
     [--gust-rest 0.15]   idle sway between gusts (fraction of --wobble)
     [--gust-push 0]      px of downwind bow at gust peak
     [--gust-flutter 2]   flutter oscillations inside the gust
+
+WHAT THIS IS NOT FOR (2026-08-20, learned expensively). This displaces ink in
+place. It is right for WATER: ripple lines and falls are thin marks that quiver
+a few px, uncover no new ground, and have no internal structure that must stay
+still.
+
+It is the WRONG TOOL FOR FOLIAGE, and `--field sway` existing here does not make
+it right — a flag is evidence someone once thought about it, not evidence of
+fitness. A tree fails both tests:
+
+  it has structure that must stay put   A trunk and its branches are mass; only
+                                        the leaves are delicate enough to move
+                                        (Ryan's law: "just the delicate things
+                                        move"). A displacement FIELD cannot hold
+                                        part of its own region still. `warp`
+                                        remaps the whole patch, so trunk, branch
+                                        and leaf travel together like a lollipop
+                                        on a stick.
+  it uncovers ground                    `lift` mattes the ink out and fills the
+                                        hole with cv2.INPAINT_TELEA (line ~178)
+                                        — precisely the averaging inpainter that
+                                        clean-plate.py's docstring names as
+                                        producing "mush with no weave and no
+                                        brush" on ink and silk. Ryan's word for
+                                        the result, unprompted, was "mush".
+
+The right route for anything with structure: cut-stroke (a card with a pivot at
+its anchored end) → clean-plate (SHIFTMAP patch synthesis, so the silk survives)
+→ a hinge rig (walk-figure --limbs is the proven instance) → composite at depth.
+Measured cost of not asking this first: four mask hypotheses and two render
+modes tuned inside the wrong tool before a human said "that's a weird mush."
 """
 import argparse, json, sys
 from pathlib import Path

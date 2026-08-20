@@ -1,0 +1,13 @@
+restyle-image: wan-video/wan-2.7-image-pro → wan-2.7-image-pro.png
+  source:    source.png
+  style ref: LOCKED-inkwash-texture-1.png
+file:///Users/SSDrive/projects/media-tools/tools/_replicate.mjs:96
+  if (pred.status !== 'succeeded') throw new Error(`${label} ${pred.status}: ${pred.error || ''}`);
+                                         ^
+
+Error: restyle-image failed: Prediction failed: Async prediction failed: ValueError: Invalid image format ''. Supported formats: .bmp, .jpeg, .jpg, .png, .webp
+    at predictModel (file:///Users/SSDrive/projects/media-tools/tools/_replicate.mjs:96:42)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/SSDrive/projects/media-tools/tools/restyle-image.mjs:223:16
+
+Node.js v22.21.1

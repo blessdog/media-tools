@@ -1,0 +1,4 @@
+restyle-image: bytedance/seedream-4.5 → seedream-4.5.png
+  source:    source.png
+  style ref: LOCKED-inkwash-texture-1.png
+{"out":"seedream-4.5.png","manifest":"seedream-4.5.png.json","bytes":1185307,"model":"bytedance/seedream-4.5","styleChannel":"image","style":"inkwash","source":"source.png"}

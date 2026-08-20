@@ -1,0 +1,4 @@
+restyle-image: flux-kontext-apps/multi-image-kontext-max → multi-image-kontext-max.png
+  source:    source.png
+  style ref: LOCKED-inkwash-texture-1.png
+{"out":"multi-image-kontext-max.png","manifest":"multi-image-kontext-max.png.json","bytes":1448729,"model":"flux-kontext-apps/multi-image-kontext-max","styleChannel":"image","style":"inkwash","source":"source.png"}

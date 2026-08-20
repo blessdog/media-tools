@@ -1,0 +1,4 @@
+restyle-image: openai/gpt-image-2 → gpt-image-2.png
+  source:    source.png
+  style ref: LOCKED-inkwash-texture-1.png
+{"out":"gpt-image-2.png","manifest":"gpt-image-2.png.json","bytes":2734473,"model":"openai/gpt-image-2","styleChannel":"image","style":"inkwash","source":"source.png"}

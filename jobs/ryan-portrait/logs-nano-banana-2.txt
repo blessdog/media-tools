@@ -1,0 +1,4 @@
+restyle-image: google/nano-banana-2 → nano-banana-2.png
+  source:    source.png
+  style ref: LOCKED-inkwash-texture-1.png
+{"out":"nano-banana-2.png","manifest":"nano-banana-2.png.json","bytes":7105313,"model":"google/nano-banana-2","styleChannel":"image","style":"inkwash","source":"source.png"}

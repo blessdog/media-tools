@@ -31,6 +31,31 @@ render a leg whose zone has no living cycles (`LIVING GATE`). Reaching for
 `--allow-dead-zones` to get a pretty flight out the door IS the violation.
 Read `jobs/wang-meng/STATE.md` — the law and the work order are at the top.
 
+## NAME THE TECHNIQUE BEFORE YOU PICK THE TOOL (law, 2026-08-20 — bible §5.10)
+Ryan: *"when your only tool is the hammer… all of your problems start looking
+like nails."* Before reaching into `tools/`, say in one sentence what a
+practitioner of the craft would DO. *"A leaf in wind is a cut-out cel on a hinge
+over a clean background"* is a technique and can be checked. *"animate-strokes
+has a --field sway flag"* is a tool that runs, which is not the same claim.
+
+Two engines, neither of which feels like a mistake at the time: **a tool that
+RUNS is more persuasive than a tool that FITS** (a flag means someone once
+thought about the case, not that it works), and **tuning has a gradient while
+tool-choice does not** — inside a tool every knob moves a number and feels like
+progress, while stepping out to ask "wrong tool?" has no local signal. Measured
+2026-08-20: four canopy-mask hypotheses and two render modes tuned inside
+`animate-strokes` before Ryan named the right technique from memory.
+
+So, in this repo:
+1. **Every tool's docstring says what it is NOT for and names the tool that is.**
+   Write it the moment a tool is proven wrong for something — a byproduct of
+   failure, not extra work. `tools/cut-stroke.py` is the reference: it opens with
+   a table of four other maskers and the measured reason each fails on strokes.
+2. **`SKILL.md`'s problem table gives ONE answer per problem.** It had two
+   adjacent rows — "the leaves should stir" and "a branch should swing" — sending
+   one problem to two tools, wrong one first. When two rows can describe one
+   situation, merge them and write down the TEST that separates the cases.
+
 ## EVIDENCE LANDS IN THE REPO (law, 2026-08-18 — Ryan: "you are too amnesic")
 Any image, video, chart, or diagnostic that is (a) opened on Ryan's screen,
 (b) cited in a claim or verdict, or (c) produced by a probe/experiment, is

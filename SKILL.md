@@ -80,8 +80,9 @@ agents arrive with a situation, not a capability.
 
 | the situation | the route |
 |---|---|
-| "the water should move" / "the leaves should stir" | `animate-strokes` — displaces the painter's own ink, and it loops. Never a video model |
-| "a thin painted thing should swing" — a limb, branch, rope, rail | `cut-stroke` → `walk-figure --limbs` |
+| "the water should move" — ripples, a fall, a surface | `animate-strokes` — displaces the painter's own ink in place, and it loops. Never a video model |
+| "the leaves should stir" / "a limb, branch, rope or rail should swing" | `cut-stroke` → `clean-plate` → a hinge rig (`walk-figure --limbs` is the proven one). NOT `animate-strokes` — see the test below |
+| **the test that splits those two rows** | Does the thing UNCOVER GROUND when it moves, or does it have STRUCTURE THAT MUST STAY PUT? Either yes → cut-out card on a pivot. A displacement field cannot hold a trunk still while its leaves move, and it has no real background to reveal — `animate-strokes` fills holes with `cv2.INPAINT_TELEA`, the averaging inpainter `clean-plate` exists to replace. Both yeses were true of foliage and it took a human to notice (2026-08-20) |
 | "a figure should cross the frame" | `crop-region` → `clean-plate` → `walk-figure --window/--pan` |
 | "the figure moved and left a hole" | `clean-plate` (and the plate must lose the WHOLE thing that moves) |
 | "where did this crop come from?" | `locate-crop` → crop.json, then every tool reads it |

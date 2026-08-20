@@ -1,0 +1,4 @@
+restyle-image: qwen/qwen-image-edit-plus → qwen-image-edit-plus.png
+  source:    source.png
+  style ref: LOCKED-inkwash-texture-1.png
+{"out":"qwen-image-edit-plus.png","manifest":"qwen-image-edit-plus.png.json","bytes":1676886,"model":"qwen/qwen-image-edit-plus","styleChannel":"image","style":"inkwash","source":"source.png"}

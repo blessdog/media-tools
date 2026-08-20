@@ -1,0 +1,4 @@
+restyle-image: black-forest-labs/flux-2-max → flux-2-max.png
+  source:    source.png
+  style ref: LOCKED-inkwash-texture-1.png
+{"out":"flux-2-max.png","manifest":"flux-2-max.png.json","bytes":3940230,"model":"black-forest-labs/flux-2-max","styleChannel":"image","style":"inkwash","source":"source.png"}
