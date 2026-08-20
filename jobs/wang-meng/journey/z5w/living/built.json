@@ -10,7 +10,12 @@
   "n": 36,
   "on": 2,
   "ownPx": 4006,
-  "movedPx": 632
+  "movedPx": 632,
+  "crop": [
+   1770,
+   991
+  ],
+  "class": "fall"
  },
  {
   "plane": "right-gorge-wall-high",
@@ -23,7 +28,12 @@
   "n": 36,
   "on": 2,
   "ownPx": 11868,
-  "movedPx": 5420
+  "movedPx": 5420,
+  "crop": [
+   1770,
+   991
+  ],
+  "class": "fall"
  },
  {
   "plane": "gully-footbridge",

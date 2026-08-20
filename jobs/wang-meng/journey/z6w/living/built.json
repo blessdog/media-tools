@@ -10,6 +10,551 @@
   "n": 36,
   "on": 2,
   "ownPx": 15904,
-  "movedPx": 6080
+  "movedPx": 6080,
+  "crop": [
+   1770,
+   2119
+  ],
+  "class": "fall"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-gorge-belt-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-gorge-belt-01",
+  "box": [
+   1535,
+   648
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 47621,
+  "movedPx": 22339,
+  "crop": [
+   1535,
+   2316
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-gorge-belt-02",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-gorge-belt-02",
+  "box": [
+   1166,
+   918
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 42554,
+  "movedPx": 25872,
+  "crop": [
+   1166,
+   2586
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-gorge-belt-03",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-gorge-belt-03",
+  "box": [
+   1187,
+   1134
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3602,
+  "movedPx": 1204,
+  "crop": [
+   1187,
+   2802
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-right-rust-tree-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-right-rust-tree-01",
+  "box": [
+   2654,
+   1025
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 10333,
+  "movedPx": 4599,
+  "crop": [
+   2654,
+   2693
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-autumn-shelf-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-autumn-shelf-01",
+  "box": [
+   270,
+   583
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 1987,
+  "movedPx": 1037,
+  "crop": [
+   270,
+   2241
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "gully-footbridge",
+  "region": "s-autumn-shelf-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/gully-footbridge__s-autumn-shelf-01",
+  "box": [
+   285,
+   838
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 27065,
+  "movedPx": 11673,
+  "crop": [
+   270,
+   2241
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "gully-footbridge",
+  "region": "s-autumn-shelf-02",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/gully-footbridge__s-autumn-shelf-02",
+  "box": [
+   30,
+   1183
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 9905,
+  "movedPx": 5008,
+  "crop": [
+   30,
+   2586
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-compound-autumn-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-compound-autumn-01",
+  "box": [
+   1227,
+   1525
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 33286,
+  "movedPx": 30068,
+  "crop": [
+   1214,
+   1525
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-rear-pines",
+  "region": "s-compound-autumn-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__s-compound-autumn-01",
+  "box": [
+   678,
+   16
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5711,
+  "movedPx": 5052,
+  "crop": [
+   1214,
+   1525
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-compound-autumn-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-compound-autumn-01",
+  "box": [
+   1214,
+   31
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 52168,
+  "movedPx": 16284,
+  "crop": [
+   1214,
+   1525
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-rear-pines",
+  "region": "s-compound-autumn-02",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__s-compound-autumn-02",
+  "box": [
+   275,
+   60
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2675,
+  "movedPx": 2049,
+  "crop": [
+   822,
+   1686
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-court",
+  "region": "s-compound-autumn-03",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-court__s-compound-autumn-03",
+  "box": [
+   160,
+   120
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 886,
+  "movedPx": 810,
+  "crop": [
+   698,
+   1746
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-compound-autumn-03",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-compound-autumn-03",
+  "box": [
+   703,
+   109
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2800,
+  "movedPx": 711,
+  "crop": [
+   698,
+   1746
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-compound-autumn-04",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-compound-autumn-04",
+  "box": [
+   1000,
+   193
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 12021,
+  "movedPx": 6627,
+  "crop": [
+   1000,
+   1861
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-compound-autumn-05",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-compound-autumn-05",
+  "box": [
+   944,
+   317
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3351,
+  "movedPx": 1837,
+  "crop": [
+   944,
+   1985
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-compound-autumn-06",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-compound-autumn-06",
+  "box": [
+   1106,
+   380
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2187,
+  "movedPx": 788,
+  "crop": [
+   1106,
+   2048
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-compound-canopies-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-compound-canopies-01",
+  "box": [
+   1228,
+   1546
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 26472,
+  "movedPx": 18203,
+  "crop": [
+   1226,
+   1546
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-rear-pines",
+  "region": "s-compound-canopies-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__s-compound-canopies-01",
+  "box": [
+   679,
+   16
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5627,
+  "movedPx": 4736,
+  "crop": [
+   1226,
+   1546
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-compound-canopies-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-compound-canopies-01",
+  "box": [
+   1226,
+   41
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 21747,
+  "movedPx": 4477,
+  "crop": [
+   1226,
+   1546
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-compound-canopies-02",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-compound-canopies-02",
+  "box": [
+   2011,
+   1626
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5409,
+  "movedPx": 3086,
+  "crop": [
+   2011,
+   1626
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-compound-canopies-03",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-compound-canopies-03",
+  "box": [
+   2106,
+   1755
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3515,
+  "movedPx": 1672,
+  "crop": [
+   2106,
+   1755
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-compound-canopies-04",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-compound-canopies-04",
+  "box": [
+   1513,
+   1838
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 8695,
+  "movedPx": 6843,
+  "crop": [
+   1467,
+   1838
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-compound-canopies-04",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-compound-canopies-04",
+  "box": [
+   1467,
+   201
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 7308,
+  "movedPx": 711,
+  "crop": [
+   1467,
+   1838
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-compound-canopies-05",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-compound-canopies-05",
+  "box": [
+   1742,
+   1945
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 4797,
+  "movedPx": 2664,
+  "crop": [
+   1742,
+   1945
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-right-edge-autumn-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-right-edge-autumn-01",
+  "box": [
+   2496,
+   1843
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 28404,
+  "movedPx": 14140,
+  "crop": [
+   2496,
+   1843
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-right-edge-autumn-02",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-right-edge-autumn-02",
+  "box": [
+   2335,
+   1924
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 1919,
+  "movedPx": 990,
+  "crop": [
+   2335,
+   1924
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-right-edge-autumn-03",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-right-edge-autumn-03",
+  "box": [
+   2104,
+   1940
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 23369,
+  "movedPx": 9034,
+  "crop": [
+   2104,
+   1940
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-right-edge-autumn-04",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-right-edge-autumn-04",
+  "box": [
+   2429,
+   2100
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2531,
+  "movedPx": 1432,
+  "crop": [
+   2429,
+   2100
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-tall-cliff-pines-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-tall-cliff-pines-01",
+  "box": [
+   0,
+   221
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 24022,
+  "movedPx": 558,
+  "crop": [
+   0,
+   1719
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "gully-footbridge",
+  "region": "s-tall-cliff-pines-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/gully-footbridge__s-tall-cliff-pines-01",
+  "box": [
+   0,
+   316
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 24786,
+  "movedPx": 15760,
+  "crop": [
+   0,
+   1719
+  ],
+  "class": "gust"
  }
 ]

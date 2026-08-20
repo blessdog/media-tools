@@ -10,7 +10,12 @@
   "n": 36,
   "on": 2,
   "ownPx": 14778,
-  "movedPx": 4633
+  "movedPx": 4633,
+  "crop": [
+   533,
+   2132
+  ],
+  "class": "fall"
  },
  {
   "plane": "right-gorge-wall-high",
@@ -23,7 +28,12 @@
   "n": 36,
   "on": 2,
   "ownPx": 15890,
-  "movedPx": 5990
+  "movedPx": 5990,
+  "crop": [
+   1770,
+   559
+  ],
+  "class": "fall"
  },
  {
   "plane": "gorge-cliff-nose",

@@ -9,5 +9,82 @@
    1898,
    2522
   ]
+ },
+ "s-gorge-belt": {
+  "class": "gust",
+  "px": 93777,
+  "pctOfPlate": 1.145,
+  "plateBox": [
+   1230,
+   2380,
+   1936,
+   2909
+  ]
+ },
+ "s-right-rust-tree": {
+  "class": "gust",
+  "px": 10333,
+  "pctOfPlate": 0.126,
+  "plateBox": [
+   2718,
+   2757,
+   2815,
+   2909
+  ]
+ },
+ "s-autumn-shelf": {
+  "class": "gust",
+  "px": 39037,
+  "pctOfPlate": 0.477,
+  "plateBox": [
+   94,
+   2305,
+   655,
+   2800
+  ]
+ },
+ "s-compound-autumn": {
+  "class": "gust",
+  "px": 115293,
+  "pctOfPlate": 1.408,
+  "plateBox": [
+   762,
+   1589,
+   1595,
+   2227
+  ]
+ },
+ "s-compound-canopies": {
+  "class": "gust",
+  "px": 83571,
+  "pctOfPlate": 1.021,
+  "plateBox": [
+   1290,
+   1610,
+   2236,
+   2158
+  ]
+ },
+ "s-right-edge-autumn": {
+  "class": "gust",
+  "px": 56223,
+  "pctOfPlate": 0.687,
+  "plateBox": [
+   2168,
+   1907,
+   2815,
+   2272
+  ]
+ },
+ "s-tall-cliff-pines": {
+  "class": "gust",
+  "px": 48818,
+  "pctOfPlate": 0.596,
+  "plateBox": [
+   0,
+   1783,
+   318,
+   2245
+  ]
  }
 }
