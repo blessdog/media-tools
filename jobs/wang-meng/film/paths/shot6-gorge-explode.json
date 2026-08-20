@@ -1,0 +1,6 @@
+{"fps":24,"duration":7.3,
+ "_note":"SHOT 6 (26.6-33.9, Chowder Julius + explosion): the gorge push retimed -- rise into the cleft as the clerk erupts, full dolly, rotation into the travel, wall relief working.",
+ "keys":[
+  {"t":0,"x":0.520,"y":0.300,"z":0.00,"fov":1.32,"rx":0.0,"ry":0.0,"rz":0.0},
+  {"t":3.65,"x":0.510,"y":0.270,"z":0.12,"fov":1.28,"rx":-0.3,"ry":0.25,"rz":-0.1},
+  {"t":7.3,"x":0.500,"y":0.240,"z":0.24,"fov":1.24,"rx":-0.6,"ry":0.5,"rz":-0.2}]}

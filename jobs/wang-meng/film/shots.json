@@ -1,16 +1,13 @@
 {
- "film": "chowder-julius",
- "audio": "../music/chowder-julius.mp3",
- "size": [1920, 1080],
- "fps": 24,
- "note": "The 42s shot list. in/out are audio seconds from music/beats.json. Engine B = render-parallax zone world; A = render-living window. status: built | rendering | pending-zone.",
+ "_note": "SEQ-Z1-v2 -- the full 42s Chowder Julius cut, every shot from the Z1 world with the locked recipe (plane-fit z-step 0.30, dolly, rotation, living cycles, relief). Cuts on beats.json line starts. Zone worlds Z2-Z6 later upgrade shots 3/6/7 per the phase plan; deer walk-figure composite is a pending accent for v3.",
+ "recipe": "render-parallax --plane-fit --z-step 0.30 --no-base --geometry z1/geometry.json --living living/living-gust.json --relief z1/relief.json 1920x1080@24",
  "shots": [
-  {"n": 1, "in": 0.0,  "out": 4.6,  "engine": "B", "zone": "z1", "path": "path-shot1-entry.json",  "status": "rendering", "leg": "river entry glide, ox party, living water"},
-  {"n": 2, "in": 4.6,  "out": 11.0, "engine": "B", "zone": "z1", "path": "path-shot2-bridge.json", "status": "rendering", "leg": "sweep onto Ge at the bridge - rapids, pine, fan"},
-  {"n": 3, "in": 11.0, "out": 16.7, "engine": "B", "zone": "z2", "path": null, "status": "pending-zone", "leg": "rising traverse past the porters"},
-  {"n": 4, "in": 16.7, "out": 21.6, "engine": "B", "zone": "z3", "path": null, "status": "pending-zone", "leg": "深遠 push through the gorge screens"},
-  {"n": 5, "in": 21.6, "out": 26.6, "engine": "A/B", "zone": "z4", "path": null, "status": "pending-zone", "leg": "THE SILENCE: locked hold under the waterfall"},
-  {"n": 6, "in": 26.6, "out": 33.9, "engine": "B", "zone": "z5", "path": null, "status": "pending-zone", "leg": "compound arrival under the explosion"},
-  {"n": 7, "in": 33.9, "out": 41.96, "engine": "B", "zone": "z6", "path": null, "status": "pending-zone", "leg": "rise into mist, release to the far blue peaks"}
+  {"n":1,"in":0.0,"out":4.6,"path":"paths/shot1-river-open.json","beat":"Orange Julius."},
+  {"n":2,"in":4.6,"out":11.0,"path":"paths/shot2-entry-reveal.json","beat":"clerk denials"},
+  {"n":3,"in":11.0,"out":16.7,"path":"paths/shot3-lateral-sweep.json","beat":"raisin Julius / No"},
+  {"n":4,"in":16.7,"out":21.6,"path":"paths/shot4-bridge-arrive.json","beat":"grapefruit Julius / No"},
+  {"n":5,"in":21.6,"out":26.6,"path":"paths/shot5-silence-hold.json","beat":"THE SILENCE"},
+  {"n":6,"in":26.6,"out":33.9,"path":"paths/shot6-gorge-explode.json","beat":"Chowder Julius + explosion"},
+  {"n":7,"in":33.9,"out":41.96,"path":"paths/shot7-falls-hold.json","beat":"rant peak -> end on falling water"}
  ]
 }
