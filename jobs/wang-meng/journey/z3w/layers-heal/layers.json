@@ -1,0 +1,68 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/journey/z3w/plate.png",
+  "size": [
+    2815,
+    3368
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 1,
+  "unclaimedFraction": 0.9231,
+  "overlay": "jobs/wang-meng/journey/z3w/layers-heal/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 4.5,
+  "inferSeconds": 4.8,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 11,
+      "name": "gorge-cliff-nose",
+      "depth": 9,
+      "point": [
+        628,
+        1522
+      ],
+      "window": 1496,
+      "windowRequested": 1496,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1496,
+          "clipped": true,
+          "imageFraction": 0.0769,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        774,
+        1496,
+        2270
+      ],
+      "pick": "whole",
+      "score": 0.7626,
+      "candidateAreas": [
+        93468,
+        254280,
+        729717
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 728991,
+      "windowFraction": 0.3257,
+      "areaFinal": 728991,
+      "bbox": [
+        195,
+        774,
+        1496,
+        2270
+      ],
+      "offset": [
+        195,
+        774
+      ],
+      "layer": "layers/901-gorge-cliff-nose.png"
+    }
+  ]
+}

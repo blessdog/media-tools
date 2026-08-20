@@ -1,0 +1,78 @@
+{
+ "image": "jobs/wang-meng/journey/z6/plate.png",
+ "note": "z6 points remapped to full-width rect 0,0,6586,6807 (landscape camera fix 2026-08-19)",
+ "points": [
+  {
+   "id": 13,
+   "x": 0.2798526981475858,
+   "y": 0.95589,
+   "depth": 7,
+   "window": 1068,
+   "name": "gully-footbridge",
+   "why": "railed footbridge across the gully"
+  },
+  {
+   "id": 14,
+   "x": 0.2881277376252657,
+   "y": 0.89512,
+   "depth": 6,
+   "window": 1068,
+   "name": "compound-approach-path",
+   "why": "pale trail climbing to the compound gate"
+  },
+  {
+   "id": 15,
+   "x": 0.3250716064378985,
+   "y": 0.78382,
+   "depth": 5,
+   "window": 1068,
+   "name": "compound-fence-autumn-trees",
+   "why": "autumn trees at the bamboo fence, figure beside"
+  },
+  {
+   "id": 16,
+   "x": 0.32603253416337685,
+   "y": 0.7445899999999999,
+   "depth": 4,
+   "window": 1496,
+   "name": "compound-lower-hall",
+   "why": "lower hall + veranda, waiting figure"
+  },
+  {
+   "id": 17,
+   "x": 0.2551381901002126,
+   "y": 0.69606,
+   "depth": 3,
+   "window": 1068,
+   "name": "compound-court",
+   "why": "pine court terrace, walking figure"
+  },
+  {
+   "id": 18,
+   "x": 0.3506502581232918,
+   "y": 0.67273,
+   "depth": 2,
+   "window": 1496,
+   "name": "compound-main-hall",
+   "why": "main hall on the upper terrace"
+  },
+  {
+   "id": 19,
+   "x": 0.25441922259337985,
+   "y": 0.6278899999999998,
+   "depth": 1,
+   "window": 1496,
+   "name": "compound-rear-pines",
+   "why": "rear building among the pines"
+  },
+  {
+   "id": 20,
+   "x": 0.35477049498937135,
+   "y": 0.57278,
+   "depth": 0,
+   "window": 2137,
+   "name": "mist-slope-above",
+   "why": "bare misty slope above the compound"
+  }
+ ]
+}

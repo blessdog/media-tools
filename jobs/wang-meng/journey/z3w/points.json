@@ -1,0 +1,123 @@
+{
+ "image": "jobs/wang-meng/journey/z3/plate.png",
+ "note": "z3 points remapped to full-width rect 0,4712,6586,12594 (landscape camera fix 2026-08-19)",
+ "points": [
+  {
+   "id": 30,
+   "x": 0.28849191011235953,
+   "y": 0.9500199999999999,
+   "depth": 13,
+   "window": 1496,
+   "name": "pine-over-bridge",
+   "why": "the pine bough over the bridge; grows behind the deck (pilot: pine behind bridge)"
+  },
+  {
+   "id": 8,
+   "x": 0.04608829638627391,
+   "y": 0.9561799999999999,
+   "depth": 12,
+   "window": 1068,
+   "name": "left-bank-rocks",
+   "why": "dark stream-edge rocks, left bank"
+  },
+  {
+   "id": 9,
+   "x": 0.09225716671727908,
+   "y": 0.90794,
+   "depth": 11,
+   "window": 1068,
+   "name": "resting-ledge",
+   "why": "ledge of the seated resting group with baskets"
+  },
+  {
+   "id": 10,
+   "x": 0.16104252353477072,
+   "y": 0.81069,
+   "depth": 10,
+   "window": 1496,
+   "name": "upper-stream-rocks",
+   "why": "mid-stream rocks in the rapids above the bridge"
+  },
+  {
+   "id": 11,
+   "x": 0.22305966899483753,
+   "y": 0.45177999999999996,
+   "depth": 9,
+   "window": 1496,
+   "name": "gorge-cliff-nose",
+   "why": "dark cliff nose below the red-foliage shelf"
+  },
+  {
+   "id": 28,
+   "x": 0.03796272395991497,
+   "y": 0.74701,
+   "depth": 9,
+   "window": 3419,
+   "name": "left-cliff-wall",
+   "why": "cliff face rising behind the left-bank ledges"
+  },
+  {
+   "id": 29,
+   "x": 0.2581217309444276,
+   "y": 0.6708899999999999,
+   "depth": 9,
+   "window": 3419,
+   "name": "gorge-wall-right",
+   "why": "pale wall flanking the upper stream, behind the rapids rocks"
+  },
+  {
+   "id": 12,
+   "x": 0.07824969632553902,
+   "y": 0.26853,
+   "depth": 8,
+   "window": 1068,
+   "name": "fenced-cliff-path",
+   "why": "railed cliff path; standing traveler shares it"
+  },
+  {
+   "id": 13,
+   "x": 0.27985190403887034,
+   "y": 0.22771000000000005,
+   "depth": 7,
+   "window": 1068,
+   "name": "gully-footbridge",
+   "why": "railed footbridge across the gully"
+  },
+  {
+   "id": 14,
+   "x": 0.28813242635894326,
+   "y": 0.17521999999999996,
+   "depth": 6,
+   "window": 1068,
+   "name": "compound-approach-path",
+   "why": "pale trail climbing to the compound gate"
+  },
+  {
+   "id": 15,
+   "x": 0.32507248102034614,
+   "y": 0.07909999999999998,
+   "depth": 5,
+   "window": 1068,
+   "name": "compound-fence-autumn-trees",
+   "why": "autumn trees at the bamboo fence, figure beside"
+  },
+  {
+   "id": 16,
+   "x": 0.3260269723656241,
+   "y": 0.04521999999999998,
+   "depth": 4,
+   "window": 1496,
+   "name": "compound-lower-hall",
+   "why": "lower hall + veranda, waiting figure"
+  },
+  {
+   "id": 17,
+   "x": 0.2551404949893714,
+   "y": 0.003299999999999951,
+   "depth": 3,
+   "window": 1068,
+   "name": "compound-court",
+   "why": "pine court terrace, walking figure"
+  }
+ ]
+}
