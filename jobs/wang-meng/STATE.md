@@ -494,3 +494,12 @@ zone depth world (plane-fit + tilts) + subtle dolly + living plane
 cycles + gust pine = the film's default shot engine. His one note:
 borderline too subtle -- an A/B at the full approved envelope (z 0->0.24)
 rendered for his pick of strength.
+
+## 2026-08-19 night IV — 2X WINS: default dolly locked at z 0->0.24
+
+Ryan on the A/B: "oh yeah stronger is better." The film's default depth
+move = the full proven envelope (z 0->0.24 over 16s, plane-fit, tilts).
+path-bridge-parallax-2x.json is the reference path shape. Next direction
+from him: camera TILT (rotation) on top of translation, and eventually
+mesh-level 3D from the composed depth field — see
+docs/2026-08-19-how-the-scroll-moves.md.
