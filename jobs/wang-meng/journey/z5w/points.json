@@ -40,21 +40,21 @@
   },
   {
    "id": 15,
-   "x": 0.32506639842089285,
-   "y": 0.52067,
+   "x": 0.34146926485466544,
+   "y": 0.5143285866280194,
    "depth": 5,
    "window": 1068,
    "name": "compound-fence-autumn-trees",
-   "why": "autumn trees at the bamboo fence, figure beside"
+   "why": "autumn trees at the bamboo fence, figure beside [dot moved 2026-08-19: into the red canopy mass, off the fence boundary]"
   },
   {
    "id": 16,
-   "x": 0.3260278013969026,
-   "y": 0.46907,
+   "x": 0.3182645960212098,
+   "y": 0.4166063114975844,
    "depth": 4,
    "window": 1496,
    "name": "compound-lower-hall",
-   "why": "lower hall + veranda, waiting figure"
+   "why": "lower hall + veranda, waiting figure [dot moved 2026-08-19: onto the thatch roof, off the standing figure]"
   },
   {
    "id": 17,
@@ -63,25 +63,26 @@
    "depth": 3,
    "window": 1068,
    "name": "compound-court",
-   "why": "pine court terrace, walking figure"
+   "why": "pine court terrace, walking figure [pick:tight 2026-08-19 -- whole-mask from the courtyard ground grabbed the entire compound and erased pines+halls beneath it]",
+   "pick": "tight"
   },
   {
    "id": 18,
-   "x": 0.3506539022168236,
-   "y": 0.3745499999999999,
+   "x": 0.3518068630428181,
+   "y": 0.3373913043478261,
    "depth": 2,
    "window": 1496,
    "name": "compound-main-hall",
-   "why": "main hall on the upper terrace"
+   "why": "main hall on the upper terrace [dot moved again 2026-08-19: onto the main hall thatch roof, off the interior wall]"
   },
   {
    "id": 19,
-   "x": 0.25441904038870333,
-   "y": 0.31556999999999996,
+   "x": 0.2131794716064379,
+   "y": 0.2763285024154589,
    "depth": 1,
    "window": 1496,
    "name": "compound-rear-pines",
-   "why": "rear building among the pines"
+   "why": "rear building among the pines [dot moved 2026-08-19: onto the dense pines, off the hall wall] [dot moved again 2026-08-19: deep into the pine canopy, off the rear hall wall]"
   },
   {
    "id": 20,
