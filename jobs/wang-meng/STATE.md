@@ -522,3 +522,17 @@ Ryan on BRIDGE-FLOAT: "yep. hit it" (go-ahead on the LDI hybrid).
 Rotation is now part of the shot vocabulary. Building: per-plane relief
 displacement from compose-depth's field — cards keep their completed
 edges, surfaces gain continuous parallax within each card.
+
+## 2026-08-19 night VI — RELIEF DISPLACEMENT: RIVER-ENTRY A/B on screen
+render-parallax --relief shipped (222ccd1): per-plane DAv2 relief,
+high-passed so authored depth stays law; radial remap about the camera
+axis, null structural at camZ=0. Figure check excluded 4 of 7 candidate
+planes (travelers hiding in trees/rocks/ledges — evidence in report);
+roster = both gorge walls + foreground-rock-mass. First probe showed
+zero effect because the BRIDGE SHOT never frames those planes — lesson:
+a feature proves nothing until the shot stages it. Probe moved to
+path-river-entry.json (shot-1 territory, 42s map). On screen:
+RIVER-ENTRY-RELIEF.mp4 + AB-RELIEF-VS-FLAT.mp4 (left flat, right
+relief; drawtext unavailable in this ffmpeg). Evidence:
+evidence-relief-maps.png, evidence-relief-what-moved.png. Awaiting
+Ryan's verdict.
