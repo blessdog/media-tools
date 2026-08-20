@@ -869,3 +869,17 @@ free.
   Holds are now 8.0s, one full gust cycle; they were 6.0s and could miss it.
 - z5w foliage built through hinge-foliage, but 6 of its 8 regions are on the
   hold-still list. The trees worth animating are in z3w/z4w.
+- APPROVED by Ryan. The 6 nub regions are class `still` (technique none,
+  held-by what-moves) — a POSITIVE decision, not a leftover, and check-routing
+  now distinguishes `held-by` (a law holds these still) from `retired-by` (a
+  dead technique, must have no regions).
+- All 4 zones rebuilt on the 7 leaf-visible canopies. z3w 61 patches, z4w 66,
+  z5w 54, z6w 45. Holds: AB-HOLD-pinebridge / greattrees / bigcanopy, statics
+  at 0.0000, living 0.53 / 0.34 / 0.30.
+- `living-masks/index.json` was a THIRD copy of region->class and carried
+  `gust` long after the rename. The mask stage now reconciles it against
+  living-polys.json on every run and prints what it healed.
+- New law: `knowledge/camera-light-parallax.md`. MOTION BEFORE CAMERA is an
+  ordering, not a ban — Ryan: "we're still doing parallax lightly and
+  tastefully." Test for a leg: would this move be worth watching with the
+  living layer switched off? If yes, it is too much camera.

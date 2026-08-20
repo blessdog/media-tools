@@ -6,7 +6,7 @@
  "cards": 15,
  "fromInk": true,
  "swingDeg": 15.0,
- "peakAngleDeg": 14.39,
+ "peakAngleDeg": 15.08,
  "gust": "0.10,0.08,0.22",
  "gustTravel": 1500.0,
  "gustRest": 0.15,

@@ -55,6 +55,11 @@
       "inkClose": 1,
       "minPx": 80,
       "note": "the envelope proven on the z1 pine 2026-08-19 (calm floor 0.07 for 60% of an 8s loop, seam 0.079, leakage 0.00). Ryan's brief: foliage NOT constantly moving -- little gusts blow through. | 2026-08-20 rebuilt on foliage-motion (cut-out cards over a clean plate). swing/flutter are UNVERIFIED pending Ryan's verdict on AB-CUTOUT-VS-WARP; the ROUTE is what changed."
+    },
+    "still": {
+      "technique": "none",
+      "held-by": "what-moves",
+      "note": "DELIBERATELY STILL, 2026-08-20. Ryan: \"Just the ones you can see the leaves of\u2026 Not the mountains or the distant pine trees that are barely nubs.\" A nub has no delicate part -- it is a silhouette, and swinging a silhouette reads as the mountain deforming, which is the summit lesson one notch closer. Authored per region because NO statistic separates these from the near trees: mark count, mark size and ink fraction all put s-compound-canopies with s-great-trees-upper. Wang Meng was not drawing them differently, he was drawing them smaller. evidence: living/evidence-which-canopies-have-leaves.png"
     }
   },
   "regions": [

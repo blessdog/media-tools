@@ -17,6 +17,12 @@ holds=(
   # framed ONE body, which is a testing artifact that leaked into review.
   "waterandtrees z5w 0.6000 0.4600 1.25"
   "gorgecanopy z3w 0.5466 0.4933 1.60"
+  # THE NEAR TREES, 2026-08-20 -- the ones whose leaves you can actually see
+  # (knowledge/what-moves.md, evidence-which-canopies-have-leaves.png). These
+  # are the canopies foliage-motion is FOR; the distant nubs are class `still`.
+  "pinebridge   z3w 0.3089 0.9160 2.20"
+  "greattrees   z3w 0.8172 0.8363 1.70"
+  "bigcanopy    z3w 0.5620 0.5334 1.80"
   "fallandpines z3w 0.2277 0.6709 1.60"
   # the summits, added 2026-08-20 -- the band above y~3850 master had no
   # living region at all, so the highest stations framed a still picture

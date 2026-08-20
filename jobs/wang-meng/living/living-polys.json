@@ -397,7 +397,7 @@
   },
   {
    "id": "s-gorge-belt",
-   "class": "foliage",
+   "class": "still",
    "points": [
     [
      2800,
@@ -466,7 +466,7 @@
   },
   {
    "id": "s-autumn-shelf",
-   "class": "foliage",
+   "class": "still",
    "points": [
     [
      0,
@@ -489,7 +489,7 @@
   },
   {
    "id": "s-compound-autumn",
-   "class": "foliage",
+   "class": "still",
    "points": [
     [
      1900,
@@ -512,7 +512,7 @@
   },
   {
    "id": "s-compound-canopies",
-   "class": "foliage",
+   "class": "still",
    "points": [
     [
      3300,
@@ -535,7 +535,7 @@
   },
   {
    "id": "s-right-edge-autumn",
-   "class": "foliage",
+   "class": "still",
    "points": [
     [
      5350,
@@ -558,7 +558,7 @@
   },
   {
    "id": "s-tall-cliff-pines",
-   "class": "foliage",
+   "class": "still",
    "points": [
     [
      0,

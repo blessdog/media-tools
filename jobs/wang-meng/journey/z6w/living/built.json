@@ -790,5 +790,23 @@
    901
   ],
   "class": "gust-far"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-right-rust-tree",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-right-rust-tree",
+  "box": [
+   2654,
+   1025
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 10333,
+  "movedPx": 10221,
+  "crop": [
+   2654,
+   2693
+  ],
+  "class": "foliage"
  }
 ]

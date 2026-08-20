@@ -739,78 +739,6 @@
  },
  {
   "plane": "compound-approach-path",
-  "region": "s-gorge-foreground",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-gorge-foreground",
-  "box": [
-   215,
-   1670
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 12592,
-  "movedPx": 12482,
-  "crop": [
-   279,
-   1930
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "gully-footbridge",
-  "region": "s-gorge-foreground",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-gorge-foreground",
-  "box": [
-   355,
-   2081
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 3162,
-  "movedPx": 3053,
-  "crop": [
-   279,
-   1930
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-gorge-wall-high",
-  "region": "s-gorge-foreground",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-gorge-foreground",
-  "box": [
-   178,
-   1930
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 69224,
-  "movedPx": 68947,
-  "crop": [
-   279,
-   1930
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-gorge-wall-high",
-  "region": "s-right-rust-tree",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-right-rust-tree",
-  "box": [
-   2086,
-   1565
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 14591,
-  "movedPx": 14361,
-  "crop": [
-   2655,
-   1565
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "compound-approach-path",
   "region": "s-autumn-shelf",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-autumn-shelf",
   "box": [
@@ -968,6 +896,78 @@
   "crop": [
    1226,
    418
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "s-gorge-foreground",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-gorge-foreground",
+  "box": [
+   215,
+   1670
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 12592,
+  "movedPx": 12477,
+  "crop": [
+   279,
+   1930
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gully-footbridge",
+  "region": "s-gorge-foreground",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-gorge-foreground",
+  "box": [
+   355,
+   2081
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3162,
+  "movedPx": 3041,
+  "crop": [
+   279,
+   1930
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-gorge-wall-high",
+  "region": "s-gorge-foreground",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-gorge-foreground",
+  "box": [
+   178,
+   1930
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 69224,
+  "movedPx": 68964,
+  "crop": [
+   279,
+   1930
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-gorge-wall-high",
+  "region": "s-right-rust-tree",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-right-rust-tree",
+  "box": [
+   2086,
+   1565
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 14591,
+  "movedPx": 14403,
+  "crop": [
+   2655,
+   1565
   ],
   "class": "foliage"
  }

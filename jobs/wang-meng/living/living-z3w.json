@@ -405,6 +405,69 @@
     ],
     "n": 96,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper",
+    "box": [
+     1786,
+     2265
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-pine-over-bridge",
+    "box": [
+     744,
+     2802
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy",
+    "box": [
+     1116,
+     1426
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-pines-z2",
+    "box": [
+     452,
+     1717
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-clifftop-pine",
+    "box": [
+     0,
+     1290
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground",
+    "box": [
+     282,
+     1051
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-rust-tree",
+    "box": [
+     2654,
+     679
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
@@ -421,6 +484,15 @@
    },
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/gorge-wall-right__s-left-pines-z2-01",
+    "box": [
+     0,
+     3
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/gorge-wall-right__s-left-pines-z2",
     "box": [
      0,
      3
@@ -478,6 +550,15 @@
    },
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__s-pine-over-bridge-01",
+    "box": [
+     0,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__s-pine-over-bridge",
     "box": [
      0,
      0

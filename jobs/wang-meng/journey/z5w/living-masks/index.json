@@ -11,7 +11,7 @@
   ]
  },
  "s-gorge-belt": {
-  "class": "gust",
+  "class": "still",
   "px": 93322,
   "pctOfPlate": 1.499,
   "plateBox": [
@@ -22,7 +22,7 @@
   ]
  },
  "s-gorge-foreground": {
-  "class": "gust",
+  "class": "foliage",
   "px": 84978,
   "pctOfPlate": 1.365,
   "plateBox": [
@@ -33,7 +33,7 @@
   ]
  },
  "s-right-rust-tree": {
-  "class": "gust",
+  "class": "foliage",
   "px": 14591,
   "pctOfPlate": 0.234,
   "plateBox": [
@@ -44,7 +44,7 @@
   ]
  },
  "s-autumn-shelf": {
-  "class": "gust",
+  "class": "still",
   "px": 38726,
   "pctOfPlate": 0.622,
   "plateBox": [
@@ -55,7 +55,7 @@
   ]
  },
  "s-compound-autumn": {
-  "class": "gust",
+  "class": "still",
   "px": 116579,
   "pctOfPlate": 1.872,
   "plateBox": [
@@ -66,7 +66,7 @@
   ]
  },
  "s-compound-canopies": {
-  "class": "gust",
+  "class": "still",
   "px": 84975,
   "pctOfPlate": 1.365,
   "plateBox": [
@@ -77,7 +77,7 @@
   ]
  },
  "s-right-edge-autumn": {
-  "class": "gust",
+  "class": "still",
   "px": 56015,
   "pctOfPlate": 0.9,
   "plateBox": [
@@ -88,7 +88,7 @@
   ]
  },
  "s-tall-cliff-pines": {
-  "class": "gust",
+  "class": "still",
   "px": 48087,
   "pctOfPlate": 0.772,
   "plateBox": [

@@ -345,6 +345,17 @@ if a.stage == "masks":
     over = plate.copy()
     idxf = MASKD / "index.json"
     index = json.loads(idxf.read_text()) if idxf.exists() else {}
+    # SELF-HEAL. This index is a build CACHE, and a cache that carries a stale
+    # copy of a region's class is a third place the class lives -- which is how
+    # 13 summit polys survived their own revert. Reconcile against the poly list
+    # on every run: refresh every entry's class, drop ids no longer authored.
+    _live = {q["id"]: q["class"] for q in POLYS["polys"]}
+    for _k in [k for k in index if k not in _live]:
+        del index[_k]
+    for _k, _v in index.items():
+        if isinstance(_v, dict) and _v.get("class") != _live[_k]:
+            print(f"    index: {_k} class {_v.get('class')} -> {_live[_k]}", file=sys.stderr)
+            _v["class"] = _live[_k]
     for r in regions_here():
         m = Image.new("L", (PW, PH), 0)
         d = ImageDraw.Draw(m)

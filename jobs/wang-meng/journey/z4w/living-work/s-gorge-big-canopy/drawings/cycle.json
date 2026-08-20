@@ -1,0 +1,19 @@
+{
+ "tool": "hinge-foliage",
+ "drawings": 96,
+ "on": 2,
+ "fps": 24,
+ "cards": 67,
+ "fromInk": true,
+ "swingDeg": 15.0,
+ "peakAngleDeg": 15.08,
+ "gust": "0.10,0.08,0.22",
+ "gustTravel": 1500.0,
+ "gustRest": 0.15,
+ "angle": 8.0,
+ "flutter": 0.35,
+ "technique": "rigid cut-out cards hinged at their own pivots over a clean plate",
+ "plate": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living-work/s-gorge-big-canopy/clean.png",
+ "source": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living-work/s-gorge-big-canopy/plate.png",
+ "cards_dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living-work/s-gorge-big-canopy/mask"
+}

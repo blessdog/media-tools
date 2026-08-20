@@ -207,6 +207,42 @@
     ],
     "n": 96,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-gorge-big-canopy",
+    "box": [
+     969,
+     1721
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-left-pines-z2",
+    "box": [
+     548,
+     2171
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-left-clifftop-pine",
+    "box": [
+     0,
+     1744
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-gorge-foreground",
+    "box": [
+     329,
+     1505
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
@@ -415,6 +451,33 @@
     "box": [
      1865,
      318
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-gorge-big-canopy",
+    "box": [
+     405,
+     1559
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-gorge-foreground",
+    "box": [
+     0,
+     1283
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-right-rust-tree",
+    "box": [
+     2090,
+     911
     ],
     "n": 96,
     "on": 2
