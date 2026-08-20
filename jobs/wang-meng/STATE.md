@@ -742,8 +742,13 @@ with its own pivot at the foot of its own mass — one pivot for six trees is
 the decal tell. Coverage is deliberately conservative; widen it after Ryan's
 verdict on the look, not before.
 
+### Gusts, all four zones
+z3w 42 canopy patches (5.55% of plate alive), z4w 59 (5.87%), z5w 39 (3.94%),
+z6w 31 (2.42%). Every what-moves map lands on leaf mass, water and falls only.
+
 ### Still open
-- gust cycles for z5w–z6w (z3w has 42 canopy patches, z4w 59); relief maps for the upper zones; deer walk; 4K.
+- MIST (class `drift`) is unbuilt, so the summits above the compound hold
+  perfectly still — and those are exactly what the highest stations frame; relief maps for the upper zones; deer walk; 4K.
 - z1's water cycles still carry the old non-closing seam — rebuild them.
 - `film/frames/` holds 35GB of pre-living, pre-seal-fix frame dumps whose mp4s
   all exist. Every one is stale. Reclaimable.
