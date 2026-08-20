@@ -84,7 +84,23 @@ p.add_argument('--gust-travel', type=float, default=1500.0,
 p.add_argument('--gust-rest', type=float, default=0.15,
                help='idle amplitude between gusts, as a fraction of --swing')
 p.add_argument('--feather', type=int, default=2)
-p.add_argument('--min-px', type=int, default=400, help='smallest card worth hinging')
+p.add_argument('--min-px', type=int, default=80, help='smallest card worth hinging')
+p.add_argument('--from-ink', dest='from_ink', action='store_true', default=True,
+               help='cut cards from the INK inside each mask, not from the mask '
+                    'itself (default). A canopy mask is a filled envelope; a card '
+                    'cut from it carries the bare ground between the leaves and '
+                    'drags it along. Cut to ink and only painted leaf travels, '
+                    'while the clean plate shows through the gaps -- the same '
+                    'reasoning as --keep tophat for water.')
+p.add_argument('--whole-mask', dest='from_ink', action='store_false',
+               help='one card per mask component instead: CROWN SWAY, the whole '
+                    'mass bending on its branch. Right for a near isolated tree; '
+                    'on a dense canopy it is a windscreen wiper.')
+p.add_argument('--ink-offset', type=float, default=0.11,
+               help='ink is V below the 75th percentile inside the mask, minus this')
+p.add_argument('--ink-close', type=int, default=1,
+               help='px to close the ink by, merging dots within a cluster '
+                    'without bridging across clusters')
 a = p.parse_args()
 
 plate = np.array(Image.open(a.plate).convert('RGB'), np.float32)
@@ -105,7 +121,24 @@ for pl in meta['planeList']:
     # ONE CARD PER LEAF MASS, not one per authored box: a stand of six trees on
     # a single hinge is the decal tell, and the pivot of a mass is a property
     # of that mass.
-    n, lab, st, cen = cv2.connectedComponentsWithStats((full > 128).astype(np.uint8), 8)
+    src_mask = (full > 128)
+    if a.from_ink:
+        # A CARD IS PAINTED LEAF, NOT A REGION. The canopy mask is a filled
+        # envelope produced by a density read; rotating it moves the bare ground
+        # between the leaves too. Measured on s-compound-canopies-01: the
+        # envelope is 53,773px in ONE component -- eroding it up to 12px never
+        # splits it, so the envelope gives one rigid windscreen wiper. Cutting
+        # to ink at offset 0.11 and closing by 1px gives 18 separate leaf
+        # clusters, each with its own foot and its own phase, which is flutter
+        # rather than sway.
+        vsrc = cv2.cvtColor(src.astype(np.uint8), cv2.COLOR_RGB2HSV)[..., 2].astype(np.float32) / 255
+        ground = float(np.percentile(vsrc[src_mask], 75))
+        ink = ((vsrc < ground - a.ink_offset) & src_mask).astype(np.uint8)
+        if a.ink_close:
+            k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * a.ink_close + 1,) * 2)
+            ink = cv2.morphologyEx(ink, cv2.MORPH_CLOSE, k)
+        src_mask = ink > 0
+    n, lab, st, cen = cv2.connectedComponentsWithStats(src_mask.astype(np.uint8), 8)
     for i in range(1, n):
         if st[i, 4] < a.min_px:
             continue
@@ -180,7 +213,7 @@ for k in range(ndraw):
 
 (outd / 'cycle.json').write_text(json.dumps({
     'tool': 'hinge-foliage', 'drawings': ndraw, 'on': a.on, 'fps': a.fps,
-    'cards': len(cards), 'swingDeg': a.swing, 'peakAngleDeg': round(peak, 2),
+    'cards': len(cards), 'fromInk': a.from_ink, 'swingDeg': a.swing, 'peakAngleDeg': round(peak, 2),
     'gust': a.gust, 'gustTravel': a.gust_travel, 'gustRest': a.gust_rest,
     'angle': a.angle, 'flutter': a.flutter,
     'technique': 'rigid cut-out cards hinged at their own pivots over a clean plate',
