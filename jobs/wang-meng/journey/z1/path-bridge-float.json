@@ -1,0 +1,10 @@
+{
+ "fps": 24,
+ "duration": 16,
+ "_note": "The FLOATING take: the approved 2x bridge dolly + camera rotation layered on top (rx/ry/rz in degrees; probed signs: +ry pans left, +rx tilts down). The camera drifts up-right while slowly panning and tilting INTO the travel (ry -> -1.0 = pan right, rx -> -0.6 = tilt up toward Ge and the pine) with a hair of roll. Rotations are 0 at t=0 so frame zero stays the painting pixel-for-pixel. Rotation adds no parallax (same center of projection) -- it adds the keystone drift that reads as a handheld float.",
+ "keys": [
+  {"t": 0,  "x": 0.430, "y": 0.500, "z": 0.00, "fov": 1.32, "rx": 0.0,  "ry": 0.0,  "rz": 0.0},
+  {"t": 8,  "x": 0.445, "y": 0.490, "z": 0.12, "fov": 1.28, "rx": -0.3, "ry": -0.5, "rz": 0.12},
+  {"t": 16, "x": 0.462, "y": 0.478, "z": 0.24, "fov": 1.24, "rx": -0.6, "ry": -1.0, "rz": 0.25}
+ ]
+}

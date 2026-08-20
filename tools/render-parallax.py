@@ -79,6 +79,11 @@ Camera path JSON:
   { "fps": 30, "duration": 12,
     "keys": [ {"t":0,  "x":0.5, "y":0.93, "z":0.0,  "fov":1.0},
               {"t":12, "x":0.5, "y":0.10, "z":-0.25,"fov":1.0} ] }
+  Optional per key: rx, ry, rz — camera ROTATION in degrees (pitch, yaw,
+  roll). Rotation shares the center of projection, so it adds NO new
+  parallax — it is the head turning, not moving. Use small values (≤2°)
+  layered over a translation for the floating-camera feel; keep them 0 at
+  t=0 so frame zero stays the painting pixel-for-pixel.
   x,y   camera target, normalised on the master. 0,0 top-left.
   z     dolly. NEGATIVE pulls back, positive pushes in. Keep it small: the
         nearest plane is only z-near away and pushing past it turns the frame
@@ -98,6 +103,7 @@ example:
 
 import argparse
 import json
+import math
 import sys
 import time
 from pathlib import Path
@@ -118,7 +124,8 @@ def sample(keys, t):
         if k0["t"] <= t <= k1["t"]:
             span = (k1["t"] - k0["t"]) or 1e-9
             u = (t - k0["t"]) / span
-            return {f: smoothstep(k0.get(f, 0.0), k1.get(f, 0.0), u) for f in ("x", "y", "z", "fov")}
+            return {f: smoothstep(k0.get(f, 0.0), k1.get(f, 0.0), u)
+                    for f in ("x", "y", "z", "fov", "rx", "ry", "rz")}
     return keys[-1]
 
 
@@ -274,6 +281,37 @@ def main() -> int:
         t = i / fps
         c = sample(keys, t)
         camX, camY, camZ, fov = c["x"] * W_SRC, c["y"] * H_SRC, c.get("z", 0.0), c.get("fov", 1.0) or 1.0
+
+        # CAMERA ROTATION (rx pitch, ry yaw, rz roll — DEGREES in path keys).
+        # Rotation is depth-independent: it moves every plane by the same
+        # screen-space homography H = K Rᵀ K⁻¹, so it creates NO new parallax
+        # (same center of projection — turning the head, not moving it). Its
+        # value is the keystone + drift it adds ON TOP of a translation.
+        # The focal is fov·width px (~53° lens at fov 1); zooming multiplies
+        # the focal, so the same physical turn moves a zoomed frame further,
+        # as a real lens does. All three zero = H is None = old renders
+        # reproduce byte-identically.
+        rx, ry, rz = (math.radians(c.get(k) or 0.0) for k in ("rx", "ry", "rz"))
+        H_rot = None
+        if rx or ry or rz:
+            fpx = fov * args.width
+            K = np.array([[fpx, 0, args.width / 2.0],
+                          [0, fpx, args.height / 2.0],
+                          [0, 0, 1.0]])
+            cx_, sx_ = math.cos(rx), math.sin(rx)
+            cy_, sy_ = math.cos(ry), math.sin(ry)
+            cz_, sz_ = math.cos(rz), math.sin(rz)
+            Rx = np.array([[1, 0, 0], [0, cx_, -sx_], [0, sx_, cx_]])
+            Ry = np.array([[cy_, 0, sy_], [0, 1, 0], [-sy_, 0, cy_]])
+            Rz = np.array([[cz_, -sz_, 0], [sz_, cz_, 0], [0, 0, 1]])
+            H_rot = K @ (Rz @ Rx @ Ry).T @ np.linalg.inv(K)
+
+        def rot_pt(x, y):
+            if H_rot is None:
+                return (x, y)
+            v = H_rot @ (x, y, 1.0)
+            return (v[0] / v[2], v[1] / v[2])
+
         canvas = Image.new("RGBA", (args.width, args.height), bg)
 
         for p in planes:
@@ -292,7 +330,7 @@ def main() -> int:
 
             tilt = tilts.get(p.get("name", ""), {})
             tx, ty = float(tilt.get("tiltX", 0.0)), float(tilt.get("tiltY", 0.0))
-            if tx or ty:
+            if tx or ty or H_rot is not None:
                 # ORIENTED PLANE. Four corners at four different depths, each
                 # projected separately, then a homography maps the output quad
                 # back to the layer. This is the whole difference between a
@@ -313,8 +351,8 @@ def main() -> int:
                     if sc is None:              # corner is behind the camera
                         ok = False
                         break
-                    dst.append((args.width / 2.0 + (wx - camX) * sc,
-                                args.height / 2.0 + (wy - camY) * sc))
+                    dst.append(rot_pt(args.width / 2.0 + (wx - camX) * sc,
+                                      args.height / 2.0 + (wy - camY) * sc))
                     src.append((lx, ly))
                 if ok:
                     try:
