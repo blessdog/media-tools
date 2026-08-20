@@ -516,3 +516,9 @@ no edge reveal. Opened for Ryan's verdict next to BRIDGE-PARALLAX-2X.
 Path: journey/z1/path-bridge-float.json. Evidence: report
 2026-08-19-seq-z1.md. Agreed next after his verdict: per-plane relief
 displacement (LDI hybrid) from compose-depth's field.
+
+## 2026-08-19 night V verdict — FLOAT PASSES. Next: relief displacement
+Ryan on BRIDGE-FLOAT: "yep. hit it" (go-ahead on the LDI hybrid).
+Rotation is now part of the shot vocabulary. Building: per-plane relief
+displacement from compose-depth's field — cards keep their completed
+edges, surfaces gain continuous parallax within each card.
