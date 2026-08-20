@@ -295,7 +295,6 @@ def main() -> int:
         living = {k: v for k, v in living.items() if k in known}
         print(f"  living planes: {sorted(living)}", file=sys.stderr)
     living_cache = {}
-    patch_cache = {}
 
     # PER-PLANE RELIEF (the LDI hybrid). Each entry carries an "L" map the
     # size of its plane; per frame the map rides the plane's own transform
@@ -379,15 +378,16 @@ def main() -> int:
                     key = tuple((i // q.get("on", 1)) % q["n"] for q in lv["patches"])
                     held = living_cache.get(p["name"])
                     if held is None or held[0] != key:
+                        # Patches are opened, not cached: a drawing index is
+                        # used for `on` consecutive frames and then not again
+                        # for a whole cycle, so a cache only holds memory. A
+                        # zone can carry a hundred canopy patches; decoded,
+                        # that is over a gigabyte for no reuse.
                         comp = p["orig"].copy()
                         for q, ti in zip(lv["patches"], key):
-                            pk = (q["dir"], ti)
-                            tile = patch_cache.get(pk)
-                            if tile is None:
-                                tile = Image.open(
-                                    Path(q["dir"]) / f"{ti:03d}.png").convert("RGBA")
-                                patch_cache[pk] = tile
-                            comp.paste(tile, tuple(q["box"]))
+                            comp.paste(Image.open(
+                                Path(q["dir"]) / f"{ti:03d}.png").convert("RGBA"),
+                                tuple(q["box"]))
                         held = (key, comp)
                         living_cache[p["name"]] = held
                     p["img"] = held[1]
