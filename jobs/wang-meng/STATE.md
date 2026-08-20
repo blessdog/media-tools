@@ -550,3 +550,14 @@ into the cleft (rx -0.6, ry 0.5, rz -0.2) + living upper-stream/gust +
 wall relief (band 0.6) on the gorge mouth framing (plate upper band,
 first time rendered — stills showed no holes, sealed layers cover it).
 Frame 0 byte-matches the stills control. On screen: GORGE-PUSH.mp4.
+
+## 2026-08-19 night VIII — SEQ-Z1-v2: the full 42s cut, one delivery
+Ryan called out the probe loop ("10 second video all night?") — answer
+was the whole film. film/SEQ-Z1-v2.mp4: all 7 Chowder Julius shots from
+the Z1 world on the locked recipe (dolly + rotation + living + relief),
+cut on beats.json line starts, call at full volume (stitch's --music
+ducks to bed level — remuxed 1:a direct; fix stitch or add --music-full
+later). Shot framings verified by stills before render: Ge hold (shot 5)
+is dead-on — fan raised, deer beside. shots.json + paths/ + render
+script in film/. v3 upgrades: deer walk composite, Z2-Z6 zone worlds
+for shots 3/6/7, 4K master.
