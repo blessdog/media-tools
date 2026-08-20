@@ -586,3 +586,27 @@ porter-ledge, resting-ledge, rear-pines, main-hall moved off figures/
 walls; compound-court DROPPED (contourless wash, Law 7). Desktop link
 refreshed. v2 upgrades: living water z3w-z6w, relief for upper zones,
 deer walk, 4K.
+
+## night Y — 2026-08-20 — the slow journey, and the seals
+
+- `film/SLOW-JOURNEY.mp4` (6.2 min, 11 stations) RENDERED and shown. Ryan has
+  not given a rhythm verdict on it. `~/Desktop/WANG-MENG-LATEST.mp4` points at it.
+- **Defect found in it, unfixed in that file:** the camera was clamped only
+  against its zone rect, so collector seals sit in frame — a full column down
+  the left of the opening station, and seals at the left edge through the
+  bridge station. Evidence: `film/evidence/check-t002.png`, `check-t040.png`.
+- **Fix committed (`2552485`), NOT yet rendered.** Every seal/inscription block
+  in the master is measured (great seal x2800-4000/y0-1000; inscription
+  x4550-6300/y80-1550; left column x0-724/y13300-15860; mist seals
+  x112-330/y9500-10080) and each station declares a `safe` rect against
+  whichever it can reach. Route re-check: 0 intrusions, was 27.
+- Same commit expands `film/stations-slow.json` to **31 stations / 19.99 min**,
+  authored against gridded crops of the master (`film/evidence/band-*.png`).
+  Composition sheet: `film/evidence/2026-08-20-stations-31-framings.png`.
+- The 20-minute render was launched, then **stopped by Ryan ~3 min into leg z1**.
+  Nothing is broken; `frames/leg-slow-*` still hold the 6-minute build's frames.
+  To build it: `python3 film/compile-flight.py --route route-slow.json --out
+  SLOW-JOURNEY-20MIN.mp4` (~2.8 h at 0.35 s/frame).
+- Still open from earlier: living water cycles for z3w-z6w (upper falls/rapids
+  are static ink), relief maps + gust for the upper zones, deer walk-figure
+  composite, 4K master.
