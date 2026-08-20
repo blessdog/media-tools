@@ -1,10 +1,10 @@
 {
- "master": "corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+ "master": "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png",
  "masterSize": [
   6586,
   15923
  ],
- "note": "The living layer inventory \u2014 every animatable region, authored 2026-08-19 from a 6-band gridded read of the scroll. Boxes are master px [x0,y0,x1,y1], generous; the MASK inside each box is what animates (P2). class params start from measured winners: wave/sway from the cel sweeps + living-both-final; fall is wave rotated vertical (semi-proven, look-waterfall probe exists); drift (mist) is UNPROVEN \u2014 control-first, cut from v1 if it smears; figure regions reuse the proven GEHONG-alive and deer walk cycles. cycle=null until P2 computes it.",
+ "note": "The living layer inventory — every animatable region, authored 2026-08-19 from a 6-band gridded read of the scroll. Boxes are master px [x0,y0,x1,y1], generous; the MASK inside each box is what animates (P2). class params start from measured winners: wave/sway from the cel sweeps + living-both-final; fall is wave rotated vertical (semi-proven, look-waterfall probe exists); drift (mist) is UNPROVEN — control-first, cut from v1 if it smears; figure regions reuse the proven GEHONG-alive and deer walk cycles. cycle=null until P2 computes it.",
  "classes": {
   "wave": {
    "field": "wave",
@@ -61,7 +61,29 @@
    "gust-travel": 1500,
    "gust-rest": 0.15,
    "gust-push": 2.5,
-   "note": "the envelope proven on the z1 pine 2026-08-19 (calm floor 0.07 for 60% of an 8s loop, seam 0.079, leakage 0.00). Ryan's brief: foliage NOT constantly moving -- little gusts blow through."
+   "note": "the envelope proven on the z1 pine 2026-08-19 (calm floor 0.07 for 60% of an 8s loop, seam 0.079, leakage 0.00). Ryan's brief: foliage NOT constantly moving -- little gusts blow through.",
+   "perCanopy": true
+  },
+  "gust-far": {
+   "field": "sway",
+   "mode": "warp",
+   "keep": "all",
+   "on": 2,
+   "drawings": 96,
+   "wobble": 1.5,
+   "drift": 2.5,
+   "stiffness": 3,
+   "gust": "0.10,0.08,0.22",
+   "gust-travel": 2600,
+   "gust-rest": 0.15,
+   "gust-push": 1.2,
+   "note": "gust-far, 2026-08-20: the summits are the FARTHEST things in the picture and aerial perspective applies to motion too -- a ridge two valleys back cannot swing as far per frame as the pine over the bridge. Half the amplitude of `gust` (wobble 3->1.5, push 2.5->1.2) and a slower front (travel 1500->2600), so the far ridges breathe rather than wave.",
+   "perCanopy": true,
+   "canopyRule": "dark-accent",
+   "accentPct": 3.0,
+   "accentClose": 9,
+   "accentMin": 110,
+   "accentGrow": 5
   }
  },
  "regions": [
@@ -220,7 +242,7 @@
     4700,
     5950
    ],
-   "note": "the waterfall under the compound \u2014 station 8 'under the waterfall'",
+   "note": "the waterfall under the compound — station 8 'under the waterfall'",
    "cycle": {
     "dir": "native/f-station8-fall/cycle",
     "pattern": "dr-%03d.png",
@@ -409,7 +431,7 @@
     950,
     2950
    ],
-   "note": "blue distant peaks, left \u2014 EXPERIMENTAL"
+   "note": "blue distant peaks, left — EXPERIMENTAL"
   },
   {
    "id": "m-summit-pocket",
@@ -420,7 +442,7 @@
     4850,
     2650
    ],
-   "note": "blue mist pocket right of the summit \u2014 EXPERIMENTAL"
+   "note": "blue mist pocket right of the summit — EXPERIMENTAL"
   },
   {
    "id": "m-compound-band",
@@ -431,7 +453,7 @@
     5350,
     4100
    ],
-   "note": "pale mist band above the compound \u2014 EXPERIMENTAL"
+   "note": "pale mist band above the compound — EXPERIMENTAL"
   },
   {
    "id": "g-ge-fan",
@@ -442,7 +464,7 @@
     1700,
     12980
    ],
-   "note": "Ge's fan/robe stir \u2014 reuse the GEHONG-alive cycle recipe"
+   "note": "Ge's fan/robe stir — reuse the GEHONG-alive cycle recipe"
   },
   {
    "id": "g-deer",
@@ -453,7 +475,7 @@
     1150,
     13100
    ],
-   "note": "the deer \u2014 reuse the proven deer-walk cycle (or hold static in v1 if the walk fights subtlety)"
+   "note": "the deer — reuse the proven deer-walk cycle (or hold static in v1 if the walk fights subtlety)"
   }
  ]
 }

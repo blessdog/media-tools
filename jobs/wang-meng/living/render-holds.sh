@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
-# STILL-CAMERA holds on each authored water body, living vs static.
+# STILL-CAMERA holds on each authored living body, living vs static.
+# Optional args select a subset by name:  ./render-holds.sh summitcrest summitpeaks
 # The camera does not move in any of these: the only thing that can differ
 # between the two halves is the water. That is the point (MOTION BEFORE CAMERA).
 set -e
@@ -12,7 +13,22 @@ holds=(
   "compoundfall z5w 0.6620 0.5525 2.00"
   "gorgecanopy z3w 0.5466 0.4933 1.60"
   "fallandpines z3w 0.2277 0.6709 1.60"
+  # the summits, added 2026-08-20 -- the band above y~3850 master had no
+  # living region at all, so the highest stations framed a still picture
+  "summitcrest z6w 0.2580 0.2500 1.60"
+  "summitdome z6w 0.3430 0.3160 1.50"
+  "summitpeaks z6w 0.8200 0.2720 1.80"
 )
+if (( $# )); then
+  want=("$@")
+  filtered=()
+  for h in "${holds[@]}"; do
+    hn=${h%% *}
+    for w in "${want[@]}"; do [[ $hn == $w ]] && filtered+=("$h"); done
+  done
+  holds=("${filtered[@]}")
+  shift $#
+fi
 for h in "${holds[@]}"; do
   set -- ${=h}; name=$1; z=$2; x=$3; y=$4; fov=$5
   d=$J/journey/$z/_ab/$name

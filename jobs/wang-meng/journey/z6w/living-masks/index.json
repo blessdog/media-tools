@@ -86,5 +86,137 @@
    318,
    2245
   ]
+ },
+ "s-summit-crest-left": {
+  "class": "gust-far",
+  "px": 11615,
+  "pctOfPlate": 0.142,
+  "plateBox": [
+   565,
+   490,
+   867,
+   633
+  ]
+ },
+ "s-summit-crest-run": {
+  "class": "gust-far",
+  "px": 11111,
+  "pctOfPlate": 0.136,
+  "plateBox": [
+   1039,
+   455,
+   1517,
+   563
+  ]
+ },
+ "s-summit-pines-mid": {
+  "class": "gust-far",
+  "px": 2790,
+  "pctOfPlate": 0.034,
+  "plateBox": [
+   1091,
+   601,
+   1269,
+   666
+  ]
+ },
+ "s-summit-dome": {
+  "class": "gust-far",
+  "px": 19222,
+  "pctOfPlate": 0.235,
+  "plateBox": [
+   805,
+   763,
+   1190,
+   1029
+  ]
+ },
+ "s-summit-left-ridge": {
+  "class": "gust-far",
+  "px": 15868,
+  "pctOfPlate": 0.194,
+  "plateBox": [
+   2,
+   783,
+   304,
+   1098
+  ]
+ },
+ "s-summit-left-lower": {
+  "class": "gust-far",
+  "px": 3222,
+  "pctOfPlate": 0.039,
+  "plateBox": [
+   165,
+   1025,
+   330,
+   1216
+  ]
+ },
+ "s-peak-left-flank": {
+  "class": "gust-far",
+  "px": 1226,
+  "pctOfPlate": 0.015,
+  "plateBox": [
+   1784,
+   710,
+   1863,
+   768
+  ]
+ },
+ "s-peak-crest-blue": {
+  "class": "gust-far",
+  "px": 2666,
+  "pctOfPlate": 0.033,
+  "plateBox": [
+   1912,
+   652,
+   2032,
+   706
+  ]
+ },
+ "s-peak-right-flank": {
+  "class": "gust-far",
+  "px": 2789,
+  "pctOfPlate": 0.034,
+  "plateBox": [
+   1971,
+   723,
+   2093,
+   784
+  ]
+ },
+ "s-peak-right-summit": {
+  "class": "gust-far",
+  "px": 3321,
+  "pctOfPlate": 0.041,
+  "plateBox": [
+   2264,
+   711,
+   2380,
+   875
+  ]
+ },
+ "s-ridge-right-run": {
+  "class": "gust-far",
+  "px": 4935,
+  "pctOfPlate": 0.06,
+  "plateBox": [
+   2396,
+   804,
+   2605,
+   878
+  ]
+ },
+ "s-right-ridge-descend": {
+  "class": "gust-far",
+  "px": 4977,
+  "pctOfPlate": 0.061,
+  "plateBox": [
+   2520,
+   953,
+   2638,
+   1159
+  ]
  }
 }

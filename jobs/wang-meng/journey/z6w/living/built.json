@@ -556,5 +556,239 @@
    1719
   ],
   "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-summit-crest-left-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-summit-crest-left-01",
+  "box": [
+   625,
+   426
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 9952,
+  "movedPx": 2897,
+  "crop": [
+   625,
+   426
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-summit-crest-run-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-summit-crest-run-01",
+  "box": [
+   1283,
+   391
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5214,
+  "movedPx": 392,
+  "crop": [
+   1283,
+   391
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-summit-crest-run-02",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-summit-crest-run-02",
+  "box": [
+   975,
+   398
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5120,
+  "movedPx": 535,
+  "crop": [
+   975,
+   398
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-summit-dome-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-summit-dome-01",
+  "box": [
+   795,
+   699
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 12291,
+  "movedPx": 3451,
+  "crop": [
+   795,
+   699
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-summit-dome-02",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-summit-dome-02",
+  "box": [
+   965,
+   804
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 4087,
+  "movedPx": 852,
+  "crop": [
+   965,
+   804
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-summit-dome-05",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-summit-dome-05",
+  "box": [
+   741,
+   892
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 1726,
+  "movedPx": 219,
+  "crop": [
+   741,
+   892
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-summit-left-ridge-03",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-summit-left-ridge-03",
+  "box": [
+   6,
+   806
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 7780,
+  "movedPx": 1224,
+  "crop": [
+   6,
+   806
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-summit-left-ridge-04",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-summit-left-ridge-04",
+  "box": [
+   0,
+   828
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3413,
+  "movedPx": 763,
+  "crop": [
+   0,
+   828
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-peak-crest-blue-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-peak-crest-blue-01",
+  "box": [
+   1848,
+   588
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2666,
+  "movedPx": 348,
+  "crop": [
+   1848,
+   588
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-peak-right-flank-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-peak-right-flank-01",
+  "box": [
+   1954,
+   659
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2355,
+  "movedPx": 439,
+  "crop": [
+   1954,
+   659
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-peak-right-summit-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-peak-right-summit-01",
+  "box": [
+   2248,
+   647
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 1829,
+  "movedPx": 575,
+  "crop": [
+   2248,
+   647
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-ridge-right-run-02",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-ridge-right-run-02",
+  "box": [
+   2332,
+   747
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3727,
+  "movedPx": 640,
+  "crop": [
+   2332,
+   747
+  ],
+  "class": "gust-far"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "s-right-ridge-descend-02",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__s-right-ridge-descend-02",
+  "box": [
+   2501,
+   901
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2082,
+  "movedPx": 141,
+  "crop": [
+   2501,
+   901
+  ],
+  "class": "gust-far"
  }
 ]

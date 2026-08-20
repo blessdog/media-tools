@@ -1,0 +1,391 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/journey/z4/plate.png",
+  "size": [
+    1855,
+    2461
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 8,
+  "unclaimedFraction": 0.5106,
+  "overlay": "jobs/wang-meng/journey/z4/layers-heal/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 3.0,
+  "inferSeconds": 27.1,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 20,
+      "name": "mist-slope-above",
+      "depth": 0,
+      "point": [
+        474,
+        106
+      ],
+      "window": 2137,
+      "windowRequested": 2137,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 2137,
+          "clipped": false,
+          "imageFraction": 0.073,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1855,
+        2137
+      ],
+      "pick": "whole",
+      "score": 0.6571,
+      "candidateAreas": [
+        124177,
+        146639,
+        334255
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 333374,
+      "windowFraction": 0.0841,
+      "areaFinal": 306253,
+      "bbox": [
+        8,
+        0,
+        1850,
+        469
+      ],
+      "offset": [
+        8,
+        0
+      ],
+      "layer": "layers/001-mist-slope-above.png"
+    },
+    {
+      "n": 2,
+      "id": 19,
+      "name": "compound-rear-pines",
+      "depth": 1,
+      "point": [
+        191,
+        267
+      ],
+      "window": 1496,
+      "windowRequested": 1496,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1496,
+          "clipped": false,
+          "imageFraction": 0.0136,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1496,
+        1496
+      ],
+      "pick": "whole",
+      "score": 0.6536,
+      "candidateAreas": [
+        6246,
+        14219,
+        62053
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 62051,
+      "windowFraction": 0.0277,
+      "areaFinal": 11169,
+      "bbox": [
+        65,
+        66,
+        288,
+        284
+      ],
+      "offset": [
+        65,
+        66
+      ],
+      "layer": "layers/102-compound-rear-pines.png"
+    },
+    {
+      "n": 3,
+      "id": 18,
+      "name": "compound-main-hall",
+      "depth": 2,
+      "point": [
+        462,
+        397
+      ],
+      "window": 1496,
+      "windowRequested": 1496,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1496,
+          "clipped": false,
+          "imageFraction": 0.0056,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1496,
+        1496
+      ],
+      "pick": "whole",
+      "score": 0.9358,
+      "candidateAreas": [
+        4882,
+        14267,
+        25575
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 25566,
+      "windowFraction": 0.0114,
+      "areaFinal": 0,
+      "layer": null
+    },
+    {
+      "n": 4,
+      "id": 17,
+      "name": "compound-court",
+      "depth": 3,
+      "point": [
+        193,
+        465
+      ],
+      "window": 1068,
+      "windowRequested": 1068,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1068,
+          "clipped": false,
+          "imageFraction": 0.0303,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1068,
+        1068
+      ],
+      "pick": "whole",
+      "score": 0.2496,
+      "candidateAreas": [
+        1496,
+        1431,
+        138394
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 138434,
+      "windowFraction": 0.1214,
+      "areaFinal": 22888,
+      "bbox": [
+        39,
+        137,
+        768,
+        414
+      ],
+      "offset": [
+        39,
+        137
+      ],
+      "layer": "layers/304-compound-court.png"
+    },
+    {
+      "n": 5,
+      "id": 16,
+      "name": "compound-lower-hall",
+      "depth": 4,
+      "point": [
+        393,
+        606
+      ],
+      "window": 1496,
+      "windowRequested": 1496,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1496,
+          "clipped": false,
+          "imageFraction": 0.0081,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1496,
+        1496
+      ],
+      "pick": "whole",
+      "score": 0.8196,
+      "candidateAreas": [
+        446,
+        1601,
+        36804
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 36782,
+      "windowFraction": 0.0164,
+      "areaFinal": 0,
+      "layer": null
+    },
+    {
+      "n": 6,
+      "id": 15,
+      "name": "compound-fence-autumn-trees",
+      "depth": 5,
+      "point": [
+        390,
+        720
+      ],
+      "window": 1068,
+      "windowRequested": 1068,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1068,
+          "clipped": true,
+          "imageFraction": 0.1685,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        186,
+        1068,
+        1254
+      ],
+      "pick": "whole",
+      "score": 0.4358,
+      "candidateAreas": [
+        1810,
+        1950,
+        768004
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 769092,
+      "windowFraction": 0.6743,
+      "areaFinal": 584803,
+      "bbox": [
+        0,
+        186,
+        1068,
+        1209
+      ],
+      "offset": [
+        0,
+        186
+      ],
+      "layer": "layers/506-compound-fence-autumn-trees.png"
+    },
+    {
+      "n": 7,
+      "id": 14,
+      "name": "compound-approach-path",
+      "depth": 6,
+      "point": [
+        286,
+        1044
+      ],
+      "window": 1068,
+      "windowRequested": 1068,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1068,
+          "clipped": true,
+          "imageFraction": 0.0578,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        510,
+        1068,
+        1578
+      ],
+      "pick": "whole",
+      "score": 0.6162,
+      "candidateAreas": [
+        9919,
+        27005,
+        264366
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 264042,
+      "windowFraction": 0.2315,
+      "areaFinal": 260504,
+      "bbox": [
+        0,
+        510,
+        475,
+        1578
+      ],
+      "offset": [
+        0,
+        510
+      ],
+      "layer": "layers/607-compound-approach-path.png"
+    },
+    {
+      "n": 8,
+      "id": 11,
+      "name": "gorge-cliff-nose",
+      "depth": 9,
+      "point": [
+        103,
+        1976
+      ],
+      "window": 1496,
+      "windowRequested": 1496,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1496,
+          "clipped": true,
+          "imageFraction": 0.2297,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        965,
+        1496,
+        2461
+      ],
+      "pick": "whole",
+      "score": 0.8415,
+      "candidateAreas": [
+        228392,
+        429809,
+        1050661
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 1048760,
+      "windowFraction": 0.4686,
+      "areaFinal": 1048760,
+      "bbox": [
+        9,
+        965,
+        1496,
+        2461
+      ],
+      "offset": [
+        9,
+        965
+      ],
+      "layer": "layers/908-gorge-cliff-nose.png"
+    }
+  ]
+}

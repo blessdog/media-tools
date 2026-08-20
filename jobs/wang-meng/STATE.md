@@ -747,8 +747,74 @@ z3w 42 canopy patches (5.55% of plate alive), z4w 59 (5.87%), z5w 39 (3.94%),
 z6w 31 (2.42%). Every what-moves map lands on leaf mass, water and falls only.
 
 ### Still open
-- MIST (class `drift`) is unbuilt, so the summits above the compound hold
-  perfectly still — and those are exactly what the highest stations frame; relief maps for the upper zones; deer walk; 4K.
-- z1's water cycles still carry the old non-closing seam — rebuild them.
+- Relief maps for the upper zones; deer walk; 4K.
 - `film/frames/` holds 35GB of pre-living, pre-seal-fix frame dumps whose mp4s
   all exist. Every one is stale. Reclaimable.
+
+## night Z+1 — 2026-08-20 — THE SUMMITS MOVE, AND MIST IS DEAD
+
+Two items closed off the "still open" list above, one by building it and one
+by killing it.
+
+### z1's water loops now close
+The non-integer cross-chop harmonic fixed for z3w–z6w was still baked into
+z1's shipped textures, built before it. Measured on the drawings: wrap step /
+largest ordinary step **1.34** on `water` and **1.61** on `upper-stream-water`
+— a pop once per 3s loop, in the only zone that had life at all. Rebuilt on
+the fixed field: **0.96 and 0.97**. Scope is exactly the wave field; the sway
+cycles were never affected (pine 0.81, pine-gust 0.05, fan 0.85) and are
+untouched. Side effect worth knowing, because it is a look change: removing
+1.7 turns of spurious phase also removed ~38% of the frame-to-frame change on
+`water` (mean step 0.0341 → 0.0213). `--wobble` is the dial if that reads too
+calm. New tool `living/seam.py` measures any drawings dir.
+Evidence: `living/evidence-loop-seam-z1.png`, `living/AB-LOOP-z1-water.mp4`
+(played through three wraps — a pop happens once per cycle and never in a
+single pass).
+
+### MIST (class `drift`) is RETIRED — there is no mist ink in this painting
+The three `drift` regions were specced as ink displacement. Measured: **40% of
+each of those boxes reads as "ink" and that ink is the MOUNTAIN** (max stroke
+thickness 59–75px), with 2.4–2.7% thin stroke. Displacing it wobbles the
+silhouette, which is exactly the smear the inventory feared. The mist in this
+scroll is 留白 — bare silk, negative space. There is nothing to displace.
+Evidence: `living/evidence-mist-has-no-ink.png`.
+An atmospheric mist CARD (the Old Mill technique — a translucent band drifting
+at its own depth) would read, but it puts material on screen that Wang Meng
+did not paint. That is a fabrication question for Ryan, not an engineering
+one. **Do not build it without a verdict.**
+
+### What was really up there: foliage, and it now gusts
+The whole band above master y~3850 had no living region of any kind — which is
+why the highest stations framed a picture that held perfectly still. 13 new
+`gust-far` polygons over the summit crests and ridge trees; z6w went from 31
+canopy patches to 44, 2.42% → **2.574%** of the plate alive.
+`gust-far` is `gust` at half amplitude (wobble 3→1.5, push 2.5→1.2) and a
+slower front (travel 1500→2600): aerial perspective applies to motion too.
+Verified clear of the seal and every character of the inscription —
+`living/evidence-summit-seals-clear.png`.
+Holds: `living/AB-HOLD-summitcrest.mp4`, `-summitdome`, `-summitpeaks`.
+
+### The canopy detector does not survive the trip up the scroll
+The density+compactness read that finds the compound canopies claims **36–46%**
+of a summit crest box — the whole ridge shoulder. Three fixes were tried and
+all three failed, which is the useful part:
+
+| tried | result |
+|---|---|
+| tighter window, harder ink threshold | still the whole shoulder |
+| high-pass texture energy, plate res AND master res | 0.64% → 0.63%: no effect |
+| local contrast at master res | 44.8% → 29%: still the shoulder |
+
+Mechanism they all miss: up here Wang Meng's 牛毛皴 covers rock and forest
+alike, so **no local texture statistic separates them** — the shoulder really
+is a dense, compact, high-contrast field of ink. What does separate them is
+plain tone: at this distance the trees are painted as the darkest accents on a
+mid-tone slope. The darkest 2–3% of a box lands on tree mass and the crest
+ribbon and nowhere else. New `canopyRule: "dark-accent"` in
+`build-zone-living.py`, selected per class in `regions.json`; the compound's
+rule is untouched and the four built zones do not move.
+Evidence: `living/evidence-summit-darkness-map.png`, `living/evidence-summit-dark-accents.png`.
+
+Note also that `perCanopy` is now a CLASS property rather than a hard-coded
+`== "gust"` test, so a new foliage class gets the per-canopy pivot split for
+free.
