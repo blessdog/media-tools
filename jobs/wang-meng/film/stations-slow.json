@@ -1,76 +1,742 @@
 {
- "_note": "THE SLOW JOURNEY, authored as STATIONS rather than a track (Ryan 2026-08-20: 'a painting is not something you race through... it's about the journey'). Each station names a place in MASTER px and two framings: WIDE (stand back and see the scene) and DETAIL (what the push goes in to look at). build-route.py turns these into camera keys using pacing laws -- never faster than the cap, zoom and dolly rate-limited -- so the FILM'S LENGTH EMERGES from the painting instead of being squeezed into a soundtrack. Every detail target is a real feature from the zone points files. Silent: Ryan's narration is the soundtrack.",
+ "_note": "THE SLOW JOURNEY -- 31 stations, authored as PLACES rather than a track (Ryan 2026-08-20: 'this could be a 20-minute 30-minute video just on this painting... a painting is not something you race through. It's about the journey.'). Each station names a place in MASTER px and two framings: WIDE (stand back and see the scene) and DETAIL (what the push goes in to look at). build-route.py turns these into camera keys using pacing laws -- never faster than the cap, zoom and dolly rate-limited -- so the FILM'S LENGTH EMERGES from the painting instead of being squeezed into a soundtrack. Every station was authored against a gridded crop of the master (evidence/band-*.png), so every detail target is a real thing in the painting. Silent: Ryan's narration is the soundtrack.",
+ "_safeRects": "Measured on the master 2026-08-20 (evidence/measure-*.png, tile scan in the report): the great collector seal spans x2800-4000/y0-1000, Wang Meng's inscription x4550-6300/y80-1550, a heavy left seal column x0-724/y13300-15860, and two seals in the mist x112-330/y9500-10080. A station whose frame could reach one of those declares its own 'safe' rect to shut it out. Cropping calligraphy or a seal into prominence is banned -- the previous cut opened on a column of them.",
+ "contentRect": [
+  0,
+  1600,
+  6586,
+  15923
+ ],
  "pacing": {
   "speedCapPxPerSec": 105,
   "zoomRatePerSec": 0.052,
   "dollyRatePerSec": 0.021,
-  "holdWide": 3.2,
-  "holdDetail": 4.0,
-  "bridgeHold": 3.0,
+  "holdWide": 4.5,
+  "holdDetail": 5.5,
+  "bridgeHold": 3.5,
   "crossfade": 0.7,
-  "minMove": 3.5
+  "minMove": 4.0
  },
  "stations": [
-  {"zone": "z1", "name": "river-entry",
-   "wide":   {"mx": 2306, "my": 14580, "fov": 1.00},
-   "scroll": {"mx": 2200, "my": 14300},
-   "detail": {"mx": 2150, "my": 14250, "fov": 1.62, "z": 0.20, "rx": -0.3, "ry": -0.4},
-   "why": "the ox party and travelers at the river crossing; living water, relief on the entry rocks"},
-
-  {"zone": "z1", "name": "ge-at-the-bridge",
-   "wide":   {"mx": 2306, "my": 13150, "fov": 1.02},
-   "scroll": {"mx": 2150, "my": 12950},
-   "detail": {"mx": 1937, "my": 12880, "fov": 1.70, "z": 0.22, "rx": -0.3, "ry": -0.5, "rz": 0.12},
-   "why": "Ge Hong crossing with fan raised, deer beside him, the family below -- the painting's subject"},
-
-  {"zone": "z1", "name": "upper-stream",
-   "wide":   {"mx": 2306, "my": 11750, "fov": 1.02},
-   "detail": {"mx": 1500, "my": 11150, "fov": 1.55, "z": 0.18, "rx": -0.3},
-   "why": "the pine over the bridge and the stream coming down from the gorge; gust cycle plays here"},
-
-  {"zone": "z3w", "name": "gorge-walls",
-   "wide":   {"mx": 2500, "my": 10350, "fov": 0.92},
-   "scroll": {"mx": 2300, "my": 9800},
-   "detail": {"mx": 1750, "my": 10000, "fov": 1.55, "z": 0.22, "rx": -0.3, "ry": 0.3},
-   "why": "the gorge closing in -- both walls turning, the waterfall behind"},
-
-  {"zone": "z3w", "name": "cliff-nose",
-   "wide":   {"mx": 2600, "my": 8650, "fov": 0.90},
-   "scroll": {"mx": 2400, "my": 8400},
-   "detail": {"mx": 1600, "my": 8273, "fov": 1.60, "z": 0.24, "rx": -0.4, "ry": 0.3},
-   "why": "the great cliff nose under the autumn trees -- the deepest push in the film"},
-
-  {"zone": "z3w", "name": "fenced-path",
-   "wide":   {"mx": 2450, "my": 7050, "fov": 0.95},
-   "detail": {"mx": 1843, "my": 6600, "fov": 1.58, "z": 0.20, "rx": -0.3, "ry": 0.2},
-   "why": "the railed path and gully footbridge -- the family's route up, a traveler on it"},
-
-  {"zone": "z4w", "name": "compound-approach",
-   "wide":   {"mx": 2450, "my": 6150, "fov": 0.95},
-   "scroll": {"mx": 2350, "my": 5800},
-   "detail": {"mx": 1950, "my": 6050, "fov": 1.62, "z": 0.20, "rx": -0.3},
-   "why": "the path arriving at the fence and the autumn trees around it"},
-
-  {"zone": "z4w", "name": "the-halls",
-   "wide":   {"mx": 2450, "my": 5000, "fov": 0.95},
-   "detail": {"mx": 2110, "my": 4830, "fov": 1.72, "z": 0.22, "rx": -0.3, "ry": -0.2},
-   "why": "the lower hall with a figure standing in the doorway; thatch and open courtyard"},
-
-  {"zone": "z5w", "name": "main-hall",
-   "wide":   {"mx": 2450, "my": 4520, "fov": 1.00},
-   "detail": {"mx": 2317, "my": 4400, "fov": 1.78, "z": 0.22, "rx": -0.3},
-   "why": "the main hall on its terrace -- the destination of the move to Mount Luofu"},
-
-  {"zone": "z6w", "name": "rear-pines",
-   "wide":   {"mx": 2450, "my": 4150, "fov": 1.00},
-   "detail": {"mx": 1600, "my": 4150, "fov": 1.66, "z": 0.20, "rx": -0.3, "ry": -0.2},
-   "why": "the dense pine grove behind the compound, the last inhabited place"},
-
-  {"zone": "z6w", "name": "mist-release",
-   "safe": [0, 1050, 4200, 15923],
-   "wide":   {"mx": 2200, "my": 3400, "fov": 1.20},
-   "scroll": {"mx": 2150, "my": 2900},
-   "detail": {"mx": 2100, "my": 2300, "fov": 1.12, "z": -0.10, "rx": -0.5, "ry": 0.2},
-   "why": "the release: the camera RISES into the mist and far peaks and pulls BACK (negative dolly, reverse parallax) instead of pushing in -- the journey ends by opening out. Its own safe rect climbs through the gap LEFT of the inscription (x<4200), so peaks are reachable without cropping calligraphy into the frame."}
+  {
+   "zone": "z1",
+   "name": "the-river",
+   "safe": [
+    800,
+    1600,
+    6586,
+    15923
+   ],
+   "wide": {
+    "mx": 2700,
+    "my": 14800,
+    "fov": 1.2
+   },
+   "detail": {
+    "mx": 2500,
+    "my": 15100,
+    "fov": 1.75,
+    "z": 0.18,
+    "rx": -0.3
+   },
+   "why": "the film opens on water and stone with nobody in it -- the scroll's own beginning, living ripples, before any figure appears"
+  },
+  {
+   "zone": "z1",
+   "name": "midstream-rocks",
+   "safe": [
+    800,
+    1600,
+    6586,
+    15923
+   ],
+   "wide": {
+    "mx": 2700,
+    "my": 14350,
+    "fov": 1.2
+   },
+   "scroll": {
+    "mx": 2750,
+    "my": 14150
+   },
+   "detail": {
+    "mx": 3400,
+    "my": 14600,
+    "fov": 1.72,
+    "z": 0.18,
+    "ry": 0.3
+   },
+   "why": "the boulders standing in the shallows and the tuft of river grass on the right bank"
+  },
+  {
+   "zone": "z1",
+   "name": "the-near-bank",
+   "safe": [
+    800,
+    1600,
+    6586,
+    15923
+   ],
+   "wide": {
+    "mx": 2700,
+    "my": 13900,
+    "fov": 1.2
+   },
+   "detail": {
+    "mx": 2100,
+    "my": 14098,
+    "fov": 1.75,
+    "z": 0.2,
+    "rx": -0.3,
+    "ry": -0.3
+   },
+   "why": "the rock shelf the party will walk out onto -- relief plane, the near stone"
+  },
+  {
+   "zone": "z1",
+   "name": "the-ox-and-the-child",
+   "safe": [
+    800,
+    1600,
+    6586,
+    15923
+   ],
+   "wide": {
+    "mx": 2500,
+    "my": 13600,
+    "fov": 1.2
+   },
+   "detail": {
+    "mx": 2650,
+    "my": 13500,
+    "fov": 1.8,
+    "z": 0.24,
+    "rx": -0.3
+   },
+   "why": "the ox carrying Ge Hong's small son, led by a servant -- the family's baggage train"
+  },
+  {
+   "zone": "z1",
+   "name": "the-women-of-the-house",
+   "safe": [
+    800,
+    1600,
+    6586,
+    15923
+   ],
+   "wide": {
+    "mx": 2600,
+    "my": 13380,
+    "fov": 1.2
+   },
+   "detail": {
+    "mx": 3150,
+    "my": 13420,
+    "fov": 1.85,
+    "z": 0.24,
+    "ry": -0.35
+   },
+   "why": "the women walking behind the ox under the vine-hung trees, the last of the household"
+  },
+  {
+   "zone": "z1",
+   "name": "the-plank-bridge",
+   "safe": [
+    200,
+    1600,
+    6586,
+    13300
+   ],
+   "wide": {
+    "mx": 2100,
+    "my": 13000,
+    "fov": 1.06
+   },
+   "scroll": {
+    "mx": 1800,
+    "my": 12900
+   },
+   "detail": {
+    "mx": 1150,
+    "my": 12980,
+    "fov": 1.78,
+    "z": 0.24,
+    "rx": -0.3,
+    "ry": -0.4
+   },
+   "why": "the trestle bridge itself -- the pile of props under the deck, water breaking beneath it"
+  },
+  {
+   "zone": "z1",
+   "name": "ge-hong-and-the-deer",
+   "safe": [
+    200,
+    1600,
+    6586,
+    13300
+   ],
+   "wide": {
+    "mx": 2100,
+    "my": 12480,
+    "fov": 1.04
+   },
+   "scroll": {
+    "mx": 1850,
+    "my": 12420
+   },
+   "detail": {
+    "mx": 1340,
+    "my": 12420,
+    "fov": 1.92,
+    "z": 0.26,
+    "rx": -0.3,
+    "ry": -0.5,
+    "rz": 0.12
+   },
+   "why": "THE SUBJECT: Ge Hong crossing with the fan raised, the pack-deer at his shoulder, a porter behind. The deepest push of the lower scroll"
+  },
+  {
+   "zone": "z1",
+   "name": "the-pine-over-the-crossing",
+   "safe": [
+    200,
+    1600,
+    6586,
+    13300
+   ],
+   "wide": {
+    "mx": 2306,
+    "my": 12100,
+    "fov": 1.04
+   },
+   "detail": {
+    "mx": 1900,
+    "my": 12123,
+    "fov": 1.78,
+    "z": 0.22,
+    "rx": -0.3,
+    "ry": 0.2
+   },
+   "why": "the pine leaning out over the path where the gust cycle plays -- foliage in motion against still rock"
+  },
+  {
+   "zone": "z1",
+   "name": "the-ledge-above",
+   "safe": [
+    200,
+    1600,
+    6586,
+    13300
+   ],
+   "wide": {
+    "mx": 2306,
+    "my": 11650,
+    "fov": 1.04
+   },
+   "scroll": {
+    "mx": 2100,
+    "my": 11350
+   },
+   "detail": {
+    "mx": 1500,
+    "my": 11550,
+    "fov": 1.85,
+    "z": 0.22,
+    "rx": -0.3,
+    "ry": -0.4
+   },
+   "why": "the resting ledge on the left wall where two small figures have stopped -- the climb has begun"
+  },
+  {
+   "zone": "z3w",
+   "name": "the-stream-descent",
+   "safe": [
+    400,
+    1600,
+    6586,
+    15923
+   ],
+   "wide": {
+    "mx": 2500,
+    "my": 11150,
+    "fov": 1.0
+   },
+   "scroll": {
+    "mx": 2350,
+    "my": 10900
+   },
+   "detail": {
+    "mx": 1500,
+    "my": 11102,
+    "fov": 1.75,
+    "z": 0.22,
+    "rx": -0.3
+   },
+   "why": "the stream coming down out of the gorge over stepped rock"
+  },
+  {
+   "zone": "z3w",
+   "name": "the-falls",
+   "safe": [
+    400,
+    1600,
+    6586,
+    15923
+   ],
+   "wide": {
+    "mx": 2600,
+    "my": 10150,
+    "fov": 0.96
+   },
+   "scroll": {
+    "mx": 2350,
+    "my": 9900
+   },
+   "detail": {
+    "mx": 1500,
+    "my": 9850,
+    "fov": 1.82,
+    "z": 0.26,
+    "rx": -0.3,
+    "ry": -0.4
+   },
+   "why": "the white fall dropping between the dark cliff walls -- the vertical axis of the whole scroll"
+  },
+  {
+   "zone": "z3w",
+   "name": "the-great-pine",
+   "wide": {
+    "mx": 2800,
+    "my": 10250,
+    "fov": 0.96
+   },
+   "detail": {
+    "mx": 3250,
+    "my": 10120,
+    "fov": 1.78,
+    "z": 0.24,
+    "ry": 0.35
+   },
+   "why": "the old pine spreading over the right-hand shoulder, its trunk drawn in dry brush",
+   "safe": [
+    400,
+    1600,
+    6586,
+    15923
+   ]
+  },
+  {
+   "zone": "z3w",
+   "name": "gorge-narrows",
+   "wide": {
+    "mx": 2500,
+    "my": 9400,
+    "fov": 0.92
+   },
+   "scroll": {
+    "mx": 2400,
+    "my": 9050
+   },
+   "detail": {
+    "mx": 1700,
+    "my": 9150,
+    "fov": 1.66,
+    "z": 0.24,
+    "rx": -0.3,
+    "ry": 0.3
+   },
+   "why": "both walls turning in at once -- the closest the rock ever comes to the camera",
+   "safe": [
+    400,
+    1600,
+    6586,
+    15923
+   ]
+  },
+  {
+   "zone": "z3w",
+   "name": "the-cliff-nose",
+   "wide": {
+    "mx": 2600,
+    "my": 8550,
+    "fov": 0.9
+   },
+   "scroll": {
+    "mx": 2400,
+    "my": 8350
+   },
+   "detail": {
+    "mx": 1600,
+    "my": 8273,
+    "fov": 1.75,
+    "z": 0.28,
+    "rx": -0.4,
+    "ry": 0.3
+   },
+   "why": "the great cliff nose under the autumn trees -- the deepest push in the film",
+   "safe": [
+    400,
+    1600,
+    6586,
+    15923
+   ]
+  },
+  {
+   "zone": "z3w",
+   "name": "the-hanging-canopy",
+   "wide": {
+    "mx": 2800,
+    "my": 7950,
+    "fov": 0.92
+   },
+   "detail": {
+    "mx": 3500,
+    "my": 7880,
+    "fov": 1.75,
+    "z": 0.24,
+    "ry": 0.35
+   },
+   "why": "blue-green and rust canopies hanging off the right wall over empty air",
+   "safe": [
+    400,
+    1600,
+    6586,
+    15923
+   ]
+  },
+  {
+   "zone": "z3w",
+   "name": "the-red-maples",
+   "wide": {
+    "mx": 2500,
+    "my": 7550,
+    "fov": 0.92
+   },
+   "detail": {
+    "mx": 1450,
+    "my": 7550,
+    "fov": 1.78,
+    "z": 0.24,
+    "ry": -0.35
+   },
+   "why": "the orange maple mass on the left wall -- the one place the painting lets colour run",
+   "safe": [
+    400,
+    1600,
+    6586,
+    15923
+   ]
+  },
+  {
+   "zone": "z3w",
+   "name": "upper-gorge-pines",
+   "wide": {
+    "mx": 2700,
+    "my": 7150,
+    "fov": 0.92
+   },
+   "scroll": {
+    "mx": 2850,
+    "my": 6950
+   },
+   "detail": {
+    "mx": 3900,
+    "my": 7080,
+    "fov": 1.75,
+    "z": 0.22,
+    "ry": 0.35
+   },
+   "why": "the pines on the far shoulder, already looking down on where we came from",
+   "safe": [
+    400,
+    1600,
+    6586,
+    15923
+   ]
+  },
+  {
+   "zone": "z3w",
+   "name": "the-fenced-path",
+   "wide": {
+    "mx": 2450,
+    "my": 6600,
+    "fov": 0.95
+   },
+   "detail": {
+    "mx": 1843,
+    "my": 6507,
+    "fov": 1.75,
+    "z": 0.24,
+    "rx": -0.3,
+    "ry": 0.2
+   },
+   "why": "the railed path cut into the rock -- the route the family is taking up",
+   "safe": [
+    400,
+    1600,
+    6586,
+    15923
+   ]
+  },
+  {
+   "zone": "z4w",
+   "name": "the-gully-footbridge",
+   "wide": {
+    "mx": 2450,
+    "my": 6300,
+    "fov": 0.95
+   },
+   "detail": {
+    "mx": 1900,
+    "my": 6250,
+    "fov": 1.75,
+    "z": 0.22,
+    "rx": -0.3
+   },
+   "why": "the little bridge over the side gully, a traveler on it"
+  },
+  {
+   "zone": "z4w",
+   "name": "the-pine-grove",
+   "wide": {
+    "mx": 2450,
+    "my": 6050,
+    "fov": 0.95
+   },
+   "scroll": {
+    "mx": 2300,
+    "my": 5800
+   },
+   "detail": {
+    "mx": 1898,
+    "my": 6093,
+    "fov": 1.78,
+    "z": 0.22,
+    "ry": -0.25
+   },
+   "why": "the ranked pines below the compound, drawn needle by needle"
+  },
+  {
+   "zone": "z4w",
+   "name": "the-second-falls",
+   "wide": {
+    "mx": 2900,
+    "my": 5400,
+    "fov": 0.95
+   },
+   "scroll": {
+    "mx": 3100,
+    "my": 5300
+   },
+   "detail": {
+    "mx": 4150,
+    "my": 5230,
+    "fov": 1.78,
+    "z": 0.22,
+    "ry": 0.4
+   },
+   "why": "the far cascade on the right wall, thin and white, high above the gorge floor"
+  },
+  {
+   "zone": "z4w",
+   "name": "the-approach",
+   "wide": {
+    "mx": 2500,
+    "my": 5400,
+    "fov": 0.95
+   },
+   "detail": {
+    "mx": 2249,
+    "my": 5303,
+    "fov": 1.78,
+    "z": 0.22,
+    "rx": -0.3
+   },
+   "why": "the path arriving at the fence line, autumn trees around the gate"
+  },
+  {
+   "zone": "z4w",
+   "name": "the-lower-hall",
+   "wide": {
+    "mx": 2450,
+    "my": 4900,
+    "fov": 0.95
+   },
+   "detail": {
+    "mx": 2096,
+    "my": 4797,
+    "fov": 1.85,
+    "z": 0.24,
+    "rx": -0.3,
+    "ry": -0.2
+   },
+   "why": "the thatched lower hall with its open court -- the first roof of the new house"
+  },
+  {
+   "zone": "z5w",
+   "name": "the-terrace",
+   "wide": {
+    "mx": 2500,
+    "my": 4780,
+    "fov": 0.88
+   },
+   "detail": {
+    "mx": 2300,
+    "my": 4560,
+    "fov": 1.8,
+    "z": 0.24,
+    "rx": -0.3
+   },
+   "why": "the stone terrace the halls stand on, cut into the slope"
+  },
+  {
+   "zone": "z5w",
+   "name": "the-main-hall",
+   "wide": {
+    "mx": 2400,
+    "my": 4430,
+    "fov": 1.15
+   },
+   "scroll": {
+    "mx": 2380,
+    "my": 4300
+   },
+   "detail": {
+    "mx": 2317,
+    "my": 4387,
+    "fov": 1.88,
+    "z": 0.26,
+    "rx": -0.3
+   },
+   "why": "the main hall -- the destination of the move to Mount Luofu, a figure in the doorway"
+  },
+  {
+   "zone": "z5w",
+   "name": "the-west-pavilion",
+   "wide": {
+    "mx": 2000,
+    "my": 4160,
+    "fov": 0.95
+   },
+   "detail": {
+    "mx": 1500,
+    "my": 4090,
+    "fov": 1.8,
+    "z": 0.22,
+    "ry": -0.35
+   },
+   "why": "the smaller roof off to the west under its own trees"
+  },
+  {
+   "zone": "z5w",
+   "name": "the-rear-court",
+   "wide": {
+    "mx": 2400,
+    "my": 3960,
+    "fov": 1.15
+   },
+   "detail": {
+    "mx": 2337,
+    "my": 3899,
+    "fov": 1.82,
+    "z": 0.24,
+    "rx": -0.3
+   },
+   "why": "the back of the compound where the roofs give way to the mountain"
+  },
+  {
+   "zone": "z6w",
+   "name": "the-rear-pines",
+   "wide": {
+    "mx": 2300,
+    "my": 4020,
+    "fov": 0.92
+   },
+   "detail": {
+    "mx": 1700,
+    "my": 3980,
+    "fov": 1.75,
+    "z": 0.22,
+    "ry": -0.3
+   },
+   "why": "the dense pine wood behind the house -- the last inhabited place in the painting"
+  },
+  {
+   "zone": "z6w",
+   "name": "the-ridge",
+   "wide": {
+    "mx": 2400,
+    "my": 3450,
+    "fov": 1.1
+   },
+   "scroll": {
+    "mx": 2300,
+    "my": 3150
+   },
+   "detail": {
+    "mx": 2000,
+    "my": 3280,
+    "fov": 1.62,
+    "z": 0.18,
+    "rx": -0.35
+   },
+   "why": "the bare ridge above the treeline, brush getting drier and looser as the air thins"
+  },
+  {
+   "zone": "z6w",
+   "name": "the-cloud-gap",
+   "safe": [
+    0,
+    1050,
+    4200,
+    15923
+   ],
+   "wide": {
+    "mx": 2300,
+    "my": 2900,
+    "fov": 1.15
+   },
+   "scroll": {
+    "mx": 2450,
+    "my": 2700
+   },
+   "detail": {
+    "mx": 2700,
+    "my": 2720,
+    "fov": 1.55,
+    "z": 0.14,
+    "rx": -0.4,
+    "ry": 0.2
+   },
+   "why": "mist crossing the mountain and cutting the peaks loose from the ground"
+  },
+  {
+   "zone": "z6w",
+   "name": "mist-release",
+   "safe": [
+    0,
+    1050,
+    4200,
+    15923
+   ],
+   "wide": {
+    "mx": 2200,
+    "my": 2760,
+    "fov": 1.02
+   },
+   "scroll": {
+    "mx": 2200,
+    "my": 2450
+   },
+   "detail": {
+    "mx": 2200,
+    "my": 2120,
+    "fov": 1.38,
+    "z": -0.16,
+    "rx": -0.5,
+    "ry": 0.15
+   },
+   "why": "the release: the camera RISES into the far peaks and pulls BACK (negative dolly, reverse parallax) instead of pushing in -- the journey ends by opening out. Its safe rect climbs through the gap LEFT of the inscription (x<4200) and above the great seal (y>1050), so the peaks are reachable without cropping calligraphy into the frame."
+  }
  ]
 }
