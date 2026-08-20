@@ -1,0 +1,13 @@
+{
+ "fps": 24,
+ "duration": 41.96,
+ "_note": "THE ONE-SHOT (Ryan: 'should be one smooth, long, continuous shot'). One continuous 42s camera: open inside the river -> rise past the entry and ox party -> arrive tight on Ge at the bridge by 21.6 -> IDENTICAL keys 21.6/26.6 = full stop for the silence, living ink only -> lift into the gorge mouth on the explosion, landing at the rant peak 33.9 -> settle by the falls to end on moving water. Camera LANDS on beats instead of cutting on them; per-segment smoothstep gives an eased pause at each landing. Every key edge-checked (mid-plane zr 1.6 window inside 1971x2704). Rotations zero at t0, drifting with the travel.",
+ "keys": [
+  {"t": 0,     "x": 0.550, "y": 0.820, "z": 0.00, "fov": 1.50, "rx": 0.0,  "ry": 0.0,  "rz": 0.0},
+  {"t": 11,    "x": 0.520, "y": 0.620, "z": 0.10, "fov": 1.32, "rx": -0.2, "ry": -0.2, "rz": 0.05},
+  {"t": 21.6,  "x": 0.420, "y": 0.510, "z": 0.14, "fov": 1.45, "rx": -0.3, "ry": -0.4, "rz": 0.1},
+  {"t": 26.6,  "x": 0.420, "y": 0.510, "z": 0.14, "fov": 1.45, "rx": -0.3, "ry": -0.4, "rz": 0.1},
+  {"t": 33.9,  "x": 0.500, "y": 0.300, "z": 0.18, "fov": 1.30, "rx": -0.5, "ry": 0.2,  "rz": -0.1},
+  {"t": 41.96, "x": 0.400, "y": 0.235, "z": 0.22, "fov": 1.34, "rx": -0.6, "ry": 0.4,  "rz": -0.2}
+ ]
+}
