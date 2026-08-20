@@ -1,0 +1,76 @@
+{
+ "_note": "THE SLOW JOURNEY, authored as STATIONS rather than a track (Ryan 2026-08-20: 'a painting is not something you race through... it's about the journey'). Each station names a place in MASTER px and two framings: WIDE (stand back and see the scene) and DETAIL (what the push goes in to look at). build-route.py turns these into camera keys using pacing laws -- never faster than the cap, zoom and dolly rate-limited -- so the FILM'S LENGTH EMERGES from the painting instead of being squeezed into a soundtrack. Every detail target is a real feature from the zone points files. Silent: Ryan's narration is the soundtrack.",
+ "pacing": {
+  "speedCapPxPerSec": 105,
+  "zoomRatePerSec": 0.052,
+  "dollyRatePerSec": 0.021,
+  "holdWide": 3.2,
+  "holdDetail": 4.0,
+  "bridgeHold": 3.0,
+  "crossfade": 0.7,
+  "minMove": 3.5
+ },
+ "stations": [
+  {"zone": "z1", "name": "river-entry",
+   "wide":   {"mx": 2306, "my": 14580, "fov": 1.00},
+   "scroll": {"mx": 2200, "my": 14300},
+   "detail": {"mx": 2150, "my": 14250, "fov": 1.62, "z": 0.20, "rx": -0.3, "ry": -0.4},
+   "why": "the ox party and travelers at the river crossing; living water, relief on the entry rocks"},
+
+  {"zone": "z1", "name": "ge-at-the-bridge",
+   "wide":   {"mx": 2306, "my": 13150, "fov": 1.02},
+   "scroll": {"mx": 2150, "my": 12950},
+   "detail": {"mx": 1937, "my": 12880, "fov": 1.70, "z": 0.22, "rx": -0.3, "ry": -0.5, "rz": 0.12},
+   "why": "Ge Hong crossing with fan raised, deer beside him, the family below -- the painting's subject"},
+
+  {"zone": "z1", "name": "upper-stream",
+   "wide":   {"mx": 2306, "my": 11750, "fov": 1.02},
+   "detail": {"mx": 1500, "my": 11150, "fov": 1.55, "z": 0.18, "rx": -0.3},
+   "why": "the pine over the bridge and the stream coming down from the gorge; gust cycle plays here"},
+
+  {"zone": "z3w", "name": "gorge-walls",
+   "wide":   {"mx": 2500, "my": 10350, "fov": 0.92},
+   "scroll": {"mx": 2300, "my": 9800},
+   "detail": {"mx": 1750, "my": 10000, "fov": 1.55, "z": 0.22, "rx": -0.3, "ry": 0.3},
+   "why": "the gorge closing in -- both walls turning, the waterfall behind"},
+
+  {"zone": "z3w", "name": "cliff-nose",
+   "wide":   {"mx": 2600, "my": 8650, "fov": 0.90},
+   "scroll": {"mx": 2400, "my": 8400},
+   "detail": {"mx": 1600, "my": 8273, "fov": 1.60, "z": 0.24, "rx": -0.4, "ry": 0.3},
+   "why": "the great cliff nose under the autumn trees -- the deepest push in the film"},
+
+  {"zone": "z3w", "name": "fenced-path",
+   "wide":   {"mx": 2450, "my": 7050, "fov": 0.95},
+   "detail": {"mx": 1843, "my": 6600, "fov": 1.58, "z": 0.20, "rx": -0.3, "ry": 0.2},
+   "why": "the railed path and gully footbridge -- the family's route up, a traveler on it"},
+
+  {"zone": "z4w", "name": "compound-approach",
+   "wide":   {"mx": 2450, "my": 6150, "fov": 0.95},
+   "scroll": {"mx": 2350, "my": 5800},
+   "detail": {"mx": 1950, "my": 6050, "fov": 1.62, "z": 0.20, "rx": -0.3},
+   "why": "the path arriving at the fence and the autumn trees around it"},
+
+  {"zone": "z4w", "name": "the-halls",
+   "wide":   {"mx": 2450, "my": 5000, "fov": 0.95},
+   "detail": {"mx": 2110, "my": 4830, "fov": 1.72, "z": 0.22, "rx": -0.3, "ry": -0.2},
+   "why": "the lower hall with a figure standing in the doorway; thatch and open courtyard"},
+
+  {"zone": "z5w", "name": "main-hall",
+   "wide":   {"mx": 2450, "my": 4520, "fov": 1.00},
+   "detail": {"mx": 2317, "my": 4400, "fov": 1.78, "z": 0.22, "rx": -0.3},
+   "why": "the main hall on its terrace -- the destination of the move to Mount Luofu"},
+
+  {"zone": "z6w", "name": "rear-pines",
+   "wide":   {"mx": 2450, "my": 4150, "fov": 1.00},
+   "detail": {"mx": 1600, "my": 4150, "fov": 1.66, "z": 0.20, "rx": -0.3, "ry": -0.2},
+   "why": "the dense pine grove behind the compound, the last inhabited place"},
+
+  {"zone": "z6w", "name": "mist-release",
+   "safe": [0, 1050, 4200, 15923],
+   "wide":   {"mx": 2200, "my": 3400, "fov": 1.20},
+   "scroll": {"mx": 2150, "my": 2900},
+   "detail": {"mx": 2100, "my": 2300, "fov": 1.12, "z": -0.10, "rx": -0.5, "ry": 0.2},
+   "why": "the release: the camera RISES into the mist and far peaks and pulls BACK (negative dolly, reverse parallax) instead of pushing in -- the journey ends by opening out. Its own safe rect climbs through the gap LEFT of the inscription (x<4200), so peaks are reachable without cropping calligraphy into the frame."}
+ ]
+}

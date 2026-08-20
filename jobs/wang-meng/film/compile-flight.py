@@ -22,15 +22,21 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 REPO = HERE.parents[2]
-route = json.loads((HERE / "route.json").read_text())
-FPS = route["fps"]
+route = None  # loaded after args
+FPS = None
 
 ap = argparse.ArgumentParser()
+ap.add_argument("--route", default="route.json")
+ap.add_argument("--out", default="FULL-SCROLL-FLIGHT.mp4")
 ap.add_argument("--legs-only", action="store_true")
 ap.add_argument("--assemble-only", action="store_true")
 ap.add_argument("--leg", help="render just this zone's leg")
 args = ap.parse_args()
 
+route = json.loads((HERE / args.route).read_text())
+FPS = route["fps"]
+TAG = Path(args.route).stem.replace("route", "").strip("-") or ""
+SUF = f"-{TAG}" if TAG else ""
 legs = route["legs"]
 
 # -- handoff law check ------------------------------------------------------
@@ -73,11 +79,11 @@ if not args.assemble_only:
                          f"({k['mx']}+/-{hw:.0f}, {k['my']}+/-{hh:.0f} vs {plate['masterBox']})")
             keys.append(kk)
         pj = {"fps": FPS, "duration": round(leg["out"] - leg["in"], 4), "keys": keys}
-        (HERE / f"paths/leg-{z}.json").write_text(json.dumps(pj, indent=1))
+        (HERE / f"paths/leg{SUF}-{z}.json").write_text(json.dumps(pj, indent=1))
         cmd = ["python3", str(REPO / "tools/render-parallax.py"),
                "--layers", str((HERE / leg["layers"]).resolve()),
-               "--path", str(HERE / f"paths/leg-{z}.json"),
-               "--out", str(HERE / f"frames/leg-{z}"),
+               "--path", str(HERE / f"paths/leg{SUF}-{z}.json"),
+               "--out", str(HERE / f"frames/leg{SUF}-{z}"),
                "--width", "1920", "--height", "1080", "--fps", str(FPS),
                "--z-step", "0.30", "--plane-fit", "--no-base",
                "--geometry", str((HERE / leg["geometry"]).resolve())]
@@ -90,16 +96,16 @@ if not args.assemble_only:
         if r.returncode != 0:
             sys.exit(f"{z} render failed:\n{r.stderr[-800:]}")
         subprocess.run(["ffmpeg", "-y", "-framerate", str(FPS),
-                        "-i", str(HERE / f"frames/leg-{z}/%05d.png"),
+                        "-i", str(HERE / f"frames/leg{SUF}-{z}/%05d.png"),
                         "-c:v", "libx264", "-crf", "15", "-pix_fmt", "yuv420p",
-                        str(HERE / f"leg-{z}.mp4")],
+                        str(HERE / f"leg{SUF}-{z}.mp4")],
                        check=True, capture_output=True)
 
 # -- assemble: chained xfades + call at full volume ---------------------------
 if not args.legs_only and not args.leg:
     inputs, filters = [], []
     for i, leg in enumerate(legs):
-        inputs += ["-i", str(HERE / f"leg-{leg['zone']}.mp4")]
+        inputs += ["-i", str(HERE / f"leg{SUF}-{leg['zone']}.mp4")]
     prev = "[0:v]"
     # xfade offset = time in the ACCUMULATED stream where the fade starts.
     # Legs overlap, so accumulated content before leg i+1 ends at handoff
@@ -111,14 +117,17 @@ if not args.legs_only and not args.leg:
                        f"duration={h['dur']}:offset={start:.3f}{out}")
         prev = out
     fc = ";".join(filters)
-    cmd = ["ffmpeg", "-y", *inputs, "-i", str((HERE / route["audio"]).resolve()),
-           "-filter_complex", fc, "-map", prev, "-map", f"{len(legs)}:a",
-           "-c:v", "libx264", "-crf", "15", "-pix_fmt", "yuv420p",
-           "-c:a", "aac", "-b:a", "192k", "-shortest",
-           str(HERE / "FULL-SCROLL-FLIGHT.mp4")]
+    cmd = ["ffmpeg", "-y", *inputs]
+    if route.get("audio"):
+        cmd += ["-i", str((HERE / route["audio"]).resolve())]
+    cmd += ["-filter_complex", fc, "-map", prev]
+    if route.get("audio"):
+        cmd += ["-map", f"{len(legs)}:a", "-c:a", "aac", "-b:a", "192k", "-shortest"]
+    cmd += ["-c:v", "libx264", "-crf", "15", "-pix_fmt", "yuv420p",
+            str(HERE / args.out)]
     r = subprocess.run(cmd, capture_output=True, text=True)
     if r.returncode != 0:
         sys.exit(f"assembly failed:\n{r.stderr[-800:]}")
-    print(json.dumps({"out": "FULL-SCROLL-FLIGHT.mp4",
+    print(json.dumps({"out": args.out,
                       "legs": [l["zone"] for l in legs],
                       "handoffs": [h["at"] for h in route["handoffs"]]}))
