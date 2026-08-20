@@ -1,0 +1,14 @@
+{
+ "_note": "z5w geometry by role from z1 proven values (gen-geometry.py)",
+ "compound-approach-path": {
+  "tiltX": -0.00022
+ },
+ "fenced-cliff-path": {
+  "tiltX": -8e-05,
+  "tiltY": -0.0002
+ },
+ "right-gorge-wall-high": {
+  "tiltX": -8e-05,
+  "tiltY": 0.0002
+ }
+}

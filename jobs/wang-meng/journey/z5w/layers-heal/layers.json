@@ -1,0 +1,166 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/journey/z5w/plate.png",
+  "size": [
+    2815,
+    2212
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 3,
+  "unclaimedFraction": 0.9003,
+  "overlay": "jobs/wang-meng/journey/z5w/layers-heal/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 2.1,
+  "inferSeconds": 9.5,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 19,
+      "name": "compound-rear-pines",
+      "depth": 1,
+      "point": [
+        600,
+        611
+      ],
+      "window": 1496,
+      "windowRequested": 1496,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1496,
+          "clipped": false,
+          "imageFraction": 0.0117,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        1496,
+        1496
+      ],
+      "pick": "whole",
+      "score": 0.8627,
+      "candidateAreas": [
+        8633,
+        36972,
+        72558
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 72773,
+      "windowFraction": 0.0325,
+      "areaFinal": 72773,
+      "bbox": [
+        560,
+        502,
+        820,
+        914
+      ],
+      "offset": [
+        560,
+        502
+      ],
+      "layer": "layers/101-compound-rear-pines.png"
+    },
+    {
+      "n": 2,
+      "id": 18,
+      "name": "compound-main-hall",
+      "depth": 2,
+      "point": [
+        990,
+        746
+      ],
+      "window": 1496,
+      "windowRequested": 1496,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1496,
+          "clipped": false,
+          "imageFraction": 0.0106,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        242,
+        0,
+        1738,
+        1496
+      ],
+      "pick": "whole",
+      "score": 0.8345,
+      "candidateAreas": [
+        10738,
+        26283,
+        66187
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 66234,
+      "windowFraction": 0.0296,
+      "areaFinal": 65635,
+      "bbox": [
+        781,
+        688,
+        1083,
+        1053
+      ],
+      "offset": [
+        781,
+        688
+      ],
+      "layer": "layers/202-compound-main-hall.png"
+    },
+    {
+      "n": 3,
+      "id": 14,
+      "name": "compound-approach-path",
+      "depth": 6,
+      "point": [
+        811,
+        1476
+      ],
+      "window": 1068,
+      "windowRequested": 1068,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1068,
+          "clipped": true,
+          "imageFraction": 0.0775,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        277,
+        942,
+        1345,
+        2010
+      ],
+      "pick": "whole",
+      "score": 0.5284,
+      "candidateAreas": [
+        16367,
+        22766,
+        479075
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 482285,
+      "windowFraction": 0.4228,
+      "areaFinal": 482285,
+      "bbox": [
+        277,
+        942,
+        1018,
+        2010
+      ],
+      "offset": [
+        277,
+        942
+      ],
+      "layer": "layers/603-compound-approach-path.png"
+    }
+  ]
+}

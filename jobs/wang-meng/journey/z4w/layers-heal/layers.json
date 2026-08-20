@@ -1,0 +1,117 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/journey/z4w/plate.png",
+  "size": [
+    2815,
+    2461
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 2,
+  "unclaimedFraction": 0.9207,
+  "overlay": "jobs/wang-meng/journey/z4w/layers-heal/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 2.8,
+  "inferSeconds": 6.3,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 18,
+      "name": "compound-main-hall",
+      "depth": 2,
+      "point": [
+        990,
+        315
+      ],
+      "window": 1496,
+      "windowRequested": 1496,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1496,
+          "clipped": false,
+          "imageFraction": 0.0097,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        242,
+        0,
+        1738,
+        1496
+      ],
+      "pick": "whole",
+      "score": 0.819,
+      "candidateAreas": [
+        10783,
+        25975,
+        66990
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 67001,
+      "windowFraction": 0.0299,
+      "areaFinal": 65948,
+      "bbox": [
+        783,
+        257,
+        1083,
+        711
+      ],
+      "offset": [
+        783,
+        257
+      ],
+      "layer": "layers/201-compound-main-hall.png"
+    },
+    {
+      "n": 2,
+      "id": 14,
+      "name": "compound-approach-path",
+      "depth": 6,
+      "point": [
+        811,
+        1044
+      ],
+      "window": 1068,
+      "windowRequested": 1068,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1068,
+          "clipped": true,
+          "imageFraction": 0.0698,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        277,
+        510,
+        1345,
+        1578
+      ],
+      "pick": "whole",
+      "score": 0.6217,
+      "candidateAreas": [
+        21199,
+        34686,
+        483067
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 483742,
+      "windowFraction": 0.4241,
+      "areaFinal": 483742,
+      "bbox": [
+        277,
+        510,
+        1018,
+        1578
+      ],
+      "offset": [
+        277,
+        510
+      ],
+      "layer": "layers/602-compound-approach-path.png"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
  "image": "jobs/wang-meng/journey/z5/plate.png",
- "note": "z5 points remapped to full-width rect 0,2641,6586,7816 (landscape camera fix 2026-08-19)",
+ "note": "z5 points remapped to full-width rect 0,2641,6586,7816 (landscape camera fix 2026-08-19) compound-court dropped 2026-08-19: courtyard is contourless wash (Law 7) -- tight mask collapsed to a sliver, whole mask ate the compound; sealing claims the ground by proximity instead.",
  "points": [
   {
    "id": 25,
@@ -55,16 +55,6 @@
    "window": 1496,
    "name": "compound-lower-hall",
    "why": "lower hall + veranda, waiting figure [dot moved 2026-08-19: onto the thatch roof, off the standing figure]"
-  },
-  {
-   "id": 17,
-   "x": 0.2551361524445794,
-   "y": 0.4052299999999999,
-   "depth": 3,
-   "window": 1068,
-   "name": "compound-court",
-   "why": "pine court terrace, walking figure [pick:tight 2026-08-19 -- whole-mask from the courtyard ground grabbed the entire compound and erased pines+halls beneath it]",
-   "pick": "tight"
   },
   {
    "id": 18,

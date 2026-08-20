@@ -1,0 +1,452 @@
+{
+ "tool": "complete-planes",
+ "image": "jobs/wang-meng/journey/z5w/plate.png",
+ "size": [
+  2815,
+  2212
+ ],
+ "model": "facebook/sam-vit-huge",
+ "device": "mps",
+ "planes": 9,
+ "unclaimedFraction": 0.0,
+ "overlay": "jobs/wang-meng/journey/z5w/layers-cut/overlay.png",
+ "feather": 2,
+ "note": "sealed by nearest-plane proximity; coverage is total, so RENDER WITH --no-base \u2014 the backing plane is what made unclaimed ink render at the wrong depth.",
+ "loadSeconds": 2.9,
+ "inferSeconds": 40.1,
+ "planeList": [
+  {
+   "n": 1,
+   "id": 20,
+   "name": "mist-slope-above",
+   "depth": 0,
+   "point": [
+    999,
+    538
+   ],
+   "window": 2137,
+   "windowRequested": 2137,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 2137,
+     "clipped": false,
+     "imageFraction": 0.1174,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    0,
+    2137,
+    2137
+   ],
+   "pick": "whole",
+   "score": 0.8351,
+   "candidateAreas": [
+    345051,
+    374477,
+    732262
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 730757,
+   "windowFraction": 0.16,
+   "areaFinal": 595547,
+   "bbox": [
+    6,
+    0,
+    1777,
+    798
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "layer": "layers/001-mist-slope-above.png",
+   "sealedFrom": 595547,
+   "sealedTo": 719997
+  },
+  {
+   "n": 2,
+   "id": 19,
+   "name": "compound-rear-pines",
+   "depth": 1,
+   "point": [
+    600,
+    611
+   ],
+   "window": 1496,
+   "windowRequested": 1496,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1496,
+     "clipped": false,
+     "imageFraction": 0.0117,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    0,
+    1496,
+    1496
+   ],
+   "pick": "whole",
+   "score": 0.8627,
+   "candidateAreas": [
+    8633,
+    36972,
+    72558
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 72773,
+   "windowFraction": 0.0325,
+   "areaFinal": 16335,
+   "bbox": [
+    560,
+    502,
+    820,
+    914
+   ],
+   "offset": [
+    441,
+    499
+   ],
+   "layer": "layers/101-compound-rear-pines.png",
+   "sealedFrom": 16335,
+   "sealedTo": 22756
+  },
+  {
+   "n": 3,
+   "id": 18,
+   "name": "compound-main-hall",
+   "depth": 2,
+   "point": [
+    990,
+    746
+   ],
+   "window": 1496,
+   "windowRequested": 1496,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1496,
+     "clipped": false,
+     "imageFraction": 0.0106,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    242,
+    0,
+    1738,
+    1496
+   ],
+   "pick": "whole",
+   "score": 0.8345,
+   "candidateAreas": [
+    10738,
+    26283,
+    66187
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 66234,
+   "windowFraction": 0.0296,
+   "areaFinal": 665,
+   "bbox": [
+    781,
+    688,
+    1083,
+    1053
+   ],
+   "offset": [
+    883,
+    683
+   ],
+   "layer": "layers/202-compound-main-hall.png",
+   "sealedFrom": 665,
+   "sealedTo": 3645
+  },
+  {
+   "n": 5,
+   "id": 15,
+   "name": "compound-fence-autumn-trees",
+   "depth": 5,
+   "point": [
+    961,
+    1138
+   ],
+   "window": 1068,
+   "windowRequested": 1068,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": false,
+     "imageFraction": 0.0403,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    427,
+    604,
+    1495,
+    1672
+   ],
+   "pick": "whole",
+   "score": 0.6381,
+   "candidateAreas": [
+    15977,
+    22394,
+    252347
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 251102,
+   "windowFraction": 0.2201,
+   "areaFinal": 164468,
+   "bbox": [
+    565,
+    614,
+    1486,
+    1496
+   ],
+   "offset": [
+    560,
+    584
+   ],
+   "layer": "layers/505-compound-fence-autumn-trees.png",
+   "sealedFrom": 159636,
+   "sealedTo": 274380
+  },
+  {
+   "n": 6,
+   "id": 14,
+   "name": "compound-approach-path",
+   "depth": 6,
+   "point": [
+    811,
+    1476
+   ],
+   "window": 2136,
+   "windowRequested": 1068,
+   "grewTo": 2136,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": true,
+     "imageFraction": 0.0775,
+     "rejected": false
+    },
+    {
+     "window": 2136,
+     "clipped": false,
+     "imageFraction": 0.0118,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    76,
+    2136,
+    2212
+   ],
+   "pick": "whole",
+   "score": 0.2132,
+   "candidateAreas": [
+    4128,
+    13937,
+    73456
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 73638,
+   "windowFraction": 0.0161,
+   "areaFinal": 50226,
+   "bbox": [
+    277,
+    942,
+    1018,
+    2010
+   ],
+   "offset": [
+    164,
+    807
+   ],
+   "layer": "layers/603-compound-approach-path.png",
+   "sealedFrom": 391936,
+   "sealedTo": 552540
+  },
+  {
+   "n": 7,
+   "id": 13,
+   "name": "gully-footbridge",
+   "depth": 7,
+   "point": [
+    788,
+    1652
+   ],
+   "window": 2815,
+   "windowRequested": 1068,
+   "grewTo": 2815,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": true,
+     "imageFraction": 0.014,
+     "rejected": false
+    },
+    {
+     "window": 2136,
+     "clipped": true,
+     "imageFraction": 0.0195,
+     "rejected": false
+    },
+    {
+     "window": 2815,
+     "clipped": false,
+     "imageFraction": 0.0934,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    0,
+    2815,
+    2212
+   ],
+   "pick": "whole",
+   "score": 0.3261,
+   "candidateAreas": [
+    1150,
+    33331,
+    591930
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 581874,
+   "windowFraction": 0.0934,
+   "areaFinal": 567218,
+   "bbox": [
+    0,
+    0,
+    2459,
+    2084
+   ],
+   "offset": [
+    0,
+    0
+   ],
+   "layer": "layers/707-gully-footbridge.png",
+   "sealedFrom": 567218,
+   "sealedTo": 1345788
+  },
+  {
+   "n": 8,
+   "id": 12,
+   "name": "fenced-cliff-path",
+   "depth": 8,
+   "point": [
+    220,
+    1790
+   ],
+   "window": 1068,
+   "windowRequested": 1068,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": false,
+     "imageFraction": 0.0032,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    1144,
+    1068,
+    2212
+   ],
+   "pick": "whole",
+   "score": 0.4888,
+   "candidateAreas": [
+    119,
+    5217,
+    20297
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 20144,
+   "windowFraction": 0.0177,
+   "areaFinal": 20144,
+   "bbox": [
+    127,
+    1648,
+    467,
+    1981
+   ],
+   "offset": [
+    0,
+    1607
+   ],
+   "layer": "layers/808-fenced-cliff-path.png",
+   "sealedFrom": 20144,
+   "sealedTo": 56401
+  },
+  {
+   "n": 9,
+   "id": 25,
+   "name": "right-gorge-wall-high",
+   "depth": 10,
+   "point": [
+    2223,
+    1863
+   ],
+   "window": 2137,
+   "windowRequested": 2137,
+   "grewTo": 2137,
+   "attempts": [
+    {
+     "window": 2137,
+     "clipped": true,
+     "imageFraction": 0.2995,
+     "rejected": false
+    },
+    {
+     "window": 2815,
+     "clipped": false,
+     "imageFraction": 0.7287,
+     "rejected": true
+    }
+   ],
+   "cropBox": [
+    678,
+    75,
+    2815,
+    2212
+   ],
+   "pick": "whole",
+   "score": 0.7864,
+   "candidateAreas": [
+    255788,
+    780503,
+    1865553
+   ],
+   "clippedByWindow": true,
+   "areaInWindow": 1864749,
+   "windowFraction": 0.4083,
+   "areaFinal": 1864749,
+   "bbox": [
+    678,
+    75,
+    2815,
+    2212
+   ],
+   "offset": [
+    605,
+    0
+   ],
+   "layer": "layers/1009-right-gorge-wall-high.png",
+   "sealedFrom": 1864749,
+   "sealedTo": 3251273
+  }
+ ],
+ "sealedFrom": "jobs/wang-meng/journey/z5w/layers-cut"
+}
