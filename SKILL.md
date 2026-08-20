@@ -78,6 +78,13 @@ Related standalone tool: `rectum` (URL → clip on disk) at
 The catalog says what each tool DOES. This says which one a problem wants —
 agents arrive with a situation, not a capability.
 
+**Before choosing, run `tools/find-technique.py "<the situation in your own
+words>"`.** It prints the top-3 live procedures from `knowledge/` with each
+one's nearest confusable sibling and the already-refuted list. This table is a
+human summary; the store is the source of truth, it is type-checked, and it
+holds at most ONE live entry per problem. Do not stop at the first row that
+matches a keyword — that is exactly how 2026-08-20 happened.
+
 | the situation | the route |
 |---|---|
 | "the water should move" — ripples, a fall, a surface | `animate-strokes` — displaces the painter's own ink in place, and it loops. Never a video model |

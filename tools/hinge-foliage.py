@@ -1,0 +1,202 @@
+#!/usr/bin/env python3
+"""Swing cut-out foliage cards on a gust envelope over a clean plate. One job.
+
+WHY THIS EXISTS RATHER THAN animate-strokes (2026-08-20). animate-strokes
+displaces a pixel FIELD, and a field cannot express "only the leaves move":
+
+  --mode warp   cv2.remap of the whole patch, so trunk, branch and leaf all
+                travel together -- the lollipop-on-a-stick tell -- and every
+                drawing is a resample of a resample. Measured on one canopy:
+                15% of the ink's high-frequency energy gone at 7px of travel.
+  --mode lift   mattes the ink out and fills the hole with cv2.INPAINT_TELEA,
+                which is precisely the averaging inpainter clean-plate.py was
+                written to replace ("a figure-sized hole becomes mush with no
+                weave and no brush"). Ryan's word for the result was "mush".
+
+A tree is a cut-out problem, not a displacement problem, on both of the tests
+that decide this: it UNCOVERS GROUND when it moves, and it has STRUCTURE THAT
+MUST STAY PUT. So each leaf mass becomes a card with its own hinge, the ground
+behind it is synthesised once by clean-plate, and the trunk is simply not a
+card -- Ryan's law ("just the delicate things move") stops being a discipline
+and becomes a structural property of the rig.
+
+The hinge is the one proven in walk-figure.py --limbs (the deer's legs):
+getRotationMatrix2D about the card's own pivot, warpAffine of RGB and alpha,
+alpha-blit. Rigid body, so the strokes keep their edges.
+
+THE GUST IS AN EVENT, NOT A STATE (The Old Mill, 1937). Each card runs the
+attack/hold/decay envelope on its own clock, delayed by its distance along the
+wind, so the bending visibly travels across the frame. The envelope is zero at
+both ends of its window, so the cycle closes exactly, and between gusts the
+foliage idles at --gust-rest so it never reads as frozen.
+
+WHAT THIS IS NOT FOR. Water. A ripple is a thin mark that quivers a few px,
+uncovers no ground and has no structure to protect -- that is animate-strokes
+--field wave, and it is right there. Do not cut water into cards.
+
+usage:
+  hinge-foliage.py --plate CLEAN.png --source ORIG.png --cards MASKDIR
+                   --out DIR [--frames 192] [--on 2] [--fps 24]
+                   [--swing 4.5] [--gust 0.10,0.08,0.22] [--gust-travel 1500]
+                   [--gust-rest 0.15] [--angle 8] [--flutter 0.35] [--preview P.mp4]
+
+  --plate    background with the cards already removed (clean-plate.py)
+  --source   the image the card pixels are cut FROM (the untouched plate)
+  --cards    dir with layers.json + masks/NNN.png; a plane may carry "pivot"
+  --swing    degrees of rotation at gust peak, about each card's own pivot
+  --angle    wind direction in degrees; the gust front travels along it
+  --flutter  extra degrees of second-harmonic jitter, per card, so a stand of
+             trees does not move as one object
+
+  writes DIR/dr-%03d.png + DIR/cycle.json -- the same contract animate-strokes
+  --out-frames emits, so the registration stage downstream is unchanged.
+
+example:
+  hinge-foliage.py --plate clean.png --source plate.png --cards canopy-masks \
+      --out drawings --swing 5 --preview gust.mp4
+"""
+import argparse, json, subprocess, sys, tempfile
+from pathlib import Path
+import numpy as np
+import cv2
+from PIL import Image
+
+Image.MAX_IMAGE_PIXELS = None
+
+p = argparse.ArgumentParser()
+p.add_argument('--plate', required=True, help='background with the cards removed')
+p.add_argument('--source', required=True, help='image the card pixels come from')
+p.add_argument('--cards', required=True, help='mask dir: layers.json + masks/')
+p.add_argument('--only', default=None, help='restrict to one card by name')
+p.add_argument('--out', required=True)
+p.add_argument('--preview', default=None)
+p.add_argument('--frames', type=int, default=192)
+p.add_argument('--on', type=int, default=2)
+p.add_argument('--fps', type=float, default=24)
+p.add_argument('--swing', type=float, default=4.5,
+               help='degrees at gust peak, about the card pivot')
+p.add_argument('--flutter', type=float, default=0.35,
+               help='degrees of second-harmonic jitter so a stand does not move as one')
+p.add_argument('--angle', type=float, default=8.0, help='wind direction, degrees')
+p.add_argument('--gust', default='0.10,0.08,0.22', help='attack,hold,decay as cycle fractions')
+p.add_argument('--gust-travel', type=float, default=1500.0,
+               help='px the gust front crosses in one cycle')
+p.add_argument('--gust-rest', type=float, default=0.15,
+               help='idle amplitude between gusts, as a fraction of --swing')
+p.add_argument('--feather', type=int, default=2)
+p.add_argument('--min-px', type=int, default=400, help='smallest card worth hinging')
+a = p.parse_args()
+
+plate = np.array(Image.open(a.plate).convert('RGB'), np.float32)
+src = np.array(Image.open(a.source).convert('RGB'), np.float32)
+if plate.shape != src.shape:
+    sys.exit(f'plate {plate.shape[:2]} and source {src.shape[:2]} must be the same size')
+H, W = plate.shape[:2]
+
+meta = json.loads((Path(a.cards) / 'layers.json').read_text())
+cards = []
+for pl in meta['planeList']:
+    if a.only and pl['name'] != a.only:
+        continue
+    m = np.array(Image.open(Path(a.cards) / 'masks' / f"{pl['n']:03d}.png").convert('L'))
+    ox, oy = pl.get('offset', (0, 0))
+    full = np.zeros((H, W), np.uint8)
+    full[oy:oy + m.shape[0], ox:ox + m.shape[1]] = m
+    # ONE CARD PER LEAF MASS, not one per authored box: a stand of six trees on
+    # a single hinge is the decal tell, and the pivot of a mass is a property
+    # of that mass.
+    n, lab, st, cen = cv2.connectedComponentsWithStats((full > 128).astype(np.uint8), 8)
+    for i in range(1, n):
+        if st[i, 4] < a.min_px:
+            continue
+        al = (lab == i).astype(np.float32)
+        if a.feather:
+            k = a.feather * 2 + 1
+            al = cv2.GaussianBlur(al, (k, k), 0)
+        ys, xs = np.nonzero(lab == i)
+        x0, y0 = int(xs.min()), int(ys.min())
+        x1, y1 = int(xs.max()) + 1, int(ys.max()) + 1
+        pad = a.feather * 3 + 2
+        x0, y0 = max(0, x0 - pad), max(0, y0 - pad)
+        x1, y1 = min(W, x1 + pad), min(H, y1 + pad)
+        # the hinge sits where the mass meets what holds it up: the centroid of
+        # its lowest rows, not its bounding-box corner
+        foot = ys > ys.max() - 6
+        pvx, pvy = float(xs[foot].mean()), float(ys.max())
+        cards.append({
+            'name': f"{pl['name']}-{i:02d}", 'box': (x0, y0, x1, y1),
+            'pivot': (pvx - x0, pvy - y0), 'along': 0.0, 'px': int(st[i, 4]),
+            'rgb': src[y0:y1, x0:x1].copy(),
+            'al': al[y0:y1, x0:x1].copy(),
+            'seed': (hash(pl['name']) + i) % 1000 / 1000.0,
+        })
+if not cards:
+    sys.exit(f'no card in {a.cards} reached --min-px {a.min_px}')
+
+th = np.deg2rad(a.angle)
+for c in cards:
+    x0, y0, x1, y1 = c['box']
+    c['along'] = (x0 + c['pivot'][0]) * np.cos(th) + (y0 + c['pivot'][1]) * np.sin(th)
+amin = min(c['along'] for c in cards)
+for c in cards:
+    c['delay'] = (c['along'] - amin) / max(a.gust_travel, 1e-3)
+
+ga, gh, gd = (float(q) for q in a.gust.split(','))
+if ga + gh + gd >= 0.95:
+    sys.exit('--gust A+H+D must leave calm air in the loop: keep the sum under 0.95')
+
+def envelope(u):
+    """attack -> hold -> decay -> calm, zero at both ends so the loop closes."""
+    u = u % 1.0
+    if u < ga:
+        return 0.5 - 0.5 * np.cos(np.pi * u / ga)
+    if u < ga + gh:
+        return 1.0
+    if u < ga + gh + gd:
+        return 0.5 + 0.5 * np.cos(np.pi * (u - ga - gh) / gd)
+    return 0.0
+
+ndraw = max(1, a.frames // max(a.on, 1))
+outd = Path(a.out); outd.mkdir(parents=True, exist_ok=True)
+peak = 0.0
+for k in range(ndraw):
+    t = k / ndraw
+    frame = plate.copy()
+    for c in cards:
+        e = envelope(t - c['delay'])
+        act = a.gust_rest + (1 - a.gust_rest) * e
+        ph = 2 * np.pi * (t - c['delay'] + c['seed'])
+        ang = a.swing * act * np.sin(ph) + a.flutter * act * np.sin(3 * ph + 1.7)
+        peak = max(peak, abs(float(ang)))
+        x0, y0, x1, y1 = c['box']
+        M = cv2.getRotationMatrix2D(c['pivot'], float(ang), 1.0)
+        wh = (x1 - x0, y1 - y0)
+        rgb = cv2.warpAffine(c['rgb'], M, wh, flags=cv2.INTER_LINEAR,
+                             borderMode=cv2.BORDER_REPLICATE)
+        al = cv2.warpAffine(c['al'], M, wh, flags=cv2.INTER_LINEAR,
+                            borderMode=cv2.BORDER_CONSTANT)[..., None]
+        frame[y0:y1, x0:x1] = frame[y0:y1, x0:x1] * (1 - al) + rgb * al
+    Image.fromarray(np.clip(frame, 0, 255).astype(np.uint8)).save(outd / f'dr-{k:03d}.png')
+
+(outd / 'cycle.json').write_text(json.dumps({
+    'tool': 'hinge-foliage', 'drawings': ndraw, 'on': a.on, 'fps': a.fps,
+    'cards': len(cards), 'swingDeg': a.swing, 'peakAngleDeg': round(peak, 2),
+    'gust': a.gust, 'gustTravel': a.gust_travel, 'gustRest': a.gust_rest,
+    'angle': a.angle, 'flutter': a.flutter,
+    'technique': 'rigid cut-out cards hinged at their own pivots over a clean plate',
+    'plate': a.plate, 'source': a.source, 'cards_dir': a.cards,
+}, indent=1))
+
+if a.preview:
+    with tempfile.TemporaryDirectory() as td:
+        for i in range(a.frames):
+            src_f = outd / f'dr-{(i // a.on) % ndraw:03d}.png'
+            (Path(td) / f'{i:05d}.png').symlink_to(src_f.resolve())
+        subprocess.run(['ffmpeg', '-y', '-framerate', str(a.fps), '-i',
+                        str(Path(td) / '%05d.png'), '-c:v', 'libx264', '-crf', '16',
+                        '-pix_fmt', 'yuv420p', '-vf', 'pad=ceil(iw/2)*2:ceil(ih/2)*2',
+                        a.preview], check=True, capture_output=True)
+
+print(json.dumps({'out': str(outd), 'drawings': ndraw, 'cards': len(cards),
+                  'peakAngleDeg': round(peak, 2),
+                  'preview': a.preview}, indent=1))
