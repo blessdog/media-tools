@@ -1,5 +1,29 @@
 # ⛔ READ THIS BEFORE YOU TOUCH ANYTHING — 2026-08-20
 
+## ⛔ ONLY DELICATE THINGS MOVE (law, Ryan 2026-08-20)
+
+> "peaks shouldnt wobble. Think about it."
+> "just the delicate things move. Their robes, the water ripples, leaves on trees."
+
+**Cloth, water surface, leaves. Nothing else.** Not mountains, not rock, not
+buildings, not trunks, not branches, not the ground. The test is physical, not
+distance-based: would a breath of wind actually move this object?
+
+Two corollaries that were learned the hard way, both on 2026-08-20:
+
+1. **Stillness at distance is a depth cue, and spending it is expensive.** The
+   near water reads as near BECAUSE the ridge behind it is dead still. A thin
+   uniform wobble spread over the whole picture is not "more life" — it flattens
+   the depth and reads as nothing moving at all. The `gust-far` summit gusts
+   built earlier that day were reverted for exactly this: at summit scale the
+   tree mass and the ridge silhouette are visually one thing, so animating the
+   trees up there reads as THE MOUNTAIN DEFORMING.
+2. **STATE.md called "the summits hold perfectly still" an open defect.** It was
+   never a defect. It was the painting being correct. Do not re-open it.
+
+Queued, not now (Ryan): eventually the characters — a little motion, maybe
+changing facial expressions. "We'll cross that bridge when we get to it."
+
 ## BRING IT TO LIFE. THAT IS NUMBER ONE. NOT THE CAMERA.
 
 Ryan, 2026-08-20, after five days of being shown camera moves over still ink:
@@ -748,6 +772,11 @@ z6w 31 (2.42%). Every what-moves map lands on leaf mass, water and falls only.
 
 ### Still open
 - Relief maps for the upper zones; deer walk; 4K.
+- **REVERTED 2026-08-20 same day:** the 13 `gust-far` summit patches are out of
+  `living-z6w.json` (31 remain, the compound canopies). Ryan: "peaks shouldnt
+  wobble." The masks, the polygons and the dark-accent rule are kept — the rule
+  is a real finding and the polygons may serve a still purpose — but nothing up
+  there animates. See the law at the top of this file.
 - `film/frames/` holds 35GB of pre-living, pre-seal-fix frame dumps whose mp4s
   all exist. Every one is stale. Reclaimable.
 
