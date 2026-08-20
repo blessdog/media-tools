@@ -15,10 +15,14 @@ not-when: >
   the mark is a thin stroke that quivers in place, uncovers nothing, and has no
   structure to protect. That is water — use the sibling, water-motion.
 route: >
-  cut-stroke.py (cards with a pivot at the anchored end) -> clean-plate.py
-  (SHIFTMAP patch synthesis for the ground behind them, ONCE) ->
-  hinge-foliage.py (rotate each card about its own pivot on a gust envelope) ->
-  render-parallax (composite at depth)
+  clean-plate.py --method shiftmap (synthesise the ground behind the canopy,
+  ONCE) -> hinge-foliage.py --from-ink (cut one card per ink cluster, pivot at
+  the foot of its own mass, rotate on a gust envelope delayed by position along
+  the wind) -> render-parallax (composite at depth). Implemented as the
+  foliage-motion entry in jobs/wang-meng/living/build-zone-living.py's
+  TECHNIQUES table. NOT cut-stroke.py first: hinge-foliage cuts its own cards,
+  because the card decomposition is what decides crown-sway vs leaf-flutter and
+  therefore belongs to the tool that swings them.
 verified-on: 2026-08-20
 evidence:
   - jobs/wang-meng/living/evidence-warp-blurs-lift-does-not.png
