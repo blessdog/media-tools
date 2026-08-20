@@ -1,0 +1,10 @@
+{
+ "fps": 24,
+ "duration": 16,
+ "_note": "The RIVER ENTRY glide -- shot-1 territory in the 42s map, and the relief probe: foreground-rock-mass rides the lower band the whole move, so its DAv2 surface relief has a stage. Low over the entry rocks, gliding up-left toward the bridge with the full proven dolly. Edge-checked: t0 window at fov 1.32 = x 356..1811, y 1808..2626 (inside 1971x2704); t16 mid-plane window = x 268..1584, y 1523..2263. Rotation held at zero -- this path A/Bs RELIEF, one variable at a time.",
+ "keys": [
+  {"t": 0,  "x": 0.550, "y": 0.820, "z": 0.00, "fov": 1.32},
+  {"t": 8,  "x": 0.510, "y": 0.760, "z": 0.12, "fov": 1.28},
+  {"t": 16, "x": 0.470, "y": 0.700, "z": 0.24, "fov": 1.24}
+ ]
+}

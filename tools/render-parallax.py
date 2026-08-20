@@ -71,6 +71,19 @@ usage:
                    across width (cliff faces turning out of frame).
                    Units are dz per source pixel, so 0.00004 over a 3000px
                    plane is 0.12 of depth across it. Small numbers.
+  --relief PATH    per-plane SURFACE SHAPE, as {"plane-name": {"map": png,
+                   "band": 0.05}} (map paths resolve against the JSON's own
+                   dir). The map is centered grayscale — 128 sits ON the
+                   card, bright is toward the camera — and each pixel of the
+                   plane is re-projected at z = zr − (map−128)/127 · band/2.
+                   This is the LDI hybrid: cards keep their completed edges,
+                   surfaces gain continuous parallax WITHIN a card, so a
+                   cliff face bulges as the camera passes instead of sliding
+                   as a flat sheet. Displacement is identically zero at
+                   camZ=0, so frame zero stays the painting pixel-for-pixel.
+                   Off = old renders reproduce byte-identically.
+  --relief-band F  default band (depth units across the full map) for relief
+                   entries that do not set their own (default 0.05)
   --fill NAME      what shows through gaps: paper (default) | black | edge
   --preview N      render only every Nth frame, for a fast look
   --stills         write first/middle/last only, then stop
@@ -154,6 +167,8 @@ def main() -> int:
                          '(index = frame//on %% n) so its ink moves while its '
                          'depth, footprint, and tilt stay authored. Off = '
                          'every plane static, old renders reproduce.')
+    ap.add_argument("--relief")
+    ap.add_argument("--relief-band", type=float, default=0.05)
     ap.add_argument("--fill", default="paper")
     ap.add_argument("--preview", type=int, default=1)
     ap.add_argument("--stills", action="store_true")
@@ -276,6 +291,35 @@ def main() -> int:
         print(f"  living planes: {sorted(living)}", file=sys.stderr)
     living_cache = {}
 
+    # PER-PLANE RELIEF (the LDI hybrid). Each entry carries an "L" map the
+    # size of its plane; per frame the map rides the plane's own transform
+    # into screen space, then the composited card is radially remapped about
+    # the camera axis by r = scale(zr+dz)/scale(zr). Since scale depends on
+    # camZ, r == 1 everywhere when camZ == 0: the null is structural, not a
+    # promise. cv2 is imported only if relief is actually requested.
+    relief = {}
+    if args.relief:
+        rj = Path(args.relief)
+        for rname, rspec in json.loads(rj.read_text()).items():
+            if not any(p.get("name") == rname for p in planes):
+                print(f"--relief names unknown plane '{rname}' — ignored",
+                      file=sys.stderr)
+                continue
+            rimg = Image.open((rj.parent / rspec["map"])).convert("L")
+            pl = next(p for p in planes if p.get("name") == rname)
+            if rimg.size != pl["img"].size:
+                print(f"relief map for '{rname}' is {rimg.size}, plane is "
+                      f"{pl['img'].size} — resizing", file=sys.stderr)
+                rimg = rimg.resize(pl["img"].size, Image.BILINEAR)
+            relief[rname] = {"img": rimg,
+                             "band": float(rspec.get("band", args.relief_band))}
+        if relief:
+            import cv2
+            xgrid, ygrid = np.meshgrid(
+                np.arange(args.width, dtype=np.float32),
+                np.arange(args.height, dtype=np.float32))
+            print(f"  relief planes: {sorted(relief)}", file=sys.stderr)
+
     t0 = time.time()
     for n, i in enumerate(idx):
         t = i / fps
@@ -328,6 +372,9 @@ def main() -> int:
             if eff <= 0.05:
                 continue                        # camera has passed through it
 
+            rl = relief.get(p.get("name"))
+            warped = None
+
             tilt = tilts.get(p.get("name", ""), {})
             tx, ty = float(tilt.get("tiltX", 0.0)), float(tilt.get("tiltY", 0.0))
             if tx or ty or H_rot is not None:
@@ -360,25 +407,61 @@ def main() -> int:
                     except np.linalg.LinAlgError:
                         ok = False
                 if ok:
-                    canvas.alpha_composite(p["img"].transform(
+                    warped = p["img"].transform(
                         (args.width, args.height), Image.PERSPECTIVE, coeffs,
-                        resample=Image.BILINEAR))
-                    continue
+                        resample=Image.BILINEAR)
+                    if rl is not None:
+                        rel_scr = rl["img"].transform(
+                            (args.width, args.height), Image.PERSPECTIVE,
+                            coeffs, resample=Image.BILINEAR, fillcolor=128)
                 # degenerate projection: fall through to the flat path
 
-            s = screen_scale(p["z"], camZ, fov)
-            if s is None or s <= 1e-6:
-                continue
-            # Inverse affine: for each OUTPUT pixel, which source pixel?
-            #   u = (x - W/2)/s + camX - ox
-            # Cost is O(output), so the master's size is irrelevant per frame.
-            a = 1.0 / s
-            cx = camX - (args.width / 2.0) / s - p["ox"]
-            cy = camY - (args.height / 2.0) / s - p["oy"]
-            warped = p["img"].transform(
-                (args.width, args.height), Image.AFFINE, (a, 0, cx, 0, a, cy),
-                resample=Image.BILINEAR,
-            )
+            if warped is None:
+                s = screen_scale(p["z"], camZ, fov)
+                if s is None or s <= 1e-6:
+                    continue
+                # Inverse affine: for each OUTPUT pixel, which source pixel?
+                #   u = (x - W/2)/s + camX - ox
+                # Cost is O(output), so the master's size is irrelevant per frame.
+                a = 1.0 / s
+                cx = camX - (args.width / 2.0) / s - p["ox"]
+                cy = camY - (args.height / 2.0) / s - p["oy"]
+                warped = p["img"].transform(
+                    (args.width, args.height), Image.AFFINE, (a, 0, cx, 0, a, cy),
+                    resample=Image.BILINEAR,
+                )
+                if rl is not None:
+                    rel_scr = rl["img"].transform(
+                        (args.width, args.height), Image.AFFINE,
+                        (a, 0, cx, 0, a, cy), resample=Image.BILINEAR,
+                        fillcolor=128)
+
+            if rl is not None and abs(camZ) > 1e-9:
+                # RELIEF REMAP. A point whose depth is zr+dz instead of zr
+                # projects at C + (q_flat - C)·r, with r the ratio of its
+                # screen scales — so the whole correction is one radial remap
+                # about the camera axis C. dz is sampled AT THE DESTINATION
+                # (the standard small-displacement approximation; measured
+                # magnitudes here are single-digit pixels). Bright map = near
+                # = smaller z. camZ == 0 → r ≡ 1 → this block is skipped and
+                # frame zero stays the painting by construction. Tilt's own
+                # per-pixel zr variation is second-order in r and ignored.
+                dz = (128.0 - np.asarray(rel_scr, dtype=np.float32)) / 127.0 \
+                    * (rl["band"] / 2.0)
+                zr = p["z"]
+                den = np.maximum(zr + dz - camZ, 0.05)
+                if args.plane_fit:
+                    ratio = ((zr + dz) * (zr - camZ)) / (zr * den)
+                else:
+                    ratio = (zr - camZ) / den
+                crx, cry = rot_pt(args.width / 2.0, args.height / 2.0)
+                xs = ((xgrid - crx) / ratio + crx).astype(np.float32)
+                ys = ((ygrid - cry) / ratio + cry).astype(np.float32)
+                remapped = cv2.remap(
+                    np.asarray(warped), xs, ys, cv2.INTER_LINEAR,
+                    borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0, 0))
+                warped = Image.fromarray(remapped, "RGBA")
+
             canvas.alpha_composite(warped)
 
         canvas.convert("RGB").save(out / f"{i:05d}.png")

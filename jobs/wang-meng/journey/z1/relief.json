@@ -1,0 +1,32 @@
+{
+ "left-cliff-wall": {
+  "map": "relief/left-cliff-wall.png",
+  "band": 0.6,
+  "sigmaPx": 212.5,
+  "clipStd": 3.0,
+  "size": [
+   850,
+   950
+  ]
+ },
+ "gorge-wall-right": {
+  "map": "relief/gorge-wall-right.png",
+  "band": 0.6,
+  "sigmaPx": 173.8,
+  "clipStd": 3.0,
+  "size": [
+   1454,
+   695
+  ]
+ },
+ "foreground-rock-mass": {
+  "map": "relief/foreground-rock-mass.png",
+  "band": 0.08,
+  "sigmaPx": 129.8,
+  "clipStd": 3.0,
+  "size": [
+   1370,
+   519
+  ]
+ }
+}
