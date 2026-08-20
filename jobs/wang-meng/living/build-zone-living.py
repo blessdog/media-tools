@@ -35,6 +35,7 @@ cel water was proven at (STATE 2026-08-19 night, scale law 3).
 """
 import argparse, json, subprocess, sys
 from pathlib import Path
+import cv2
 import numpy as np
 from PIL import Image
 
@@ -49,6 +50,20 @@ ap.add_argument("--stage", required=True,
                 choices=["masks", "cycle", "register", "audit"])
 ap.add_argument("--region", default=None, help="restrict to one region id")
 ap.add_argument("--plane", default=None, help="restrict to one plane name")
+ap.add_argument("--canopy-win", type=int, default=21,
+                help="gust: window (plate px) for the local ink-density read "
+                     "that finds a canopy inside its authored box")
+ap.add_argument("--canopy-dens", type=float, default=0.40,
+                help="gust: ink fraction above which a window is canopy")
+ap.add_argument("--canopy-compact", type=float, default=0.70,
+                help="gust: max ink-boundary per ink area; leaves are a solid "
+                     "body of ink (0.25-0.47 measured), cliff is separate "
+                     "strokes (1.1-1.4)")
+ap.add_argument("--canopy-grow", type=int, default=120,
+                help="gust: px the authored box is grown by for the density "
+                     "read, so a canopy straddling its edge comes out whole")
+ap.add_argument("--canopy-min", type=int, default=1500,
+                help="gust: smallest canopy worth its own cantilever, plate px")
 ap.add_argument("--classes", default="wave,fall",
                 help="region classes to build (default: the water ones)")
 ap.add_argument("--min-frac", type=float, default=0.02,
@@ -61,6 +76,9 @@ ap.add_argument("--pad", type=int, default=64,
                      "the displacement field and its feather have room to die "
                      "out inside the patch instead of at its edge")
 ap.add_argument("--drawings", type=int, default=36)
+ap.add_argument("--keep-work", action="store_true",
+                help="keep the full-frame intermediate drawings (ab-cycle.py "
+                     "needs them; the renderer never does)")
 a = ap.parse_args()
 
 Z = JOB / "journey" / a.zone
@@ -72,7 +90,7 @@ LAY = Z / "layers-filled"
 layers = json.loads((LAY / "layers.json").read_text())
 REG = json.loads((HERE / "regions.json").read_text())
 CLASSES = REG["classes"]                     # SSOT for the motion parameters
-POLYS = json.loads((HERE / "water-polys.json").read_text())
+POLYS = json.loads((HERE / "living-polys.json").read_text())
 WANT = set(a.classes.split(","))
 MASKD = Z / "living-masks"
 WORK = Z / "living-work"
@@ -99,6 +117,56 @@ def regions_here():
     return out
 
 
+def canopy_mask(poly_mask, plate_rgb):
+    """The canopy inside an authored box, by local ink DENSITY.
+
+    Colour cannot do this and that is measured twice: only 0.9% of leaf ink is
+    green/cyan, cliff ink is MORE saturated than leaf ink, and in Lab the
+    compound canopies sit 1-3 units from bare cliff on both a and b. What DOES
+    separate them is texture -- a leaf mass is a dense field of repeated dot or
+    outline strokes, while a 皴 cliff is sparse hatching. Read the ink fraction
+    in a window and the canopies come out whole (living/evidence-canopy-density.png).
+
+    Density alone is not enough on its own, though: run it over the WHOLE plate
+    and it claims 36% of the painting, because a dark wash band and a shadowed
+    cliff face are also "a lot of ink" (living/evidence-canopy-density-unbounded.png). So the
+    authored box still decides WHERE to look. The analysis runs on the box
+    GROWN by --canopy-grow and then keeps only components whose centroid is
+    inside the original box: a canopy that straddles the edge comes out whole
+    instead of being sliced along a straight line, which is what a warp would
+    have torn.
+    """
+    grow = cv2.dilate(poly_mask, cv2.getStructuringElement(
+        cv2.MORPH_ELLIPSE, (2 * a.canopy_grow + 1,) * 2))
+    sel = grow > 128
+    v = cv2.cvtColor(plate_rgb, cv2.COLOR_RGB2HSV)[..., 2].astype(np.float32) / 255
+    ground = float(np.percentile(v[sel], 75))
+    ink = ((v < ground - 0.08) & sel).astype(np.float32)
+    dens = cv2.blur(ink, (a.canopy_win, a.canopy_win))
+    # AND the ink has to be COMPACT. Density alone still swallows the dark
+    # cliff bands next to a canopy, because a shadowed 皴 face is also a lot of
+    # ink. A leaf mass is a solid body of ink, a cliff is many separate
+    # strokes, so boundary-per-ink tells them apart: measured on z3w, leaf
+    # canopy 0.25 and the great-trees knoll 0.47, against cliff wash 1.14 and
+    # bare cliff 1.37.
+    edge = cv2.morphologyEx(ink.astype(np.uint8), cv2.MORPH_GRADIENT,
+                            np.ones((3, 3), np.uint8)).astype(np.float32)
+    compact = cv2.blur(edge, (a.canopy_win, a.canopy_win)) / np.maximum(dens, 1e-6)
+    m = ((dens > a.canopy_dens) & (compact < a.canopy_compact) & sel).astype(np.uint8)
+    m = cv2.morphologyEx(m, cv2.MORPH_CLOSE,
+                         cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 15)))
+    n, lab, st, cen = cv2.connectedComponentsWithStats(m, 8)
+    inside = poly_mask > 128
+    keep = np.zeros_like(m)
+    for i in range(1, n):
+        if st[i, 4] < a.canopy_min:
+            continue
+        cx, cy = int(round(cen[i][0])), int(round(cen[i][1]))
+        if 0 <= cy < inside.shape[0] and 0 <= cx < inside.shape[1] and inside[cy, cx]:
+            keep[lab == i] = 1
+    return (keep * 255).astype(np.uint8)
+
+
 def plate_mask(rid):
     """Region mask in full-plate space, uint8 0/255."""
     return np.array(Image.open(MASKD / f"{rid}.png").convert("L"))
@@ -110,7 +178,8 @@ if a.stage == "masks":
     MASKD.mkdir(parents=True, exist_ok=True)
     plate = Image.open(Z / "plate.png").convert("RGB")
     over = plate.copy()
-    index = {}
+    idxf = MASKD / "index.json"
+    index = json.loads(idxf.read_text()) if idxf.exists() else {}
     for r in regions_here():
         m = Image.new("L", (PW, PH), 0)
         d = ImageDraw.Draw(m)
@@ -119,6 +188,8 @@ if a.stage == "masks":
             if ex["forId"] == r["id"]:
                 d.polygon(to_plate(ex["points"]), fill=0)
         canvas = np.array(m)
+        if r["class"] == "gust":
+            canvas = canopy_mask(canvas, np.array(plate))
         if not canvas.any():
             continue
         Image.fromarray(canvas).save(MASKD / f"{r['id']}.png")
@@ -134,7 +205,15 @@ if a.stage == "masks":
                          (30, 90, 200) if r["class"] in ("wave", "fall") else (200, 90, 30))
         over = Image.composite(Image.blend(over, tint, 0.5), over,
                                Image.fromarray(canvas))
-    (MASKD / "index.json").write_text(json.dumps(index, indent=1))
+    idxf.write_text(json.dumps(index, indent=1))
+    # the overlay shows EVERY mask the zone carries, not just the classes this
+    # run touched -- an evidence sheet that hides half the living layer is worse
+    # than none
+    for rid, meta in index.items():
+        mm = np.array(Image.open(MASKD / f"{rid}.png"))
+        tint = Image.new("RGB", plate.size,
+                         (30, 90, 200) if meta["class"] in ("wave", "fall") else (40, 190, 90))
+        over = Image.composite(Image.blend(over, tint, 0.5), over, Image.fromarray(mm))
     s_ = 1400 / max(over.size)
     over.resize((int(over.width * s_), int(over.height * s_))).save(
         HERE / f"evidence-masks-{a.zone}.png")
@@ -151,7 +230,7 @@ if a.stage == "cycle":
     # real painting where nothing nearer covers it -- everywhere else it is
     # disocclusion fill, and over the midstream pool that fill is smeared
     # streaks where the ripple arcs used to be (evidence:
-    # living/_chk-texture-source.png, master | plate | left-cliff-wall).
+    # living/evidence-fill-vs-plate.png, master | plate | left-cliff-wall).
     # Animating the fill would move garbage. So each water pixel is animated by
     # exactly one plane: the one that shows it.
     order = sorted(layers["planeList"], key=lambda q: q["depth"])
@@ -169,9 +248,32 @@ if a.stage == "cycle":
         vis[q["name"]] = alphas[q["name"]] & ~covered
         covered |= alphas[q["name"]]
 
-    built = []
+    # UNITS OF WORK. Water is one unit per body: the whole surface shares one
+    # travelling wave. Foliage is one unit per CANOPY, because sway is a
+    # cantilever about a pivot -- swinging six trees about one distant pivot is
+    # the decal tell animate-strokes exists to avoid -- so each connected
+    # canopy gets its own crop, its own pivot at the foot of its own mass, and
+    # its own run. The gust envelope still travels across all of them together,
+    # since the delay is computed from position along the wind.
+    units = []
     for r in regions_here():
+        if not (MASKD / f"{r['id']}.png").exists():
+            continue          # the mask stage found nothing of this body here
         rm = plate_mask(r["id"]) > 128
+        if r["class"] != "gust":
+            units.append((r["id"], r, rm, None))
+            continue
+        n, lab, st, cen = cv2.connectedComponentsWithStats(rm.astype(np.uint8), 8)
+        for i in range(1, n):
+            if st[i, 4] < a.canopy_min:
+                continue
+            cm = lab == i
+            ys_, xs_ = np.nonzero(cm)
+            pivot = (float(xs_[ys_ > ys_.max() - 6].mean()), float(ys_.max()))
+            units.append((f"{r['id']}-{i:02d}", r, cm, pivot))
+
+    built = []
+    for uid, r, rm, pivot in units:
         tot = int(rm.sum())
         cls = dict(CLASSES[r["class"]])
         ys, xs = np.nonzero(rm)
@@ -180,31 +282,33 @@ if a.stage == "cycle":
 
         # ONE animation per water body, cut from the plate, so the displacement
         # field is continuous across the plane seams that cross it.
-        wd = WORK / r["id"]
+        wd = WORK / uid
         (wd / "mask" / "masks").mkdir(parents=True, exist_ok=True)
         plate.crop((cx0, cy0, cx1, cy1)).save(wd / "plate.png")
         Image.fromarray((rm[cy0:cy1, cx0:cx1] * 255).astype(np.uint8)).save(
             wd / "mask" / "masks" / "001.png")
         (wd / "mask" / "layers.json").write_text(json.dumps({
             "tool": "build-zone-living", "size": [cx1 - cx0, cy1 - cy0],
-            "planeList": [{"n": 1, "name": r["id"], "offset": [0, 0]}]}))
+            "planeList": [{"n": 1, "name": uid, "offset": [0, 0]}]}))
         cmd = ["python3", str(ROOT / "tools/animate-strokes.py"),
                "--image", str(wd / "plate.png"), "--masks", str(wd / "mask"),
                "--out", str(wd / "preview.mp4"),
                "--out-frames", str(wd / "drawings"),
-               "--frames", str(a.drawings * cls.get("on", 2)),
+               "--frames", str(cls.get("drawings", a.drawings) * cls.get("on", 2)),
                "--on", str(cls.get("on", 2)),
                "--field", cls["field"], "--mode", cls["mode"], "--keep", cls["keep"]]
         for flag in ("wobble", "drift", "wavelength", "angle", "stiffness",
-                     "scale", "boil", "max-thick"):
-            key = flag.replace("-", "_") if flag == "max-thick" else flag
-            if key in cls:
-                cmd += [f"--{flag}", str(cls[key])]
-        print(f"=== {r['id']} ({r['class']}): {tot}px, crop "
+                     "scale", "boil", "max-thick", "gust", "gust-travel",
+                     "gust-rest", "gust-push", "gust-flutter"):
+            if flag in cls:
+                cmd += [f"--{flag}", str(cls[flag])]
+        if pivot is not None:
+            cmd += ["--pivot", f"{pivot[0]-cx0:.1f},{pivot[1]-cy0:.1f}"]
+        print(f"=== {uid} ({r['class']}): {tot}px, crop "
               f"{cx1-cx0}x{cy1-cy0} at {cx0},{cy0}", file=sys.stderr)
         res = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
         if res.returncode != 0:
-            sys.exit(f"{r['id']}: animate-strokes failed\n{res.stderr[-900:]}")
+            sys.exit(f"{uid}: animate-strokes failed\n{res.stderr[-900:]}")
         cyc = json.loads((wd / "drawings" / "cycle.json").read_text())
         draw = [np.array(Image.open(wd / "drawings" / f"dr-{i:03d}.png").convert("RGB"))
                 for i in range(cyc["drawings"])]
@@ -237,7 +341,7 @@ if a.stage == "cycle":
             gx1, gy1 = bx1 + ox_, by1 + oy_
             texa = np.array(tex.crop((bx0, by0, bx1, by1)))
             sel = own[gy0:gy1, gx0:gx1]
-            od = OUT / f"{q['name']}__{r['id']}"
+            od = OUT / f"{q['name']}__{uid}"
             od.mkdir(parents=True, exist_ok=True)
             for i, d in enumerate(draw):
                 out = texa.copy()
@@ -245,12 +349,20 @@ if a.stage == "cycle":
                 out[..., :3][sel] = dd[sel]
                 Image.fromarray(out).save(od / f"{i:03d}.png")
             mv = int((moved[gy0 - cy0:gy1 - cy0, gx0 - cx0:gx1 - cx0][sel] > 6).sum())
-            built.append({"plane": q["name"], "region": r["id"], "dir": str(od),
+            built.append({"plane": q["name"], "region": uid, "dir": str(od),
                           "box": [bx0, by0], "n": cyc["drawings"], "on": cyc["on"],
-                          "ownPx": n, "movedPx": mv})
+                          "ownPx": n, "movedPx": mv,
+                          "crop": [int(cx0), int(cy0)], "class": r["class"]})
             print(f"    {q['name']:26s} owns {n:7d}px ({100*n/tot:5.1f}%), "
                   f"patch {bx1-bx0}x{by1-by0} at {bx0},{by0}, moved {mv}px",
                   file=sys.stderr)
+        # The full-frame drawings were only ever an intermediate: the patches
+        # carry the pixels the renderer reads, and moved.png carries the audit.
+        # Keeping them costs about as much disk as the patches themselves.
+        if not a.keep_work:
+            for f in (wd / "drawings").glob("dr-*.png"):
+                f.unlink()
+
     manifest = OUT / "built.json"
     prev = json.loads(manifest.read_text()) if manifest.exists() else []
     keep = [b for b in prev
@@ -278,15 +390,11 @@ if a.stage == "audit":
     plate = Image.open(Z / "plate.png").convert("RGB")
     heat = np.zeros((PH, PW), np.uint8)
     for rid in sorted({b["region"] for b in built}):
+        b0 = next(b for b in built if b["region"] == rid)
         m = np.array(Image.open(WORK / rid / "moved.png"))
-        idx = json.loads((MASKD / "index.json").read_text())[rid]
-        ys, xs = np.nonzero(np.array(Image.open(MASKD / f"{rid}.png")) > 128)
-        gx = int(max(0, xs.min() - a.pad))
-        gy = int(max(0, ys.min() - a.pad))
+        gx, gy = b0["crop"]
         hh, ww = m.shape
         gx1, gy1 = min(PW, gx + ww), min(PH, gy + hh)
-        if gx1 <= gx or gy1 <= gy:
-            continue
         heat[gy:gy1, gx:gx1] = np.maximum(heat[gy:gy1, gx:gx1],
                                           m[:gy1 - gy, :gx1 - gx])
     red = np.array(plate).astype(np.float32)

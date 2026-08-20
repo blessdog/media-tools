@@ -674,3 +674,76 @@ deer walk, 4K.
 - Still open from earlier: living water cycles for z3w-z6w (upper falls/rapids
   are static ink), relief maps + gust for the upper zones, deer walk-figure
   composite, 4K master.
+
+## night Z — 2026-08-20 — THE WATER MOVES IN EVERY ZONE (the gate's first pass)
+
+Ryan's #1 ask, worked in the order he set: water first, camera untouched.
+
+- **All four upper zones now have living cycles.** `living/living-z3w.json`
+  (11 patches), `-z4w` (2), `-z5w` (2), `-z6w` (1). `route-slow.json` legs
+  carry them and `compile-flight.py` no longer trips the LIVING GATE.
+- **Evidence, still camera, living vs static:** `living/LIVING-AB.mp4`
+  (36s, six holds; left static, right living) — also on the Desktop as
+  `WANG-MENG-LIVING-AB.mp4`. The control is a perfect null: the static half
+  drifts **0.0000** between frames while the living half moves 0.05–0.19 and
+  0.69–2.85% of the frame is alive. **The camera does not move in any of
+  these** — the only difference between the halves is the ink.
+- Per-body clips + loop-seam numbers: `living/AB-z3w-*.mp4`, `ab-cycle.py`.
+
+### Three defects found by looking, all fixed
+
+1. **The masks were not water.** `mask-bare-ground` finds bright low-variance
+   silk; above the river the dry cliff is bright low-variance silk too. The
+   audited native mask for w-midstream is blue confetti over rock — 449
+   components, largest 6487px, no pool (`living/native/w-midstream/
+   mask-overlay.png`). Water boundaries are now AUTHORED by eye against
+   gridded master crops: `living/living-polys.json` + `living/grid-crop.py`.
+   Two inventory boxes died while looking: `f-left-tall-fall` is bare cliff and
+   canopy, and `w-upper-stream` is not a stream — both name the same slender fall
+   at x~1470–1610, y 9040–10620.
+2. **The ink rule dropped every ripple.** `--keep thin` asks whether a
+   connected COMPONENT is thin. Every arc in the midstream pool touches a rock
+   it curls around, so arcs and rocks label as one mass: 70,330 ink px, 46
+   components, 683 px kept — and the "animated" drawing was pixel-identical to
+   the plate. New `--keep tophat` asks by SHAPE (a mass survives an opening by
+   a disk of max-thick, a line does not) and returns the arcs.
+3. **The loop did not close.** The wave field's cross chop carried `1.7*t` —
+   1.7 turns of phase per cycle. Wrap step measured 1.4–1.7x the largest
+   ordinary step on all five bodies. `2.0*t` closes it: seam/max-step now
+   0.53–0.96.
+
+### The construction, and why it is shaped this way
+
+`living/build-zone-living.py`: one animation per water body, cut from the
+PLATE so the travelling wave is continuous across the plane seams crossing it,
+then split into per-plane patches **by visibility** — each water pixel is
+animated by the plane that actually shows it. That last part is load-bearing:
+a plane's filled texture is real painting only where nothing nearer covers it,
+and over the pool `left-cliff-wall`'s fill is smeared streaks where the arcs
+used to be (`living/evidence-fill-vs-plate.png`). The first build animated that
+fill, i.e. moved garbage.
+
+`render-parallax --living` gained a patch form,
+`{"patches":[{dir,box,n,on}]}`, pasted onto the plane's own texture. The
+full-plane form z1 uses would cost ~40MB a drawing here for ink that lives in
+a 220x415 window.
+
+### Foliage (work-order step 2) — in progress
+
+Canopy masks cannot be cut by colour and that is now measured three times:
+0.9% of leaf ink is green/cyan, cliff ink is MORE saturated than leaf ink, and
+in Lab the compound canopies sit 1–3 units from bare cliff on both a and b.
+What works is TEXTURE inside an authored box: local ink density (leaf masses
+are dense, 皴 is sparse) plus ink compactness (boundary-per-ink: leaf 0.25–0.47,
+cliff 1.1–1.4), with the box grown by 120px for the read and components kept by
+centroid so a canopy straddling the edge comes out whole instead of being
+sliced along a straight line a warp would tear. Each canopy is its own unit
+with its own pivot at the foot of its own mass — one pivot for six trees is
+the decal tell. Coverage is deliberately conservative; widen it after Ryan's
+verdict on the look, not before.
+
+### Still open
+- gust cycles for z5w–z6w (z3w has 42 canopy patches, z4w 59); relief maps for the upper zones; deer walk; 4K.
+- z1's water cycles still carry the old non-closing seam — rebuild them.
+- `film/frames/` holds 35GB of pre-living, pre-seal-fix frame dumps whose mp4s
+  all exist. Every one is stale. Reclaimable.

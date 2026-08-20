@@ -20,5 +20,126 @@
    1898,
    962
   ]
+ },
+ "s-gorge-big-canopy": {
+  "class": "gust",
+  "px": 165807,
+  "pctOfPlate": 2.393,
+  "plateBox": [
+   1033,
+   1785,
+   1985,
+   2461
+  ]
+ },
+ "s-left-pines-z2": {
+  "class": "gust",
+  "px": 7245,
+  "pctOfPlate": 0.105,
+  "plateBox": [
+   612,
+   2235,
+   699,
+   2461
+  ]
+ },
+ "s-left-clifftop-pine": {
+  "class": "gust",
+  "px": 45045,
+  "pctOfPlate": 0.65,
+  "plateBox": [
+   21,
+   1808,
+   354,
+   2242
+  ]
+ },
+ "s-gorge-belt": {
+  "class": "gust",
+  "px": 93469,
+  "pctOfPlate": 1.349,
+  "plateBox": [
+   1230,
+   820,
+   1936,
+   1421
+  ]
+ },
+ "s-gorge-foreground": {
+  "class": "gust",
+  "px": 147229,
+  "pctOfPlate": 2.125,
+  "plateBox": [
+   346,
+   1569,
+   1441,
+   2044
+  ]
+ },
+ "s-right-rust-tree": {
+  "class": "gust",
+  "px": 14550,
+  "pctOfPlate": 0.21,
+  "plateBox": [
+   2718,
+   1197,
+   2815,
+   1519
+  ]
+ },
+ "s-autumn-shelf": {
+  "class": "gust",
+  "px": 39015,
+  "pctOfPlate": 0.563,
+  "plateBox": [
+   94,
+   747,
+   655,
+   1240
+  ]
+ },
+ "s-compound-autumn": {
+  "class": "gust",
+  "px": 115833,
+  "pctOfPlate": 1.672,
+  "plateBox": [
+   763,
+   29,
+   1595,
+   666
+  ]
+ },
+ "s-compound-canopies": {
+  "class": "gust",
+  "px": 83728,
+  "pctOfPlate": 1.209,
+  "plateBox": [
+   1290,
+   50,
+   2236,
+   599
+  ]
+ },
+ "s-right-edge-autumn": {
+  "class": "gust",
+  "px": 56324,
+  "pctOfPlate": 0.813,
+  "plateBox": [
+   2169,
+   347,
+   2815,
+   712
+  ]
+ },
+ "s-tall-cliff-pines": {
+  "class": "gust",
+  "px": 48445,
+  "pctOfPlate": 0.699,
+  "plateBox": [
+   0,
+   223,
+   318,
+   686
+  ]
  }
 }

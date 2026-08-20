@@ -14,7 +14,8 @@
    "wobble": 4,
    "drift": 12,
    "wavelength": 250,
-   "note": "keep=tophat since 2026-08-20: above the river every ripple arc touches a rock, so the per-component 'thin' rule labelled arcs and rocks as one mass and moved neither"
+   "note": "keep=tophat since 2026-08-20: above the river every ripple arc touches a rock, so the per-component 'thin' rule labelled arcs and rocks as one mass and moved neither",
+   "drawings": 36
   },
   "fall": {
    "field": "wave",
@@ -24,7 +25,8 @@
    "wobble": 3,
    "drift": 26,
    "wavelength": 150,
-   "angle": 90
+   "angle": 90,
+   "drawings": 36
   },
   "sway": {
    "field": "sway",
@@ -45,6 +47,21 @@
   },
   "figure": {
    "note": "reuse proven cycles only; never generate a new figure cycle without a verdict"
+  },
+  "gust": {
+   "field": "sway",
+   "mode": "warp",
+   "keep": "all",
+   "on": 2,
+   "drawings": 96,
+   "wobble": 3,
+   "drift": 5,
+   "stiffness": 3,
+   "gust": "0.10,0.08,0.22",
+   "gust-travel": 1500,
+   "gust-rest": 0.15,
+   "gust-push": 2.5,
+   "note": "the envelope proven on the z1 pine 2026-08-19 (calm floor 0.07 for 60% of an 8s loop, seam 0.079, leakage 0.00). Ryan's brief: foliage NOT constantly moving -- little gusts blow through."
   }
  },
  "regions": [

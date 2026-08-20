@@ -149,7 +149,7 @@ if keep_rule == 'tophat':
     # mass survives an opening by a disk of max-thick, a line does not. Remove
     # the mass AND a one-disk collar around it, and what is left is stroke.
     # Measured on the same crop: 2,035 px, and they are the arcs
-    # (living/_tophat-3.png).
+    # (living/evidence-tophat-arcs.png).
     r = max(1, int(round(a.max_thick)))
     se = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 1, 2 * r + 1))
     se2 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 3, 2 * r + 3))

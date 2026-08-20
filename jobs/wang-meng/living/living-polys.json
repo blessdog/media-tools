@@ -1,5 +1,5 @@
 {
- "note": "AUTHORED water boundaries in MASTER px. These exist because the material mask fails above the river: mask-bare-ground looks for bright low-variance silk and the dry CLIFF up here is bright low-variance silk too \u2014 living/native/w-midstream/mask-overlay.png is blue confetti over rock, and 449 mask components with a largest of 6487px is what that looks like numerically. What separates water here is pictorial, so it is authored by eye against gridded master crops (living/grid-crop.py), the same loop the 31 stations used. Two inventory boxes in regions.json were also refuted by looking: f-left-tall-fall [980,8650,1330,10100] is bare cliff and canopy \u2014 the real gorge fall is a slender white column at x~1470-1610 running y 9040-10620; and w-upper-stream is not a stream at all, it is the same fall's lower half.",
+ "note": "AUTHORED living-layer boundaries (water and foliage) in MASTER px. These exist because the material mask fails above the river: mask-bare-ground looks for bright low-variance silk and the dry CLIFF up here is bright low-variance silk too \u2014 living/native/w-midstream/mask-overlay.png is blue confetti over rock, and 449 mask components with a largest of 6487px is what that looks like numerically. What separates water here is pictorial, so it is authored by eye against gridded master crops (living/grid-crop.py), the same loop the 31 stations used. Two inventory boxes in regions.json were also refuted by looking: f-left-tall-fall [980,8650,1330,10100] is bare cliff and canopy \u2014 the real gorge fall is a slender white column at x~1470-1610 running y 9040-10620; and w-upper-stream is not a stream at all, it is the same fall's lower half.",
  "polys": [
   {
    "id": "w-gorge-fall",
@@ -256,6 +256,328 @@
     ]
    ],
    "note": "the water below the foreground rock, ripple arcs"
+  },
+  {
+   "id": "s-great-trees-upper",
+   "class": "gust",
+   "points": [
+    [
+     4300,
+     10400
+    ],
+    [
+     6586,
+     10400
+    ],
+    [
+     6586,
+     12450
+    ],
+    [
+     4300,
+     12450
+    ]
+   ],
+   "note": "great-trees knoll, upper canopy mass | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-great-trees-lower",
+   "class": "gust",
+   "points": [
+    [
+     4400,
+     12450
+    ],
+    [
+     6586,
+     12450
+    ],
+    [
+     6586,
+     15250
+    ],
+    [
+     4400,
+     15250
+    ]
+   ],
+   "note": "great-trees knoll, lower trees to the river | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-pine-over-bridge",
+   "class": "gust",
+   "points": [
+    [
+     1590,
+     11700
+    ],
+    [
+     2150,
+     11700
+    ],
+    [
+     2150,
+     12370
+    ],
+    [
+     1590,
+     12370
+    ]
+   ],
+   "note": "the pine leaning over Ge at the bridge. Box CORRECTED 2026-08-19 from the proven Z1 plane (plate bbox x2.34 + z1 masterBox); the old box [2400,11650,3450,12750] was bare cliff. Pivot master (1867,12310) = trunk base. | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-gorge-big-canopy",
+   "class": "gust",
+   "points": [
+    [
+     2700,
+     7950
+    ],
+    [
+     4650,
+     7950
+    ],
+    [
+     4650,
+     9350
+    ],
+    [
+     2700,
+     9350
+    ]
+   ],
+   "note": "big teal canopies mid-gorge | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-left-pines-z2",
+   "class": "gust",
+   "points": [
+    [
+     1280,
+     9150
+    ],
+    [
+     2450,
+     9150
+    ],
+    [
+     2450,
+     10150
+    ],
+    [
+     1280,
+     10150
+    ]
+   ],
+   "note": "needle pines beside the tall fall | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-left-clifftop-pine",
+   "class": "gust",
+   "points": [
+    [
+     0,
+     7950
+    ],
+    [
+     850,
+     7950
+    ],
+    [
+     850,
+     8850
+    ],
+    [
+     0,
+     8850
+    ]
+   ],
+   "note": "pine on the left cliff top | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-gorge-belt",
+   "class": "gust",
+   "points": [
+    [
+     2800,
+     5850
+    ],
+    [
+     4350,
+     5850
+    ],
+    [
+     4350,
+     6850
+    ],
+    [
+     2800,
+     6850
+    ]
+   ],
+   "note": "teal+red foliage belt across the gorge | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-gorge-foreground",
+   "class": "gust",
+   "points": [
+    [
+     800,
+     7250
+    ],
+    [
+     3250,
+     7250
+    ],
+    [
+     3250,
+     8150
+    ],
+    [
+     800,
+     8150
+    ]
+   ],
+   "note": "big mixed cluster at the gorge foreground | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-right-rust-tree",
+   "class": "gust",
+   "points": [
+    [
+     5350,
+     6550
+    ],
+    [
+     6586,
+     6550
+    ],
+    [
+     6586,
+     7450
+    ],
+    [
+     5350,
+     7450
+    ]
+   ],
+   "note": "rust-leaf tree on the right wall | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-autumn-shelf",
+   "class": "gust",
+   "points": [
+    [
+     0,
+     5550
+    ],
+    [
+     1250,
+     5550
+    ],
+    [
+     1250,
+     6450
+    ],
+    [
+     0,
+     6450
+    ]
+   ],
+   "note": "autumn shelf, left side above the cliff path | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-compound-autumn",
+   "class": "gust",
+   "points": [
+    [
+     1900,
+     3850
+    ],
+    [
+     3450,
+     3850
+    ],
+    [
+     3450,
+     5050
+    ],
+    [
+     1900,
+     5050
+    ]
+   ],
+   "note": "red autumn trees at the compound | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-compound-canopies",
+   "class": "gust",
+   "points": [
+    [
+     3300,
+     4050
+    ],
+    [
+     5350,
+     4050
+    ],
+    [
+     5350,
+     5350
+    ],
+    [
+     3300,
+     5350
+    ]
+   ],
+   "note": "teal+orange canopies right of the compound | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-right-edge-autumn",
+   "class": "gust",
+   "points": [
+    [
+     5350,
+     4150
+    ],
+    [
+     6586,
+     4150
+    ],
+    [
+     6586,
+     5350
+    ],
+    [
+     5350,
+     5350
+    ]
+   ],
+   "note": "autumn mass at the right edge, compound level | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "s-tall-cliff-pines",
+   "class": "gust",
+   "points": [
+    [
+     0,
+     4250
+    ],
+    [
+     850,
+     4250
+    ],
+    [
+     850,
+     5700
+    ],
+    [
+     0,
+     5700
+    ]
+   ],
+   "note": "pine cluster on the tall left cliff | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
   }
  ],
  "excludes": [

@@ -36,6 +36,375 @@
     ],
     "n": 36,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-01",
+    "box": [
+     2274,
+     2265
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-02",
+    "box": [
+     1786,
+     2498
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-03",
+    "box": [
+     2349,
+     2727
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-04",
+    "box": [
+     2675,
+     2744
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-05",
+    "box": [
+     2248,
+     2953
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-06",
+    "box": [
+     2342,
+     2959
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-07",
+    "box": [
+     2619,
+     2976
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-08",
+    "box": [
+     1841,
+     3008
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-09",
+    "box": [
+     2202,
+     3163
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-pine-over-bridge-01",
+    "box": [
+     744,
+     2802
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy-01",
+    "box": [
+     1237,
+     1426
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy-02",
+    "box": [
+     1398,
+     1450
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy-03",
+    "box": [
+     1129,
+     1519
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy-04",
+    "box": [
+     1116,
+     1560
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-pines-z2-01",
+    "box": [
+     452,
+     1717
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-pines-z2-02",
+    "box": [
+     886,
+     2218
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-clifftop-pine-01",
+    "box": [
+     0,
+     1290
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-left-clifftop-pine-02",
+    "box": [
+     16,
+     1630
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-belt-01",
+    "box": [
+     1535,
+     302
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-belt-02",
+    "box": [
+     1166,
+     572
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-belt-03",
+    "box": [
+     1366,
+     576
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-belt-04",
+    "box": [
+     1190,
+     792
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground-01",
+    "box": [
+     748,
+     1051
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground-02",
+    "box": [
+     1074,
+     1051
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground-03",
+    "box": [
+     352,
+     1092
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground-04",
+    "box": [
+     282,
+     1144
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground-05",
+    "box": [
+     349,
+     1257
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground-06",
+    "box": [
+     525,
+     1278
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground-07",
+    "box": [
+     851,
+     1311
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-rust-tree-01",
+    "box": [
+     2654,
+     679
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-autumn-shelf-01",
+    "box": [
+     271,
+     232
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-autumn-shelf-02",
+    "box": [
+     30,
+     572
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-autumn-01",
+    "box": [
+     1223,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-autumn-02",
+    "box": [
+     946,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-autumn-03",
+    "box": [
+     1108,
+     36
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-canopies-01",
+    "box": [
+     1416,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-canopies-02",
+    "box": [
+     1742,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-edge-autumn-01",
+    "box": [
+     2108,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-edge-autumn-02",
+    "box": [
+     2497,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-edge-autumn-03",
+    "box": [
+     2431,
+     87
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-tall-cliff-pines-01",
+    "box": [
+     0,
+     0
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
@@ -48,6 +417,15 @@
      184
     ],
     "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/gorge-wall-right__s-left-pines-z2-01",
+    "box": [
+     0,
+     3
+    ],
+    "n": 96,
     "on": 2
    }
   ]
@@ -96,6 +474,15 @@
      103
     ],
     "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__s-pine-over-bridge-01",
+    "box": [
+     0,
+     0
+    ],
+    "n": 96,
     "on": 2
    }
   ]
