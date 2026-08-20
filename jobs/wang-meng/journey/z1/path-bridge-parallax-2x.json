@@ -1,0 +1,28 @@
+{
+ "fps": 24,
+ "duration": 16,
+ "_note": "A/B STRENGTH VARIANT of the passed bridge-parallax: same framing, dolly at the FULL approved ceiling-shot envelope (z 0->0.24, double the subtle take) for Ryan's pick.",
+ "keys": [
+  {
+   "t": 0,
+   "x": 0.43,
+   "y": 0.5,
+   "z": 0.0,
+   "fov": 1.32
+  },
+  {
+   "t": 8,
+   "x": 0.445,
+   "y": 0.49,
+   "z": 0.12,
+   "fov": 1.28
+  },
+  {
+   "t": 16,
+   "x": 0.462,
+   "y": 0.478,
+   "z": 0.24,
+   "fov": 1.24
+  }
+ ]
+}

@@ -485,3 +485,12 @@ SHIPPED: z1/BRIDGE-PARALLAX.mp4 — bridge theater, dolly z 0→0.14 (half
 the ceiling-shot envelope), pine GUSTING (plane gust cycle via
 living-gust.json), water + fan alive. Static A/B: 3.4→4.7% of frame
 alive, living-planes-confined. Awaiting verdict.
+
+## 2026-08-19 night III — VERDICT: BRIDGE-PARALLAX PASSES
+
+Ryan: "I think its working. subtle. very very subtle. barly notice it.
+but it doesnt suck." First positive gate of the day. THE RECIPE LOCKS:
+zone depth world (plane-fit + tilts) + subtle dolly + living plane
+cycles + gust pine = the film's default shot engine. His one note:
+borderline too subtle -- an A/B at the full approved envelope (z 0->0.24)
+rendered for his pick of strength.
