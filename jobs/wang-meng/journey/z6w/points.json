@@ -22,21 +22,21 @@
   },
   {
    "id": 15,
-   "x": 0.3250716064378985,
-   "y": 0.78382,
+   "x": 0.34146926485466544,
+   "y": 0.7789996232995446,
    "depth": 5,
    "window": 1068,
    "name": "compound-fence-autumn-trees",
-   "why": "autumn trees at the bamboo fence, figure beside"
+   "why": "autumn trees at the bamboo fence, figure beside [dot moved 2026-08-19: into the red canopy mass, off the fence boundary]"
   },
   {
    "id": 16,
-   "x": 0.32603253416337685,
-   "y": 0.7445899999999999,
+   "x": 0.3182645960212098,
+   "y": 0.7047065758777727,
    "depth": 4,
    "window": 1496,
    "name": "compound-lower-hall",
-   "why": "lower hall + veranda, waiting figure"
+   "why": "lower hall + veranda, waiting figure [dot moved 2026-08-19: onto the thatch roof, off the standing figure]"
   },
   {
    "id": 17,
@@ -58,12 +58,12 @@
   },
   {
    "id": 19,
-   "x": 0.25441922259337985,
-   "y": 0.6278899999999998,
+   "x": 0.2303048079136845,
+   "y": 0.6168851280152785,
    "depth": 1,
    "window": 1496,
    "name": "compound-rear-pines",
-   "why": "rear building among the pines"
+   "why": "rear building among the pines [dot moved 2026-08-19: onto the dense pines, off the hall wall]"
   },
   {
    "id": 20,

@@ -1,0 +1,441 @@
+{
+ "tool": "segment-points",
+ "image": "jobs/wang-meng/journey/z6w/plate.png",
+ "size": [
+  2815,
+  2909
+ ],
+ "model": "facebook/sam-vit-huge",
+ "device": "mps",
+ "planes": 8,
+ "unclaimedFraction": 0.788,
+ "overlay": "jobs/wang-meng/journey/z6w/layers-cut/overlay.png",
+ "feather": 2,
+ "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+ "loadSeconds": 2.8,
+ "inferSeconds": 46.2,
+ "planeList": [
+  {
+   "n": 1,
+   "id": 20,
+   "name": "mist-slope-above",
+   "depth": 0,
+   "point": [
+    999,
+    1666
+   ],
+   "window": 2909,
+   "windowRequested": 2137,
+   "grewTo": 2909,
+   "attempts": [
+    {
+     "window": 2137,
+     "clipped": true,
+     "imageFraction": 0.1533,
+     "rejected": false
+    },
+    {
+     "window": 2909,
+     "clipped": false,
+     "imageFraction": 0.1678,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    0,
+    2815,
+    2909
+   ],
+   "pick": "whole",
+   "score": 0.8869,
+   "candidateAreas": [
+    378081,
+    807014,
+    1373742
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 1373752,
+   "windowFraction": 0.1678,
+   "areaFinal": 1373752,
+   "bbox": [
+    268,
+    268,
+    1771,
+    1755
+   ],
+   "offset": [
+    268,
+    268
+   ],
+   "layer": "layers/001-mist-slope-above.png"
+  },
+  {
+   "n": 2,
+   "id": 19,
+   "name": "compound-rear-pines",
+   "depth": 1,
+   "point": [
+    648,
+    1795
+   ],
+   "window": 1496,
+   "windowRequested": 1496,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1496,
+     "clipped": false,
+     "imageFraction": 0.0093,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    1047,
+    1496,
+    2543
+   ],
+   "pick": "whole",
+   "score": 0.8245,
+   "candidateAreas": [
+    8756,
+    32632,
+    76438
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 76518,
+   "windowFraction": 0.0342,
+   "areaFinal": 12216,
+   "bbox": [
+    561,
+    1707,
+    1331,
+    1841
+   ],
+   "offset": [
+    561,
+    1707
+   ],
+   "layer": "layers/101-compound-rear-pines.png"
+  },
+  {
+   "n": 3,
+   "id": 18,
+   "name": "compound-main-hall",
+   "depth": 2,
+   "point": [
+    987,
+    1957
+   ],
+   "window": 1496,
+   "windowRequested": 1496,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1496,
+     "clipped": false,
+     "imageFraction": 0.0032,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    239,
+    1209,
+    1735,
+    2705
+   ],
+   "pick": "whole",
+   "score": 0.9153,
+   "candidateAreas": [
+    4740,
+    16801,
+    26073
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 26068,
+   "windowFraction": 0.0116,
+   "areaFinal": 26068,
+   "bbox": [
+    882,
+    1817,
+    1084,
+    1979
+   ],
+   "offset": [
+    882,
+    1817
+   ],
+   "layer": "layers/203-compound-main-hall.png"
+  },
+  {
+   "n": 4,
+   "id": 17,
+   "name": "compound-court",
+   "depth": 3,
+   "point": [
+    718,
+    2025
+   ],
+   "window": 2136,
+   "windowRequested": 1068,
+   "grewTo": 2136,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": true,
+     "imageFraction": 0.0634,
+     "rejected": false
+    },
+    {
+     "window": 2136,
+     "clipped": false,
+     "imageFraction": 0.0085,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    773,
+    2136,
+    2909
+   ],
+   "pick": "whole",
+   "score": 0.5173,
+   "candidateAreas": [
+    1360,
+    1547,
+    69494
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 69637,
+   "windowFraction": 0.0153,
+   "areaFinal": 69637,
+   "bbox": [
+    552,
+    1708,
+    881,
+    2046
+   ],
+   "offset": [
+    552,
+    1708
+   ],
+   "layer": "layers/304-compound-court.png"
+  },
+  {
+   "n": 5,
+   "id": 16,
+   "name": "compound-lower-hall",
+   "depth": 4,
+   "point": [
+    896,
+    2050
+   ],
+   "window": 1496,
+   "windowRequested": 1496,
+   "grewTo": null,
+   "attempts": [
+    {
+     "window": 1496,
+     "clipped": false,
+     "imageFraction": 0.0046,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    148,
+    1302,
+    1644,
+    2798
+   ],
+   "pick": "whole",
+   "score": 0.8932,
+   "candidateAreas": [
+    18763,
+    36360,
+    37522
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 37518,
+   "windowFraction": 0.0168,
+   "areaFinal": 37463,
+   "bbox": [
+    780,
+    1997,
+    1070,
+    2186
+   ],
+   "offset": [
+    780,
+    1997
+   ],
+   "layer": "layers/405-compound-lower-hall.png"
+  },
+  {
+   "n": 6,
+   "id": 15,
+   "name": "compound-fence-autumn-trees",
+   "depth": 5,
+   "point": [
+    961,
+    2266
+   ],
+   "window": 2136,
+   "windowRequested": 1068,
+   "grewTo": 2136,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": true,
+     "imageFraction": 0.0504,
+     "rejected": false
+    },
+    {
+     "window": 2136,
+     "clipped": false,
+     "imageFraction": 0.003,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    773,
+    2136,
+    2909
+   ],
+   "pick": "whole",
+   "score": 0.925,
+   "candidateAreas": [
+    18448,
+    19320,
+    24770
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 24748,
+   "windowFraction": 0.0054,
+   "areaFinal": 24698,
+   "bbox": [
+    922,
+    2055,
+    1070,
+    2335
+   ],
+   "offset": [
+    922,
+    2055
+   ],
+   "layer": "layers/506-compound-fence-autumn-trees.png"
+  },
+  {
+   "n": 7,
+   "id": 14,
+   "name": "compound-approach-path",
+   "depth": 6,
+   "point": [
+    811,
+    2604
+   ],
+   "window": 2136,
+   "windowRequested": 1068,
+   "grewTo": 2136,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": true,
+     "imageFraction": 0.1114,
+     "rejected": false
+    },
+    {
+     "window": 2136,
+     "clipped": false,
+     "imageFraction": 0.0081,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    773,
+    2136,
+    2909
+   ],
+   "pick": "whole",
+   "score": 0.5396,
+   "candidateAreas": [
+    4214,
+    14025,
+    66164
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 66101,
+   "windowFraction": 0.0145,
+   "areaFinal": 65708,
+   "bbox": [
+    277,
+    1841,
+    1345,
+    2909
+   ],
+   "offset": [
+    277,
+    1841
+   ],
+   "layer": "layers/602-compound-approach-path.png"
+  },
+  {
+   "n": 8,
+   "id": 13,
+   "name": "gully-footbridge",
+   "depth": 7,
+   "point": [
+    788,
+    2781
+   ],
+   "window": 2136,
+   "windowRequested": 1068,
+   "grewTo": 2136,
+   "attempts": [
+    {
+     "window": 1068,
+     "clipped": true,
+     "imageFraction": 0.0421,
+     "rejected": false
+    },
+    {
+     "window": 2136,
+     "clipped": false,
+     "imageFraction": 0.0155,
+     "rejected": false
+    }
+   ],
+   "cropBox": [
+    0,
+    773,
+    2136,
+    2909
+   ],
+   "pick": "whole",
+   "score": 0.3298,
+   "candidateAreas": [
+    13134,
+    21471,
+    127011
+   ],
+   "clippedByWindow": false,
+   "areaInWindow": 126544,
+   "windowFraction": 0.0277,
+   "areaFinal": 126544,
+   "bbox": [
+    27,
+    1801,
+    1218,
+    2839
+   ],
+   "offset": [
+    27,
+    1801
+   ],
+   "layer": "layers/708-gully-footbridge.png"
+  }
+ ]
+}

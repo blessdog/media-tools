@@ -3,50 +3,255 @@
  "fps": 24,
  "audio": "../music/chowder-julius.mp3",
  "legs": [
-  {"zone": "z1", "in": 0.0, "out": 10.05,
-   "layers": "../journey/z1/layers-filled", "geometry": "../journey/z1/geometry.json",
-   "living": "../living/living-gust.json", "relief": "../journey/z1/relief.json",
+  {
+   "zone": "z1",
+   "in": 0.0,
+   "out": 10.05,
+   "layers": "../journey/z1/layers-filled",
+   "geometry": "../journey/z1/geometry.json",
+   "living": "../living/living-gust.json",
+   "relief": "../journey/z1/relief.json",
    "keys": [
-    {"t": 0.0,  "mx": 2880, "my": 14900, "z": 0.00, "fov": 1.30},
-    {"t": 4.0,  "mx": 2400, "my": 13900, "z": 0.14, "fov": 1.32},
-    {"t": 6.8,  "mx": 1980, "my": 12850, "z": 0.18, "fov": 1.36},
-    {"t": 9.35, "mx": 1750, "my": 11650, "z": 0.00, "fov": 1.30},
-    {"t": 10.05,"mx": 1730, "my": 11530, "z": 0.00, "fov": 1.30}]},
-  {"zone": "z3w", "in": 9.35, "out": 24.35,
-   "layers": "../journey/z3w/layers-filled", "geometry": "../journey/z3w/geometry.json",
+    {
+     "t": 0.0,
+     "mx": 2880,
+     "my": 14900,
+     "z": 0.0,
+     "fov": 1.3
+    },
+    {
+     "t": 4.0,
+     "mx": 2400,
+     "my": 13900,
+     "z": 0.14,
+     "fov": 1.32
+    },
+    {
+     "t": 6.8,
+     "mx": 1980,
+     "my": 12850,
+     "z": 0.18,
+     "fov": 1.36
+    },
+    {
+     "t": 9.35,
+     "mx": 1750,
+     "my": 11600,
+     "z": 0.0,
+     "fov": 1.3
+    },
+    {
+     "t": 10.05,
+     "mx": 1730,
+     "my": 11530,
+     "z": 0.0,
+     "fov": 1.3
+    }
+   ]
+  },
+  {
+   "zone": "z3w",
+   "in": 9.35,
+   "out": 24.35,
+   "layers": "../journey/z3w/layers-filled",
+   "geometry": "../journey/z3w/geometry.json",
    "keys": [
-    {"t": 9.35, "mx": 1750, "my": 11650, "z": 0.00, "fov": 1.30},
-    {"t": 10.05,"mx": 1730, "my": 11530, "z": 0.00, "fov": 1.30},
-    {"t": 15.5, "mx": 1700, "my": 8300,  "z": 0.22, "fov": 1.34, "rx": -0.4, "ry": 0.3},
-    {"t": 21.6, "mx": 1700, "my": 6950,  "z": 0.00, "fov": 1.30, "rx": -0.2, "ry": 0.0},
-    {"t": 24.35,"mx": 1700, "my": 6930,  "z": 0.00, "fov": 1.30, "rx": -0.2}]},
-  {"zone": "z4w", "in": 23.65, "out": 34.25,
-   "layers": "../journey/z4w/layers-filled", "geometry": "../journey/z4w/geometry.json",
+    {
+     "t": 9.35,
+     "mx": 1750,
+     "my": 11600,
+     "z": 0.0,
+     "fov": 1.3
+    },
+    {
+     "t": 10.05,
+     "mx": 1730,
+     "my": 11530,
+     "z": 0.0,
+     "fov": 1.3
+    },
+    {
+     "t": 15.5,
+     "mx": 1700,
+     "my": 8300,
+     "z": 0.22,
+     "fov": 1.34,
+     "rx": -0.4,
+     "ry": 0.3
+    },
+    {
+     "t": 21.6,
+     "mx": 1730,
+     "my": 6950,
+     "z": 0.0,
+     "fov": 1.3,
+     "rx": -0.2,
+     "ry": 0.0
+    },
+    {
+     "t": 24.35,
+     "mx": 1730,
+     "my": 6930,
+     "z": 0.0,
+     "fov": 1.3,
+     "rx": -0.2
+    }
+   ]
+  },
+  {
+   "zone": "z4w",
+   "in": 23.65,
+   "out": 34.25,
+   "layers": "../journey/z4w/layers-filled",
+   "geometry": "../journey/z4w/geometry.json",
    "keys": [
-    {"t": 23.65,"mx": 1700, "my": 6935,  "z": 0.00, "fov": 1.30, "rx": -0.2},
-    {"t": 26.6, "mx": 1700, "my": 6900,  "z": 0.00, "fov": 1.30, "rx": -0.2},
-    {"t": 30.5, "mx": 2100, "my": 5300,  "z": 0.18, "fov": 1.34, "rx": -0.4, "ry": -0.3},
-    {"t": 33.55,"mx": 2200, "my": 4720,  "z": 0.00, "fov": 1.30, "rx": -0.3},
-    {"t": 34.25,"mx": 2205, "my": 4650,  "z": 0.00, "fov": 1.30, "rx": -0.3}]},
-  {"zone": "z5w", "in": 33.55, "out": 38.25,
-   "layers": "../journey/z5w/layers-filled", "geometry": "../journey/z5w/geometry.json",
+    {
+     "t": 23.65,
+     "mx": 1730,
+     "my": 6935,
+     "z": 0.0,
+     "fov": 1.3,
+     "rx": -0.2
+    },
+    {
+     "t": 26.6,
+     "mx": 1730,
+     "my": 6900,
+     "z": 0.0,
+     "fov": 1.3,
+     "rx": -0.2
+    },
+    {
+     "t": 30.5,
+     "mx": 2100,
+     "my": 5300,
+     "z": 0.18,
+     "fov": 1.34,
+     "rx": -0.4,
+     "ry": -0.3
+    },
+    {
+     "t": 33.55,
+     "mx": 2200,
+     "my": 4720,
+     "z": 0.0,
+     "fov": 1.3,
+     "rx": -0.3
+    },
+    {
+     "t": 34.25,
+     "mx": 2205,
+     "my": 4650,
+     "z": 0.0,
+     "fov": 1.3,
+     "rx": -0.3
+    }
+   ]
+  },
+  {
+   "zone": "z5w",
+   "in": 33.55,
+   "out": 38.25,
+   "layers": "../journey/z5w/layers-filled",
+   "geometry": "../journey/z5w/geometry.json",
    "keys": [
-    {"t": 33.55,"mx": 2200, "my": 4720,  "z": 0.00, "fov": 1.30, "rx": -0.3},
-    {"t": 34.25,"mx": 2205, "my": 4650,  "z": 0.00, "fov": 1.30, "rx": -0.3},
-    {"t": 36.3, "mx": 2280, "my": 4250,  "z": 0.10, "fov": 1.30, "rx": -0.4},
-    {"t": 37.55,"mx": 2300, "my": 3950,  "z": 0.00, "fov": 1.29, "rx": -0.4},
-    {"t": 38.25,"mx": 2310, "my": 3860,  "z": 0.00, "fov": 1.29, "rx": -0.4}]},
-  {"zone": "z6w", "in": 37.55, "out": 41.96,
-   "layers": "../journey/z6w/layers-filled", "geometry": "../journey/z6w/geometry.json",
+    {
+     "t": 33.55,
+     "mx": 2200,
+     "my": 4720,
+     "z": 0.0,
+     "fov": 1.3,
+     "rx": -0.3
+    },
+    {
+     "t": 34.25,
+     "mx": 2205,
+     "my": 4650,
+     "z": 0.0,
+     "fov": 1.3,
+     "rx": -0.3
+    },
+    {
+     "t": 36.3,
+     "mx": 2280,
+     "my": 4250,
+     "z": 0.1,
+     "fov": 1.3,
+     "rx": -0.4
+    },
+    {
+     "t": 37.55,
+     "mx": 2300,
+     "my": 3950,
+     "z": 0.0,
+     "fov": 1.29,
+     "rx": -0.4
+    },
+    {
+     "t": 38.25,
+     "mx": 2310,
+     "my": 3860,
+     "z": 0.0,
+     "fov": 1.29,
+     "rx": -0.4
+    }
+   ]
+  },
+  {
+   "zone": "z6w",
+   "in": 37.55,
+   "out": 41.96,
+   "layers": "../journey/z6w/layers-filled",
+   "geometry": "../journey/z6w/geometry.json",
    "keys": [
-    {"t": 37.55,"mx": 2300, "my": 3950,  "z": 0.00, "fov": 1.29, "rx": -0.4},
-    {"t": 38.25,"mx": 2310, "my": 3860,  "z": 0.00, "fov": 1.29, "rx": -0.4},
-    {"t": 41.96,"mx": 2480, "my": 2750,  "z": 0.10, "fov": 1.25, "rx": -0.6, "ry": 0.3}]}
+    {
+     "t": 37.55,
+     "mx": 2300,
+     "my": 3950,
+     "z": 0.0,
+     "fov": 1.29,
+     "rx": -0.4
+    },
+    {
+     "t": 38.25,
+     "mx": 2310,
+     "my": 3860,
+     "z": 0.0,
+     "fov": 1.29,
+     "rx": -0.4
+    },
+    {
+     "t": 41.96,
+     "mx": 2480,
+     "my": 2750,
+     "z": 0.1,
+     "fov": 1.25,
+     "rx": -0.6,
+     "ry": 0.3
+    }
+   ]
+  }
  ],
  "handoffs": [
-  {"at": 9.7,  "dur": 0.7, "note": "z1->z3w above the bridge, upper stream"},
-  {"at": 24.0, "dur": 0.7, "note": "z3w->z4w mid-SILENCE, both worlds at rest"},
-  {"at": 33.9, "dur": 0.7, "note": "z4w->z5w over the compound approach"},
-  {"at": 37.9, "dur": 0.7, "note": "z5w->z6w rising into the mist slope"}
+  {
+   "at": 9.7,
+   "dur": 0.7,
+   "note": "z1->z3w above the bridge, upper stream"
+  },
+  {
+   "at": 24.0,
+   "dur": 0.7,
+   "note": "z3w->z4w mid-SILENCE, both worlds at rest"
+  },
+  {
+   "at": 33.9,
+   "dur": 0.7,
+   "note": "z4w->z5w over the compound approach"
+  },
+  {
+   "at": 37.9,
+   "dur": 0.7,
+   "note": "z5w->z6w rising into the mist slope"
+  }
  ]
 }
