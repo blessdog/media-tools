@@ -1,5 +1,16 @@
 # CLAUDE.md — media-tools
 
+## SHOW ME PIXELS (law, 2026-08-20 — "a path is not a picture")
+Every claim in this repo is a claim about pixels, so every claim comes with the
+pixels ON SCREEN. If a message to Ryan names an image or a video, `open` it in
+the same turn. Not "it's at jobs/.../evidence-foo.png", not "it's on your
+Desktop", not a symlink to go find. His words, after repeating it for sessions:
+*"I'm not a machine, I need pixels in front of my eyes. So if you say, hey, take
+a look, put pixels up. Make that a rule. Make it more than a rule. Make it a
+law."* Note `Read`ing an image shows it to the MODEL, not to him — only `open`
+is showing. Enforced by `~/.claude/hooks/show-me-pixels-stop.sh`, which refuses
+to end a turn whose text names a visual that was never opened.
+
 ## MOTION BEFORE CAMERA (law, 2026-08-20 — Ryan: "Bring it to life. That is number one.")
 In any project whose subject is a still image made to move, **authoring the
 motion comes first and the camera comes last.** Ryan, after five days of being
