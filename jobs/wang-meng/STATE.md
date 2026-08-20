@@ -503,3 +503,16 @@ path-bridge-parallax-2x.json is the reference path shape. Next direction
 from him: camera TILT (rotation) on top of translation, and eventually
 mesh-level 3D from the composed depth field — see
 docs/2026-08-19-how-the-scroll-moves.md.
+
+## 2026-08-19 night V — CAMERA ROTATION: BRIDGE-FLOAT rendered
+
+render-parallax now takes rx/ry/rz (degrees) in path keys — homography
+H = K·Rᵀ·K⁻¹, fpx = fov·width. Rotation adds no parallax (same center of
+projection); the value is the keystone drift. Commit `72af9c9`. Verified:
+zero-rotation re-renders byte-identical; signs probed (+ry pans camera
+left, +rx tilts down). BRIDGE-FLOAT.mp4 (journey/z1/) = the 2X dolly +
+ry→−1.0/rx→−0.6/rz→0.25 easing from zero; frame 0 byte-matches the 2X,
+no edge reveal. Opened for Ryan's verdict next to BRIDGE-PARALLAX-2X.
+Path: journey/z1/path-bridge-float.json. Evidence: report
+2026-08-19-seq-z1.md. Agreed next after his verdict: per-plane relief
+displacement (LDI hybrid) from compose-depth's field.
