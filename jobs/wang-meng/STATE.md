@@ -571,3 +571,18 @@ keys = true full stop, living ink only), lift into the gorge on the
 explosion, settle by the falls. Full stack throughout. Path:
 film/paths/oneshot-42.json. The camera LANDS on beats instead of
 cutting on them. Cuts-on-beats structure retired for this film.
+
+## 2026-08-19 night X — FULL-SCROLL-FLIGHT: the whole painting, one shot
+Ryan's demand ("we have this whole huge painting") answered: all five
+flight worlds built TONIGHT from the existing global dots (z3w-z6w cut
+full-width for the landscape camera; z2's portrait-era rect bypassed),
+every zone frame-zero 0px / 100% claimed. film/FULL-SCROLL-FLIGHT.mp4 =
+42s, one apparent shot, river to peaks: z1 (living water + relief) ->
+z3w gorge push -> silence hold + mid-hold handoff -> z4w/z5w compound
+on the explosion -> z6w mist release. Handoff law enforced in
+compile-flight.py (identical rest cameras through every crossfade;
+measured z1->z3w agreement mean|diff| 2.26). Dot surgery tonight:
+porter-ledge, resting-ledge, rear-pines, main-hall moved off figures/
+walls; compound-court DROPPED (contourless wash, Law 7). Desktop link
+refreshed. v2 upgrades: living water z3w-z6w, relief for upper zones,
+deer walk, 4K.
