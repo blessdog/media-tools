@@ -1,0 +1,10 @@
+{
+ "fps": 24,
+ "duration": 16,
+ "_note": "The bridge theater with SUBTLE 3D parallax (Ryan, 2026-08-19: 'some very subtle 3D parallaxing would be awesome' + the authored depth field is the crown asset). Sibling of the approved hero-landscape, half its dolly: drift up-right across the bridge scene, z 0 -> 0.14 inside the proven envelope, pine GUSTING via living-gust.json, water + fan alive. Every key edge-checked: half-window at fov stays inside the 1971x2704 plate; pine plane (plate y 920-1164) fully in frame from t=4 on.",
+ "keys": [
+  {"t": 0,  "x": 0.430, "y": 0.500, "z": 0.00, "fov": 1.32},
+  {"t": 8,  "x": 0.445, "y": 0.490, "z": 0.07, "fov": 1.28},
+  {"t": 16, "x": 0.462, "y": 0.478, "z": 0.14, "fov": 1.24}
+ ]
+}

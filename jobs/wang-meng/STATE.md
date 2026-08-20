@@ -474,3 +474,14 @@ scale), fov≈1 native is for detail holds only. Pine inventory box was
 bare cliff — corrected from the Z1 plane; native gust cycle registered.
 SHIPPED: film/BRIDGE-ENSEMBLE.mp4 (fov 2.3→1.7 push, whole bridge cast,
 water streaming, pine gusting twice). Awaiting verdict.
+
+## 2026-08-19 night II — BACK TO THE DEPTH WORLD (Ryan's correction)
+
+Ensemble verdict: line-water alone is not the carrier; "let's start
+utilizing some of this depth of field… very subtle 3D parallaxing."
+DEMOTION: render-living 2D lane = scaffolding for stack-less zones only.
+The film's engine is render-parallax over zone worlds + living planes.
+SHIPPED: z1/BRIDGE-PARALLAX.mp4 — bridge theater, dolly z 0→0.14 (half
+the ceiling-shot envelope), pine GUSTING (plane gust cycle via
+living-gust.json), water + fan alive. Static A/B: 3.4→4.7% of frame
+alive, living-planes-confined. Awaiting verdict.

@@ -1,0 +1,22 @@
+{
+ "upper-stream-water": {
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/living/plane-cycles/upper-stream-water",
+  "n": 36,
+  "on": 2
+ },
+ "pine-over-bridge": {
+  "dir": "jobs/wang-meng/living/plane-cycles/pine-over-bridge-gust",
+  "n": 96,
+  "on": 2
+ },
+ "water": {
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/living/plane-cycles/water",
+  "n": 36,
+  "on": 2
+ },
+ "trestle-bridge-ge": {
+  "dir": "jobs/wang-meng/living/plane-cycles/trestle-bridge-ge",
+  "n": 36,
+  "on": 2
+ }
+}
