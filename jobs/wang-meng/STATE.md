@@ -1,3 +1,67 @@
+# ⛔ READ THIS BEFORE YOU TOUCH ANYTHING — 2026-08-20
+
+## BRING IT TO LIFE. THAT IS NUMBER ONE. NOT THE CAMERA.
+
+Ryan, 2026-08-20, after five days of being shown camera moves over still ink:
+
+> "Stop cutting corners and doing the same fucking camera pan shot. That's not
+> what this is about. You understand exactly what the fuck this is about and
+> how to. **Bring it to life. That is number one. Quit pushing that off.** Even
+> though that is what I fucking want and have wanted for fucking days. But you
+> still keep putting it off and showing me the same fucking zigzag Ken Burns
+> left, right, camera pan. Not that we shouldn't, but that shouldn't be the
+> only thing we're doing. I don't know how to drill that into your skull."
+
+**He is right and the drift is predictable, so predict it in yourself.**
+Parallax is cheap, fast, and looks like progress. Authoring motion is slow,
+manual, and is the actual deliverable. Every session so far has taken the
+cheap path, shipped a flight, and called the day's work done. Do not do this.
+
+### The measured state of the failure
+
+| zone | living cycles | relief | what is in those frames |
+|---|---|---|---|
+| z1 | 4 planes (water, upper-stream, pine-over-bridge, trestle) | yes | the only living zone in the film |
+| z3w | **NONE** | none | the main waterfall, the stream descent, the great pine — all STILL |
+| z4w | **NONE** | none | the second cascade, the pine grove — all STILL |
+| z5w | **NONE** | none | the compound and its trees — all STILL |
+| z6w | **NONE** | none | the ridge pines, the mist — all STILL |
+
+Twelve of the 31 stations in `film/route-slow.json` push into water. Not one
+of those pushes has a single frame of motion in it. That is why a 20-minute
+version is not worth rendering yet, and why the 6-minute one did not land.
+
+### The gate (enforced, not requested)
+
+`film/compile-flight.py` now REFUSES to render a leg whose zone has no living
+cycles. Verified 2026-08-20 — it exits with `LIVING GATE` on z3w/z4w/z5w/z6w.
+`--allow-dead-zones` exists only for a probe Ryan will not be shown. **If you
+find yourself reaching for that flag to get a flight out the door, that is the
+corner being cut.** Go build the cycles.
+
+### The work order — do these IN THIS ORDER
+
+1. **Living water for z3w–z6w.** The falls (master ~x1500 y9850), the stream
+   descent (~x1500 y11100), the second cascade (~x4150 y5230), the rapids.
+   Recipe already proven in z1: `living/build-plane-cycles.py` +
+   `tools/animate-strokes.py` (wave/sway, `--out-frames`), registered in a
+   `living-<zone>.json` shaped exactly like `living/living-gust.json`.
+   Verify each cycle A/B against a static control and check the loop seam.
+2. **Living foliage for z3w–z6w** — gusts, not constant sway. `living/
+   AB-GUST-VS-SWAY.mp4` and `evidence-gust-vs-constant-sway.png` already
+   settled that question; do not re-litigate it.
+3. **Relief maps for z3w–z6w** — `journey/z1/build-relief.py` is the template
+   (high-passed DAv2 against a masked-normalized blur; the scene-scale ramp is
+   removed by construction).
+4. **The figures.** The deer walk-figure composite and Ge Hong's fan.
+   `tools/walk-figure.py` is proven (churn 0.000). Subtle accents, not puppetry.
+5. **ONLY THEN** re-render the camera route. The camera is already solved and
+   committed — stations, pacing laws, seal-safe framing. It needs no more work.
+
+Do not open this session by rendering a flight. Open it by making water move.
+
+---
+
 # WANG MENG — STATE OF THE WORK (read this FIRST, every session)
 
 Updated 2026-08-17 evening. This file exists because compaction and API kills

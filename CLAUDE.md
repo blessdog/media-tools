@@ -1,5 +1,25 @@
 # CLAUDE.md — media-tools
 
+## MOTION BEFORE CAMERA (law, 2026-08-20 — Ryan: "Bring it to life. That is number one.")
+In any project whose subject is a still image made to move, **authoring the
+motion comes first and the camera comes last.** Ryan, after five days of being
+handed camera moves over still ink: *"stop cutting corners and doing the same
+fucking camera pan shot… you still keep putting it off and showing me the same
+fucking zigzag Ken Burns left, right, camera pan. Not that we shouldn't, but
+that shouldn't be the only thing we're doing."*
+
+The drift is structural, so expect it in yourself: parallax is cheap, fast and
+*looks* like progress; authoring stroke cycles is slow manual work and is the
+actual deliverable. A flight over a still painting is not a milestone — it is
+the corner being cut. Measured: `jobs/wang-meng` reached a 31-station, 20-minute
+route with living cycles in exactly ONE of five zones; twelve of its stations
+push into water that does not move.
+
+Enforced, not requested: `jobs/wang-meng/film/compile-flight.py` REFUSES to
+render a leg whose zone has no living cycles (`LIVING GATE`). Reaching for
+`--allow-dead-zones` to get a pretty flight out the door IS the violation.
+Read `jobs/wang-meng/STATE.md` — the law and the work order are at the top.
+
 ## EVIDENCE LANDS IN THE REPO (law, 2026-08-18 — Ryan: "you are too amnesic")
 Any image, video, chart, or diagnostic that is (a) opened on Ryan's screen,
 (b) cited in a claim or verdict, or (c) produced by a probe/experiment, is

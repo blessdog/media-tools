@@ -31,6 +31,9 @@ ap.add_argument("--out", default="FULL-SCROLL-FLIGHT.mp4")
 ap.add_argument("--legs-only", action="store_true")
 ap.add_argument("--assemble-only", action="store_true")
 ap.add_argument("--leg", help="render just this zone's leg")
+ap.add_argument("--allow-dead-zones", action="store_true",
+                help="render legs whose zone has NO living cycles (see the gate below). "
+                     "Only for a deliberate camera-only probe Ryan is not being shown.")
 args = ap.parse_args()
 
 route = json.loads((HERE / args.route).read_text())
@@ -38,6 +41,32 @@ FPS = route["fps"]
 TAG = Path(args.route).stem.replace("route", "").strip("-") or ""
 SUF = f"-{TAG}" if TAG else ""
 legs = route["legs"]
+
+# -- THE LIVING GATE (2026-08-20) -------------------------------------------
+# Ryan, after five days of being shown camera moves over still ink:
+#   "Bring it to life. That is number one. Quit pushing that off... you still
+#    keep putting it off and showing me the same fucking zigzag Ken Burns
+#    left, right, camera pan. I don't know how to drill that into your skull."
+#
+# He is right, and the failure is structural: parallax is easy and cheap, and
+# motion is slow authoring work, so every session drifts to the camera and
+# calls it progress. Only z1 has ever had living cycles. Every waterfall,
+# cascade, stream and pine grove above it is a STILL IMAGE being flown past.
+#
+# So this is a gate, not a note -- prose laws are read, gates are executed.
+# A leg whose zone has no living cycles will not render. If you find yourself
+# reaching for --allow-dead-zones to get a pretty flight out the door, THAT
+# IS THE CORNER BEING CUT. Go build the cycles (living/build-plane-cycles.py,
+# tools/animate-strokes.py) for that zone first.
+dead = [l["zone"] for l in legs if not l.get("living")]
+if dead and not args.allow_dead_zones:
+    sys.exit(
+        "LIVING GATE: these zones have no living cycles, so their legs would be\n"
+        f"  a camera move over a still painting: {', '.join(dead)}\n"
+        "That is the exact thing Ryan has rejected for five days running.\n"
+        "Build the water/foliage cycles for those zones, add a 'living' key to\n"
+        "their legs, and render again. Override only for a probe he will not\n"
+        "be shown: --allow-dead-zones")
 
 # -- handoff law check ------------------------------------------------------
 for h in route["handoffs"]:
