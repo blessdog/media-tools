@@ -9,16 +9,17 @@
   "wave": {
    "field": "wave",
    "mode": "lift",
-   "keep": "thin",
+   "keep": "tophat",
    "on": 2,
    "wobble": 4,
    "drift": 12,
-   "wavelength": 250
+   "wavelength": 250,
+   "note": "keep=tophat since 2026-08-20: above the river every ripple arc touches a rock, so the per-component 'thin' rule labelled arcs and rocks as one mass and moved neither"
   },
   "fall": {
    "field": "wave",
    "mode": "lift",
-   "keep": "thin",
+   "keep": "tophat",
    "on": 2,
    "wobble": 3,
    "drift": 26,

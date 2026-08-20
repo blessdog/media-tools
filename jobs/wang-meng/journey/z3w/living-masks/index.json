@@ -1,0 +1,46 @@
+{
+ "w-gorge-fall": {
+  "class": "fall",
+  "px": 29146,
+  "pctOfPlate": 0.307,
+  "plateBox": [
+   597,
+   1742,
+   693,
+   2525
+  ]
+ },
+ "w-compound-fall": {
+  "class": "fall",
+  "px": 15871,
+  "pctOfPlate": 0.167,
+  "plateBox": [
+   1834,
+   170,
+   1898,
+   508
+  ]
+ },
+ "w-midstream": {
+  "class": "wave",
+  "px": 188236,
+  "pctOfPlate": 1.985,
+  "plateBox": [
+   292,
+   2435,
+   941,
+   3030
+  ]
+ },
+ "w-lower-pool": {
+  "class": "wave",
+  "px": 25780,
+  "pctOfPlate": 0.272,
+  "plateBox": [
+   397,
+   3071,
+   727,
+   3183
+  ]
+ }
+}

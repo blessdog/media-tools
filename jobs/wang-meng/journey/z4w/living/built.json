@@ -1,0 +1,28 @@
+[
+ {
+  "plane": "gorge-cliff-nose",
+  "region": "w-gorge-fall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__w-gorge-fall",
+  "box": [
+   533,
+   2132
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 14778,
+  "movedPx": 4633
+ },
+ {
+  "plane": "right-gorge-wall-high",
+  "region": "w-compound-fall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__w-compound-fall",
+  "box": [
+   1206,
+   337
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 15890,
+  "movedPx": 5990
+ }
+]

@@ -165,7 +165,11 @@ def main() -> int:
                          '%%03d.png sized like the plane, "n": count, "on": '
                          'hold}} — the plane\'s texture is swapped per frame '
                          '(index = frame//on %% n) so its ink moves while its '
-                         'depth, footprint, and tilt stay authored. Off = '
+                         'depth, footprint, and tilt stay authored. Or '
+                         '{plane-name: {"patches": [{"dir","box":[x,y],"n",'
+                         '"on"}, ...]}} to paste small cycles onto the plane\'s '
+                         'own texture — use this when the moving ink is a small '
+                         'part of a big plane. Off = '
                          'every plane static, old renders reproduce.')
     ap.add_argument("--relief")
     ap.add_argument("--relief-band", type=float, default=0.05)
@@ -218,6 +222,7 @@ def main() -> int:
         p["z"] = args.z_near + (max_depth - p["depth"]) * args.z_step
         img = Image.open(lay / p["layer"]).convert("RGBA")
         p["img"] = img
+        p["orig"] = img                 # kept unmodified: --living patches paste onto it
         p["ox"], p["oy"] = p["offset"]
     if not args.no_base:
         base = {
@@ -290,6 +295,7 @@ def main() -> int:
         living = {k: v for k, v in living.items() if k in known}
         print(f"  living planes: {sorted(living)}", file=sys.stderr)
     living_cache = {}
+    patch_cache = {}
 
     # PER-PLANE RELIEF (the LDI hybrid). Each entry carries an "L" map the
     # size of its plane; per frame the map rides the plane's own transform
@@ -361,13 +367,38 @@ def main() -> int:
         for p in planes:
             lv = living.get(p.get("name"))
             if lv:
-                ti = (i // lv.get("on", 1)) % lv["n"]
-                held = living_cache.get(p["name"])
-                if held is None or held[0] != ti:
-                    held = (ti, Image.open(
-                        Path(lv["dir"]) / f"{ti:03d}.png").convert("RGBA"))
-                    living_cache[p["name"]] = held   # one texture per plane
-                p["img"] = held[1]
+                # Two forms. "dir" = a full-plane texture cycle (the z1 form:
+                # every drawing is the whole plane re-rendered). "patches" = a
+                # list of small cycles pasted onto the plane's own texture at
+                # their box, which is what the upper zones need: there the
+                # moving water is 0.2-1.2% of a plate-sized plane, so a
+                # full-plane cycle would be ~40MB a drawing for ink that lives
+                # in a 220x415 window. Patches carry the plane's own alpha, so
+                # pasting them cannot change the plane's footprint.
+                if "patches" in lv:
+                    key = tuple((i // q.get("on", 1)) % q["n"] for q in lv["patches"])
+                    held = living_cache.get(p["name"])
+                    if held is None or held[0] != key:
+                        comp = p["orig"].copy()
+                        for q, ti in zip(lv["patches"], key):
+                            pk = (q["dir"], ti)
+                            tile = patch_cache.get(pk)
+                            if tile is None:
+                                tile = Image.open(
+                                    Path(q["dir"]) / f"{ti:03d}.png").convert("RGBA")
+                                patch_cache[pk] = tile
+                            comp.paste(tile, tuple(q["box"]))
+                        held = (key, comp)
+                        living_cache[p["name"]] = held
+                    p["img"] = held[1]
+                else:
+                    ti = (i // lv.get("on", 1)) % lv["n"]
+                    held = living_cache.get(p["name"])
+                    if held is None or held[0] != ti:
+                        held = (ti, Image.open(
+                            Path(lv["dir"]) / f"{ti:03d}.png").convert("RGBA"))
+                        living_cache[p["name"]] = held   # one texture per plane
+                    p["img"] = held[1]
             eff = p["z"] - camZ
             if eff <= 0.05:
                 continue                        # camera has passed through it

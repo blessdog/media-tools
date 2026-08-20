@@ -1,0 +1,13 @@
+{
+ "w-compound-fall": {
+  "class": "fall",
+  "px": 15874,
+  "pctOfPlate": 0.255,
+  "plateBox": [
+   1834,
+   1055,
+   1898,
+   1393
+  ]
+ }
+}

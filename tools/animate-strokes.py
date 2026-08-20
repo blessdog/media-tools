@@ -89,10 +89,13 @@ p.add_argument('--gust-push', type=float, default=0.0,
                     'canopy is the 2.5D decal tell)')
 p.add_argument('--gust-flutter', type=float, default=2.0,
                help='flutter oscillations inside one gust window')
-p.add_argument('--keep', choices=['thin', 'all'], default=None,
+p.add_argument('--keep', choices=['thin', 'all', 'tophat'], default=None,
                help="which ink to move. 'thin' keeps only strokes (water lines, "
                     "default for wave); 'all' keeps filled shapes too, which is "
-                    "what leaf clusters are (default for sway).")
+                    "what leaf clusters are (default for sway); 'tophat' judges "
+                    "thinness by SHAPE rather than by component label, which is "
+                    "what a ripple arc needs when it touches the rock it curls "
+                    "around -- see the comment at the keep rule.")
 p.add_argument('--mode', choices=['lift', 'warp'], default=None,
                help="how the ink is moved. 'lift' extracts the strokes, inpaints "
                     "the ground behind them and moves them over it -- right for "
@@ -134,18 +137,41 @@ ink = cv2.morphologyEx(ink, cv2.MORPH_CLOSE, np.ones((3, 3), np.uint8))
 # distance-to-edge. A drawn ripple line is 1-3px from its own edge everywhere; a
 # painted rock is a filled mass many px thick. Keep the thin, leave the massive.
 keep_rule = a.keep or ('all' if a.field == 'sway' else 'thin')
-dist = cv2.distanceTransform(ink, cv2.DIST_L2, 3)
-n, lab, st, _ = cv2.connectedComponentsWithStats(ink, 8)
-keep = np.zeros_like(ink)
-dropped = 0
-for i in range(1, n):
-    sel = lab == i
-    if keep_rule == 'all' or dist[sel].max() <= a.max_thick:
-        keep[sel] = 1
-    else:
-        dropped += 1
-ink = keep
-solid = (lab > 0) & (ink == 0)            # the masses we are deliberately NOT moving
+if keep_rule == 'tophat':
+    # THINNESS IS A PROPERTY OF SHAPE, NOT OF A COMPONENT LABEL (2026-08-20).
+    # 'thin' asks whether a whole connected component is thin, which works only
+    # while the strokes are isolated. In the midstream pool above the bridge
+    # every ripple arc TOUCHES a rock it curls around, so arcs and rocks label
+    # as one component: measured 70,330 ink px in 46 components, two of which
+    # held nearly all of it, and the thin rule kept 683 px -- rock rims, not a
+    # single arc (living/_chk-pool-moved.png, the drawing identical to the
+    # plate). A morphological opening answers the same question by shape: a
+    # mass survives an opening by a disk of max-thick, a line does not. Remove
+    # the mass AND a one-disk collar around it, and what is left is stroke.
+    # Measured on the same crop: 2,035 px, and they are the arcs
+    # (living/_tophat-3.png).
+    r = max(1, int(round(a.max_thick)))
+    se = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 1, 2 * r + 1))
+    se2 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * r + 3, 2 * r + 3))
+    mass = cv2.morphologyEx(ink, cv2.MORPH_OPEN, se)
+    keep = ((ink > 0) & ~(cv2.dilate(mass, se2) > 0)).astype(np.uint8)
+    solid = (ink > 0) & (keep == 0)
+    dropped = int(cv2.connectedComponentsWithStats(
+        solid.astype(np.uint8), 8)[0]) - 1
+    ink = keep
+else:
+    dist = cv2.distanceTransform(ink, cv2.DIST_L2, 3)
+    n, lab, st, _ = cv2.connectedComponentsWithStats(ink, 8)
+    keep = np.zeros_like(ink)
+    dropped = 0
+    for i in range(1, n):
+        sel = lab == i
+        if keep_rule == 'all' or dist[sel].max() <= a.max_thick:
+            keep[sel] = 1
+        else:
+            dropped += 1
+    ink = keep
+    solid = (lab > 0) & (ink == 0)        # the masses we are deliberately NOT moving
 
 # ── 2. the silk behind it ────────────────────────────────────────────────────
 clean = cv2.inpaint(img.astype(np.uint8), cv2.dilate(ink, np.ones((3, 3), np.uint8)),
@@ -272,7 +298,13 @@ for k in range(ndraw):
         my += (ry / np.maximum(d, 1e-3)) * a.drift * taper * np.cos(t - lag) * act
     else:
         ph = phase2 - t                         # wave crest moves along the flow
-        w_perp = a.wobble * np.sin(ph) + 0.35 * a.wobble * np.sin(2.3 * phase + 1.7 * t)
+        # The cross-current chop must be an INTEGER harmonic of the cycle or the
+        # loop does not close. It used to carry 1.7*t, and 1.7 turns of phase
+        # per cycle means the last drawing does not meet the first: measured on
+        # the five z3w water bodies 2026-08-20, the wrap step ran 1.4-1.7x the
+        # largest ordinary step between drawings, i.e. a visible tick every
+        # three seconds. 2*t keeps the same second-harmonic chop and closes.
+        w_perp = a.wobble * np.sin(ph) + 0.35 * a.wobble * np.sin(2.3 * phase + 2.0 * t)
         w_along = a.drift * np.cos(ph)
         mx = fx * w_along + px * w_perp + jit[k, 0]
         my = fy * w_along + py * w_perp + jit[k, 1]

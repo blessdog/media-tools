@@ -1,0 +1,28 @@
+{
+ "gorge-cliff-nose": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__w-gorge-fall",
+    "box": [
+     533,
+     2132
+    ],
+    "n": 36,
+    "on": 2
+   }
+  ]
+ },
+ "right-gorge-wall-high": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__w-compound-fall",
+    "box": [
+     1206,
+     337
+    ],
+    "n": 36,
+    "on": 2
+   }
+  ]
+ }
+}

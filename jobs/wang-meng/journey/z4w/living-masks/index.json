@@ -1,0 +1,24 @@
+{
+ "w-gorge-fall": {
+  "class": "fall",
+  "px": 14778,
+  "pctOfPlate": 0.213,
+  "plateBox": [
+   597,
+   2196,
+   693,
+   2461
+  ]
+ },
+ "w-compound-fall": {
+  "class": "fall",
+  "px": 15890,
+  "pctOfPlate": 0.229,
+  "plateBox": [
+   1834,
+   623,
+   1898,
+   962
+  ]
+ }
+}
