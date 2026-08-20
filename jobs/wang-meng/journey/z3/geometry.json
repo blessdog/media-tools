@@ -1,0 +1,24 @@
+{
+ "_note": "z3 geometry by role from z1 proven values (gen-geometry.py)",
+ "gorge-cliff-nose": {
+  "tiltX": -8e-05,
+  "tiltY": -0.0002
+ },
+ "left-cliff-wall": {
+  "tiltX": -8e-05,
+  "tiltY": -0.0002
+ },
+ "gorge-wall-right": {
+  "tiltX": -8e-05,
+  "tiltY": 0.0002
+ },
+ "upper-stream-rocks": {
+  "tiltX": -0.00012
+ },
+ "resting-ledge": {
+  "tiltX": -0.00022
+ },
+ "left-bank-rocks": {
+  "tiltX": -0.00012
+ }
+}
