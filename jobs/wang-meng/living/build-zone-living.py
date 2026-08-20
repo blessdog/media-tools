@@ -44,6 +44,92 @@ HERE = Path(__file__).parent          # jobs/wang-meng/living
 JOB = HERE.parent                     # jobs/wang-meng
 ROOT = JOB.parents[1]                 # media-tools
 
+
+# ── TECHNIQUE DISPATCH ───────────────────────────────────────────────────────
+# One entry per LIVE `procedure` claim in knowledge/, keyed by its claim id.
+# The class in regions.json names the id; check-routing.py refuses to build a
+# class whose claim is superseded or refuted, and cross-checks this table
+# against the store in both directions (`--implements`).
+#
+# Before 2026-08-20 there was no table: one hardcoded call to animate-strokes
+# and no branch to take, which is why the store recording
+# foliage-motion-by-displacement as SUPERSEDED could not stop 14 regions from
+# still rendering through it. The technique has to be DATA before a type system
+# can have an opinion about it.
+#
+# Each entry returns a LIST of argv steps to run in order -- a route, matching
+# the claim's `route:` field, rather than a single command.
+
+def _water_motion(wd, cls, pivot, cx0, cy0):
+    """knowledge/water-motion.md — displace thin marks in place, keep=tophat."""
+    cmd = ["python3", str(ROOT / "tools/animate-strokes.py"),
+           "--image", str(wd / "plate.png"), "--masks", str(wd / "mask"),
+           "--out", str(wd / "preview.mp4"),
+           "--out-frames", str(wd / "drawings"),
+           "--frames", str(cls.get("drawings", 36) * cls.get("on", 2)),
+           "--on", str(cls.get("on", 2)),
+           "--field", cls["field"], "--mode", cls["mode"], "--keep", cls["keep"]]
+    for flag in ("wobble", "drift", "wavelength", "angle", "stiffness",
+                 "scale", "boil", "max-thick"):
+        if flag in cls:
+            cmd += [f"--{flag}", str(cls[flag])]
+    if pivot is not None:
+        cmd += ["--pivot", f"{pivot[0]-cx0:.1f},{pivot[1]-cy0:.1f}"]
+    return [cmd]
+
+
+def _foliage_motion(wd, cls, pivot, cx0, cy0):
+    """knowledge/foliage-motion.md — cut-out cards hinged over a clean plate.
+
+    Two steps, because the ground behind a leaf has to exist before the leaf
+    can move off it. clean-plate synthesises it ONCE with shiftmap patch
+    synthesis; the alternative (animate-strokes --mode lift) fills the hole with
+    cv2.INPAINT_TELEA, which is the averaging inpainter that produced the mush.
+    """
+    clean = wd / "clean.png"
+    plate_step = ["python3", str(ROOT / "tools/clean-plate.py"),
+                  "--image", str(wd / "plate.png"), "--masks", str(wd / "mask"),
+                  "--out", str(clean),
+                  "--grow", str(cls.get("cleanGrow", 4)),
+                  "--method", cls.get("cleanMethod", "shiftmap")]
+    hinge = ["python3", str(ROOT / "tools/hinge-foliage.py"),
+             "--plate", str(clean), "--source", str(wd / "plate.png"),
+             "--cards", str(wd / "mask"),
+             "--out", str(wd / "drawings"), "--preview", str(wd / "preview.mp4"),
+             "--frames", str(cls.get("drawings", 96) * cls.get("on", 2)),
+             "--on", str(cls.get("on", 2)),
+             "--swing", str(cls.get("swing", 15)),
+             "--flutter", str(cls.get("flutter", 0.35)),
+             "--angle", str(cls.get("angle", 8)),
+             "--gust", str(cls.get("gust", "0.10,0.08,0.22")),
+             "--gust-travel", str(cls.get("gust-travel", 1500)),
+             "--gust-rest", str(cls.get("gust-rest", 0.15)),
+             "--min-px", str(cls.get("minPx", 80)),
+             "--ink-offset", str(cls.get("inkOffset", 0.11)),
+             "--ink-close", str(cls.get("inkClose", 1))]
+    hinge += ["--from-ink"] if cls.get("fromInk", True) else ["--whole-mask"]
+    return [plate_step, hinge]
+
+
+def _figure_motion(wd, cls, pivot, cx0, cy0):
+    """knowledge/figure-motion.md — reuse a verified cycle; never invent one."""
+    sys.exit("figure-motion: reuse a proven cycle from living/cycles/. "
+             "Generating a new figure cycle is a fabrication decision and needs "
+             "Ryan's verdict first (knowledge/figure-motion.md, not-when).")
+
+
+TECHNIQUES = {
+    "water-motion":   _water_motion,
+    "foliage-motion": _foliage_motion,
+    "figure-motion":  _figure_motion,
+}
+
+if "--techniques" in sys.argv:
+    # so check-routing.py can compare the store against what is IMPLEMENTED,
+    # instead of the two drifting apart silently.
+    print(json.dumps(sorted(TECHNIQUES)))
+    sys.exit(0)
+
 ap = argparse.ArgumentParser()
 ap.add_argument("--zone", required=True)
 ap.add_argument("--stage", required=True,
@@ -88,8 +174,22 @@ K = plate_meta["masterPxPerRegionPx"]
 PW, PH = plate_meta["size"]
 LAY = Z / "layers-filled"
 layers = json.loads((LAY / "layers.json").read_text())
-REG = json.loads((HERE / "regions.json").read_text())
+REGF = HERE / "regions.json"
+REG = json.loads(REGF.read_text())
 CLASSES = REG["classes"]                     # SSOT for the motion parameters
+
+# THE STORE GATES THE BUILD. Not a lint step somebody remembers to run: if a
+# class routes to a technique that has been superseded or refuted, this build
+# does not start. That is the whole difference between a knowledge store and a
+# folder of notes.
+_chk = subprocess.run(["python3", str(Path.home() / ".claude/knowledge/bin/check-routing.py"),
+                       "--config", str(REGF), "--knowledge", str(ROOT / "knowledge"),
+                       "--implements", "-"],
+                      input=json.dumps(sorted(TECHNIQUES)), capture_output=True, text=True)
+if _chk.returncode != 0:
+    sys.exit("ROUTING GATE — regions.json routes to a technique the knowledge store "
+             "does not believe:\n" + _chk.stderr)
+
 POLYS = json.loads((HERE / "living-polys.json").read_text())
 WANT = set(a.classes.split(","))
 MASKD = Z / "living-masks"
@@ -310,20 +410,29 @@ if a.stage == "cycle":
     # since the delay is computed from position along the wind.
     units = []
     for r in regions_here():
+        cls = CLASSES[r["class"]]
+        tech = cls.get("technique")
+        if tech in (None, "none"):
+            print(f"--- {r['id']}: technique {tech!r} "
+                  f"(retired by {cls.get('retired-by','?')}), skipped", file=sys.stderr)
+            continue
         if not (MASKD / f"{r['id']}.png").exists():
             continue          # the mask stage found nothing of this body here
         rm = plate_mask(r["id"]) > 128
-        if not CLASSES[r["class"]].get("perCanopy"):
+        # hinge-foliage cuts its OWN cards from the ink inside the region and
+        # delays each one by its position along the wind, so splitting the
+        # region here would break the travelling gust into per-canopy islands.
+        if tech != "foliage-motion" and cls.get("perCanopy"):
+            n, lab, st, cen = cv2.connectedComponentsWithStats(rm.astype(np.uint8), 8)
+            for i in range(1, n):
+                if st[i, 4] < a.canopy_min:
+                    continue
+                cm = lab == i
+                ys_, xs_ = np.nonzero(cm)
+                pivot = (float(xs_[ys_ > ys_.max() - 6].mean()), float(ys_.max()))
+                units.append((f"{r['id']}-{i:02d}", r, cm, pivot))
+        else:
             units.append((r["id"], r, rm, None))
-            continue
-        n, lab, st, cen = cv2.connectedComponentsWithStats(rm.astype(np.uint8), 8)
-        for i in range(1, n):
-            if st[i, 4] < a.canopy_min:
-                continue
-            cm = lab == i
-            ys_, xs_ = np.nonzero(cm)
-            pivot = (float(xs_[ys_ > ys_.max() - 6].mean()), float(ys_.max()))
-            units.append((f"{r['id']}-{i:02d}", r, cm, pivot))
 
     built = []
     for uid, r, rm, pivot in units:
@@ -343,25 +452,12 @@ if a.stage == "cycle":
         (wd / "mask" / "layers.json").write_text(json.dumps({
             "tool": "build-zone-living", "size": [cx1 - cx0, cy1 - cy0],
             "planeList": [{"n": 1, "name": uid, "offset": [0, 0]}]}))
-        cmd = ["python3", str(ROOT / "tools/animate-strokes.py"),
-               "--image", str(wd / "plate.png"), "--masks", str(wd / "mask"),
-               "--out", str(wd / "preview.mp4"),
-               "--out-frames", str(wd / "drawings"),
-               "--frames", str(cls.get("drawings", a.drawings) * cls.get("on", 2)),
-               "--on", str(cls.get("on", 2)),
-               "--field", cls["field"], "--mode", cls["mode"], "--keep", cls["keep"]]
-        for flag in ("wobble", "drift", "wavelength", "angle", "stiffness",
-                     "scale", "boil", "max-thick", "gust", "gust-travel",
-                     "gust-rest", "gust-push", "gust-flutter"):
-            if flag in cls:
-                cmd += [f"--{flag}", str(cls[flag])]
-        if pivot is not None:
-            cmd += ["--pivot", f"{pivot[0]-cx0:.1f},{pivot[1]-cy0:.1f}"]
-        print(f"=== {uid} ({r['class']}): {tot}px, crop "
+        print(f"=== {uid} ({r['class']} / {cls['technique']}): {tot}px, crop "
               f"{cx1-cx0}x{cy1-cy0} at {cx0},{cy0}", file=sys.stderr)
-        res = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
-        if res.returncode != 0:
-            sys.exit(f"{uid}: animate-strokes failed\n{res.stderr[-900:]}")
+        for step in TECHNIQUES[cls["technique"]](wd, cls, pivot, cx0, cy0):
+            res = subprocess.run(step, cwd=ROOT, capture_output=True, text=True)
+            if res.returncode != 0:
+                sys.exit(f"{uid}: {Path(step[1]).name} failed\n{res.stderr[-900:]}")
         cyc = json.loads((wd / "drawings" / "cycle.json").read_text())
         draw = [np.array(Image.open(wd / "drawings" / f"dr-{i:03d}.png").convert("RGB"))
                 for i in range(cyc["drawings"])]
