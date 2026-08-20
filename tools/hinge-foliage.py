@@ -142,10 +142,20 @@ for pl in meta['planeList']:
     for i in range(1, n):
         if st[i, 4] < a.min_px:
             continue
-        al = (lab == i).astype(np.float32)
+        solid = (lab == i).astype(np.float32)
+        al = solid
         if a.feather:
+            # FEATHER OUTWARD ONLY. Blurring the binary mask directly pulls the
+            # alpha below 1 along the INSIDE of every edge, so the composite
+            # base*(1-al) + rgb*al lerps the cluster's own outline toward the
+            # clean plate -- which has the ink removed. Measured 2026-08-20: a
+            # ZERO-degree hinge changed 26,293px by up to 102 levels and visibly
+            # thinned every leaf spray, before any rotation happened at all.
+            # Taking the max with the solid mask keeps the interior at exactly 1,
+            # so a card at rest is a bit-exact no-op and the ramp only softens
+            # the cut edge where the card leaves its hole.
             k = a.feather * 2 + 1
-            al = cv2.GaussianBlur(al, (k, k), 0)
+            al = np.maximum(solid, cv2.GaussianBlur(solid, (k, k), 0))
         ys, xs = np.nonzero(lab == i)
         x0, y0 = int(xs.min()), int(ys.min())
         x1, y1 = int(xs.max()) + 1, int(ys.max()) + 1
@@ -161,6 +171,7 @@ for pl in meta['planeList']:
             'pivot': (pvx - x0, pvy - y0), 'along': 0.0, 'px': int(st[i, 4]),
             'rgb': src[y0:y1, x0:x1].copy(),
             'al': al[y0:y1, x0:x1].copy(),
+            'solid': solid[y0:y1, x0:x1].copy(),
             'seed': (hash(pl['name']) + i) % 1000 / 1000.0,
         })
 if not cards:
@@ -189,12 +200,38 @@ def envelope(u):
         return 0.5 + 0.5 * np.cos(np.pi * (u - ga - gh) / gd)
     return 0.0
 
+# THE BASE IS THE SOURCE, NOT THE CLEAN PLATE (fix, 2026-08-20).
+# `frame = plate.copy()` erased every masked pixel that did not become a card,
+# and on a real tree that is most of it: measured on s-pine-over-bridge, the
+# region is 72,564px, the cards are 33,227px, and the remaining 39,337px --
+# 54.2% of the canopy, being the pale wash between the leaf strokes plus 197
+# specks under --min-px -- was deleted before anything moved. Ryan's word for
+# the result was "broken", and he was looking at a pine with half its paint
+# gone, not at a swing that was too large.
+#
+# The clean plate is only needed where a card CAN VACATE, which is exactly each
+# card's rest footprint. Everywhere else the painting stands.
+vacate = np.zeros((H, W), bool)
+for c in cards:
+    x0, y0, x1, y1 = c['box']
+    # SOLID, not the feathered extent. Inside the ramp band the card's alpha is
+    # < 1, so if the base there were the clean plate the composite would mix
+    # plate and ink and thin the outline. With the base left as source, a card
+    # at rest composites source-over-source and is bit-exact; the cost is a
+    # ~2px ghost of the old edge once it swings, which is smaller than the swing.
+    vacate[y0:y1, x0:x1] |= (np.squeeze(c['solid']) > 0.5)
+base = src.astype(np.float32).copy()
+base[vacate] = plate[vacate]
+print(f'base: source everywhere except {int(vacate.sum()):,}px of card footprint '
+      f'({100*vacate.sum()/(H*W):.1f}% of the crop) where the clean plate shows',
+      file=sys.stderr)
+
 ndraw = max(1, a.frames // max(a.on, 1))
 outd = Path(a.out); outd.mkdir(parents=True, exist_ok=True)
 peak = 0.0
 for k in range(ndraw):
     t = k / ndraw
-    frame = plate.copy()
+    frame = base.copy()
     for c in cards:
         e = envelope(t - c['delay'])
         act = a.gust_rest + (1 - a.gust_rest) * e
