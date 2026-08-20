@@ -536,3 +536,10 @@ RIVER-ENTRY-RELIEF.mp4 + AB-RELIEF-VS-FLAT.mp4 (left flat, right
 relief; drawtext unavailable in this ffmpeg). Evidence:
 evidence-relief-maps.png, evidence-relief-what-moved.png. Awaiting
 Ryan's verdict.
+
+## 2026-08-19 night VI verdict — RELIEF WINS ("right wins")
+Relief displacement joins the locked shot vocabulary. Default recipe is
+now: zone world + plane-fit z-step 0.30 + dolly to 0.24 + rotation into
+the travel + living cycles + relief on figure-free masses. Next: the
+gorge-facing shot that stages the walls' relief (band 0.6, already
+mapped), all elements stacked.
