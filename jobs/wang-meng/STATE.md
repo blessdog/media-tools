@@ -543,3 +543,10 @@ now: zone world + plane-fit z-step 0.30 + dolly to 0.24 + rotation into
 the travel + living cycles + relief on figure-free masses. Next: the
 gorge-facing shot that stages the walls' relief (band 0.6, already
 mapped), all elements stacked.
+
+## 2026-08-19 night VII — GORGE-PUSH: all elements in one take
+First full-stack shot: path-gorge-push.json = dolly 0->0.24 + rotation
+into the cleft (rx -0.6, ry 0.5, rz -0.2) + living upper-stream/gust +
+wall relief (band 0.6) on the gorge mouth framing (plate upper band,
+first time rendered — stills showed no holes, sealed layers cover it).
+Frame 0 byte-matches the stills control. On screen: GORGE-PUSH.mp4.
