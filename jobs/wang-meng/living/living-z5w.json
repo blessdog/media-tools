@@ -2,15 +2,6 @@
  "gully-footbridge": {
   "patches": [
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__w-compound-fall",
-    "box": [
-     1771,
-     1143
-    ],
-    "n": 36,
-    "on": 2
-   },
-   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-gorge-belt-01",
     "box": [
      1569,
@@ -117,20 +108,74 @@
     ],
     "n": 96,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__w-compound-fall",
+    "box": [
+     1771,
+     1143
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-gorge-belt",
+    "box": [
+     1569,
+     1187
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-gorge-foreground",
+    "box": [
+     355,
+     2081
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-autumn-shelf",
+    "box": [
+     30,
+     1390
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-compound-autumn",
+    "box": [
+     698,
+     397
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-compound-canopies",
+    "box": [
+     1226,
+     418
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-tall-cliff-pines",
+    "box": [
+     0,
+     590
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
  "right-gorge-wall-high": {
   "patches": [
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__w-compound-fall",
-    "box": [
-     1201,
-     991
-    ],
-    "n": 36,
-    "on": 2
-   },
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-gorge-belt-01",
     "box": [
@@ -310,6 +355,69 @@
     ],
     "n": 96,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__w-compound-fall",
+    "box": [
+     1201,
+     991
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-gorge-belt",
+    "box": [
+     597,
+     1187
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-gorge-foreground",
+    "box": [
+     178,
+     1930
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-right-rust-tree",
+    "box": [
+     2086,
+     1565
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-compound-autumn",
+    "box": [
+     456,
+     651
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-compound-canopies",
+    "box": [
+     759,
+     496
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-right-edge-autumn",
+    "box": [
+     1535,
+     715
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
@@ -341,6 +449,24 @@
     ],
     "n": 96,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-gorge-foreground",
+    "box": [
+     215,
+     1670
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-autumn-shelf",
+    "box": [
+     207,
+     811
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
@@ -360,6 +486,15 @@
     "box": [
      484,
      316
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-fence-autumn-trees__s-compound-autumn",
+    "box": [
+     484,
+     193
     ],
     "n": 96,
     "on": 2

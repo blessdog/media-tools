@@ -11,6 +11,11 @@ holds=(
   "gorgefall z3w 0.2323 0.6328 2.00"
   "lowerpool z3w 0.1974 0.9183 2.20"
   "compoundfall z5w 0.6620 0.5525 2.00"
+  # WATER AND FOLIAGE IN ONE FRAME, 2026-08-20. Ryan: "It's like you'll either
+  # animate a little bit of water or the tree, you won't put both together in a
+  # picture. Is there a reason for that?" There was not. Every hold until now
+  # framed ONE body, which is a testing artifact that leaked into review.
+  "waterandtrees z5w 0.6000 0.4600 1.25"
   "gorgecanopy z3w 0.5466 0.4933 1.60"
   "fallandpines z3w 0.2277 0.6709 1.60"
   # the summits, added 2026-08-20 -- the band above y~3850 master had no
@@ -34,9 +39,9 @@ for h in "${holds[@]}"; do
   d=$J/journey/$z/_ab/$name
   mkdir -p $d
   cat > $d/path.json <<JSON
-{"fps": 24, "duration": 6.0,
+{"fps": 24, "duration": 8.0,
  "keys": [{"t": 0.0, "x": $x, "y": $y, "z": 0.0, "fov": $fov},
-          {"t": 6.0, "x": $x, "y": $y, "z": 0.0, "fov": $fov}]}
+          {"t": 8.0, "x": $x, "y": $y, "z": 0.0, "fov": $fov}]}
 JSON
   for mode in static living; do
     args=(--layers $J/journey/$z/layers-filled --path $d/path.json
@@ -44,7 +49,7 @@ JSON
           --z-step 0.30 --plane-fit --no-base
           --geometry $J/journey/$z/geometry.json)
     [[ $mode == living ]] && args+=(--living $J/living/living-$z.json)
-    if [[ $(ls $d/$mode 2>/dev/null | wc -l) -eq 144 ]]; then
+    if [[ $(ls $d/$mode 2>/dev/null | wc -l) -eq 192 ]]; then
       echo "== $name/$mode already rendered" >&2
     else
       echo "== $name/$mode" >&2

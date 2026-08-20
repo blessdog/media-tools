@@ -78,17 +78,26 @@ def _water_motion(wd, cls, pivot, cx0, cy0):
     return [cmd]
 
 
-def _foliage_motion(wd, cls, pivot, cx0, cy0):
+def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
     """knowledge/foliage-motion.md — cut-out cards hinged over a clean plate.
 
     Two steps, because the ground behind a leaf has to exist before the leaf
     can move off it. clean-plate synthesises it ONCE with shiftmap patch
     synthesis; the alternative (animate-strokes --mode lift) fills the hole with
     cv2.INPAINT_TELEA, which is the averaging inpainter that produced the mush.
+
+    `exclude` is EVERY foliage pixel in the crop, not just this region's --
+    see knowledge/clean-plate-donor-scope.md. Shiftmap copies the best-matching
+    patch from elsewhere in the image, so removing one canopy from a crop full
+    of canopies makes another canopy the best match, and it gets copied in. It
+    invented two masses of orange autumn leaves where a blue-green pine was.
+    A masked pixel cannot be a donor, so masking the whole class leaves only
+    ground -- which is the only thing actually behind a tree.
     """
     clean = wd / "clean.png"
     plate_step = ["python3", str(ROOT / "tools/clean-plate.py"),
-                  "--image", str(wd / "plate.png"), "--masks", str(wd / "mask"),
+                  "--image", str(wd / "plate.png"),
+                  "--masks", str(exclude or (wd / "mask")),
                   "--out", str(clean),
                   "--grow", str(cls.get("cleanGrow", 4)),
                   "--method", cls.get("cleanMethod", "shiftmap")]
@@ -123,6 +132,9 @@ TECHNIQUES = {
     "foliage-motion": _foliage_motion,
     "figure-motion":  _figure_motion,
 }
+
+# techniques whose clean plate must exclude every pixel of their own class
+CLASS_WIDE_EXCLUDE = {"foliage-motion"}
 
 if "--techniques" in sys.argv:
     # so check-routing.py can compare the store against what is IMPLEMENTED,
@@ -454,7 +466,34 @@ if a.stage == "cycle":
             "planeList": [{"n": 1, "name": uid, "offset": [0, 0]}]}))
         print(f"=== {uid} ({r['class']} / {cls['technique']}): {tot}px, crop "
               f"{cx1-cx0}x{cy1-cy0} at {cx0},{cy0}", file=sys.stderr)
-        for step in TECHNIQUES[cls["technique"]](wd, cls, pivot, cx0, cy0):
+        # DONOR SCOPE. clean-plate may only copy from material that is NOT the
+        # class being removed (knowledge/clean-plate-donor-scope.md), so every
+        # region of this class overlapping the crop becomes a hole, and only the
+        # animated one becomes cards.
+        extra = None
+        if cls["technique"] in CLASS_WIDE_EXCLUDE:
+            same = np.zeros((PH, PW), bool)
+            # NOT regions_here(): that honours --region, and the whole point is
+            # the SIBLINGS. Building one region must not change what the clean
+            # plate is allowed to copy from.
+            for o in POLYS["polys"]:
+                if o["class"] == r["class"] and (MASKD / f"{o['id']}.png").exists():
+                    same |= plate_mask(o["id"]) > 128
+            sub = same[cy0:cy1, cx0:cx1]
+            if sub.sum() > rm[cy0:cy1, cx0:cx1].sum():
+                extra = wd / "exclude"
+                (extra / "masks").mkdir(parents=True, exist_ok=True)
+                Image.fromarray((sub * 255).astype(np.uint8)).save(extra / "masks" / "001.png")
+                (extra / "layers.json").write_text(json.dumps({
+                    "tool": "build-zone-living", "size": [cx1 - cx0, cy1 - cy0],
+                    "planeList": [{"n": 1, "name": f"{uid}-classwide", "offset": [0, 0]}]}))
+                print(f"    donor scope: {int(sub.sum()):,}px of {r['class']} masked "
+                      f"(vs {int(rm[cy0:cy1, cx0:cx1].sum()):,} for this region alone)",
+                      file=sys.stderr)
+
+        fn = TECHNIQUES[cls["technique"]]
+        args = (wd, cls, pivot, cx0, cy0) + ((extra,) if extra is not None else ())
+        for step in fn(*args):
             res = subprocess.run(step, cwd=ROOT, capture_output=True, text=True)
             if res.returncode != 0:
                 sys.exit(f"{uid}: {Path(step[1]).name} failed\n{res.stderr[-900:]}")

@@ -847,3 +847,25 @@ Evidence: `living/evidence-summit-darkness-map.png`, `living/evidence-summit-dar
 Note also that `perCanopy` is now a CLASS property rather than a hard-coded
 `== "gust"` test, so a new foliage class gets the per-canopy pivot split for
 free.
+
+## 2026-08-20 night — clean-plate invented foliage; only leaf-visible canopies animate
+
+- `evidence-cleanplate-invented-foliage.png` — shiftmap replaced a blue-green
+  pine with two invented masses of orange autumn leaves. FABRICATION, caught by
+  eye after clean-plate's own texture metric passed it (16.28 hole vs 16.35
+  ring). Fix: every pixel of the class is masked, so only ground can be a donor.
+  Claim: `knowledge/clean-plate-donor-scope.md`.
+- `evidence-which-canopies-have-leaves.png` — all 13 foliage regions labelled
+  animate/hold-still under Ryan's rule ("just the ones you can see the leaves
+  of"). 7 animate (gorge-big-canopy, great-trees-upper, gorge-foreground,
+  left-pines-z2, pine-over-bridge, left-clifftop-pine, right-rust-tree), 6 hold
+  still. AWAITING RYAN'S CORRECTIONS.
+- No statistic separates the two groups — mark count, mark size and ink fraction
+  all put s-compound-canopies with s-great-trees-upper. Same mechanism as
+  `canopy-by-texture-statistics`: the painter drew them smaller, not different.
+  So it is authored per region, never recomputed.
+- `evidence-cutout-what-moves.png`, `AB-HOLD-waterandtrees.mp4` — first hold with
+  water AND foliage in one frame (Ryan asked why that had never been shown).
+  Holds are now 8.0s, one full gust cycle; they were 6.0s and could miss it.
+- z5w foliage built through hinge-foliage, but 6 of its 8 regions are on the
+  hold-still list. The trees worth animating are in z3w/z4w.
