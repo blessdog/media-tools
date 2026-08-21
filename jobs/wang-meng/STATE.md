@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 09:26 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 09:48 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -25,7 +25,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 29 live claims: 29 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 28 live claims: 28 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -88,12 +88,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (18) · 0 violation(s)
 
 DELIVERABLES
-  jobs/wang-meng/film/ST-z3w-the-cliff-nose.mp4
-  jobs/wang-meng/film/ST-z3w-gorge-narrows.mp4
   jobs/wang-meng/film/STATIONS-z3w.mp4
   jobs/wang-meng/film/ST-z3w-upper-gorge-pines.mp4
   jobs/wang-meng/film/ST-z3w-the-stream-descent.mp4
   jobs/wang-meng/film/ST-z3w-the-red-maples.mp4
+  jobs/wang-meng/film/ST-z3w-the-hanging-canopy.mp4
+  jobs/wang-meng/film/ST-z3w-the-great-pine.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/STATIONS-z3w.mp4
 ```
 
@@ -102,6 +102,10 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  a881773  leaf marks: split every card into individual leaves that twinkle, rotate and jitter on their own phase
+2026-08-21  d5ce97c  z3w station reel v2: colour-gated foliage, nine named moves, fov 1.0 to 1.6
+2026-08-21  8f5dc53  catalogue: label nine of z3w's sixteen tiles, and compose them into one master-px catalogue
+2026-08-21  c00561e  refine-mask-sam: SAM turns a labelled tree box into a canopy mask that stops at the cliff
 2026-08-21  0c58842  verdict: CLIPSeg alone is the right family and not yet accurate enough; semantic:false until SAM refines it
 2026-08-21  037c4bf  a missing semantic pass falls back loudly instead of killing the zone build
 2026-08-21  08385af  STATE.md and z3w cycle records after the leaf-colour rebuild
@@ -110,29 +114,21 @@ DELIVERABLES
 2026-08-21  d434ba8  how much should a leaf move: 6 degrees is 7-12 screen px, half a percent of frame width; ladder script picks the amount by eye
 2026-08-21  eef4c03  STATE.md regenerated: leaf-colour gate and shot vocabulary in the store
 2026-08-21  6fb9cc7  keep the before-overlays of the rock that moved
-2026-08-21  eda0b83  leaf is colour, rock is graphite: cards are cut only from ink on green or orange wash; the reel gets a real scale range and a pull-out
-2026-08-21  d9944f5  journal: the camera gets a vocabulary
-2026-08-21  246491c  z3w station reel: nine moves from Ryan's vocabulary, 0.7 s dissolves; cut-reel.py orders by station, not filename
-2026-08-21  e62eafa  shot-vocabulary: easing is built into render-parallax; every key is a rest point
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**4 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/film/ST-z3w-gorge-narrows.mp4
- M jobs/wang-meng/film/ST-z3w-the-cliff-nose.mp4
- M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living/built.json
- M jobs/wang-meng/living/living-z3w.json
-?? tools/refine-mask-sam.py
+?? jobs/wang-meng/catalogue/t013.json
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
