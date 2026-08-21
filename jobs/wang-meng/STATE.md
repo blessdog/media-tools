@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 12:16 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 12:23 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -109,6 +109,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  a15ce32  STATE.md regenerated after band 02
 2026-08-21  be037ec  claim: band 02 was already animated once -- 73 frames, and why it still cannot ship
 2026-08-21  cc7936f  BAND02-approach: the first shot built the new way -- establish, notice, approach
 2026-08-21  b528836  band 02 is alive: z1 masks, cycles and register at native resolution
@@ -120,7 +121,6 @@ DELIVERABLES
 2026-08-21  bcbf130  the pink grid is splat lattice: found, reproduced, and the 'unrecoverable' law corrected
 2026-08-21  572da6b  swing back to 6: a ladder built at one framing cannot settle an amplitude for a film that changes framing
 2026-08-21  a9a2527  ci: park the workflow until the token has 'workflow' scope
-2026-08-21  0527203  z3w reel v4: back to bushel cards at swing 12, no per-mark deformation
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*

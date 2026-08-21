@@ -1,0 +1,21 @@
+{
+ "fps": 24,
+ "duration": 9.17,
+ "_note": "leg of the continuous rise, zone z5w, master centre 5502 -> 4493 at 110px/s. Approaches: none animated in range",
+ "keys": [
+  {
+   "t": 0.0,
+   "x": 0.5,
+   "y": 0.5527,
+   "z": 0.0,
+   "fov": 1.0
+  },
+  {
+   "t": 9.17,
+   "x": 0.5,
+   "y": 0.3579,
+   "z": 0.0,
+   "fov": 1.0
+  }
+ ]
+}
