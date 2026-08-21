@@ -98,7 +98,16 @@ p.add_argument('--semantic', help='dir written by segment-semantic.py. A VISION 
                     'them are painted mark (the WHICH). Supersedes --leaf-colour, which answered a '
                     'semantic question with colour thresholds')
 p.add_argument('--semantic-class', default='green-and-orange-tree-leaves',
-               help='slug of the class to keep, as written by segment-semantic.py')
+               help='slug of the class the cards belong to, as written by segment-semantic.py')
+p.add_argument('--semantic-veto', default='bare-grey-rock-and-cliff',
+               help='slug of the class that must NOT move')
+p.add_argument('--semantic-mode', choices=('veto', 'keep'), default='veto',
+               help='veto: drop ink only where the veto class beats the card class -- targets the '
+                    'defect (rock swinging) and leaves everything else alone. keep: drop ink '
+                    'anywhere the card class does not win, which is far stricter. MEASURED '
+                    '2026-08-21 on z3w: keep costs real foliage (pine 21 cards -> 16, great trees '
+                    '74 -> 52) because CLIPSeg draws blobby envelopes and misses small crowns; '
+                    'veto removes the rock and holds the cards')
 p.add_argument('--semantic-grow', type=int, default=4,
                help='px the semantic region is grown; CLIPSeg decodes at 352px and its edges sit '
                     'a few px inside the true canopy')
@@ -197,14 +206,26 @@ for pl in meta['planeList']:
                 a.semantic = None
             else:
                 want = scores.pop(a.semantic_class)
-                sem = want >= np.maximum.reduce(list(scores.values())) if scores else want > 127
-                if a.semantic_grow:
-                    sem = cv2.dilate(sem.astype(np.uint8), cv2.getStructuringElement(
-                        cv2.MORPH_ELLIPSE, (2 * a.semantic_grow + 1,) * 2)) > 0
+                if a.semantic_mode == 'veto':
+                    veto = scores.get(a.semantic_veto)
+                    if veto is None:
+                        sys.exit(f'--semantic-veto {a.semantic_veto!r} not in {sorted(scores)}')
+                    bad = veto > want
+                    if a.semantic_grow:
+                        bad = cv2.erode(bad.astype(np.uint8), cv2.getStructuringElement(
+                            cv2.MORPH_ELLIPSE, (2 * a.semantic_grow + 1,) * 2)) > 0
+                    sem = ~bad
+                    what = f'{a.semantic_veto} beats {a.semantic_class} on {100*bad.mean():.0f}%'
+                else:
+                    sem = want >= np.maximum.reduce(list(scores.values())) if scores else want > 127
+                    if a.semantic_grow:
+                        sem = cv2.dilate(sem.astype(np.uint8), cv2.getStructuringElement(
+                            cv2.MORPH_ELLIPSE, (2 * a.semantic_grow + 1,) * 2)) > 0
+                    what = f'{a.semantic_class} wins {100*sem.mean():.0f}%'
                 dropped = int((src_mask & ~sem).sum())
                 ink_dropped_px += dropped
-                print(f'semantic: {a.semantic_class} wins {100*sem.mean():.0f}% of the crop; '
-                      f'{dropped:,} ink px are outside it and are left still', file=sys.stderr)
+                print(f'semantic[{a.semantic_mode}]: {what} of the crop; '
+                      f'{dropped:,} ink px left still', file=sys.stderr)
                 src_mask &= sem
         if (not a.semantic) and a.leaf_colour:
             # WHAT A LEAF IS, IN THIS PAINTING. Ryan, 2026-08-21: "The leaves are all
@@ -411,6 +432,7 @@ for k in range(ndraw):
     'cardsAttached': n_attached, 'cardsFoot': n_foot, 'branchPx': branch_px,
     'leafSource': 'semantic' if a.semantic else ('colour' if a.leaf_colour else 'none'),
     'semanticDir': a.semantic, 'semanticClass': a.semantic_class if a.semantic else None,
+    'semanticMode': a.semantic_mode if a.semantic else None,
     'leafColour': bool(a.leaf_colour and not a.semantic), 'inkNotOnLeafPx': ink_dropped_px,
     'technique': 'rigid cut-out cards hinged where they meet a branch, over a clean plate',
     'plate': a.plate, 'source': a.source, 'cards_dir': a.cards,

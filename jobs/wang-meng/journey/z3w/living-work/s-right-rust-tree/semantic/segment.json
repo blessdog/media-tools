@@ -1,0 +1,33 @@
+{
+ "tool": "segment-semantic",
+ "model": "CIDAS/clipseg-rd64-refined",
+ "device": "mps",
+ "image": "jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/plate.png",
+ "size": [
+  161,
+  451
+ ],
+ "tile": 352,
+ "overlap": 0.5,
+ "tiles": 2,
+ "classes": [
+  {
+   "prompt": "green and orange tree leaves",
+   "slug": "green-and-orange-tree-leaves",
+   "winnerFraction": 0.1606,
+   "meanScore": 0.1637
+  },
+  {
+   "prompt": "bare grey rock and cliff",
+   "slug": "bare-grey-rock-and-cliff",
+   "winnerFraction": 0.0978,
+   "meanScore": 0.2433
+  },
+  {
+   "prompt": "empty background paper",
+   "slug": "empty-background-paper",
+   "winnerFraction": 0.7417,
+   "meanScore": 0.5866
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "tool": "segment-semantic",
+ "model": "CIDAS/clipseg-rd64-refined",
+ "device": "mps",
+ "image": "jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/plate.png",
+ "size": [
+  1029,
+  1103
+ ],
+ "tile": 352,
+ "overlap": 0.5,
+ "tiles": 30,
+ "classes": [
+  {
+   "prompt": "green and orange tree leaves",
+   "slug": "green-and-orange-tree-leaves",
+   "winnerFraction": 0.1791,
+   "meanScore": 0.1934
+  },
+  {
+   "prompt": "bare grey rock and cliff",
+   "slug": "bare-grey-rock-and-cliff",
+   "winnerFraction": 0.0427,
+   "meanScore": 0.1805
+  },
+  {
+   "prompt": "empty background paper",
+   "slug": "empty-background-paper",
+   "winnerFraction": 0.7782,
+   "meanScore": 0.4949
+  }
+ ]
+}

@@ -114,7 +114,9 @@ def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
              "--gust-travel", str(cls.get("gust-travel", 1500)),
              "--gust-rest", str(cls.get("gust-rest", 0.15)),
              "--min-px", str(cls.get("minPx", 80)),
-             "--semantic", str(wd / "semantic"),
+             *(["--semantic", str(wd / "semantic"),
+                "--semantic-mode", cls.get("semanticMode", "veto")]
+               if cls.get("semantic") else []),
              "--branch-radius", str(cls.get("branchRadius", "auto")),
              "--branch-ratio", str(cls.get("branchRatio", 0.55)),
              "--attach-max", str(cls.get("attachMax", 14)),

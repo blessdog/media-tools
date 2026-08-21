@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 08:59 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 09:15 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -25,7 +25,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 27 live claims: 27 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 28 live claims: 28 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -52,6 +52,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · clean-plate-donor-scope Any clean-plate fill whose hole is SURROUNDED BY MATERIAL OF THE SAME KIND as the thing be
   · depth-is-authored      Whole-painting depth on 葛稚川移居圖 and, by the same mechanism, any painting built on 散点透視 rath
   · hinge-at-the-attachment Cut-out foliage cards in ink painting, where leaves are drawn as separate sprays hanging o
+  · leaf-travel-is-measured-on-screen Choosing the swing angle for cut-out foliage on 葛稚川移居圖. The GEOMETRY below is exact for th
   · plan-planes-at-shot-scale Planning a depth-plane stack for a camera that will be CLOSE to the surface. Measured on z
 
 REFUTED — already tried, do NOT retry
@@ -100,6 +101,11 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  037c4bf  a missing semantic pass falls back loudly instead of killing the zone build
+2026-08-21  08385af  STATE.md and z3w cycle records after the leaf-colour rebuild
+2026-08-21  5b7d32c  an AI model labels the painting: tile it, inventory it, draw the labels back so they can be checked
+2026-08-21  0a2f2fa  note why a wide hold cannot centre an edge subject: the falls clamps 840px
+2026-08-21  d434ba8  how much should a leaf move: 6 degrees is 7-12 screen px, half a percent of frame width; ladder script picks the amount by eye
 2026-08-21  eef4c03  STATE.md regenerated: leaf-colour gate and shot vocabulary in the store
 2026-08-21  6fb9cc7  keep the before-overlays of the rock that moved
 2026-08-21  eda0b83  leaf is colour, rock is graphite: cards are cut only from ink on green or orange wash; the reel gets a real scale range and a pull-out
@@ -107,44 +113,23 @@ DELIVERABLES
 2026-08-21  246491c  z3w station reel: nine moves from Ryan's vocabulary, 0.7 s dissolves; cut-reel.py orders by station, not filename
 2026-08-21  e62eafa  shot-vocabulary: easing is built into render-parallax; every key is a rest point
 2026-08-21  5e03125  shot vocabulary is Ryan's list: push in, pull out, pan, tilt, parallax, breathing...; holds sit on the subject; render-stations.sh cuts a zone reel
-2026-08-21  9616e23  z3w station legs authored from the shot vocabulary: one move per station, SSOT in station-moves.json
-2026-08-21  93ec02d  shot-vocabulary: phrasings that BM25 can rank
-2026-08-21  3a0d41a  shot vocabulary: five camera moves, searchable in Ryan's words; the repetitive-camera bookmark is answered
-2026-08-21  e238656  LEG-LIGHT-z3w re-rendered on the approved auto-radius foliage; render-leg.sh keeps the zone suffix lower-case
-2026-08-21  6babde2  STATE.md regenerated after the foliage verdicts; render-leg.sh for one leg over a living layer
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/journey/z3w/_ab/fallandpines/path.json
- M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living/built.json
- M jobs/wang-meng/journey/z4w/living-work/s-gorge-big-canopy/drawings/cycle.json
- M jobs/wang-meng/journey/z4w/living-work/s-gorge-foreground/drawings/cycle.json
- M jobs/wang-meng/journey/z4w/living-work/s-left-clifftop-pine/drawings/cycle.json
- M jobs/wang-meng/journey/z4w/living-work/s-left-pines-z2/drawings/cycle.json
- M jobs/wang-meng/journey/z4w/living-work/s-right-rust-tree/drawings/cycle.json
- M jobs/wang-meng/journey/z4w/living/built.json
- M jobs/wang-meng/journey/z5w/living-work/s-gorge-foreground/drawings/cycle.json
- M jobs/wang-meng/journey/z5w/living-work/s-right-rust-tree/drawings/cycle.json
- M jobs/wang-meng/journey/z5w/living/built.json
- M jobs/wang-meng/journey/z6w/living-work/s-right-rust-tree/drawings/cycle.json
- M jobs/wang-meng/journey/z6w/living/built.json
- M jobs/wang-meng/living/evidence-branch-pivots-z3w.png
- M jobs/wang-meng/living/logs/cycle-foliage-z3w.json
- M jobs/wang-meng/living/logs/cycle-foliage-z4w.json
-?? jobs/wang-meng/film/evidence/stations-z3w-stills/
-?? jobs/wang-meng/living/evidence-rock-stopped-moving.png
+ M jobs/wang-meng/film/rebuild-and-cut.sh
+?? jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/semantic/
+?? jobs/wang-meng/living/semantic-then-reel.sh
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*

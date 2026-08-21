@@ -1,0 +1,33 @@
+{
+ "tool": "segment-semantic",
+ "model": "CIDAS/clipseg-rd64-refined",
+ "device": "mps",
+ "image": "jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/plate.png",
+ "size": [
+  467,
+  566
+ ],
+ "tile": 352,
+ "overlap": 0.5,
+ "tiles": 6,
+ "classes": [
+  {
+   "prompt": "green and orange tree leaves",
+   "slug": "green-and-orange-tree-leaves",
+   "winnerFraction": 0.1329,
+   "meanScore": 0.1501
+  },
+  {
+   "prompt": "bare grey rock and cliff",
+   "slug": "bare-grey-rock-and-cliff",
+   "winnerFraction": 0.1128,
+   "meanScore": 0.1654
+  },
+  {
+   "prompt": "empty background paper",
+   "slug": "empty-background-paper",
+   "winnerFraction": 0.7542,
+   "meanScore": 0.5227
+  }
+ ]
+}

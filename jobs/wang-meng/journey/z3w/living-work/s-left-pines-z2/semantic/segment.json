@@ -1,0 +1,33 @@
+{
+ "tool": "segment-semantic",
+ "model": "CIDAS/clipseg-rd64-refined",
+ "device": "mps",
+ "image": "jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/plate.png",
+ "size": [
+  653,
+  791
+ ],
+ "tile": 352,
+ "overlap": 0.5,
+ "tiles": 12,
+ "classes": [
+  {
+   "prompt": "green and orange tree leaves",
+   "slug": "green-and-orange-tree-leaves",
+   "winnerFraction": 0.1514,
+   "meanScore": 0.1198
+  },
+  {
+   "prompt": "bare grey rock and cliff",
+   "slug": "bare-grey-rock-and-cliff",
+   "winnerFraction": 0.2025,
+   "meanScore": 0.2347
+  },
+  {
+   "prompt": "empty background paper",
+   "slug": "empty-background-paper",
+   "winnerFraction": 0.6461,
+   "meanScore": 0.3402
+  }
+ ]
+}

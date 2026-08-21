@@ -3,8 +3,8 @@
 set -e
 cd "$(dirname "$0")/../../.."
 J=jobs/wang-meng
-echo "==== restoring s-pine-over-bridge to the class swing" >&2
-python3 $J/living/build-zone-living.py --zone z3w --stage cycle --classes foliage --region s-pine-over-bridge --keep-work > /dev/null
+echo "==== rebuilding every z3w foliage cycle on the semantic masks" >&2
+python3 $J/living/build-zone-living.py --zone z3w --stage cycle --classes foliage --keep-work > /dev/null
 python3 $J/living/build-zone-living.py --zone z3w --stage register > /dev/null
 for p in $J/film/paths/st-z3w-*.json; do
   n=$(basename $p .json)
