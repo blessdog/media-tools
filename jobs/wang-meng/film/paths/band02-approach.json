@@ -1,0 +1,31 @@
+{
+ "fps": 24,
+ "duration": 14,
+ "_note": "BAND 02, establish -> approach (knowledge/the-camera-moves-toward-motion.md). Salvaged from film/path-bridge-ensemble.json, which already framed Ge Hong on the trestle bridge at master y~12700. Three beats: a wide hold to show the country, a pause, then the approach onto the bridge where the water and the pine are moving. 14s at 24fps.",
+ "keys": [
+  {
+   "t": 0.0,
+   "x": 0.3352,
+   "y": 0.7976,
+   "fov": 2.3
+  },
+  {
+   "t": 3.5,
+   "x": 0.3352,
+   "y": 0.7976,
+   "fov": 2.3
+  },
+  {
+   "t": 12.0,
+   "x": 0.2478,
+   "y": 0.8133,
+   "fov": 1.55
+  },
+  {
+   "t": 14.0,
+   "x": 0.2478,
+   "y": 0.8133,
+   "fov": 1.55
+  }
+ ]
+}
