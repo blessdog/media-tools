@@ -38,3 +38,9 @@ __pycache__/
 !jobs/wang-meng/living/native/*/vmin-compare.png
 !jobs/wang-meng/film/*.mp4
 !jobs/wang-meng/film/evidence-*.png
+
+# Bulk renders. GitHub hard-rejects >100MB and these are regenerable outputs;
+# the short A/B evidence clips (all <4MB) are what claims actually cite.
+# Added 2026-08-20 after a push was rejected on a 329MB leg render.
+jobs/wang-meng/film/SLOW-JOURNEY.mp4
+jobs/wang-meng/film/leg-slow-*.mp4
