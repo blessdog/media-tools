@@ -176,28 +176,37 @@ for pl in meta['planeList']:
             # a leaf": "this is a problem that has been astonishingly and
             # unbelievably solved by LLMs and vision models... and we're doing a
             # primitive, ridiculous way to point out what are trees from rocks."
-            # He is right, and the failure is architectural: a threshold is a
-            # good tool for "which pixels carry ink" and the worst possible tool
-            # for "what is this thing". segment-semantic.py answers the second
-            # from words; this cut answers the first. Neither alone is enough --
-            # the model's mask is a blobby envelope that includes bare silk
+            # He is right, and the failure is architectural: a threshold is a good
+            # tool for "which pixels carry ink" and the worst possible tool for
+            # "what is this thing". segment-semantic.py answers the second from
+            # words; this cut answers the first. Neither alone is enough -- the
+            # model's mask is a blobby envelope that includes the bare silk
             # between the leaves, and the ink cut has no idea what a tree is.
             sd = Path(a.semantic)
-            scores = {f.stem: np.array(Image.open(f).convert('L'), np.float32)
-                      for f in sorted(sd.glob('*.png')) if f.stem != 'label'}
+            scores = ({f.stem: np.array(Image.open(f).convert('L'), np.float32)
+                       for f in sorted(sd.glob('*.png')) if f.stem != 'label'}
+                      if sd.is_dir() else {})
             if a.semantic_class not in scores:
-                sys.exit(f'--semantic-class {a.semantic_class!r} not in {sorted(scores)}')
-            want = scores.pop(a.semantic_class)
-            sem = want >= np.maximum.reduce(list(scores.values())) if scores else want > 127
-            if a.semantic_grow:
-                sem = cv2.dilate(sem.astype(np.uint8), cv2.getStructuringElement(
-                    cv2.MORPH_ELLIPSE, (2 * a.semantic_grow + 1,) * 2)) > 0
-            dropped = int((src_mask & ~sem).sum())
-            ink_dropped_px += dropped
-            print(f'semantic: {a.semantic_class} wins {100*sem.mean():.0f}% of the crop; '
-                  f'{dropped:,} ink px are outside it and are left still', file=sys.stderr)
-            src_mask &= sem
-        elif a.leaf_colour:
+                # A MISSING SEMANTIC PASS MUST NOT SILENTLY SHIP THE OLD RIG, and
+                # must not kill a whole zone build either. Say it loudly, fall back
+                # to the colour gate, and record in cycle.json which one ran.
+                print(f'!! semantic: {sd} has no {a.semantic_class!r} '
+                      f'({sorted(scores) or "no masks at all"}) -- run '
+                      f'living/build-semantic-masks.sh. FALLING BACK to the colour gate',
+                      file=sys.stderr)
+                a.semantic = None
+            else:
+                want = scores.pop(a.semantic_class)
+                sem = want >= np.maximum.reduce(list(scores.values())) if scores else want > 127
+                if a.semantic_grow:
+                    sem = cv2.dilate(sem.astype(np.uint8), cv2.getStructuringElement(
+                        cv2.MORPH_ELLIPSE, (2 * a.semantic_grow + 1,) * 2)) > 0
+                dropped = int((src_mask & ~sem).sum())
+                ink_dropped_px += dropped
+                print(f'semantic: {a.semantic_class} wins {100*sem.mean():.0f}% of the crop; '
+                      f'{dropped:,} ink px are outside it and are left still', file=sys.stderr)
+                src_mask &= sem
+        if (not a.semantic) and a.leaf_colour:
             # WHAT A LEAF IS, IN THIS PAINTING. Ryan, 2026-08-21: "The leaves are all
             # green or orange. You shouldn't be animating the graphite ridges of
             # rocks." The dark strokes that draw a leaf and the dark strokes that
