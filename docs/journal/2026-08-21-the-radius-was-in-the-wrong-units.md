@@ -84,3 +84,39 @@ builder now writes `pivots.png` per tree and `pivot-sheet.py` stitches them:
   evidence of how it moves.* The attachment rig ran for a whole evening on the
   strength of a picture of dots; the comparison that justified it was made
   this morning, and it came out "slightly".
+
+## Afternoon: the camera gets a vocabulary
+
+Ryan, on being asked to pick camera moves by name: *"I might not remember
+all of these vocabulary terms for specific movements. But they should be
+locked into your vocabulary. So if I describe something similar, you will
+understand."* Then he sent the full list — push in, pull out, pan, tilt,
+diagonal drift, anchored zoom, drifting anchor, opposition move; ease,
+hold-move-hold, speed ramp; slow roll, corner pin, parallax, handheld float,
+breathing; rack focus, vignette pulse, light sweep, grain; and the
+transitions. His names are now the claim (`shot-vocabulary`), each with its
+status here: PATH (authorable today), POST (ffmpeg/edit), GAP (not yet —
+slow roll, handheld float, rack focus). The `asked-as` lines are his
+phrasings, so "creep in" or "let it breathe" find the table.
+
+**Tried.** One move per station for z3w's nine stations, no two neighbours
+alike, SSOT in `film/station-moves.json`: pan · hold · parallax · tilt ·
+push-in · hold · pan · tilt · hold. `author-stations.py` turns it into
+paths; `render-leg.sh` renders one; `cut-reel.py` dissolves them in station
+order.
+
+**Happened.** Stills first (`film/evidence/stations-z3w-stills.png`) caught
+that holds framed the station's WIDE point — "the falls" held on the pine
+next to the fall. Holds now sit on the detail point. Then three small script
+failures in a row, all zsh: `${(U)...}` upper-casing the zone suffix, a
+case-sensitive glob matching nothing so the reel had zero inputs, and float
+arithmetic returning "" inside `$(( ))`. The reel cut moved into Python.
+Reel: `film/STATIONS-z3w.mp4`, 84.4 s. Ryan's verdict pending.
+
+Also found: `render-parallax` eases with piecewise smoothstep, so every key
+is a rest point — a three-key sweep pauses in the middle. Recorded in the
+claim; the great-pine parallax leg has three keys and may show it.
+
+Also today: GitHub SSH went unreachable mid-session on both ports while
+HTTPS was fine. `gh auth setup-git` is now the credential helper and all
+twelve repos push over HTTPS. Procedure in the universal store.
