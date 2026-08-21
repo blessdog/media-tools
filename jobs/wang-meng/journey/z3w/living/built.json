@@ -523,78 +523,6 @@
  },
  {
   "plane": "left-cliff-wall",
-  "region": "s-gorge-belt-01",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-belt-01",
-  "box": [
-   1535,
-   302
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 46026,
-  "movedPx": 21107,
-  "crop": [
-   1535,
-   302
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-gorge-belt-02",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-belt-02",
-  "box": [
-   1166,
-   572
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 17299,
-  "movedPx": 9728,
-  "crop": [
-   1166,
-   572
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-gorge-belt-03",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-belt-03",
-  "box": [
-   1366,
-   576
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 25662,
-  "movedPx": 17348,
-  "crop": [
-   1366,
-   576
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-gorge-belt-04",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-belt-04",
-  "box": [
-   1190,
-   792
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 4532,
-  "movedPx": 2192,
-  "crop": [
-   1190,
-   792
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
   "region": "s-gorge-foreground-01",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-foreground-01",
   "box": [
@@ -739,204 +667,6 @@
  },
  {
   "plane": "left-cliff-wall",
-  "region": "s-autumn-shelf-01",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-autumn-shelf-01",
-  "box": [
-   271,
-   232
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 29009,
-  "movedPx": 12739,
-  "crop": [
-   271,
-   232
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-autumn-shelf-02",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-autumn-shelf-02",
-  "box": [
-   30,
-   572
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 10021,
-  "movedPx": 5074,
-  "crop": [
-   30,
-   572
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-compound-autumn-01",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-autumn-01",
-  "box": [
-   1223,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 20128,
-  "movedPx": 9971,
-  "crop": [
-   1223,
-   0
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-compound-autumn-02",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-autumn-02",
-  "box": [
-   946,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 3125,
-  "movedPx": 1708,
-  "crop": [
-   946,
-   0
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-compound-autumn-03",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-autumn-03",
-  "box": [
-   1108,
-   36
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 2042,
-  "movedPx": 681,
-  "crop": [
-   1108,
-   36
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-compound-canopies-01",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-canopies-01",
-  "box": [
-   1416,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 3565,
-  "movedPx": 1860,
-  "crop": [
-   1416,
-   0
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-compound-canopies-02",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-compound-canopies-02",
-  "box": [
-   1742,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 5647,
-  "movedPx": 3242,
-  "crop": [
-   1742,
-   0
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-right-edge-autumn-01",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-edge-autumn-01",
-  "box": [
-   2108,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 21016,
-  "movedPx": 8053,
-  "crop": [
-   2108,
-   0
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-right-edge-autumn-02",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-edge-autumn-02",
-  "box": [
-   2497,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 12882,
-  "movedPx": 6763,
-  "crop": [
-   2497,
-   0
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-right-edge-autumn-03",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-right-edge-autumn-03",
-  "box": [
-   2431,
-   87
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 2384,
-  "movedPx": 1317,
-  "crop": [
-   2431,
-   87
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-tall-cliff-pines-01",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-tall-cliff-pines-01",
-  "box": [
-   0,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 30902,
-  "movedPx": 11436,
-  "crop": [
-   0,
-   0
-  ],
-  "class": "gust"
- },
- {
-  "plane": "left-cliff-wall",
   "region": "s-great-trees-upper",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper",
   "box": [
@@ -946,7 +676,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 155223,
-  "movedPx": 98686,
+  "movedPx": 98220,
   "crop": [
    1786,
    2265
@@ -964,7 +694,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 5036,
-  "movedPx": 1068,
+  "movedPx": 941,
   "crop": [
    636,
    2802
@@ -982,7 +712,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 67017,
-  "movedPx": 45967,
+  "movedPx": 44520,
   "crop": [
    636,
    2802
@@ -1000,7 +730,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 144362,
-  "movedPx": 46937,
+  "movedPx": 43408,
   "crop": [
    1116,
    1426
@@ -1018,7 +748,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 24563,
-  "movedPx": 6773,
+  "movedPx": 5661,
   "crop": [
    452,
    1717
@@ -1036,7 +766,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 69959,
-  "movedPx": 34733,
+  "movedPx": 34388,
   "crop": [
    452,
    1717
@@ -1054,7 +784,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 44728,
-  "movedPx": 31255,
+  "movedPx": 30568,
   "crop": [
    0,
    1290
@@ -1072,7 +802,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 147292,
-  "movedPx": 56845,
+  "movedPx": 53019,
   "crop": [
    282,
    1051
@@ -1090,7 +820,7 @@
   "n": 96,
   "on": 2,
   "ownPx": 14555,
-  "movedPx": 3313,
+  "movedPx": 3728,
   "crop": [
    2654,
    679

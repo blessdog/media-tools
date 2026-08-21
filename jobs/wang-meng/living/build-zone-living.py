@@ -567,6 +567,24 @@ if a.stage == "cycle":
     keep = [b for b in prev
             if not any(b["plane"] == n["plane"] and b["region"] == n["region"]
                        for n in built)]
+    # PRUNE, DO NOT ONLY MERGE. built.json is the shipped living layer, and a
+    # merge keeps every region ever built -- including ones since retired.
+    # Measured 2026-08-20 by the generated STATE.md on its first run: NINE
+    # summit regions Ryan had reverted ("peaks shouldnt wobble") were still
+    # registered and playing in z6w, plus all six `still`-class nubs in every
+    # zone. A decision to stop animating something has to reach the artefact,
+    # not just the config, or it is not a decision.
+    animated = {q["id"] for q in POLYS["polys"]
+                if CLASSES.get(q["class"], {}).get("technique") not in (None, "none")}
+    def region_of(b):
+        r = b["region"]
+        return r.rsplit("-", 1)[0] if r.rsplit("-", 1)[-1].isdigit() else r
+    dropped = [b for b in keep if region_of(b) not in animated]
+    keep = [b for b in keep if region_of(b) in animated]
+    if dropped:
+        byreg = sorted({region_of(b) for b in dropped})
+        print(f"    pruned {len(dropped)} stale patches from {len(byreg)} retired "
+              f"region(s): {', '.join(byreg)}", file=sys.stderr)
     manifest.write_text(json.dumps(keep + built, indent=1))
     print(json.dumps(built, indent=1))
 

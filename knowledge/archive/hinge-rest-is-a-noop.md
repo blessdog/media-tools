@@ -2,7 +2,7 @@
 id: hinge-rest-is-a-noop
 kind: law
 conflict-key: what-must-a-cutout-rig-guarantee
-status: live
+status: superseded
 supersedes: []
 verified-on: 2026-08-20
 asked-as:
