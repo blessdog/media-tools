@@ -4,18 +4,19 @@
 KSRC := $(HOME)/.claude/knowledge
 PY   := python3
 
-.PHONY: check check-store check-retrieval check-routing check-vendor test-gate vendor help
+.PHONY: check check-store check-retrieval check-routing check-supersedes check-vendor test-gate vendor help
 
 help:
 	@echo "make check         everything below; this is the gate"
 	@echo "make check-store   claims type-check (tagged union, one live claim per conflict-key)"
 	@echo "make check-retrieval  every claim is findable by its own asked-as questions"
 	@echo "make check-routing    pipeline configs name LIVE claim ids"
+	@echo "make check-supersedes no LIVE claim routes through a RETIRED one"
 	@echo "make check-vendor  knowledge-bin/ has not drifted from $(KSRC)"
 	@echo "make test-gate     the stagnation gate's own test suite"
 	@echo "make vendor        refresh knowledge-bin/ from $(KSRC)"
 
-check: check-vendor check-store check-retrieval check-routing test-gate
+check: check-vendor check-store check-retrieval check-routing check-supersedes test-gate
 	@echo "== ALL CHECKS PASSED"
 
 check-store:
@@ -23,6 +24,9 @@ check-store:
 
 check-retrieval:
 	@$(PY) knowledge-bin/check-retrieval.py
+
+check-supersedes:
+	@$(PY) knowledge-bin/check-supersedes.py --dir knowledge
 
 check-routing:
 	@n=0; for c in $$(git ls-files '*/pipeline*.json' 'jobs/*/route*.json' 2>/dev/null); do \

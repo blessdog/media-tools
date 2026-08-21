@@ -1,5 +1,5 @@
 source   ~/.claude/knowledge (git@github.com:blessdog/claude-knowledge)
-commit   8c3dc44faa4fef31e3294ef1536491859f562f59
+commit   275c428df2b48a3961d5050e580aa6a935b67707
 vendored 2026-08-21
 
 These are COPIES so that a clone of this repo has working gates without the

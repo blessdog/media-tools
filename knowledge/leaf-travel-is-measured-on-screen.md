@@ -74,7 +74,9 @@ leaves kind of twinkle and shake. move around leaf not entire tree."* **An
 amplitude question can be the wrong question.** Three angles of one rigid blob
 were three sizes of the same defect, and no value on that ladder was ever going
 to be right, because what was missing was a whole scale of motion rather than
-more of the one we had. See [[leaf-marks-are-the-second-scale]].
+more of the one we had. That second scale was then built and REJECTED the same
+afternoon, for a reason the amplitude question could not reach either -- see
+[[rigid-cards-preserve-the-brushwork]].
 
 **The method that generalises:** `living/swing-ladder.sh <hold> <region> <deg...>`
 rebuilds one region at several angles, renders the same hold for each, and

@@ -4,6 +4,10 @@ kind: verdict
 conflict-key: why-does-animated-foliage-read-as-a-blob
 status: superseded
 superseded-by: [rigid-cards-preserve-the-brushwork]
+retires:
+  - --leaf-marks
+  - --mark-swing
+  - --mark-twinkle
 scope: >
   Foliage drawn as ROUND SEPARATE MARKS -- dot clusters, lobed leaves, brick
   dashes, needle fans. Measured on 葛稚川移居圖. NOT valid for two grammars: a
