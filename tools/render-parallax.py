@@ -128,7 +128,16 @@ def smoothstep(a, b, t):
 
 
 def sample(keys, t):
-    """Piecewise smoothstep through the keyframes."""
+    """Piecewise smoothstep through the keyframes.
+
+    NOTE THE TRAP, measured 2026-08-21: smoothstep eases at BOTH ends of every
+    segment, so velocity hits zero AT EVERY KEY. That is exactly right for
+    hold-move-hold authoring, where each key is a pose the camera arrives at.
+    It is wrong for a densely SAMPLED path -- 21 keys half a second apart made
+    the camera stop and restart 21 times, once every 12 frames, and Ryan read
+    it immediately: "it's so choppy, it looks like you're stuttering through
+    it." Author poses, not samples. check_key_spacing() warns about it.
+    """
     if t <= keys[0]["t"]:
         return keys[0]
     if t >= keys[-1]["t"]:
@@ -140,6 +149,17 @@ def sample(keys, t):
             return {f: smoothstep(k0.get(f, 0.0), k1.get(f, 0.0), u)
                     for f in ("x", "y", "z", "fov", "rx", "ry", "rz")}
     return keys[-1]
+
+
+def check_key_spacing(keys, fps):
+    """Warn when a path is SAMPLED rather than posed -- see sample()."""
+    tight = [(a["t"], b["t"]) for a, b in zip(keys, keys[1:])
+             if 0 < (b["t"] - a["t"]) < 1.0]
+    if len(tight) >= 3:
+        print(f"  WARNING: {len(tight)} keyframe gaps under 1.0s. sample() eases "
+              f"to zero velocity AT EVERY KEY, so a densely sampled path stutters "
+              f"once per key ({int(fps * (tight[0][1] - tight[0][0]))} frames here). "
+              f"Author poses, not samples.", file=sys.stderr)
 
 
 def main() -> int:
@@ -299,6 +319,7 @@ def main() -> int:
         bg = (214, 203, 176, 255)
 
     n_frames = int(round(duration * fps))
+    check_key_spacing(keys, fps)
     idx = list(range(0, n_frames, max(1, args.preview)))
     if args.stills:
         idx = [0, n_frames // 2, max(0, n_frames - 1)]
