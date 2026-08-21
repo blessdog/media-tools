@@ -17,6 +17,7 @@ scope: >
 verified-on: 2026-08-21
 evidence:
   - jobs/wang-meng/living/evidence-attachment-pivot.png
+  - jobs/wang-meng/living/AB-PINEBRIDGE-foot-vs-attach.mp4
 asked-as:
   - where should a leaf card pivot
   - the leaves slide off the branch
@@ -59,6 +60,18 @@ than `--attach-max` from any branch is genuinely free-floating and falls back to
 its foot. This is the same morphological read as `--keep tophat`, which
 separates ripple arcs from rock in water — thin-versus-thick, applied to a
 different question.
+
+## The motion A/B, 2026-08-21 -- the still overlay was not the proof
+
+The rig was adopted on the strength of the pivot overlay alone; the
+"not acceptable" it answered was a 15-degree foot pivot BEFORE de4941f fixed
+three compositor leaks. Rendered side by side on the same hold -- foot pivot
+6 deg (5cc32e8) left, attachment r5 right, living halves only -- Ryan:
+**"The right one is slightly better."** Slightly. The fixed compositor did most
+of the work; the hinge placement is a real but small gain on the pine, and
+nothing here says it is a large gain on trees whose branch ink is thinner
+(see branch-radius-scales-with-the-tree). A still overlay is a claim about
+where a card WILL pivot; only the clip is evidence of how it moves.
 
 ## The mechanism worth carrying
 
