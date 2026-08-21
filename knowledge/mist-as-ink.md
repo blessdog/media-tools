@@ -10,6 +10,9 @@ mechanism: >
   displaces ink; there is no mark to displace. The ink inside the three `drift`
   boxes is the MOUNTAIN.
 verified-on: 2026-08-20
+asked-as:
+  - animate the mist
+  - make the clouds drift
 ---
 
 Measured across all three `drift` regions in `regions.json`:

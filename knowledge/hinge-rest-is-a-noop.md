@@ -5,6 +5,11 @@ conflict-key: what-must-a-cutout-rig-guarantee
 status: live
 supersedes: []
 verified-on: 2026-08-20
+asked-as:
+  - the animation looks broken
+  - paint is missing from my render
+  - the tree lost half its ink
+  - how do I test a rig
 ---
 
 > "this is broken." — Ryan, 2026-08-20, shown a pine with half its paint gone

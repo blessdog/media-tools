@@ -20,6 +20,10 @@ verified-on: 2026-08-20
 evidence:
   - jobs/wang-meng/living/AB-LOOP-z1-water.mp4
   - jobs/wang-meng/living/evidence-loop-seam-z1.png
+asked-as:
+  - make the water move
+  - animate ripples
+  - animate a waterfall
 ---
 
 ## The raw trace

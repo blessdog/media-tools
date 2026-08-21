@@ -11,6 +11,9 @@ mechanism: >
   because the painter was not drawing them differently. What separates them is
   plain TONE.
 verified-on: 2026-08-20
+asked-as:
+  - separate trees from rock
+  - tell forest from cliff
 ---
 
 Three discriminators tried on `s-summit-crest-left`, all failed. This is the

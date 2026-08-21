@@ -6,6 +6,9 @@ status: live
 supersedes: []
 proven: false
 verified-on: 2026-08-20
+asked-as:
+  - the camera is repetitive
+  - shot vocabulary
 ---
 
 **This is a PLAN, not a finding. `proven: false`. Do not build against it.**

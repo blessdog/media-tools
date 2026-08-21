@@ -26,6 +26,10 @@ route: >
 verified-on: 2026-08-20
 evidence:
   - jobs/wang-meng/living/evidence-warp-blurs-lift-does-not.png
+asked-as:
+  - make the leaves move
+  - animate a tree
+  - foliage in wind
 ---
 
 ## The raw trace, 2026-08-20

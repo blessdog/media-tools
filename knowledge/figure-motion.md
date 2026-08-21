@@ -24,6 +24,10 @@ route: >
 verified-on: 2026-08-16
 evidence:
   - jobs/wang-meng/living/cycles
+asked-as:
+  - animate a person
+  - make the robe stir
+  - move the deer
 ---
 
 ## The raw trace

@@ -13,6 +13,10 @@ scope: >
 verified-on: 2026-08-20
 evidence:
   - jobs/wang-meng/living/evidence-cleanplate-invented-foliage.png
+asked-as:
+  - the inpaint invented something
+  - clean plate copied the wrong thing
+  - fabricated detail in the fill
 ---
 
 ## Shiftmap will copy a tree into the hole where a tree was

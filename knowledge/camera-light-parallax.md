@@ -5,6 +5,10 @@ conflict-key: how-much-camera
 status: live
 supersedes: []
 verified-on: 2026-08-20
+asked-as:
+  - how much camera movement
+  - should the camera move at all
+  - is this too much zoom
 ---
 
 > "Don't forget it's not just about tree animation, we're still doing parallax

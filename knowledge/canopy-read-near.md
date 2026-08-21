@@ -12,6 +12,9 @@ verified-on: 2026-08-20
 evidence:
   - jobs/wang-meng/living/evidence-canopy-density.png
   - jobs/wang-meng/living/evidence-canopy-density-unbounded.png
+asked-as:
+  - find the canopies
+  - mask the trees near the compound
 ---
 
 Local ink DENSITY plus ink COMPACTNESS inside an authored box, box grown 120px

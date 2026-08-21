@@ -12,6 +12,9 @@ verified-on: 2026-08-20
 evidence:
   - jobs/wang-meng/living/evidence-summit-dark-accents.png
   - jobs/wang-meng/living/evidence-summit-darkness-map.png
+asked-as:
+  - mask trees on a distant ridge
+  - find canopies on the summits
 ---
 
 The darkest 2-3% of the box, closed into coherent masses, specks dropped, grown

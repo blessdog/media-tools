@@ -14,6 +14,9 @@ route: animate-strokes.py --field sway --mode warp
 verified-on: never
 evidence:
   - jobs/wang-meng/living/evidence-warp-blurs-lift-does-not.png
+asked-as:
+  - animate leaves with animate-strokes
+  - use field sway for trees
 ---
 
 ## Why this was retired, 2026-08-20

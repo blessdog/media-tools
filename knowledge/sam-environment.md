@@ -22,6 +22,11 @@ route: >
 verified-on: 2026-08-20
 evidence:
   - requirements-sam.txt
+asked-as:
+  - torch is missing
+  - ModuleNotFoundError torch
+  - how do I run SAM
+  - python quit unexpectedly
 ---
 
 ## Why this claim exists at all

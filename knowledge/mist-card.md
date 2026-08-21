@@ -6,6 +6,10 @@ status: live
 proven: false
 supersedes: []
 verified-on: never
+asked-as:
+  - add a mist layer
+  - can we paint in fog
+  - atmospheric card
 ---
 
 **This is a PLAN, not a finding. Do not build against it.**

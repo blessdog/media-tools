@@ -12,6 +12,10 @@ scope: >
 verified-on: 2026-08-20
 evidence:
   - jobs/wang-meng/living/evidence-attachment-pivot.png
+asked-as:
+  - where should a leaf card pivot
+  - the leaves slide off the branch
+  - leaves detached from the tree
 ---
 
 ## The axis was in the wrong place, so no amplitude could be right

@@ -17,6 +17,10 @@ mechanism: >
   half. A whole-tree mask can only be AUTHORED -- a lasso is a human judgement
   about which marks are one tree, and that judgement is not in the pixels.
 verified-on: 2026-08-20
+asked-as:
+  - how do I mask a whole tree
+  - can SAM cut out a tree
+  - segment one tree
 ---
 
 ## Measured, 2026-08-20

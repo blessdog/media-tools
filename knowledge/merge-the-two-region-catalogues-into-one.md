@@ -6,6 +6,10 @@ status: live
 supersedes: []
 proven: false
 verified-on: 2026-08-20
+asked-as:
+  - why are there two region files
+  - regions.json vs living-polys.json
+  - which region file does the builder read
 ---
 
 **This is a PLAN, not a finding. `proven: false`. Do not build against it.**

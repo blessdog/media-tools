@@ -6,6 +6,9 @@ status: superseded
 proven: false
 supersedes: []
 verified-on: never
+asked-as:
+  - should the summits move
+  - animate the far peaks
 ---
 
 ## A dead belief that stayed reachable for weeks

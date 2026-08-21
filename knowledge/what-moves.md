@@ -6,6 +6,10 @@ status: live
 supersedes:
   - summits-should-move
 verified-on: 2026-08-20
+asked-as:
+  - what is allowed to move
+  - should the mountains move
+  - can I animate the distant trees
 ---
 
 > "just the delicate things move. Their robes, the water ripples, leaves on
