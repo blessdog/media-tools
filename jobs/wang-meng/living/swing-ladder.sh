@@ -1,7 +1,15 @@
 #!/usr/bin/env zsh
 # HOW MUCH SHOULD A LEAF MOVE? Build the same hold at several swing angles and
-# stack them, so the amount is chosen by eye against the real framing instead of
-# being nudged. Reports ink loss per angle -- the cost of a bigger swing.
+# stack them, so the amount is SEEN rather than nudged. Reports ink loss per
+# angle -- the cost of a bigger swing.
+#
+# WHAT THIS LADDER CANNOT SETTLE (measured 2026-08-21): the value the FILM should
+# use. Ryan picked 12 off this ladder on one tight hold of one tree, and reversed
+# it to 6 within the hour on seeing the cut. Tip travel in screen px scales with
+# fov, the reel spans fov 1.0-1.6, and its seven trees differ 3x in card radius --
+# so an angle that reads as lively in a tight hold is nearly double the travel in
+# a wide one. Use the ladder to understand the RANGE; set the value in the reel.
+# See knowledge/leaf-travel-is-measured-on-screen.md.
 #   swing-ladder.sh <hold-name> <region> [deg ...]     e.g. swing-ladder.sh pinebridge s-pine-over-bridge 6 12 18
 set -e
 cd "$(dirname "$0")/../../.."

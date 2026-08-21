@@ -6,9 +6,10 @@ status: live
 supersedes: []
 scope: >
   Choosing the swing angle for cut-out foliage on 葛稚川移居圖. The GEOMETRY below
-  is exact for this plate and framing. SETTLED 2026-08-21: Ryan picked 12 deg off
-  LADDER-pinebridge.mp4. Note the angle alone was NOT the whole answer -- see
-  leaf-marks-are-the-second-scale, which he asked for in the same breath.
+  is exact for this plate. SETTLED 2026-08-21 at swing 6 -- and note that 12 was
+  chosen first off a single-tree ladder and then REVERSED once seen in the film.
+  A ladder built at one framing does not settle an amplitude for a film that
+  changes framing.
 verified-on: 2026-08-21
 evidence:
   - jobs/wang-meng/living/LADDER-pinebridge.mp4
@@ -51,9 +52,21 @@ compositor leak was fixed, because the 15 had been compensating for a rig that
 deleted 54% of the canopy. Ink loss at 6 deg is 1.8%. So the ladder must report
 loss per angle, not just look nicer.
 
-**The verdict, 2026-08-21.** Ryan watched the 6 / 12 / 20 ladder and said
-*"12"*. So swing 12 is the class default, ~18 px of tip travel on the pine at
-fov 1.35, about 1% of frame width.
+**The verdict, 2026-08-21 — and its reversal the same afternoon.** Ryan watched
+the 6 / 12 / 20 ladder and said *"12"*. Rebuilt into the reel, he watched it and
+said: *"Unfortunately, the leaves looked better before."* Swing is 6.
+
+**Why the ladder lied, which is the transferable part.** The ladder was ONE
+tight hold on ONE tree. The reel spans **fov 1.0 to 1.6 across seven trees**, and
+tip travel in screen px scales with fov — the same 12 deg that read as lively in
+a tight hold is nearly double the screen travel in a wide one, on trees whose
+card radii differ by 3x. **An amplitude chosen at one framing does not transfer
+to a film that changes framing.**
+
+So the ladder is still the right instrument for the QUESTION "what does this
+angle look like", and the wrong instrument for "what angle should the film use".
+The second question can only be answered in the cut. Build the ladder to
+understand the range; set the value in the reel.
 
 But he did not stop there, and the second half matters more: *"Okay, but I see
 the entire leaf structure is one green blob. I would like to make the individual
