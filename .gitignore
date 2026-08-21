@@ -50,3 +50,6 @@ jobs/wang-meng/film/leg-slow-*.mp4
 # A/B evidence clips, all under 4MB. Added 2026-08-20 after a rejected push.
 jobs/wang-meng/film/SLOW-JOURNEY.mp4
 jobs/wang-meng/film/leg-slow-*.mp4
+
+# vision-model tiles: regenerable from the master by tools/tile-image.py
+jobs/*/catalogue/tiles-*/*.jpg

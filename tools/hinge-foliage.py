@@ -93,6 +93,15 @@ p.add_argument('--branch-radius', default='auto',
 p.add_argument('--branch-ratio', type=float, default=0.55,
                help='auto radius = this x p99 stroke half-width. 0.55 reproduces the '
                     'radius Ryan chose on s-pine-over-bridge (5 of 9.17)')
+p.add_argument('--semantic', help='dir written by segment-semantic.py. A VISION MODEL decides which '
+                    'regions are foliage (the WHAT); the ink cut below decides which pixels inside '
+                    'them are painted mark (the WHICH). Supersedes --leaf-colour, which answered a '
+                    'semantic question with colour thresholds')
+p.add_argument('--semantic-class', default='green-and-orange-tree-leaves',
+               help='slug of the class to keep, as written by segment-semantic.py')
+p.add_argument('--semantic-grow', type=int, default=4,
+               help='px the semantic region is grown; CLIPSeg decodes at 352px and its edges sit '
+                    'a few px inside the true canopy')
 p.add_argument('--leaf-colour', dest='leaf_colour', action='store_true', default=True,
                help='a dark stroke is a LEAF only if it sits on coloured wash: green (Lab a '
                     'below the silk by --leaf-da) or orange (hue <= 28 deg, S >= 0.34). '
@@ -161,7 +170,34 @@ for pl in meta['planeList']:
             k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * a.ink_close + 1,) * 2)
             ink = cv2.morphologyEx(ink, cv2.MORPH_CLOSE, k)
         src_mask = ink > 0
-        if a.leaf_colour:
+        if a.semantic:
+            # THE MODEL DECIDES WHAT, THE INK DECIDES WHICH PIXELS. Ryan,
+            # 2026-08-21, on five hand-tuned colour thresholds answering "is this
+            # a leaf": "this is a problem that has been astonishingly and
+            # unbelievably solved by LLMs and vision models... and we're doing a
+            # primitive, ridiculous way to point out what are trees from rocks."
+            # He is right, and the failure is architectural: a threshold is a
+            # good tool for "which pixels carry ink" and the worst possible tool
+            # for "what is this thing". segment-semantic.py answers the second
+            # from words; this cut answers the first. Neither alone is enough --
+            # the model's mask is a blobby envelope that includes bare silk
+            # between the leaves, and the ink cut has no idea what a tree is.
+            sd = Path(a.semantic)
+            scores = {f.stem: np.array(Image.open(f).convert('L'), np.float32)
+                      for f in sorted(sd.glob('*.png')) if f.stem != 'label'}
+            if a.semantic_class not in scores:
+                sys.exit(f'--semantic-class {a.semantic_class!r} not in {sorted(scores)}')
+            want = scores.pop(a.semantic_class)
+            sem = want >= np.maximum.reduce(list(scores.values())) if scores else want > 127
+            if a.semantic_grow:
+                sem = cv2.dilate(sem.astype(np.uint8), cv2.getStructuringElement(
+                    cv2.MORPH_ELLIPSE, (2 * a.semantic_grow + 1,) * 2)) > 0
+            dropped = int((src_mask & ~sem).sum())
+            ink_dropped_px += dropped
+            print(f'semantic: {a.semantic_class} wins {100*sem.mean():.0f}% of the crop; '
+                  f'{dropped:,} ink px are outside it and are left still', file=sys.stderr)
+            src_mask &= sem
+        elif a.leaf_colour:
             # WHAT A LEAF IS, IN THIS PAINTING. Ryan, 2026-08-21: "The leaves are all
             # green or orange. You shouldn't be animating the graphite ridges of
             # rocks." The dark strokes that draw a leaf and the dark strokes that
@@ -364,7 +400,9 @@ for k in range(ndraw):
     'branchRadius': branch_radii[0] if len(set(branch_radii)) == 1 else branch_radii,
     'branchRadiusMode': str(a.branch_radius), 'branchRatio': a.branch_ratio, 'attachMax': a.attach_max,
     'cardsAttached': n_attached, 'cardsFoot': n_foot, 'branchPx': branch_px,
-    'leafColour': bool(a.leaf_colour), 'inkNotOnLeafPx': ink_dropped_px,
+    'leafSource': 'semantic' if a.semantic else ('colour' if a.leaf_colour else 'none'),
+    'semanticDir': a.semantic, 'semanticClass': a.semantic_class if a.semantic else None,
+    'leafColour': bool(a.leaf_colour and not a.semantic), 'inkNotOnLeafPx': ink_dropped_px,
     'technique': 'rigid cut-out cards hinged where they meet a branch, over a clean plate',
     'plate': a.plate, 'source': a.source, 'cards_dir': a.cards,
 }, indent=1))

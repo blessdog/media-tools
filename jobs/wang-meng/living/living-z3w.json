@@ -281,15 +281,6 @@
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-pine-over-bridge",
-    "box": [
-     744,
-     2802
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy",
     "box": [
      1116,
@@ -330,6 +321,15 @@
     "box": [
      2654,
      679
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-pine-over-bridge",
+    "box": [
+     744,
+     2802
     ],
     "n": 96,
     "on": 2
