@@ -61,16 +61,47 @@ measurable cost — 4.5 s rendered both halves of the A/B. The honest outlier is
 `s-right-rust-tree`: 13 cards, 40 marks, the smallest leaves in the zone. That
 is the one tree where the blob critique may still stand.
 
-## Verdict
+## Verdict: rejected, four hours later
 
-**Law-shaped, and it generalises past this project:** when tuning a parameter
+I recorded a verdict — `leaf-marks-are-the-second-scale` — and routed
+`foliage-motion` through it. Then Ryan watched the rebuilt reel:
+
+> "This new method of cutting out the leaves is a little too aggressive. It
+> deforms the aesthetic. What we had before was actually looking good. I think if
+> we just cut out little chunks, bushels of branches, and wave those around, like
+> how we were doing before, that's a better method."
+
+**And the reasoning had not been wrong.** A real canopy does carry two scales of
+motion. Secondary action *is* why foliage shimmers. The watershed found the atoms
+cleanly — 433 marks from 21 cards. Every step was sound, and the output was still
+rejected, for a reason that outranks all of it:
+
+**A card is a rigid transform.** Every brushstroke inside it arrives at the new
+position unchanged — same ink, same taper, same dry-brush edge, just somewhere
+else. Rotating and narrowing each mark deforms each stroke individually. That is
+not animating the painting. It is **redrawing** it, several times a second, in a
+hand that is not Wang Meng's.
+
+The goal was never a physically plausible tree. The goal is this painting, in
+motion, still looking painted by the person who painted it. **Fidelity to the
+medium beats fidelity to the physics.** A cel animator cutting a tree out of a
+background painting cuts *along the branches* for exactly this reason — the cut
+is free, the redraw is not.
+
+So the unit of motion is the **bushel**: a chunk of branch with its leaves on,
+big enough to carry its brushwork intact, small enough that neighbours can move
+out of phase. Nothing below the card is ours to move.
+
+`leaf-marks-are-the-second-scale` is in `knowledge/archive/`, superseded by
+`rigid-cards-preserve-the-brushwork`. `--leaf-marks` stays in the tool as an
+off-by-default flag whose docstring now records what it is *not* for.
+
+**What I still think is true from the dead end:** when tuning a parameter
 produces only bigger and smaller versions of the same complaint, the missing
-thing is a **degree of freedom**, not a value. Same shape as the universal law
-`a-defect-that-does-not-scale-is-not-the-parameter`.
-
-Recorded as `leaf-marks-are-the-second-scale`; `foliage-motion`'s route now runs
-through `--leaf-marks`, so the procedure that gets retrieved is the one that
-works.
+thing is a degree of freedom, not a value. That got me to build the right
+mechanism. It just did not tell me whether the mechanism belonged here — and no
+amount of animation theory could have, because the answer lives in the medium,
+not in the motion.
 
 ---
 
