@@ -1,9 +1,9 @@
 {
  "fps": 24,
  "duration": 10.0,
- "move": "unroll",
+ "move": "tilt",
  "station": "upper-gorge-pines",
- "_note": "UNROLL -- already looking down on where we came from -- keep rising. the pines on the far shoulder, already looking down on where we came from",
+ "_note": "TILT -- already looking down on where we came from -- keep rising. the pines on the far shoulder, already looking down on where we came from",
  "keys": [
   {
    "t": 0,

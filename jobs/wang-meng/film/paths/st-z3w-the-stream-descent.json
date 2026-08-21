@@ -1,9 +1,9 @@
 {
  "fps": 24,
  "duration": 10.0,
- "move": "track",
+ "move": "pan",
  "station": "the-stream-descent",
- "_note": "TRACK -- the stream steps down across the frame; read it sideways. the stream coming down out of the gorge over stepped rock",
+ "_note": "PAN -- the stream steps down across the frame; read it sideways. the stream coming down out of the gorge over stepped rock",
  "keys": [
   {
    "t": 0,

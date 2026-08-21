@@ -1,9 +1,9 @@
 {
  "fps": 24,
  "duration": 10.0,
- "move": "unroll",
+ "move": "tilt",
  "station": "gorge-narrows",
- "_note": "UNROLL -- rise through the narrows, walls sliding past, no zoom. both walls turning in at once -- the closest the rock ever comes to the camera",
+ "_note": "TILT -- rise through the narrows, walls sliding past, no zoom. both walls turning in at once -- the closest the rock ever comes to the camera",
  "keys": [
   {
    "t": 0,

@@ -1,9 +1,9 @@
 {
  "fps": 24,
  "duration": 10.0,
- "move": "track",
+ "move": "pan",
  "station": "the-red-maples",
- "_note": "TRACK -- the colour runs along the left wall; read it edge to edge. the orange maple mass on the left wall -- the one place the painting lets colour run",
+ "_note": "PAN -- the colour runs along the left wall; read it edge to edge. the orange maple mass on the left wall -- the one place the painting lets colour run",
  "keys": [
   {
    "t": 0,

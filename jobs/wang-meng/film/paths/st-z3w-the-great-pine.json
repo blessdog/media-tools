@@ -1,9 +1,9 @@
 {
  "fps": 24,
  "duration": 10.0,
- "move": "peek",
+ "move": "parallax",
  "station": "the-great-pine",
- "_note": "PEEK -- the pine is a near plane over the gorge -- the one multiplane moment in this zone. the old pine spreading over the right-hand shoulder, its trunk drawn in dry brush",
+ "_note": "PARALLAX -- the pine is a near plane over the gorge -- the one multiplane moment in this zone. the old pine spreading over the right-hand shoulder, its trunk drawn in dry brush",
  "keys": [
   {
    "t": 0,
