@@ -1,0 +1,33 @@
+{
+ "tool": "segment-semantic",
+ "model": "CIDAS/clipseg-rd64-refined",
+ "device": "mps",
+ "image": "jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/plate.png",
+ "size": [
+  1223,
+  603
+ ],
+ "tile": 352,
+ "overlap": 0.5,
+ "tiles": 18,
+ "classes": [
+  {
+   "prompt": "green and orange tree leaves",
+   "slug": "green-and-orange-tree-leaves",
+   "winnerFraction": 0.2399,
+   "meanScore": 0.1677
+  },
+  {
+   "prompt": "bare grey rock and cliff",
+   "slug": "bare-grey-rock-and-cliff",
+   "winnerFraction": 0.1321,
+   "meanScore": 0.1632
+  },
+  {
+   "prompt": "empty background paper",
+   "slug": "empty-background-paper",
+   "winnerFraction": 0.628,
+   "meanScore": 0.3425
+  }
+ ]
+}

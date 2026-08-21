@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 08:56 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 08:59 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -100,6 +100,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  eef4c03  STATE.md regenerated: leaf-colour gate and shot vocabulary in the store
 2026-08-21  6fb9cc7  keep the before-overlays of the rock that moved
 2026-08-21  eda0b83  leaf is colour, rock is graphite: cards are cut only from ink on green or orange wash; the reel gets a real scale range and a pull-out
 2026-08-21  d9944f5  journal: the camera gets a vocabulary
@@ -111,16 +112,9 @@ DELIVERABLES
 2026-08-21  3a0d41a  shot vocabulary: five camera moves, searchable in Ryan's words; the repetitive-camera bookmark is answered
 2026-08-21  e238656  LEG-LIGHT-z3w re-rendered on the approved auto-radius foliage; render-leg.sh keeps the zone suffix lower-case
 2026-08-21  6babde2  STATE.md regenerated after the foliage verdicts; render-leg.sh for one leg over a living layer
-2026-08-21  2322aed  hold: fall and pines on the auto-radius hinge (left pines r=3)
 ```
 
-### ⚠ UNPUSHED
-
-**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
@@ -146,8 +140,11 @@ git push origin main
  M jobs/wang-meng/journey/z5w/living/built.json
  M jobs/wang-meng/journey/z6w/living-work/s-right-rust-tree/drawings/cycle.json
  M jobs/wang-meng/journey/z6w/living/built.json
+ M jobs/wang-meng/living/evidence-branch-pivots-z3w.png
  M jobs/wang-meng/living/logs/cycle-foliage-z3w.json
+ M jobs/wang-meng/living/logs/cycle-foliage-z4w.json
 ?? jobs/wang-meng/film/evidence/stations-z3w-stills/
+?? jobs/wang-meng/living/evidence-rock-stopped-moving.png
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
