@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-20 19:40 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 08:18 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -18,6 +18,9 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 ? the-camera-has-one-move-and-repeats-it   (2026-08-20)
     the camera has one move and repeats it
     why: Ryan, 2026-08-20, on the third different leg in a row: 'Zoom in and out. We're doing the same zigzag cam
+? verify-remote-resolves   (2026-08-20)
+    verify the remote RESOLVES, not just that it exists
+    why: having an origin is not the same as being backed up. Measured 2026-08-20: 8 repos had a remote pointing
 ```
 
 ## What this project knows
@@ -25,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 25 live claims: 25 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 26 live claims: 26 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -44,6 +47,7 @@ PROCEDURES — the routes that are currently believed
   · water-motion           answers how-to-move-water   (sibling: foliage-motion)
 
 VERDICTS — measured, and SCOPED; check the scope before reusing
+  · branch-radius-scales-with-the-tree hinge-foliage's branch/leaf split on 葛稚川移居圖, and by the same mechanism any painting where 
   · canopy-read-distant    DISTANT ridges only -- the summits, master y < ~3850, verified on z6w. NOT valid near; the
   · canopy-read-near       NEAR foliage only -- the compound canopies and the gorge, master y > ~3850. NOT valid on d
   · clean-plate-donor-scope Any clean-plate fill whose hole is SURROUNDED BY MATERIAL OF THE SAME KIND as the thing be
@@ -60,6 +64,7 @@ OPEN — plans, NOT specs. proven: false. Do not build against these.
   ? merge-the-two-region-catalogues-into-one Why it matters: regions.json and living-polys.json BOTH carry a class per region, and only
   ? mist-card              A translucent band drifting on its own plane -- the multiplane technique from
   ? the-camera-has-one-move-and-repeats-it Why it matters: Ryan, 2026-08-20, on the third different leg in a row: 'Zoom in and out. W
+  ? verify-remote-resolves Why it matters: having an origin is not the same as being backed up. Measured 2026-08-20:
 ```
 
 ## Where the work stands
@@ -83,13 +88,13 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (18) · 0 violation(s)
 
 DELIVERABLES
-  jobs/wang-meng/living/AB-HOLD-bigcanopy.mp4
-  jobs/wang-meng/living/AB-HOLD-pinebridge.mp4
   jobs/wang-meng/film/LEG-LIGHT-z3w.mp4
+  jobs/wang-meng/living/AB-HOLD-fallandpines.mp4
+  jobs/wang-meng/living/AB-HOLD-bigcanopy.mp4
   jobs/wang-meng/living/AB-HOLD-greattrees.mp4
-  jobs/wang-meng/living/AB-HOLD-waterandtrees.mp4
-  jobs/wang-meng/living/AB-CUTOUT-VS-WARP.mp4
-  Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/LEG-LIGHT-z3w.mp4
+  jobs/wang-meng/living/AB-PINEBRIDGE-foot-vs-attach.mp4
+  jobs/wang-meng/living/AB-HOLD-pinebridge.mp4
+  Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/LEG-LIGHT-Z3W.mp4
 ```
 
 ## Recent history
@@ -97,26 +102,48 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
-2026-08-20  75a51b9  STATE.md: remote and push status
-2026-08-20  727b329  gitignore the bulk leg renders after a rejected push
-2026-08-20  13b260e  gitignore the bulk leg renders: GitHub rejects >100MB and they regenerate
-2026-08-20  98a0655  wip
-2026-08-20  f2e362b  record the two open questions as pending claims instead of offering to remember
-2026-08-20  36200b2  regenerate STATE.md after the store split
-2026-08-20  115ad0e  move the cross-project laws out of this project's store
-2026-08-20  46ce440  migrate STATE.md into the store: 896 hand-written lines -> 155 generated
-2026-08-20  e5162e8  every claim declares how it will be searched for; 48 questions, 0 unfindable
-2026-08-20  0adfae4  hinge each leaf spray where it joins its twig, not at the foot of its own mass
-2026-08-20  5cc32e8  rebuild all four zones on the fixed hinge at 6 degrees, not 15
-2026-08-20  de4941f  a zero-degree hinge changed 26,293 pixels: three leaks in the cut-out compositor
+2026-08-21  2322aed  hold: fall and pines on the auto-radius hinge (left pines r=3)
+2026-08-21  68ff56d  verdict: auto-radius hinge approved on pine, great trees and big canopy -- 'subtle and beautiful in all'; camera bookmark unblocked
+2026-08-21  6975104  journal: the radius was in the wrong units
+2026-08-21  bf19bb5  verdict: attachment pivot beats foot pivot on the pine, slightly, on a motion A/B
+2026-08-21  39185a9  pinebridge: restore the approved foot-pivot hold, keep both rigs by name, A/B them side by side
+2026-08-21  fd7bf3e  pivot-sheet: row heights per row, not per tallest tile
+2026-08-21  7bdcf67  evidence: every z3w tree's hinge pivots on auto radius, one sheet
+2026-08-21  1645445  claim: branch radius scales with the tree; pivot-sheet.py stitches every tree's hinge overlay
+2026-08-21  7841ad8  branch radius is a property of the tree, not the painting: --branch-radius auto
+2026-08-21  d802f66  hinge-foliage: cycle.json records the rig that made it; card seeds no longer salted per process
+2026-08-21  87eb324  foliage rig verdict: branch radius 5, and the builder now passes it
+2026-08-20  0c30c54  bookmark: a configured remote is not a resolving remote
 ```
 
-*Remote: `git@github.com:blessdog/media-tools.git` — `main` is pushed.*
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
+ M jobs/wang-meng/film/LEG-LIGHT-z3w.mp4
+ M jobs/wang-meng/journey/z3w/_ab/fallandpines/path.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living/built.json
+ M jobs/wang-meng/journey/z4w/living-work/s-gorge-big-canopy/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/s-gorge-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/s-left-clifftop-pine/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/s-left-pines-z2/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living/built.json
+ M jobs/wang-meng/journey/z5w/living-work/s-gorge-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living/built.json
+ M jobs/wang-meng/journey/z6w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living/built.json
+?? jobs/wang-meng/film/render-leg.sh
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
