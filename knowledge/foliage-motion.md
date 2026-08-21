@@ -17,12 +17,13 @@ not-when: >
 route: >
   clean-plate.py --method shiftmap (synthesise the ground behind the canopy,
   ONCE) -> hinge-foliage.py --from-ink --branch-radius auto --attach-max 14
-  --leaf-marks (cut one card per ink cluster, pivot WHERE IT JOINS A BRANCH --
-  see hinge-at-the-attachment -- rotate on a gust envelope delayed by position
-  along the wind, AND split each card into its individual leaf marks so each one
-  moves on its own phase -- see leaf-marks-are-the-second-scale, without which a
-  spray of touching marks is one rigid blob that can only tilt) ->
-  render-parallax (composite at depth). Implemented as the
+  --swing 6 (cut one card per ink cluster -- a BUSHEL of branch with its leaves
+  on -- pivot WHERE IT JOINS A BRANCH, see hinge-at-the-attachment, and rotate on
+  a gust envelope delayed by position along the wind) -> render-parallax
+  (composite at depth). Do NOT pass --leaf-marks: splitting a card into its
+  individual leaf marks was measured and REJECTED on 2026-08-21 because
+  deforming each mark redraws the brushwork -- see
+  rigid-cards-preserve-the-brushwork. Implemented as the
   foliage-motion entry in jobs/wang-meng/living/build-zone-living.py's
   TECHNIQUES table. NOT cut-stroke.py first: hinge-foliage cuts its own cards,
   because the card decomposition is what decides crown-sway vs leaf-flutter and
