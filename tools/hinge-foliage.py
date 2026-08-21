@@ -55,7 +55,7 @@ example:
   hinge-foliage.py --plate clean.png --source plate.png --cards canopy-masks \
       --out drawings --swing 5 --preview gust.mp4
 """
-import argparse, json, subprocess, sys, tempfile
+import argparse, json, subprocess, sys, tempfile, zlib
 from pathlib import Path
 import numpy as np
 import cv2
@@ -117,6 +117,7 @@ H, W = plate.shape[:2]
 
 meta = json.loads((Path(a.cards) / 'layers.json').read_text())
 cards = []
+n_attached = n_foot = branch_px = 0
 for pl in meta['planeList']:
     if a.only and pl['name'] != a.only:
         continue
@@ -152,7 +153,8 @@ for pl in meta['planeList']:
     branch = cv2.morphologyEx(src_mask.astype(np.uint8), cv2.MORPH_OPEN, kb)
     branch_dist = (cv2.distanceTransform(1 - branch, cv2.DIST_L2, 3)
                    if branch.any() else np.full(src_mask.shape, 1e9, np.float32))
-    print(f'branch ink (opening by r={a.branch_radius}): {int(branch.sum()):,}px '
+    branch_px += int(branch.sum())
+    print(f'branch ink (opening by r={a.branch_radius}): {branch_px:,}px '
           f'of {int(src_mask.sum()):,}', file=sys.stderr)
 
     n, lab, st, cen = cv2.connectedComponentsWithStats(src_mask.astype(np.uint8), 8)
@@ -192,16 +194,21 @@ for pl in meta['planeList']:
         j = int(np.argmin(near))
         if near[j] <= a.attach_max:
             pvx, pvy = float(xs[j]), float(ys[j])
+            n_attached += 1
         else:
             foot = ys > ys.max() - 6
             pvx, pvy = float(xs[foot].mean()), float(ys.max())
+            n_foot += 1
         cards.append({
             'name': f"{pl['name']}-{i:02d}", 'box': (x0, y0, x1, y1),
             'pivot': (pvx - x0, pvy - y0), 'along': 0.0, 'px': int(st[i, 4]),
             'rgb': src[y0:y1, x0:x1].copy(),
             'al': al[y0:y1, x0:x1].copy(),
             'solid': solid[y0:y1, x0:x1].copy(),
-            'seed': (hash(pl['name']) + i) % 1000 / 1000.0,
+            # crc32, not hash(): str hash is salted per process, so the same
+            # flags gave a different gust phase on every run and no two builds
+            # of one tree were comparable.
+            'seed': (zlib.crc32(pl['name'].encode()) + i) % 1000 / 1000.0,
         })
 if not cards:
     sys.exit(f'no card in {a.cards} reached --min-px {a.min_px}')
@@ -282,7 +289,9 @@ for k in range(ndraw):
     'cards': len(cards), 'fromInk': a.from_ink, 'swingDeg': a.swing, 'peakAngleDeg': round(peak, 2),
     'gust': a.gust, 'gustTravel': a.gust_travel, 'gustRest': a.gust_rest,
     'angle': a.angle, 'flutter': a.flutter,
-    'technique': 'rigid cut-out cards hinged at their own pivots over a clean plate',
+    'branchRadius': a.branch_radius, 'attachMax': a.attach_max,
+    'cardsAttached': n_attached, 'cardsFoot': n_foot, 'branchPx': branch_px,
+    'technique': 'rigid cut-out cards hinged where they meet a branch, over a clean plate',
     'plate': a.plate, 'source': a.source, 'cards_dir': a.cards,
 }, indent=1))
 
