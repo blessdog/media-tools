@@ -2,12 +2,13 @@
 id: truck-parallax-must-saturate
 kind: verdict
 conflict-key: how-much-multiplane-separation-can-a-cut-up-painting-take
-status: live
+status: superseded
 scope: >
   render-parallax.py --truck on a plane stack CUT FROM A SINGLE PAINTING
   (as opposed to cels painted separately). Measured 2026-08-21 on
   jobs/wang-meng/journey/z1, 13 planes, z 1.00..3.70, a 10s vertical rise.
 supersedes: []
+retires: truck-parallax-must-saturate
 verified-on: 2026-08-21
 evidence:
   - jobs/wang-meng/evidence/2026-08-21-AB-pan-vs-truck-0.25.mp4
@@ -17,6 +18,12 @@ asked-as:
   - paper gaps opened during the camera move
   - how much truck is too much
 ---
+
+> **SUPERSEDED 2026-08-21 by translation-parallax-is-refuted-on-a-cut-painting.**
+> The cap does not tame the truck, it deletes it: the raw displacement is hundreds
+> of px against a 36px ceiling, so every plane saturates within ~2s and near and far
+> end up shifted identically. Ryan on the capped render: "it still really distorts
+> the painting and fucks it up." Kept for the measurement, not the recommendation.
 
 **A rate difference accumulates, so an uncapped truck destroys the picture on
 any long move.** `--truck K` makes near planes translate `w = 1 + K(z_ref/z − 1)`
