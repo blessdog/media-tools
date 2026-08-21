@@ -12,11 +12,11 @@ evidence:
   - jobs/wang-meng/film/station-moves.json
   - jobs/wang-meng/film/STATIONS-z3w.mp4
 asked-as:
-  - how should the camera behave
   - the shots all look the same
-  - where should the camera move
   - why does it feel like floating above the painting
   - how do people actually look at a painting
+  - nothing ever backs out or pushes in
+  - what should a shot be pointed at
 ---
 
 ## People look from a distance, then move toward what moves
@@ -48,11 +48,11 @@ before anyone knows where the life is, so the camera can only visit coordinates.
 This law is the strongest argument for the animate-first inversion, and the two
 should be read together.
 
-**Vocabulary.** The moves themselves are Ryan's, in [[shot-vocabulary]] — he
-built that language for exactly this and re-sent it in full. The relevant ones
-here are *anchored zoom* and *drifting anchor* (arrive on a point rather than a
-region), *hold–move–hold* (the noticing pause before the approach), and *push in*
-after a *pull out* has earned it.
+**Which move to use is a different question**, and [[shot-vocabulary]] is the one
+place that answers it — Ryan built that language for exactly this purpose and
+re-sent it in full on the same day. This claim decides WHERE the camera goes and
+what shape a shot takes; that one holds the named moves. Do not copy the list
+into here.
 
 **Corollary — a wide is not wasted time.** Backing out is what makes a push mean
 anything, and the reel currently has almost no width to spend. The widest shot in
