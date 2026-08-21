@@ -114,6 +114,8 @@ def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
              "--gust-travel", str(cls.get("gust-travel", 1500)),
              "--gust-rest", str(cls.get("gust-rest", 0.15)),
              "--min-px", str(cls.get("minPx", 80)),
+             *(["--leaf-mask", str(wd / "leaf-mask.png")]
+               if cls.get("leafMask") and (wd / "leaf-mask.png").exists() else []),
              *(["--leaf-marks",
                 "--mark-swing", str(cls.get("markSwing", 3.0)),
                 "--mark-rate", str(cls.get("markRate", 3.0)),
@@ -484,6 +486,29 @@ if a.stage == "cycle":
         wd = WORK / uid
         (wd / "mask" / "masks").mkdir(parents=True, exist_ok=True)
         plate.crop((cx0, cy0, cx1, cy1)).save(wd / "plate.png")
+        # THE MODEL'S MASK, CROPPED HERE. A master-px foliage mask (VLM catalogue
+        # box -> refine-mask-sam -> composite-tile-masks) is one mask for the whole
+        # painting, and this is the only place that knows how to cut a region out
+        # of it: master = masterBox origin + plate px * K. Doing it in the tool
+        # would make the tool depend on the zone's geometry, which is the caller's.
+        fm = cls.get("leafMask")
+        if fm:
+            fmp = (HERE / fm) if not Path(fm).is_absolute() else Path(fm)
+            if fmp.exists():
+                big = Image.open(fmp).convert("L")
+                sub = big.crop((int(X0 + cx0 * K), int(Y0 + cy0 * K),
+                                int(X0 + cx1 * K), int(Y0 + cy1 * K)))
+                sub = sub.resize((cx1 - cx0, cy1 - cy0), Image.NEAREST)
+                sub.save(wd / "leaf-mask.png")
+                keep = np.array(sub) > 127
+                print(f"    leaf-mask: model keeps {100*keep.mean():.1f}% of the crop",
+                      file=sys.stderr)
+            else:
+                sys.exit(f"leafMask {fmp} not found -- build it with "
+                         f"jobs/wang-meng/catalogue/sam-all-tiles.sh, or unset "
+                         f"classes.{r['class']}.leafMask. Falling back silently to "
+                         f"the colour gate would hide which perception produced the "
+                         f"cards, and that is the one thing the record must show.")
         Image.fromarray((rm[cy0:cy1, cx0:cx1] * 255).astype(np.uint8)).save(
             wd / "mask" / "masks" / "001.png")
         (wd / "mask" / "layers.json").write_text(json.dumps({

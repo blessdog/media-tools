@@ -128,6 +128,14 @@ p.add_argument('--leaf-grow', type=int, default=5, help='px the leaf wash is gro
 # and each leaf moves smaller, faster and out of phase with its neighbours
 # (secondary action / overlapping action). The flash a real canopy gives off is
 # a leaf turning edge-on, which for a flat mark is a narrowing along one axis.
+p.add_argument('--leaf-mask',
+               help='binary PNG in the SOURCE image\'s coordinate space: ink outside '
+                    'it is not leaf. This is where a MODEL-derived mask goes -- a VLM '
+                    'catalogue box refined by SAM (refine-mask-sam.py) and composited '
+                    'to master px, then cropped to this plate by the caller. It '
+                    'replaces --leaf-colour, which is a threshold and cannot tell a '
+                    'rust maple from the cliff it stands on '
+                    '(knowledge/perception-is-a-model-not-a-threshold.md)')
 p.add_argument('--leaf-marks', action='store_true',
                help='split each card into individual leaf MARKS (distance-transform '
                     'watershed) and move each one on its own phase ON TOP of the '
@@ -253,7 +261,22 @@ for pl in meta['planeList']:
                 print(f'semantic[{a.semantic_mode}]: {what} of the crop; '
                       f'{dropped:,} ink px left still', file=sys.stderr)
                 src_mask &= sem
-        if (not a.semantic) and a.leaf_colour:
+        if a.leaf_mask:
+            # A MODEL SAID SO, not a threshold. The mask arrives in the source
+            # image's own space, so it needs no reprojection here -- the caller
+            # owns the master->plate crop because the caller is what knows the
+            # plate's masterBox and scale.
+            lm = np.array(Image.open(a.leaf_mask).convert('L'))
+            if lm.shape != src_mask.shape:
+                lm = cv2.resize(lm, (src_mask.shape[1], src_mask.shape[0]),
+                                interpolation=cv2.INTER_NEAREST)
+            keep = lm > 127
+            dropped = int((src_mask & ~keep).sum())
+            ink_dropped_px += dropped
+            print(f'leaf-mask: model keeps {100*keep.mean():.0f}% of the crop; '
+                  f'{dropped:,} ink px left still', file=sys.stderr)
+            src_mask &= keep
+        elif (not a.semantic) and a.leaf_colour:
             # WHAT A LEAF IS, IN THIS PAINTING. Ryan, 2026-08-21: "The leaves are all
             # green or orange. You shouldn't be animating the graphite ridges of
             # rocks." The dark strokes that draw a leaf and the dark strokes that
@@ -576,10 +599,12 @@ for k in range(ndraw):
     'branchRadius': branch_radii[0] if len(set(branch_radii)) == 1 else branch_radii,
     'branchRadiusMode': str(a.branch_radius), 'branchRatio': a.branch_ratio, 'attachMax': a.attach_max,
     'cardsAttached': n_attached, 'cardsFoot': n_foot, 'branchPx': branch_px,
-    'leafSource': 'semantic' if a.semantic else ('colour' if a.leaf_colour else 'none'),
+    'leafSource': ('leaf-mask' if a.leaf_mask else
+                   'semantic' if a.semantic else ('colour' if a.leaf_colour else 'none')),
+    'leafMask': a.leaf_mask,
     'semanticDir': a.semantic, 'semanticClass': a.semantic_class if a.semantic else None,
     'semanticMode': a.semantic_mode if a.semantic else None,
-    'leafColour': bool(a.leaf_colour and not a.semantic), 'inkNotOnLeafPx': ink_dropped_px,
+    'leafColour': bool(a.leaf_colour and not a.semantic and not a.leaf_mask), 'inkNotOnLeafPx': ink_dropped_px,
     'leafMarks': bool(a.leaf_marks), 'marks': n_marks,
     'markSwingDeg': a.mark_swing if a.leaf_marks else None,
     'markRate': a.mark_rate if a.leaf_marks else None,
