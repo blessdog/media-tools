@@ -70,6 +70,9 @@ p.add_argument('--gust-rest', type=float, default=0.15, help='floor so nothing i
 p.add_argument('--frames', type=int, default=96)
 p.add_argument('--on', type=int, default=2, help='hold each drawing this many frames')
 p.add_argument('--feather', type=int, default=2)
+p.add_argument('--prefix', default='',
+               help="filename prefix for the drawings; the living-layer builder "
+                    "reads dr-%03d.png, so pass --prefix dr- when feeding it")
 p.add_argument('--out', required=True)
 a = p.parse_args()
 
@@ -167,17 +170,17 @@ for d in range(n_draw):
         alf = cv2.warpAffine(c['al'], M, (bw, bh), flags=cv2.INTER_LINEAR,
                              borderMode=cv2.BORDER_CONSTANT, borderValue=0)[..., None]
         frame[y0:y1, x0:x1] = frame[y0:y1, x0:x1] * (1 - alf) + rgb * alf
-    Image.fromarray(np.clip(frame, 0, 255).astype(np.uint8)).save(out / f'{d:03d}.png')
+    Image.fromarray(np.clip(frame, 0, 255).astype(np.uint8)).save(out / f'{a.prefix}{d:03d}.png')
 
 # LOOP SEAM: the last drawing must flow into the first, or the cycle ticks.
-f0 = np.asarray(Image.open(out / '000.png'), np.float32)
-fl = np.asarray(Image.open(out / f'{n_draw - 1:03d}.png'), np.float32)
+f0 = np.asarray(Image.open(out / f'{a.prefix}000.png'), np.float32)
+fl = np.asarray(Image.open(out / f'{a.prefix}{n_draw - 1:03d}.png'), np.float32)
 seam = float(np.abs(f0 - fl).mean())
 # MEASURE AT THE PEAK DRAWING, not at the midpoint. The gust peaks around
 # u = attack+hold (~0.14 of the loop), and the midpoint sits in the calm air
 # where the angle equals frame 0's -- comparing there reported 0.00% moved on a
 # cycle that was working perfectly.
-fp = np.asarray(Image.open(out / f'{peak_d:03d}.png'), np.float32)
+fp = np.asarray(Image.open(out / f'{a.prefix}{peak_d:03d}.png'), np.float32)
 moved = float((np.abs(f0 - fp).sum(2) > 6).mean() * 100)
 
 (out / 'cycle.json').write_text(json.dumps({

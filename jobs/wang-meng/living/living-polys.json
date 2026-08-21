@@ -1,5 +1,5 @@
 {
- "note": "AUTHORED living-layer boundaries (water and foliage) in MASTER px. These exist because the material mask fails above the river: mask-bare-ground looks for bright low-variance silk and the dry CLIFF up here is bright low-variance silk too \u2014 living/native/w-midstream/mask-overlay.png is blue confetti over rock, and 449 mask components with a largest of 6487px is what that looks like numerically. What separates water here is pictorial, so it is authored by eye against gridded master crops (living/grid-crop.py), the same loop the 31 stations used. Two inventory boxes in regions.json were also refuted by looking: f-left-tall-fall [980,8650,1330,10100] is bare cliff and canopy \u2014 the real gorge fall is a slender white column at x~1470-1610 running y 9040-10620; and w-upper-stream is not a stream at all, it is the same fall's lower half.  2026-08-20 \u2014 THE SUMMITS. The whole band above y~3850 had no living region at all, which is why the highest stations framed a picture that held perfectly still. The three `drift` (mist) regions in regions.json cannot supply it: measured, 40% of each of those boxes reads as 'ink' and that ink is the MOUNTAIN (max stroke thickness 59-75px), with 2.4-2.7% thin stroke \u2014 displacing it wobbles the silhouette, which is the smear the inventory feared (living/evidence-mist-has-no-ink.png). There is no mist ink in this painting; the mist IS bare silk. What is really up there and really moves is FOLIAGE, so the summits get gusts like everything else, at half amplitude for distance (class `gust-far`).  2026-08-20: 13 `gust-far` summit polys REMOVED. They were reverted from regions.json the day they were built (Ryan: \"peaks shouldnt wobble\") but survived here, in the file the builder actually reads -- see knowledge/what-moves.md. `gust` renamed `foliage`; class names are validated against regions.json by check-routing.py.",
+ "note": "AUTHORED living-layer boundaries (water and foliage) in MASTER px. These exist because the material mask fails above the river: mask-bare-ground looks for bright low-variance silk and the dry CLIFF up here is bright low-variance silk too — living/native/w-midstream/mask-overlay.png is blue confetti over rock, and 449 mask components with a largest of 6487px is what that looks like numerically. What separates water here is pictorial, so it is authored by eye against gridded master crops (living/grid-crop.py), the same loop the 31 stations used. Two inventory boxes in regions.json were also refuted by looking: f-left-tall-fall [980,8650,1330,10100] is bare cliff and canopy — the real gorge fall is a slender white column at x~1470-1610 running y 9040-10620; and w-upper-stream is not a stream at all, it is the same fall's lower half.  2026-08-20 — THE SUMMITS. The whole band above y~3850 had no living region at all, which is why the highest stations framed a picture that held perfectly still. The three `drift` (mist) regions in regions.json cannot supply it: measured, 40% of each of those boxes reads as 'ink' and that ink is the MOUNTAIN (max stroke thickness 59-75px), with 2.4-2.7% thin stroke — displacing it wobbles the silhouette, which is the smear the inventory feared (living/evidence-mist-has-no-ink.png). There is no mist ink in this painting; the mist IS bare silk. What is really up there and really moves is FOLIAGE, so the summits get gusts like everything else, at half amplitude for distance (class `gust-far`).  2026-08-20: 13 `gust-far` summit polys REMOVED. They were reverted from regions.json the day they were built (Ryan: \"peaks shouldnt wobble\") but survived here, in the file the builder actually reads -- see knowledge/what-moves.md. `gust` renamed `foliage`; class names are validated against regions.json by check-routing.py.",
  "polys": [
   {
    "id": "w-gorge-fall",
@@ -74,7 +74,7 @@
      8860
     ]
    ],
-   "note": "the tall gorge fall \u2014 four white threads between dark ink lines. Pine branches cross it at y 9560-9780 and y 9990-10250; those are excluded so needles are not dragged downstream."
+   "note": "the tall gorge fall — four white threads between dark ink lines. Pine branches cross it at y 9560-9780 and y 9990-10250; those are excluded so needles are not dragged downstream."
   },
   {
    "id": "w-compound-fall",
@@ -125,7 +125,7 @@
      5250
     ]
    ],
-   "note": "the fall under the compound \u2014 station 8. A slender \u7559\u767d column of white threads between dark banks; the polygon hugs the white so the bank hatching is not dragged."
+   "note": "the fall under the compound — station 8. A slender 留白 column of white threads between dark banks; the polygon hugs the white so the bank hatching is not dragged."
   },
   {
    "id": "w-midstream",
@@ -578,6 +578,29 @@
     ]
    ],
    "note": "pine cluster on the tall left cliff | box from the 2026-08-19 six-band read; the canopy DENSITY mask does the fine cut inside it, so a generous box is safe as long as it holds no figures"
+  },
+  {
+   "id": "g-ge-fan",
+   "class": "figure",
+   "points": [
+    [
+     1505,
+     12205
+    ],
+    [
+     1730,
+     12205
+    ],
+    [
+     1730,
+     12390
+    ],
+    [
+     1505,
+     12390
+    ]
+   ],
+   "note": "the fan and its swing arc, master px. Ge's crop origin is [1176,12029] at k=1.0; the fan card sits at [1539,12240,1696,12354] inside it."
   }
  ],
  "excludes": [

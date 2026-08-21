@@ -137,10 +137,80 @@ def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
 
 
 def _figure_motion(wd, cls, pivot, cx0, cy0):
-    """knowledge/figure-motion.md — reuse a verified cycle; never invent one."""
-    sys.exit("figure-motion: reuse a proven cycle from living/cycles/. "
-             "Generating a new figure cycle is a fabrication decision and needs "
-             "Ryan's verdict first (knowledge/figure-motion.md, not-when).")
+    """knowledge/figure-motion.md — swing AUTHORED cards; never invent a motion.
+
+    The gate this replaces refused outright, because generating a figure cycle
+    is a fabrication decision. Ryan gave the verdict 2026-08-21 ("start on the
+    figures", after "we can invent a little bit of ink... as long as it looks
+    hand-drawn"), so what stands guard now is narrower and better: EVERY card
+    must be a mask a human authored, named in regions.json. Nothing here decides
+    which pixels are a sleeve.
+
+    RESAMPLE THE STENCIL, NOT THE BRUSHWORK. The cards are cut at master
+    resolution (SAM on a k=1.0 crop) while this zone's plate is at k=K. A mask
+    is a stencil and survives being resized; the finished drawings would carry
+    Wang Meng's ink through a second resample, so the cycle is REBUILT at plate
+    scale here rather than pasted in from living/cycles/.
+    """
+    spec = (cls.get("cards") or {}).get(wd.name)
+    if not spec:
+        sys.exit(f"figure-motion: no cards authored for '{wd.name}'. Add "
+                 f"classes.figure.cards['{wd.name}'] to regions.json naming the "
+                 f"mask dir, the pivots file and which part swings. A figure "
+                 f"cycle is never generated from nothing "
+                 f"(knowledge/figure-motion.md).")
+
+    src_master = spec["masterOrigin"]          # where the authored crop sits
+    md = ROOT / spec["masks"]
+    meta = json.loads((md / "layers.json").read_text())
+    piv = json.loads((ROOT / spec["pivots"]).read_text())
+    only = spec.get("only")
+
+    cards = wd / "cards"
+    (cards / "masks").mkdir(parents=True, exist_ok=True)
+    plane_list, pivots_out = [], {}
+    for pl in meta["planeList"]:
+        if only and pl["name"] != only:
+            continue
+        m = Image.open(md / "masks" / f"{pl['n']:03d}.png").convert("L")
+        # master px -> plate px -> this region's crop
+        nw, nh = max(1, round(m.width / K)), max(1, round(m.height / K))
+        m = m.resize((nw, nh), Image.LANCZOS)
+        ox = round((src_master[0] + pl["offset"][0] - X0) / K) - cx0
+        oy = round((src_master[1] + pl["offset"][1] - Y0) / K) - cy0
+        m.save(cards / "masks" / f"{pl['n']:03d}.png")
+        plane_list.append({"n": pl["n"], "name": pl["name"], "offset": [ox, oy]})
+        if pl["name"] in piv:
+            px, py = piv[pl["name"]]["pivot"]
+            pivots_out[pl["name"]] = {"pivot": [
+                round((src_master[0] + px - X0) / K - cx0, 1),
+                round((src_master[1] + py - Y0) / K - cy0, 1)]}
+    if not plane_list:
+        sys.exit(f"figure-motion: '{only}' is not a plane in {spec['masks']}")
+    (cards / "layers.json").write_text(json.dumps(
+        {"tool": "build-zone-living", "note": "authored cards resampled from "
+         f"master into {wd.name}'s crop at k={K}", "planeList": plane_list}))
+    (cards / "pivots.json").write_text(json.dumps(pivots_out, indent=1))
+
+    # THE GROUND BEHIND THE CARD, first. Same two-step shape as foliage: a card
+    # that rotates over its own ink smears at the trailing edge. Only this
+    # card's footprint is synthesised -- everywhere else the painting stands.
+    return [["python3", str(ROOT / "tools/clean-plate.py"),
+             "--image", str(wd / "plate.png"), "--masks", str(cards),
+             *(["--only", only] if only else []),
+             "--method", "shiftmap", "--grow", "2",
+             "--out", str(wd / "clean.png")],
+            ["python3", str(ROOT / "tools/swing-card.py"),
+             "--plate", str(wd / "clean.png"),
+             "--source", str(wd / "plate.png"),
+             "--masks", str(cards), "--pivots", str(cards / "pivots.json"),
+             *(["--only", only] if only else []),
+             "--swing", str(spec.get("swing", cls.get("swing", 5.0))),
+             "--gust", str(cls.get("gust", "0.10,0.08,0.22")),
+             "--gust-rest", str(cls.get("gustRest", 0.15)),
+             "--frames", str(cls.get("drawings", 48) * cls.get("on", 2)),
+             "--on", str(cls.get("on", 2)),
+             "--prefix", "dr-", "--out", str(wd / "drawings")]]
 
 
 TECHNIQUES = {

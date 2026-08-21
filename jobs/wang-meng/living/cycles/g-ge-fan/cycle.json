@@ -1,0 +1,30 @@
+{
+ "tool": "swing-card",
+ "source": "jobs/wang-meng/motion/gehong-hi.png",
+ "masks": "jobs/wang-meng/motion/mask/gehong",
+ "cards": [
+  {
+   "name": "fan",
+   "box": [
+    339,
+    187,
+    545,
+    350
+   ],
+   "lengthPx": 188.7,
+   "pivot": [
+    27.0,
+    133.0
+   ]
+  }
+ ],
+ "swingDeg": 5.0,
+ "gust": "0.10,0.08,0.22",
+ "gustRest": 0.15,
+ "drawings": 48,
+ "on": 2,
+ "plate": "jobs/wang-meng/motion/gehong-plate-fan.png",
+ "loopSeamLevels": 0.0,
+ "movedPctAtPeak": 1.39,
+ "peakDrawing": 5
+}

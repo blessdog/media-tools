@@ -37,7 +37,25 @@
   },
   "figure": {
    "technique": "figure-motion",
-   "note": "reuse proven cycles only; never generate a new figure cycle without a verdict"
+   "note": "swing AUTHORED cards only; the cards are a human's judgement about which pixels are a part, never the tool's. Ge's four puppet masks were re-cut 2026-08-21 from motion/gehong-points.json after the originals were lost clearing disk -- and only `fan` matches its name: sleeve is a strip down the robe's edge, hem is the central panel not the skirt, head is only the cap. Those three are NOT listed here on purpose.",
+   "on": 2,
+   "drawings": 48,
+   "gust": "0.10,0.08,0.22",
+   "gustRest": 0.15,
+   "swing": 5.0,
+   "cards": {
+    "g-ge-fan": {
+     "masks": "jobs/wang-meng/motion/mask/gehong",
+     "pivots": "jobs/wang-meng/motion/mask/gehong/pivots.json",
+     "masterOrigin": [
+      1176,
+      12029
+     ],
+     "only": "fan",
+     "swing": 5.0,
+     "why": "the feather fan on his raised wrist -- a flap on a hinge, the most legible thing on a standing figure to catch a breeze"
+    }
+   }
   },
   "foliage": {
    "technique": "foliage-motion",
