@@ -30,6 +30,7 @@ asked-as:
   - just hold still and let it breathe
   - move sideways along the cliff
   - go up the scroll like you are reading it
+  - travel up the scroll
   - creep in slowly
   - same zigzag camera shot over and over
   - what camera moves do we have
@@ -40,8 +41,8 @@ asked-as:
 
 | name | what the camera does | how he might describe it | use it for |
 |---|---|---|---|
-| **hold** | dead still. Only water, leaves, robes move. A hair of drift (fov or x ramp under 1%) is allowed to keep it alive, Disney-style | "just hold on it", "let it breathe", "don't move, let the water do it", "sit there" | the DEFAULT. Any station where the subject is the life itself: a fall, a pool, a canopy in a gust |
-| **unroll** | a vertical rise (or descent) with NO zoom and NO rotation -- the way a hanging scroll is physically read | "go up the painting", "like reading it", "travel up", "scroll through it" | moving between stations; the whole 105MP set travelled. The move that is this painting's own |
+| **hold** | dead still. Only the living layer plays -- ripples, leaves, robes. A hair of drift (fov or x ramp under 1%) is allowed to keep it alive, Disney-style | "just hold on it", "let it breathe", "don't go anywhere, let the stream do it", "sit there" | the DEFAULT. Any station where the subject is the life itself: a fall, a pool, a canopy in a gust |
+| **unroll** | a vertical rise (or descent) up the painting with NO zoom and NO rotation -- the way a hanging scroll is physically read, travelling up the painting | "go up the painting", "like reading it", "travel up", "scroll through it" | moving between stations; the whole 105MP set travelled. The move that is this painting's own |
 | **track** | sideways at fixed depth along a cliff face or across a canopy; parallax felt laterally, near planes sliding past far ones | "slide across", "pan along the cliff", "go left to right", "move along the ridge" | a wide subject read edge to edge: the great-trees knoll, the gorge wall |
 | **push** | a small z push with tiny rotation, one continuous direction (what LEG-LIGHT does). Depth FELT, never announced | "creep in", "drift in slowly", "come closer", "ease into it" | ARRIVALS only: the bridge, the hall. Ryan's complaint was this move as identity -- "same zigzag camera shot over and over" |
 | **peek** | a lateral offset that lets a near plane cross in front of a far one, then settles -- the multiplane reveal | "look around it", "peek behind the tree", "show the depth", "3D moment" | once or twice in the whole film, where the narration lingers on a spatial detail. Spent more often it becomes the screensaver again |
