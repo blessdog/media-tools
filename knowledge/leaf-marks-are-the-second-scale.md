@@ -5,10 +5,13 @@ conflict-key: why-does-animated-foliage-read-as-a-blob
 status: live
 supersedes: []
 scope: >
-  Cut-out foliage on 葛稚川移居圖, and by the same mechanism any painting whose
-  leaves are drawn as separate marks (most Chinese landscape, most cel
-  backgrounds). NOT valid where foliage is a continuous wash with no internal
-  marks -- there is nothing to split and the card is the only atom available.
+  Foliage drawn as ROUND SEPARATE MARKS -- dot clusters, lobed leaves, brick
+  dashes, needle fans. Measured on 葛稚川移居圖. NOT valid for two grammars: a
+  continuous wash with no internal marks (nothing to split), and HANGING-STROKE
+  foliage -- long drooping willow strokes -- where a distance-transform watershed
+  finds almost nothing because it separates BLOBS, not strokes. Those want
+  flutter along the stroke instead. The tile catalogue already types every tree's
+  grammar, so the two cases can be routed apart.
 verified-on: 2026-08-21
 evidence:
   - jobs/wang-meng/evidence/2026-08-21-leaf-marks-pinebridge.png
@@ -68,9 +71,22 @@ Measured across z3w's seven near trees:
     s-right-rust-tree          13           40          3.1   <- weakest split
 
 306 cards -> 2,853 marks, at no measurable cost (4.5s rendered both halves of
-the A/B). `s-right-rust-tree` is the honest outlier: its leaves are the smallest
-in the zone (p90 card radius 31px) and barely separate, so it is the one tree
-where the blob critique may still stand.
+the A/B).
+
+**`s-right-rust-tree` is the outlier and it is diagnostic, not noise.** 13 cards
+gave 40 marks, and the marks sheet shows why: the split found scattered specks
+in the teal canopy and did not touch the big ochre mass at all. That mass is
+HANGING-STROKE foliage -- long drooping strokes rather than round leaves -- and a
+distance-transform watershed separates blobs by finding necks between them. A
+stroke has no neck. The failure is not a tuning problem and no seed spacing
+fixes it; that grammar needs flutter ALONG the stroke, which is a different rig.
+
+    evidence/2026-08-21-leaf-marks-rust-tree.png   40 specks, ochre mass untouched
+    evidence/2026-08-21-leaf-marks-pinebridge.png  433 marks, every spray split
+
+The general form: **when a technique works on most of a set and collapses on one
+member, ask what KIND that member is before touching a parameter.** The tile
+catalogue types every tree's leaf grammar for exactly this reason.
 
 **The general lesson, and the reason this is a verdict and not a note:** an
 amplitude ladder can be the wrong question. Three angles of one rigid blob were
