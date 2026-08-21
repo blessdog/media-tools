@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 08:18 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 08:56 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -15,9 +15,6 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
     why: regions.json and living-polys.json BOTH carry a class per region, and only living-polys.json is executed
 ? mist-card   (never)
     A translucent band drifting on its own plane -- the multiplane technique from
-? the-camera-has-one-move-and-repeats-it   (2026-08-20)
-    the camera has one move and repeats it
-    why: Ryan, 2026-08-20, on the third different leg in a row: 'Zoom in and out. We're doing the same zigzag cam
 ? verify-remote-resolves   (2026-08-20)
     verify the remote RESOLVES, not just that it exists
     why: having an origin is not the same as being backed up. Measured 2026-08-20: 8 repos had a remote pointing
@@ -28,7 +25,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 26 live claims: 26 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 27 live claims: 27 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -41,8 +38,10 @@ LAWS — absolute, no exceptions
 PROCEDURES — the routes that are currently believed
   · figure-motion          answers how-to-move-a-figure   (sibling: foliage-motion)
   · foliage-motion         answers how-to-move-foliage   (sibling: water-motion)
+  · leaf-is-colour-rock-is-graphite answers how-are-leaf-strokes-separated-from-rock-strokes   (sibling: no-whole-tree-to-segment)
   · sam-click-trunks-not-canopies answers how-to-prompt-sam-on-this-painting   (sibling: no-whole-tree-to-segment)
   · sam-environment        answers how-to-run-a-torch-tool-in-this-repo   (sibling: no-whole-tree-to-segment)
+  · shot-vocabulary        answers which-camera-move-for-a-station   (sibling: camera-light-parallax)
   · two-renderers-one-data-source answers which-renderer-for-a-camera-move   (sibling: plan-planes-at-shot-scale)
   · water-motion           answers how-to-move-water   (sibling: foliage-motion)
 
@@ -63,7 +62,6 @@ REFUTED — already tried, do NOT retry
 OPEN — plans, NOT specs. proven: false. Do not build against these.
   ? merge-the-two-region-catalogues-into-one Why it matters: regions.json and living-polys.json BOTH carry a class per region, and only
   ? mist-card              A translucent band drifting on its own plane -- the multiplane technique from
-  ? the-camera-has-one-move-and-repeats-it Why it matters: Ryan, 2026-08-20, on the third different leg in a row: 'Zoom in and out. W
   ? verify-remote-resolves Why it matters: having an origin is not the same as being backed up. Measured 2026-08-20:
 ```
 
@@ -88,13 +86,13 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (18) · 0 violation(s)
 
 DELIVERABLES
-  jobs/wang-meng/film/LEG-LIGHT-z3w.mp4
-  jobs/wang-meng/living/AB-HOLD-fallandpines.mp4
-  jobs/wang-meng/living/AB-HOLD-bigcanopy.mp4
-  jobs/wang-meng/living/AB-HOLD-greattrees.mp4
-  jobs/wang-meng/living/AB-PINEBRIDGE-foot-vs-attach.mp4
-  jobs/wang-meng/living/AB-HOLD-pinebridge.mp4
-  Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/LEG-LIGHT-Z3W.mp4
+  jobs/wang-meng/film/STATIONS-z3w.mp4
+  jobs/wang-meng/film/ST-z3w-upper-gorge-pines.mp4
+  jobs/wang-meng/film/ST-z3w-the-stream-descent.mp4
+  jobs/wang-meng/film/ST-z3w-the-red-maples.mp4
+  jobs/wang-meng/film/ST-z3w-the-hanging-canopy.mp4
+  jobs/wang-meng/film/ST-z3w-the-great-pine.mp4
+  Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/STATIONS-z3w.mp4
 ```
 
 ## Recent history
@@ -102,27 +100,32 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  6fb9cc7  keep the before-overlays of the rock that moved
+2026-08-21  eda0b83  leaf is colour, rock is graphite: cards are cut only from ink on green or orange wash; the reel gets a real scale range and a pull-out
+2026-08-21  d9944f5  journal: the camera gets a vocabulary
+2026-08-21  246491c  z3w station reel: nine moves from Ryan's vocabulary, 0.7 s dissolves; cut-reel.py orders by station, not filename
+2026-08-21  e62eafa  shot-vocabulary: easing is built into render-parallax; every key is a rest point
+2026-08-21  5e03125  shot vocabulary is Ryan's list: push in, pull out, pan, tilt, parallax, breathing...; holds sit on the subject; render-stations.sh cuts a zone reel
+2026-08-21  9616e23  z3w station legs authored from the shot vocabulary: one move per station, SSOT in station-moves.json
+2026-08-21  93ec02d  shot-vocabulary: phrasings that BM25 can rank
+2026-08-21  3a0d41a  shot vocabulary: five camera moves, searchable in Ryan's words; the repetitive-camera bookmark is answered
+2026-08-21  e238656  LEG-LIGHT-z3w re-rendered on the approved auto-radius foliage; render-leg.sh keeps the zone suffix lower-case
+2026-08-21  6babde2  STATE.md regenerated after the foliage verdicts; render-leg.sh for one leg over a living layer
 2026-08-21  2322aed  hold: fall and pines on the auto-radius hinge (left pines r=3)
-2026-08-21  68ff56d  verdict: auto-radius hinge approved on pine, great trees and big canopy -- 'subtle and beautiful in all'; camera bookmark unblocked
-2026-08-21  6975104  journal: the radius was in the wrong units
-2026-08-21  bf19bb5  verdict: attachment pivot beats foot pivot on the pine, slightly, on a motion A/B
-2026-08-21  39185a9  pinebridge: restore the approved foot-pivot hold, keep both rigs by name, A/B them side by side
-2026-08-21  fd7bf3e  pivot-sheet: row heights per row, not per tallest tile
-2026-08-21  7bdcf67  evidence: every z3w tree's hinge pivots on auto radius, one sheet
-2026-08-21  1645445  claim: branch radius scales with the tree; pivot-sheet.py stitches every tree's hinge overlay
-2026-08-21  7841ad8  branch radius is a property of the tree, not the painting: --branch-radius auto
-2026-08-21  d802f66  hinge-foliage: cycle.json records the rig that made it; card seeds no longer salted per process
-2026-08-21  87eb324  foliage rig verdict: branch radius 5, and the builder now passes it
-2026-08-20  0c30c54  bookmark: a configured remote is not a resolving remote
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/film/LEG-LIGHT-z3w.mp4
  M jobs/wang-meng/journey/z3w/_ab/fallandpines/path.json
  M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
  M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/drawings/cycle.json
@@ -143,7 +146,8 @@ DELIVERABLES
  M jobs/wang-meng/journey/z5w/living/built.json
  M jobs/wang-meng/journey/z6w/living-work/s-right-rust-tree/drawings/cycle.json
  M jobs/wang-meng/journey/z6w/living/built.json
-?? jobs/wang-meng/film/render-leg.sh
+ M jobs/wang-meng/living/logs/cycle-foliage-z3w.json
+?? jobs/wang-meng/film/evidence/stations-z3w-stills/
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
