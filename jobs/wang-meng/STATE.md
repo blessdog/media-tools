@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 15:58 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 16:45 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -118,6 +118,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  9e83221  STATE.md regenerated after reaping 55.8GB of frame intermediates
 2026-08-21  c01c462  reap-frames: 67GB of the repo was PNG intermediates nobody had deleted after encoding
 2026-08-21  6f08fae  PLAN.md: depth is settled and was the plan's biggest omission; the water count was wrong and is corrected
 2026-08-21  c0a6d30  STATE.md regenerated after the disparity-spacing refutation
@@ -129,21 +130,22 @@ DELIVERABLES
 2026-08-21  e959788  THE RISE v2: the breath carries the depth, continuously, and --relief finally gets passed
 2026-08-21  f0ba647  claim: light parallax is z 0.11, and CONTINUOUS -- the law had no number, which is why it did not stop me
 2026-08-21  11d082b  LAW: depth may resize, never deform -- three techniques rejected in one afternoon for the same reason
-2026-08-21  ddad17f  REFUTED: translation parallax on a plane stack cut from one painting -- and the cap made it worse, not better
 ```
 
-### ⚠ UNPUSHED
-
-**2 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
+ M jobs/wang-meng/motion/mask/gehong/layers.json
+?? jobs/wang-meng/evidence/2026-08-21-AB-ge-fan-still-vs-stirring.mp4
+?? jobs/wang-meng/evidence/2026-08-21-gehong-fan-pivot.png
+?? jobs/wang-meng/evidence/2026-08-21-gehong-puppet-parts.png
+?? jobs/wang-meng/living/cycles/
+?? jobs/wang-meng/motion/gehong-crop.json
+?? jobs/wang-meng/motion/mask/gehong/pivots.json
+?? tools/swing-card.py
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*

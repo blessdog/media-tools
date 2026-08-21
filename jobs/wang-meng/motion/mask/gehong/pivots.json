@@ -1,0 +1,9 @@
+{
+ "fan": {
+  "pivot": [
+   366,
+   320
+  ],
+  "note": "handle end of the fan = the wrist it hangs from"
+ }
+}

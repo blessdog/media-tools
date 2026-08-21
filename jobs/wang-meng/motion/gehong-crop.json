@@ -1,0 +1,14 @@
+{
+ "tool": "locate-crop",
+ "note": "WHERE gehong-hi.png COMES FROM. The png is gitignored under jobs/** and was lost 2026-08-21 clearing disk. It is a k=1.0 crop of the master, so THIS file is the load-bearing artefact and it is tracked. Re-cut: crop((x,y,x+w,y+h)).",
+ "master": "corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+ "crop": {
+  "x": 1176,
+  "y": 12029,
+  "w": 588,
+  "h": 1112,
+  "masterPxPerShotPx": 1.0,
+  "score": 0.9769
+ },
+ "masks": "re-run segment-points.py with motion/gehong-points.json against this crop"
+}
