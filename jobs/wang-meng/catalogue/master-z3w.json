@@ -785,8 +785,8 @@
    "tile": "t002.jpg"
   },
   {
-   "id": "t000:ge-hong",
-   "name": "\u767d\u8863 white-robed figure with black cap on the path, bottom left",
+   "id": "t000:servant-boy-with-gourds",
+   "name": "young servant carrying a shoulder pole with two gourds",
    "kind": "figure",
    "box": [
     506,
@@ -794,10 +794,10 @@
     638,
     6912
    ],
-   "motion": "robe",
+   "motion": "walk",
    "leavesVisible": false,
    "depth": "near",
-   "note": "THIS IS GE HONG, the subject of \u845b\u7a1a\u5ddd\u79fb\u5c45\u5716. The largest and most legible figure in the zone. Robe hem and sleeve only -- the body must not deform, and nothing else in frame may draw the eye off him",
+   "note": "CORRECTED 2026-08-21. First labelled 'GE HONG HIMSELF' at tile resolution and that was WRONG. Read at full scale he is a \u7ae5\u5b50 -- a servant boy with the double top-knot, no beard, both hands on a shoulder pole with two gourds hanging from it. Ge Hong is the BEARDED figure with the official's cap, the fan and the deer, at the FOOT of the scroll (master y~12150-12980, region g-ge-fan), and he is already rigged as a four-part puppet in motion/. The gourds matter: Ge Hong was an alchemist and the boy is carrying his elixir gourds. MOTION: he is mid-stride with both hands occupied, so a WAVE would require an arm Wang Meng never painted. What is honest here is a walk, a hem sway, and the two gourds swinging on the pole -- they hang, so they swing. evidence/2026-08-21-servant-boy-with-gourds.png",
    "tile": "t000.jpg"
   },
   {

@@ -1,26 +1,297 @@
 {
  "tile": "t000.jpg",
- "sourceBox": [0, 4712, 2200, 6912],
+ "sourceBox": [
+  0,
+  4712,
+  2200,
+  6912
+ ],
  "_note": "Boxes are NORMALISED to the tile (0-1). THE SUBJECT TILE: the white-robed figure at the bottom left is 葛稚川 Ge Hong himself, the man the painting is named for. Also holds the mountain dwellings, their figures, and a hatched water channel on the right.",
  "objects": [
-  {"id": "ge-hong", "name": "白衣 white-robed figure with black cap on the path, bottom left", "kind": "figure", "box": [0.23, 0.81, 0.29, 1.0], "motion": "robe", "leavesVisible": false, "depth": "near", "note": "THIS IS GE HONG, the subject of 葛稚川移居圖. The largest and most legible figure in the zone. Robe hem and sleeve only -- the body must not deform, and nothing else in frame may draw the eye off him"},
-  {"id": "pavilion-upper", "name": "thatched pavilion at the top", "kind": "building", "box": [0.59, 0.0, 0.80, 0.12], "motion": "none", "leavesVisible": false, "depth": "far", "note": "ruled lines -- rigid, never deforms"},
-  {"id": "hall-top-right", "name": "thatched hall at the top right", "kind": "building", "box": [0.84, 0.0, 1.0, 0.19], "motion": "none", "leavesVisible": false, "depth": "far", "note": "rigid"},
-  {"id": "figures-hall", "name": "two figures at the hall and its gate", "kind": "figure", "box": [0.94, 0.08, 1.0, 0.24], "motion": "robe", "leavesVisible": false, "depth": "far", "note": "small; robe hems only, and at this size probably leave still"},
-  {"id": "fence-upper-right", "name": "paling fence below the hall", "kind": "structure", "box": [0.81, 0.19, 0.93, 0.31], "motion": "none", "leavesVisible": false, "depth": "far", "note": "ruled lines -- rigid"},
-  {"id": "tree-teal-upper-left", "name": "teal round-leaf tree on the upper left ledge", "kind": "tree", "box": [0.13, 0.11, 0.36, 0.28], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clean separated clusters on a pale branch"},
-  {"id": "maple-left", "name": "big orange-rust maple down the left edge", "kind": "tree", "box": [0.0, 0.26, 0.29, 0.53], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped by the left edge; the strongest colour mass in the tile"},
-  {"id": "grove-lower-left", "name": "ochre, rust and teal grove at the lower left", "kind": "tree", "box": [0.02, 0.56, 0.37, 0.85], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "several crowns of different colour and grammar packed together -- cut them apart before hinging. This grove stands directly behind Ge Hong"},
-  {"id": "tree-teal-above-ge-hong", "name": "teal round-leaf tree just above the figure", "kind": "tree", "box": [0.10, 0.68, 0.32, 0.84], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "the nearest canopy to Ge Hong; its motion is what will sell that he is standing in a living place"},
-  {"id": "conifer-row-centre", "name": "row of spiky dark conifers climbing the centre ridge", "kind": "tree", "box": [0.35, 0.26, 0.53, 0.52], "motion": "none", "leavesVisible": false, "depth": "far", "note": "distant silhouette marks -- leave still. A hinge at this size is jitter, not wind"},
-  {"id": "conifer-scatter-centre", "name": "scattered conifers below that row", "kind": "tree", "box": [0.52, 0.41, 0.68, 0.63], "motion": "none", "leavesVisible": false, "depth": "far", "note": "distant marks -- leave still"},
-  {"id": "conifers-right", "name": "tall slim conifers on the right bank", "kind": "tree", "box": [0.70, 0.33, 0.88, 0.58], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "big enough to read; narrow crowns, so a small swing about a high pivot"},
-  {"id": "tree-weeping-upper-right", "name": "dark hanging-leaf tree below the pavilion", "kind": "tree", "box": [0.62, 0.15, 0.81, 0.33], "motion": "foliage", "leavesVisible": true, "depth": "far", "note": "drooping strokes; flutter rather than swing"},
-  {"id": "tree-rust-by-pavilion", "name": "rust tree beside the upper pavilion", "kind": "tree", "box": [0.60, 0.10, 0.73, 0.20], "motion": "foliage", "leavesVisible": true, "depth": "far", "note": "sits against the building -- must not drag the roofline"},
-  {"id": "stream-right", "name": "hatched water channel down the right side", "kind": "water", "box": [0.80, 0.17, 1.0, 0.68], "motion": "water", "leavesVisible": false, "depth": "mid", "note": "horizontal hatching IS the water surface here -- the strokes are the ripples, so they move as a surface, not as cards"},
-  {"id": "stream-bottom", "name": "stream at the bottom centre by the figure", "kind": "water", "box": [0.13, 0.86, 0.50, 0.96], "motion": "water", "leavesVisible": false, "depth": "near", "note": "the near water; Ge Hong stands at its edge"},
-  {"id": "bridge-lower-right", "name": "railed bridge at the lower right", "kind": "structure", "box": [0.83, 0.79, 1.0, 0.90], "motion": "none", "leavesVisible": false, "depth": "near", "note": "ruled lines -- rigid"},
-  {"id": "rock-mass-centre", "name": "the great rock mass through the centre", "kind": "rock", "box": [0.27, 0.20, 0.80, 0.90], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "NEVER animate; the conifer rows sit on its shoulders"},
-  {"id": "cliff-top-left", "name": "dark cliff across the top left", "kind": "rock", "box": [0.0, 0.0, 0.34, 0.15], "motion": "none", "leavesVisible": false, "depth": "far", "note": "NEVER animate"}
+  {
+   "id": "servant-boy-with-gourds",
+   "name": "young servant carrying a shoulder pole with two gourds",
+   "kind": "figure",
+   "box": [
+    0.23,
+    0.81,
+    0.29,
+    1.0
+   ],
+   "motion": "walk",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "CORRECTED 2026-08-21. First labelled 'GE HONG HIMSELF' at tile resolution and that was WRONG. Read at full scale he is a 童子 -- a servant boy with the double top-knot, no beard, both hands on a shoulder pole with two gourds hanging from it. Ge Hong is the BEARDED figure with the official's cap, the fan and the deer, at the FOOT of the scroll (master y~12150-12980, region g-ge-fan), and he is already rigged as a four-part puppet in motion/. The gourds matter: Ge Hong was an alchemist and the boy is carrying his elixir gourds. MOTION: he is mid-stride with both hands occupied, so a WAVE would require an arm Wang Meng never painted. What is honest here is a walk, a hem sway, and the two gourds swinging on the pole -- they hang, so they swing. evidence/2026-08-21-servant-boy-with-gourds.png"
+  },
+  {
+   "id": "pavilion-upper",
+   "name": "thatched pavilion at the top",
+   "kind": "building",
+   "box": [
+    0.59,
+    0.0,
+    0.8,
+    0.12
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "ruled lines -- rigid, never deforms"
+  },
+  {
+   "id": "hall-top-right",
+   "name": "thatched hall at the top right",
+   "kind": "building",
+   "box": [
+    0.84,
+    0.0,
+    1.0,
+    0.19
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "rigid"
+  },
+  {
+   "id": "figures-hall",
+   "name": "two figures at the hall and its gate",
+   "kind": "figure",
+   "box": [
+    0.94,
+    0.08,
+    1.0,
+    0.24
+   ],
+   "motion": "robe",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "small; robe hems only, and at this size probably leave still"
+  },
+  {
+   "id": "fence-upper-right",
+   "name": "paling fence below the hall",
+   "kind": "structure",
+   "box": [
+    0.81,
+    0.19,
+    0.93,
+    0.31
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "ruled lines -- rigid"
+  },
+  {
+   "id": "tree-teal-upper-left",
+   "name": "teal round-leaf tree on the upper left ledge",
+   "kind": "tree",
+   "box": [
+    0.13,
+    0.11,
+    0.36,
+    0.28
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "clean separated clusters on a pale branch"
+  },
+  {
+   "id": "maple-left",
+   "name": "big orange-rust maple down the left edge",
+   "kind": "tree",
+   "box": [
+    0.0,
+    0.26,
+    0.29,
+    0.53
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "clipped by the left edge; the strongest colour mass in the tile"
+  },
+  {
+   "id": "grove-lower-left",
+   "name": "ochre, rust and teal grove at the lower left",
+   "kind": "tree",
+   "box": [
+    0.02,
+    0.56,
+    0.37,
+    0.85
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "several crowns of different colour and grammar packed together -- cut them apart before hinging. This grove stands directly behind Ge Hong"
+  },
+  {
+   "id": "tree-teal-above-ge-hong",
+   "name": "teal round-leaf tree just above the figure",
+   "kind": "tree",
+   "box": [
+    0.1,
+    0.68,
+    0.32,
+    0.84
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "the nearest canopy to Ge Hong; its motion is what will sell that he is standing in a living place"
+  },
+  {
+   "id": "conifer-row-centre",
+   "name": "row of spiky dark conifers climbing the centre ridge",
+   "kind": "tree",
+   "box": [
+    0.35,
+    0.26,
+    0.53,
+    0.52
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "distant silhouette marks -- leave still. A hinge at this size is jitter, not wind"
+  },
+  {
+   "id": "conifer-scatter-centre",
+   "name": "scattered conifers below that row",
+   "kind": "tree",
+   "box": [
+    0.52,
+    0.41,
+    0.68,
+    0.63
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "distant marks -- leave still"
+  },
+  {
+   "id": "conifers-right",
+   "name": "tall slim conifers on the right bank",
+   "kind": "tree",
+   "box": [
+    0.7,
+    0.33,
+    0.88,
+    0.58
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "big enough to read; narrow crowns, so a small swing about a high pivot"
+  },
+  {
+   "id": "tree-weeping-upper-right",
+   "name": "dark hanging-leaf tree below the pavilion",
+   "kind": "tree",
+   "box": [
+    0.62,
+    0.15,
+    0.81,
+    0.33
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "drooping strokes; flutter rather than swing"
+  },
+  {
+   "id": "tree-rust-by-pavilion",
+   "name": "rust tree beside the upper pavilion",
+   "kind": "tree",
+   "box": [
+    0.6,
+    0.1,
+    0.73,
+    0.2
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "sits against the building -- must not drag the roofline"
+  },
+  {
+   "id": "stream-right",
+   "name": "hatched water channel down the right side",
+   "kind": "water",
+   "box": [
+    0.8,
+    0.17,
+    1.0,
+    0.68
+   ],
+   "motion": "water",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "horizontal hatching IS the water surface here -- the strokes are the ripples, so they move as a surface, not as cards"
+  },
+  {
+   "id": "stream-bottom",
+   "name": "stream at the bottom centre by the figure",
+   "kind": "water",
+   "box": [
+    0.13,
+    0.86,
+    0.5,
+    0.96
+   ],
+   "motion": "water",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "the near water; Ge Hong stands at its edge"
+  },
+  {
+   "id": "bridge-lower-right",
+   "name": "railed bridge at the lower right",
+   "kind": "structure",
+   "box": [
+    0.83,
+    0.79,
+    1.0,
+    0.9
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "ruled lines -- rigid"
+  },
+  {
+   "id": "rock-mass-centre",
+   "name": "the great rock mass through the centre",
+   "kind": "rock",
+   "box": [
+    0.27,
+    0.2,
+    0.8,
+    0.9
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "NEVER animate; the conifer rows sit on its shoulders"
+  },
+  {
+   "id": "cliff-top-left",
+   "name": "dark cliff across the top left",
+   "kind": "rock",
+   "box": [
+    0.0,
+    0.0,
+    0.34,
+    0.15
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "NEVER animate"
+  }
  ]
 }
