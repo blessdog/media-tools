@@ -1,0 +1,128 @@
+[
+ {
+  "plane": "gorge-cliff-nose",
+  "region": "s-gorge-big-canopy",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-gorge-big-canopy",
+  "box": [
+   969,
+   1721
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 155535,
+  "movedPx": 40942,
+  "crop": [
+   969,
+   1721
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-gorge-wall-high",
+  "region": "s-gorge-big-canopy",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-gorge-big-canopy",
+  "box": [
+   405,
+   1559
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 10262,
+  "movedPx": 1407,
+  "crop": [
+   969,
+   1721
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-cliff-nose",
+  "region": "s-left-pines-z2",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-left-pines-z2",
+  "box": [
+   548,
+   2171
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 7245,
+  "movedPx": 3103,
+  "crop": [
+   548,
+   2171
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-cliff-nose",
+  "region": "s-left-clifftop-pine",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-left-clifftop-pine",
+  "box": [
+   0,
+   1744
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 44820,
+  "movedPx": 32037,
+  "crop": [
+   0,
+   1744
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-cliff-nose",
+  "region": "s-gorge-foreground",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-gorge-foreground",
+  "box": [
+   329,
+   1505
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 96438,
+  "movedPx": 32858,
+  "crop": [
+   282,
+   1505
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-gorge-wall-high",
+  "region": "s-gorge-foreground",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-gorge-foreground",
+  "box": [
+   0,
+   1283
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 47892,
+  "movedPx": 21110,
+  "crop": [
+   282,
+   1505
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-gorge-wall-high",
+  "region": "s-right-rust-tree",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-right-rust-tree",
+  "box": [
+   2090,
+   911
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 14550,
+  "movedPx": 3903,
+  "crop": [
+   2654,
+   1133
+  ],
+  "class": "foliage"
+ }
+]

@@ -8,11 +8,17 @@ scope: >
   hinge-foliage's branch/leaf split on 葛稚川移居圖, and by the same mechanism any
   painting where trees are drawn at near-constant real size so a far tree is the
   same drawing made smaller. Verified on the seven near trees of z3w. The RATIO
-  0.55 is Ryan's pine choice expressed in the tree's own units; it has been
-  judged by eye on the pine only -- the other six trees await his look.
+  0.55 is Ryan's pine choice expressed in the tree's own units. Judged by eye
+  2026-08-21 on the pine, the great-trees knoll (r=3) and the big gorge canopy
+  (r=2) holds -- Ryan: "very nice. right one is subtle and beautiful in all."
+  The left pines, clifftop pine, gorge foreground and rust tree are built on
+  the same rule and have not had their own hold in front of him.
 verified-on: 2026-08-21
 evidence:
   - jobs/wang-meng/living/evidence-branch-radius-sweep.json
+  - jobs/wang-meng/living/evidence-branch-pivots-z3w.png
+  - jobs/wang-meng/living/AB-HOLD-greattrees.mp4
+  - jobs/wang-meng/living/AB-HOLD-bigcanopy.mp4
   - jobs/wang-meng/living/evidence-stroke-width-z3w.json
 asked-as:
   - which branch radius for the other trees

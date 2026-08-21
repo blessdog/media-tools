@@ -21,6 +21,6 @@ asked-as:
 
 **First step:** Name the shot vocabulary a practitioner would actually use BEFORE authoring another path: a lateral track across a cliff face at fixed depth; a vertical scroll-unroll with no fov change at all (the way the scroll was physically read); a locked hold with only the living layer moving; a slow drift that lets a near plane exit frame. Then pick per station from that vocabulary. The zoom is ONE entry in it, not the default.
 
-**Blocked on:** the foliage rig — the tree is currently shredded and no camera decision is judgeable until the subject is correct
+**Blocked on:** nothing, since 2026-08-21 — the foliage rig is approved ("subtle and beautiful"), so the subject is correct and the camera vocabulary is the next conversation to have with Ryan, BEFORE any new path is authored
 
 Bookmarked 2026-08-20 at the moment of deferral, because the record of a deferral is what fails, not the decision to defer.
