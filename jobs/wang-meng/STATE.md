@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-20 18:42 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-20 19:04 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -25,15 +25,13 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE STORE — /Users/SSDrive/projects/media-tools/knowledge  (25 live claims)
+KNOWLEDGE — 23 live claims: 23 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
   · camera-light-parallax: Don't forget it's not just about tree animation, we're still doing parallax
   · grading-is-not-geometry: A card with a soft edge is still a card.
   · naming-a-substance-requests-footage: Naming a physical substance in a motion prompt requests FOOTAGE of it. Write
-  · null-before-the-metric: Build the null before believing the number. A static control, a synthetic
-  · rest-is-a-noop: Every transform has a parameter value at which it must do NOTHING, and that
   · share-your-ground: Every figure rides the depth of the surface that supports it. The party on
   · what-moves: just the delicate things move. Their robes, the water ripples, leaves on
 
@@ -99,6 +97,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-20  af4f4db  move the cross-project laws out of this project's store
 2026-08-20  aade9e6  migrate STATE.md into the store: 896 hand-written lines -> 155 generated
 2026-08-20  63310ba  every claim declares how it will be searched for; 48 questions, 0 unfindable
 2026-08-20  dce64cb  hinge each leaf spray where it joins its twig, not at the foot of its own mass
@@ -110,8 +109,15 @@ DELIVERABLES
 2026-08-20  b171157  13 summit polys outlived their own revert, in the file the builder actually reads
 2026-08-20  a2d817f  the store now gates the build: a retired technique is a failed run, not a note
 2026-08-20  c45c664  regions.json classes are a tagged union now: the store can fail the build
-2026-08-20  a7c1471  a type system and a collector for the knowledge that keeps getting lost
 ```
+
+### Uncommitted
+
+```
+ M jobs/wang-meng/STATE.md
+```
+
+*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
