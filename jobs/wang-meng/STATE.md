@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 09:48 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 11:23 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -25,13 +25,14 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 28 live claims: 28 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 30 live claims: 30 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
   · camera-light-parallax: Don't forget it's not just about tree animation, we're still doing parallax
   · grading-is-not-geometry: A card with a soft edge is still a card.
   · naming-a-substance-requests-footage: Naming a physical substance in a motion prompt requests FOOTAGE of it. Write
+  · rigid-cards-preserve-the-brushwork: Ryan, 2026-08-21, having asked for per-leaf twinkle that morning and seen it by
   · share-your-ground: Every figure rides the depth of the surface that supports it. The party on
   · what-moves: just the delicate things move. Their robes, the water ripples, leaves on
 
@@ -51,6 +52,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · canopy-read-near       NEAR foliage only -- the compound canopies and the gorge, master y > ~3850. NOT valid on d
   · clean-plate-donor-scope Any clean-plate fill whose hole is SURROUNDED BY MATERIAL OF THE SAME KIND as the thing be
   · depth-is-authored      Whole-painting depth on 葛稚川移居圖 and, by the same mechanism, any painting built on 散点透視 rath
+  · gates-must-survive-a-clone Any repo whose correctness depends on hooks, checkers or generated files. Measured on medi
   · hinge-at-the-attachment Cut-out foliage cards in ink painting, where leaves are drawn as separate sprays hanging o
   · leaf-travel-is-measured-on-screen Choosing the swing angle for cut-out foliage on 葛稚川移居圖. The GEOMETRY below is exact for th
   · perception-needs-a-boundary-model-too CLIPSeg (CIDAS/clipseg-rd64-refined) as the SOLE decider of which ink is foliage on 葛稚川移居圖
@@ -88,12 +90,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (18) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/ST-z3w-the-falls.mp4
+  jobs/wang-meng/film/ST-z3w-the-cliff-nose.mp4
+  jobs/wang-meng/film/ST-z3w-gorge-narrows.mp4
   jobs/wang-meng/film/STATIONS-z3w.mp4
   jobs/wang-meng/film/ST-z3w-upper-gorge-pines.mp4
   jobs/wang-meng/film/ST-z3w-the-stream-descent.mp4
-  jobs/wang-meng/film/ST-z3w-the-red-maples.mp4
-  jobs/wang-meng/film/ST-z3w-the-hanging-canopy.mp4
-  jobs/wang-meng/film/ST-z3w-the-great-pine.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/STATIONS-z3w.mp4
 ```
 
@@ -102,33 +104,41 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
-2026-08-21  a881773  leaf marks: split every card into individual leaves that twinkle, rotate and jitter on their own phase
-2026-08-21  d5ce97c  z3w station reel v2: colour-gated foliage, nine named moves, fov 1.0 to 1.6
-2026-08-21  8f5dc53  catalogue: label nine of z3w's sixteen tiles, and compose them into one master-px catalogue
-2026-08-21  c00561e  refine-mask-sam: SAM turns a labelled tree box into a canopy mask that stops at the cliff
-2026-08-21  0c58842  verdict: CLIPSeg alone is the right family and not yet accurate enough; semantic:false until SAM refines it
-2026-08-21  037c4bf  a missing semantic pass falls back loudly instead of killing the zone build
-2026-08-21  08385af  STATE.md and z3w cycle records after the leaf-colour rebuild
-2026-08-21  5b7d32c  an AI model labels the painting: tile it, inventory it, draw the labels back so they can be checked
-2026-08-21  0a2f2fa  note why a wide hold cannot centre an edge subject: the falls clamps 840px
-2026-08-21  d434ba8  how much should a leaf move: 6 degrees is 7-12 screen px, half a percent of frame width; ladder script picks the amount by eye
-2026-08-21  eef4c03  STATE.md regenerated: leaf-colour gate and shot vocabulary in the store
-2026-08-21  6fb9cc7  keep the before-overlays of the rock that moved
+2026-08-21  572da6b  swing back to 6: a ladder built at one framing cannot settle an amplitude for a film that changes framing
+2026-08-21  a9a2527  ci: park the workflow until the token has 'workflow' scope
+2026-08-21  0527203  z3w reel v4: back to bushel cards at swing 12, no per-mark deformation
+2026-08-21  38fbe2e  the master foliage mask: all 16 tiles, VLM boxes refined by SAM, composited to master px
+2026-08-21  48a91c1  journal: the leaf-mark entry gets its ending -- rejected four hours later, and why the sound reasoning still lost
+2026-08-21  779ad2a  law: move the drawing, never redraw it -- leaf marks retired the day they landed
+2026-08-21  4093199  z3w reel v3: swing 12 and 2,853 leaf marks
+2026-08-21  bc97ff8  scope: leaf marks work on round marks and collapse on hanging strokes
+2026-08-21  df5efcb  --leaf-mask: hinge-foliage can take a MODEL's mask instead of a colour threshold
+2026-08-21  9be569e  journal: the ladder was the wrong question
+2026-08-21  345a855  composite-tile-masks: the inverse of tile-image, and a driver that runs the whole chain
+2026-08-21  56359ca  claim: gates must survive a clone -- and must FAIL when they cannot find their subject
 ```
 
-### ⚠ UNPUSHED
-
-**4 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
-?? jobs/wang-meng/catalogue/t013.json
+ M jobs/wang-meng/catalogue/master-z3w.json
+ M jobs/wang-meng/catalogue/t000.json
+ M jobs/wang-meng/film/ST-z3w-gorge-narrows.mp4
+ M jobs/wang-meng/film/ST-z3w-the-cliff-nose.mp4
+ M jobs/wang-meng/film/ST-z3w-the-falls.mp4
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living/built.json
+?? jobs/wang-meng/evidence/2026-08-21-pink-grid-reproduced.png
+?? jobs/wang-meng/evidence/2026-08-21-servant-boy-with-gourds.png
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*

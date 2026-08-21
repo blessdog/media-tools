@@ -13,9 +13,11 @@ applies-when: >
   said it is.
 not-when: >
   the figure is smaller than roughly 40px of ink, where a hinge reads as a
-  jitter and stillness is correct. And never to INVENT a motion: a new cycle
-  for a figure is a fabrication decision and needs Ryan's verdict first, which
-  is why this route reuses cycles rather than generating them.
+  jitter and stillness is correct. The old blanket ban on INVENTING a motion is
+  retired -- Ryan 2026-08-21: "we can invent a little bit of ink... as long as it
+  looks hand-drawn." See invented-ink-is-allowed-in-the-painters-hand for the
+  line that replaces it: new marks may be drawn in Wang's hand, EXISTING marks
+  are still moved rigidly and never deformed.
 route: >
   reuse a verified cycle from jobs/wang-meng/living/cycles/ where one exists ->
   otherwise cut-stroke.py (one card per limb, pivot at the joint) ->
