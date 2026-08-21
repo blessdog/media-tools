@@ -177,6 +177,18 @@ def main() -> int:
     ap.add_argument("--duration", type=float, default=12.0)
     ap.add_argument("--z-near", type=float, default=1.0)
     ap.add_argument("--z-step", type=float, default=0.035)
+    ap.add_argument("--z-space", choices=["linear", "disparity"], default="linear",
+                    help="how depth LEVELS map to z. linear (default, reproduces "
+                         "every earlier render) spaces planes evenly in z -- but "
+                         "the scale response is z/(z-camZ), which is hyperbolic, "
+                         "so even depth steps give WILDLY uneven scale steps: "
+                         "measured on z1, the front plane's step is 12.3x the "
+                         "back plane's. Ryan saw it in THE RISE: 'the mountain "
+                         "comes out way farther and zoom in way closer than the "
+                         "background... it's still smooth but it's not natural.' "
+                         "disparity spaces them evenly in 1/z, which linearises "
+                         "the scale response (12.3:1 -> 1.3:1) for the SAME total "
+                         "near/far differential.")
     ap.add_argument("--plane-fit", action="store_true")
     ap.add_argument("--truck", type=float, default=0.0,
                     help="MULTIPLANE TRUCK. 0 = every plane translates at the "
@@ -255,9 +267,26 @@ def main() -> int:
     planes.sort(key=lambda p: p["depth"])          # farthest first = paint order
 
     max_depth = max(p["depth"] for p in planes)
+    min_depth = min(p["depth"] for p in planes)
+    _z_far = args.z_near + (max_depth - min_depth) * args.z_step
+
+    def depth_to_z(d):
+        """Depth LEVEL -> z. See --z-space.
+
+        Perspective scale is z/(z-camZ), a hyperbola, so spacing planes evenly
+        in z crowds the far ones into almost no differential and hands the whole
+        budget to the nearest card. Spacing evenly in DISPARITY (1/z) is the
+        standard fix -- it is why depth buffers and stereo rigs are parameterised
+        in 1/z -- and it linearises the scale response without changing the
+        endpoints, so the total near/far differential is untouched.
+        """
+        if args.z_space == "linear" or max_depth == min_depth:
+            return args.z_near + (max_depth - d) * args.z_step
+        t = (max_depth - d) / (max_depth - min_depth)      # 0 = nearest
+        return 1.0 / ((1 - t) / args.z_near + t / _z_far)
     for p in planes:
         # Nearest plane sits at z-near; each step further back adds z-step.
-        p["z"] = args.z_near + (max_depth - p["depth"]) * args.z_step
+        p["z"] = depth_to_z(p["depth"])
         img = Image.open(lay / p["layer"]).convert("RGBA")
         p["img"] = img
         p["orig"] = img                 # kept unmodified: --living patches paste onto it
@@ -265,7 +294,7 @@ def main() -> int:
     if not args.no_base:
         base = {
             "name": "__master__", "depth": planes[0]["depth"], "layer": None,
-            "z": args.z_near + (max_depth - planes[0]["depth"] + 1) * args.z_step,
+            "z": depth_to_z(planes[0]["depth"] - 1),
             "img": Image.open(meta["image"]).convert("RGBA"), "ox": 0, "oy": 0,
         }
         planes.insert(0, base)
@@ -583,7 +612,7 @@ def main() -> int:
         "tool": "render-parallax", "layers": str(lay), "out": str(out),
         "planes": len(planes), "frames": len(idx), "size": [args.width, args.height],
         "fps": fps, "duration": duration,
-        "zNear": args.z_near, "zStep": args.z_step, "planeFit": bool(args.plane_fit), "truck": args.truck,
+        "zNear": args.z_near, "zStep": args.z_step, "zSpace": args.z_space, "planeFit": bool(args.plane_fit), "truck": args.truck,
         "truckMax": args.truck_max,
         "zRange": [round(planes[-1]["z"], 4), round(planes[0]["z"], 4)],
         "fill": args.fill,
