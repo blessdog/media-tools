@@ -25,6 +25,16 @@ content = spec.get('contentRect', box)
 SEC = moves.get('seconds', 10)
 
 def clamp(mx, my, fov):
+    """Keep the view inside the plate at this fov.
+
+    A WIDE framing cannot centre a subject near the plate edge: at fov 0.96 the
+    view is 4,680 master px across, so a station at mx 1500 (the falls, near the
+    left edge) clamps to mx 2340 and the fall sits a third of the way in from
+    the left instead of centred. That is a legitimate composition, not a bug --
+    but if a wide hold must be centred, the station has to move or the fov has
+    to come up. Measured 2026-08-21: the falls is the only z3w station this
+    affects.
+    """
     hw, hh = OUT_W / 2 * K / fov, OUT_H / 2 * K / fov
     lx0, ly0 = max(x0, content[0]), max(y0, content[1])
     lx1, ly1 = min(x1, content[2]), min(y1, content[3])
