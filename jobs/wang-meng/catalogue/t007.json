@@ -1,0 +1,15 @@
+{
+ "tile": "t007.jpg",
+ "sourceBox": [5808, 6648, 8008, 8848],
+ "_note": "Boxes are NORMALISED to the tile (0-1). Overwhelmingly cliff. Living material is a band along the top edge only, plus one clipped canopy at the bottom left corner.",
+ "objects": [
+  {"id": "willow-top-left", "name": "ochre hanging-leaf tree in the top left corner", "kind": "tree", "box": [0.03, 0.0, 0.32, 0.13], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "long vertical drooping strokes; flutter, not swing -- continues into t006"},
+  {"id": "pine-top-left", "name": "teal dot-cluster pine below the ochre tree", "kind": "tree", "box": [0.0, 0.05, 0.35, 0.29], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped at the left edge"},
+  {"id": "willow-top-centre", "name": "big ochre and rust hanging-leaf tree on the ridge", "kind": "tree", "box": [0.42, 0.02, 0.93, 0.31], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "the dominant living form in this tile; drooping strokes hang BELOW their branch, so the hinge line sits along the top of the mass"},
+  {"id": "tree-right-edge", "name": "teal and ochre canopy at the right edge", "kind": "tree", "box": [0.90, 0.0, 1.0, 0.30], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped; continues into the tile to the right"},
+  {"id": "canopy-bottom-left", "name": "teal canopy clipped at the bottom left corner", "kind": "tree", "box": [0.0, 0.90, 0.13, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "only a corner of it is in this tile; continues into the tile below"},
+  {"id": "cliff-dome", "name": "the domed cliff mass filling the whole lower two thirds", "kind": "rock", "box": [0.10, 0.28, 1.0, 1.0], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "long looping contour strokes over pale wash -- NEVER animate"},
+  {"id": "cliff-wet-left", "name": "streaked wet rock down the left edge", "kind": "rock", "box": [0.0, 0.25, 0.22, 0.92], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "vertical drip strokes are texture, not water"},
+  {"id": "peak-top-centre", "name": "pale peak rising behind the ridge trees", "kind": "rock", "box": [0.37, 0.0, 0.62, 0.22], "motion": "none", "leavesVisible": false, "depth": "far", "note": "nearly bare silk; a parallax plane boundary, not a subject"}
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "tile": "t006.jpg",
+ "sourceBox": [3872, 6648, 6072, 8848],
+ "_note": "Boxes are NORMALISED to the tile (0-1), so they survive any rescale. catalogue-to-master.py converts them to master px using tiles.json. This tile is MOSTLY CLIFF -- the living material is a band along the top edge plus one foreground canopy at the bottom left.",
+ "objects": [
+  {"id": "maple-top-left", "name": "red maple in the top left corner", "kind": "tree", "box": [0.0, 0.0, 0.17, 0.12], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped by the tile edge; continues into the tile to the left"},
+  {"id": "pine-top-left", "name": "teal pine cluster below the maple", "kind": "tree", "box": [0.02, 0.02, 0.33, 0.26], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "dot-cluster leaves on pale ochre branches"},
+  {"id": "willow-top-centre", "name": "ochre hanging-leaf tree along the top", "kind": "tree", "box": [0.28, 0.0, 0.57, 0.12], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "long drooping strokes -- flutter reads better than swing on this one"},
+  {"id": "tree-top-centre-teal", "name": "round-leaf teal tree at top centre", "kind": "tree", "box": [0.36, 0.10, 0.58, 0.29], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "the cleanest separated crown in the tile"},
+  {"id": "ridge-trees-top-right", "name": "band of ochre and rust trees on the ridge, top right", "kind": "tree", "box": [0.63, 0.03, 1.0, 0.32], "motion": "foliage", "leavesVisible": true, "depth": "far", "note": "a ROW of small trees read as one band; hinge as one card set, not individually"},
+  {"id": "canopy-foreground-left", "name": "teal foreground canopy at the bottom left", "kind": "tree", "box": [0.0, 0.72, 0.33, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "largest leaf marks in the tile; clipped by both the left and bottom edges"},
+  {"id": "cliff-main", "name": "the great cliff mass filling the centre and right", "kind": "rock", "box": [0.35, 0.28, 1.0, 1.0], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "graphite 牛毛皴 over broad wash -- NEVER animate; this is the surface earlier colour gates kept fusing into canopy cards"},
+  {"id": "cliff-wet-left", "name": "streaked wet cliff face on the left", "kind": "rock", "box": [0.0, 0.26, 0.38, 0.93], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "vertical drip strokes read as texture, not as water"}
+ ]
+}

@@ -1,0 +1,16 @@
+{
+ "tile": "t010.jpg",
+ "sourceBox": [3872, 8584, 6072, 10784],
+ "_note": "Boxes are NORMALISED to the tile (0-1). A big pale boulder mass fills the middle; living material is confined to the left edge and a band along the bottom. The bottom band uses a DIFFERENT leaf grammar -- brick-like horizontal dashes -- and should not share a card style with the round-leaf trees.",
+ "objects": [
+  {"id": "broadleaf-top-left", "name": "broadleaf crown reaching in from the top left", "kind": "tree", "box": [0.0, 0.0, 0.37, 0.21], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "the same great broadleaf as t009's; clipped -- expect a seam merge to the left"},
+  {"id": "branch-bare-top-left", "name": "bare ochre branch curling below that crown", "kind": "trunk", "box": [0.10, 0.14, 0.36, 0.29], "motion": "none", "leavesVisible": false, "depth": "near", "note": "a leafless limb. It is the HINGE LINE for the crown above it, not a card of its own"},
+  {"id": "tree-left-edge", "name": "teal and pink round-leaf tree down the left edge", "kind": "tree", "box": [0.0, 0.31, 0.13, 0.64], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped; pink accents among teal leaves"},
+  {"id": "thicket-bottom", "name": "dense band of brick-mark foliage along the bottom", "kind": "tree", "box": [0.18, 0.76, 0.80, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "leaves drawn as short horizontal dashes packed in rows -- a different grammar from the round-leaf trees. Hinge as a shallow mass with small swing; a big angle will read as the ground tilting"},
+  {"id": "pine-bottom-right", "name": "dark needle pine at the bottom right", "kind": "tree", "box": [0.74, 0.77, 1.0, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "the darkest foliage in the tile; fine needle fans"},
+  {"id": "sapling-bottom-centre", "name": "bare young sapling above the thicket", "kind": "tree", "box": [0.65, 0.72, 0.79, 0.84], "motion": "branch", "leavesVisible": false, "depth": "near", "note": "NO LEAVES. Nothing to cut cards from -- if it must move it is a whole-twig sway, not a foliage hinge"},
+  {"id": "boulder-mass-centre", "name": "the great pale boulder mass filling the centre", "kind": "rock", "box": [0.13, 0.05, 1.0, 0.85], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "the largest bare rock passage in z3w -- NEVER animate, and the single best clean-plate donor in the zone"},
+  {"id": "ridge-top-right", "name": "dark combed ridge across the top right", "kind": "rock", "box": [0.45, 0.0, 1.0, 0.30], "motion": "none", "leavesVisible": false, "depth": "far", "note": "raking 牛毛皴 strokes read as texture at distance, never as leaves"},
+  {"id": "rock-dark-lower-left", "name": "dark wedge of rock at the lower left", "kind": "rock", "box": [0.04, 0.66, 0.36, 0.92], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "the darkest rock in the tile; tonally identical to leaf ink, which is why tone alone cannot separate them"}
+ ]
+}

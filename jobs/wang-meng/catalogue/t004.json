@@ -1,0 +1,20 @@
+{
+ "tile": "t004.jpg",
+ "sourceBox": [0, 6648, 2200, 8848],
+ "_note": "Boxes are NORMALISED to the tile (0-1), so they survive any rescale. catalogue-to-master.py converts them to master px using tiles.json.",
+ "objects": [
+  {"id": "path-figures", "name": "figures on the stepped path at the top", "kind": "figure", "box": [0.14, 0.0, 0.31, 0.10], "motion": "robe", "leavesVisible": false, "depth": "far", "note": "the travelling party; robes and hems are the only moving parts"},
+  {"id": "gorge-fall", "name": "narrow fall dropping through the left gorge", "kind": "water", "box": [0.10, 0.12, 0.24, 0.31], "motion": "water", "leavesVisible": false, "depth": "far", "note": "white 留白 between two dark rock walls, not painted ink"},
+  {"id": "tree-upper-teal", "name": "teal tree leaning right off the upper ledge", "kind": "tree", "box": [0.22, 0.25, 0.42, 0.38], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "long bare branch reaching right; canopy is the left half only"},
+  {"id": "tree-mid-round", "name": "round-leaf teal tree mid-tile", "kind": "tree", "box": [0.43, 0.33, 0.61, 0.47], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clean separated leaf marks, good hinge candidate"},
+  {"id": "maple-orange", "name": "orange-red maple on the cliff shoulder", "kind": "tree", "box": [0.59, 0.36, 0.94, 0.68], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "the colour accent; sits AGAINST the cliff and must not take the cliff with it"},
+  {"id": "tree-right-teal", "name": "teal canopy at the right edge", "kind": "tree", "box": [0.81, 0.37, 1.0, 0.57], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "continues into the tile to the right -- merge across the overlap"},
+  {"id": "pine-needle-left", "name": "blue-green needle pine lower left", "kind": "tree", "box": [0.01, 0.53, 0.37, 0.84], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "needle fans, not dot clusters; the widest sprays in the tile"},
+  {"id": "tree-lower-round", "name": "round-leaf tree below the pine", "kind": "tree", "box": [0.24, 0.67, 0.51, 0.91], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "overlaps the pine above it; crowns must be cut apart before hinging"},
+  {"id": "canopy-foreground", "name": "foreground canopy along the bottom edge", "kind": "tree", "box": [0.06, 0.81, 0.53, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "clipped by the tile edge; continues into the tile below"},
+  {"id": "tree-bottom-right", "name": "small teal tree at the bottom", "kind": "tree", "box": [0.48, 0.91, 0.66, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "clipped by the tile edge"},
+  {"id": "cliff-right", "name": "cliff face filling the right half", "kind": "rock", "box": [0.58, 0.54, 1.0, 1.0], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "graphite 牛毛皴 texture strokes -- NEVER animate"},
+  {"id": "ridge-upper", "name": "big grey ridge across the top right", "kind": "rock", "box": [0.33, 0.0, 1.0, 0.46], "motion": "none", "leavesVisible": false, "depth": "far", "note": "broad wash, no leaf marks"},
+  {"id": "gorge-wall-left", "name": "dark gorge wall on the left", "kind": "rock", "box": [0.0, 0.0, 0.22, 0.55], "motion": "none", "leavesVisible": false, "depth": "far", "note": "frames the fall"}
+ ]
+}

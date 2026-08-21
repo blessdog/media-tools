@@ -1,0 +1,16 @@
+{
+ "tile": "t008.jpg",
+ "sourceBox": [0, 8584, 2200, 10784],
+ "_note": "Boxes are NORMALISED to the tile (0-1). Contains a real WATERFALL (white 留白 stripes, not ink) and two collector seals that must never be treated as subject matter.",
+ "objects": [
+  {"id": "great-tree-top-left", "name": "big teal round-leaf tree spreading across the top left", "kind": "tree", "box": [0.07, 0.0, 0.65, 0.36], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "the dominant tree of the tile; leaf clusters clearly separated from pale ochre branches -- an ideal hinge subject. Canopy ONLY; its trunk is a separate object"},
+  {"id": "great-tree-trunk", "name": "the dark trunk descending from that tree", "kind": "trunk", "box": [0.27, 0.26, 0.42, 0.90], "motion": "none", "leavesVisible": false, "depth": "near", "note": "a trunk does NOT move; it is the anchor the canopy hinges above. Cataloguing it separately is what stops a colour gate fusing trunk into card"},
+  {"id": "waterfall-centre", "name": "waterfall dropping down the centre right", "kind": "water", "box": [0.62, 0.13, 0.74, 1.0], "motion": "water", "leavesVisible": false, "depth": "mid", "note": "three white 留白 stripes between dark rock edges -- there is NO ink to animate here, this is negative space and must be moved as water, not as strokes"},
+  {"id": "pine-needle-right", "name": "blue-green needle pine on the right ledge", "kind": "tree", "box": [0.55, 0.39, 1.0, 0.82], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "flat needle fans on ochre branches; sprays hang off a nearly horizontal limb, so swing reads strongly here"},
+  {"id": "tree-rust-top-right", "name": "rust dot-cluster tree at the right edge", "kind": "tree", "box": [0.88, 0.36, 1.0, 0.52], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped; continues into the tile to the right"},
+  {"id": "cliff-left", "name": "cliff wall down the whole left edge", "kind": "rock", "box": [0.0, 0.0, 0.36, 1.0], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "NEVER animate"},
+  {"id": "cliff-centre", "name": "pale cliff face behind the trunk", "kind": "rock", "box": [0.30, 0.30, 0.68, 1.0], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "the flattest passage in the tile; a good clean-plate donor"},
+  {"id": "ledge-bottom-right", "name": "rock ledge the pine stands on", "kind": "rock", "box": [0.72, 0.76, 1.0, 1.0], "motion": "none", "leavesVisible": false, "depth": "near", "note": "the pine's roots grip this -- share its depth plane"},
+  {"id": "seals-left", "name": "two red collector seals on the cliff", "kind": "seal", "box": [0.05, 0.42, 0.15, 0.70], "motion": "none", "leavesVisible": false, "depth": "surface", "note": "vermilion seal impressions sit ON the silk, not IN the scene. They must never enter a card, a plane, or a colour gate -- red is exactly what a maple gate looks for"}
+ ]
+}

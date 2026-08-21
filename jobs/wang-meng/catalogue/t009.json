@@ -1,0 +1,17 @@
+{
+ "tile": "t009.jpg",
+ "sourceBox": [1936, 8584, 4136, 10784],
+ "_note": "Boxes are NORMALISED to the tile (0-1). The densest foliage in z3w -- the right half is one enormous broadleaf mass with individually drawn leaves. Note the PALE VERTICAL STREAKS across the centre top: those are a distant fall / wet rock, NOT ink.",
+ "objects": [
+  {"id": "broadleaf-great-right", "name": "the great broadleaf tree filling the right half", "kind": "tree", "box": [0.36, 0.16, 1.0, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "the single biggest living form in the zone; each leaf is drawn as its own outlined mark on ochre branches. Sprays hang off long limbs and this is where a hinge rig should read best. Cut it into several cards along its branches, not one"},
+  {"id": "broadleaf-top-right", "name": "upper crown of the same broadleaf, top right corner", "kind": "tree", "box": [0.75, 0.0, 1.0, 0.30], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "clipped by the top edge; continues into t005 above -- expect a seam merge"},
+  {"id": "pine-top-centre", "name": "teal dot-cluster pine on the upper ledge", "kind": "tree", "box": [0.37, 0.0, 0.58, 0.19], "motion": "foliage", "leavesVisible": true, "depth": "far", "note": "small round clusters, well separated from the wall behind"},
+  {"id": "maple-rust-left", "name": "rust and pink dot-cluster tree on the left ledge", "kind": "tree", "box": [0.02, 0.31, 0.44, 0.53], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "the colour accent; pale pink ring-marks. Very close in tone to the rock it sits on -- this is the exact case a colour gate gets wrong"},
+  {"id": "pine-needle-left", "name": "blue needle pine at the left edge", "kind": "tree", "box": [0.0, 0.42, 0.14, 0.68], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped; needle fans, different leaf grammar from its neighbours"},
+  {"id": "wet-streaks-centre", "name": "pale vertical streaks down the centre of the wall", "kind": "water", "box": [0.36, 0.13, 0.66, 0.44], "motion": "water", "leavesVisible": false, "depth": "far", "note": "reads as a thin distant fall or seepage over the cliff. Faint -- if it will not carry motion, leave it still rather than inventing a stream"},
+  {"id": "cliff-upper-left", "name": "dark cliff mass across the top left", "kind": "rock", "box": [0.0, 0.0, 0.40, 0.36], "motion": "none", "leavesVisible": false, "depth": "far", "note": "NEVER animate"},
+  {"id": "slope-lower-left", "name": "pale bare slope across the lower left", "kind": "rock", "box": [0.0, 0.50, 0.50, 1.0], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "nearly bare silk; the best clean-plate donor in this tile"},
+  {"id": "cliff-wall-centre", "name": "the cliff wall behind everything", "kind": "rock", "box": [0.30, 0.10, 0.85, 0.60], "motion": "none", "leavesVisible": false, "depth": "far", "note": "the backdrop plane the trees sit in front of"},
+  {"id": "root-bottom-left", "name": "exposed ochre roots at the left edge", "kind": "trunk", "box": [0.0, 0.72, 0.09, 0.87], "motion": "none", "leavesVisible": false, "depth": "near", "note": "roots and trunks do not move"}
+ ]
+}
