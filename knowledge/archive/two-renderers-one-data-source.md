@@ -2,8 +2,9 @@
 id: two-renderers-one-data-source
 kind: procedure
 conflict-key: which-renderer-for-a-camera-move
-status: live
+status: superseded
 supersedes: []
+retires: depth-comes-from-the-breath
 sibling: plan-planes-at-shot-scale
 applies-when: >
   choosing between render-parallax and render-warp for a segment. TRAVERSES --
@@ -27,6 +28,12 @@ asked-as:
   - holes appear when the camera pushes in
   - the wash stretches
 ---
+
+> **SUPERSEDED 2026-08-21 by depth-comes-from-the-breath.** Both halves of
+> the routing were measured wrong on this painting: cards give a traverse ZERO
+> parallax at camZ=0 (flattening all 13 depths changed 0 of 2,073,600 px), and
+> render-warp is rejected outright -- Ryan: "too extreme. It really distorts
+> the painting." What survives is ONE DATA SOURCE, carried into the new claim.
 
 Migrated from `STATE.md`'s SYNTHESIS PLAN, which Ryan asked for as "put it all
 together". The load-bearing part is ONE DATA SOURCE: the moment the two
