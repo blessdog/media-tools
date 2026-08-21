@@ -7,17 +7,9 @@
  ],
  "space": "master-px",
  "tilesTotal": 16,
- "tilesCatalogued": 9,
- "tilesMissing": [
-  "t002.jpg",
-  "t003.jpg",
-  "t011.jpg",
-  "t012.jpg",
-  "t013.jpg",
-  "t014.jpg",
-  "t015.jpg"
- ],
- "objectsBeforeMerge": 107,
+ "tilesCatalogued": 16,
+ "tilesMissing": [],
+ "objectsBeforeMerge": 185,
  "objects": [
   {
    "id": "t000:cliff-top-left",
@@ -88,6 +80,58 @@
    "tile": "t001.jpg"
   },
   {
+   "id": "t002:canopy-top-centre-left",
+   "name": "teal canopy along the top edge",
+   "kind": "tree",
+   "box": [
+    4224,
+    4712,
+    4554,
+    4954
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "clipped by the top edge",
+   "tile": "t002.jpg"
+  },
+  {
+   "id": "t003:canopy-top-band",
+   "name": "band of teal and ochre trees along the top",
+   "kind": "tree",
+   "box": [
+    5046,
+    4712,
+    6102,
+    5284
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "several overlapping crowns on the upper shelf; cut apart before hinging",
+   "tile": "t003.jpg",
+   "mergedFrom": [
+    "t003:canopy-top-band",
+    "t002:canopy-top-right"
+   ]
+  },
+  {
+   "id": "t003:canopy-top-right",
+   "name": "teal and ochre trees at the top right corner",
+   "kind": "tree",
+   "box": [
+    5970,
+    4712,
+    6586,
+    4998
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "the scroll's right margin",
+   "tile": "t003.jpg"
+  },
+  {
    "id": "t001:pine-top-centre",
    "name": "teal pine on the upper ridge",
    "kind": "tree",
@@ -104,20 +148,24 @@
    "tile": "t001.jpg"
   },
   {
-   "id": "t001:tree-rust-top-right",
-   "name": "rust and orange tree at the top right",
+   "id": "t002:maple-top-left",
+   "name": "orange-red maple in the top left",
    "kind": "tree",
    "box": [
     3828,
     4756,
-    4136,
+    4312,
     5262
    ],
    "motion": "foliage",
    "leavesVisible": true,
    "depth": "mid",
    "note": "clipped; continues into the tile to the right",
-   "tile": "t001.jpg"
+   "tile": "t002.jpg",
+   "mergedFrom": [
+    "t002:maple-top-left",
+    "t001:tree-rust-top-right"
+   ]
   },
   {
    "id": "t001:cliff-centre",
@@ -170,6 +218,26 @@
    "depth": "far",
    "note": "sits against the building -- must not drag the roofline",
    "tile": "t000.jpg"
+  },
+  {
+   "id": "t003:willow-ochre-upper-left",
+   "name": "ochre and rust hanging-leaf tree upper left",
+   "kind": "tree",
+   "box": [
+    4686,
+    4932,
+    5156,
+    5350
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "drooping strokes -- flutter reads better than swing",
+   "tile": "t003.jpg",
+   "mergedFrom": [
+    "t003:willow-ochre-upper-left",
+    "t002:tree-ochre-top-centre"
+   ]
   },
   {
    "id": "t000:tree-teal-upper-left",
@@ -236,6 +304,22 @@
    "tile": "t001.jpg"
   },
   {
+   "id": "t002:wall-behind-fall",
+   "name": "dark wall the fall drops through",
+   "kind": "rock",
+   "box": [
+    4246,
+    5064,
+    4576,
+    5812
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "the dark frame that makes the white ribbon read; must stay rigid or the fall appears to swing",
+   "tile": "t002.jpg"
+  },
+  {
    "id": "t000:stream-right",
    "name": "hatched water channel down the right side",
    "kind": "water",
@@ -252,6 +336,26 @@
    "tile": "t000.jpg"
   },
   {
+   "id": "t003:cliff-great",
+   "name": "the enormous bare cliff filling the tile",
+   "kind": "rock",
+   "box": [
+    4606,
+    5086,
+    6586,
+    6692
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "the largest continuous bare passage in the whole zone -- NEVER animate, and the strongest clean-plate donor available anywhere in z3w",
+   "tile": "t003.jpg",
+   "mergedFrom": [
+    "t003:cliff-great",
+    "t002:cliff-right-mass"
+   ]
+  },
+  {
    "id": "t001:figure-below",
    "name": "second figure at the hall door",
    "kind": "figure",
@@ -266,6 +370,26 @@
    "depth": "mid",
    "note": "only the robe hem moves",
    "tile": "t001.jpg"
+  },
+  {
+   "id": "t002:fall-main",
+   "name": "the waterfall dropping between dark walls",
+   "kind": "water",
+   "box": [
+    4334,
+    5108,
+    4510,
+    5724
+   ],
+   "motion": "water",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "combed white stripes on bare silk -- NEGATIVE SPACE, there is no ink here to cut into cards. It moves as a surface. The brightest and most legible water in the zone",
+   "tile": "t002.jpg",
+   "mergedFrom": [
+    "t002:fall-main",
+    "t003:fall-left-edge"
+   ]
   },
   {
    "id": "t000:fence-upper-right",
@@ -300,6 +424,22 @@
    "tile": "t000.jpg"
   },
   {
+   "id": "t003:pine-right-edge",
+   "name": "needle pine on the right cliff shoulder",
+   "kind": "tree",
+   "box": [
+    6344,
+    5152,
+    6586,
+    5394
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "small feathered fans hanging over the drop",
+   "tile": "t003.jpg"
+  },
+  {
    "id": "t000:maple-left",
    "name": "big orange-rust maple down the left edge",
    "kind": "tree",
@@ -332,20 +472,24 @@
    "tile": "t000.jpg"
   },
   {
-   "id": "t001:tree-right-edge",
-   "name": "teal canopy at the right edge",
+   "id": "t002:tree-teal-left",
+   "name": "teal round-leaf tree on the left ledge",
    "kind": "tree",
    "box": [
     3872,
     5284,
-    4136,
-    5570
+    4268,
+    5614
    ],
    "motion": "foliage",
    "leavesVisible": true,
    "depth": "mid",
-   "note": "clipped",
-   "tile": "t001.jpg"
+   "note": "clean separated clusters",
+   "tile": "t002.jpg",
+   "mergedFrom": [
+    "t002:tree-teal-left",
+    "t001:tree-right-edge"
+   ]
   },
   {
    "id": "t001:tree-brick-centre",
@@ -428,6 +572,58 @@
    "tile": "t000.jpg"
   },
   {
+   "id": "t002:slope-left-centre",
+   "name": "pale slope running down from the fall",
+   "kind": "rock",
+   "box": [
+    4092,
+    5636,
+    4840,
+    6384
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "bare wash",
+   "tile": "t002.jpg"
+  },
+  {
+   "id": "t002:fall-plunge",
+   "name": "the pool and spill below the fall",
+   "kind": "water",
+   "box": [
+    4334,
+    5680,
+    4488,
+    5878
+   ],
+   "motion": "water",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "where the ribbon breaks up; slower than the drop above it",
+   "tile": "t002.jpg"
+  },
+  {
+   "id": "t002:conifer-row-left",
+   "name": "row of dark conifers on the left slope",
+   "kind": "tree",
+   "box": [
+    3696,
+    5790,
+    4246,
+    6142
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "distant silhouette marks -- leave still",
+   "tile": "t002.jpg",
+   "mergedFrom": [
+    "t002:conifer-row-left",
+    "t001:conifer-row-right"
+   ]
+  },
+  {
    "id": "t001:slope-pale-centre",
    "name": "the broad pale slope through the middle",
    "kind": "rock",
@@ -441,22 +637,6 @@
    "leavesVisible": false,
    "depth": "mid",
    "note": "nearly bare silk; a good clean-plate donor",
-   "tile": "t001.jpg"
-  },
-  {
-   "id": "t001:conifer-row-right",
-   "name": "row of dark conifers on the right slope",
-   "kind": "tree",
-   "box": [
-    3696,
-    5878,
-    4136,
-    6142
-   ],
-   "motion": "none",
-   "leavesVisible": false,
-   "depth": "far",
-   "note": "distant marks -- leave still",
    "tile": "t001.jpg"
   },
   {
@@ -517,6 +697,42 @@
    ]
   },
   {
+   "id": "t002:sapling-bare-centre",
+   "name": "bare forked sapling below the slope",
+   "kind": "tree",
+   "box": [
+    4246,
+    6252,
+    4730,
+    6582
+   ],
+   "motion": "branch",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "NO LEAVES -- nothing to cut cards from",
+   "tile": "t002.jpg"
+  },
+  {
+   "id": "t002:tree-bottom-centre",
+   "name": "teal tree at the bottom centre",
+   "kind": "tree",
+   "box": [
+    4334,
+    6340,
+    4774,
+    6912
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "clipped by the bottom edge",
+   "tile": "t002.jpg",
+   "mergedFrom": [
+    "t002:tree-bottom-centre",
+    "t003:tree-teal-bottom-left"
+   ]
+  },
+  {
    "id": "t000:bridge-lower-right",
    "name": "railed bridge at the lower right",
    "kind": "structure",
@@ -537,6 +753,38 @@
    ]
   },
   {
+   "id": "t003:tree-bottom-right",
+   "name": "teal tree at the bottom right corner",
+   "kind": "tree",
+   "box": [
+    6322,
+    6428,
+    6586,
+    6912
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "the scroll's right margin at the bottom",
+   "tile": "t003.jpg"
+  },
+  {
+   "id": "t002:maple-bottom-left",
+   "name": "red-orange cluster tree at the bottom left",
+   "kind": "tree",
+   "box": [
+    3872,
+    6450,
+    4356,
+    6912
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "the largest leaf marks in the tile; clipped by both edges",
+   "tile": "t002.jpg"
+  },
+  {
    "id": "t000:ge-hong",
    "name": "\u767d\u8863 white-robed figure with black cap on the path, bottom left",
    "kind": "figure",
@@ -551,6 +799,22 @@
    "depth": "near",
    "note": "THIS IS GE HONG, the subject of \u845b\u7a1a\u5ddd\u79fb\u5c45\u5716. The largest and most legible figure in the zone. Robe hem and sleeve only -- the body must not deform, and nothing else in frame may draw the eye off him",
    "tile": "t000.jpg"
+  },
+  {
+   "id": "t003:trees-bottom-centre",
+   "name": "bare saplings over ochre foliage, bottom centre",
+   "kind": "tree",
+   "box": [
+    5684,
+    6538,
+    6256,
+    6912
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "bare forks above a low ochre crown; the forks have no leaves to cut",
+   "tile": "t003.jpg"
   },
   {
    "id": "t000:stream-bottom",
@@ -583,6 +847,49 @@
    "depth": "near",
    "note": "clipped by the bottom edge",
    "tile": "t001.jpg"
+  },
+  {
+   "id": "t007:willow-top-left",
+   "name": "ochre hanging-leaf tree in the top left corner",
+   "kind": "tree",
+   "box": [
+    4452,
+    6604,
+    5192,
+    6934
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "long vertical drooping strokes; flutter, not swing -- continues into t006",
+   "tile": "t007.jpg",
+   "mergedFrom": [
+    "t007:willow-top-left",
+    "t006:willow-top-centre",
+    "t003:tree-ochre-bottom-left",
+    "t002:tree-ochre-bottom"
+   ]
+  },
+  {
+   "id": "t007:willow-top-centre",
+   "name": "big ochre and rust hanging-leaf tree on the ridge",
+   "kind": "tree",
+   "box": [
+    5258,
+    6604,
+    6432,
+    7352
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "the dominant living form in this tile; drooping strokes hang BELOW their branch, so the hinge line sits along the top of the mass",
+   "tile": "t007.jpg",
+   "mergedFrom": [
+    "t007:willow-top-centre",
+    "t006:ridge-trees-top-right",
+    "t002:tree-bottom-right"
+   ]
   },
   {
    "id": "t004:gorge-wall-left",
@@ -665,26 +972,6 @@
    "tile": "t005.jpg"
   },
   {
-   "id": "t007:willow-top-left",
-   "name": "ochre hanging-leaf tree in the top left corner",
-   "kind": "tree",
-   "box": [
-    4452,
-    6648,
-    5126,
-    6934
-   ],
-   "motion": "foliage",
-   "leavesVisible": true,
-   "depth": "mid",
-   "note": "long vertical drooping strokes; flutter, not swing -- continues into t006",
-   "tile": "t007.jpg",
-   "mergedFrom": [
-    "t007:willow-top-left",
-    "t006:willow-top-centre"
-   ]
-  },
-  {
    "id": "t007:peak-top-centre",
    "name": "pale peak rising behind the ridge trees",
    "kind": "rock",
@@ -731,26 +1018,6 @@
    "depth": "mid",
    "note": "dot-cluster leaves on pale ochre branches",
    "tile": "t006.jpg"
-  },
-  {
-   "id": "t007:willow-top-centre",
-   "name": "big ochre and rust hanging-leaf tree on the ridge",
-   "kind": "tree",
-   "box": [
-    5258,
-    6692,
-    6432,
-    7352
-   ],
-   "motion": "foliage",
-   "leavesVisible": true,
-   "depth": "mid",
-   "note": "the dominant living form in this tile; drooping strokes hang BELOW their branch, so the hinge line sits along the top of the mass",
-   "tile": "t007.jpg",
-   "mergedFrom": [
-    "t007:willow-top-centre",
-    "t006:ridge-trees-top-right"
-   ]
   },
   {
    "id": "t007:pine-top-left",
@@ -1218,25 +1485,31 @@
    "leavesVisible": true,
    "depth": "near",
    "note": "the same great broadleaf as t009's; clipped -- expect a seam merge to the left",
-   "tile": "t010.jpg"
+   "tile": "t010.jpg",
+   "mergedFrom": [
+    "t010:broadleaf-top-left",
+    "t011:canopy-top-left"
+   ]
   },
   {
-   "id": "t010:boulder-mass-centre",
-   "name": "the great pale boulder mass filling the centre",
+   "id": "t011:boulder-great",
+   "name": "the great pale boulder filling the tile",
    "kind": "rock",
    "box": [
     4158,
     8584,
-    6072,
+    6586,
     10454
    ],
    "motion": "none",
    "leavesVisible": false,
    "depth": "mid",
    "note": "the largest bare rock passage in z3w -- NEVER animate, and the single best clean-plate donor in the zone",
-   "tile": "t010.jpg",
+   "tile": "t011.jpg",
    "mergedFrom": [
+    "t011:boulder-great",
     "t010:boulder-mass-centre",
+    "t011:ridge-combed-top-right",
     "t010:ridge-top-right"
    ]
   },
@@ -1270,7 +1543,11 @@
    "leavesVisible": false,
    "depth": "mid",
    "note": "three white \u7559\u767d stripes between dark rock edges -- there is NO ink to animate here, this is negative space and must be moved as water, not as strokes",
-   "tile": "t008.jpg"
+   "tile": "t008.jpg",
+   "mergedFrom": [
+    "t008:waterfall-centre",
+    "t012:fall-top-right"
+   ]
   },
   {
    "id": "t009:wet-streaks-centre",
@@ -1312,7 +1589,7 @@
     2728,
     8936,
     4158,
-    10784
+    10812
    ],
    "motion": "foliage",
    "leavesVisible": true,
@@ -1321,8 +1598,25 @@
    "tile": "t009.jpg",
    "mergedFrom": [
     "t009:broadleaf-great-right",
+    "t013:pine-top-roots",
     "t010:tree-left-edge"
    ]
+  },
+  {
+   "id": "t011:tree-ochre-left",
+   "name": "small ochre tree on the left ledge",
+   "kind": "tree",
+   "box": [
+    4386,
+    9024,
+    4584,
+    9222
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "clipped by the left edge",
+   "tile": "t011.jpg"
   },
   {
    "id": "t008:great-tree-trunk",
@@ -1442,6 +1736,60 @@
    "tile": "t010.jpg"
   },
   {
+   "id": "t011:red-mark-bottom-right",
+   "name": "small red passage among the pines at the bottom right",
+   "kind": "unknown",
+   "box": [
+    6432,
+    10080,
+    6586,
+    10322
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "UNCERTAIN at this resolution -- a red-robed figure or autumn colour, the same ambiguity as t014's red-mark-top-right. Read at full scale before rigging either way",
+   "tile": "t011.jpg"
+  },
+  {
+   "id": "t011:pine-needle-bottom-right",
+   "name": "dark needle pines across the bottom right",
+   "kind": "tree",
+   "box": [
+    5420,
+    10124,
+    6586,
+    10922
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "fine needle fans, the darkest foliage here; a different grammar from the thicket beside it and must not share its card style",
+   "tile": "t011.jpg",
+   "mergedFrom": [
+    "t011:pine-needle-bottom-right",
+    "t015:pine-dark-top-right",
+    "t014:pine-dark-top-right",
+    "t010:pine-bottom-right"
+   ]
+  },
+  {
+   "id": "t011:sapling-bare-bottom",
+   "name": "bare forked sapling above the thicket",
+   "kind": "tree",
+   "box": [
+    5288,
+    10146,
+    5596,
+    10432
+   ],
+   "motion": "branch",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "NO LEAVES -- nothing to cut cards from",
+   "tile": "t011.jpg"
+  },
+  {
    "id": "t009:root-bottom-left",
    "name": "exposed ochre roots at the left edge",
    "kind": "trunk",
@@ -1458,68 +1806,537 @@
    "tile": "t009.jpg"
   },
   {
-   "id": "t010:sapling-bottom-centre",
-   "name": "bare young sapling above the thicket",
+   "id": "t014:canopy-brick-top",
+   "name": "brick-dash canopy band across the top",
    "kind": "tree",
    "box": [
-    5302,
+    4158,
     10168,
-    5610,
-    10432
+    5852,
+    11186
    ],
-   "motion": "branch",
-   "leavesVisible": false,
+   "motion": "foliage",
+   "leavesVisible": true,
    "depth": "near",
-   "note": "NO LEAVES. Nothing to cut cards from -- if it must move it is a whole-twig sway, not a foliage hinge",
-   "tile": "t010.jpg"
+   "note": "leaves as short horizontal dashes in tight rows over pale ochre limbs. Densest ink in the tile; the marks are small, so leaf-mark seed spacing must come from the ink and not from a neighbour tile",
+   "tile": "t014.jpg",
+   "mergedFrom": [
+    "t014:canopy-brick-top",
+    "t010:thicket-bottom",
+    "t015:canopy-brick-top-left",
+    "t011:thicket-brick-bottom",
+    "t014:tree-round-top-left",
+    "t010:sapling-bottom-centre"
+   ]
   },
   {
-   "id": "t008:ledge-bottom-right",
-   "name": "rock ledge the pine stands on",
+   "id": "t012:cliff-right",
+   "name": "cliff wall on the right",
    "kind": "rock",
    "box": [
-    1584,
+    1452,
     10256,
     2200,
-    10784
+    11384
    ],
    "motion": "none",
    "leavesVisible": false,
    "depth": "near",
    "note": "the pine's roots grip this -- share its depth plane",
-   "tile": "t008.jpg"
+   "tile": "t012.jpg",
+   "mergedFrom": [
+    "t012:cliff-right",
+    "t008:ledge-bottom-right"
+   ]
   },
   {
-   "id": "t010:thicket-bottom",
-   "name": "dense band of brick-mark foliage along the bottom",
+   "id": "t012:cliff-left",
+   "name": "cliff mass down the left",
+   "kind": "rock",
+   "box": [
+    0,
+    10394,
+    748,
+    11538
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "NEVER animate",
+   "tile": "t012.jpg"
+  },
+  {
+   "id": "t013:ledge-upper-left",
+   "name": "pale ledge running across the top left",
+   "kind": "rock",
+   "box": [
+    1936,
+    10394,
+    3036,
+    11010
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "bare silk; the far plane",
+   "tile": "t013.jpg"
+  },
+  {
+   "id": "t014:rock-left-edge",
+   "name": "pale rock down the left edge",
+   "kind": "rock",
+   "box": [
+    3872,
+    10394,
+    4290,
+    12110
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "the only substantial bare passage in the tile, and therefore the only clean-plate donor -- a thin one",
+   "tile": "t014.jpg"
+  },
+  {
+   "id": "t015:red-mark-top-right",
+   "name": "red passage inside the canopy at the top right",
+   "kind": "unknown",
+   "box": [
+    5728,
+    10658,
+    6256,
+    11142
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "UNCERTAIN, and the LARGEST of the three red passages in the zone (see t014 and t011). Either a red-robed figure deep in the trees or a maple in autumn colour. Read at full scale before rigging -- a figure wants a robe cycle, a maple wants leaf cards, and guessing wrong is visible",
+   "tile": "t015.jpg",
+   "mergedFrom": [
+    "t015:red-mark-top-right",
+    "t014:red-mark-top-right"
+   ]
+  },
+  {
+   "id": "t013:roots-clifftop",
+   "name": "bare ochre roots spread across the clifftop",
+   "kind": "trunk",
+   "box": [
+    2640,
+    10680,
+    3256,
+    10944
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "an anchor, never a card. Catalogued separately precisely because it is ochre and lies on pale rock -- a colour gate reads it as leaf",
+   "tile": "t013.jpg"
+  },
+  {
+   "id": "t012:stream-broad",
+   "name": "the broad stream running through the middle",
+   "kind": "water",
+   "box": [
+    594,
+    10702,
+    2200,
+    12198
+   ],
+   "motion": "water",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "bare silk with fine RIPPLE LINES curling around each rock. The lines ARE the water -- they move as a surface, never as cards. The widest water passage in z3w and the strongest argument that this zone needs water motion, not only foliage",
+   "tile": "t012.jpg"
+  },
+  {
+   "id": "t012:rocks-in-stream",
+   "name": "the scatter of dark rocks standing in the water",
+   "kind": "rock",
+   "box": [
+    594,
+    10724,
+    1760,
+    12044
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "each is ringed by its own ripple lines -- the rocks stay put and the rings move around them. Animating these is the exact defect Ryan called out",
+   "tile": "t012.jpg",
+   "mergedFrom": [
+    "t012:rocks-in-stream",
+    "t012:bank-centre"
+   ]
+  },
+  {
+   "id": "t013:cliff-head-centre",
+   "name": "the blunt cliff head filling the centre",
+   "kind": "rock",
+   "box": [
+    2288,
+    10724,
+    3652,
+    12594
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "NEVER animate. Broad flat wash with sparse contour -- a strong clean-plate donor",
+   "tile": "t013.jpg"
+  },
+  {
+   "id": "t015:branches-upper-left",
+   "name": "tangle of bare ochre limbs through the upper left",
+   "kind": "trunk",
+   "box": [
+    4386,
+    10790,
+    5266,
+    11340
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "hinge lines, not cards. Ochre on pale ground -- exactly what a colour gate mistakes for leaf",
+   "tile": "t015.jpg"
+  },
+  {
+   "id": "t015:canopy-brick-centre",
+   "name": "brick-dash canopy through the centre",
    "kind": "tree",
    "box": [
-    4268,
-    10256,
-    5632,
-    10784
+    5134,
+    10856,
+    5970,
+    11362
    ],
    "motion": "foliage",
    "leavesVisible": true,
    "depth": "near",
-   "note": "leaves drawn as short horizontal dashes packed in rows -- a different grammar from the round-leaf trees. Hinge as a shallow mass with small swing; a big angle will read as the ground tilting",
-   "tile": "t010.jpg"
+   "note": "continues the band above; cut along the limbs that divide them",
+   "tile": "t015.jpg"
   },
   {
-   "id": "t010:pine-bottom-right",
-   "name": "dark needle pine at the bottom right",
+   "id": "t015:pine-dark-right",
+   "name": "dark needle pine at the right edge",
    "kind": "tree",
    "box": [
-    5500,
-    10278,
+    6190,
+    10856,
+    6586,
+    11274
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "the scroll's right margin",
+   "tile": "t015.jpg"
+  },
+  {
+   "id": "t013:foliage-right-wall",
+   "name": "wall of teal foliage down the right edge",
+   "kind": "tree",
+   "box": [
+    3520,
+    11054,
+    4136,
+    12154
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "many overlapping crowns rather than one tree; must be cut into cards along its branches or it swings as a slab",
+   "tile": "t013.jpg"
+  },
+  {
+   "id": "t014:tree-teal-mid-left",
+   "name": "teal round-leaf tree at the left",
+   "kind": "tree",
+   "box": [
+    3872,
+    11054,
+    4400,
+    11384
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "clipped by the left edge; the clearest separated crown in the tile",
+   "tile": "t014.jpg"
+  },
+  {
+   "id": "t014:tree-great-centre",
+   "name": "the big round-leaf tree through the centre",
+   "kind": "tree",
+   "box": [
+    4334,
+    11164,
+    5530,
+    11670
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "larger, better separated marks than the brick band -- an easier hinge",
+   "tile": "t014.jpg",
+   "mergedFrom": [
+    "t014:tree-great-centre",
+    "t015:canopy-round-mid-left"
+   ]
+  },
+  {
+   "id": "t015:canopy-dense-bottom-right",
+   "name": "dense round-leaf mass filling the bottom right",
+   "kind": "tree",
+   "box": [
+    5244,
+    11164,
+    6586,
+    12594
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "many crowns fused into one field. As a single card this is a slab; it only reads once split into leaf marks",
+   "tile": "t015.jpg",
+   "mergedFrom": [
+    "t015:canopy-dense-bottom-right",
+    "t014:pine-dark-right",
+    "t015:pine-dark-centre"
+   ]
+  },
+  {
+   "id": "t013:valley-left-edge",
+   "name": "pale valley floor glimpsed at the left edge",
+   "kind": "void",
+   "box": [
+    1936,
+    11230,
+    2222,
+    11670
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "\u7559\u767d -- bare ground read as distance. There is no ink here to move; see refuted claim mist-as-ink",
+   "tile": "t013.jpg"
+  },
+  {
+   "id": "t015:branches-lower-left",
+   "name": "bare limbs below the left canopy",
+   "kind": "trunk",
+   "box": [
+    4386,
+    11362,
+    5060,
+    11978
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "the hinge lines for the crowns above and below. Ochre on pale ground -- a colour gate reads this as leaf, which is why it is catalogued",
+   "tile": "t015.jpg",
+   "mergedFrom": [
+    "t015:branches-lower-left",
+    "t014:branches-centre"
+   ]
+  },
+  {
+   "id": "t012:figures-left-bank",
+   "name": "two figures at the left edge",
+   "kind": "figure",
+   "box": [
+    0,
+    11494,
+    264,
+    11868
+   ],
+   "motion": "robe",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "clipped by the left edge; one carries a bundle",
+   "tile": "t012.jpg"
+  },
+  {
+   "id": "t012:child-with-cages",
+   "name": "child sitting between two bird cages",
+   "kind": "figure",
+   "box": [
+    286,
+    11494,
+    770,
+    11890
+   ],
+   "motion": "robe",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "the most charming passage in the zone and a natural station. Robe and hem only -- the face must NOT deform, and the cages are ruled structures that stay rigid",
+   "tile": "t012.jpg"
+  },
+  {
+   "id": "t013:tree-colour-lower-left",
+   "name": "teal tree with red-tipped leaves at the lower left",
+   "kind": "tree",
+   "box": [
+    1936,
+    11604,
+    2728,
+    12374
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "the clearest leaf drawing in the tile -- outlined lobed leaves in loose sprays on ochre limbs. An ideal hinge subject",
+   "tile": "t013.jpg"
+  },
+  {
+   "id": "t012:tree-bottom-right",
+   "name": "lobed-leaf tree reaching in from the right",
+   "kind": "tree",
+   "box": [
+    1606,
+    11714,
+    2200,
+    12594
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "the ONLY real foliage in the tile; red-tipped lobed leaves in loose sprays on an ochre limb -- clean, well separated, an easy hinge subject",
+   "tile": "t012.jpg"
+  },
+  {
+   "id": "t014:canopy-dense-bottom",
+   "name": "dense round-leaf mass across the bottom right",
+   "kind": "tree",
+   "box": [
+    4386,
+    11780,
     6072,
-    10784
+    12594
    ],
    "motion": "foliage",
    "leavesVisible": true,
    "depth": "near",
-   "note": "the darkest foliage in the tile; fine needle fans",
-   "tile": "t010.jpg"
+   "note": "many crowns fused into one field of ink. The clearest case in z3w of a mass that must be split into leaf marks -- as one card it is a slab",
+   "tile": "t014.jpg",
+   "mergedFrom": [
+    "t014:canopy-dense-bottom",
+    "t015:fronds-bottom-left"
+   ]
+  },
+  {
+   "id": "t014:fronds-bottom-left",
+   "name": "feathered blue-green fronds at the bottom left",
+   "kind": "tree",
+   "box": [
+    4114,
+    11956,
+    4862,
+    12594
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "long feathered sprays rather than clusters; these hang off their stem, so the hinge sits at the stem end and flutter carries more than swing",
+   "tile": "t014.jpg"
+  },
+  {
+   "id": "t013:tree-bottom-right",
+   "name": "teal tree at the bottom right",
+   "kind": "tree",
+   "box": [
+    3586,
+    12000,
+    4136,
+    12594
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "clipped by the bottom edge",
+   "tile": "t013.jpg"
+  },
+  {
+   "id": "t012:gentleman-with-fan",
+   "name": "robed gentleman holding a fan, bottom right",
+   "kind": "figure",
+   "box": [
+    1386,
+    12088,
+    1628,
+    12594
+   ],
+   "motion": "robe",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "the largest figure in the tile; wide sleeves and a long hem, so the robe carries real motion",
+   "tile": "t012.jpg"
+  },
+  {
+   "id": "t013:sapling-bottom-centre",
+   "name": "bare forked sapling at the bottom centre right",
+   "kind": "tree",
+   "box": [
+    3256,
+    12154,
+    3520,
+    12440
+   ],
+   "motion": "branch",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "NO LEAVES -- nothing to cut cards from; whole-twig sway or nothing",
+   "tile": "t013.jpg"
+  },
+  {
+   "id": "t013:canopy-bottom-left",
+   "name": "denser canopy below it, clipped by the bottom edge",
+   "kind": "tree",
+   "box": [
+    1936,
+    12264,
+    2420,
+    12594
+   ],
+   "motion": "foliage",
+   "leavesVisible": true,
+   "depth": "near",
+   "note": "continues below the tile",
+   "tile": "t013.jpg"
+  },
+  {
+   "id": "t012:porter-bottom-left",
+   "name": "porter with a shoulder basket",
+   "kind": "figure",
+   "box": [
+    352,
+    12286,
+    594,
+    12594
+   ],
+   "motion": "robe",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "clipped by the bottom edge; the load is rigid, the robe is not",
+   "tile": "t012.jpg"
+  },
+  {
+   "id": "t012:bundle-bottom-centre",
+   "name": "figure with a covered load at the bottom centre",
+   "kind": "figure",
+   "box": [
+    1078,
+    12374,
+    1342,
+    12594
+   ],
+   "motion": "robe",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "clipped by the bottom edge",
+   "tile": "t012.jpg"
   }
  ]
 }

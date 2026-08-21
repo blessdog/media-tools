@@ -1,0 +1,23 @@
+{
+ "tile": "t002.jpg",
+ "sourceBox": [3872, 4712, 6072, 6912],
+ "_note": "Boxes are NORMALISED to the tile (0-1). Holds THE FALL -- a bright 留白 ribbon dropping between dark walls, the clearest water in z3w. The right half is a huge pale cliff; the living material rings the left and bottom.",
+ "objects": [
+  {"id": "fall-main", "name": "the waterfall dropping between dark walls", "kind": "water", "box": [0.21, 0.18, 0.29, 0.46], "motion": "water", "leavesVisible": false, "depth": "mid", "note": "combed white stripes on bare silk -- NEGATIVE SPACE, there is no ink here to cut into cards. It moves as a surface. The brightest and most legible water in the zone"},
+  {"id": "fall-plunge", "name": "the pool and spill below the fall", "kind": "water", "box": [0.21, 0.44, 0.28, 0.53], "motion": "water", "leavesVisible": false, "depth": "mid", "note": "where the ribbon breaks up; slower than the drop above it"},
+  {"id": "maple-top-left", "name": "orange-red maple in the top left", "kind": "tree", "box": [0.0, 0.02, 0.20, 0.24], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped by the left edge; strong colour mass"},
+  {"id": "tree-teal-left", "name": "teal round-leaf tree on the left ledge", "kind": "tree", "box": [0.0, 0.26, 0.18, 0.41], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clean separated clusters"},
+  {"id": "canopy-top-centre-left", "name": "teal canopy along the top edge", "kind": "tree", "box": [0.16, 0.0, 0.31, 0.11], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped by the top edge"},
+  {"id": "tree-ochre-top-centre", "name": "ochre and rust hanging-leaf tree above the cliff lip", "kind": "tree", "box": [0.37, 0.10, 0.56, 0.29], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "drooping strokes -- flutter reads better than swing"},
+  {"id": "canopy-top-right", "name": "band of teal trees across the top right", "kind": "tree", "box": [0.62, 0.0, 1.0, 0.26], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "several overlapping crowns on the upper shelf; cut apart before hinging"},
+  {"id": "conifer-row-left", "name": "row of dark conifers on the left slope", "kind": "tree", "box": [0.0, 0.49, 0.17, 0.64], "motion": "none", "leavesVisible": false, "depth": "far", "note": "distant silhouette marks -- leave still"},
+  {"id": "sapling-bare-centre", "name": "bare forked sapling below the slope", "kind": "tree", "box": [0.17, 0.70, 0.39, 0.85], "motion": "branch", "leavesVisible": false, "depth": "near", "note": "NO LEAVES -- nothing to cut cards from"},
+  {"id": "maple-bottom-left", "name": "red-orange cluster tree at the bottom left", "kind": "tree", "box": [0.0, 0.79, 0.22, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "the largest leaf marks in the tile; clipped by both edges"},
+  {"id": "tree-bottom-centre", "name": "teal tree at the bottom centre", "kind": "tree", "box": [0.21, 0.80, 0.41, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "clipped by the bottom edge"},
+  {"id": "tree-ochre-bottom", "name": "ochre hanging-leaf tree at the bottom", "kind": "tree", "box": [0.40, 0.87, 0.60, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "clipped by the bottom edge"},
+  {"id": "tree-bottom-right", "name": "bare sapling and ochre foliage at the bottom right", "kind": "tree", "box": [0.83, 0.86, 1.0, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "clipped; a bare fork above a small ochre crown"},
+  {"id": "cliff-right-mass", "name": "the great pale cliff filling the right half", "kind": "rock", "box": [0.42, 0.17, 1.0, 0.90], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "NEVER animate. Broad and sparsely marked -- the best clean-plate donor in this tile"},
+  {"id": "wall-behind-fall", "name": "dark wall the fall drops through", "kind": "rock", "box": [0.17, 0.16, 0.32, 0.50], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "the dark frame that makes the white ribbon read; must stay rigid or the fall appears to swing"},
+  {"id": "slope-left-centre", "name": "pale slope running down from the fall", "kind": "rock", "box": [0.10, 0.42, 0.44, 0.76], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "bare wash"}
+ ]
+}

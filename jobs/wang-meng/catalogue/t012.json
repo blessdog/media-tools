@@ -1,0 +1,19 @@
+{
+ "tile": "t012.jpg",
+ "sourceBox": [0, 10394, 2200, 12594],
+ "_note": "Boxes are NORMALISED to the tile (0-1). THE PARTY TILE -- this is the 移居 itself, the household on the move: a child minding caged birds, porters with baskets, a robed figure with a fan. It also holds the broadest WATER in z3w, drawn as ripple lines around rocks. Almost no foliage; the motion here is robes and ripples, not leaves.",
+ "objects": [
+  {"id": "child-with-cages", "name": "child sitting between two bird cages", "kind": "figure", "box": [0.13, 0.50, 0.35, 0.68], "motion": "robe", "leavesVisible": false, "depth": "near", "note": "the most charming passage in the zone and a natural station. Robe and hem only -- the face must NOT deform, and the cages are ruled structures that stay rigid"},
+  {"id": "figures-left-bank", "name": "two figures at the left edge", "kind": "figure", "box": [0.0, 0.50, 0.12, 0.67], "motion": "robe", "leavesVisible": false, "depth": "near", "note": "clipped by the left edge; one carries a bundle"},
+  {"id": "porter-bottom-left", "name": "porter with a shoulder basket", "kind": "figure", "box": [0.16, 0.86, 0.27, 1.0], "motion": "robe", "leavesVisible": false, "depth": "near", "note": "clipped by the bottom edge; the load is rigid, the robe is not"},
+  {"id": "gentleman-with-fan", "name": "robed gentleman holding a fan, bottom right", "kind": "figure", "box": [0.63, 0.77, 0.74, 1.0], "motion": "robe", "leavesVisible": false, "depth": "near", "note": "the largest figure in the tile; wide sleeves and a long hem, so the robe carries real motion"},
+  {"id": "bundle-bottom-centre", "name": "figure with a covered load at the bottom centre", "kind": "figure", "box": [0.49, 0.90, 0.61, 1.0], "motion": "robe", "leavesVisible": false, "depth": "near", "note": "clipped by the bottom edge"},
+  {"id": "stream-broad", "name": "the broad stream running through the middle", "kind": "water", "box": [0.27, 0.14, 1.0, 0.82], "motion": "water", "leavesVisible": false, "depth": "mid", "note": "bare silk with fine RIPPLE LINES curling around each rock. The lines ARE the water -- they move as a surface, never as cards. The widest water passage in z3w and the strongest argument that this zone needs water motion, not only foliage"},
+  {"id": "fall-top-right", "name": "narrow fall dropping in at the top right", "kind": "water", "box": [0.63, 0.0, 0.71, 0.15], "motion": "water", "leavesVisible": false, "depth": "far", "note": "feeds the stream below; 留白 between dark walls"},
+  {"id": "tree-bottom-right", "name": "lobed-leaf tree reaching in from the right", "kind": "tree", "box": [0.73, 0.60, 1.0, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "the ONLY real foliage in the tile; red-tipped lobed leaves in loose sprays on an ochre limb -- clean, well separated, an easy hinge subject"},
+  {"id": "rocks-in-stream", "name": "the scatter of dark rocks standing in the water", "kind": "rock", "box": [0.31, 0.15, 0.80, 0.75], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "each is ringed by its own ripple lines -- the rocks stay put and the rings move around them. Animating these is the exact defect Ryan called out"},
+  {"id": "cliff-left", "name": "cliff mass down the left", "kind": "rock", "box": [0.0, 0.0, 0.34, 0.52], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "NEVER animate"},
+  {"id": "cliff-right", "name": "cliff wall on the right", "kind": "rock", "box": [0.66, 0.0, 1.0, 0.45], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "NEVER animate"},
+  {"id": "bank-centre", "name": "the ochre bank the child sits on", "kind": "rock", "box": [0.27, 0.42, 0.52, 0.72], "motion": "none", "leavesVisible": false, "depth": "near", "note": "the ground that supports the figures -- share its depth plane with them (knowledge/share-your-ground.md)"}
+ ]
+}

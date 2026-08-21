@@ -1,0 +1,17 @@
+{
+ "tile": "t003.jpg",
+ "sourceBox": [4386, 4712, 6586, 6912],
+ "_note": "Boxes are NORMALISED to the tile (0-1). The narrow RIGHT-EDGE column, offset only 514px from t002, so most of it is a re-read of that tile and the merge in catalogue-to-master.py is expected to collapse them. What it adds is the scroll's right margin. Dominated by one enormous bare cliff.",
+ "objects": [
+  {"id": "fall-left-edge", "name": "the fall clipped at the left edge", "kind": "water", "box": [0.0, 0.18, 0.05, 0.44], "motion": "water", "leavesVisible": false, "depth": "mid", "note": "the same fall as t002's fall-main, seen at its edge -- expect a seam merge"},
+  {"id": "willow-ochre-upper-left", "name": "ochre and rust hanging-leaf tree upper left", "kind": "tree", "box": [0.15, 0.10, 0.35, 0.29], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "long drooping strokes -- flutter, not swing"},
+  {"id": "canopy-top-band", "name": "band of teal and ochre trees along the top", "kind": "tree", "box": [0.30, 0.0, 0.78, 0.25], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "several crowns on the upper shelf; cut apart before hinging"},
+  {"id": "canopy-top-right", "name": "teal and ochre trees at the top right corner", "kind": "tree", "box": [0.72, 0.0, 1.0, 0.13], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "the scroll's right margin"},
+  {"id": "pine-right-edge", "name": "needle pine on the right cliff shoulder", "kind": "tree", "box": [0.89, 0.20, 1.0, 0.31], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "small feathered fans hanging over the drop"},
+  {"id": "tree-teal-bottom-left", "name": "teal round-leaf tree at the bottom left", "kind": "tree", "box": [0.0, 0.74, 0.17, 0.93], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "clipped by the left edge"},
+  {"id": "tree-ochre-bottom-left", "name": "ochre hanging-leaf tree below it", "kind": "tree", "box": [0.13, 0.86, 0.35, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "clipped by the bottom edge"},
+  {"id": "trees-bottom-centre", "name": "bare saplings over ochre foliage, bottom centre", "kind": "tree", "box": [0.59, 0.83, 0.85, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "bare forks above a low ochre crown; the forks have no leaves to cut"},
+  {"id": "tree-bottom-right", "name": "teal tree at the bottom right corner", "kind": "tree", "box": [0.88, 0.78, 1.0, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "the scroll's right margin at the bottom"},
+  {"id": "cliff-great", "name": "the enormous bare cliff filling the tile", "kind": "rock", "box": [0.10, 0.20, 1.0, 0.90], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "the largest continuous bare passage in the whole zone -- NEVER animate, and the strongest clean-plate donor available anywhere in z3w"}
+ ]
+}

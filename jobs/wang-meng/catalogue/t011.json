@@ -1,0 +1,15 @@
+{
+ "tile": "t011.jpg",
+ "sourceBox": [4386, 8584, 6586, 10784],
+ "_note": "Boxes are NORMALISED to the tile (0-1). The narrow RIGHT-EDGE column of row 2, offset 514px from t010, so most of it re-reads that tile. Overwhelmingly bare boulder; living material is a band along the bottom only.",
+ "objects": [
+  {"id": "canopy-top-left", "name": "round-leaf canopy clipped at the top left", "kind": "tree", "box": [0.0, 0.0, 0.13, 0.15], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "the great broadleaf of t009/t010 seen at its edge -- expect a seam merge"},
+  {"id": "tree-ochre-left", "name": "small ochre tree on the left ledge", "kind": "tree", "box": [0.0, 0.20, 0.09, 0.29], "motion": "foliage", "leavesVisible": true, "depth": "mid", "note": "clipped by the left edge"},
+  {"id": "thicket-brick-bottom", "name": "brick-mark thicket across the bottom left", "kind": "tree", "box": [0.0, 0.75, 0.52, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "leaves as short horizontal dashes in rows on pale ochre limbs -- the same band as t010's bottom thicket. Shallow mass: small swing, or it reads as the ground tilting"},
+  {"id": "pine-needle-bottom-right", "name": "dark needle pines across the bottom right", "kind": "tree", "box": [0.47, 0.70, 1.0, 1.0], "motion": "foliage", "leavesVisible": true, "depth": "near", "note": "fine needle fans, the darkest foliage here; a different grammar from the thicket beside it and must not share its card style"},
+  {"id": "sapling-bare-bottom", "name": "bare forked sapling above the thicket", "kind": "tree", "box": [0.41, 0.71, 0.55, 0.84], "motion": "branch", "leavesVisible": false, "depth": "near", "note": "NO LEAVES -- nothing to cut cards from"},
+  {"id": "red-mark-bottom-right", "name": "small red passage among the pines at the bottom right", "kind": "unknown", "box": [0.93, 0.68, 1.0, 0.79], "motion": "none", "leavesVisible": false, "depth": "near", "note": "UNCERTAIN at this resolution -- a red-robed figure or autumn colour, the same ambiguity as t014's red-mark-top-right. Read at full scale before rigging either way"},
+  {"id": "boulder-great", "name": "the great pale boulder filling the tile", "kind": "rock", "box": [0.05, 0.02, 1.0, 0.82], "motion": "none", "leavesVisible": false, "depth": "mid", "note": "the same mass as t010's boulder-mass-centre. NEVER animate; the best clean-plate donor in the zone"},
+  {"id": "ridge-combed-top-right", "name": "combed dark ridge across the top right", "kind": "rock", "box": [0.30, 0.0, 1.0, 0.28], "motion": "none", "leavesVisible": false, "depth": "far", "note": "raking 牛毛皴 -- texture at distance, never leaves"}
+ ]
+}
