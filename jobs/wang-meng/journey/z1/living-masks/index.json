@@ -1,0 +1,79 @@
+{
+ "w-gorge-fall": {
+  "class": "fall",
+  "px": 10290,
+  "pctOfPlate": 0.193,
+  "plateBox": [
+   615,
+   83,
+   687,
+   438
+  ]
+ },
+ "w-midstream": {
+  "class": "wave",
+  "px": 188404,
+  "pctOfPlate": 3.535,
+  "plateBox": [
+   292,
+   347,
+   941,
+   942
+  ]
+ },
+ "w-lower-pool": {
+  "class": "wave",
+  "px": 25780,
+  "pctOfPlate": 0.484,
+  "plateBox": [
+   397,
+   984,
+   727,
+   1096
+  ]
+ },
+ "s-great-trees-upper": {
+  "class": "foliage",
+  "px": 30361,
+  "pctOfPlate": 0.57,
+  "plateBox": [
+   1782,
+   317,
+   1971,
+   1177
+  ]
+ },
+ "s-great-trees-lower": {
+  "class": "foliage",
+  "px": 18624,
+  "pctOfPlate": 0.349,
+  "plateBox": [
+   1816,
+   1628,
+   1971,
+   1882
+  ]
+ },
+ "s-pine-over-bridge": {
+  "class": "foliage",
+  "px": 74565,
+  "pctOfPlate": 1.399,
+  "plateBox": [
+   700,
+   779,
+   1039,
+   1306
+  ]
+ },
+ "s-left-pines-z2": {
+  "class": "foliage",
+  "px": 78521,
+  "pctOfPlate": 1.473,
+  "plateBox": [
+   516,
+   0,
+   1041,
+   357
+  ]
+ }
+}

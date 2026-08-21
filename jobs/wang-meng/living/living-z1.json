@@ -1,0 +1,196 @@
+{
+ "left-cliff-wall": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-gorge-fall",
+    "box": [
+     551,
+     19
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-midstream",
+    "box": [
+     228,
+     283
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__s-left-pines-z2",
+    "box": [
+     452,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "gorge-wall-right": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__w-gorge-fall",
+    "box": [
+     41,
+     19
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__s-left-pines-z2",
+    "box": [
+     0,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "upper-stream-water": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-midstream",
+    "box": [
+     242,
+     0
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-lower-pool",
+    "box": [
+     342,
+     430
+    ],
+    "n": 36,
+    "on": 2
+   }
+  ]
+ },
+ "trestle-bridge-ge": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-midstream",
+    "box": [
+     308,
+     0
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-lower-pool",
+    "box": [
+     347,
+     211
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__s-pine-over-bridge",
+    "box": [
+     637,
+     86
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "right-hill-front-trees": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-midstream",
+    "box": [
+     48,
+     356
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-lower-pool",
+    "box": [
+     36,
+     701
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-great-trees-upper",
+    "box": [
+     1345,
+     36
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-pine-over-bridge",
+    "box": [
+     302,
+     491
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "resting-ledge": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/resting-ledge__w-lower-pool",
+    "box": [
+     333,
+     192
+    ],
+    "n": 36,
+    "on": 2
+   }
+  ]
+ },
+ "great-trees-knoll": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-upper",
+    "box": [
+     364,
+     170
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-lower",
+    "box": [
+     398,
+     1472
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "bank-path": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__s-pine-over-bridge",
+    "box": [
+     605,
+     12
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ }
+}

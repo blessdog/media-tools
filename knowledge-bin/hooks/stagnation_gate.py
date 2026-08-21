@@ -103,6 +103,27 @@ def flagset(cmd, tool):
     return ' '.join(sorted(tail.split()))
 
 
+STAGE_RE = re.compile(r'--(?:stage|step|phase|mode|subcommand|cmd)[= ]+([a-z0-9_-]+)')
+
+
+def stage_of(cmd, tool):
+    """Which OPERATION of a multi-stage tool this is, or '' if it has none.
+
+    A pipeline tool like build-zone-living.py runs `--stage masks`, then
+    `--stage cycle`, then `--stage register`. Those are three different
+    operations in one documented route, not three steps of a knob search, and
+    counting them together made the gate fire on correct sequential work
+    (measured 2026-08-21, band 02: masks -> cycle -> register blocked at the
+    third). Tuning means the SAME operation with different settings, so the
+    count is partitioned by stage.
+    """
+    m = EXEC_RE.search(cmd)
+    if not m or find_exec(cmd) != tool:
+        return ''
+    got = STAGE_RE.search(cmd[m.end():])
+    return got.group(1) if got else ''
+
+
 def writes_tool(cmd, tool):
     """True if this command AUTHORS the tool (redirect into it, or a python
     heredoc that opens it for writing). Authoring resets the tuning count, and
@@ -201,13 +222,16 @@ def main():
                 continue
             if result_failed(entries, b.get('id')):
                 continue          # crash-fix loop, not a knob search
-            seen.append(flagset(c, tool))
+            seen.append((stage_of(c, tool), flagset(c, tool)))
 
     # DIFFERENT SETTINGS only. Re-running with the same flags is a retry after
     # fixing something else; only a changed flag set is a step in a search.
-    now = flagset(cmd, tool)
-    distinct = len(set(seen))
-    n = distinct + (0 if now in set(seen) else 1)
+    now_stage = stage_of(cmd, tool)
+    now = (now_stage, flagset(cmd, tool))
+    # only passes at the SAME stage are steps in the same search
+    same = {f for (st, f) in seen if st == now_stage}
+    distinct = len(same)
+    n = distinct + (0 if now[1] in same else 1)
     if n not in (THRESHOLD, THRESHOLD * 2):
         return 0
 

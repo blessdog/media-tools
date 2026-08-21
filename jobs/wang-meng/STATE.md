@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 12:00 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 12:03 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -107,6 +107,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  4bc6a32  STATE.md regenerated after the leaf-mark retirement and the supersedes checker
 2026-08-21  175807e  check-supersedes wired into make check; two more dangling retirement links fixed
 2026-08-21  5b71924  foliage-motion's route was still recommending the technique Ryan rejected an hour earlier
 2026-08-21  eee36fc  split the move TABLE out of shot-vocabulary; the claim keeps the rules
@@ -118,7 +119,6 @@ DELIVERABLES
 2026-08-21  38fbe2e  the master foliage mask: all 16 tiles, VLM boxes refined by SAM, composited to master px
 2026-08-21  48a91c1  journal: the leaf-mark entry gets its ending -- rejected four hours later, and why the sound reasoning still lost
 2026-08-21  779ad2a  law: move the drawing, never redraw it -- leaf marks retired the day they landed
-2026-08-21  4093199  z3w reel v3: swing 12 and 2,853 leaf marks
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
@@ -126,6 +126,7 @@ DELIVERABLES
 ### Uncommitted
 
 ```
+ M jobs/wang-meng/STATE.md
 ?? jobs/wang-meng/journey/z1/living/
 ```
 

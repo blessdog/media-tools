@@ -84,7 +84,34 @@ FLAG_CASES = [
      "python3 tools/hinge-foliage.py --flutter 0.1 --swing 6",
      "hinge-foliage.py", True, "flag ORDER is not a new setting"),
 ]
+# STAGE CASES. A multi-stage tool runs different OPERATIONS, not a knob search.
+# Measured 2026-08-21: masks -> cycle -> register on build-zone-living.py fired
+# the gate at the third call, blocking correct sequential work. Tuning is the
+# SAME stage with different settings; a changed stage is a different operation.
+STAGE_CASES = [
+    ("python3 jobs/x/build-zone-living.py --zone z1 --stage masks",
+     "build-zone-living.py", "masks", "the stage is the operation"),
+    ("python3 jobs/x/build-zone-living.py --zone z1 --stage cycle --classes foliage",
+     "build-zone-living.py", "cycle", "stage survives other flags"),
+    ("python3 jobs/x/build-zone-living.py --zone z1 --stage register",
+     "build-zone-living.py", "register", "third stage of the documented route"),
+    ("python3 tools/hinge-foliage.py --swing 6",
+     "hinge-foliage.py", "", "a single-operation tool has no stage"),
+    ("python3 tools/animate-strokes.py --mode lift --field wave",
+     "animate-strokes.py", "lift", "--mode names an operation too"),
+]
+
 fails = []
+for cmd, tool, want, why in STAGE_CASES:
+    got = gate.stage_of(cmd, tool)
+    if got != want:
+        fails.append((cmd[:60], want, got, why))
+# and the property that matters: three DIFFERENT stages must not look like one search
+_st = [gate.stage_of(c, "build-zone-living.py") for c, t, w, y in STAGE_CASES[:3]]
+if len(set(_st)) != 3:
+    fails.append(("masks/cycle/register", "3 distinct stages", len(set(_st)),
+                  "sequential stages must partition, or the gate blocks a pipeline"))
+
 for a_, b_, tool, same, why in FLAG_CASES:
     got = (gate.flagset(a_, tool) == gate.flagset(b_, tool))
     if got != same:
@@ -100,6 +127,6 @@ for cmd, want, why in CASES:
 
 for c, want, got, why in fails:
     print(f"FAIL  {c!r}\n      want={want} got={got}  ({why})", file=sys.stderr)
-n = len(CASES) + len(WRITE_CASES) + len(FLAG_CASES)
+n = len(CASES) + len(WRITE_CASES) + len(FLAG_CASES) + len(STAGE_CASES) + 1
 print(f"{n - len(fails)}/{n} cases classify correctly", file=sys.stderr)
 sys.exit(1 if fails else 0)
