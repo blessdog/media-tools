@@ -1,17 +1,24 @@
 #!/usr/bin/env zsh
 # A/B the multiplane truck against the pan it replaces. One job.
-#   ab-truck.sh <truck> [seconds]      e.g.  ab-truck.sh 0.25 10
+#   ab-truck.sh <truck> <truck-max px> [seconds]   e.g.  ab-truck.sh 0.25 36 10
 #
 # Same camera path, same plane stack, same living layer -- the ONLY difference
-# is whether the planes translate at different rates. Left is what the film has
-# been doing for weeks (every plane on one sheet: a pan). Right is the truck.
+# is whether the planes translate at different rates. Left is what the film did
+# for weeks (every plane on one sheet: a pan). Right is the truck.
+#
+# Labels are composited as PIL-rendered PNG overlays, NOT ffmpeg drawtext: this
+# machine's ffmpeg is built without libfreetype, so drawtext fails at the very
+# last step after both legs have already rendered.
 set -e
 cd "$(dirname "$0")/../../.."          # media-tools
 J=jobs/wang-meng
 F=$J/film
 T=${1:-0.25}
-SECS=${2:-10}
+CAP=${2:-36}
+SECS=${3:-10}
 P=$F/paths/_ab-truck.json
+TMP=${TMPDIR:-/tmp}/ab-truck.$$
+mkdir -p $TMP
 
 python3 - "$SECS" > $P <<'PY'
 import json, sys
@@ -25,24 +32,40 @@ json.dump({"fps": 24, "duration": secs,
                      "z": 0.0, "fov": k[1]["fov"]}]}, sys.stdout, indent=1)
 PY
 
-for tr in 0.0 $T; do
-  d=$F/frames/_ab-truck-$tr
-  rm -rf $d; mkdir -p $d
-  print -u2 "== rendering truck $tr"
+render() {  # render <outdir> <truck> <truck-max>
+  rm -rf $1; mkdir -p $1
   python3 tools/render-parallax.py \
-    --layers $J/journey/z1/layers-filled --path $P --out $d \
+    --layers $J/journey/z1/layers-filled --path $P --out $1 \
     --width 1920 --height 1080 --fps 24 --z-step 0.30 --plane-fit --no-base \
-    --truck $tr --geometry $J/journey/z1/geometry.json \
+    --truck $2 --truck-max $3 --geometry $J/journey/z1/geometry.json \
     --living $J/living/living-z1.json > /dev/null
-done
+}
+print -u2 "== pan"
+render $F/frames/_ab-truck-pan 0 0
+print -u2 "== truck $T cap ${CAP}px"
+render $F/frames/_ab-truck-$T-$CAP $T $CAP
 
+python3 - "$TMP" "$T" "$CAP" <<'PY'
+import os, sys
+from PIL import Image, ImageDraw, ImageFont
+tmp, t, cap = sys.argv[1], sys.argv[2], sys.argv[3]
+font = next((ImageFont.truetype(c, 24) for c in
+             ["/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+              "/System/Library/Fonts/Helvetica.ttc"] if os.path.exists(c)), None)
+for name, text in (("a", "PAN  —  every plane on one sheet"),
+                   ("b", f"MULTIPLANE TRUCK {t}  ·  capped {cap}px")):
+    im = Image.new("RGBA", (560, 44), (0, 0, 0, 150))
+    ImageDraw.Draw(im).text((14, 9), text, fill=(255, 255, 255, 255), font=font)
+    im.save(f"{tmp}/lab-{name}.png")
+PY
+
+OUT=$J/evidence/$(date +%Y-%m-%d)-AB-pan-vs-truck-$T-cap$CAP.mp4
 ffmpeg -y -loglevel error \
-  -framerate 24 -i $F/frames/_ab-truck-0.0/%05d.png \
-  -framerate 24 -i $F/frames/_ab-truck-$T/%05d.png \
-  -filter_complex "\
-    [0:v]scale=960:540,drawtext=text='PAN — every plane on one sheet':x=16:y=16:fontsize=22:fontcolor=white:box=1:boxcolor=black@0.55:boxborderw=6[a];\
-    [1:v]scale=960:540,drawtext=text='MULTIPLANE TRUCK $T':x=16:y=16:fontsize=22:fontcolor=white:box=1:boxcolor=black@0.55:boxborderw=6[b];\
-    [a][b]hstack=inputs=2,format=yuv420p" \
-  -c:v libx264 -crf 16 $J/evidence/$(date +%Y-%m-%d)-AB-pan-vs-truck-$T.mp4
-
-print -u2 "-> $J/evidence/$(date +%Y-%m-%d)-AB-pan-vs-truck-$T.mp4"
+  -framerate 24 -i $F/frames/_ab-truck-pan/%05d.png \
+  -framerate 24 -i $F/frames/_ab-truck-$T-$CAP/%05d.png \
+  -i $TMP/lab-a.png -i $TMP/lab-b.png \
+  -filter_complex "[0:v]scale=960:540[a];[1:v]scale=960:540[b];\
+[a][b]hstack=inputs=2[h];[h][2:v]overlay=14:14[h2];[h2][3:v]overlay=974:14,format=yuv420p" \
+  -c:v libx264 -crf 16 $OUT
+rm -rf $TMP
+print -u2 "-> $OUT"

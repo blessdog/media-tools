@@ -166,6 +166,16 @@ def main() -> int:
                          "1 = fully physical, near planes traverse z_ref/z times "
                          "faster than far ones. 0.15-0.35 is the useful band on "
                          "this stack, whose z spans 1.0..3.7.")
+    ap.add_argument("--truck-max", type=float, default=36.0,
+                    help="ceiling on the truck's relative displacement, in "
+                         "OUTPUT px, soft-clamped with tanh. The rate "
+                         "difference ACCUMULATES over a move, and these planes "
+                         "are cut from one painting rather than painted as "
+                         "separate cels -- measured 2026-08-21, an uncapped "
+                         "0.25 truck over a 10s rise put the nearest plane ~500px "
+                         "out of register with the farthest and tore the picture "
+                         "along the cut lines. Parallax is a VELOCITY cue, so "
+                         "ramp at full rate and then saturate. 0 = uncapped.")
     ap.add_argument("--no-base", action="store_true")
     ap.add_argument("--geometry")
     ap.add_argument("--living",
@@ -434,8 +444,19 @@ def main() -> int:
             # z_ref, w < 1 for planes further away.
             if args.truck:
                 w_tr = 1.0 + args.truck * (z_ref / p["z"] - 1.0)
-                pcamX = camX0 + (camX - camX0) * w_tr
-                pcamY = camY0 + (camY - camY0) * w_tr
+                dx, dy = (camX - camX0) * (w_tr - 1.0), (camY - camY0) * (w_tr - 1.0)
+                if args.truck_max > 0:
+                    # SATURATE. The rate difference accumulates, so on a long
+                    # traverse an unbounded truck slides the planes hundreds of
+                    # px apart and the cut lines open as paper. Depth is read
+                    # from differential VELOCITY at the start of a move, not
+                    # from where the planes end up, so ramp at full rate and
+                    # then asymptote. tanh is used because it is exactly linear
+                    # near zero -- no knee, no visible moment of clamping.
+                    cap = args.truck_max / max(fov, 1e-6)   # output px -> source px
+                    dx = cap * math.tanh(dx / cap)
+                    dy = cap * math.tanh(dy / cap)
+                pcamX, pcamY = camX + dx, camY + dy
             else:
                 pcamX, pcamY = camX, camY
 
@@ -542,6 +563,7 @@ def main() -> int:
         "planes": len(planes), "frames": len(idx), "size": [args.width, args.height],
         "fps": fps, "duration": duration,
         "zNear": args.z_near, "zStep": args.z_step, "planeFit": bool(args.plane_fit), "truck": args.truck,
+        "truckMax": args.truck_max,
         "zRange": [round(planes[-1]["z"], 4), round(planes[0]["z"], 4)],
         "fill": args.fill,
         "keys": keys,
