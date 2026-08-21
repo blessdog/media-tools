@@ -20,7 +20,10 @@ python3 tools/render-parallax.py \
   --z-step 0.30 --plane-fit --no-base \
   --geometry $J/journey/$z/geometry.json \
   --living $J/living/living-$z.json > /dev/null
-out=$J/film/${(U)${name%-*}}-${name##*-}.mp4   # LEG-LIGHT-z3w: prefix upper, zone as is
+# LEG-LIGHT-z3w for a zone leg; ST-z3w-the-falls for a station leg (only the
+# first token upper-cased, so the station name still matches stations-slow.json)
+if [[ $name == st-* ]]; then out=$J/film/ST-${name#st-}.mp4
+else out=$J/film/${(U)${name%-*}}-${name##*-}.mp4; fi
 ffmpeg -y -loglevel error -framerate 24 -i $d/%05d.png -c:v libx264 -crf 16 -pix_fmt yuv420p $out
 [[ -n $NO_DESKTOP ]] || ln -sfn "$PWD/$out" ~/Desktop/WANG-MENG-LATEST.mp4
-echo "-> $out  ($(ls $d | wc -l | tr -d ' ') frames); Desktop symlink refreshed" >&2
+echo "-> $out  ($(ls $d | wc -l | tr -d ' ') frames)${NO_DESKTOP:+ (Desktop symlink untouched)}" >&2
