@@ -1,0 +1,23 @@
+{
+ "fps": 24,
+ "duration": 10.0,
+ "move": "track",
+ "station": "the-red-maples",
+ "_note": "TRACK -- the colour runs along the left wall; read it edge to edge. the orange maple mass on the left wall -- the one place the painting lets colour run",
+ "keys": [
+  {
+   "t": 0,
+   "x": 0.31127,
+   "y": 0.36006,
+   "z": 0.0,
+   "fov": 1.3
+  },
+  {
+   "t": 10,
+   "x": 0.44792,
+   "y": 0.36006,
+   "z": 0.0,
+   "fov": 1.3
+  }
+ ]
+}

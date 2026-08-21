@@ -22,5 +22,5 @@ python3 tools/render-parallax.py \
   --living $J/living/living-$z.json > /dev/null
 out=$J/film/${(U)${name%-*}}-${name##*-}.mp4   # LEG-LIGHT-z3w: prefix upper, zone as is
 ffmpeg -y -loglevel error -framerate 24 -i $d/%05d.png -c:v libx264 -crf 16 -pix_fmt yuv420p $out
-ln -sfn "$PWD/$out" ~/Desktop/WANG-MENG-LATEST.mp4
+[[ -n $NO_DESKTOP ]] || ln -sfn "$PWD/$out" ~/Desktop/WANG-MENG-LATEST.mp4
 echo "-> $out  ($(ls $d | wc -l | tr -d ' ') frames); Desktop symlink refreshed" >&2

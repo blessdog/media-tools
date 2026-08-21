@@ -1,0 +1,23 @@
+{
+ "fps": 24,
+ "duration": 10.0,
+ "move": "hold",
+ "station": "the-falls",
+ "_note": "HOLD -- the vertical axis of the scroll; the fall does the moving. the white fall dropping between the dark cliff walls -- the vertical axis of the whole scroll",
+ "keys": [
+  {
+   "t": 0,
+   "x": 0.39478,
+   "y": 0.68993,
+   "z": 0.0,
+   "fov": 1.2
+  },
+  {
+   "t": 10,
+   "x": 0.39478,
+   "y": 0.68993,
+   "z": 0.0,
+   "fov": 1.214
+  }
+ ]
+}

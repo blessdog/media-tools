@@ -1,0 +1,32 @@
+{
+ "fps": 24,
+ "duration": 10.0,
+ "move": "push",
+ "station": "the-cliff-nose",
+ "_note": "PUSH -- the station author called it the deepest push in the film -- the arrival. the great cliff nose under the autumn trees -- the deepest push in the film",
+ "keys": [
+  {
+   "t": 0,
+   "x": 0.39478,
+   "y": 0.48693,
+   "z": 0.0,
+   "fov": 1.035
+  },
+  {
+   "t": 2.0,
+   "x": 0.39478,
+   "y": 0.48693,
+   "z": 0.0,
+   "fov": 1.035
+  },
+  {
+   "t": 10,
+   "x": 0.24294,
+   "y": 0.45179,
+   "z": 0.168,
+   "fov": 1.488,
+   "rx": -0.2,
+   "ry": 0.15
+  }
+ ]
+}

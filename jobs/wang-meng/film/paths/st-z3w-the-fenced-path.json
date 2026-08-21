@@ -1,0 +1,23 @@
+{
+ "fps": 24,
+ "duration": 10.0,
+ "move": "hold",
+ "station": "the-fenced-path",
+ "_note": "HOLD -- the family's route; let the path sit under the narration. the railed path cut into the rock -- the route the family is taking up",
+ "keys": [
+  {
+   "t": 0,
+   "x": 0.372,
+   "y": 0.23953,
+   "z": 0.0,
+   "fov": 1.188
+  },
+  {
+   "t": 10,
+   "x": 0.372,
+   "y": 0.23953,
+   "z": 0.0,
+   "fov": 1.202
+  }
+ ]
+}

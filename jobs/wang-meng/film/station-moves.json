@@ -1,0 +1,15 @@
+{
+ "_note": "ONE move per station from knowledge/shot-vocabulary.md: hold | unroll | track | push | peek. Consecutive stations never share a move. Edit THIS file, then author-stations.py regenerates paths/st-<zone>-<station>.json. The hold is the default; push is for arrivals; peek is spent at most twice in the film.",
+ "seconds": 10,
+ "z3w": {
+  "the-stream-descent": {"move": "track", "why": "the stream steps down across the frame; read it sideways"},
+  "the-falls":          {"move": "hold",  "why": "the vertical axis of the scroll; the fall does the moving"},
+  "the-great-pine":     {"move": "peek",  "why": "the pine is a near plane over the gorge -- the one multiplane moment in this zone"},
+  "gorge-narrows":      {"move": "unroll","why": "rise through the narrows, walls sliding past, no zoom"},
+  "the-cliff-nose":     {"move": "push",  "why": "the station author called it the deepest push in the film -- the arrival"},
+  "the-hanging-canopy": {"move": "hold",  "why": "big canopy and rust tree in a gust over empty air; sit and watch"},
+  "the-red-maples":     {"move": "track", "why": "the colour runs along the left wall; read it edge to edge"},
+  "upper-gorge-pines":  {"move": "unroll","why": "already looking down on where we came from -- keep rising"},
+  "the-fenced-path":    {"move": "hold",  "why": "the family's route; let the path sit under the narration"}
+ }
+}

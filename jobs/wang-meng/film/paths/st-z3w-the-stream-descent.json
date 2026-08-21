@@ -1,0 +1,23 @@
+{
+ "fps": 24,
+ "duration": 10.0,
+ "move": "track",
+ "station": "the-stream-descent",
+ "_note": "TRACK -- the stream steps down across the frame; read it sideways. the stream coming down out of the gorge over stepped rock",
+ "keys": [
+  {
+   "t": 0,
+   "x": 0.31127,
+   "y": 0.8168,
+   "z": 0.0,
+   "fov": 1.3
+  },
+  {
+   "t": 10,
+   "x": 0.44792,
+   "y": 0.8168,
+   "z": 0.0,
+   "fov": 1.3
+  }
+ ]
+}

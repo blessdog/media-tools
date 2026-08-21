@@ -1,0 +1,23 @@
+{
+ "fps": 24,
+ "duration": 10.0,
+ "move": "hold",
+ "station": "the-hanging-canopy",
+ "_note": "HOLD -- big canopy and rust tree in a gust over empty air; sit and watch. blue-green and rust canopies hanging off the right wall over empty air",
+ "keys": [
+  {
+   "t": 0,
+   "x": 0.42514,
+   "y": 0.41081,
+   "z": 0.0,
+   "fov": 1.15
+  },
+  {
+   "t": 10,
+   "x": 0.42514,
+   "y": 0.41081,
+   "z": 0.0,
+   "fov": 1.164
+  }
+ ]
+}
