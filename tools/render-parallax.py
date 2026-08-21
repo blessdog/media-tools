@@ -158,6 +158,14 @@ def main() -> int:
     ap.add_argument("--z-near", type=float, default=1.0)
     ap.add_argument("--z-step", type=float, default=0.035)
     ap.add_argument("--plane-fit", action="store_true")
+    ap.add_argument("--truck", type=float, default=0.0,
+                    help="MULTIPLANE TRUCK. 0 = every plane translates at the "
+                         "same rate, which is a PAN over a flat sheet no matter "
+                         "how many planes the stack has (measured: z-step 0.30 "
+                         "and z-step 0.0 render byte-identically on a traverse). "
+                         "1 = fully physical, near planes traverse z_ref/z times "
+                         "faster than far ones. 0.15-0.35 is the useful band on "
+                         "this stack, whose z spans 1.0..3.7.")
     ap.add_argument("--no-base", action="store_true")
     ap.add_argument("--geometry")
     ap.add_argument("--living",
@@ -325,6 +333,25 @@ def main() -> int:
                 np.arange(args.height, dtype=np.float32))
             print(f"  relief planes: {sorted(relief)}", file=sys.stderr)
 
+    # MULTIPLANE TRUCK (Disney, 1937). A plane stack only produces parallax on
+    # a traverse if the planes translate at DIFFERENT RATES -- near faster than
+    # far. --plane-fit deliberately equalises every plane's SCALE at rest, which
+    # is right, but the sampling offset was equalised with it, so thirteen
+    # planes moved as one sheet and the whole stack contributed nothing. Proven
+    # by the null: collapsing every plane to one depth changed 0 of 2,073,600
+    # pixels. Rate is what carries a truck; scale is what carries a dolly.
+    #
+    # Anchored at the path's FIRST key so the composition is exactly as painted
+    # at t=0 and the separation is earned by the move, never present at rest.
+    _pz = sorted(p["z"] for p in planes)
+    z_ref = _pz[len(_pz) // 2]
+    camX0, camY0 = keys[0]["x"] * W_SRC, keys[0]["y"] * H_SRC
+    if args.truck:
+        print(f"  multiplane truck {args.truck:g}: rate "
+              f"{1 + args.truck * (z_ref / _pz[0] - 1):.2f}x near .. "
+              f"{1 + args.truck * (z_ref / _pz[-1] - 1):.2f}x far "
+              f"(z_ref {z_ref:.2f})", file=sys.stderr)
+
     t0 = time.time()
     for n, i in enumerate(idx):
         t = i / fps
@@ -403,6 +430,15 @@ def main() -> int:
             if eff <= 0.05:
                 continue                        # camera has passed through it
 
+            # This plane's own share of the truck. w > 1 for planes nearer than
+            # z_ref, w < 1 for planes further away.
+            if args.truck:
+                w_tr = 1.0 + args.truck * (z_ref / p["z"] - 1.0)
+                pcamX = camX0 + (camX - camX0) * w_tr
+                pcamY = camY0 + (camY - camY0) * w_tr
+            else:
+                pcamX, pcamY = camX, camY
+
             rl = relief.get(p.get("name"))
             warped = None
 
@@ -429,8 +465,8 @@ def main() -> int:
                     if sc is None:              # corner is behind the camera
                         ok = False
                         break
-                    dst.append(rot_pt(args.width / 2.0 + (wx - camX) * sc,
-                                      args.height / 2.0 + (wy - camY) * sc))
+                    dst.append(rot_pt(args.width / 2.0 + (wx - pcamX) * sc,
+                                      args.height / 2.0 + (wy - pcamY) * sc))
                     src.append((lx, ly))
                 if ok:
                     try:
@@ -455,8 +491,8 @@ def main() -> int:
                 #   u = (x - W/2)/s + camX - ox
                 # Cost is O(output), so the master's size is irrelevant per frame.
                 a = 1.0 / s
-                cx = camX - (args.width / 2.0) / s - p["ox"]
-                cy = camY - (args.height / 2.0) / s - p["oy"]
+                cx = pcamX - (args.width / 2.0) / s - p["ox"]
+                cy = pcamY - (args.height / 2.0) / s - p["oy"]
                 warped = p["img"].transform(
                     (args.width, args.height), Image.AFFINE, (a, 0, cx, 0, a, cy),
                     resample=Image.BILINEAR,
@@ -505,7 +541,7 @@ def main() -> int:
         "tool": "render-parallax", "layers": str(lay), "out": str(out),
         "planes": len(planes), "frames": len(idx), "size": [args.width, args.height],
         "fps": fps, "duration": duration,
-        "zNear": args.z_near, "zStep": args.z_step, "planeFit": bool(args.plane_fit),
+        "zNear": args.z_near, "zStep": args.z_step, "planeFit": bool(args.plane_fit), "truck": args.truck,
         "zRange": [round(planes[-1]["z"], 4), round(planes[0]["z"], 4)],
         "fill": args.fill,
         "keys": keys,
