@@ -93,6 +93,14 @@ p.add_argument('--branch-radius', default='auto',
 p.add_argument('--branch-ratio', type=float, default=0.55,
                help='auto radius = this x p99 stroke half-width. 0.55 reproduces the '
                     'radius Ryan chose on s-pine-over-bridge (5 of 9.17)')
+p.add_argument('--leaf-colour', dest='leaf_colour', action='store_true', default=True,
+               help='a dark stroke is a LEAF only if it sits on coloured wash: green (Lab a '
+                    'below the silk by --leaf-da) or orange (hue <= 28 deg, S >= 0.34). '
+                    'Measured 2026-08-21: tone alone fuses a maple with the graphite cap of the '
+                    'rock it stands on, and the rock swings (default on)')
+p.add_argument('--no-leaf-colour', dest='leaf_colour', action='store_false')
+p.add_argument('--leaf-da', type=float, default=2.5, help='green test: silk a minus this')
+p.add_argument('--leaf-grow', type=int, default=5, help='px the leaf wash is grown to reach the strokes that draw it')
 p.add_argument('--pivots', help='write a PNG of every card box and pivot over the '
                                 'source: green = hinged at a branch, red = foot fallback')
 p.add_argument('--attach-max', type=float, default=14.0,
@@ -124,7 +132,7 @@ H, W = plate.shape[:2]
 
 meta = json.loads((Path(a.cards) / 'layers.json').read_text())
 cards = []
-n_attached = n_foot = branch_px = 0
+n_attached = n_foot = branch_px = ink_dropped_px = 0
 branch_radii = []
 for pl in meta['planeList']:
     if a.only and pl['name'] != a.only:
@@ -153,6 +161,33 @@ for pl in meta['planeList']:
             k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * a.ink_close + 1,) * 2)
             ink = cv2.morphologyEx(ink, cv2.MORPH_CLOSE, k)
         src_mask = ink > 0
+        if a.leaf_colour:
+            # WHAT A LEAF IS, IN THIS PAINTING. Ryan, 2026-08-21: "The leaves are all
+            # green or orange. You shouldn't be animating the graphite ridges of
+            # rocks." The dark strokes that draw a leaf and the dark strokes that
+            # draw a rock are the same grey ink, and where they touch, a tone
+            # threshold fuses them into one card. The COLOUR is in the wash under
+            # the strokes, never in the strokes themselves -- so classify the
+            # mid-tone wash (green: Lab a below the silk's; orange: warm hue at a
+            # saturation the silk never reaches), grow it a few px to reach the
+            # strokes drawn over it, and keep only ink inside that. Measured on
+            # s-gorge-foreground: 3,946 of 40,848 ink px dropped, all of it the
+            # rock cap under the maples. evidence-leafcut-*.png
+            mid = (vsrc >= ground - a.ink_offset) & (vsrc < ground + 0.15)
+            lab = cv2.cvtColor(src.astype(np.uint8), cv2.COLOR_RGB2LAB).astype(np.float32)
+            hsvf = cv2.cvtColor(src.astype(np.uint8), cv2.COLOR_RGB2HSV).astype(np.float32)
+            hue, sat = hsvf[..., 0] * 2, hsvf[..., 1] / 255
+            silk_a = float(np.median(lab[..., 1][mid])) if mid.any() else 128.0
+            green = (lab[..., 1] <= silk_a - a.leaf_da) & mid
+            orange = (hue <= 28) & (sat >= 0.34) & mid
+            leaf = cv2.dilate((green | orange).astype(np.uint8),
+                              cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * a.leaf_grow + 1,) * 2)) > 0
+            dropped = int((src_mask & ~leaf).sum())
+            ink_dropped_px += dropped
+            print(f'leaf colour: silk a={silk_a:.0f}; green {int(green.sum()):,}px, orange '
+                  f'{int(orange.sum()):,}px of wash; {dropped:,} ink px are not on a leaf and are left still',
+                  file=sys.stderr)
+            src_mask &= leaf
     # WHAT IS A BRANCH. Wang Meng paints trunk and branch with a loaded brush
     # and leaves with a fine one, so THICKNESS separates them -- the same
     # morphological read that separates ripple arcs from rock (--keep tophat).
@@ -329,6 +364,7 @@ for k in range(ndraw):
     'branchRadius': branch_radii[0] if len(set(branch_radii)) == 1 else branch_radii,
     'branchRadiusMode': str(a.branch_radius), 'branchRatio': a.branch_ratio, 'attachMax': a.attach_max,
     'cardsAttached': n_attached, 'cardsFoot': n_foot, 'branchPx': branch_px,
+    'leafColour': bool(a.leaf_colour), 'inkNotOnLeafPx': ink_dropped_px,
     'technique': 'rigid cut-out cards hinged where they meet a branch, over a clean plate',
     'plate': a.plate, 'source': a.source, 'cards_dir': a.cards,
 }, indent=1))

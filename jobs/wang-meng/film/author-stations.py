@@ -40,31 +40,38 @@ def key(t, mx, my, fov, z=0.0, rx=0.0, ry=0.0):
     if ry: k['ry'] = round(ry, 3)
     return k
 
-def author(st, move):
+def author(st, move, m):
     w, d = st['wide'], st['detail']
     mx, my, f = w['mx'], w['my'], w['fov']
+    # SCALE IS PART OF THE VOCABULARY. Ryan, 2026-08-21: "I see the same cropped
+    # in angle in almost all of them. There's no pull back or push forward." So
+    # the fov range is wide (0.95, the whole gorge) to tight (1.75, one canopy),
+    # and a reel must visit both ends.
     if move == 'hold':
-        # a hold sits ON THE SUBJECT (the station's detail point), framed a
-        # little tighter than wide; the 1.2% fov creep is 'breathing'
-        fov = f * 1.25
+        fov = f * float(m.get('fov', 1.25))          # per-station: wide 1.0 .. tight 1.6
         return [key(0, d['mx'], d['my'], fov), key(SEC, d['mx'], d['my'], fov * 1.012)]
     if move == 'pan':
-        fov, dx = 1.3, 450
+        fov, dx = float(m.get('fov', 1.1)), 450
         return [key(0, mx - dx, my, fov), key(SEC, mx + dx, my, fov)]
     if move == 'tilt':
-        fov, dy = f * 1.1, 450
+        fov, dy = f * float(m.get('fov', 1.05)), 450
         return [key(0, mx, my + dy, fov), key(SEC, mx, my - dy, fov)]
     if move == 'push-in':
-        return [key(0, mx, my, f * 1.15),
-                key(2.0, mx, my, f * 1.15),
-                key(SEC, d['mx'], d['my'], d['fov'] * 0.85, z=d.get('z', 0.2) * 0.6,
+        return [key(0, mx, my, f * 1.0),
+                key(1.5, mx, my, f * 1.0),
+                key(SEC, d['mx'], d['my'], 1.75, z=d.get('z', 0.2) * 0.6,
                     rx=d.get('rx', 0) * 0.5, ry=d.get('ry', 0) * 0.5)]
+    if move == 'pull-out':
+        return [key(0, d['mx'], d['my'], 1.75, z=d.get('z', 0.2) * 0.6,
+                    rx=d.get('rx', 0) * 0.5, ry=d.get('ry', 0) * 0.5),
+                key(1.5, d['mx'], d['my'], 1.75, z=d.get('z', 0.2) * 0.6,
+                    rx=d.get('rx', 0) * 0.5, ry=d.get('ry', 0) * 0.5),
+                key(SEC, mx, my, f * 0.98)]
     if move == 'parallax':
         fov, z, dx = 1.35, 0.18, 250
         cx, cy = d['mx'], d['my']
         return [key(0, cx - dx, cy, fov, z=z, ry=-0.22),
-                key(6.0, cx + dx, cy, fov, z=z, ry=0.22),
-                key(SEC, cx, cy, fov, z=z, ry=0.0)]
+                key(SEC, cx + dx, cy, fov, z=z, ry=0.22)]
     raise SystemExit(f'unknown move {move!r}')
 
 out = []
@@ -78,7 +85,7 @@ for st in spec['stations']:
     prev = m['move']
     path = {'fps': 24, 'duration': float(SEC), 'move': m['move'], 'station': st['name'],
             '_note': f"{m['move'].upper()} -- {m['why']}. {st.get('why','')}",
-            'keys': author(st, m['move'])}
+            'keys': author(st, m['move'], m)}
     p = HERE / 'paths' / f"st-{a.zone}-{st['name']}.json"
     p.write_text(json.dumps(path, indent=1))
     out.append({'station': st['name'], 'move': m['move'], 'path': p.name})

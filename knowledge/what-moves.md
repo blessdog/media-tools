@@ -16,6 +16,10 @@ asked-as:
 > trees." — Ryan, 2026-08-20
 >
 > "peaks shouldnt wobble. Think about it."
+>
+> "The leaves are all green or orange. You shouldn't be animating the graphite
+> ridges of rocks." — 2026-08-21, on a maple's card that had swallowed the rock
+> cap it stands on (leaf-is-colour-rock-is-graphite)
 
 Cloth, water surface, leaves. Nothing else. Not mountains, not rock, not
 buildings, not trunks, not branches, not the ground. The test is physical, not

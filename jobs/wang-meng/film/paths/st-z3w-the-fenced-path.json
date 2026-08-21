@@ -1,23 +1,34 @@
 {
  "fps": 24,
  "duration": 10.0,
- "move": "hold",
+ "move": "pull-out",
  "station": "the-fenced-path",
- "_note": "HOLD -- the family's route; let the path sit under the narration. the railed path cut into the rock -- the route the family is taking up",
+ "_note": "PULL-OUT -- from the railed path out to the whole gorge -- the reveal of how big it is. the railed path cut into the rock -- the route the family is taking up",
  "keys": [
   {
    "t": 0,
-   "x": 0.28723,
+   "x": 0.27984,
    "y": 0.22773,
-   "z": 0.0,
-   "fov": 1.188
+   "z": 0.144,
+   "fov": 1.75,
+   "rx": -0.15,
+   "ry": 0.1
+  },
+  {
+   "t": 1.5,
+   "x": 0.27984,
+   "y": 0.22773,
+   "z": 0.144,
+   "fov": 1.75,
+   "rx": -0.15,
+   "ry": 0.1
   },
   {
    "t": 10,
-   "x": 0.28383,
-   "y": 0.22773,
+   "x": 0.372,
+   "y": 0.23953,
    "z": 0.0,
-   "fov": 1.202
+   "fov": 0.931
   }
  ]
 }

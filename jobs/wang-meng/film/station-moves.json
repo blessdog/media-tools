@@ -4,11 +4,13 @@
  "z3w": {
   "the-stream-descent": {
    "move": "pan",
-   "why": "the stream steps down across the frame; read it sideways"
+   "why": "the stream steps down across the frame; read it sideways",
+   "fov": 1.05
   },
   "the-falls": {
    "move": "hold",
-   "why": "the vertical axis of the scroll; the fall does the moving"
+   "why": "the vertical axis of the scroll; the fall does the moving -- WIDE: the whole fall in its walls",
+   "fov": 1.0
   },
   "the-great-pine": {
    "move": "parallax",
@@ -24,19 +26,21 @@
   },
   "the-hanging-canopy": {
    "move": "hold",
-   "why": "big canopy and rust tree in a gust over empty air; sit and watch"
+   "why": "big canopy and rust tree in a gust over empty air; sit and watch -- TIGHT: leaves you can see",
+   "fov": 1.6
   },
   "the-red-maples": {
    "move": "pan",
-   "why": "the colour runs along the left wall; read it edge to edge"
+   "why": "the colour runs along the left wall; read it edge to edge",
+   "fov": 1.3
   },
   "upper-gorge-pines": {
    "move": "tilt",
    "why": "already looking down on where we came from -- keep rising"
   },
   "the-fenced-path": {
-   "move": "hold",
-   "why": "the family's route; let the path sit under the narration"
+   "move": "pull-out",
+   "why": "from the railed path out to the whole gorge -- the reveal of how big it is"
   }
  }
 }

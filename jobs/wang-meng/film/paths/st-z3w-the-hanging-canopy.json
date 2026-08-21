@@ -3,21 +3,21 @@
  "duration": 10.0,
  "move": "hold",
  "station": "the-hanging-canopy",
- "_note": "HOLD -- big canopy and rust tree in a gust over empty air; sit and watch. blue-green and rust canopies hanging off the right wall over empty air",
+ "_note": "HOLD -- big canopy and rust tree in a gust over empty air; sit and watch -- TIGHT: leaves you can see. blue-green and rust canopies hanging off the right wall over empty air",
  "keys": [
   {
    "t": 0,
    "x": 0.53143,
    "y": 0.40193,
    "z": 0.0,
-   "fov": 1.15
+   "fov": 1.472
   },
   {
    "t": 10,
    "x": 0.53143,
    "y": 0.40193,
    "z": 0.0,
-   "fov": 1.164
+   "fov": 1.49
   }
  ]
 }
