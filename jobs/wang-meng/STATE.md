@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 16:45 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 17:45 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -96,12 +96,13 @@ LIVING LAYER — cycles registered per zone
 
 REGIONS — by class, from the file the builder reads
   fall       2
+  figure     1
   foliage    8
   still      6
   wave       2
 
 ROUTING — knowledge store vs config vs implementation
-  regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (18) · 0 violation(s)
+  regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (19) · 0 violation(s)
 
 DELIVERABLES
   jobs/wang-meng/film/THE-RISE.mp4
@@ -118,6 +119,8 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  6117351  figure-motion: the gate now demands AUTHORED cards instead of refusing outright, and the fan is wired to reach the film
+2026-08-21  51d9052  swing-card: Ge Hong's fan is the first figure in this painting that moves
 2026-08-21  9e83221  STATE.md regenerated after reaping 55.8GB of frame intermediates
 2026-08-21  c01c462  reap-frames: 67GB of the repo was PNG intermediates nobody had deleted after encoding
 2026-08-21  6f08fae  PLAN.md: depth is settled and was the plan's biggest omission; the water count was wrong and is corrected
@@ -128,24 +131,24 @@ DELIVERABLES
 2026-08-21  d85b9b8  STATE.md regenerated after THE RISE v2 legs rendered with the breath and relief
 2026-08-21  d1ce6fa  supersede two-renderers-one-data-source: depth is a property of the PATH, not a renderer choice
 2026-08-21  e959788  THE RISE v2: the breath carries the depth, continuously, and --relief finally gets passed
-2026-08-21  f0ba647  claim: light parallax is z 0.11, and CONTINUOUS -- the law had no number, which is why it did not stop me
-2026-08-21  11d082b  LAW: depth may resize, never deform -- three techniques rejected in one afternoon for the same reason
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**2 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
+ M jobs/wang-meng/journey/z1/layers-cut/layers.json
  M jobs/wang-meng/motion/mask/gehong/layers.json
-?? jobs/wang-meng/evidence/2026-08-21-AB-ge-fan-still-vs-stirring.mp4
-?? jobs/wang-meng/evidence/2026-08-21-gehong-fan-pivot.png
-?? jobs/wang-meng/evidence/2026-08-21-gehong-puppet-parts.png
-?? jobs/wang-meng/living/cycles/
-?? jobs/wang-meng/motion/gehong-crop.json
-?? jobs/wang-meng/motion/mask/gehong/pivots.json
-?? tools/swing-card.py
+?? jobs/wang-meng/journey/z1/layers-heal/
+?? jobs/wang-meng/journey/z1/points-heal.json
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
