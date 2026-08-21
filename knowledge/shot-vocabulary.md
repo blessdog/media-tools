@@ -63,7 +63,7 @@ not buildable yet; say so rather than fake it.
 
 | move | what it is | status |
 |---|---|---|
-| **ease in/out (smoothstep)** | gentle start and end | CHECK: how render-parallax interpolates between keys -- if linear, add smoothstep per segment (small flag) |
+| **ease in/out (smoothstep)** | gentle start and end | BUILT IN: render-parallax samples piecewise smoothstep between keys (tools/render-parallax.py:125). Consequence: every key is a rest point -- a 3-key move slows at the middle key, so a continuous sweep wants 2 keys and a hold-move-hold wants 4 |
 | **hold-move-hold** | sit, move, sit | PATH: repeat a key, then move, then repeat |
 | **speed ramp** | accelerate or decelerate through the shot | PATH: uneven key spacing |
 
