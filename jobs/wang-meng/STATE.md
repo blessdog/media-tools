@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-20 19:39 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-20 19:40 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -97,6 +97,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-20  75a51b9  STATE.md: remote and push status
 2026-08-20  727b329  gitignore the bulk leg renders after a rejected push
 2026-08-20  13b260e  gitignore the bulk leg renders: GitHub rejects >100MB and they regenerate
 2026-08-20  98a0655  wip
@@ -108,10 +109,17 @@ DELIVERABLES
 2026-08-20  0adfae4  hinge each leaf spray where it joins its twig, not at the foot of its own mass
 2026-08-20  5cc32e8  rebuild all four zones on the fixed hinge at 6 degrees, not 15
 2026-08-20  de4941f  a zero-degree hinge changed 26,293 pixels: three leaks in the cut-out compositor
-2026-08-20  57c5b99  light parallax leg over the living layer: one continuous rise, bridge to gorge
 ```
 
 *Remote: `git@github.com:blessdog/media-tools.git` — `main` is pushed.*
+
+### Uncommitted
+
+```
+ M jobs/wang-meng/STATE.md
+```
+
+*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
