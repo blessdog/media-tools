@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 09:15 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 09:26 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -25,7 +25,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 28 live claims: 28 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 29 live claims: 29 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -53,6 +53,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · depth-is-authored      Whole-painting depth on 葛稚川移居圖 and, by the same mechanism, any painting built on 散点透視 rath
   · hinge-at-the-attachment Cut-out foliage cards in ink painting, where leaves are drawn as separate sprays hanging o
   · leaf-travel-is-measured-on-screen Choosing the swing angle for cut-out foliage on 葛稚川移居圖. The GEOMETRY below is exact for th
+  · perception-needs-a-boundary-model-too CLIPSeg (CIDAS/clipseg-rd64-refined) as the SOLE decider of which ink is foliage on 葛稚川移居圖
   · plan-planes-at-shot-scale Planning a depth-plane stack for a camera that will be CLOSE to the surface. Measured on z
 
 REFUTED — already tried, do NOT retry
@@ -87,12 +88,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (18) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/ST-z3w-the-cliff-nose.mp4
+  jobs/wang-meng/film/ST-z3w-gorge-narrows.mp4
   jobs/wang-meng/film/STATIONS-z3w.mp4
   jobs/wang-meng/film/ST-z3w-upper-gorge-pines.mp4
   jobs/wang-meng/film/ST-z3w-the-stream-descent.mp4
   jobs/wang-meng/film/ST-z3w-the-red-maples.mp4
-  jobs/wang-meng/film/ST-z3w-the-hanging-canopy.mp4
-  jobs/wang-meng/film/ST-z3w-the-great-pine.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/STATIONS-z3w.mp4
 ```
 
@@ -101,6 +102,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  0c58842  verdict: CLIPSeg alone is the right family and not yet accurate enough; semantic:false until SAM refines it
 2026-08-21  037c4bf  a missing semantic pass falls back loudly instead of killing the zone build
 2026-08-21  08385af  STATE.md and z3w cycle records after the leaf-colour rebuild
 2026-08-21  5b7d32c  an AI model labels the painting: tile it, inventory it, draw the labels back so they can be checked
@@ -112,24 +114,25 @@ DELIVERABLES
 2026-08-21  d9944f5  journal: the camera gets a vocabulary
 2026-08-21  246491c  z3w station reel: nine moves from Ryan's vocabulary, 0.7 s dissolves; cut-reel.py orders by station, not filename
 2026-08-21  e62eafa  shot-vocabulary: easing is built into render-parallax; every key is a rest point
-2026-08-21  5e03125  shot vocabulary is Ryan's list: push in, pull out, pan, tilt, parallax, breathing...; holds sit on the subject; render-stations.sh cuts a zone reel
 ```
 
-### ⚠ UNPUSHED
-
-**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/film/rebuild-and-cut.sh
-?? jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/semantic/
-?? jobs/wang-meng/living/semantic-then-reel.sh
+ M jobs/wang-meng/film/ST-z3w-gorge-narrows.mp4
+ M jobs/wang-meng/film/ST-z3w-the-cliff-nose.mp4
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living/built.json
+ M jobs/wang-meng/living/living-z3w.json
+?? tools/refine-mask-sam.py
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
