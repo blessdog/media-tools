@@ -13,7 +13,7 @@ for j in $C/t0*.json; do
   echo "== $n"
   ~/.venvs/media-tools/bin/python $ROOT/tools/refine-mask-sam.py \
     --image $C/tiles-z3w/$n.jpg --boxes $j --kinds tree \
-    --out $C/sam/$n-trees.png --multimask 2>&1 \
+    --out $C/sam/$n-trees.png --multimask 2>/dev/null \
     | python3 -c "import sys,json; d=json.load(sys.stdin); print('  boxes',d['boxes'],'coverage',d['coverage'],'maxFill',max((b['fillOfBox'] for b in d['perBox']),default=0))"
 done
 python3 $ROOT/tools/composite-tile-masks.py --tiles $C/tiles-z3w/tiles.json \
