@@ -1,13 +1,24 @@
 ---
 id: space-planes-in-disparity-not-depth
-kind: verdict
+kind: refuted
 conflict-key: how-should-depth-levels-map-to-z
-status: live
+status: superseded
 scope: >
   render-parallax.py --plane-fit, any plane stack. The MECHANISM is general to
   any renderer whose scale law is z/(z-camZ); the measured 12.3:1 figure is z1's
   10 depth levels over z 1.00..3.70.
 supersedes: []
+retires: perspective-falloff-is-hyperbolic-on-purpose
+mechanism: >
+  The hyperbolic scale response is not a defect to be corrected -- IT IS
+  PERSPECTIVE. Evenly spaced physical planes genuinely do give a strong
+  near-field falloff, because that is what a real camera does. Linearising the
+  response makes every plane separate by an equal amount, which reads as a
+  DIORAMA rather than a landscape: uniform separation is the signature of flat
+  cards at even spacing, exactly the thing depth is supposed to hide. The 12.3:1
+  step ratio measured on z1 is therefore the correct number, not the bug. Ryan,
+  on the side-by-side: "From that shot, the even in depth actually wins."
+
 verified-on: 2026-08-21
 evidence:
   - jobs/wang-meng/evidence/2026-08-21-AB-zspace-linear-vs-disparity.mp4
@@ -17,6 +28,12 @@ asked-as:
   - depth looks smooth but unnatural
   - how should plane depths be spaced
 ---
+
+> **REFUTED 2026-08-21, by the A/B it asked for.** Ryan: *"From that shot, the
+> even in depth actually wins."* The reasoning below is arithmetically correct and
+> aimed at the wrong target -- see `mechanism`. Kept for the measurement and for
+> the trap, which is that a mathematically even distribution LOOKED like an
+> obvious improvement and was tested only because a rendered A/B was cheap.
 
 **Space depth planes evenly in 1/z, not evenly in z.** Ryan on THE RISE v1,
 2026-08-21: *"there were certain scenes where the mountain comes out way farther

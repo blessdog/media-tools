@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 14:33 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 15:15 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 39 live claims: 39 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 40 live claims: 40 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -37,6 +37,7 @@ LAWS — absolute, no exceptions
   · grading-is-not-geometry: A card with a soft edge is still a card.
   · invented-ink-is-allowed-in-the-painters-hand: Ryan, 2026-08-21, asked whether the servant boy could wave when both his hands
   · naming-a-substance-requests-footage: Naming a physical substance in a motion prompt requests FOOTAGE of it. Write
+  · perspective-falloff-is-hyperbolic-on-purpose: Space depth planes evenly in z. The uneven scale response that produces is
   · rigid-cards-preserve-the-brushwork: Ryan, 2026-08-21, having asked for per-leaf twinkle that morning and seen it by
   · share-your-ground: Every figure rides the depth of the surface that supports it. The party on
   · the-camera-moves-toward-motion: Ryan, 2026-08-21, on the station reel: "the way people investigate things, they
@@ -117,6 +118,10 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  2029f64  STATE.md regenerated after the disparity-spacing refutation
+2026-08-21  4488294  REFUTED by his eyes: evening out the parallax made a diorama -- the hyperbolic falloff IS perspective
+2026-08-21  0afa6c3  --z-space disparity: even depth steps gave 12.3:1 uneven SCALE steps, which is why the mountain leapt and the background sat still
+2026-08-21  2f3d517  THE RISE assembled: 2:53 of the whole scroll, bottom to top, with the breath carrying the depth
 2026-08-21  d85b9b8  STATE.md regenerated after THE RISE v2 legs rendered with the breath and relief
 2026-08-21  d1ce6fa  supersede two-renderers-one-data-source: depth is a property of the PATH, not a renderer choice
 2026-08-21  e959788  THE RISE v2: the breath carries the depth, continuously, and --relief finally gets passed
@@ -125,35 +130,15 @@ DELIVERABLES
 2026-08-21  ddad17f  REFUTED: translation parallax on a plane stack cut from one painting -- and the cap made it worse, not better
 2026-08-21  f5121c8  --truck-max: the truck must SATURATE, because a rate difference has no equilibrium
 2026-08-21  ab5a487  render-parallax --truck: the plane stack was contributing NOTHING to a traverse, proven by flattening it
-2026-08-21  87790da  PLAN.md: the film's end state, six phases, and a benchmark per phase that can be counted
-2026-08-21  2ab2d80  THE RISE: one continuous bottom-to-top film, and the inverted fov that made every push show the mount
-2026-08-21  a15ce32  STATE.md regenerated after band 02
-2026-08-21  be037ec  claim: band 02 was already animated once -- 73 frames, and why it still cannot ship
 ```
 
 ### ⚠ UNPUSHED
 
-**10 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**14 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
 ```
-
-### Uncommitted
-
-```
- M jobs/wang-meng/STATE.md
- M jobs/wang-meng/film/build-rise.sh
-?? jobs/wang-meng/film/RISE-z1.mp4
-?? jobs/wang-meng/film/RISE-z3w.mp4
-?? jobs/wang-meng/film/RISE-z4w.mp4
-?? jobs/wang-meng/film/RISE-z5w.mp4
-?? jobs/wang-meng/film/RISE-z6w.mp4
-?? jobs/wang-meng/film/THE-RISE.mp4
-?? jobs/wang-meng/film/paths/_ab-truck.json
-```
-
-*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
