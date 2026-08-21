@@ -56,5 +56,17 @@ keys over 10s stutters. And `--relief` only engages when `camZ != 0`, so a leg
 with a flat traverse gets no within-plane shape either — another thing the
 zero-z traverse silently switched off.
 
+**TWO SHAPES, TWO SETTINGS — verdict 2026-08-21.** The 0.11 above is for a
+MONOTONIC RAMP across a long leg (`leg-light-z3w`, 26s). A BREATH — in and back
+out over ~10s — carries more without reading as too much: Ryan on the smooth
+3-pose breathe at **z 0.18**, *"Breathe smooth is looking good. Now I feel like
+we're starting to finally make a little bit of traction."* The same 0.18 had
+been rejected an hour earlier at 21 keys, which was the stutter and not the
+amplitude. So amplitude is not the whole ceiling; a value that returns to zero
+buys more than a value that arrives and stays.
+
+  ramp across a long leg   z -> 0.11, ends at the peak
+  breath over ~10-25s      z -> 0.18, returns to 0
+
 **The test that decides it stays Ryan's:** would this move be worth watching if
 the living layer were switched off? If yes, it is too much camera.

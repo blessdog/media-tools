@@ -22,7 +22,7 @@ usage:
                  [--pushes 2] [--out FILE]
 JSON summary on stdout; the path is written to film/paths/rise-<zone>.json
 """
-import argparse, json
+import argparse, json, math
 from pathlib import Path
 
 HERE = Path(__file__).parent            # film/
@@ -34,6 +34,17 @@ ap.add_argument("--from-y", type=float, required=True, help="camera CENTRE, mast
 ap.add_argument("--to-y", type=float, required=True, help="camera CENTRE, master px, at the end")
 ap.add_argument("--rate", type=float, default=110.0, help="master px per second of rise")
 ap.add_argument("--pushes", type=int, default=2, help="max approach moments in this leg")
+ap.add_argument("--breathe", type=float, default=0.18,
+                help="peak camZ of the breath. Depth on this painting comes from "
+                     "DIFFERENTIAL SCALE, never from sliding or deforming planes "
+                     "(knowledge/depth-may-resize-never-deform.md). 0.18 is "
+                     "Ryan's 2026-08-21 verdict on the smooth 3-pose breathe; "
+                     "a monotonic ramp wants 0.11 instead because it ends at its "
+                     "peak rather than returning.")
+ap.add_argument("--breathe-period", type=float, default=24.0,
+                help="seconds per full breath, in and back out. Keys are POSES: "
+                     "sample() eases to zero velocity at every key, so breath "
+                     "keys land no closer than period/2 apart.")
 ap.add_argument("--push-fov", type=float, default=0.62,
                 help="fraction of the WIDE framing visible at the closest point; "
                      "0.62 shows 62%% of the width, i.e. fov = 1/0.62")
@@ -101,29 +112,82 @@ targets = sorted(cand[:a.pushes], key=lambda c: -c["my"])   # bottom-first, we r
 span = a.from_y - a.to_y                  # positive: we are rising
 keys, t = [], 0.0
 x_w, y_w = clamp_key(0.5, norm(0, a.from_y)[1], WIDE)
-keys.append({"t": 0.0, "x": x_w, "y": y_w, "z": 0.0, "fov": round(WIDE, 4)})
+keys.append({"t": 0.0, "x": x_w, "y": y_w, "fov": round(WIDE, 4)})
 
 prev_my = a.from_y
 for c in targets:
     # rise until the target sits in frame
     t += abs(prev_my - c["my"]) / a.rate
     xw, yw = clamp_key(0.5, norm(0, c["my"])[1], WIDE)
-    keys.append({"t": round(t, 2), "x": xw, "y": yw, "z": 0.0, "fov": round(WIDE, 4)})
+    keys.append({"t": round(t, 2), "x": xw, "y": yw, "fov": round(WIDE, 4)})
     # notice it, then move toward it -- 3.5s in, 3s held, 3.5s back out
     fov_in = WIDE / a.push_fov      # smaller push_fov = closer
     xi, yi = clamp_key(*norm(c["mx"], c["my"]), fov_in)
     t += 3.5
-    keys.append({"t": round(t, 2), "x": xi, "y": yi, "z": 0.10, "fov": round(fov_in, 4),
+    keys.append({"t": round(t, 2), "x": xi, "y": yi, "fov": round(fov_in, 4),
                  "_at": c["id"]})
     t += 3.0
-    keys.append({"t": round(t, 2), "x": xi, "y": yi, "z": 0.10, "fov": round(fov_in, 4)})
+    keys.append({"t": round(t, 2), "x": xi, "y": yi, "fov": round(fov_in, 4)})
     t += 3.5
-    keys.append({"t": round(t, 2), "x": xw, "y": yw, "z": 0.0, "fov": round(WIDE, 4)})
+    keys.append({"t": round(t, 2), "x": xw, "y": yw, "fov": round(WIDE, 4)})
     prev_my = c["my"]
 
 t += abs(prev_my - a.to_y) / a.rate
 xe, ye = clamp_key(0.5, norm(0, a.to_y)[1], WIDE)
-keys.append({"t": round(t, 2), "x": xe, "y": ye, "z": 0.0, "fov": round(WIDE, 4)})
+# The closing pose. If the rise ends within 3s of the last key, MOVE that key
+# rather than adding one -- a sub-3s gap stutters, because sample() eases to
+# zero velocity at both ends of every segment.
+_end = {"t": round(t, 2), "x": xe, "y": ye, "fov": round(WIDE, 4)}
+if keys and t - keys[-1]["t"] < 3.0:
+    keys[-1] = _end
+else:
+    keys.append(_end)
+
+# THE BREATH. Depth is spent CONTINUOUSLY across the leg, never as a spike:
+# rise-*.json v1 held z at exactly 0.000 through every traverse and jumped to
+# 0.10 only inside the approaches, which made the traverse provably flat
+# (collapsing all 13 plane depths changed 0 of 2,073,600 px) and made the
+# approaches read as zooms, because they were the only depth in the shot.
+# See knowledge/light-parallax-is-011-and-continuous.md.
+# A leg shorter than half a period would contain no extreme and therefore no
+# breath at all -- z5w came out 9.2s long with z pinned at 0.000. Clamp the
+# period to the leg so every leg gets at least one full breath.
+PERIOD = min(a.breathe_period, max(t, 6.0))
+
+
+def breath(tt):
+    return a.breathe * 0.5 * (1 - math.cos(2 * math.pi * tt / PERIOD))
+
+if a.breathe:
+    half = PERIOD / 2.0
+    # a pose at each breath extreme, but only where it does not crowd an
+    # existing key -- keys closer than ~3s apart stutter (sample() eases to
+    # zero velocity at every one).
+    n_ext = int(t // half)
+    for j in range(1, n_ext + 1):
+        te = j * half
+        if all(abs(te - k["t"]) > 3.0 for k in keys):
+            u = None
+            for k0, k1 in zip(keys, keys[1:]):
+                if k0["t"] <= te <= k1["t"]:
+                    u = (te - k0["t"]) / max(k1["t"] - k0["t"], 1e-9)
+                    keys.append({"t": round(te, 2),
+                                 "x": round(k0["x"] + (k1["x"] - k0["x"]) * u, 4),
+                                 "y": round(k0["y"] + (k1["y"] - k0["y"]) * u, 4),
+                                 "fov": round(k0["fov"] + (k1["fov"] - k0["fov"]) * u, 4)})
+                    break
+    keys.sort(key=lambda k: k["t"])
+    for k in keys:
+        k["z"] = round(breath(k["t"]), 4)
+    # Every leg STARTS AND ENDS AT REST. The legs are dissolved together, so a
+    # leg that ends mid-breath hands the next one a z discontinuity -- and at
+    # z=0 the composition is exactly the painting, which is the right thing to
+    # cut on. (knowledge/depth-may-resize-never-deform.md)
+    keys[0]["z"] = 0.0
+    keys[-1]["z"] = 0.0
+else:
+    for k in keys:
+        k.setdefault("z", 0.0)
 
 out = Path(a.out) if a.out else HERE / "paths" / f"rise-{a.zone}.json"
 out.write_text(json.dumps({

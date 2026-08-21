@@ -42,13 +42,20 @@ if [[ $stage == render || $stage == all ]]; then
     z=$parts[1]
     d=$F/frames/rise-$z
     rm -rf $d; mkdir -p $d
-    print -u2 "== rendering leg $z"
+    # WITHIN-PLANE SURFACE SHAPE, where it was authored. --relief only engages
+    # when camZ != 0, so it does nothing on a flat traverse and everything under
+    # the breath. Only z1 has maps today (left-cliff-wall, gorge-wall-right,
+    # foreground-rock-mass).
+    relief=""
+    [[ -f $J/journey/$z/relief.json ]] && relief=$J/journey/$z/relief.json
+    print -u2 "== rendering leg $z${relief:+  (+relief)}"
     python3 tools/render-parallax.py \
       --layers $J/journey/$z/layers-filled --path $F/paths/rise-$z.json \
       --out $d --width 1920 --height 1080 --fps 24 \
       --z-step 0.30 --plane-fit --no-base \
       --geometry $J/journey/$z/geometry.json \
-      --living $J/living/living-$z.json > /dev/null
+      --living $J/living/living-$z.json \
+      ${relief:+--relief $relief} > /dev/null
     ffmpeg -y -loglevel error -framerate 24 -i $d/%05d.png \
       -c:v libx264 -crf 16 -pix_fmt yuv420p $F/RISE-$z.mp4
     print -u2 "   -> $F/RISE-$z.mp4"
