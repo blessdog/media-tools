@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 12:23 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 14:30 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -15,6 +15,9 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
     why: regions.json and living-polys.json BOTH carry a class per region, and only living-polys.json is executed
 ? mist-card   (never)
     A translucent band drifting on its own plane -- the multiplane technique from
+? museum-edition-curator-directed-emphasis-a-narra   (2026-08-21)
+    MUSEUM EDITION: curator-directed emphasis. A narrator points at part of the painting and the film responds -- 
+    why: Raised 2026-08-21 while the first full assembly was being built. He said 'for now yes, continue what you
 ? verify-remote-resolves   (2026-08-20)
     verify the remote RESOLVES, not just that it exists
     why: having an origin is not the same as being backed up. Measured 2026-08-20: 8 repos had a remote pointing
@@ -25,11 +28,12 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 34 live claims: 34 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 39 live claims: 39 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
   · camera-light-parallax: Don't forget it's not just about tree animation, we're still doing parallax
+  · depth-may-resize-never-deform: Depth may change how big things are relative to each other. It may never
   · grading-is-not-geometry: A card with a soft edge is still a card.
   · invented-ink-is-allowed-in-the-painters-hand: Ryan, 2026-08-21, asked whether the servant boy could wave when both his hands
   · naming-a-substance-requests-footage: Naming a physical substance in a motion prompt requests FOOTAGE of it. Write
@@ -39,13 +43,13 @@ LAWS — absolute, no exceptions
   · what-moves: just the delicate things move. Their robes, the water ripples, leaves on
 
 PROCEDURES — the routes that are currently believed
+  · depth-comes-from-the-breath answers which-renderer-for-a-camera-move   (sibling: light-parallax-is-011-and-continuous)
   · figure-motion          answers how-to-move-a-figure   (sibling: foliage-motion)
   · foliage-motion         answers how-to-move-foliage   (sibling: water-motion)
   · leaf-is-colour-rock-is-graphite answers how-are-leaf-strokes-separated-from-rock-strokes   (sibling: no-whole-tree-to-segment)
   · sam-click-trunks-not-canopies answers how-to-prompt-sam-on-this-painting   (sibling: no-whole-tree-to-segment)
   · sam-environment        answers how-to-run-a-torch-tool-in-this-repo   (sibling: no-whole-tree-to-segment)
   · shot-vocabulary        answers which-camera-move-for-a-station   (sibling: camera-light-parallax)
-  · two-renderers-one-data-source answers which-renderer-for-a-camera-move   (sibling: plan-planes-at-shot-scale)
   · water-motion           answers how-to-move-water   (sibling: foliage-motion)
 
 VERDICTS — measured, and SCOPED; check the scope before reusing
@@ -58,6 +62,8 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · gates-must-survive-a-clone Any repo whose correctness depends on hooks, checkers or generated files. Measured on medi
   · hinge-at-the-attachment Cut-out foliage cards in ink painting, where leaves are drawn as separate sprays hanging o
   · leaf-travel-is-measured-on-screen Choosing the swing angle for cut-out foliage on 葛稚川移居圖. The GEOMETRY below is exact for th
+  · light-parallax-is-011-and-continuous Camera paths over the wang-meng plane stacks, render-parallax --plane-fit --z-step 0.30. T
+  · parallax-needs-differential-RATE-not-depth render-parallax.py with --plane-fit, on any plane stack, for any TRAVERSE (a camera move w
   · perception-needs-a-boundary-model-too CLIPSeg (CIDAS/clipseg-rd64-refined) as the SOLE decider of which ink is foliage on 葛稚川移居圖
   · plan-planes-at-shot-scale Planning a depth-plane stack for a camera that will be CLOSE to the surface. Measured on z
   · the-pink-grid-is-splat-lattice probe-parallax.py --marks on any image+depth pair. The GRID is a property of forward splat
@@ -66,10 +72,12 @@ REFUTED — already tried, do NOT retry
   ✗ canopy-by-texture-statistics At distance Wang Meng's 牛毛皴 (hemp-fibre texture strokes) covers rock and forest alike, so the ridge 
   ✗ mist-as-ink            There is no mist ink in this painting. What reads as mist is 留白 -- bare ground, negative space, the 
   ✗ no-whole-tree-to-segment There is no whole-tree SHAPE in this painting to find. Wang Meng draws a tree as separate marks over
+  ✗ translation-parallax-is-refuted-on-a-cut-painting The planes are a decomposition of ONE continuous composition, not independent cels, so plane B's bru
 
 OPEN — plans, NOT specs. proven: false. Do not build against these.
   ? merge-the-two-region-catalogues-into-one Why it matters: regions.json and living-polys.json BOTH carry a class per region, and only
   ? mist-card              A translucent band drifting on its own plane -- the multiplane technique from
+  ? museum-edition-curator-directed-emphasis-a-narra Why it matters: Raised 2026-08-21 while the first full assembly was being built. He said '
   ? verify-remote-resolves Why it matters: having an origin is not the same as being backed up. Measured 2026-08-20:
 ```
 
@@ -95,12 +103,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (18) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/RISE-z6w.mp4
+  jobs/wang-meng/film/RISE-z5w.mp4
+  jobs/wang-meng/film/RISE-z4w.mp4
+  jobs/wang-meng/film/RISE-z3w.mp4
+  jobs/wang-meng/film/RISE-z1.mp4
   jobs/wang-meng/film/BAND02-approach.mp4
-  jobs/wang-meng/film/STATIONS-z3w.mp4
-  jobs/wang-meng/film/ST-z3w-upper-gorge-pines.mp4
-  jobs/wang-meng/film/ST-z3w-the-stream-descent.mp4
-  jobs/wang-meng/film/ST-z3w-the-red-maples.mp4
-  jobs/wang-meng/film/ST-z3w-the-hanging-canopy.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/BAND02-approach.mp4
 ```
 
@@ -109,26 +117,39 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  d1ce6fa  supersede two-renderers-one-data-source: depth is a property of the PATH, not a renderer choice
+2026-08-21  e959788  THE RISE v2: the breath carries the depth, continuously, and --relief finally gets passed
+2026-08-21  f0ba647  claim: light parallax is z 0.11, and CONTINUOUS -- the law had no number, which is why it did not stop me
+2026-08-21  11d082b  LAW: depth may resize, never deform -- three techniques rejected in one afternoon for the same reason
+2026-08-21  ddad17f  REFUTED: translation parallax on a plane stack cut from one painting -- and the cap made it worse, not better
+2026-08-21  f5121c8  --truck-max: the truck must SATURATE, because a rate difference has no equilibrium
+2026-08-21  ab5a487  render-parallax --truck: the plane stack was contributing NOTHING to a traverse, proven by flattening it
+2026-08-21  87790da  PLAN.md: the film's end state, six phases, and a benchmark per phase that can be counted
+2026-08-21  2ab2d80  THE RISE: one continuous bottom-to-top film, and the inverted fov that made every push show the mount
 2026-08-21  a15ce32  STATE.md regenerated after band 02
 2026-08-21  be037ec  claim: band 02 was already animated once -- 73 frames, and why it still cannot ship
 2026-08-21  cc7936f  BAND02-approach: the first shot built the new way -- establish, notice, approach
-2026-08-21  b528836  band 02 is alive: z1 masks, cycles and register at native resolution
-2026-08-21  4bc6a32  STATE.md regenerated after the leaf-mark retirement and the supersedes checker
-2026-08-21  175807e  check-supersedes wired into make check; two more dangling retirement links fixed
-2026-08-21  5b71924  foliage-motion's route was still recommending the technique Ryan rejected an hour earlier
-2026-08-21  eee36fc  split the move TABLE out of shot-vocabulary; the claim keeps the rules
-2026-08-21  cad0cf4  two laws from Ryan's answers: invented ink is allowed in Wang's hand, and the camera moves toward motion
-2026-08-21  bcbf130  the pink grid is splat lattice: found, reproduced, and the 'unrecoverable' law corrected
-2026-08-21  572da6b  swing back to 6: a ladder built at one framing cannot settle an amplitude for a film that changes framing
-2026-08-21  a9a2527  ci: park the workflow until the token has 'workflow' scope
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**9 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
+ M jobs/wang-meng/film/build-rise.sh
+?? jobs/wang-meng/film/RISE-z1.mp4
+?? jobs/wang-meng/film/RISE-z3w.mp4
+?? jobs/wang-meng/film/RISE-z4w.mp4
+?? jobs/wang-meng/film/RISE-z5w.mp4
+?? jobs/wang-meng/film/RISE-z6w.mp4
+?? jobs/wang-meng/film/paths/_ab-truck.json
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
