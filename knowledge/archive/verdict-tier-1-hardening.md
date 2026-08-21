@@ -2,7 +2,7 @@
 id: verdict-tier-1-hardening
 kind: pending
 conflict-key: verdict-on-is-tier-1-of-the-hardening-audit-a-go-vendor-the
-status: live
+status: superseded
 supersedes: []
 question: >
   is Tier 1 of the hardening audit a go — vendor the tools, in-repo hooks, make check, push the knowledge repo, add CI?
@@ -42,3 +42,7 @@ decision that was one sentence from being made.
 Settle it with `knowledge-ask.py --answer verdict-tier-1-hardening --verdict "..."`, then
 write the claim the answer justifies. The verdict is not the knowledge;
 the rule it establishes is.
+
+## Answered 2026-08-21 by Ryan
+
+> GO. Ryan 2026-08-21: 'hardenign looks good as far as i can tell glancing over it'. Tier 1 approved: vendor the tools, in-repo .claude/settings.json hooks, one 'make check' entry point, push ~/.claude/knowledge to a private remote with a pre-push gate, GitHub Action running make check.

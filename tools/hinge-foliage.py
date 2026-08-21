@@ -119,6 +119,32 @@ p.add_argument('--leaf-colour', dest='leaf_colour', action='store_true', default
 p.add_argument('--no-leaf-colour', dest='leaf_colour', action='store_false')
 p.add_argument('--leaf-da', type=float, default=2.5, help='green test: silk a minus this')
 p.add_argument('--leaf-grow', type=int, default=5, help='px the leaf wash is grown to reach the strokes that draw it')
+# ---- SECONDARY ACTION: the leaf, not the tree (2026-08-21) ----------------
+# Ryan: "the entire leaf structure is one green blob... make the individual
+# leaves kind of twinkle and shake. move around leaf not entire tree."
+# A card is a connected component of ink, so a spray whose marks TOUCH is one
+# blob on one hinge, and a blob on a hinge tilts -- it never shimmers. In cel
+# practice a canopy has two scales: the spray swings on its branch (primary),
+# and each leaf moves smaller, faster and out of phase with its neighbours
+# (secondary action / overlapping action). The flash a real canopy gives off is
+# a leaf turning edge-on, which for a flat mark is a narrowing along one axis.
+p.add_argument('--leaf-marks', action='store_true',
+               help='split each card into individual leaf MARKS (distance-transform '
+                    'watershed) and move each one on its own phase ON TOP of the '
+                    'card hinge. Without this a touching spray is one rigid blob')
+p.add_argument('--mark-swing', type=float, default=3.0,
+               help='degrees each mark rotates about its own centroid')
+p.add_argument('--mark-rate', type=float, default=3.0,
+               help='how many times faster than the gust a mark moves; non-integer '
+                    'keeps marks from resynchronising with the spray')
+p.add_argument('--mark-twinkle', type=float, default=0.25,
+               help='0-1: how far a mark narrows as it turns edge-on. This is the '
+                    'shimmer; rotation alone reads as wobble')
+p.add_argument('--mark-shift', type=float, default=0.6,
+               help='px of per-mark translation jitter')
+p.add_argument('--min-mark', type=int, default=10, help='smallest blob worth calling a leaf')
+p.add_argument('--marks-sheet', help='debug PNG: every mark in its own colour, so the '
+                                     'split can be judged BEFORE 96 frames are rendered')
 p.add_argument('--pivots', help='write a PNG of every card box and pivot over the '
                                 'source: green = hinged at a branch, red = foot fallback')
 p.add_argument('--attach-max', type=float, default=14.0,
@@ -339,6 +365,92 @@ for pl in meta['planeList']:
 if not cards:
     sys.exit(f'no card in {a.cards} reached --min-px {a.min_px}')
 
+
+def split_marks(solid, min_mark):
+    """Cut one card's ink into individual leaf marks.
+
+    Distance-transform watershed -- the standard separation for touching blobs
+    of similar size, which is exactly what a leaf spray is. The seed spacing is
+    read from the ink itself (the median distance-transform value over the ink
+    is the typical mark half-width), because Wang Meng paints leaves at
+    near-constant real size and a distant tree is the same drawing with smaller
+    marks. A fixed spacing splits one tree and fuses the next.
+    """
+    u8 = (solid > 0.5).astype(np.uint8)
+    if u8.sum() < min_mark * 2:
+        return None
+    dist = cv2.distanceTransform(u8, cv2.DIST_L2, 3)
+    r = float(np.median(dist[u8 > 0]))
+    k = max(3, int(2 * max(r, 1.0)) | 1)
+    peaks = (dist >= cv2.dilate(dist, np.ones((k, k), np.uint8)) - 1e-6) & (dist > 0.6 * r)
+    nseed, seeds = cv2.connectedComponents(peaks.astype(np.uint8))
+    if nseed <= 2:
+        return None
+    markers = np.where(u8 > 0, seeds, 0).astype(np.int32)
+    markers[u8 == 0] = 1                      # background is marker 1
+    markers[(u8 > 0) & (seeds == 0)] = 0      # unknown: watershed fills these
+    rgb3 = cv2.cvtColor((u8 * 255), cv2.COLOR_GRAY2BGR)
+    cv2.watershed(rgb3, markers)
+    out = []
+    for lbl in range(2, nseed):
+        m = (markers == lbl) & (u8 > 0)
+        if m.sum() < min_mark:
+            continue
+        out.append(m)
+    return out if len(out) > 1 else None
+
+
+n_marks = 0
+if a.leaf_marks:
+    for c in cards:
+        parts = split_marks(np.squeeze(c['solid']), a.min_mark)
+        if not parts:
+            continue
+        marks = []
+        for j, m in enumerate(parts):
+            ys, xs = np.nonzero(m)
+            # Each mark keeps its OWN tight box. Warping a mark inside the whole
+            # card box would cost the card's area per mark per frame; on a dense
+            # spray that is the difference between seconds and minutes.
+            mx0, my0 = int(xs.min()), int(ys.min())
+            mx1, my1 = int(xs.max()) + 1, int(ys.max()) + 1
+            pad = 2
+            mx0, my0 = max(0, mx0 - pad), max(0, my0 - pad)
+            mx1 = min(c['solid'].shape[1], mx1 + pad); my1 = min(c['solid'].shape[0], my1 + pad)
+            sub = m[my0:my1, mx0:mx1].astype(np.float32)
+            marks.append({
+                'box': (mx0, my0, mx1, my1),
+                'cen': (float(xs.mean()) - mx0, float(ys.mean()) - my0),
+                'rgb': c['rgb'][my0:my1, mx0:mx1].copy(),
+                'al': (np.squeeze(c['al'])[my0:my1, mx0:mx1] * sub).copy(),
+                'seed': ((zlib.crc32(c['name'].encode()) + j * 7919) % 1000) / 1000.0,
+            })
+        if len(marks) > 1:
+            c['marks'] = marks
+            n_marks += len(marks)
+    print(f'leaf marks: {n_marks:,} across {sum(1 for c in cards if "marks" in c)} '
+          f'of {len(cards)} cards', file=sys.stderr)
+
+if a.marks_sheet:
+    ov = src.astype(np.uint8).copy()
+    rng = np.random.default_rng(7)
+    for c in cards:
+        x0, y0, x1, y1 = c['box']
+        if 'marks' not in c:
+            # a card nothing could split is drawn in grey: it is still one blob
+            sol = np.squeeze(c['solid']) > 0.5
+            ov[y0:y1, x0:x1][sol] = (140, 140, 140)
+            continue
+        for m in c['marks']:
+            mx0, my0, mx1, my1 = m['box']
+            col = rng.integers(60, 255, 3)
+            sub = ov[y0 + my0:y0 + my1, x0 + mx0:x0 + mx1]
+            sel = m['al'] > 0.5
+            sub[sel] = (sub[sel] * 0.25 + col * 0.75).astype(np.uint8)
+    Path(a.marks_sheet).parent.mkdir(parents=True, exist_ok=True)
+    Image.fromarray(ov).save(a.marks_sheet)
+    print(f'marks sheet -> {a.marks_sheet}', file=sys.stderr)
+
 if a.pivots:
     ov = src.astype(np.uint8).copy()
     for c in cards:
@@ -415,11 +527,45 @@ for k in range(ndraw):
         x0, y0, x1, y1 = c['box']
         M = cv2.getRotationMatrix2D(c['pivot'], float(ang), 1.0)
         wh = (x1 - x0, y1 - y0)
-        rgb = cv2.warpAffine(c['rgb'], M, wh, flags=cv2.INTER_LINEAR,
-                             borderMode=cv2.BORDER_REPLICATE)
-        al = cv2.warpAffine(c['al'], M, wh, flags=cv2.INTER_LINEAR,
-                            borderMode=cv2.BORDER_CONSTANT)[..., None]
-        frame[y0:y1, x0:x1] = frame[y0:y1, x0:x1] * (1 - al) + rgb * al
+        if 'marks' not in c:
+            rgb = cv2.warpAffine(c['rgb'], M, wh, flags=cv2.INTER_LINEAR,
+                                 borderMode=cv2.BORDER_REPLICATE)
+            al = cv2.warpAffine(c['al'], M, wh, flags=cv2.INTER_LINEAR,
+                                borderMode=cv2.BORDER_CONSTANT)[..., None]
+            frame[y0:y1, x0:x1] = frame[y0:y1, x0:x1] * (1 - al) + rgb * al
+            continue
+        # TWO SCALES, COMPOSED (2026-08-21). The spray's hinge M is the primary
+        # motion; each mark then gets its own rotation, its own narrowing as it
+        # turns edge-on, and its own jitter, about ITS OWN centroid. Composing
+        # the two 3x3s and warping once per mark keeps this one resample -- warp
+        # the mark by M and then again by its own matrix and every leaf softens.
+        M3 = np.vstack([M, [0, 0, 1]])
+        for mk in c['marks']:
+            mx0, my0, mx1, my1 = mk['box']
+            mph = 2 * np.pi * (t * a.mark_rate + mk['seed'])
+            mang = a.mark_swing * act * np.sin(mph)
+            # edge-on flash: narrow across the mark, never along it, so the leaf
+            # reads as turning rather than shrinking
+            sx = 1.0 - a.mark_twinkle * act * abs(np.sin(mph + 0.9))
+            dx = a.mark_shift * act * np.sin(mph * 1.31 + mk['seed'] * 6.28)
+            dy = a.mark_shift * act * np.cos(mph * 1.17 + mk['seed'] * 6.28)
+            cx, cy = mk['cen']
+            Rm = cv2.getRotationMatrix2D((cx, cy), float(mang), 1.0)
+            Rm3 = np.vstack([Rm, [0, 0, 1]])
+            S3 = np.array([[sx, 0, cx * (1 - sx) + dx], [0, 1.0, dy], [0, 0, 1]])
+            # the mark lives at (mx0,my0) inside the card, so shift into card
+            # space, apply the card hinge, and come back to the mark's own box
+            T_in = np.array([[1, 0, mx0], [0, 1, my0], [0, 0, 1]], float)
+            T_out = np.array([[1, 0, -mx0], [0, 1, -my0], [0, 0, 1]], float)
+            full = (T_out @ M3 @ T_in @ Rm3 @ S3)[:2]
+            mwh = (mx1 - mx0, my1 - my0)
+            mrgb = cv2.warpAffine(mk['rgb'], full, mwh, flags=cv2.INTER_LINEAR,
+                                  borderMode=cv2.BORDER_REPLICATE)
+            mal = cv2.warpAffine(mk['al'], full, mwh, flags=cv2.INTER_LINEAR,
+                                 borderMode=cv2.BORDER_CONSTANT)[..., None]
+            ax0, ay0 = x0 + mx0, y0 + my0
+            ax1, ay1 = x0 + mx1, y0 + my1
+            frame[ay0:ay1, ax0:ax1] = frame[ay0:ay1, ax0:ax1] * (1 - mal) + mrgb * mal
     Image.fromarray(np.clip(frame, 0, 255).astype(np.uint8)).save(outd / f'dr-{k:03d}.png')
 
 (outd / 'cycle.json').write_text(json.dumps({
@@ -434,7 +580,15 @@ for k in range(ndraw):
     'semanticDir': a.semantic, 'semanticClass': a.semantic_class if a.semantic else None,
     'semanticMode': a.semantic_mode if a.semantic else None,
     'leafColour': bool(a.leaf_colour and not a.semantic), 'inkNotOnLeafPx': ink_dropped_px,
-    'technique': 'rigid cut-out cards hinged where they meet a branch, over a clean plate',
+    'leafMarks': bool(a.leaf_marks), 'marks': n_marks,
+    'markSwingDeg': a.mark_swing if a.leaf_marks else None,
+    'markRate': a.mark_rate if a.leaf_marks else None,
+    'markTwinkle': a.mark_twinkle if a.leaf_marks else None,
+    'markShift': a.mark_shift if a.leaf_marks else None,
+    'technique': ('cards hinged at their branch, each split into leaf marks that '
+                  'rotate, narrow and jitter on their own phase'
+                  if a.leaf_marks else
+                  'rigid cut-out cards hinged where they meet a branch, over a clean plate'),
     'plate': a.plate, 'source': a.source, 'cards_dir': a.cards,
 }, indent=1))
 

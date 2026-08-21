@@ -114,6 +114,13 @@ def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
              "--gust-travel", str(cls.get("gust-travel", 1500)),
              "--gust-rest", str(cls.get("gust-rest", 0.15)),
              "--min-px", str(cls.get("minPx", 80)),
+             *(["--leaf-marks",
+                "--mark-swing", str(cls.get("markSwing", 3.0)),
+                "--mark-rate", str(cls.get("markRate", 3.0)),
+                "--mark-twinkle", str(cls.get("markTwinkle", 0.25)),
+                "--mark-shift", str(cls.get("markShift", 0.6)),
+                "--min-mark", str(cls.get("minMark", 10))]
+               if cls.get("leafMarks") else []),
              *(["--semantic", str(wd / "semantic"),
                 "--semantic-mode", cls.get("semanticMode", "veto")]
                if cls.get("semantic") else []),
