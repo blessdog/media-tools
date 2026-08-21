@@ -6,8 +6,9 @@ status: live
 supersedes: []
 scope: >
   Choosing the swing angle for cut-out foliage on 葛稚川移居圖. The GEOMETRY below
-  is exact for this plate and framing; the VERDICT on how many screen px read as
-  wind is Ryan's and is pending (LADDER-pinebridge.mp4, 2026-08-21).
+  is exact for this plate and framing. SETTLED 2026-08-21: Ryan picked 12 deg off
+  LADDER-pinebridge.mp4. Note the angle alone was NOT the whole answer -- see
+  leaf-marks-are-the-second-scale, which he asked for in the same breath.
 verified-on: 2026-08-21
 evidence:
   - jobs/wang-meng/living/LADDER-pinebridge.mp4
@@ -49,6 +50,18 @@ the angle doubles the travel (small-angle), so 12 deg is ~2x and 20 deg ~3.3x.
 compositor leak was fixed, because the 15 had been compensating for a rig that
 deleted 54% of the canopy. Ink loss at 6 deg is 1.8%. So the ladder must report
 loss per angle, not just look nicer.
+
+**The verdict, 2026-08-21.** Ryan watched the 6 / 12 / 20 ladder and said
+*"12"*. So swing 12 is the class default, ~18 px of tip travel on the pine at
+fov 1.35, about 1% of frame width.
+
+But he did not stop there, and the second half matters more: *"Okay, but I see
+the entire leaf structure is one green blob. I would like to make the individual
+leaves kind of twinkle and shake. move around leaf not entire tree."* **An
+amplitude question can be the wrong question.** Three angles of one rigid blob
+were three sizes of the same defect, and no value on that ladder was ever going
+to be right, because what was missing was a whole scale of motion rather than
+more of the one we had. See [[leaf-marks-are-the-second-scale]].
 
 **The method that generalises:** `living/swing-ladder.sh <hold> <region> <deg...>`
 rebuilds one region at several angles, renders the same hold for each, and

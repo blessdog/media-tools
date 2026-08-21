@@ -16,17 +16,21 @@ not-when: >
   structure to protect. That is water — use the sibling, water-motion.
 route: >
   clean-plate.py --method shiftmap (synthesise the ground behind the canopy,
-  ONCE) -> hinge-foliage.py --from-ink --branch-radius 5 --attach-max 14 (cut
-  one card per ink cluster, pivot WHERE IT JOINS A BRANCH -- see
-  hinge-at-the-attachment -- rotate on a gust envelope delayed by position
-  along the wind) -> render-parallax (composite at depth). Implemented as the
+  ONCE) -> hinge-foliage.py --from-ink --branch-radius auto --attach-max 14
+  --leaf-marks (cut one card per ink cluster, pivot WHERE IT JOINS A BRANCH --
+  see hinge-at-the-attachment -- rotate on a gust envelope delayed by position
+  along the wind, AND split each card into its individual leaf marks so each one
+  moves on its own phase -- see leaf-marks-are-the-second-scale, without which a
+  spray of touching marks is one rigid blob that can only tilt) ->
+  render-parallax (composite at depth). Implemented as the
   foliage-motion entry in jobs/wang-meng/living/build-zone-living.py's
   TECHNIQUES table. NOT cut-stroke.py first: hinge-foliage cuts its own cards,
   because the card decomposition is what decides crown-sway vs leaf-flutter and
   therefore belongs to the tool that swings them.
-verified-on: 2026-08-20
+verified-on: 2026-08-21
 evidence:
   - jobs/wang-meng/living/evidence-warp-blurs-lift-does-not.png
+  - jobs/wang-meng/evidence/AB-leafmarks-s-pine-over-bridge.mp4
 asked-as:
   - make the leaves move
   - animate a tree
