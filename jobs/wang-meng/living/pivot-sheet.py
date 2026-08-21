@@ -35,14 +35,19 @@ except OSError:
     font = ImageFont.load_default()
 H = 44
 cols = a.cols
-rows = (len(tiles) + cols - 1) // cols
-th = max(im.height for im, _ in tiles) + H
-sheet = Image.new('RGB', (cols * a.width, rows * th), (24, 24, 24))
+# sort short tiles together so a tall one does not stretch every row
+tiles.sort(key=lambda t: t[0].height)
+rows = [tiles[i:i + cols] for i in range(0, len(tiles), cols)]
+row_h = [max(im.height for im, _ in r) + H for r in rows]
+sheet = Image.new('RGB', (cols * a.width, sum(row_h)), (24, 24, 24))
 d = ImageDraw.Draw(sheet)
-for k, (im, label) in enumerate(tiles):
-    x, y = (k % cols) * a.width, (k // cols) * th
-    d.text((x + 12, y + 9), label, fill=(235, 235, 235), font=font)
-    sheet.paste(im, (x, y + H))
+y = 0
+for r, rh in zip(rows, row_h):
+    for j, (im, label) in enumerate(r):
+        x = j * a.width
+        d.text((x + 12, y + 9), label, fill=(235, 235, 235), font=font)
+        sheet.paste(im, (x, y + H))
+    y += rh
 Path(a.out).parent.mkdir(parents=True, exist_ok=True)
 sheet.save(a.out)
 print(a.out, sheet.size, len(tiles), 'trees')
