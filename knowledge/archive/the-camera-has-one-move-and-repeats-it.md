@@ -2,7 +2,7 @@
 id: the-camera-has-one-move-and-repeats-it
 kind: open
 conflict-key: should-we-the-camera-has-one-move-and-repeats-it
-status: live
+status: superseded
 supersedes: []
 proven: false
 verified-on: 2026-08-20
