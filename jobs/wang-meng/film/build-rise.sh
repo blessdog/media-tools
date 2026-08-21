@@ -46,8 +46,11 @@ if [[ $stage == render || $stage == all ]]; then
     # when camZ != 0, so it does nothing on a flat traverse and everything under
     # the breath. Only z1 has maps today (left-cliff-wall, gorge-wall-right,
     # foreground-rock-mass).
-    relief=""
-    [[ -f $J/journey/$z/relief.json ]] && relief=$J/journey/$z/relief.json
+    # An ARRAY, not a string: zsh does not word-split an unquoted parameter
+    # expansion, so ${relief:+--relief $relief} arrives as ONE argv entry and
+    # argparse rejects it.
+    relief=()
+    [[ -f $J/journey/$z/relief.json ]] && relief=(--relief $J/journey/$z/relief.json)
     print -u2 "== rendering leg $z${relief:+  (+relief)}"
     python3 tools/render-parallax.py \
       --layers $J/journey/$z/layers-filled --path $F/paths/rise-$z.json \
@@ -55,10 +58,10 @@ if [[ $stage == render || $stage == all ]]; then
       --z-step 0.30 --plane-fit --no-base \
       --geometry $J/journey/$z/geometry.json \
       --living $J/living/living-$z.json \
-      ${relief:+--relief $relief} > /dev/null
+      $relief > /dev/null
     ffmpeg -y -loglevel error -framerate 24 -i $d/%05d.png \
       -c:v libx264 -crf 16 -pix_fmt yuv420p $F/RISE-$z.mp4
-    print -u2 "   -> $F/RISE-$z.mp4"
+    print -u2 -- "   -> $F/RISE-$z.mp4"
   done
 fi
 
@@ -81,5 +84,5 @@ if [[ $stage == concat || $stage == all ]]; then
   done
   ffmpeg -y -loglevel error -i $prev -c copy $F/THE-RISE.mp4
   ln -sfn "$PWD/$F/THE-RISE.mp4" ~/Desktop/WANG-MENG-LATEST.mp4
-  print -u2 "-> $F/THE-RISE.mp4  ($(ffprobe -v error -show_entries format=duration -of csv=p=0 $F/THE-RISE.mp4)s), Desktop symlink refreshed"
+  print -u2 -- "-> $F/THE-RISE.mp4  ($(ffprobe -v error -show_entries format=duration -of csv=p=0 $F/THE-RISE.mp4)s), Desktop symlink refreshed"
 fi

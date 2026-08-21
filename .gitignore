@@ -43,12 +43,24 @@ __pycache__/
 # the short A/B evidence clips (all <4MB) are what claims actually cite.
 # Added 2026-08-20 after a push was rejected on a 329MB leg render.
 jobs/wang-meng/film/SLOW-JOURNEY.mp4
+# THE RISE, 2026-08-21: the assembled film is 168MB and each leg is 10-69MB.
+# The film is the DELIVERABLE but not an archive: it is fully regenerable from
+# film/build-rise.sh + film/paths/rise-*.json + the living layer, all of which
+# ARE tracked. Ship it via ~/Desktop/WANG-MENG-LATEST.mp4, not via git.
+jobs/wang-meng/film/THE-RISE.mp4
+jobs/wang-meng/film/RISE-z*.mp4
 jobs/wang-meng/film/leg-slow-*.mp4
 
 # Bulk leg renders. GitHub hard-rejects >100MB, and these regenerate from the
 # path JSON + layers in minutes. What the repo keeps is what claims cite: the
 # A/B evidence clips, all under 4MB. Added 2026-08-20 after a rejected push.
 jobs/wang-meng/film/SLOW-JOURNEY.mp4
+# THE RISE, 2026-08-21: the assembled film is 168MB and each leg is 10-69MB.
+# The film is the DELIVERABLE but not an archive: it is fully regenerable from
+# film/build-rise.sh + film/paths/rise-*.json + the living layer, all of which
+# ARE tracked. Ship it via ~/Desktop/WANG-MENG-LATEST.mp4, not via git.
+jobs/wang-meng/film/THE-RISE.mp4
+jobs/wang-meng/film/RISE-z*.mp4
 jobs/wang-meng/film/leg-slow-*.mp4
 
 # vision-model tiles: regenerable from the master by tools/tile-image.py

@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 14:30 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 14:33 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -103,13 +103,13 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (18) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/THE-RISE.mp4
   jobs/wang-meng/film/RISE-z6w.mp4
   jobs/wang-meng/film/RISE-z5w.mp4
   jobs/wang-meng/film/RISE-z4w.mp4
   jobs/wang-meng/film/RISE-z3w.mp4
   jobs/wang-meng/film/RISE-z1.mp4
-  jobs/wang-meng/film/BAND02-approach.mp4
-  Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/BAND02-approach.mp4
+  Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 ```
 
 ## Recent history
@@ -117,6 +117,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  d85b9b8  STATE.md regenerated after THE RISE v2 legs rendered with the breath and relief
 2026-08-21  d1ce6fa  supersede two-renderers-one-data-source: depth is a property of the PATH, not a renderer choice
 2026-08-21  e959788  THE RISE v2: the breath carries the depth, continuously, and --relief finally gets passed
 2026-08-21  f0ba647  claim: light parallax is z 0.11, and CONTINUOUS -- the law had no number, which is why it did not stop me
@@ -128,12 +129,11 @@ DELIVERABLES
 2026-08-21  2ab2d80  THE RISE: one continuous bottom-to-top film, and the inverted fov that made every push show the mount
 2026-08-21  a15ce32  STATE.md regenerated after band 02
 2026-08-21  be037ec  claim: band 02 was already animated once -- 73 frames, and why it still cannot ship
-2026-08-21  cc7936f  BAND02-approach: the first shot built the new way -- establish, notice, approach
 ```
 
 ### ⚠ UNPUSHED
 
-**9 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**10 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -149,6 +149,7 @@ git push origin main
 ?? jobs/wang-meng/film/RISE-z4w.mp4
 ?? jobs/wang-meng/film/RISE-z5w.mp4
 ?? jobs/wang-meng/film/RISE-z6w.mp4
+?? jobs/wang-meng/film/THE-RISE.mp4
 ?? jobs/wang-meng/film/paths/_ab-truck.json
 ```
 
