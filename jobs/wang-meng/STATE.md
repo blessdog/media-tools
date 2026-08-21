@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-20 19:25 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-20 19:39 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -97,27 +97,21 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
-2026-08-20  f839bbb  record the two open questions as pending claims instead of offering to remember
-2026-08-20  6b6c765  regenerate STATE.md after the store split
-2026-08-20  af4f4db  move the cross-project laws out of this project's store
-2026-08-20  aade9e6  migrate STATE.md into the store: 896 hand-written lines -> 155 generated
-2026-08-20  63310ba  every claim declares how it will be searched for; 48 questions, 0 unfindable
-2026-08-20  dce64cb  hinge each leaf spray where it joins its twig, not at the foot of its own mass
-2026-08-20  e88ebfb  rebuild all four zones on the fixed hinge at 6 degrees, not 15
-2026-08-20  0bfabd3  a zero-degree hinge changed 26,293 pixels: three leaks in the cut-out compositor
-2026-08-20  bfd6c3f  light parallax leg over the living layer: one continuous rise, bridge to gorge
-2026-08-20  f601490  only the canopies whose leaves you can see: 7 animate, 6 hold still
-2026-08-20  85067f0  clean-plate invented orange autumn leaves where a pine was; donor scope fixed
-2026-08-20  b171157  13 summit polys outlived their own revert, in the file the builder actually reads
+2026-08-20  727b329  gitignore the bulk leg renders after a rejected push
+2026-08-20  13b260e  gitignore the bulk leg renders: GitHub rejects >100MB and they regenerate
+2026-08-20  98a0655  wip
+2026-08-20  f2e362b  record the two open questions as pending claims instead of offering to remember
+2026-08-20  36200b2  regenerate STATE.md after the store split
+2026-08-20  115ad0e  move the cross-project laws out of this project's store
+2026-08-20  46ce440  migrate STATE.md into the store: 896 hand-written lines -> 155 generated
+2026-08-20  e5162e8  every claim declares how it will be searched for; 48 questions, 0 unfindable
+2026-08-20  0adfae4  hinge each leaf spray where it joins its twig, not at the foot of its own mass
+2026-08-20  5cc32e8  rebuild all four zones on the fixed hinge at 6 degrees, not 15
+2026-08-20  de4941f  a zero-degree hinge changed 26,293 pixels: three leaks in the cut-out compositor
+2026-08-20  57c5b99  light parallax leg over the living layer: one continuous rise, bridge to gorge
 ```
 
-### Uncommitted
-
-```
- M jobs/wang-meng/STATE.md
-```
-
-*Uncommitted is not learned. Commit at the moment of learning.*
+*Remote: `git@github.com:blessdog/media-tools.git` — `main` is pushed.*
 
 ---
 
