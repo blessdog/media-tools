@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-20 19:17 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-20 19:25 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -97,6 +97,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-20  f839bbb  record the two open questions as pending claims instead of offering to remember
 2026-08-20  6b6c765  regenerate STATE.md after the store split
 2026-08-20  af4f4db  move the cross-project laws out of this project's store
 2026-08-20  aade9e6  migrate STATE.md into the store: 896 hand-written lines -> 155 generated
@@ -108,18 +109,12 @@ DELIVERABLES
 2026-08-20  f601490  only the canopies whose leaves you can see: 7 animate, 6 hold still
 2026-08-20  85067f0  clean-plate invented orange autumn leaves where a pine was; donor scope fixed
 2026-08-20  b171157  13 summit polys outlived their own revert, in the file the builder actually reads
-2026-08-20  a2d817f  the store now gates the build: a retired technique is a failed run, not a note
 ```
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
-?? docs/reports/2026-08-20-hardening-the-knowledge-store.html
-?? docs/reports/2026-08-20-hardening-the-knowledge-store.url
-?? knowledge/verdict-foliage-pivot-and-stir.md
-?? knowledge/verdict-tier-1-hardening.md
-?? tools/knowledge-ask.py
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
