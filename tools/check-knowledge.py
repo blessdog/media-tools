@@ -1,1 +1,1 @@
-/Users/SSDrive/.claude/knowledge/bin/check-knowledge.py
+../knowledge-bin/check-knowledge.py

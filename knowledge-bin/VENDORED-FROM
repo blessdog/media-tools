@@ -1,0 +1,12 @@
+source   ~/.claude/knowledge (git@github.com:blessdog/claude-knowledge)
+commit   8c3dc44faa4fef31e3294ef1536491859f562f59
+vendored 2026-08-21
+
+These are COPIES so that a clone of this repo has working gates without the
+author's home directory. The knowledge repo above is the SINGLE SOURCE OF TRUTH.
+'make check' runs check-vendor, which diffs these files against that source
+whenever it is present and FAILS on drift -- so the copy cannot silently rot,
+which is the whole cost of vendoring. On a machine without the source (CI), the
+check is skipped and says so.
+
+To refresh:  make vendor

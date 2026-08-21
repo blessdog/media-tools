@@ -1,1 +1,1 @@
-/Users/SSDrive/.claude/knowledge/bin/find-technique.py
+../knowledge-bin/find-technique.py

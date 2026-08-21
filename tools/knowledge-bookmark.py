@@ -1,1 +1,1 @@
-/Users/SSDrive/.claude/knowledge/bin/knowledge-bookmark.py
+../knowledge-bin/knowledge-bookmark.py

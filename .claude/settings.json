@@ -1,0 +1,66 @@
+{
+  "_note": "Repo-relative copies of the four knowledge gates, so a CLONE of this repo inherits them without the author's home directory. Project settings MERGE OVER user settings, so on the authoring machine both fire and the user-level ones stay authoritative. The vendored scripts live in knowledge-bin/ and 'make check' fails if they have drifted from ~/.claude/knowledge (see knowledge-bin/VENDORED-FROM).",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/knowledge-bin/hooks/knowledge-check.sh",
+            "timeout": 20,
+            "statusMessage": "knowledge type-check (repo)"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/knowledge-bin/hooks/knowledge-session-start.sh",
+            "timeout": 15,
+            "statusMessage": "knowledge index (repo)"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/knowledge-bin/hooks/stagnation-gate.sh",
+            "timeout": 15,
+            "statusMessage": "stagnation check (repo)"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/knowledge-bin/hooks/state-report-stop.sh",
+            "timeout": 60,
+            "statusMessage": "regenerate STATE.md (repo)"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/knowledge-bin/hooks/show-me-pixels-stop.sh",
+            "timeout": 15,
+            "statusMessage": "show-me-pixels check (repo)"
+          }
+        ]
+      }
+    ]
+  }
+}

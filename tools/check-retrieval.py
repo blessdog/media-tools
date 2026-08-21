@@ -1,1 +1,1 @@
-/Users/SSDrive/.claude/knowledge/bin/check-retrieval.py
+../knowledge-bin/check-retrieval.py

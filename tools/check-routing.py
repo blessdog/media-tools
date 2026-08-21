@@ -1,1 +1,1 @@
-/Users/SSDrive/.claude/knowledge/bin/check-routing.py
+../knowledge-bin/check-routing.py

@@ -1,1 +1,1 @@
-/Users/SSDrive/.claude/knowledge/bin/knowledge-ask.py
+../knowledge-bin/knowledge-ask.py

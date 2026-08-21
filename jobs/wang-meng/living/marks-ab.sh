@@ -3,7 +3,8 @@
 # Left  = cards only  (a spray is one rigid blob on a hinge)
 # Right = cards + leaf marks (each mark rotates, narrows and jitters on its own phase)
 set -e
-ROOT=/Users/SSDrive/projects/media-tools
+ROOT=${0:a:h}/../../..
+ROOT=${ROOT:A}
 REGION=${1:-s-pine-over-bridge}
 SWING=${2:-12}
 D=$ROOT/jobs/wang-meng/journey/z3w/living-work/$REGION
