@@ -2,8 +2,8 @@
 id: leaf-marks-are-the-second-scale
 kind: verdict
 conflict-key: why-does-animated-foliage-read-as-a-blob
-status: live
-supersedes: []
+status: superseded
+superseded-by: [rigid-cards-preserve-the-brushwork]
 scope: >
   Foliage drawn as ROUND SEPARATE MARKS -- dot clusters, lobed leaves, brick
   dashes, needle fans. Measured on 葛稚川移居圖. NOT valid for two grammars: a
@@ -24,6 +24,14 @@ asked-as:
   - the foliage looks like a slab on a hinge
   - make the leaves twinkle
 ---
+
+> **RETIRED the same day, 2026-08-21.** Ryan, seeing it in the reel: *"This new
+> method of cutting out the leaves is a little too aggressive. It deforms the
+> aesthetic. What we had before was actually looking good."* The reasoning below
+> about two scales of motion is sound animation theory and the watershed works;
+> what it gets WRONG is that deforming each mark rewrites the brushwork. Kept for
+> the mechanism, not the conclusion. See
+> [[rigid-cards-preserve-the-brushwork]].
 
 ## A blob on a hinge can only tilt
 

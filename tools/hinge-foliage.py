@@ -119,7 +119,14 @@ p.add_argument('--leaf-colour', dest='leaf_colour', action='store_true', default
 p.add_argument('--no-leaf-colour', dest='leaf_colour', action='store_false')
 p.add_argument('--leaf-da', type=float, default=2.5, help='green test: silk a minus this')
 p.add_argument('--leaf-grow', type=int, default=5, help='px the leaf wash is grown to reach the strokes that draw it')
-# ---- SECONDARY ACTION: the leaf, not the tree (2026-08-21) ----------------
+# ---- SECONDARY ACTION: the leaf, not the tree (2026-08-21, REJECTED) ------
+# KEPT AS A DEAD END, not as a recommendation. Everything below works and the
+# reasoning was sound animation theory -- and the output was still rejected, for
+# a reason that outranks the theory: a card is a RIGID transform, so the ink
+# inside it arrives unchanged, while deforming each mark redraws the painting in
+# a hand that is not the painter's. Fidelity to the medium beats fidelity to the
+# physics. Read knowledge/rigid-cards-preserve-the-brushwork.md before switching
+# this on for any artwork you did not draw yourself.
 # Ryan: "the entire leaf structure is one green blob... make the individual
 # leaves kind of twinkle and shake. move around leaf not entire tree."
 # A card is a connected component of ink, so a spray whose marks TOUCH is one
@@ -137,9 +144,16 @@ p.add_argument('--leaf-mask',
                     'rust maple from the cliff it stands on '
                     '(knowledge/perception-is-a-model-not-a-threshold.md)')
 p.add_argument('--leaf-marks', action='store_true',
-               help='split each card into individual leaf MARKS (distance-transform '
-                    'watershed) and move each one on its own phase ON TOP of the '
-                    'card hinge. Without this a touching spray is one rigid blob')
+               help='OFF BY DEFAULT AND NOT FOR ANIMATING EXISTING BRUSHWORK. Splits '
+                    'each card into individual leaf MARKS (distance-transform '
+                    'watershed) and moves each on its own phase on top of the card '
+                    'hinge. MEASURED 2026-08-21 on 葛稚川移居圖 and rejected: rotating '
+                    'and narrowing a mark DEFORMS the stroke, which redraws the '
+                    'painting instead of moving it. Ryan: "too aggressive. It deforms '
+                    'the aesthetic." A card is a rigid transform and carries its '
+                    'brushwork intact -- that is the point of a card. Use this only '
+                    'where the marks are yours to redraw '
+                    '(knowledge/rigid-cards-preserve-the-brushwork.md)')
 p.add_argument('--mark-swing', type=float, default=3.0,
                help='degrees each mark rotates about its own centroid')
 p.add_argument('--mark-rate', type=float, default=3.0,
