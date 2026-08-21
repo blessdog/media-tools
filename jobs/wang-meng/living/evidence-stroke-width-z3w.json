@@ -1,0 +1,44 @@
+{
+ "s-gorge-big-canopy": {
+  "inkPx": 32360,
+  "halfWidth_p99": 3.28,
+  "halfWidth_p999": 6.14,
+  "halfWidth_max": 7.93
+ },
+ "s-gorge-foreground": {
+  "inkPx": 45195,
+  "halfWidth_p99": 6.14,
+  "halfWidth_p999": 8.76,
+  "halfWidth_max": 9.96
+ },
+ "s-great-trees-upper": {
+  "inkPx": 64495,
+  "halfWidth_p99": 4.65,
+  "halfWidth_p999": 6.14,
+  "halfWidth_max": 8.22
+ },
+ "s-left-clifftop-pine": {
+  "inkPx": 17052,
+  "halfWidth_p99": 4.23,
+  "halfWidth_p999": 5.73,
+  "halfWidth_max": 6.69
+ },
+ "s-left-pines-z2": {
+  "inkPx": 26013,
+  "halfWidth_p99": 4.78,
+  "halfWidth_p999": 7.64,
+  "halfWidth_max": 9.17
+ },
+ "s-pine-over-bridge": {
+  "inkPx": 34400,
+  "halfWidth_p99": 9.17,
+  "halfWidth_p999": 11.75,
+  "halfWidth_max": 13.24
+ },
+ "s-right-rust-tree": {
+  "inkPx": 4123,
+  "halfWidth_p99": 3.69,
+  "halfWidth_p999": 4.23,
+  "halfWidth_max": 5.19
+ }
+}

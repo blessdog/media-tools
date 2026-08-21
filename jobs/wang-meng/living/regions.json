@@ -1,10 +1,10 @@
 {
-  "master": "corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+  "master": "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png",
   "masterSize": [
     6586,
     15923
   ],
-  "note": "The living layer inventory \u2014 every animatable region, authored 2026-08-19 from a 6-band gridded read of the scroll. Boxes are master px [x0,y0,x1,y1], generous; the MASK inside each box is what animates (P2). class params start from measured winners: wave/sway from the cel sweeps + living-both-final; fall is wave rotated vertical (semi-proven, look-waterfall probe exists); drift (mist) is UNPROVEN \u2014 control-first, cut from v1 if it smears; figure regions reuse the proven GEHONG-alive and deer walk cycles. cycle=null until P2 computes it.  CLASSES ARE A TAGGED UNION as of 2026-08-20: `technique` is the discriminant and names a claim id in knowledge/. tools/check-routing.py refuses to build a class whose claim is superseded or refuted.",
+  "note": "The living layer inventory — every animatable region, authored 2026-08-19 from a 6-band gridded read of the scroll. Boxes are master px [x0,y0,x1,y1], generous; the MASK inside each box is what animates (P2). class params start from measured winners: wave/sway from the cel sweeps + living-both-final; fall is wave rotated vertical (semi-proven, look-waterfall probe exists); drift (mist) is UNPROVEN — control-first, cut from v1 if it smears; figure regions reuse the proven GEHONG-alive and deer walk cycles. cycle=null until P2 computes it.  CLASSES ARE A TAGGED UNION as of 2026-08-20: `technique` is the discriminant and names a claim id in knowledge/. tools/check-routing.py refuses to build a class whose claim is superseded or refuted.",
   "classes": {
     "wave": {
       "technique": "water-motion",
@@ -54,14 +54,15 @@
       "inkOffset": 0.11,
       "inkClose": 1,
       "minPx": 80,
-      "note": "the envelope proven on the z1 pine 2026-08-19 (calm floor 0.07 for 60% of an 8s loop, seam 0.079, leakage 0.00). Ryan's brief: foliage NOT constantly moving -- little gusts blow through. | 2026-08-20 rebuilt on foliage-motion (cut-out cards over a clean plate). swing/flutter are UNVERIFIED pending Ryan's verdict on AB-CUTOUT-VS-WARP; the ROUTE is what changed. | swing 15->6 and flutter 0.35->0.15 on 2026-08-20 AFTER the compositor was fixed: the earlier 15 was chosen against a rig that was deleting 54% of the canopy, so it was compensating for missing paint rather than describing wind. Ink loss at 6 deg is 1.8%. | 2026-08-21 branchRadius 5 / attachMax 14: cards hinge WHERE THEY JOIN A BRANCH (knowledge/hinge-at-the-attachment.md). Ryan's verdict on evidence-attachment-pivot.png: radius 5, swing as is. Before this the builder never passed --branch-radius, so every zone build used the tool default of 3.",
-      "branchRadius": 5,
-      "attachMax": 14
+      "note": "the envelope proven on the z1 pine 2026-08-19 (calm floor 0.07 for 60% of an 8s loop, seam 0.079, leakage 0.00). Ryan's brief: foliage NOT constantly moving -- little gusts blow through. | 2026-08-20 rebuilt on foliage-motion (cut-out cards over a clean plate). swing/flutter are UNVERIFIED pending Ryan's verdict on AB-CUTOUT-VS-WARP; the ROUTE is what changed. | swing 15->6 and flutter 0.35->0.15 on 2026-08-20 AFTER the compositor was fixed: the earlier 15 was chosen against a rig that was deleting 54% of the canopy, so it was compensating for missing paint rather than describing wind. Ink loss at 6 deg is 1.8%. | 2026-08-21 branchRadius 5 / attachMax 14: cards hinge WHERE THEY JOIN A BRANCH (knowledge/hinge-at-the-attachment.md). Ryan's verdict on evidence-attachment-pivot.png: radius 5 on the pine, swing as is. Then measured across all seven near trees (evidence-branch-radius-sweep.json, evidence-stroke-width-z3w.json): a fixed 5 hinged 1 of 68 big-canopy cards, because the other trees are drawn smaller and their branch strokes are thinner. branchRadius auto = branchRatio 0.55 x each tree's own p99 stroke half-width; 0.55 reproduces Ryan's 5 on the pine (9.17px) and gives 2-3 on the rest.",
+      "branchRadius": "auto",
+      "attachMax": 14,
+      "branchRatio": 0.55
     },
     "still": {
       "technique": "none",
       "held-by": "what-moves",
-      "note": "DELIBERATELY STILL, 2026-08-20. Ryan: \"Just the ones you can see the leaves of\u2026 Not the mountains or the distant pine trees that are barely nubs.\" A nub has no delicate part -- it is a silhouette, and swinging a silhouette reads as the mountain deforming, which is the summit lesson one notch closer. Authored per region because NO statistic separates these from the near trees: mark count, mark size and ink fraction all put s-compound-canopies with s-great-trees-upper. Wang Meng was not drawing them differently, he was drawing them smaller. evidence: living/evidence-which-canopies-have-leaves.png"
+      "note": "DELIBERATELY STILL, 2026-08-20. Ryan: \"Just the ones you can see the leaves of… Not the mountains or the distant pine trees that are barely nubs.\" A nub has no delicate part -- it is a silhouette, and swinging a silhouette reads as the mountain deforming, which is the summit lesson one notch closer. Authored per region because NO statistic separates these from the near trees: mark count, mark size and ink fraction all put s-compound-canopies with s-great-trees-upper. Wang Meng was not drawing them differently, he was drawing them smaller. evidence: living/evidence-which-canopies-have-leaves.png"
     }
   },
   "regions": [
@@ -220,7 +221,7 @@
         4700,
         5950
       ],
-      "note": "the waterfall under the compound \u2014 station 8 'under the waterfall'",
+      "note": "the waterfall under the compound — station 8 'under the waterfall'",
       "cycle": {
         "dir": "native/f-station8-fall/cycle",
         "pattern": "dr-%03d.png",
@@ -409,7 +410,7 @@
         1700,
         12980
       ],
-      "note": "Ge's fan/robe stir \u2014 reuse the GEHONG-alive cycle recipe"
+      "note": "Ge's fan/robe stir — reuse the GEHONG-alive cycle recipe"
     },
     {
       "id": "g-deer",
@@ -420,7 +421,7 @@
         1150,
         13100
       ],
-      "note": "the deer \u2014 reuse the proven deer-walk cycle (or hold static in v1 if the walk fights subtlety)"
+      "note": "the deer — reuse the proven deer-walk cycle (or hold static in v1 if the walk fights subtlety)"
     }
   ]
 }

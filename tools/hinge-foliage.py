@@ -85,9 +85,16 @@ p.add_argument('--gust-rest', type=float, default=0.15,
                help='idle amplitude between gusts, as a fraction of --swing')
 p.add_argument('--feather', type=int, default=2)
 p.add_argument('--min-px', type=int, default=80, help='smallest card worth hinging')
-p.add_argument('--branch-radius', type=int, default=3,
+p.add_argument('--branch-radius', default='auto',
                help='ink at least this half-width is BRANCH, not leaf; a card hinges '
-                    'where it meets one (morphological opening by a disk)')
+                    'where it meets one (morphological opening by a disk). An integer, '
+                    'or "auto": --branch-ratio x the 99th-percentile stroke half-width '
+                    'of THIS tree, so a tree drawn smaller gets a thinner branch test')
+p.add_argument('--branch-ratio', type=float, default=0.55,
+               help='auto radius = this x p99 stroke half-width. 0.55 reproduces the '
+                    'radius Ryan chose on s-pine-over-bridge (5 of 9.17)')
+p.add_argument('--pivots', help='write a PNG of every card box and pivot over the '
+                                'source: green = hinged at a branch, red = foot fallback')
 p.add_argument('--attach-max', type=float, default=14.0,
                help='a card further than this from any branch is free-floating and '
                     'falls back to hinging at its own foot')
@@ -118,6 +125,7 @@ H, W = plate.shape[:2]
 meta = json.loads((Path(a.cards) / 'layers.json').read_text())
 cards = []
 n_attached = n_foot = branch_px = 0
+branch_radii = []
 for pl in meta['planeList']:
     if a.only and pl['name'] != a.only:
         continue
@@ -149,12 +157,27 @@ for pl in meta['planeList']:
     # and leaves with a fine one, so THICKNESS separates them -- the same
     # morphological read that separates ripple arcs from rock (--keep tophat).
     # An opening by a disk of radius r keeps only what is at least 2r wide.
-    kb = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * a.branch_radius + 1,) * 2)
+    # THE RADIUS IS A PROPERTY OF THE TREE, NOT OF THE PAINTING. Measured
+    # 2026-08-21 across the seven near trees: the pine over the bridge has a
+    # 9.2px p99 stroke half-width, every other tree 3.3-6.1px -- the same
+    # drawing made smaller. A fixed radius 5 hinged 18/23 pine cards at a
+    # branch and 1/68 on the big gorge canopy, because at that width the
+    # smaller tree HAS no branch ink. evidence-branch-radius-sweep.json.
+    if str(a.branch_radius) == 'auto':
+        dts = cv2.distanceTransform(src_mask.astype(np.uint8), cv2.DIST_L2, 3)[src_mask]
+        p99 = float(np.percentile(dts, 99)) if dts.size else 0.0
+        br = max(2, int(round(a.branch_ratio * p99)))
+        print(f'branch radius auto: p99 half-width {p99:.2f}px x {a.branch_ratio} -> r={br}',
+              file=sys.stderr)
+    else:
+        br = int(a.branch_radius)
+    branch_radii.append(br)
+    kb = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * br + 1,) * 2)
     branch = cv2.morphologyEx(src_mask.astype(np.uint8), cv2.MORPH_OPEN, kb)
     branch_dist = (cv2.distanceTransform(1 - branch, cv2.DIST_L2, 3)
                    if branch.any() else np.full(src_mask.shape, 1e9, np.float32))
     branch_px += int(branch.sum())
-    print(f'branch ink (opening by r={a.branch_radius}): {branch_px:,}px '
+    print(f'branch ink (opening by r={br}): {branch_px:,}px '
           f'of {int(src_mask.sum()):,}', file=sys.stderr)
 
     n, lab, st, cen = cv2.connectedComponentsWithStats(src_mask.astype(np.uint8), 8)
@@ -192,7 +215,8 @@ for pl in meta['planeList']:
         # honest fallback.
         near = branch_dist[ys, xs]
         j = int(np.argmin(near))
-        if near[j] <= a.attach_max:
+        attached = bool(near[j] <= a.attach_max)
+        if attached:
             pvx, pvy = float(xs[j]), float(ys[j])
             n_attached += 1
         else:
@@ -200,6 +224,7 @@ for pl in meta['planeList']:
             pvx, pvy = float(xs[foot].mean()), float(ys.max())
             n_foot += 1
         cards.append({
+            'attached': attached,
             'name': f"{pl['name']}-{i:02d}", 'box': (x0, y0, x1, y1),
             'pivot': (pvx - x0, pvy - y0), 'along': 0.0, 'px': int(st[i, 4]),
             'rgb': src[y0:y1, x0:x1].copy(),
@@ -212,6 +237,18 @@ for pl in meta['planeList']:
         })
 if not cards:
     sys.exit(f'no card in {a.cards} reached --min-px {a.min_px}')
+
+if a.pivots:
+    ov = src.astype(np.uint8).copy()
+    for c in cards:
+        x0, y0, x1, y1 = c['box']
+        col = (40, 170, 60) if c['attached'] else (220, 40, 40)
+        cv2.rectangle(ov, (x0, y0), (x1 - 1, y1 - 1), col, 1)
+        px, py = int(round(c['pivot'][0] + x0)), int(round(c['pivot'][1] + y0))
+        cv2.circle(ov, (px, py), 4, col, -1)
+        cv2.circle(ov, (px, py), 5, (255, 255, 255), 1)
+    Path(a.pivots).parent.mkdir(parents=True, exist_ok=True)
+    Image.fromarray(ov).save(a.pivots)
 
 th = np.deg2rad(a.angle)
 for c in cards:
@@ -289,7 +326,8 @@ for k in range(ndraw):
     'cards': len(cards), 'fromInk': a.from_ink, 'swingDeg': a.swing, 'peakAngleDeg': round(peak, 2),
     'gust': a.gust, 'gustTravel': a.gust_travel, 'gustRest': a.gust_rest,
     'angle': a.angle, 'flutter': a.flutter,
-    'branchRadius': a.branch_radius, 'attachMax': a.attach_max,
+    'branchRadius': branch_radii[0] if len(set(branch_radii)) == 1 else branch_radii,
+    'branchRadiusMode': str(a.branch_radius), 'branchRatio': a.branch_ratio, 'attachMax': a.attach_max,
     'cardsAttached': n_attached, 'cardsFoot': n_foot, 'branchPx': branch_px,
     'technique': 'rigid cut-out cards hinged where they meet a branch, over a clean plate',
     'plate': a.plate, 'source': a.source, 'cards_dir': a.cards,
