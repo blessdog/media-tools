@@ -16,9 +16,10 @@ not-when: >
   structure to protect. That is water — use the sibling, water-motion.
 route: >
   clean-plate.py --method shiftmap (synthesise the ground behind the canopy,
-  ONCE) -> hinge-foliage.py --from-ink (cut one card per ink cluster, pivot at
-  the foot of its own mass, rotate on a gust envelope delayed by position along
-  the wind) -> render-parallax (composite at depth). Implemented as the
+  ONCE) -> hinge-foliage.py --from-ink --branch-radius 5 --attach-max 14 (cut
+  one card per ink cluster, pivot WHERE IT JOINS A BRANCH -- see
+  hinge-at-the-attachment -- rotate on a gust envelope delayed by position
+  along the wind) -> render-parallax (composite at depth). Implemented as the
   foliage-motion entry in jobs/wang-meng/living/build-zone-living.py's
   TECHNIQUES table. NOT cut-stroke.py first: hinge-foliage cuts its own cards,
   because the card decomposition is what decides crown-sway vs leaf-flutter and

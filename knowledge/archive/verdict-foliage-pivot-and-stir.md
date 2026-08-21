@@ -2,7 +2,7 @@
 id: verdict-foliage-pivot-and-stir
 kind: pending
 conflict-key: verdict-on-which-branch-radius-and-is-5-degrees-the-right-a
-status: live
+status: superseded
 supersedes: []
 question: >
   which branch radius, and is 5 degrees the right amount of stir for the foliage?
@@ -46,3 +46,7 @@ decision that was one sentence from being made.
 Settle it with `knowledge-ask.py --answer verdict-foliage-pivot-and-stir --verdict "..."`, then
 write the claim the answer justifies. The verdict is not the knowledge;
 the rule it establishes is.
+
+## Answered 2026-08-21 by Ryan
+
+> radius 5, stir as rendered in AB-HOLD-pinebridge.mp4 — Ryan 2026-08-21: 'looks good'. Roll the attachment-pivot rig out to every leaf-visible tree.

@@ -114,6 +114,8 @@ def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
              "--gust-travel", str(cls.get("gust-travel", 1500)),
              "--gust-rest", str(cls.get("gust-rest", 0.15)),
              "--min-px", str(cls.get("minPx", 80)),
+             "--branch-radius", str(cls.get("branchRadius", 5)),
+             "--attach-max", str(cls.get("attachMax", 14)),
              "--ink-offset", str(cls.get("inkOffset", 0.11)),
              "--ink-close", str(cls.get("inkClose", 1))]
     hinge += ["--from-ink"] if cls.get("fromInk", True) else ["--whole-mask"]

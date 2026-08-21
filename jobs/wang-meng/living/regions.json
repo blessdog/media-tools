@@ -54,7 +54,9 @@
       "inkOffset": 0.11,
       "inkClose": 1,
       "minPx": 80,
-      "note": "the envelope proven on the z1 pine 2026-08-19 (calm floor 0.07 for 60% of an 8s loop, seam 0.079, leakage 0.00). Ryan's brief: foliage NOT constantly moving -- little gusts blow through. | 2026-08-20 rebuilt on foliage-motion (cut-out cards over a clean plate). swing/flutter are UNVERIFIED pending Ryan's verdict on AB-CUTOUT-VS-WARP; the ROUTE is what changed. | swing 15->6 and flutter 0.35->0.15 on 2026-08-20 AFTER the compositor was fixed: the earlier 15 was chosen against a rig that was deleting 54% of the canopy, so it was compensating for missing paint rather than describing wind. Ink loss at 6 deg is 1.8%."
+      "note": "the envelope proven on the z1 pine 2026-08-19 (calm floor 0.07 for 60% of an 8s loop, seam 0.079, leakage 0.00). Ryan's brief: foliage NOT constantly moving -- little gusts blow through. | 2026-08-20 rebuilt on foliage-motion (cut-out cards over a clean plate). swing/flutter are UNVERIFIED pending Ryan's verdict on AB-CUTOUT-VS-WARP; the ROUTE is what changed. | swing 15->6 and flutter 0.35->0.15 on 2026-08-20 AFTER the compositor was fixed: the earlier 15 was chosen against a rig that was deleting 54% of the canopy, so it was compensating for missing paint rather than describing wind. Ink loss at 6 deg is 1.8%. | 2026-08-21 branchRadius 5 / attachMax 14: cards hinge WHERE THEY JOIN A BRANCH (knowledge/hinge-at-the-attachment.md). Ryan's verdict on evidence-attachment-pivot.png: radius 5, swing as is. Before this the builder never passed --branch-radius, so every zone build used the tool default of 3.",
+      "branchRadius": 5,
+      "attachMax": 14
     },
     "still": {
       "technique": "none",
