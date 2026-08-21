@@ -17,4 +17,4 @@ for j in $C/t0*.json; do
     | python3 -c "import sys,json; d=json.load(sys.stdin); print('  boxes',d['boxes'],'coverage',d['coverage'],'maxFill',max((b['fillOfBox'] for b in d['perBox']),default=0))"
 done
 python3 $ROOT/tools/composite-tile-masks.py --tiles $C/tiles-z3w/tiles.json \
-  --masks $C/sam --suffix -trees.png --out $C/foliage-master-z3w.png
+  --masks $C/sam --suffix=-trees.png --out $C/foliage-master-z3w.png
