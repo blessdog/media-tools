@@ -28,7 +28,7 @@ route: >
   leafColour and inkNotOnLeafPx.
 verified-on: 2026-08-21
 evidence:
-  - jobs/wang-meng/living/evidence-moved-s-gorge-foreground.png
+  - jobs/wang-meng/living/evidence-moved-s-gorge-foreground-BEFORE.png
   - jobs/wang-meng/living/evidence-leafcut-s-gorge-foreground.png
   - jobs/wang-meng/living/evidence-leafcut-s-gorge-big-canopy.png
 asked-as:
