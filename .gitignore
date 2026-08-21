@@ -44,3 +44,9 @@ __pycache__/
 # Added 2026-08-20 after a push was rejected on a 329MB leg render.
 jobs/wang-meng/film/SLOW-JOURNEY.mp4
 jobs/wang-meng/film/leg-slow-*.mp4
+
+# Bulk leg renders. GitHub hard-rejects >100MB, and these regenerate from the
+# path JSON + layers in minutes. What the repo keeps is what claims cite: the
+# A/B evidence clips, all under 4MB. Added 2026-08-20 after a rejected push.
+jobs/wang-meng/film/SLOW-JOURNEY.mp4
+jobs/wang-meng/film/leg-slow-*.mp4
