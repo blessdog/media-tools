@@ -1,0 +1,166 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/plate.png",
+  "size": [
+    467,
+    566
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 3,
+  "unclaimedFraction": 0.6887,
+  "overlay": "jobs/wang-meng/living/_sam-pine/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 4.8,
+  "inferSeconds": 10.6,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 1,
+      "name": "pine-whole",
+      "depth": 0.0,
+      "point": [
+        140100,
+        186780
+      ],
+      "window": 700,
+      "windowRequested": 700,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 700,
+          "clipped": false,
+          "imageFraction": 0.0106,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        467,
+        566
+      ],
+      "pick": "whole",
+      "score": 0.3797,
+      "candidateAreas": [
+        0,
+        3,
+        4679
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 2806,
+      "windowFraction": 0.0106,
+      "areaFinal": 2739,
+      "bbox": [
+        86,
+        0,
+        455,
+        267
+      ],
+      "offset": [
+        86,
+        0
+      ],
+      "layer": null
+    },
+    {
+      "n": 2,
+      "id": 2,
+      "name": "pine-leftbranch",
+      "depth": 0.0,
+      "point": [
+        74720,
+        226400
+      ],
+      "window": 700,
+      "windowRequested": 700,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 700,
+          "clipped": false,
+          "imageFraction": 0.2831,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        467,
+        566
+      ],
+      "pick": "whole",
+      "score": 0.7468,
+      "candidateAreas": [
+        7330,
+        27248,
+        74240
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 74827,
+      "windowFraction": 0.2831,
+      "areaFinal": 13361,
+      "bbox": [
+        224,
+        0,
+        465,
+        566
+      ],
+      "offset": [
+        224,
+        0
+      ],
+      "layer": null
+    },
+    {
+      "n": 3,
+      "id": 3,
+      "name": "pine-upper",
+      "depth": 0.0,
+      "point": [
+        177460,
+        113200
+      ],
+      "window": 700,
+      "windowRequested": 700,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 700,
+          "clipped": false,
+          "imageFraction": 0.2504,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        0,
+        467,
+        566
+      ],
+      "pick": "whole",
+      "score": 0.6431,
+      "candidateAreas": [
+        8600,
+        32398,
+        66377
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 66196,
+      "windowFraction": 0.2504,
+      "areaFinal": 66196,
+      "bbox": [
+        81,
+        154,
+        466,
+        566
+      ],
+      "offset": [
+        81,
+        154
+      ],
+      "layer": null
+    }
+  ]
+}

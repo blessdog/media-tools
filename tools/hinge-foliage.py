@@ -85,6 +85,12 @@ p.add_argument('--gust-rest', type=float, default=0.15,
                help='idle amplitude between gusts, as a fraction of --swing')
 p.add_argument('--feather', type=int, default=2)
 p.add_argument('--min-px', type=int, default=80, help='smallest card worth hinging')
+p.add_argument('--branch-radius', type=int, default=3,
+               help='ink at least this half-width is BRANCH, not leaf; a card hinges '
+                    'where it meets one (morphological opening by a disk)')
+p.add_argument('--attach-max', type=float, default=14.0,
+               help='a card further than this from any branch is free-floating and '
+                    'falls back to hinging at its own foot')
 p.add_argument('--from-ink', dest='from_ink', action='store_true', default=True,
                help='cut cards from the INK inside each mask, not from the mask '
                     'itself (default). A canopy mask is a filled envelope; a card '
@@ -138,6 +144,17 @@ for pl in meta['planeList']:
             k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * a.ink_close + 1,) * 2)
             ink = cv2.morphologyEx(ink, cv2.MORPH_CLOSE, k)
         src_mask = ink > 0
+    # WHAT IS A BRANCH. Wang Meng paints trunk and branch with a loaded brush
+    # and leaves with a fine one, so THICKNESS separates them -- the same
+    # morphological read that separates ripple arcs from rock (--keep tophat).
+    # An opening by a disk of radius r keeps only what is at least 2r wide.
+    kb = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * a.branch_radius + 1,) * 2)
+    branch = cv2.morphologyEx(src_mask.astype(np.uint8), cv2.MORPH_OPEN, kb)
+    branch_dist = (cv2.distanceTransform(1 - branch, cv2.DIST_L2, 3)
+                   if branch.any() else np.full(src_mask.shape, 1e9, np.float32))
+    print(f'branch ink (opening by r={a.branch_radius}): {int(branch.sum()):,}px '
+          f'of {int(src_mask.sum()):,}', file=sys.stderr)
+
     n, lab, st, cen = cv2.connectedComponentsWithStats(src_mask.astype(np.uint8), 8)
     for i in range(1, n):
         if st[i, 4] < a.min_px:
@@ -162,10 +179,22 @@ for pl in meta['planeList']:
         pad = a.feather * 3 + 2
         x0, y0 = max(0, x0 - pad), max(0, y0 - pad)
         x1, y1 = min(W, x1 + pad), min(H, y1 + pad)
-        # the hinge sits where the mass meets what holds it up: the centroid of
-        # its lowest rows, not its bounding-box corner
-        foot = ys > ys.max() - 6
-        pvx, pvy = float(xs[foot].mean()), float(ys.max())
+        # THE HINGE IS THE ATTACHMENT, NOT THE FOOT (2026-08-20).
+        # A leaf spray pivots where it joins its twig. Hinging it at the bottom
+        # of its own mass swings the whole spray sideways and slides it off the
+        # branch -- visible at 6 degrees, and no amplitude fixes it because the
+        # axis is in the wrong place. Ryan: "these are not acceptable."
+        # The branch is the THICK ink; the leaves are the thin marks. So the
+        # pivot is the cluster pixel nearest a thick stroke, and where a cluster
+        # touches no branch at all (a free-floating spray) the foot is the
+        # honest fallback.
+        near = branch_dist[ys, xs]
+        j = int(np.argmin(near))
+        if near[j] <= a.attach_max:
+            pvx, pvy = float(xs[j]), float(ys[j])
+        else:
+            foot = ys > ys.max() - 6
+            pvx, pvy = float(xs[foot].mean()), float(ys.max())
         cards.append({
             'name': f"{pl['name']}-{i:02d}", 'box': (x0, y0, x1, y1),
             'pivot': (pvx - x0, pvy - y0), 'along': 0.0, 'px': int(st[i, 4]),

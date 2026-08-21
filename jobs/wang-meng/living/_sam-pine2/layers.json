@@ -1,0 +1,166 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/plate.png",
+  "size": [
+    467,
+    566
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 3,
+  "unclaimedFraction": 0.9086,
+  "overlay": "jobs/wang-meng/living/_sam-pine2/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 3.0,
+  "inferSeconds": 9.7,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 1,
+      "name": "fork-whole",
+      "depth": 0.0,
+      "point": [
+        114415,
+        178290
+      ],
+      "window": 500,
+      "windowRequested": 500,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 500,
+          "clipped": false,
+          "imageFraction": 0.0299,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        66,
+        467,
+        566
+      ],
+      "pick": "whole",
+      "score": 0.4666,
+      "candidateAreas": [
+        2466,
+        5573,
+        8110
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 7909,
+      "windowFraction": 0.0339,
+      "areaFinal": 7909,
+      "bbox": [
+        64,
+        274,
+        261,
+        442
+      ],
+      "offset": [
+        64,
+        274
+      ],
+      "layer": null
+    },
+    {
+      "n": 2,
+      "id": 2,
+      "name": "leaves-left",
+      "depth": 0.1,
+      "point": [
+        88730,
+        220740
+      ],
+      "window": 500,
+      "windowRequested": 500,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 500,
+          "clipped": false,
+          "imageFraction": 0.0391,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        66,
+        467,
+        566
+      ],
+      "pick": "whole",
+      "score": 0.5418,
+      "candidateAreas": [
+        19,
+        10953,
+        98
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 10332,
+      "windowFraction": 0.0442,
+      "areaFinal": 10332,
+      "bbox": [
+        287,
+        241,
+        466,
+        566
+      ],
+      "offset": [
+        287,
+        241
+      ],
+      "layer": null
+    },
+    {
+      "n": 3,
+      "id": 3,
+      "name": "spray-upper",
+      "depth": 0.2,
+      "point": [
+        99471,
+        131312
+      ],
+      "window": 500,
+      "windowRequested": 500,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 500,
+          "clipped": false,
+          "imageFraction": 0.0224,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        0,
+        66,
+        467,
+        566
+      ],
+      "pick": "whole",
+      "score": 0.4148,
+      "candidateAreas": [
+        1197,
+        5638,
+        9572
+      ],
+      "clippedByWindow": false,
+      "areaInWindow": 5931,
+      "windowFraction": 0.0254,
+      "areaFinal": 5931,
+      "bbox": [
+        83,
+        70,
+        464,
+        390
+      ],
+      "offset": [
+        83,
+        70
+      ],
+      "layer": null
+    }
+  ]
+}
