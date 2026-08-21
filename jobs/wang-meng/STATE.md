@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 12:03 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 12:16 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -25,7 +25,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 33 live claims: 33 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 34 live claims: 34 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -49,6 +49,7 @@ PROCEDURES — the routes that are currently believed
   · water-motion           answers how-to-move-water   (sibling: foliage-motion)
 
 VERDICTS — measured, and SCOPED; check the scope before reusing
+  · band-02-was-already-animated-once The Ge Hong / deer / trestle-bridge scene, master box roughly [901, 10604, 2585, 13599]. F
   · branch-radius-scales-with-the-tree hinge-foliage's branch/leaf split on 葛稚川移居圖, and by the same mechanism any painting where 
   · canopy-read-distant    DISTANT ridges only -- the summits, master y < ~3850, verified on z6w. NOT valid near; the
   · canopy-read-near       NEAR foliage only -- the compound canopies and the gorge, master y > ~3850. NOT valid on d
@@ -78,6 +79,7 @@ OPEN — plans, NOT specs. proven: false. Do not build against these.
 
 ```
 LIVING LAYER — cycles registered per zone
+  z1     18 patches · 8 planes · 7 regions
   z3w    46 patches · 5 planes · 37 regions
   z4w    32 patches · 3 planes · 23 regions
   z5w    13 patches · 3 planes · 9 regions
@@ -93,13 +95,13 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (18) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/BAND02-approach.mp4
   jobs/wang-meng/film/STATIONS-z3w.mp4
   jobs/wang-meng/film/ST-z3w-upper-gorge-pines.mp4
   jobs/wang-meng/film/ST-z3w-the-stream-descent.mp4
   jobs/wang-meng/film/ST-z3w-the-red-maples.mp4
   jobs/wang-meng/film/ST-z3w-the-hanging-canopy.mp4
-  jobs/wang-meng/film/ST-z3w-the-great-pine.mp4
-  Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/STATIONS-z3w.mp4
+  Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/BAND02-approach.mp4
 ```
 
 ## Recent history
@@ -107,6 +109,9 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  be037ec  claim: band 02 was already animated once -- 73 frames, and why it still cannot ship
+2026-08-21  cc7936f  BAND02-approach: the first shot built the new way -- establish, notice, approach
+2026-08-21  b528836  band 02 is alive: z1 masks, cycles and register at native resolution
 2026-08-21  4bc6a32  STATE.md regenerated after the leaf-mark retirement and the supersedes checker
 2026-08-21  175807e  check-supersedes wired into make check; two more dangling retirement links fixed
 2026-08-21  5b71924  foliage-motion's route was still recommending the technique Ryan rejected an hour earlier
@@ -116,9 +121,6 @@ DELIVERABLES
 2026-08-21  572da6b  swing back to 6: a ladder built at one framing cannot settle an amplitude for a film that changes framing
 2026-08-21  a9a2527  ci: park the workflow until the token has 'workflow' scope
 2026-08-21  0527203  z3w reel v4: back to bushel cards at swing 12, no per-mark deformation
-2026-08-21  38fbe2e  the master foliage mask: all 16 tiles, VLM boxes refined by SAM, composited to master px
-2026-08-21  48a91c1  journal: the leaf-mark entry gets its ending -- rejected four hours later, and why the sound reasoning still lost
-2026-08-21  779ad2a  law: move the drawing, never redraw it -- leaf marks retired the day they landed
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
@@ -127,7 +129,6 @@ DELIVERABLES
 
 ```
  M jobs/wang-meng/STATE.md
-?? jobs/wang-meng/journey/z1/living/
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
