@@ -1,0 +1,348 @@
+<title>Hardening the Knowledge Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+:root{
+  --bg:#f7f8fa; --panel:#ffffff; --panel-2:#eef1f5;
+  --ink:#1b2430; --ink-2:#3d4c5c; --muted:#6b7c8d; --line:#d8dee6;
+  --teal:#1f7a6f; --teal-soft:#e2f0ed;
+  --clay:#a84a26; --clay-soft:#fbe9e1;
+  --amber:#8a6a12; --amber-soft:#f7efd8;
+  --steel:#4a5c70;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --disp:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1319; --panel:#161c24; --panel-2:#1c242e;
+    --ink:#e6ecf2; --ink-2:#b9c6d3; --muted:#8296a8; --line:#28323e;
+    --teal:#5cc2b2; --teal-soft:#12312d;
+    --clay:#e08a5f; --clay-soft:#33190f;
+    --amber:#d9b559; --amber-soft:#2b2413;
+    --steel:#93a7bb;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1319; --panel:#161c24; --panel-2:#1c242e;
+  --ink:#e6ecf2; --ink-2:#b9c6d3; --muted:#8296a8; --line:#28323e;
+  --teal:#5cc2b2; --teal-soft:#12312d;
+  --clay:#e08a5f; --clay-soft:#33190f;
+  --amber:#d9b559; --amber-soft:#2b2413;
+  --steel:#93a7bb;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--serif); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1060px; margin:0 auto; padding:0 28px 96px}
+.col{max-width:70ch}
+
+/* ---------- masthead ---------- */
+header{
+  border-bottom:1px solid var(--line); margin-bottom:52px;
+  padding:64px 0 34px;
+}
+.eyebrow{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 18px;
+}
+h1{
+  font-family:var(--disp); font-weight:700; font-size:clamp(34px,5.4vw,54px);
+  line-height:1.04; letter-spacing:-.022em; margin:0 0 20px; text-wrap:balance;
+}
+.standfirst{font-size:19px; color:var(--ink-2); margin:0; max-width:62ch}
+.meta{
+  display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:26px;
+  font-family:var(--mono); font-size:12px; color:var(--muted);
+}
+.meta b{color:var(--ink-2); font-weight:500}
+
+/* ---------- sections ---------- */
+section{margin:0 0 66px}
+h2{
+  font-family:var(--disp); font-weight:600; font-size:13px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--steel); margin:0 0 6px;
+}
+h2 + .rule{height:2px; background:var(--ink); width:44px; margin-bottom:26px}
+h3{
+  font-family:var(--disp); font-weight:600; font-size:25px; letter-spacing:-.012em;
+  margin:0 0 14px; text-wrap:balance; line-height:1.2;
+}
+p{margin:0 0 17px}
+strong{font-weight:600}
+a{color:var(--teal)}
+
+/* ---------- data ---------- */
+.scroll{overflow-x:auto; margin:0 0 26px; border:1px solid var(--line); border-radius:7px; background:var(--panel)}
+table{border-collapse:collapse; width:100%; font-family:var(--mono); font-size:13px}
+th{
+  text-align:left; font-weight:600; color:var(--muted); font-size:11px;
+  letter-spacing:.1em; text-transform:uppercase; padding:12px 16px;
+  border-bottom:1px solid var(--line); white-space:nowrap; background:var(--panel-2);
+}
+td{padding:11px 16px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2)}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--ink)}
+td b{color:var(--ink); font-weight:600}
+
+pre{
+  font-family:var(--mono); font-size:12.5px; line-height:1.62;
+  background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--steel);
+  border-radius:5px; padding:16px 18px; overflow-x:auto; margin:0 0 26px; color:var(--ink-2);
+}
+pre .ok{color:var(--teal)} pre .bad{color:var(--clay)} pre .dim{color:var(--muted)}
+code{font-family:var(--mono); font-size:.9em; background:var(--panel-2);
+     padding:1px 5px; border-radius:3px; color:var(--ink)}
+pre code{background:none; padding:0}
+
+/* ---------- findings ---------- */
+.finding{
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+  padding:24px 26px 8px; margin:0 0 20px; position:relative; overflow:hidden;
+}
+.finding::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--muted)}
+.finding.crit::before{background:var(--clay)}
+.finding.high::before{background:var(--amber)}
+.finding.med::before{background:var(--steel)}
+.fhead{display:flex; flex-wrap:wrap; align-items:baseline; gap:12px; margin-bottom:12px}
+.fid{font-family:var(--mono); font-weight:600; font-size:13px; color:var(--muted)}
+.fname{font-family:var(--disp); font-weight:600; font-size:20px; letter-spacing:-.01em; flex:1 1 260px; line-height:1.25}
+.sev{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.11em; text-transform:uppercase;
+  padding:3px 9px; border-radius:99px; font-weight:600; white-space:nowrap;
+}
+.sev.crit{background:var(--clay-soft); color:var(--clay)}
+.sev.high{background:var(--amber-soft); color:var(--amber)}
+.sev.med{background:var(--panel-2); color:var(--steel)}
+.finding p{font-size:16px; margin-bottom:14px}
+.handle{
+  display:block; margin:4px 0 18px; padding:11px 14px; background:var(--panel-2);
+  border-radius:5px; font-family:var(--mono); font-size:12px; color:var(--ink-2); line-height:1.55;
+}
+.handle b{color:var(--ink); font-weight:600}
+.handle span{color:var(--muted)}
+
+/* ---------- plan ---------- */
+.tier{border-top:1px solid var(--line); padding:26px 0 6px}
+.tier:first-of-type{border-top:0; padding-top:0}
+.tlabel{
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--teal); margin:0 0 6px; font-weight:600;
+}
+.tier h3{font-size:22px; margin-bottom:8px}
+.tier .why{color:var(--muted); font-size:15px; margin-bottom:16px}
+ol.steps{margin:0 0 8px; padding-left:22px}
+ol.steps li{margin-bottom:11px; font-size:16px}
+ol.steps li::marker{font-family:var(--mono); font-size:13px; color:var(--muted)}
+
+/* ---------- callout ---------- */
+.note{
+  border:1px solid var(--line); border-left:3px solid var(--teal);
+  background:var(--teal-soft); border-radius:5px; padding:18px 22px; margin:0 0 26px;
+}
+.note p:last-child{margin-bottom:0}
+.note .lbl{
+  font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--teal); font-weight:600; display:block; margin-bottom:8px;
+}
+.dont{border-left-color:var(--clay); background:var(--clay-soft)}
+.dont .lbl{color:var(--clay)}
+
+footer{border-top:1px solid var(--line); padding-top:26px; color:var(--muted); font-size:14px}
+</style>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Maintainability audit · media-tools + ~/.claude/knowledge</p>
+  <h1>Hardening the Knowledge Store</h1>
+  <p class="standfirst">The typed-claim system works and is measurably retrievable. Its weakness is not the data model — it is that every invariant is enforced by one machine's config, and the tools are wired into the repo by absolute paths carrying a username.</p>
+  <div class="meta">
+    <span><b>35</b> claims, 2 stores</span>
+    <span><b>115</b> retrieval assertions, <b>0</b> unfindable</span>
+    <span><b>10</b> findings</span>
+    <span><b>2</b> critical</span>
+    <span>2026-08-20</span>
+  </div>
+</header>
+
+<section>
+  <h2>What exists</h2><div class="rule"></div>
+  <div class="col">
+    <p>Built today, in one session, and all of it verified by its own tests rather than by assertion:</p>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>Layer</th><th>Mechanism</th><th>Enforced by</th><th>Verified</th></tr></thead>
+    <tbody>
+      <tr><td><b>Type</b></td><td>tagged union — law / verdict / refuted / procedure / open</td><td>check-knowledge.py</td><td class="num">35 claims, 0 violations</td></tr>
+      <tr><td><b>Collector</b></td><td>one live claim per <code>conflict-key</code>, across both stores</td><td>check-knowledge.py</td><td class="num">shadow control → exit 1</td></tr>
+      <tr><td><b>Retrieval</b></td><td>BM25 (IDF + length norm), weighted fields, <code>asked-as</code> golden set</td><td>check-retrieval.py</td><td class="num">115 questions, 0 unfindable</td></tr>
+      <tr><td><b>Scope</b></td><td>project store + universal store, searched together, labelled</td><td>stores() resolver</td><td class="num">23 project / 9 universal</td></tr>
+      <tr><td><b>Pipeline</b></td><td>configs name a technique by claim id; retired = failed build</td><td>check-routing.py</td><td class="num">5 negative controls</td></tr>
+      <tr><td><b>Status</b></td><td>STATE.md generated from git + store + <code>status.sh</code></td><td>state-report.py</td><td class="num">896 → 155 lines</td></tr>
+      <tr><td><b>Injection</b></td><td>index pushed into every session, in every project</td><td>SessionStart hook</td><td class="num">both states tested</td></tr>
+      <tr><td><b>Anti-stagnation</b></td><td>blocks the 3rd flag-change on one tool, injects the tabu list</td><td>PreToolUse hook</td><td class="num">22/22 classifier cases</td></tr>
+    </tbody>
+  </table></div>
+  <div class="col">
+    <p>The closest thing to this in industry practice is the <strong>Architecture Decision Record</strong> (Michael Nygard, 2011; the MADR template). ADRs record a decision, its context and its status, and they are typically markdown in a repo. What this adds, and what ADRs conventionally lack, is three things worth naming: a <strong>type</strong> that makes a scopeless verdict unwritable, a <strong>collector</strong> that forbids two live answers to one question, and a <strong>retrieval test</strong> that fails at write time when a record cannot be found. Those are the parts that were bought with real mistakes.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The audit, measured</h2><div class="rule"></div>
+  <pre><span class="dim">$ audit across both stores — 35 claims</span>
+
+1. evidence paths that do not resolve      <span class="ok">0</span>
+2. tools named in route: that do not exist <span class="bad">2</span>  <span class="dim">(both false positives — the checker only looks in tools/)</span>
+3. [[wiki-links]] to nonexistent claims    <span class="bad">1</span>  <span class="dim">sam-environment → [[feedback_memory_is_not_capability]]</span>
+4. claims older than 30 days               <span class="ok">0</span>  <span class="dim">(oldest is 7d — the corpus is one week old)</span>
+5. portability
+     .pre-commit-config.yaml               <span class="bad">NO</span>
+     Makefile / justfile                   <span class="bad">NO</span>
+     .github/workflows                     <span class="bad">NO</span>
+     in-repo .claude/settings.json         <span class="bad">NO</span>  <span class="dim">all enforcement in ~/.claude, one machine</span>
+     media-tools remote                    <span class="ok">git@github.com:blessdog/media-tools.git</span>
+     knowledge repo remote                 <span class="bad">NONE</span>
+6. claims carrying a schema version        <span class="bad">0 of 35</span>
+7. claims recording the verifying commit   <span class="bad">0 of 35</span>
+8. open bookmarks with a review-by date    <span class="bad">0 of 4</span>
+
+<span class="dim">$ git ls-files -s tools/check-knowledge.py</span>
+120000 3a649bf …  tools/check-knowledge.py
+       <span class="bad">→ /Users/SSDrive/.claude/knowledge/bin/check-knowledge.py</span>
+</pre>
+  <div class="col">
+    <p>That last line is the sharpest one. Five tools are committed to <code>media-tools</code> as symlinks whose recorded target is an absolute path containing <code>SSDrive</code>. On the Mac Mini, whose user is <code>homer</code>, every one of them is a dead link. The repo has a remote and is pushed; the thing it points at is not.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Findings</h2><div class="rule"></div>
+
+  <div class="finding crit">
+    <div class="fhead"><span class="fid">F1</span><span class="fname">Every invariant is enforced by one machine's config</span><span class="sev crit">Critical</span></div>
+    <p>All four gates — type check, retrieval test, session injection, stagnation — live in <code>~/.claude/settings.json</code> and <code>~/.claude/hooks/</code>. None is in any repository. A clone on another machine, a git worktree used by a subagent, a reinstall, or a second person gets a project with all the discipline stripped out and no signal that it is missing. The rules survive only as prose inside the files they were supposed to govern.</p>
+    <span class="handle"><b>Search handles:</b> “works on my machine” · <b>hermetic build</b> · <b>pre-commit framework</b> (pre-commit.com) · <b>CI as the source of truth</b> · <b>configuration as code</b> <span>— the enterprise rule is that a check a human can skip is a check that is not running.</span></span>
+  </div>
+
+  <div class="finding crit">
+    <div class="fhead"><span class="fid">F2</span><span class="fname">The universal store has no remote</span><span class="sev crit">Critical</span></div>
+    <p>Nine cross-project laws, each one paid for with a measured failure, exist in exactly one place on one disk. <code>media-tools</code> is pushed to GitHub; <code>~/.claude/knowledge</code> is a local git repo with no origin. This is the highest value-per-byte content in the whole system and it has the worst durability of anything in it.</p>
+    <span class="handle"><b>Search handles:</b> <b>single point of failure</b> · <b>3-2-1 backup rule</b> · <b>offsite replication</b> · <b>RPO</b> (recovery point objective) <span>— and note the store is small text, so the cost of fixing this is one private repo.</span></span>
+  </div>
+
+  <div class="finding high">
+    <div class="fhead"><span class="fid">F3</span><span class="fname">No schema version, so a field change breaks every existing store</span><span class="sev high">High</span></div>
+    <p>Adding <code>asked-as</code> as a required field today invalidated all nineteen existing claims at once, and the repair was a throwaway script written in the moment. The next required field will do the same, and by then there will be stores in several projects, some not opened for months. There is no way for a tool to know which shape a file is written in.</p>
+    <span class="handle"><b>Search handles:</b> <b>schema evolution</b> · <b>migrations</b> (Flyway, Alembic) · <b>expand–contract / parallel change</b> · <b>tolerant reader</b> <span>— stamp <code>schema: N</code>, ship a migration per bump, and let the checker upgrade in place.</span></span>
+  </div>
+
+  <div class="finding high">
+    <div class="fhead"><span class="fid">F4</span><span class="fname">The relevance test is circular and binary</span><span class="sev high">High</span></div>
+    <p>Findability is asserted against <code>asked-as</code> — questions written by the same author, at the same moment, in the same frame of mind as the claim. That is the vocabulary problem measured against itself. It catches gross failure (it caught 44 of 44) and cannot catch the case that matters most: a question phrased six weeks later by someone who has forgotten the file exists. There are also no <strong>negative</strong> judgements — nothing asserts that a query must <em>not</em> return a particular claim — and the metric is binary recall@3, which cannot tell rank 1 from rank 3.</p>
+    <span class="handle"><b>Search handles:</b> <b>qrels / relevance judgments</b> · <b>held-out evaluation</b> · <b>MRR</b> and <b>nDCG</b> · <b>negative judgments</b> · <b>query log mining</b> <span>— the durable fix is real queries from real sessions, not more authored ones.</span></span>
+  </div>
+
+  <div class="finding high">
+    <div class="fhead"><span class="fid">F5</span><span class="fname">No telemetry: dead claims and zero-result queries are invisible</span><span class="sev high">High</span></div>
+    <p>Nothing records what was searched for or what came back. So there is no way to answer the two questions that actually drive maintenance: <em>which claims has nobody ever retrieved</em> (candidates for deletion or rewording) and <em>which queries returned nothing useful</em> (missing claims, or a wording gap). Without it the store can only grow, and growth without pruning is how the old markdown files failed.</p>
+    <span class="handle"><b>Search handles:</b> <b>query log analysis</b> · <b>zero-result rate</b> · <b>dead code detection</b> applied to docs · <b>usage-driven deprecation</b> <span>— append one JSONL line per query; that is the whole implementation.</span></span>
+  </div>
+
+  <div class="finding med">
+    <div class="fhead"><span class="fid">F6</span><span class="fname">No freshness policy — nothing ever expires or gets re-reviewed</span><span class="sev med">Medium</span></div>
+    <p>Every claim carries <code>verified-on</code> and nothing reads it. The corpus is one week old so nothing is stale yet, which is exactly when the policy is cheap to install. A verdict about a tool's behaviour is a claim about a version of that tool; six months on it is a guess wearing a measurement's clothes.</p>
+    <span class="handle"><b>Search handles:</b> <b>doc rot</b> · <b>TTL / review-by date</b> · <b>freshness SLO</b> · <b>CODEOWNERS</b> · <b>Google's “documentation freshness” practice</b> <span>— different kinds want different lifetimes: a law is timeless, a verdict about a dependency is not.</span></span>
+  </div>
+
+  <div class="finding med">
+    <div class="fhead"><span class="fid">F7</span><span class="fname">Referential integrity is partial</span><span class="sev med">Medium</span></div>
+    <p>Evidence paths all resolve today, but nothing checks them. One <code>[[wiki-link]]</code> already points at a memory file rather than a claim, and the <code>route:</code> field names tools in prose that nothing verifies exist. Each of these is a link that will rot silently the first time a file is renamed.</p>
+    <span class="handle"><b>Search handles:</b> <b>referential integrity</b> · <b>link checker</b> · <b>foreign key constraint</b> <span>— <code>check-routing.py</code> already proves the pattern for one config; generalise it to every reference a claim makes.</span></span>
+  </div>
+
+  <div class="finding med">
+    <div class="fhead"><span class="fid">F8</span><span class="fname">No provenance: a verdict does not record the state it was measured in</span><span class="sev med">Medium</span></div>
+    <p>A claim says <em>16.28 versus 16.35</em> but not which commit produced those numbers. To reproduce or challenge a verdict you have to guess at the tree state from the date. One field — the SHA at verification — turns every claim into something a future session can check out and re-run.</p>
+    <span class="handle"><b>Search handles:</b> <b>immutable audit trail</b> · <b>provenance</b> · <b>reproducible builds</b> · <b>ADR context section</b></span>
+  </div>
+
+  <div class="finding med">
+    <div class="fhead"><span class="fid">F9</span><span class="fname">A hand-rolled YAML parser that fails silently</span><span class="sev med">Medium</span></div>
+    <p>The frontmatter parser accepts a deliberately small subset and <strong>skips lines it does not recognise</strong>. That was the right call for a git-hook dependency, but silent skipping is the wrong failure mode: a claim written with valid YAML the parser does not implement loses a field with no error. Parse-don't-validate means unrecognised input is an error, not a shrug.</p>
+    <span class="handle"><b>Search handles:</b> <b>parse, don't validate</b> (Alexis King) · <b>strict mode</b> · <b>fail fast</b> · <b>Postel's law considered harmful</b></span>
+  </div>
+
+  <div class="finding med">
+    <div class="fhead"><span class="fid">F10</span><span class="fname">Bookmarks accumulate with no triage pressure</span><span class="sev med">Medium</span></div>
+    <p>Four open items, none with a review date or an owner. Bookmarks were built precisely because deferrals get lost — but a bookmark list nobody prunes becomes the same backlog of good intentions in a new file format. Four is fine; forty is a graveyard, and nothing currently distinguishes the two.</p>
+    <span class="handle"><b>Search handles:</b> <b>WIP limits</b> · <b>stale issue triage</b> · <b>backlog hygiene</b> · <b>bug bankruptcy</b></span>
+  </div>
+</section>
+
+<section>
+  <h2>Plan</h2><div class="rule"></div>
+
+  <div class="tier">
+    <p class="tlabel">Tier 1 — do first</p>
+    <h3>Make it survive leaving this machine</h3>
+    <p class="why">F1, F2. Nothing else matters if the system evaporates on a clone. Small, mechanical, high certainty.</p>
+    <ol class="steps">
+      <li><strong>Vendor the tools into the repo</strong> and delete the absolute symlinks. <code>media-tools/tools/</code> gets real files or a relative link into a checked-in <code>knowledge-bin/</code>; the username stops appearing in git objects.</li>
+      <li><strong>Add <code>.claude/settings.json</code> to each project</strong> with the four hooks, pointing at repo-relative paths. Project settings merge over user settings, so the machine keeps working and a clone inherits the gates.</li>
+      <li><strong>One entry point:</strong> <code>make check</code> runs type-check, retrieval, routing and the gate's own test suite. A human, a hook and CI all call the same target, so there is exactly one definition of “passing”.</li>
+      <li><strong>Push <code>~/.claude/knowledge</code> to a private remote,</strong> and add a pre-push hook that runs <code>make check</code>.</li>
+      <li><strong>A GitHub Action</strong> running <code>make check</code> on push. This is the part that makes the invariants real rather than customary.</li>
+    </ol>
+  </div>
+
+  <div class="tier">
+    <p class="tlabel">Tier 2 — next</p>
+    <h3>Make the store defensible over months, not days</h3>
+    <p class="why">F3, F6, F7, F8. All cheap now, all expensive once several projects have stores.</p>
+    <ol class="steps">
+      <li><strong><code>schema: 1</code> on every claim,</strong> plus <code>knowledge-migrate.py</code> that upgrades a store in place and refuses to read a version it does not know. Install it <em>before</em> the next required field, not after.</li>
+      <li><strong>Referential integrity in the type checker:</strong> evidence paths must exist, <code>[[links]]</code> must resolve to a claim, tools named in <code>route:</code> must be findable. Turn the one broken wiki-link into a failing test today.</li>
+      <li><strong><code>review-by</code> derived per kind:</strong> a law never expires, a verdict about a dependency expires in 90 days, an open bookmark nags at 30. A <code>--stale</code> report, surfaced in the generated STATE.md.</li>
+      <li><strong>Stamp the verifying commit</strong> into every new claim automatically, so a verdict can be checked out and re-run.</li>
+    </ol>
+  </div>
+
+  <div class="tier">
+    <p class="tlabel">Tier 3 — once there is usage to learn from</p>
+    <h3>Let real queries drive relevance</h3>
+    <p class="why">F4, F5, F10. These need data the system has not produced yet, which is the honest reason to sequence them last rather than a reason to skip them.</p>
+    <ol class="steps">
+      <li><strong>Log every query</strong> as one JSONL line — query, top three, scores, whether anything scored above a floor. This is the input for everything else here.</li>
+      <li><strong>Two reports from that log:</strong> zero-result queries (a missing claim, or a wording gap) and never-retrieved claims (delete, merge, or reword the <code>asked-as</code>).</li>
+      <li><strong>Upgrade the eval</strong> from binary recall@3 to MRR, and add negative judgements so “this query must NOT return X” is testable — the sibling-confusion failure that started all of this is exactly a negative-judgement bug.</li>
+      <li><strong>Triage pressure on bookmarks:</strong> an owner and a review date; the STATE.md report names anything past it.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>What not to build</h2><div class="rule"></div>
+  <div class="note dont">
+    <span class="lbl">Pressure-testing the obvious upgrades</span>
+    <p><strong>Not embeddings, not yet.</strong> The corpus is 35 claims. Dense retrieval earns its keep on vocabulary mismatch at scale; at this size the BM25 scores are already separated by a wide margin and <code>asked-as</code> covers the mismatch directly and legibly. Adding a model here buys a dependency, a cache and an opaque ranking, in exchange for a problem that is currently measured at zero failures. Revisit at a few hundred claims, or the first time the query log shows real zero-result queries.</p>
+    <p><strong>Not a database.</strong> Files in git give diffs, review, blame, offline access and free history. A database gives none of those and would need all of them rebuilt.</p>
+    <p><strong>Not a web UI.</strong> The consumers are a terminal and an agent. The SessionStart injection is already the interface, and it is pushed rather than pulled — which is the property that made it work.</p>
+  </div>
+  <div class="col">
+    <p>The general shape of the argument: every one of those three is a real technique that solves a real problem, and none of the problems is currently measured as present. The discipline the store itself enforces — build the null before believing the number — applies to its own roadmap.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Audit run 2026-08-20 against <code>media-tools@af4f4db</code> and <code>~/.claude/knowledge@fba1afb</code>. Every figure quoted here came from a command, not an estimate; the two “tools that do not exist” in the raw output are false positives from a checker that only looks in <code>tools/</code>, and F7 exists partly to fix that checker.</p>
+</footer>
+
+</div>

@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-20 19:04 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-20 19:17 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -25,7 +25,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 23 live claims: 23 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 25 live claims: 25 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -97,6 +97,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-20  6b6c765  regenerate STATE.md after the store split
 2026-08-20  af4f4db  move the cross-project laws out of this project's store
 2026-08-20  aade9e6  migrate STATE.md into the store: 896 hand-written lines -> 155 generated
 2026-08-20  63310ba  every claim declares how it will be searched for; 48 questions, 0 unfindable
@@ -108,13 +109,17 @@ DELIVERABLES
 2026-08-20  85067f0  clean-plate invented orange autumn leaves where a pine was; donor scope fixed
 2026-08-20  b171157  13 summit polys outlived their own revert, in the file the builder actually reads
 2026-08-20  a2d817f  the store now gates the build: a retired technique is a failed run, not a note
-2026-08-20  c45c664  regions.json classes are a tagged union now: the store can fail the build
 ```
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
+?? docs/reports/2026-08-20-hardening-the-knowledge-store.html
+?? docs/reports/2026-08-20-hardening-the-knowledge-store.url
+?? knowledge/verdict-foliage-pivot-and-stir.md
+?? knowledge/verdict-tier-1-hardening.md
+?? tools/knowledge-ask.py
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
