@@ -61,7 +61,17 @@ if [[ $stage == render || $stage == all ]]; then
       $relief > /dev/null
     ffmpeg -y -loglevel error -framerate 24 -i $d/%05d.png \
       -c:v libx264 -crf 16 -pix_fmt yuv420p $F/RISE-$z.mp4
-    print -u2 -- "   -> $F/RISE-$z.mp4"
+    # REAP THE FRAMES. A 1920x1080 PNG is ~3MB and a leg is 1200-1700 of them,
+    # so keeping them costs 4-8GB PER LEG. Measured 2026-08-21: this repo had
+    # reached 123GB, 67GB of it frame sequences, and Ryan had to clear space on
+    # the Mac by hand. Only after the mp4 exists and is non-empty; NO_REAP=1
+    # keeps them when you need to inspect individual frames.
+    if [[ -z $NO_REAP && -s $F/RISE-$z.mp4 ]]; then
+      rm -rf $d
+      print -u2 -- "   -> $F/RISE-$z.mp4  (frames reaped)"
+    else
+      print -u2 -- "   -> $F/RISE-$z.mp4"
+    fi
   done
 fi
 
