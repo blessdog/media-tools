@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 15:15 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 15:58 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -118,8 +118,10 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
-2026-08-21  2029f64  STATE.md regenerated after the disparity-spacing refutation
-2026-08-21  4488294  REFUTED by his eyes: evening out the parallax made a diorama -- the hyperbolic falloff IS perspective
+2026-08-21  c01c462  reap-frames: 67GB of the repo was PNG intermediates nobody had deleted after encoding
+2026-08-21  6f08fae  PLAN.md: depth is settled and was the plan's biggest omission; the water count was wrong and is corrected
+2026-08-21  c0a6d30  STATE.md regenerated after the disparity-spacing refutation
+2026-08-21  94aebe0  REFUTED by his eyes: evening out the parallax made a diorama -- the hyperbolic falloff IS perspective
 2026-08-21  0afa6c3  --z-space disparity: even depth steps gave 12.3:1 uneven SCALE steps, which is why the mountain leapt and the background sat still
 2026-08-21  2f3d517  THE RISE assembled: 2:53 of the whole scroll, bottom to top, with the breath carrying the depth
 2026-08-21  d85b9b8  STATE.md regenerated after THE RISE v2 legs rendered with the breath and relief
@@ -128,17 +130,23 @@ DELIVERABLES
 2026-08-21  f0ba647  claim: light parallax is z 0.11, and CONTINUOUS -- the law had no number, which is why it did not stop me
 2026-08-21  11d082b  LAW: depth may resize, never deform -- three techniques rejected in one afternoon for the same reason
 2026-08-21  ddad17f  REFUTED: translation parallax on a plane stack cut from one painting -- and the cap made it worse, not better
-2026-08-21  f5121c8  --truck-max: the truck must SATURATE, because a rate difference has no equilibrium
-2026-08-21  ab5a487  render-parallax --truck: the plane stack was contributing NOTHING to a traverse, proven by flattening it
 ```
 
 ### ⚠ UNPUSHED
 
-**14 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**2 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
 ```
+
+### Uncommitted
+
+```
+ M jobs/wang-meng/STATE.md
+```
+
+*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
