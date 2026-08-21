@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-20 18:40 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-20 18:42 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -99,6 +99,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-20  aade9e6  migrate STATE.md into the store: 896 hand-written lines -> 155 generated
 2026-08-20  63310ba  every claim declares how it will be searched for; 48 questions, 0 unfindable
 2026-08-20  dce64cb  hinge each leaf spray where it joins its twig, not at the foot of its own mass
 2026-08-20  e88ebfb  rebuild all four zones on the fixed hinge at 6 degrees, not 15
@@ -110,47 +111,7 @@ DELIVERABLES
 2026-08-20  a2d817f  the store now gates the build: a retired technique is a failed run, not a note
 2026-08-20  c45c664  regions.json classes are a tagged union now: the store can fail the build
 2026-08-20  a7c1471  a type system and a collector for the knowledge that keeps getting lost
-2026-08-20  0d060de  name the technique before you pick the tool: fix the routing table that handed me the hammer
 ```
-
-### Uncommitted
-
-```
- M jobs/wang-meng/STATE.md
- M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living/built.json
- M jobs/wang-meng/journey/z4w/living-work/s-left-clifftop-pine/drawings/cycle.json
- M jobs/wang-meng/journey/z4w/living-work/s-left-pines-z2/drawings/cycle.json
- M jobs/wang-meng/journey/z4w/living-work/s-right-rust-tree/drawings/cycle.json
- M jobs/wang-meng/journey/z4w/living/built.json
- M jobs/wang-meng/journey/z5w/living-work/s-right-rust-tree/drawings/cycle.json
- M jobs/wang-meng/journey/z5w/living/built.json
- M jobs/wang-meng/journey/z6w/living-work/s-right-rust-tree/drawings/cycle.json
- M jobs/wang-meng/journey/z6w/living/built.json
- M jobs/wang-meng/living/build-zone-living.py
- M jobs/wang-meng/living/living-z3w.json
- M jobs/wang-meng/living/living-z4w.json
- M jobs/wang-meng/living/living-z5w.json
- M jobs/wang-meng/living/living-z6w.json
- D knowledge/hinge-rest-is-a-noop.md
-?? docs/journal/2026-08-20-retired-state-md.md
-?? knowledge/archive/hinge-rest-is-a-noop.md
-?? knowledge/depth-is-authored.md
-?? knowledge/grading-is-not-geometry.md
-?? knowledge/naming-a-substance-requests-footage.md
-?? knowledge/null-before-the-metric.md
-?? knowledge/plan-planes-at-shot-scale.md
-?? knowledge/rest-is-a-noop.md
-?? knowledge/sam-click-trunks-not-canopies.md
-?? knowledge/share-your-ground.md
-?? knowledge/status.sh
-?? knowledge/two-renderers-one-data-source.md
-?? tools/state-report.py
-```
-
-*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
