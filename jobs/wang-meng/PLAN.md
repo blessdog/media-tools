@@ -37,7 +37,39 @@ Every benchmark below is a thing that can be looked at or counted, not a
 feeling. "Pass" means Ryan has seen it and said so, or a number is on the
 board.
 
-### Phase 0 — THE RISE v1 · **in flight, 2026-08-21**
+### Phase 0 — THE RISE · **DONE 2026-08-21**
+
+`film/THE-RISE.mp4`, 172.96s / 4151 frames / 1920×1080, shipped via
+`~/Desktop/WANG-MENG-LATEST.mp4`. The film exists.
+
+### Phase 0b — Depth · **SETTLED 2026-08-21**
+
+Not in the original plan, which was the plan's biggest omission — Ryan:
+*"I'm reading the plan and I see nothing about parallax. I really want the 2.5D."*
+
+Then the finding that mattered: **the plane stack was contributing nothing.**
+Rendering a traverse with all 13 depths collapsed onto one changed **0 of
+2,073,600 pixels**. Every "parallax" shot for weeks was a pan.
+
+Four techniques tried, one survives:
+
+| technique | changes | verdict |
+|---|---|---|
+| multiplane truck | where things are, permanently | refuted |
+| sheet warp | the shape of the brushwork | rejected |
+| disparity spacing | evens the falloff | refuted — makes a diorama |
+| **breath (z, differential scale)** | how big things are, returns to 0 | **approved** |
+
+Law: depth may resize, never deform. Setting: cosine breath, peak `z` 0.18,
+period clamped to the leg, every leg starting and ending at rest.
+
+**Still open here** — two verdicts and one untried option:
+- does relief read as surface or bulge on the z1 cliff walls?
+- does 0.18 hold across the 70s leg the way it did across 10?
+- tilt at 1×, which the kit records as never fairly tested (rejected at 4×
+  exaggeration, before `--plane-fit` existed, and never dialled back).
+
+### ~~Phase 0 — THE RISE v1~~ (superseded by the above)
 
 The first assembly. Everything currently animated, one continuous pass,
 bottom to top, with the camera moving toward motion and nothing hidden.
@@ -55,23 +87,25 @@ oversight, it is the report.
 
 ### Phase 1 — Close the water gaps · **hours**
 
-Six water regions **already have finished 36-frame cycles on disk** and are
-invisible to the film. They live in `living/regions.json` as boxes; the
-builder reads `living/living-polys.json`, which takes polygons. That is the
-entire bug.
+**CORRECTED 2026-08-21 after opening the mask overlays.** It is not six, and
+they cannot simply be switched on. The cycles on disk feed `render-living`,
+the master-space 2D renderer; the film's legs use `render-parallax` with the
+per-zone plane stacks, which builds its own cycles from polygons in
+`living-polys.json`. So these regions need **polygons authored by eye**, the
+same loop the 31 stations used — real work, not a config edit.
 
-| Region | State |
+| Region | Mask verdict (blue = what would move) |
 |---|---|
-| `w-river-entry` | cycle rendered, not registered |
-| `w-river-foreground` | cycle rendered, not registered |
-| `w-bridge-rapids` | cycle rendered, not registered |
-| `w-upper-stream` | cycle rendered, not registered |
-| `f-left-tall-fall` | cycle rendered, not registered |
-| `f-station8-fall` | cycle rendered, not registered |
+| `w-river-entry` | **good** — on the open water |
+| `w-river-foreground` | **good** — on the water between the rocks |
+| `w-bridge-rapids` | **bad** — much of it is on the trestle bridge itself |
+| `f-station8-fall` | **usable** — tracks the column, spills onto rock |
+| `w-upper-stream` | **refuted** — confetti over rock; already recorded as "not a stream" |
+| `f-left-tall-fall` | **refuted** — speckle over canopy; already recorded as bare cliff |
 
 | | |
 |---|---|
-| Benchmark | z1 `built.json` goes 18 → ~30 patches |
+| Benchmark | z1 `built.json` goes 18 → ~24 patches |
 | Benchmark | all six ids appear in `journey/*/living-masks/index.json` |
 | Benchmark | the opening shot of THE RISE has moving water in it — right now the river the film opens on is a still |
 | Risk | the two boxes refuted by eye (`f-left-tall-fall` is bare cliff; `w-upper-stream` is the same fall's lower half) must be re-cut from the corrected polygons, not from the old boxes |
