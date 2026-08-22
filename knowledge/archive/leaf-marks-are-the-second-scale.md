@@ -4,7 +4,7 @@ kind: verdict
 conflict-key: why-does-animated-foliage-read-as-a-blob
 status: superseded
 superseded-by: [rigid-cards-preserve-the-brushwork]
-retires:
+retires: --leaf-marks
   - --leaf-marks
   - --mark-swing
   - --mark-twinkle

@@ -2,7 +2,7 @@
 id: a-check-needs-a-dated-incident
 kind: law
 conflict-key: when-is-a-rule-worth-wiring-as-a-check
-status: live
+status: superseded
 supersedes: []
 verified-on: 2026-08-22
 asked-as:
@@ -12,6 +12,16 @@ asked-as:
   - should I add a rule about how sessions work
   - a process document says we should do X
 ---
+
+**RETIRED 2026-08-22, the same day, by [[checks-start-in-observation]].** What it
+got right stands: a rule with no evidence behind it cannot be evaluated, and
+artefact checks beat session restrictions. What it got WRONG is the gate it put
+in front of writing a check at all. Requiring an incident to exist FIRST means a
+check can only ever guard a failure already suffered, and it makes the evidence
+anecdotal — whatever anyone happens to remember. Ryan, 2026-08-22: *"instead of a
+hard rule, can we just run the checks? And then once it either validates or
+disproves, it can then litigate."* A check run in observation costs nothing and
+MANUFACTURES the incident record this claim demanded.
 
 > "Writing principles that are universal, like one task per session, which is so
 > vague, it is pointless." — Ryan, 2026-08-22, on a harness brief written by a

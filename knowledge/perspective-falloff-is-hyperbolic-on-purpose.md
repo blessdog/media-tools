@@ -48,5 +48,5 @@ mass put on a nearer card than it belongs on — and it is diagnosed by looking 
 which planes those shots use, never by changing the global spacing law. See
 [[plan-planes-at-shot-scale]].
 
-`--z-space disparity` remains in the tool so the refutation is reproducible. Do
-not make it the default.
+`--z-space disparity` is REFUTED and must never be the default; it remains in the
+tool only so the refutation stays reproducible.

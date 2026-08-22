@@ -8,7 +8,7 @@ scope: >
   any renderer whose scale law is z/(z-camZ); the measured 12.3:1 figure is z1's
   10 depth levels over z 1.00..3.70.
 supersedes: []
-retires: perspective-falloff-is-hyperbolic-on-purpose
+retires: --z-space disparity
 mechanism: >
   The hyperbolic scale response is not a defect to be corrected -- IT IS
   PERSPECTIVE. Evenly spaced physical planes genuinely do give a strong

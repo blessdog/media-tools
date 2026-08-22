@@ -4,7 +4,7 @@ kind: procedure
 conflict-key: which-renderer-for-a-camera-move
 status: superseded
 supersedes: []
-retires: depth-comes-from-the-breath
+retires: render-warp.py
 sibling: plan-planes-at-shot-scale
 applies-when: >
   choosing between render-parallax and render-warp for a segment. TRAVERSES --

@@ -8,7 +8,7 @@ scope: >
   (as opposed to cels painted separately). Measured 2026-08-21 on
   jobs/wang-meng/journey/z1, 13 planes, z 1.00..3.70, a 10s vertical rise.
 supersedes: []
-retires: truck-parallax-must-saturate
+retires: --truck-max
 verified-on: 2026-08-21
 evidence:
   - jobs/wang-meng/evidence/2026-08-21-AB-pan-vs-truck-0.25.mp4
