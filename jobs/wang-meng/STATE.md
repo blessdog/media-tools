@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-22 14:05 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-22 15:22 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -121,6 +121,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-22  7513661  STATE regenerated
 2026-08-22  e9e8e8d  STATE regenerated after the retires: field fix
 2026-08-22  49f5ca7  STATE regenerated: checks-start-in-observation now the live answer on wiring a check
 2026-08-22  50c6da1  checks-start-in-observation supersedes the dated-incident law; and retires: now names the dead ROUTE, which makes check-supersedes actually work
@@ -132,12 +133,11 @@ DELIVERABLES
 2026-08-21  b0bfef4  canopy tearing: four fixes measured, all four refuted -- and the concat now clears its own 583MB of scaffolding
 2026-08-21  2377a62  STATE regenerated: 41 live claims, interior-disocclusion verdict landed
 2026-08-21  ed7090d  why sparse canopies tear and dense ones do not: interior disocclusion vs edge disocclusion
-2026-08-21  89da17f  leg z1 re-rendered with Ge Hong's fan in the living layer -- the first figure to reach the film
 ```
 
 ### ⚠ UNPUSHED
 
-**11 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**12 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -147,6 +147,7 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
+?? jobs/wang-meng/evidence/2026-08-22-gehong-rig-proposal.png
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
