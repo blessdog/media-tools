@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-22 12:06 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-22 12:22 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -120,6 +120,8 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-22  d2d2371  contact-sheet: tile N rendered loops into one sheet so the verdict is one look, not N
+2026-08-22  08e89dc  harness brief lands in the repo root: four phases, verification substrate first
 2026-08-21  b0bfef4  canopy tearing: four fixes measured, all four refuted -- and the concat now clears its own 583MB of scaffolding
 2026-08-21  2377a62  STATE regenerated: 41 live claims, interior-disocclusion verdict landed
 2026-08-21  ed7090d  why sparse canopies tear and dense ones do not: interior disocclusion vs edge disocclusion
@@ -130,13 +132,11 @@ DELIVERABLES
 2026-08-21  51d9052  swing-card: Ge Hong's fan is the first figure in this painting that moves
 2026-08-21  9e83221  STATE.md regenerated after reaping 55.8GB of frame intermediates
 2026-08-21  c01c462  reap-frames: 67GB of the repo was PNG intermediates nobody had deleted after encoding
-2026-08-21  6f08fae  PLAN.md: depth is settled and was the plan's biggest omission; the water count was wrong and is corrected
-2026-08-21  c0a6d30  STATE.md regenerated after the disparity-spacing refutation
 ```
 
 ### ⚠ UNPUSHED
 
-**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**5 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -146,7 +146,6 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
-?? HARNESS-BRIEF.md
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
