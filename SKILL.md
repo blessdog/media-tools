@@ -58,6 +58,7 @@ the same command that creates the file.
 | `probe-parallax.py` | image + depth → does this move carry depth? measures against a built-in null |
 | `probe-zoom.py` | rendered frames → is this move a ZOOM or a FLIGHT? fits one global scale and reports the leftover, against a flat-still control |
 | `probe-planes.py` | plane stack → is it OBJECT-COMPLETE? finds painted things straddling two depths |
+| `contact-sheet.py` | N rendered loops → ONE tiled sheet with labels; the human gives one verdict instead of N |
 | `complete-planes.py` | plane stack with gaps → every pixel claimed, by nearest-plane proximity |
 | `inpaint-planes.py` | plane stack → each plane painted on BEHIND its occluders, so a dolly opens no holes |
 | `pin-objects.py` | plane stack + object masks → no painted object straddles two depths |
@@ -87,6 +88,7 @@ matches a keyword — that is exactly how 2026-08-20 happened.
 
 | the situation | the route |
 |---|---|
+| "which of these candidates is right?" — a parameter sweep, two rigs, an effect vs its null | `contact-sheet.py --cells ... --focus motion` — render every candidate FIRST, then tile them into one sheet and ask once. Showing them one at a time is how 2026-08-21 rendered eight canopy variants and put two on screen. Two candidates only, and wanting them full size? `ab-cycle.py` |
 | "the water should move" — ripples, a fall, a surface | `animate-strokes` — displaces the painter's own ink in place, and it loops. Never a video model |
 | "the leaves should stir" / "a limb, branch, rope or rail should swing" | `cut-stroke` → `clean-plate` → a hinge rig (`walk-figure --limbs` is the proven one). NOT `animate-strokes` — see the test below |
 | **the test that splits those two rows** | Does the thing UNCOVER GROUND when it moves, or does it have STRUCTURE THAT MUST STAY PUT? Either yes → cut-out card on a pivot. A displacement field cannot hold a trunk still while its leaves move, and it has no real background to reveal — `animate-strokes` fills holes with `cv2.INPAINT_TELEA`, the averaging inpainter `clean-plate` exists to replace. Both yeses were true of foliage and it took a human to notice (2026-08-20) |
