@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 17:45 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 18:07 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -88,7 +88,7 @@ OPEN — plans, NOT specs. proven: false. Do not build against these.
 
 ```
 LIVING LAYER — cycles registered per zone
-  z1     18 patches · 8 planes · 7 regions
+  z1     21 patches · 8 planes · 8 regions
   z3w    46 patches · 5 planes · 37 regions
   z4w    32 patches · 3 planes · 23 regions
   z5w    13 patches · 3 planes · 9 regions
@@ -119,6 +119,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  9d66db8  STATE.md regenerated mid z1 plane-stack rebuild
 2026-08-21  6117351  figure-motion: the gate now demands AUTHORED cards instead of refusing outright, and the fan is wired to reach the film
 2026-08-21  51d9052  swing-card: Ge Hong's fan is the first figure in this painting that moves
 2026-08-21  9e83221  STATE.md regenerated after reaping 55.8GB of frame intermediates
@@ -130,12 +131,11 @@ DELIVERABLES
 2026-08-21  2f3d517  THE RISE assembled: 2:53 of the whole scroll, bottom to top, with the breath carrying the depth
 2026-08-21  d85b9b8  STATE.md regenerated after THE RISE v2 legs rendered with the breath and relief
 2026-08-21  d1ce6fa  supersede two-renderers-one-data-source: depth is a property of the PATH, not a renderer choice
-2026-08-21  e959788  THE RISE v2: the breath carries the depth, continuously, and --relief finally gets passed
 ```
 
 ### ⚠ UNPUSHED
 
-**2 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -145,9 +145,22 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
+ M jobs/wang-meng/journey/build-zone.sh
+ M jobs/wang-meng/journey/z1/evidence-relief-maps.png
  M jobs/wang-meng/journey/z1/layers-cut/layers.json
+ M jobs/wang-meng/journey/z1/layers-filled/layers.json
+ M jobs/wang-meng/journey/z1/layers-pinned/layers.json
+ M jobs/wang-meng/journey/z1/layers-sealed/layers.json
+ M jobs/wang-meng/journey/z1/living-masks/index.json
+ M jobs/wang-meng/journey/z1/living/built.json
+ M jobs/wang-meng/journey/z1/objects/regions.json
+ M jobs/wang-meng/living/evidence-masks-z1.png
+ M jobs/wang-meng/living/living-z1.json
  M jobs/wang-meng/motion/mask/gehong/layers.json
+ M tools/swing-card.py
+?? jobs/wang-meng/evidence/2026-08-21-crownpines-invariant-fail.png
 ?? jobs/wang-meng/journey/z1/layers-heal/
+?? jobs/wang-meng/journey/z1/living-work/g-ge-fan/
 ?? jobs/wang-meng/journey/z1/points-heal.json
 ```
 

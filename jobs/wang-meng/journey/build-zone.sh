@@ -42,7 +42,35 @@ print(" ".join(bad))
 PY
 )
   if [[ -z "$BAD" ]]; then echo "    invariant clean" >&2; break; fi
-  if [[ $attempt == 2 ]]; then echo "INVARIANT STILL FAILING after heal: $BAD" >&2; exit 3; fi
+  if [[ $attempt == 2 ]]; then
+    echo "INVARIANT STILL FAILING after heal: $BAD" >&2
+    # A plane whose mask does not contain its own prompt point is NOT that
+    # plane, so it must never be composited. But halting the whole zone over
+    # one of thirteen is the wrong trade when the survivor is a distant canopy
+    # carrying no animation. DROP_BAD=1 removes the failing planes and says so;
+    # the default still refuses, because dropping silently is how a stack
+    # quietly loses depth nobody notices.
+    # Measured 2026-08-21 on right-bluff-crown-pines: with the auto-grow SAM
+    # returns 575,615px (the entire right side of the plate); with --max-grow 0
+    # it returns a 226x35 sliver 160px ABOVE the point. Neither is a pine
+    # cluster -- see knowledge/no-whole-tree-to-segment.md, there is no
+    # whole-tree SHAPE in this painting to find.
+    [[ -z $DROP_BAD ]] && exit 3
+    echo "    DROP_BAD=1: removing $BAD from the stack" >&2
+    python3 - "$D" ${=BAD} <<'PYDROP'
+import json, sys
+d, bad = sys.argv[1], sys.argv[2:]
+f = f"{d}/layers-cut/layers.json"
+m = json.loads(open(f).read())
+kept = [p for p in m["planeList"] if p["name"] not in bad]
+m["droppedForInvariant"] = bad
+m["planeList"] = kept
+m["planes"] = len(kept)
+open(f, "w").write(json.dumps(m, indent=1))
+print(f"    stack is now {len(kept)} planes (was {len(kept)+len(bad)})", file=sys.stderr)
+PYDROP
+    break
+  fi
   echo "    healing off-point masks: $BAD" >&2
   python3 - "$D" ${=BAD} <<'PY'
 import json, sys

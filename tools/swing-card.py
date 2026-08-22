@@ -72,7 +72,7 @@ p.add_argument('--on', type=int, default=2, help='hold each drawing this many fr
 p.add_argument('--feather', type=int, default=2)
 p.add_argument('--prefix', default='',
                help="filename prefix for the drawings; the living-layer builder "
-                    "reads dr-%03d.png, so pass --prefix dr- when feeding it")
+                    "reads dr-%%03d.png, so pass --prefix dr- when feeding it")
 p.add_argument('--out', required=True)
 a = p.parse_args()
 
