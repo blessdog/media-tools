@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-22 12:22 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-22 13:17 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,11 +28,12 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 41 live claims: 41 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 42 live claims: 42 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
   · camera-light-parallax: Don't forget it's not just about tree animation, we're still doing parallax
+  · checks-start-in-observation: Instead of a hard rule, can we just run the checks? And then once it either
   · depth-may-resize-never-deform: Depth may change how big things are relative to each other. It may never
   · grading-is-not-geometry: A card with a soft edge is still a card.
   · invented-ink-is-allowed-in-the-painters-hand: Ryan, 2026-08-21, asked whether the servant boy could wave when both his hands
@@ -120,6 +121,10 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-22  50c6da1  checks-start-in-observation supersedes the dated-incident law; and retires: now names the dead ROUTE, which makes check-supersedes actually work
+2026-08-22  5e1fa85  law: a check earns its wiring only with a dated incident from this repo
+2026-08-22  bfa6867  drop HARNESS-BRIEF.md: a generic harness doc is an instruction to future sessions, and this one was written without seeing the repo
+2026-08-22  85b99ff  STATE regenerated after contact-sheet landed
 2026-08-22  d2d2371  contact-sheet: tile N rendered loops into one sheet so the verdict is one look, not N
 2026-08-22  08e89dc  harness brief lands in the repo root: four phases, verification substrate first
 2026-08-21  b0bfef4  canopy tearing: four fixes measured, all four refuted -- and the concat now clears its own 583MB of scaffolding
@@ -128,15 +133,11 @@ DELIVERABLES
 2026-08-21  89da17f  leg z1 re-rendered with Ge Hong's fan in the living layer -- the first figure to reach the film
 2026-08-21  44c41a5  z1 plane stack rebuilt from points.json -- and a recipe turns out not to be a backup
 2026-08-21  9d66db8  STATE.md regenerated mid z1 plane-stack rebuild
-2026-08-21  6117351  figure-motion: the gate now demands AUTHORED cards instead of refusing outright, and the fan is wired to reach the film
-2026-08-21  51d9052  swing-card: Ge Hong's fan is the first figure in this painting that moves
-2026-08-21  9e83221  STATE.md regenerated after reaping 55.8GB of frame intermediates
-2026-08-21  c01c462  reap-frames: 67GB of the repo was PNG intermediates nobody had deleted after encoding
 ```
 
 ### ⚠ UNPUSHED
 
-**5 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**9 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
