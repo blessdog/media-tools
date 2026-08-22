@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 18:08 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 18:37 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 40 live claims: 40 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 41 live claims: 41 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -62,6 +62,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · depth-is-authored      Whole-painting depth on 葛稚川移居圖 and, by the same mechanism, any painting built on 散点透視 rath
   · gates-must-survive-a-clone Any repo whose correctness depends on hooks, checkers or generated files. Measured on medi
   · hinge-at-the-attachment Cut-out foliage cards in ink painting, where leaves are drawn as separate sprays hanging o
+  · interior-disocclusion-is-tearing hinge-foliage cut-out cards over a clean plate, on 葛稚川移居圖. Measured 2026-08-21 on z1's fou
   · leaf-travel-is-measured-on-screen Choosing the swing angle for cut-out foliage on 葛稚川移居圖. The GEOMETRY below is exact for th
   · light-parallax-is-011-and-continuous Camera paths over the wang-meng plane stacks, render-parallax --plane-fit --z-step 0.30. T
   · parallax-needs-differential-RATE-not-depth render-parallax.py with --plane-fit, on any plane stack, for any TRAVERSE (a camera move w
@@ -105,12 +106,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (19) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/RISE-z1.mp4
   jobs/wang-meng/film/THE-RISE.mp4
   jobs/wang-meng/film/RISE-z6w.mp4
   jobs/wang-meng/film/RISE-z5w.mp4
   jobs/wang-meng/film/RISE-z4w.mp4
   jobs/wang-meng/film/RISE-z3w.mp4
-  jobs/wang-meng/film/RISE-z1.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 ```
 
@@ -119,6 +120,8 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  ed7090d  why sparse canopies tear and dense ones do not: interior disocclusion vs edge disocclusion
+2026-08-21  89da17f  leg z1 re-rendered with Ge Hong's fan in the living layer -- the first figure to reach the film
 2026-08-21  44c41a5  z1 plane stack rebuilt from points.json -- and a recipe turns out not to be a backup
 2026-08-21  9d66db8  STATE.md regenerated mid z1 plane-stack rebuild
 2026-08-21  6117351  figure-motion: the gate now demands AUTHORED cards instead of refusing outright, and the fan is wired to reach the film
@@ -129,13 +132,11 @@ DELIVERABLES
 2026-08-21  c0a6d30  STATE.md regenerated after the disparity-spacing refutation
 2026-08-21  94aebe0  REFUTED by his eyes: evening out the parallax made a diorama -- the hyperbolic falloff IS perspective
 2026-08-21  0afa6c3  --z-space disparity: even depth steps gave 12.3:1 uneven SCALE steps, which is why the mountain leapt and the background sat still
-2026-08-21  2f3d517  THE RISE assembled: 2:53 of the whole scroll, bottom to top, with the breath carrying the depth
-2026-08-21  d85b9b8  STATE.md regenerated after THE RISE v2 legs rendered with the breath and relief
 ```
 
 ### ⚠ UNPUSHED
 
-**4 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -144,20 +145,7 @@ git push origin main
 ### Uncommitted
 
 ```
- M jobs/wang-meng/journey/z1/evidence-relief-maps.png
- M jobs/wang-meng/journey/z1/layers-cut/layers.json
- M jobs/wang-meng/journey/z1/layers-filled/layers.json
- M jobs/wang-meng/journey/z1/layers-pinned/layers.json
- M jobs/wang-meng/journey/z1/layers-sealed/layers.json
- M jobs/wang-meng/journey/z1/living-masks/index.json
- M jobs/wang-meng/journey/z1/living/built.json
- M jobs/wang-meng/journey/z1/objects/regions.json
- M jobs/wang-meng/living/evidence-masks-z1.png
- M jobs/wang-meng/living/living-z1.json
- M jobs/wang-meng/motion/mask/gehong/layers.json
-?? jobs/wang-meng/journey/z1/layers-heal/
-?? jobs/wang-meng/journey/z1/living-work/g-ge-fan/
-?? jobs/wang-meng/journey/z1/points-heal.json
+ M jobs/wang-meng/STATE.md
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
