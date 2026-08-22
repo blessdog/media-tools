@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-22 16:28 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-22 17:04 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -121,6 +121,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-22  5a9358c  STATE regenerated
 2026-08-22  ee4d95d  Ge Hong's rig proposal: skirt is ONE cel, not three border strips
 2026-08-22  7513661  STATE regenerated
 2026-08-22  e9e8e8d  STATE regenerated after the retires: field fix
@@ -132,12 +133,11 @@ DELIVERABLES
 2026-08-22  d2d2371  contact-sheet: tile N rendered loops into one sheet so the verdict is one look, not N
 2026-08-22  08e89dc  harness brief lands in the repo root: four phases, verification substrate first
 2026-08-21  b0bfef4  canopy tearing: four fixes measured, all four refuted -- and the concat now clears its own 583MB of scaffolding
-2026-08-21  2377a62  STATE regenerated: 41 live claims, interior-disocclusion verdict landed
 ```
 
 ### ⚠ UNPUSHED
 
-**13 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**14 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
