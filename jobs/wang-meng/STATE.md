@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 18:37 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-22 12:06 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -106,8 +106,8 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (19) · 0 violation(s)
 
 DELIVERABLES
-  jobs/wang-meng/film/RISE-z1.mp4
   jobs/wang-meng/film/THE-RISE.mp4
+  jobs/wang-meng/film/RISE-z1.mp4
   jobs/wang-meng/film/RISE-z6w.mp4
   jobs/wang-meng/film/RISE-z5w.mp4
   jobs/wang-meng/film/RISE-z4w.mp4
@@ -120,6 +120,8 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  b0bfef4  canopy tearing: four fixes measured, all four refuted -- and the concat now clears its own 583MB of scaffolding
+2026-08-21  2377a62  STATE regenerated: 41 live claims, interior-disocclusion verdict landed
 2026-08-21  ed7090d  why sparse canopies tear and dense ones do not: interior disocclusion vs edge disocclusion
 2026-08-21  89da17f  leg z1 re-rendered with Ge Hong's fan in the living layer -- the first figure to reach the film
 2026-08-21  44c41a5  z1 plane stack rebuilt from points.json -- and a recipe turns out not to be a backup
@@ -130,13 +132,11 @@ DELIVERABLES
 2026-08-21  c01c462  reap-frames: 67GB of the repo was PNG intermediates nobody had deleted after encoding
 2026-08-21  6f08fae  PLAN.md: depth is settled and was the plan's biggest omission; the water count was wrong and is corrected
 2026-08-21  c0a6d30  STATE.md regenerated after the disparity-spacing refutation
-2026-08-21  94aebe0  REFUTED by his eyes: evening out the parallax made a diorama -- the hyperbolic falloff IS perspective
-2026-08-21  0afa6c3  --z-space disparity: even depth steps gave 12.3:1 uneven SCALE steps, which is why the mountain leapt and the background sat still
 ```
 
 ### ⚠ UNPUSHED
 
-**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -146,6 +146,7 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
+?? HARNESS-BRIEF.md
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
