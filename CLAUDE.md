@@ -8,7 +8,18 @@ Desktop", not a symlink to go find. His words, after repeating it for sessions:
 *"I'm not a machine, I need pixels in front of my eyes. So if you say, hey, take
 a look, put pixels up. Make that a rule. Make it more than a rule. Make it a
 law."* Note `Read`ing an image shows it to the MODEL, not to him — only `open`
-is showing. Enforced by `~/.claude/hooks/show-me-pixels-stop.sh`, which refuses
+is showing.
+
+AMENDED 2026-08-21: this is a rule about PRECISION, not frequency. Ryan, after a
+session that opened a picture for every intermediate: *"when there's something
+you need to show me, you can show me precisely instead of showing a path where
+to find it. Not like every single change needs to come before my eyes."* Name a
+visual and you still open it — but name fewer. Show at verdict points; a dead
+hypothesis is a sentence, not a contact sheet. **Probe renders go to the
+scratchpad and are deleted; only a visual a LIVE CLAIM cites, or one he ruled
+on, is written into the repo.** And any stage that writes video clears its own
+scaffolding — measured 2026-08-21, all of `evidence/` was 124MB while one
+concat left 583MB of intermediate mp4s. Enforced by `~/.claude/hooks/show-me-pixels-stop.sh`, which refuses
 to end a turn whose text names a visual that was never opened.
 
 ## MOTION BEFORE CAMERA (law, 2026-08-20 — Ryan: "Bring it to life. That is number one.")

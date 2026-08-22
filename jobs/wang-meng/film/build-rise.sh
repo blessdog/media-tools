@@ -93,6 +93,11 @@ if [[ $stage == concat || $stage == all ]]; then
     prev=$out; i=$((i+1))
   done
   ffmpeg -y -loglevel error -i $prev -c copy $F/THE-RISE.mp4
+  # THE CHAIN IS SCAFFOLDING. Four intermediate encodes of a 3-minute 1080p film
+  # is 583MB, measured 2026-08-21, and every one of them is THE-RISE minus a leg.
+  # reap-frames.sh cannot see them (they are mp4s, not frame dirs), so the stage
+  # that made them is the stage that must clear them.
+  rm -rf $tmp
   ln -sfn "$PWD/$F/THE-RISE.mp4" ~/Desktop/WANG-MENG-LATEST.mp4
   print -u2 -- "-> $F/THE-RISE.mp4  ($(ffprobe -v error -show_entries format=duration -of csv=p=0 $F/THE-RISE.mp4)s), Desktop symlink refreshed"
 fi

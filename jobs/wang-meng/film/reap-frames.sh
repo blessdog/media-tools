@@ -25,8 +25,18 @@ for arg in "$@"; do
 done
 
 total=0; kept=0
+# SCAFFOLDING DIRS carry no mp4 of their own and are never worth keeping: _x is
+# the concat chain, _ab-* are throwaway A/B probes. Named with a leading _ so
+# they are recognisable as intermediates rather than deliverables.
+for d in $F/frames/_*(/N); do
+  sz=$(du -sm "$d" 2>/dev/null | cut -f1)
+  total=$((total + sz))
+  if [[ -n $go ]]; then rm -rf "$d"; print -- "  REAPED  ${sz}MB  ${d:t}  (scaffolding)"
+  else print -- "  would reap  ${sz}MB  ${d:t}  (scaffolding, no mp4 of its own)"; fi
+done
 for d in $F/frames/*(/N); do
   n=${d:t}
+  [[ $n == _* ]] && continue
   [[ -n $only && $n != $only ]] && continue
   sz=$(du -sm "$d" 2>/dev/null | cut -f1)
   # the encoder names the mp4 for the dir: rise-z1 -> RISE-z1.mp4,

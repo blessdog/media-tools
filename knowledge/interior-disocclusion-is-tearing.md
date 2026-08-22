@@ -55,14 +55,24 @@ Both were arithmetically fine and aimed at the wrong quantity — see
 [[perspective-falloff-is-hyperbolic-on-purpose]] for the same failure shape on a
 different question.
 
-**The control.** Interior disocclusion scales with how far a card leaves its own
-footprint, so a low-density canopy needs a SMALLER swing than a dense one for the
-same apparent liveliness. Density is measurable before anything renders:
+**FOUR CONTROLS MEASURED 2026-08-21, ALL FOUR REFUTED.** The tearing is real and
+the edge/interior distinction above holds, but nothing tried so far removes it:
 
-    inked = (clean_plate.mean() - source.mean()) > 18
-    density = inked[moved].mean()
+| tried | reasoning | measured on s-great-trees-lower at the gust peak |
+|---|---|---|
+| **smaller swing** | less travel, less disocclusion | 6 deg tears 16.9% of the tree's ink; 2 deg still tears 8.2%. 3x less rotation buys half the tearing, and the curve saturates — the holes are already open at 1.6 deg. |
+| **`--ink-close` 3, 5, 8** | seal the lace so a card is opaque | 15.8 / 16.5 / 16.5%. And it destroys the decomposition: 7 cards -> 3 -> 1. On a sparse canopy the gaps WITHIN a spray and the gaps BETWEEN sprays are the same size, so one close does both jobs. |
+| **`--whole-mask` (opaque cel)** | a real cel is opaque inside its outline, so it carries its own negative space | **17.3% — worse than `--from-ink`**, and still 90% interior. |
+| **tone-matching the plate to the silk** | the exposed ground reads as a different colour | the systematic cast is only 5.6 levels and the per-pixel scatter is 13, so a global shift cannot reduce it; correcting the measured cast OVERSHOT to -8.1. Confined correctly (0 px outside the vacated footprint changed) — it just does not help. |
 
-Below roughly 0.70 the holes open in the interior. That is a per-region property
-of the leaf grammar the painter used, not a global setting — the same reason
-branch radius had to become per-tree
-([[branch-radius-scales-with-the-tree]]).
+The null holds throughout: at swing 0, **0 px** of ink goes bare, so this is
+caused by movement and not by orphan ink the decomposition failed to carry.
+
+**What is left standing.** Comparing the two plates side by side
+(`evidence/2026-08-21-the-plate-is-the-wrong-colour.png`), the pine's clean plate
+is genuinely bare silk while the great trees' plate still holds a ghost of
+canopy structure. That points at the PLATE'S CONTENT rather than its colour or
+the card geometry — untested. Density remains the best available PREDICTOR of
+which canopies will tear; it is not yet established as the cause, and the
+`density < 0.70 -> use a smaller swing` rule stated here on the morning of
+2026-08-21 is withdrawn as measured-false.
