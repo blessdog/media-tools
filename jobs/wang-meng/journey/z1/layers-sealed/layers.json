@@ -7,13 +7,13 @@
  ],
  "model": "facebook/sam-vit-huge",
  "device": "mps",
- "planes": 13,
+ "planes": 12,
  "unclaimedFraction": 0.0,
  "overlay": "jobs/wang-meng/journey/z1/layers-cut/overlay.png",
  "feather": 2,
  "note": "sealed by nearest-plane proximity; coverage is total, so RENDER WITH --no-base \u2014 the backing plane is what made unclaimed ink render at the wrong depth.",
- "loadSeconds": 4.0,
- "inferSeconds": 72.1,
+ "loadSeconds": 3.7,
+ "inferSeconds": 79.0,
  "planeList": [
   {
    "n": 1,
@@ -115,7 +115,7 @@
    ],
    "layer": "layers/902-gorge-wall-right.png",
    "sealedFrom": 263322,
-   "sealedTo": 636860
+   "sealedTo": 637030
   },
   {
    "n": 3,
@@ -283,57 +283,6 @@
    "sealedTo": 11828
   },
   {
-   "n": 6,
-   "id": 23,
-   "name": "right-bluff-crown-pines",
-   "depth": 12,
-   "point": [
-    1857,
-    657
-   ],
-   "window": 700,
-   "windowRequested": 700,
-   "grewTo": null,
-   "attempts": [
-    {
-     "window": 700,
-     "clipped": true,
-     "imageFraction": 0.0152,
-     "rejected": false
-    }
-   ],
-   "cropBox": [
-    1271,
-    307,
-    1971,
-    1007
-   ],
-   "pick": "whole",
-   "score": 0.6807,
-   "candidateAreas": [
-    1826,
-    20439,
-    80899
-   ],
-   "clippedByWindow": true,
-   "areaInWindow": 80997,
-   "windowFraction": 0.1653,
-   "areaFinal": 80997,
-   "bbox": [
-    1532,
-    626,
-    1968,
-    1007
-   ],
-   "offset": [
-    1680,
-    510
-   ],
-   "layer": "layers/1206-right-bluff-crown-pines.png",
-   "sealedFrom": 980,
-   "sealedTo": 13480
-  },
-  {
    "n": 7,
    "id": 30,
    "name": "pine-over-bridge",
@@ -456,34 +405,40 @@
     1821,
     1391
    ],
-   "window": 1495,
+   "window": 2704,
    "windowRequested": 1495,
-   "grewTo": null,
+   "grewTo": 2704,
    "attempts": [
     {
      "window": 1495,
      "clipped": true,
      "imageFraction": 0.194,
      "rejected": false
+    },
+    {
+     "window": 2704,
+     "clipped": false,
+     "imageFraction": 0.0988,
+     "rejected": false
     }
    ],
    "cropBox": [
-    476,
-    644,
+    0,
+    0,
     1971,
-    2139
+    2704
    ],
    "pick": "whole",
-   "score": 0.87,
+   "score": 0.9203,
    "candidateAreas": [
-    242207,
-    367793,
-    1035581
+    200426,
+    405771,
+    526536
    ],
-   "clippedByWindow": true,
-   "areaInWindow": 1034058,
-   "windowFraction": 0.4627,
-   "areaFinal": 1034058,
+   "clippedByWindow": false,
+   "areaInWindow": 526590,
+   "windowFraction": 0.0988,
+   "areaFinal": 95816,
    "bbox": [
     476,
     644,
@@ -494,9 +449,9 @@
     431,
     468
    ],
-   "layer": "layers/1509-right-hill-front-trees.png",
+   "layer": "layers/1502-right-hill-front-trees.png",
    "sealedFrom": 512780,
-   "sealedTo": 669316
+   "sealedTo": 673644
   },
   {
    "n": 10,
@@ -667,7 +622,7 @@
    ],
    "layer": "layers/1712-great-trees-knoll.png",
    "sealedFrom": 513079,
-   "sealedTo": 596123
+   "sealedTo": 605105
   },
   {
    "n": 13,
@@ -720,6 +675,9 @@
    "sealedFrom": 448965,
    "sealedTo": 534981
   }
+ ],
+ "droppedForInvariant": [
+  "right-bluff-crown-pines"
  ],
  "sealedFrom": "jobs/wang-meng/journey/z1/layers-cut"
 }

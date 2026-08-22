@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-21 18:07 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-21 18:08 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -119,6 +119,7 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-21  44c41a5  z1 plane stack rebuilt from points.json -- and a recipe turns out not to be a backup
 2026-08-21  9d66db8  STATE.md regenerated mid z1 plane-stack rebuild
 2026-08-21  6117351  figure-motion: the gate now demands AUTHORED cards instead of refusing outright, and the fan is wired to reach the film
 2026-08-21  51d9052  swing-card: Ge Hong's fan is the first figure in this painting that moves
@@ -130,12 +131,11 @@ DELIVERABLES
 2026-08-21  0afa6c3  --z-space disparity: even depth steps gave 12.3:1 uneven SCALE steps, which is why the mountain leapt and the background sat still
 2026-08-21  2f3d517  THE RISE assembled: 2:53 of the whole scroll, bottom to top, with the breath carrying the depth
 2026-08-21  d85b9b8  STATE.md regenerated after THE RISE v2 legs rendered with the breath and relief
-2026-08-21  d1ce6fa  supersede two-renderers-one-data-source: depth is a property of the PATH, not a renderer choice
 ```
 
 ### ⚠ UNPUSHED
 
-**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**4 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -144,8 +144,6 @@ git push origin main
 ### Uncommitted
 
 ```
- M jobs/wang-meng/STATE.md
- M jobs/wang-meng/journey/build-zone.sh
  M jobs/wang-meng/journey/z1/evidence-relief-maps.png
  M jobs/wang-meng/journey/z1/layers-cut/layers.json
  M jobs/wang-meng/journey/z1/layers-filled/layers.json
@@ -157,8 +155,6 @@ git push origin main
  M jobs/wang-meng/living/evidence-masks-z1.png
  M jobs/wang-meng/living/living-z1.json
  M jobs/wang-meng/motion/mask/gehong/layers.json
- M tools/swing-card.py
-?? jobs/wang-meng/evidence/2026-08-21-crownpines-invariant-fail.png
 ?? jobs/wang-meng/journey/z1/layers-heal/
 ?? jobs/wang-meng/journey/z1/living-work/g-ge-fan/
 ?? jobs/wang-meng/journey/z1/points-heal.json

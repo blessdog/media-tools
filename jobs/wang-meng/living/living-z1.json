@@ -71,6 +71,15 @@
     ],
     "n": 36,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__g-ge-fan",
+    "box": [
+     607,
+     560
+    ],
+    "n": 48,
+    "on": 2
    }
   ]
  },
@@ -101,6 +110,15 @@
      86
     ],
     "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__g-ge-fan",
+    "box": [
+     579,
+     341
+    ],
+    "n": 48,
     "on": 2
    }
   ]
@@ -141,6 +159,15 @@
      491
     ],
     "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__g-ge-fan",
+    "box": [
+     230,
+     826
+    ],
+    "n": 48,
     "on": 2
    }
   ]

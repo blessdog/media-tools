@@ -1,0 +1,117 @@
+{
+  "tool": "segment-points",
+  "image": "jobs/wang-meng/journey/z1/plate.png",
+  "size": [
+    1971,
+    2704
+  ],
+  "model": "facebook/sam-vit-huge",
+  "device": "mps",
+  "planes": 2,
+  "unclaimedFraction": 0.8056,
+  "overlay": "jobs/wang-meng/journey/z1/layers-heal/overlay.png",
+  "feather": 2,
+  "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
+  "loadSeconds": 3.1,
+  "inferSeconds": 7.2,
+  "planeList": [
+    {
+      "n": 1,
+      "id": 23,
+      "name": "right-bluff-crown-pines",
+      "depth": 12,
+      "point": [
+        1895,
+        800
+      ],
+      "window": 400,
+      "windowRequested": 400,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 400,
+          "clipped": true,
+          "imageFraction": 0.0228,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        1571,
+        600,
+        1971,
+        1000
+      ],
+      "pick": "whole",
+      "score": 0.846,
+      "candidateAreas": [
+        21963,
+        41033,
+        121235
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 121522,
+      "windowFraction": 0.7595,
+      "areaFinal": 2215,
+      "bbox": [
+        1711,
+        608,
+        1938,
+        644
+      ],
+      "offset": [
+        1711,
+        608
+      ],
+      "layer": "layers/1201-right-bluff-crown-pines.png"
+    },
+    {
+      "n": 2,
+      "id": 21,
+      "name": "right-hill-front-trees",
+      "depth": 15,
+      "point": [
+        1821,
+        1391
+      ],
+      "window": 1495,
+      "windowRequested": 1495,
+      "grewTo": null,
+      "attempts": [
+        {
+          "window": 1495,
+          "clipped": true,
+          "imageFraction": 0.194,
+          "rejected": false
+        }
+      ],
+      "cropBox": [
+        476,
+        644,
+        1971,
+        2139
+      ],
+      "pick": "whole",
+      "score": 0.87,
+      "candidateAreas": [
+        242207,
+        367793,
+        1035581
+      ],
+      "clippedByWindow": true,
+      "areaInWindow": 1034058,
+      "windowFraction": 0.4627,
+      "areaFinal": 1034058,
+      "bbox": [
+        476,
+        644,
+        1971,
+        2139
+      ],
+      "offset": [
+        476,
+        644
+      ],
+      "layer": "layers/1502-right-hill-front-trees.png"
+    }
+  ]
+}

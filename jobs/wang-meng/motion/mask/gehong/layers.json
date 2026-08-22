@@ -3,17 +3,17 @@
   "image": "jobs/wang-meng/motion/gehong-hi.png",
   "size": [
     588,
-    1113
+    1112
   ],
   "model": "facebook/sam-vit-huge",
   "device": "mps",
   "planes": 4,
-  "unclaimedFraction": 0.9493,
+  "unclaimedFraction": 0.9257,
   "overlay": "jobs/wang-meng/motion/mask/gehong/overlay.png",
-  "feather": 3,
+  "feather": 2,
   "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
-  "loadSeconds": 3.6,
-  "inferSeconds": 13.4,
+  "loadSeconds": 35.2,
+  "inferSeconds": 29.9,
   "planeList": [
     {
       "n": 1,
@@ -22,7 +22,7 @@
       "depth": 3,
       "point": [
         447,
-        262
+        261
       ],
       "window": 230,
       "windowRequested": 230,
@@ -31,38 +31,38 @@
         {
           "window": 230,
           "clipped": false,
-          "imageFraction": 0.0128,
+          "imageFraction": 0.0123,
           "rejected": false
         }
       ],
       "cropBox": [
         332,
-        147,
+        146,
         562,
-        377
+        376
       ],
       "pick": "tight",
-      "score": 0.8774,
+      "score": 0.8582,
       "candidateAreas": [
-        8398,
-        32560,
-        45692
+        8057,
+        32452,
+        45341
       ],
       "clippedByWindow": false,
-      "areaInWindow": 8356,
-      "windowFraction": 0.158,
-      "areaFinal": 8348,
+      "areaInWindow": 8067,
+      "windowFraction": 0.1525,
+      "areaFinal": 8067,
       "bbox": [
-        360,
-        212,
+        363,
+        211,
         521,
         326
       ],
       "offset": [
-        360,
-        212
+        363,
+        211
       ],
-      "layer": null
+      "layer": "layers/301-fan.png"
     },
     {
       "n": 2,
@@ -73,45 +73,57 @@
         412,
         356
       ],
-      "window": 260,
+      "window": 1040,
       "windowRequested": 260,
-      "grewTo": null,
+      "grewTo": 1040,
       "attempts": [
         {
           "window": 260,
           "clipped": true,
-          "imageFraction": 0.0056,
+          "imageFraction": 0.0057,
+          "rejected": false
+        },
+        {
+          "window": 520,
+          "clipped": true,
+          "imageFraction": 0.0099,
+          "rejected": false
+        },
+        {
+          "window": 1040,
+          "clipped": false,
+          "imageFraction": 0.0126,
           "rejected": false
         }
       ],
       "cropBox": [
-        282,
-        226,
-        542,
-        486
+        0,
+        0,
+        588,
+        1040
       ],
       "pick": "tight",
-      "score": 0.9799,
+      "score": 0.8249,
       "candidateAreas": [
-        3709,
-        10439,
-        33485
+        8279,
+        146661,
+        205107
       ],
-      "clippedByWindow": true,
-      "areaInWindow": 3697,
-      "windowFraction": 0.0547,
-      "areaFinal": 3697,
+      "clippedByWindow": false,
+      "areaInWindow": 8268,
+      "windowFraction": 0.0135,
+      "areaFinal": 8268,
       "bbox": [
         397,
-        322,
-        434,
-        486
+        324,
+        477,
+        679
       ],
       "offset": [
         397,
-        322
+        324
       ],
-      "layer": null
+      "layer": "layers/302-sleeve.png"
     },
     {
       "n": 3,
@@ -120,47 +132,59 @@
       "depth": 3,
       "point": [
         294,
-        824
+        823
       ],
-      "window": 340,
+      "window": 1112,
       "windowRequested": 340,
-      "grewTo": null,
+      "grewTo": 1112,
       "attempts": [
         {
           "window": 340,
           "clipped": true,
-          "imageFraction": 0.0284,
+          "imageFraction": 0.0258,
+          "rejected": false
+        },
+        {
+          "window": 680,
+          "clipped": true,
+          "imageFraction": 0.0723,
+          "rejected": false
+        },
+        {
+          "window": 1112,
+          "clipped": false,
+          "imageFraction": 0.0454,
           "rejected": false
         }
       ],
       "cropBox": [
-        124,
-        654,
-        464,
-        994
+        0,
+        0,
+        588,
+        1112
       ],
       "pick": "tight",
-      "score": 0.9686,
+      "score": 0.7137,
       "candidateAreas": [
-        18577,
-        18997,
-        93046
+        29762,
+        206889,
+        216466
       ],
-      "clippedByWindow": true,
-      "areaInWindow": 18556,
-      "windowFraction": 0.1605,
-      "areaFinal": 18556,
+      "clippedByWindow": false,
+      "areaInWindow": 29674,
+      "windowFraction": 0.0454,
+      "areaFinal": 29674,
       "bbox": [
-        228,
-        654,
-        338,
-        887
+        225,
+        419,
+        357,
+        888
       ],
       "offset": [
-        228,
-        654
+        225,
+        419
       ],
-      "layer": null
+      "layer": "layers/303-hem.png"
     },
     {
       "n": 4,
@@ -178,7 +202,7 @@
         {
           "window": 220,
           "clipped": false,
-          "imageFraction": 0.004,
+          "imageFraction": 0.0039,
           "rejected": false
         }
       ],
@@ -189,27 +213,27 @@
         220
       ],
       "pick": "tight",
-      "score": 0.7401,
+      "score": 0.7827,
       "candidateAreas": [
-        2637,
-        15095,
-        44903
+        2585,
+        14973,
+        44720
       ],
       "clippedByWindow": false,
-      "areaInWindow": 2606,
-      "windowFraction": 0.0538,
-      "areaFinal": 2606,
+      "areaInWindow": 2580,
+      "windowFraction": 0.0533,
+      "areaFinal": 2580,
       "bbox": [
-        271,
-        60,
-        346,
-        113
+        270,
+        61,
+        345,
+        114
       ],
       "offset": [
-        271,
-        60
+        270,
+        61
       ],
-      "layer": null
+      "layer": "layers/304-head.png"
     }
   ]
 }
