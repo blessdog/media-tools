@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-22 18:37 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-22 18:52 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,10 +28,11 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 45 live claims: 45 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 46 live claims: 46 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
+  · a-verdict-is-not-landed-until-the-builder-changes: Measured on 2026-08-22, from the commit log of a single night.
   · an-absence-is-invisible-in-the-output: Ryan, 2026-08-22, from memory, about eleven days of renders that had all been
   · camera-light-parallax: Don't forget it's not just about tree animation, we're still doing parallax
   · checks-start-in-observation: Instead of a hard rule, can we just run the checks? And then once it either
@@ -117,6 +118,20 @@ DELIVERABLES
   jobs/wang-meng/film/RISE-z4w.mp4
   jobs/wang-meng/film/RISE-z3w.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
+
+RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
+  z1      3 of  12 planes
+  z2      0 of  10 planes   ⚠ NO relief.json
+  z3      0 of  13 planes   ⚠ NO relief.json
+  z3w     0 of  13 planes   ⚠ NO relief.json
+  z4w     0 of   9 planes   ⚠ NO relief.json
+  z5w     0 of   9 planes   ⚠ NO relief.json
+  z6w     0 of   8 planes   ⚠ NO relief.json
+  TOTAL   3 of  74 planes = 4%
+        ⚠ relief WON its A/B on 2026-08-19 and joined the 'locked recipe',
+        but journey/build-zone.sh has no relief step, so the six zones
+        built after the verdict never got it. See
+        knowledge/a-verdict-is-not-landed-until-the-builder-changes.md
 ```
 
 ## Recent history
@@ -124,6 +139,8 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-22  f6e80a6  build-relief promoted to a tool, and wired into build-zone.sh where it belonged
+2026-08-22  bcc959e  STATE regenerated: transform-vs-replacement verdict landed
 2026-08-22  a926435  a transform cannot change an expression -- I oversold the ink transform
 2026-08-22  79eef20  STATE regenerated: check-camera-plan and the absence law landed
 2026-08-22  def9a0a  Ge Hong A/B: the shipped doctrine had a parallax differential of 1.12x
@@ -134,13 +151,11 @@ DELIVERABLES
 2026-08-22  ee4d95d  Ge Hong's rig proposal: skirt is ONE cel, not three border strips
 2026-08-22  7513661  STATE regenerated
 2026-08-22  e9e8e8d  STATE regenerated after the retires: field fix
-2026-08-22  49f5ca7  STATE regenerated: checks-start-in-observation now the live answer on wiring a check
-2026-08-22  50c6da1  checks-start-in-observation supersedes the dated-incident law; and retires: now names the dead ROUTE, which makes check-supersedes actually work
 ```
 
 ### ⚠ UNPUSHED
 
-**20 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**22 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
