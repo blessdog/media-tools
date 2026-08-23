@@ -12,8 +12,8 @@
   "overlay": "jobs/wang-meng/journey/z5w/layers-heal/overlay.png",
   "feather": 2,
   "note": "planes painted farthest-first; nearer wins on overlap. Layers are cropped RGBA + offset.",
-  "loadSeconds": 2.1,
-  "inferSeconds": 9.5,
+  "loadSeconds": 2.8,
+  "inferSeconds": 9.1,
   "planeList": [
     {
       "n": 1,

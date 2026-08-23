@@ -1,0 +1,46 @@
+{
+ "mist-slope-above": {
+  "map": "relief/mist-slope-above.png",
+  "band": 0.671,
+  "sigmaPx": 179.0,
+  "clipStd": 3.0,
+  "zRest": 4.0,
+  "size": [
+   2296,
+   716
+  ]
+ },
+ "compound-approach-path": {
+  "map": "relief/compound-approach-path.png",
+  "band": 0.278,
+  "sigmaPx": 275.8,
+  "clipStd": 3.0,
+  "zRest": 2.2,
+  "size": [
+   1103,
+   2230
+  ]
+ },
+ "gorge-cliff-nose": {
+  "map": "relief/gorge-cliff-nose.png",
+  "band": 0.1232,
+  "sigmaPx": 615.2,
+  "clipStd": 3.0,
+  "zRest": 1.3,
+  "size": [
+   2815,
+   2461
+  ]
+ },
+ "right-gorge-wall-high": {
+  "map": "relief/right-gorge-wall-high.png",
+  "band": 0.08,
+  "sigmaPx": 559.8,
+  "clipStd": 3.0,
+  "zRest": 1.0,
+  "size": [
+   2251,
+   2239
+  ]
+ }
+}
