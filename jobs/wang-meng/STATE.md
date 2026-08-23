@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-22 18:21 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-22 18:37 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 44 live claims: 44 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 45 live claims: 45 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -56,6 +56,7 @@ PROCEDURES — the routes that are currently believed
   · water-motion           answers how-to-move-water   (sibling: foliage-motion)
 
 VERDICTS — measured, and SCOPED; check the scope before reusing
+  · a-transform-cannot-change-an-expression Character animation on a painted or drawn source. The MEASUREMENTS are from 葛稚川移居圖's Ge Ho
   · band-02-was-already-animated-once The Ge Hong / deer / trestle-bridge scene, master box roughly [901, 10604, 2585, 13599]. F
   · branch-radius-scales-with-the-tree hinge-foliage's branch/leaf split on 葛稚川移居圖, and by the same mechanism any painting where 
   · canopy-read-distant    DISTANT ridges only -- the summits, master y < ~3850, verified on z6w. NOT valid near; the
@@ -123,6 +124,8 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-22  a926435  a transform cannot change an expression -- I oversold the ink transform
+2026-08-22  79eef20  STATE regenerated: check-camera-plan and the absence law landed
 2026-08-22  def9a0a  Ge Hong A/B: the shipped doctrine had a parallax differential of 1.12x
 2026-08-22  137bb83  coverage must be measured against what the renderer was POINTED AT
 2026-08-22  977050a  check-camera-plan: an absence is invisible in the output, so read the parameters
@@ -133,13 +136,11 @@ DELIVERABLES
 2026-08-22  e9e8e8d  STATE regenerated after the retires: field fix
 2026-08-22  49f5ca7  STATE regenerated: checks-start-in-observation now the live answer on wiring a check
 2026-08-22  50c6da1  checks-start-in-observation supersedes the dated-incident law; and retires: now names the dead ROUTE, which makes check-supersedes actually work
-2026-08-22  5e1fa85  law: a check earns its wiring only with a dated incident from this repo
-2026-08-22  bfa6867  drop HARNESS-BRIEF.md: a generic harness doc is an instruction to future sessions, and this one was written without seeing the repo
 ```
 
 ### ⚠ UNPUSHED
 
-**18 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**20 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
