@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-22 19:14 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-23 07:44 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 46 live claims: 46 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 47 live claims: 47 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -64,6 +64,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · canopy-read-near       NEAR foliage only -- the compound canopies and the gorge, master y > ~3850. NOT valid on d
   · clean-plate-donor-scope Any clean-plate fill whose hole is SURROUNDED BY MATERIAL OF THE SAME KIND as the thing be
   · depth-is-authored      Whole-painting depth on 葛稚川移居圖 and, by the same mechanism, any painting built on 散点透視 rath
+  · disocclusion-is-solved-the-boundary-tone-is-not jobs/wang-meng/journey/z1's 12-plane stack, inpainted at --behind 100, under the ab-ge-cor
   · gates-must-survive-a-clone Any repo whose correctness depends on hooks, checkers or generated files. Measured on medi
   · hinge-at-the-attachment Cut-out foliage cards in ink painting, where leaves are drawn as separate sprays hanging o
   · interior-disocclusion-is-tearing hinge-foliage cut-out cards over a clean plate, on 葛稚川移居圖. Measured 2026-08-21 on z1's fou
@@ -126,8 +127,8 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
   z3w     0 of  13 planes   ⚠ NO relief.json
   z4w     0 of   9 planes   ⚠ NO relief.json
   z5w     0 of   9 planes   ⚠ NO relief.json
-  z6w     0 of   8 planes   ⚠ NO relief.json
-  TOTAL   3 of  74 planes = 4%
+  z6w     2 of   8 planes
+  TOTAL   5 of  74 planes = 7%
         ⚠ relief WON its A/B on 2026-08-19 and joined the 'locked recipe',
         but journey/build-zone.sh has no relief step, so the six zones
         built after the verdict never got it. See
@@ -139,6 +140,9 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-23  3d99868  rebuild-zones.sh: resume the five reaped zones, log into the repo
+2026-08-22  0e9f3e2  disocclusion measured at 6px -- I predicted 160 and the real defect is tone
+2026-08-22  790f9e3  six zone plates re-cut from their tracked sidecars -- recoverability confirmed
 2026-08-22  5690927  STATE regenerated: relief coverage now counted per zone, 3 of 74 planes
 2026-08-22  f6e80a6  build-relief promoted to a tool, and wired into build-zone.sh where it belonged
 2026-08-22  bcc959e  STATE regenerated: transform-vs-replacement verdict landed
@@ -148,21 +152,21 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-22  137bb83  coverage must be measured against what the renderer was POINTED AT
 2026-08-22  977050a  check-camera-plan: an absence is invisible in the output, so read the parameters
 2026-08-22  0edefc2  the Resolve substrate is already built, paid for, and dormant since August
-2026-08-22  5a9358c  STATE regenerated
-2026-08-22  ee4d95d  Ge Hong's rig proposal: skirt is ONE cel, not three border strips
-2026-08-22  7513661  STATE regenerated
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/journey/z3/plate.json
- M jobs/wang-meng/journey/z6w/layers-cut/layers.json
- M jobs/wang-meng/journey/z6w/layers-heal/layers.json
- M jobs/wang-meng/journey/z6w/layers-sealed/layers.json
+?? jobs/wang-meng/evidence/relief-z6w.png
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
