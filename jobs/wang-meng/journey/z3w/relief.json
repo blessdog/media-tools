@@ -1,0 +1,57 @@
+{
+ "gorge-cliff-nose": {
+  "map": "relief/gorge-cliff-nose.png",
+  "band": 0.278,
+  "sigmaPx": 102.0,
+  "clipStd": 3.0,
+  "zRest": 2.2,
+  "size": [
+   1084,
+   408
+  ]
+ },
+ "left-cliff-wall": {
+  "map": "relief/left-cliff-wall.png",
+  "band": 0.278,
+  "sigmaPx": 703.8,
+  "clipStd": 3.0,
+  "zRest": 2.2,
+  "size": [
+   2815,
+   3368
+  ]
+ },
+ "gorge-wall-right": {
+  "map": "relief/gorge-wall-right.png",
+  "band": 0.278,
+  "sigmaPx": 123.5,
+  "clipStd": 3.0,
+  "zRest": 2.2,
+  "size": [
+   700,
+   494
+  ]
+ },
+ "resting-ledge": {
+  "map": "relief/resting-ledge.png",
+  "band": 0.1709,
+  "sigmaPx": 120.0,
+  "clipStd": 3.0,
+  "zRest": 1.6,
+  "size": [
+   833,
+   480
+  ]
+ },
+ "left-bank-rocks": {
+  "map": "relief/left-bank-rocks.png",
+  "band": 0.1232,
+  "sigmaPx": 54.2,
+  "clipStd": 3.0,
+  "zRest": 1.3,
+  "size": [
+   217,
+   345
+  ]
+ }
+}

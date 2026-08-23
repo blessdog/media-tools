@@ -12,8 +12,8 @@
  "overlay": "jobs/wang-meng/journey/z3w/layers-cut/overlay.png",
  "feather": 0,
  "note": "object boundaries now define plane boundaries; every object sits wholly on one depth. Hard alpha on purpose \u2014 a feather leaves a partial-transparency ring at every boundary that inpaint-planes cannot fill and a dolly turns into an outline.",
- "loadSeconds": 3.5,
- "inferSeconds": 62.3,
+ "loadSeconds": 2.6,
+ "inferSeconds": 50.9,
  "planeList": [
   {
    "n": 7,

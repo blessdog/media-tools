@@ -20,7 +20,7 @@
   "overlay": "jobs/wang-meng/journey/z4w/objects/overlay.png",
   "note": "depth is null on every region \u2014 assign it, 0 = farthest. Region 0 is unclaimed background.",
   "loadSeconds": 2.0,
-  "inferSeconds": 468.9,
+  "inferSeconds": 344.8,
   "regionList": [
     {
       "id": 1,

@@ -12,8 +12,8 @@
  "overlay": "jobs/wang-meng/journey/z4w/layers-cut/overlay.png",
  "feather": 2,
  "note": "sealed by nearest-plane proximity; coverage is total, so RENDER WITH --no-base \u2014 the backing plane is what made unclaimed ink render at the wrong depth.",
- "loadSeconds": 2.3,
- "inferSeconds": 45.1,
+ "loadSeconds": 3.0,
+ "inferSeconds": 45.6,
  "planeList": [
   {
    "n": 1,
