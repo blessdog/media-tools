@@ -1,0 +1,6 @@
+{ "fps": 24, "duration": 14,
+  "_note": "CONTROL: the shipped doctrine applied to Ge Hong. fov 1.0->1.613, dolly 0.18, no rotation. Parallax differential 1.12x.",
+  "keys": [
+    {"t": 0.0,  "x": 0.3186, "y": 0.4723, "fov": 1.000, "z": 0.00},
+    {"t": 14.0, "x": 0.3186, "y": 0.4723, "fov": 1.613, "z": 0.18}
+  ] }
