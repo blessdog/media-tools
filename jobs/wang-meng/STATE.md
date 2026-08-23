@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-23 07:44 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-23 17:23 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -121,14 +121,14 @@ DELIVERABLES
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 
 RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
-  z1      3 of  12 planes
-  z2      0 of  10 planes   ⚠ NO relief.json
-  z3      0 of  13 planes   ⚠ NO relief.json
-  z3w     0 of  13 planes   ⚠ NO relief.json
-  z4w     0 of   9 planes   ⚠ NO relief.json
-  z5w     0 of   9 planes   ⚠ NO relief.json
+  z1      6 of  12 planes
+  z2      5 of  10 planes
+  z3      5 of  13 planes
+  z3w     5 of  13 planes
+  z4w     4 of   9 planes
+  z5w     4 of   9 planes
   z6w     2 of   8 planes
-  TOTAL   5 of  74 planes = 7%
+  TOTAL  31 of  74 planes = 42%
         ⚠ relief WON its A/B on 2026-08-19 and joined the 'locked recipe',
         but journey/build-zone.sh has no relief step, so the six zones
         built after the verdict never got it. See
@@ -140,6 +140,10 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-23  8151dad  all five zones rebuilt in 44:53 -- relief coverage 4% to 42%
+2026-08-23  1e60a44  z3w rebuilt with its living layer intact -- relief coverage 4% to 27%
+2026-08-23  d4949dc  the rebuild reproduces the originals byte-for-byte except wall-clock timing
+2026-08-23  b7d5a67  z6w relief sheet: first output of build-relief running inside the zone chain
 2026-08-23  3d99868  rebuild-zones.sh: resume the five reaped zones, log into the repo
 2026-08-22  0e9f3e2  disocclusion measured at 6px -- I predicted 160 and the real defect is tone
 2026-08-22  790f9e3  six zone plates re-cut from their tracked sidecars -- recoverability confirmed
@@ -148,25 +152,14 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-22  bcc959e  STATE regenerated: transform-vs-replacement verdict landed
 2026-08-22  a926435  a transform cannot change an expression -- I oversold the ink transform
 2026-08-22  79eef20  STATE regenerated: check-camera-plan and the absence law landed
-2026-08-22  def9a0a  Ge Hong A/B: the shipped doctrine had a parallax differential of 1.12x
-2026-08-22  137bb83  coverage must be measured against what the renderer was POINTED AT
-2026-08-22  977050a  check-camera-plan: an absence is invisible in the output, so read the parameters
-2026-08-22  0edefc2  the Resolve substrate is already built, paid for, and dormant since August
 ```
 
-### ⚠ UNPUSHED
-
-**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
-?? jobs/wang-meng/evidence/relief-z6w.png
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
