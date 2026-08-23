@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-22 18:52 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-22 19:14 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -139,6 +139,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-22  5690927  STATE regenerated: relief coverage now counted per zone, 3 of 74 planes
 2026-08-22  f6e80a6  build-relief promoted to a tool, and wired into build-zone.sh where it belonged
 2026-08-22  bcc959e  STATE regenerated: transform-vs-replacement verdict landed
 2026-08-22  a926435  a transform cannot change an expression -- I oversold the ink transform
@@ -150,21 +151,18 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-22  5a9358c  STATE regenerated
 2026-08-22  ee4d95d  Ge Hong's rig proposal: skirt is ONE cel, not three border strips
 2026-08-22  7513661  STATE regenerated
-2026-08-22  e9e8e8d  STATE regenerated after the retires: field fix
 ```
 
-### ⚠ UNPUSHED
-
-**22 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
+ M jobs/wang-meng/journey/z3/plate.json
+ M jobs/wang-meng/journey/z6w/layers-cut/layers.json
+ M jobs/wang-meng/journey/z6w/layers-heal/layers.json
+ M jobs/wang-meng/journey/z6w/layers-sealed/layers.json
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
