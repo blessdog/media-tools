@@ -30,6 +30,9 @@ shellingham==1.5.4
 sympy==1.14.0
 tokenizers==0.22.2
 torch==2.13.0
+# transformers 5.x routes AutoImageProcessor through torchvision; without it
+# estimate-depth dies at from_pretrained. Added 2026-08-22 after relief broke.
+torchvision==0.28.0
 tqdm==4.70.0
 transformers==5.15.1
 typer==0.27.1

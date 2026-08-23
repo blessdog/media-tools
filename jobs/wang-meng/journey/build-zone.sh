@@ -1,7 +1,14 @@
 #!/bin/zsh
 # The zone chain, exactly as proven on Z1 (STATE.md 2026-08-17 night):
 # segment-points -> invariant check -> complete-planes -> segment-regions
-# -> pin-objects -> inpaint-planes --flux -> frame-zero control.
+# -> pin-objects -> inpaint-planes --flux -> frame-zero control -> build-relief.
+#
+# RELIEF ADDED 2026-08-22, and the reason is the point: relief won its A/B on
+# 2026-08-19 and the verdict commit (02f025d) changed STATE.md and nothing else.
+# Six zones were built through THIS FILE hours later and none of them got it --
+# 3 of 74 planes, 4% of the film. Tilt, proven the same night, WAS scripted
+# (gen-geometry.py) and reached every zone. See
+# knowledge/a-verdict-is-not-landed-until-the-builder-changes.md.
 # usage: build-zone.sh z2
 set -e
 Z=$1
@@ -135,4 +142,9 @@ if diff.sum() > 0:
     print(f"FRAME-ZERO FAIL: {diff.sum()} px changed at rest", file=sys.stderr)
     sys.exit(4)
 PY
+echo "=== $Z relief (within-plane surface shape; --relief for render-parallax)" >&2
+~/.venvs/media-tools/bin/python tools/build-relief.py \
+  --layers $D/layers-filled --out $D \
+  --sheet jobs/wang-meng/evidence/relief-$Z.png >/dev/null
+
 echo "=== $Z DONE" >&2

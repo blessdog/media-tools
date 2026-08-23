@@ -46,3 +46,28 @@ echo
 echo "DELIVERABLES"
 ls -t $J/living/AB-*.mp4 $J/film/*.mp4 2>/dev/null | head -6 | sed 's|^|  |'
 printf "  Desktop symlink: "; readlink ~/Desktop/WANG-MENG-LATEST.mp4 2>/dev/null || echo "(none)"
+
+echo
+echo "RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)"
+python3 - <<'PY2'
+import json, glob, os
+tot_r = tot_p = 0
+for d in sorted(glob.glob('jobs/wang-meng/journey/z*/')):
+    z = os.path.basename(d.rstrip('/'))
+    lj = os.path.join(d, 'layers-filled', 'layers.json')
+    if not os.path.exists(lj):
+        continue
+    planes = json.load(open(lj)).get('planes', 0)
+    rj = os.path.join(d, 'relief.json')
+    n = len(json.load(open(rj))) if os.path.exists(rj) else 0
+    tot_r += n; tot_p += planes
+    flag = '' if n else '   ⚠ NO relief.json'
+    print(f"  {z:5s} {n:3d} of {planes:3d} planes{flag}")
+pct = 100.0 * tot_r / tot_p if tot_p else 0
+print(f"  TOTAL {tot_r:3d} of {tot_p:3d} planes = {pct:.0f}%")
+if pct < 90:
+    print(f"        ⚠ relief WON its A/B on 2026-08-19 and joined the 'locked recipe',")
+    print(f"        but journey/build-zone.sh has no relief step, so the six zones")
+    print(f"        built after the verdict never got it. See")
+    print(f"        knowledge/a-verdict-is-not-landed-until-the-builder-changes.md")
+PY2
