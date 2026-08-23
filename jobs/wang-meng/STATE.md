@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-22 17:04 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-22 18:21 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,10 +28,11 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 42 live claims: 42 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 44 live claims: 44 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
+  · an-absence-is-invisible-in-the-output: Ryan, 2026-08-22, from memory, about eleven days of renders that had all been
   · camera-light-parallax: Don't forget it's not just about tree animation, we're still doing parallax
   · checks-start-in-observation: Instead of a hard rule, can we just run the checks? And then once it either
   · depth-may-resize-never-deform: Depth may change how big things are relative to each other. It may never
@@ -70,6 +71,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · perception-needs-a-boundary-model-too CLIPSeg (CIDAS/clipseg-rd64-refined) as the SOLE decider of which ink is foliage on 葛稚川移居圖
   · plan-planes-at-shot-scale Planning a depth-plane stack for a camera that will be CLOSE to the surface. Measured on z
   · the-pink-grid-is-splat-lattice probe-parallax.py --marks on any image+depth pair. The GRID is a property of forward splat
+  · the-resolve-substrate-is-already-built Facts read off this machine on 2026-08-22. Applies to any plan that proposes building agen
 
 REFUTED — already tried, do NOT retry
   ✗ canopy-by-texture-statistics At distance Wang Meng's 牛毛皴 (hemp-fibre texture strokes) covers rock and forest alike, so the ridge 
@@ -121,6 +123,10 @@ DELIVERABLES
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-22  def9a0a  Ge Hong A/B: the shipped doctrine had a parallax differential of 1.12x
+2026-08-22  137bb83  coverage must be measured against what the renderer was POINTED AT
+2026-08-22  977050a  check-camera-plan: an absence is invisible in the output, so read the parameters
+2026-08-22  0edefc2  the Resolve substrate is already built, paid for, and dormant since August
 2026-08-22  5a9358c  STATE regenerated
 2026-08-22  ee4d95d  Ge Hong's rig proposal: skirt is ONE cel, not three border strips
 2026-08-22  7513661  STATE regenerated
@@ -129,15 +135,11 @@ DELIVERABLES
 2026-08-22  50c6da1  checks-start-in-observation supersedes the dated-incident law; and retires: now names the dead ROUTE, which makes check-supersedes actually work
 2026-08-22  5e1fa85  law: a check earns its wiring only with a dated incident from this repo
 2026-08-22  bfa6867  drop HARNESS-BRIEF.md: a generic harness doc is an instruction to future sessions, and this one was written without seeing the repo
-2026-08-22  85b99ff  STATE regenerated after contact-sheet landed
-2026-08-22  d2d2371  contact-sheet: tile N rendered loops into one sheet so the verdict is one look, not N
-2026-08-22  08e89dc  harness brief lands in the repo root: four phases, verification substrate first
-2026-08-21  b0bfef4  canopy tearing: four fixes measured, all four refuted -- and the concat now clears its own 583MB of scaffolding
 ```
 
 ### ⚠ UNPUSHED
 
-**14 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**18 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
