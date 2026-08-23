@@ -34,10 +34,19 @@ reproduced all four defects on the shipped film with no human hint:
 
 | check | THE-RISE, measured 2026-08-22 |
 |---|---|
-| establishing shot exists | **FAIL** — widest view in the whole plan is 29.2% of the source width. A whole-painting shot needs fov 0.324 and was never authored once, in 34 paths |
+| establishing shot exists | **FAIL** — the widest shot frames **68% of the painting's width and ~16% of its height**. There is no whole-painting shot in 34 paths |
 | no dead axes | **FAIL** — `rx`, `ry`, `rz` are 0.000 in all five shipped legs |
 | shots are distinct | **FAIL** — five legs, two envelopes. z1/z3w/z4w byte-identical at z 0..0.180, fov 1.0..1.613 |
 | camera travels the scene | **FAIL** — the dolly covers **5.5% of a plane stack 3.30 deep**. The camera moves through a twentieth of the space it is standing in |
+
+**A correction made the same hour, and it is the reason this tool takes
+`--plate-json`.** The first run of this check reported 29.2% because it compared
+the camera against the MASTER while the renderer is pointed at a zone PLATE,
+downsampled 2.34x. The right answer is 68% of the width. The complaint survives
+the correction — there is still no whole-painting shot, and the height coverage
+is far worse than the width — but **a coverage check that does not know what the
+renderer was actually pointed at is off by the downsample factor**, which is a
+big enough error to discredit a true finding.
 
 That last number is the whole diagnosis. It is not a taste failure and not a
 vocabulary failure — `MOVES.md` already held every move Ryan named. **The camera

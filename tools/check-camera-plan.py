@@ -42,8 +42,14 @@ usage:
                        [--z-step F] [--width N] [--min-coverage F] [--strict]
 
   --paths DIR      directory of camera-path JSONs (or a single .json file)
-  --source IMG     the master image, for its true dimensions. Without it the
-                   coverage check is skipped and says so.
+  --source IMG     THE IMAGE THE RENDERER IS ACTUALLY POINTED AT -- the plate
+                   or stack source, not the master it was cut from. Getting
+                   this wrong misreports coverage by the downsample factor;
+                   it did on 2026-08-22, by 2.34x.
+  --plate-json P   the crop-region sidecar (masterBox + masterPxPerRegionPx).
+                   With it, coverage is ALSO reported against the true master,
+                   which is the number that answers "is the whole subject ever
+                   on screen".
   --layers DIR     a plane stack (layers.json) so dolly can be reported as a
                    FRACTION OF SCENE DEPTH, which is the number that says
                    whether the camera is really moving.
@@ -84,6 +90,7 @@ def main():
     ap = argparse.ArgumentParser(add_help=True)
     ap.add_argument("--paths", required=True)
     ap.add_argument("--source")
+    ap.add_argument("--plate-json")
     ap.add_argument("--layers")
     ap.add_argument("--z-step", type=float, default=0.30)
     ap.add_argument("--width", type=int, default=1920)
@@ -104,6 +111,21 @@ def main():
         Image.MAX_IMAGE_PIXELS = None
         W_SRC, H_SRC = Image.open(args.source).size
 
+    # The renderer is pointed at a PLATE; the subject is the master it was cut
+    # from. Coverage against the wrong one is off by the downsample factor.
+    k_master, W_MAST, H_MAST = None, None, None
+    if args.plate_json:
+        pj = json.loads(Path(args.plate_json).read_text())
+        k_master = float(pj.get("masterPxPerRegionPx") or 1.0)
+        box = pj.get("masterBox")
+        if box:
+            from PIL import Image
+            Image.MAX_IMAGE_PIXELS = None
+            try:
+                W_MAST, H_MAST = Image.open(pj["master"]).size
+            except Exception:
+                W_MAST, H_MAST = box[2], box[3]
+
     depth_span = None
     if args.layers:
         lj = Path(args.layers)
@@ -122,9 +144,12 @@ def main():
             continue
         env = envelope(keys)
         rec = {"file": Path(f).name, "keys": len(keys), "envelope": {a: list(v) for a, v in env.items()}}
-        if W_SRC:
-            rec["widestFractionOfWidth"] = min(1.0, (args.width / env["fov"][0]) / W_SRC) if env["fov"][0] > 0 else None
-            rec["narrowestFractionOfWidth"] = min(1.0, (args.width / env["fov"][1]) / W_SRC) if env["fov"][1] > 0 else None
+        if W_SRC and env["fov"][0] > 0:
+            vis_w = args.width / env["fov"][0]          # source px across at the WIDEST
+            rec["widestFractionOfSource"] = min(1.0, vis_w / W_SRC)
+            rec["narrowestFractionOfSource"] = min(1.0, (args.width / env["fov"][1]) / W_SRC)
+            if k_master and W_MAST:
+                rec["widestFractionOfMasterWidth"] = min(1.0, vis_w * k_master / W_MAST)
         if depth_span:
             rec["dollyFractionOfSceneDepth"] = (env["z"][1] - env["z"][0]) / depth_span
         plans.append(rec)
@@ -138,12 +163,15 @@ def main():
             failures.append(name)
 
     if W_SRC:
-        widest = max((r.get("widestFractionOfWidth") or 0) for r in plans)
-        who = max(plans, key=lambda r: r.get("widestFractionOfWidth") or 0)["file"]
+        key = "widestFractionOfMasterWidth" if (k_master and W_MAST) else "widestFractionOfSource"
+        against = f"master width ({W_MAST}px)" if key.endswith("MasterWidth") else f"source width ({W_SRC}px)"
+        widest = max((r.get(key) or 0) for r in plans)
+        who = max(plans, key=lambda r: r.get(key) or 0)["file"]
+        denom = (W_MAST / k_master) if key.endswith("MasterWidth") else W_SRC
         add("establishing-shot-exists", widest >= args.min_coverage,
-            f"widest view in the entire plan is {widest*100:.1f}% of the source width "
+            f"widest view in the entire plan is {widest*100:.1f}% of the {against} "
             f"({who}); an establishing shot needs >= {args.min_coverage*100:.0f}%. "
-            f"fov {args.width/(W_SRC*args.min_coverage):.3f} would frame it.")
+            f"fov {args.width/(denom*args.min_coverage):.3f} would frame it.")
 
     dead = [a for a in AXES if all(abs(r["envelope"][a][1] - r["envelope"][a][0]) < 1e-9 for r in plans)]
     add("no-dead-axes", not dead, f"axes that NEVER vary in any path: {dead or 'none'}")
