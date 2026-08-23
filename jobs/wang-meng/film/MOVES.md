@@ -14,6 +14,10 @@ Ryan re-sent this list in full on 2026-08-21. Every move he named is below.
 **PATH** = authored purely in those keys today. **POST** = done in ffmpeg / the
 edit, not the renderer. **GAP** = not buildable yet; say so rather than fake it.
 
+**Run `tools/check-camera-plan.py` on a plan before rendering it** -- a move being
+listed here is not evidence it was ever authored. Measured 2026-08-22: rx/ry/rz
+were 0.000 in every leg of the shipped film.
+
 **This is the complete set of camera moves available on this film**, in Ryan's
 own names. He re-sent the whole list on 2026-08-21; every move he named is
 already in the tables below, with what it costs to build here.
@@ -50,8 +54,8 @@ not buildable yet; say so rather than fake it.
 | move | what it is | status | note |
 |---|---|---|---|
 | **slow roll (dutch drift)** | tiny rotation of the frame over time | GAP: no roll axis in the keys (rx/ry tilt planes, they do not roll the frame) | a hanging scroll has a strong vertical; roll would read as the painting slipping. Probably never |
-| **corner pin / perspective creep** | fake 3D by shifting corners | PATH: rx/ry do the real thing | we have real planes -- use parallax, not the fake |
-| **parallax (2.5D)** | foreground and background at different speeds | PATH: z > 0 with x or ry -- the multiplane reveal | at most twice in the film. Spent more often it is the screensaver again |
+| **corner pin / perspective creep** | fake 3D by shifting corners | PATH: per-plane `tiltX`/`tiltY` in the geometry file do the real thing | **NOT rx/ry.** Corrected 2026-08-22: render-parallax's own docstring says rotation shares the centre of projection, so it adds NO new parallax -- it is the head turning, not moving. An ORIENTED PLANE is what turns as you pass it |
+| **parallax (2.5D)** | foreground and background at different speeds | PATH: **z travel** against tilted planes -- the multiplane reveal | z must be a real fraction of the stack's depth. Measured 2026-08-22: THE-RISE dollied 5.5% of a 3.30-deep stack, which is why it read as a zoom. See `check-camera-plan.py` |
 | **handheld float** | small irregular wobble, off the rails | GAP: no noise source in the path | Disney's multiplane was on rails and so are we; the living layer is the life. Revisit if holds feel dead |
 | **breathing** | tiny in-out zoom pulse, no travel | PATH: fov +1% and back | the only motion on a LONG hold |
 
