@@ -12,8 +12,8 @@
  "overlay": "jobs/wang-meng/journey/z3/layers-cut/overlay.png",
  "feather": 0,
  "note": "each plane painted on behind its occluders; every added pixel is hidden at rest, so frame zero must render byte-identical to the source stack.",
- "loadSeconds": 4.0,
- "inferSeconds": 78.1,
+ "loadSeconds": 3.0,
+ "inferSeconds": 56.3,
  "planeList": [
   {
    "n": 7,

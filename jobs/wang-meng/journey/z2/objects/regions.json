@@ -19,8 +19,8 @@
   "maxRegions": 60,
   "overlay": "jobs/wang-meng/journey/z2/objects/overlay.png",
   "note": "depth is null on every region \u2014 assign it, 0 = farthest. Region 0 is unclaimed background.",
-  "loadSeconds": 3.5,
-  "inferSeconds": 14.2,
+  "loadSeconds": 2.5,
+  "inferSeconds": 11.8,
   "regionList": [
     {
       "id": 1,

@@ -1,0 +1,57 @@
+{
+ "left-cliff-wall": {
+  "map": "relief/left-cliff-wall.png",
+  "band": 0.3982,
+  "sigmaPx": 254.5,
+  "clipStd": 3.0,
+  "zRest": 2.8,
+  "size": [
+   1018,
+   1448
+  ]
+ },
+ "gorge-wall-right": {
+  "map": "relief/gorge-wall-right.png",
+  "band": 0.3982,
+  "sigmaPx": 125.5,
+  "clipStd": 3.0,
+  "zRest": 2.8,
+  "size": [
+   502,
+   1112
+  ]
+ },
+ "resting-ledge": {
+  "map": "relief/resting-ledge.png",
+  "band": 0.278,
+  "sigmaPx": 116.2,
+  "clipStd": 3.0,
+  "zRest": 2.2,
+  "size": [
+   637,
+   465
+  ]
+ },
+ "left-bank-rocks": {
+  "map": "relief/left-bank-rocks.png",
+  "band": 0.2226,
+  "sigmaPx": 66.0,
+  "clipStd": 3.0,
+  "zRest": 1.9,
+  "size": [
+   264,
+   313
+  ]
+ },
+ "porter-ledge": {
+  "map": "relief/porter-ledge.png",
+  "band": 0.1709,
+  "sigmaPx": 205.2,
+  "clipStd": 3.0,
+  "zRest": 1.6,
+  "size": [
+   974,
+   821
+  ]
+ }
+}
