@@ -65,3 +65,13 @@ jobs/wang-meng/film/leg-slow-*.mp4
 
 # vision-model tiles: regenerable from the master by tools/tile-image.py
 jobs/*/catalogue/tiles-*/*.jpg
+
+# Derived plane stacks and measurement frame dirs from the 2026-08-24 fill and
+# plane-count experiments. All are REPRODUCIBLE from committed tools:
+#   layers-*-coarse4     journey/merge-planes.py + inpaint-planes
+#   layers-filled-*      inpaint-planes --method <m>
+#   measure-work/        journey/measure-invented.py (2.7GB of rendered frames)
+# Track text, scripts, JSON and curated evidence; ignore bulk pixels.
+jobs/*/journey/*/layers-*-coarse*/
+jobs/*/journey/*/layers-filled-shiftmap/
+jobs/*/journey/*/measure-work/
