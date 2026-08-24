@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 11:57 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 12:26 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -102,7 +102,7 @@ OPEN — plans, NOT specs. proven: false. Do not build against these.
 ```
 LIVING LAYER — cycles registered per zone
   z1-coarse4  21 patches · 4 planes · 8 regions
-  z1     21 patches · 8 planes · 8 regions
+  z1     46 patches · 8 planes · 23 regions
   z3w    46 patches · 5 planes · 37 regions
   z4w    32 patches · 3 planes · 23 regions
   z5w    13 patches · 3 planes · 9 regions
@@ -111,19 +111,19 @@ LIVING LAYER — cycles registered per zone
 REGIONS — by class, from the file the builder reads
   fall       2
   figure     1
-  foliage    8
+  foliage    122
   still      6
   wave       2
 
 ROUTING — knowledge store vs config vs implementation
-  regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (19) · 0 violation(s)
+  regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (133) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/THE-RISE.mp4
   jobs/wang-meng/film/SUBTLE-REEL.mp4
   jobs/wang-meng/film/SHOT-focus-slope.mp4
   jobs/wang-meng/film/SHOT-focus-ge.mp4
   jobs/wang-meng/film/SHOT-focus-water.mp4
-  jobs/wang-meng/film/THE-RISE.mp4
   jobs/wang-meng/film/RISE-z1.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 
@@ -143,23 +143,23 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  080052c  the coverage denominator was the retired colour gate; the catalogue is the decider
+2026-08-24  f7e0d35  z1's living layer rebuilt from the catalogue: 46 patches, foliage 8 to 33
+2026-08-24  f9d42fb  the foliage masks were never actually committed -- a blanket jobs/** ignore ate them
+2026-08-24  3fc36ff  gitignore the derived stacks: 2.7GB of measure-work frames are reproducible
+2026-08-24  c0ed21b  the subtle reel, reframed: fov floors computed, focus-trees replaced
+2026-08-24  2c25f8b  STATE regenerated: colour gate retired, catalogue decides foliage
 2026-08-24  708db94  retire the colour gate: a catalogue decides what is foliage, not a threshold
 2026-08-24  321d230  the catalogue replaces the colour gate: rock leaf-ink 64% to 9.5%
 2026-08-24  557efc8  the bottom of the scroll is catalogued: 170 objects, 58 leaf masses
 2026-08-24  9ccf63f  the loop Ryan ruled on: the rock moves
 2026-08-24  24cb815  two vision models probed for foliage-vs-rock, then set aside for the catalogue
 2026-08-24  38e7fea  whole-plate foliage pass: coverage 6.9% to 56.6%, but the rock moves
-2026-08-24  5e73f8f  measure foliage coverage: only 6.9% of z1's leaf ink ever moves
-2026-08-24  0da3d30  leaves hold under leaves: a swinging foliage card should reveal foliage, not ground
-2026-08-24  7203b07  a living layer is baked against its stack, and a cream bar is arithmetic
-2026-08-24  b675fdd  STATE regenerated: coarse-plane experiment in flight
-2026-08-24  af1a4f9  the subtle reel: three focus shots on four planes, crossfaded
-2026-08-24  bbdcc2d  four planes instead of twelve: invented ink falls by a third at the same fill
 ```
 
 ### ⚠ UNPUSHED
 
-**17 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -170,16 +170,35 @@ git push origin main
 ```
  M jobs/wang-meng/STATE.md
  M jobs/wang-meng/film/SHOT-focus-ge.mp4
- D jobs/wang-meng/film/SHOT-focus-trees.mp4
- M jobs/wang-meng/film/SHOT-focus-water.mp4
+ M jobs/wang-meng/film/SHOT-focus-slope.mp4
  M jobs/wang-meng/film/SUBTLE-REEL.mp4
- D jobs/wang-meng/film/paths/shot-focus-trees.json
- M jobs/wang-meng/living/living-z1-coarse4.json
-?? jobs/wang-meng/film/SHOT-focus-slope.mp4
-?? jobs/wang-meng/journey/z1/layers-filled-coarse4/
-?? jobs/wang-meng/journey/z1/layers-filled-shiftmap/
-?? jobs/wang-meng/journey/z1/layers-pinned-coarse4/
-?? jobs/wang-meng/journey/z1/measure-work/
+ M jobs/wang-meng/journey/z1/living-masks/index.json
+ M jobs/wang-meng/journey/z1/living-work/s-great-trees-lower/drawings/cycle.json
+ M jobs/wang-meng/journey/z1/living-work/s-great-trees-upper/drawings/cycle.json
+ M jobs/wang-meng/journey/z1/living-work/s-left-pines-z2/drawings/cycle.json
+ M jobs/wang-meng/journey/z1/living-work/s-pine-over-bridge/drawings/cycle.json
+ M jobs/wang-meng/journey/z1/living/built.json
+?? jobs/wang-meng/catalogue/sam/
+?? jobs/wang-meng/journey/z1/living-work/cat-broadleaf-great-right/
+?? jobs/wang-meng/journey/z1/living-work/cat-canopy-bottom-left/
+?? jobs/wang-meng/journey/z1/living-work/cat-canopy-bough-left-main/
+?? jobs/wang-meng/journey/z1/living-work/cat-canopy-bough-left-tip/
+?? jobs/wang-meng/journey/z1/living-work/cat-canopy-brick-top/
+?? jobs/wang-meng/journey/z1/living-work/cat-fronds-bottom-left/
+?? jobs/wang-meng/journey/z1/living-work/cat-pine-needle-right/
+?? jobs/wang-meng/journey/z1/living-work/cat-pine-top-roots/
+?? jobs/wang-meng/journey/z1/living-work/cat-tree-bottom-right-t013/
+?? jobs/wang-meng/journey/z1/living-work/cat-tree-bottom-right/
+?? jobs/wang-meng/journey/z1/living-work/cat-tree-colour-lower-left/
+?? jobs/wang-meng/journey/z1/living-work/cat-tree-great-centre/
+?? jobs/wang-meng/journey/z1/living-work/cat-tree-round-top-left/
+?? jobs/wang-meng/journey/z1/living-work/cat-tree-teal-mid-left/
+?? jobs/wang-meng/journey/z1/living-work/cat-vine-curtain-left/
+?? jobs/wang-meng/journey/z1/living-work/cat-vine-curtain-mid/
+?? jobs/wang-meng/journey/z1/living-work/s-great-trees-lower/exclude/
+?? jobs/wang-meng/journey/z1/living-work/s-great-trees-upper/exclude/
+?? jobs/wang-meng/journey/z1/living-work/s-left-pines-z2/exclude/
+?? jobs/wang-meng/journey/z1/living-work/s-pine-over-bridge/exclude/
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
