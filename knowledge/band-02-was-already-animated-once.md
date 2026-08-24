@@ -7,7 +7,7 @@ supersedes: []
 scope: >
   The Ge Hong / deer / trestle-bridge scene, master box roughly
   [901, 10604, 2585, 13599]. Facts about assets on disk as of 2026-08-21.
-verified-on: 2026-08-21
+verified-on: 2026-08-24
 evidence:
   - jobs/wang-meng/evidence/2026-08-21-band02-bridge-proto.mp4
   - jobs/wang-meng/living/regions-proto.json
@@ -48,13 +48,19 @@ reference for what "right" looks like. The native-res replacement was built
 2026-08-21: z1 masks -> cycles -> register, giving 18 patches over 8 planes
 including `trestle-bridge-ge`.
 
-**What is still missing at native res:** the FIGURES. `g-ge-fan` and `g-deer`
-exist in `regions.json` and NOT in `living-polys.json`, which is the file the
-builder reads — see [[merge-the-two-region-catalogues-into-one]]. Their puppet
-masks survive (`motion/mask/gehong/`, four parts: fan, sleeve, hem, head) but
-their FRAME SEQUENCES do not — only `gh-fan.mp4`, `gh-walk.mp4` and
-`deer-walk.mp4` remain, so the cycles must be re-rendered from the rigs through
-`walk-figure.py`.
+**What is still missing at native res, re-checked 2026-08-24:** ONE FOURTH of Ge
+Hong moves, and the deer does not move at all.
+
+- `g-ge-fan` is now in BOTH `regions.json` and `living-polys.json`, and it is
+  built: `journey/z1/living/built.json` carries it as 48 drawings on 2s, split
+  across three planes by ownership — `trestle-bridge-ge` (5572 own px, 1619
+  moved), `right-hill-front-trees` (1513 / 16), `upper-stream-water` (645 / 69).
+- `living/cycles/g-ge-fan/cycle.json` records ONE card: `fan`, swing 5.0°, peak
+  1.39% of the crop moving, loop seam 0.0 levels. The other three puppet masks
+  in `motion/mask/gehong/layers/` — `302-sleeve`, `303-hem`, `304-head` — are cut
+  and unused. The brief is "fan AND robe stir"; only the fan does.
+- `g-deer` is still in `regions.json` ONLY, absent from `living-polys.json`,
+  and has no cycle. See [[merge-the-two-region-catalogues-into-one]].
 
 **One thing already settled and worth not re-deriving:** `walk-figure.py`'s
 docstring records that a walk for Ge Hong invents nothing, because his robe
