@@ -1,26 +1,4 @@
 {
- "w-compound-fall": {
-  "class": "fall",
-  "px": 15874,
-  "pctOfPlate": 0.255,
-  "plateBox": [
-   1834,
-   1055,
-   1898,
-   1393
-  ]
- },
- "s-gorge-belt": {
-  "class": "still",
-  "px": 93322,
-  "pctOfPlate": 1.499,
-  "plateBox": [
-   1230,
-   1251,
-   1935,
-   1853
-  ]
- },
  "s-gorge-foreground": {
   "class": "foliage",
   "px": 84978,
@@ -43,59 +21,532 @@
    1951
   ]
  },
- "s-autumn-shelf": {
-  "class": "still",
-  "px": 38726,
-  "pctOfPlate": 0.622,
+ "cat-grove-bottom-right": {
+  "class": "foliage",
+  "px": 50370,
+  "pctOfPlate": 0.809,
   "plateBox": [
-   94,
-   1181,
-   655,
-   1671
+   1230,
+   1521,
+   1632,
+   1854
   ]
  },
- "s-compound-autumn": {
-  "class": "still",
-  "px": 116579,
-  "pctOfPlate": 1.872,
+ "cat-pine-left-spread": {
+  "class": "foliage",
+  "px": 41740,
+  "pctOfPlate": 0.67,
   "plateBox": [
-   762,
-   461,
-   1595,
-   1097
+   808,
+   2000,
+   1166,
+   2212
   ]
  },
- "s-compound-canopies": {
-  "class": "still",
-  "px": 84975,
-  "pctOfPlate": 1.365,
+ "cat-canopy-top-band": {
+  "class": "foliage",
+  "px": 26458,
+  "pctOfPlate": 0.425,
   "plateBox": [
-   1290,
-   482,
-   2236,
-   1030
-  ]
- },
- "s-right-edge-autumn": {
-  "class": "still",
-  "px": 56015,
-  "pctOfPlate": 0.9,
-  "plateBox": [
-   2168,
-   779,
-   2815,
+   2170,
+   861,
+   2539,
    1143
   ]
  },
- "s-tall-cliff-pines": {
-  "class": "still",
-  "px": 48087,
-  "pctOfPlate": 0.772,
+ "cat-pine-centre": {
+  "class": "foliage",
+  "px": 28372,
+  "pctOfPlate": 0.456,
   "plateBox": [
-   0,
-   654,
+   1202,
+   1995,
+   1444,
+   2212
+  ]
+ },
+ "cat-grove-lower-left": {
+  "class": "foliage",
+  "px": 11034,
+  "pctOfPlate": 0.177,
+  "plateBox": [
+   94,
+   1520,
+   265,
+   1673
+  ]
+ },
+ "cat-pine-top-left": {
+  "class": "foliage",
+  "px": 19078,
+  "pctOfPlate": 0.306,
+  "plateBox": [
+   2007,
+   1818,
+   2173,
+   2001
+  ]
+ },
+ "cat-tree-brick-centre": {
+  "class": "foliage",
+  "px": 15425,
+  "pctOfPlate": 0.248,
+  "plateBox": [
+   1338,
+   1254,
+   1610,
+   1365
+  ]
+ },
+ "cat-tree-bottom-centre": {
+  "class": "foliage",
+  "px": 6472,
+  "pctOfPlate": 0.104,
+  "plateBox": [
+   1091,
+   1736,
+   1383,
+   1807
+  ]
+ },
+ "cat-tree-top-left": {
+  "class": "foliage",
+  "px": 23335,
+  "pctOfPlate": 0.375,
+  "plateBox": [
+   1018,
+   1729,
+   1280,
+   1955
+  ]
+ },
+ "cat-conifers-right": {
+  "class": "foliage",
+  "px": 9517,
+  "pctOfPlate": 0.153,
+  "plateBox": [
+   671,
+   1173,
+   801,
+   1391
+  ]
+ },
+ "cat-tree-teal-centre-right": {
+  "class": "foliage",
+  "px": 15425,
+  "pctOfPlate": 0.248,
+  "plateBox": [
+   1338,
+   1254,
+   1610,
+   1365
+  ]
+ },
+ "cat-tree-bottom-centre-t002": {
+  "class": "foliage",
+  "px": 25552,
+  "pctOfPlate": 0.41,
+  "plateBox": [
+   1733,
+   1615,
+   2055,
+   1885
+  ]
+ },
+ "cat-tree-teal-upper-left": {
+  "class": "foliage",
+  "px": 14660,
+  "pctOfPlate": 0.235,
+  "plateBox": [
+   128,
+   987,
    318,
    1118
+  ]
+ },
+ "cat-willow-top-left": {
+  "class": "foliage",
+  "px": 29955,
+  "pctOfPlate": 0.481,
+  "plateBox": [
+   1782,
+   1614,
+   2057,
+   1862
+  ]
+ },
+ "cat-canopy-top-right": {
+  "class": "foliage",
+  "px": 20374,
+  "pctOfPlate": 0.327,
+  "plateBox": [
+   2562,
+   800,
+   2815,
+   989
+  ]
+ },
+ "cat-tree-teal-above-ge-hong": {
+  "class": "foliage",
+  "px": 9969,
+  "pctOfPlate": 0.16,
+  "plateBox": [
+   94,
+   1521,
+   261,
+   1671
+  ]
+ },
+ "cat-tree-weeping-upper-right": {
+  "class": "foliage",
+  "px": 19695,
+  "pctOfPlate": 0.316,
+  "plateBox": [
+   543,
+   1009,
+   767,
+   1277
+  ]
+ },
+ "cat-pine-top-centre": {
+  "class": "foliage",
+  "px": 8351,
+  "pctOfPlate": 0.134,
+  "plateBox": [
+   1290,
+   900,
+   1458,
+   1001
+  ]
+ },
+ "cat-grove-left-upper": {
+  "class": "foliage",
+  "px": 13110,
+  "pctOfPlate": 0.211,
+  "plateBox": [
+   858,
+   1195,
+   1028,
+   1382
+  ]
+ },
+ "cat-tree-teal-bottom-left": {
+  "class": "foliage",
+  "px": 28119,
+  "pctOfPlate": 0.452,
+  "plateBox": [
+   1774,
+   1615,
+   2057,
+   1859
+  ]
+ },
+ "cat-tree-right-edge": {
+  "class": "foliage",
+  "px": 15357,
+  "pctOfPlate": 0.247,
+  "plateBox": [
+   2717,
+   1628,
+   2815,
+   1953
+  ]
+ },
+ "cat-tree-teal-left": {
+  "class": "foliage",
+  "px": 4847,
+  "pctOfPlate": 0.078,
+  "plateBox": [
+   1710,
+   1144,
+   1821,
+   1266
+  ]
+ },
+ "cat-tree-bottom-right-t003": {
+  "class": "foliage",
+  "px": 15498,
+  "pctOfPlate": 0.249,
+  "plateBox": [
+   2716,
+   1628,
+   2815,
+   1946
+  ]
+ },
+ "cat-tree-mid-round": {
+  "class": "foliage",
+  "px": 11380,
+  "pctOfPlate": 0.183,
+  "plateBox": [
+   416,
+   2041,
+   561,
+   2195
+  ]
+ },
+ "cat-canopy-top-centre-left": {
+  "class": "foliage",
+  "px": 5524,
+  "pctOfPlate": 0.089,
+  "plateBox": [
+   1805,
+   881,
+   1909,
+   1031
+  ]
+ },
+ "sum-wooded-knoll-left-centre": {
+  "class": "foliage",
+  "px": 44157,
+  "pctOfPlate": 0.709,
+  "plateBox": [
+   763,
+   0,
+   1240,
+   305
+  ]
+ },
+ "sum-pines-bottom-left": {
+  "class": "foliage",
+  "px": 31001,
+  "pctOfPlate": 0.498,
+  "plateBox": [
+   0,
+   653,
+   237,
+   1006
+  ]
+ },
+ "sum-grove-village-right": {
+  "class": "foliage",
+  "px": 15405,
+  "pctOfPlate": 0.247,
+  "plateBox": [
+   681,
+   567,
+   882,
+   782
+  ]
+ },
+ "sum-grove-village-left": {
+  "class": "foliage",
+  "px": 9286,
+  "pctOfPlate": 0.149,
+  "plateBox": [
+   574,
+   670,
+   710,
+   874
+  ]
+ },
+ "sum-grove-village-centre": {
+  "class": "foliage",
+  "px": 17458,
+  "pctOfPlate": 0.28,
+  "plateBox": [
+   549,
+   661,
+   726,
+   878
+  ]
+ },
+ "sum-tree-crown-bottom-centre": {
+  "class": "foliage",
+  "px": 3605,
+  "pctOfPlate": 0.058,
+  "plateBox": [
+   2112,
+   568,
+   2205,
+   654
+  ]
+ },
+ "sum-ridge-trees-upper-right": {
+  "class": "foliage",
+  "px": 29225,
+  "pctOfPlate": 0.469,
+  "plateBox": [
+   698,
+   0,
+   1061,
+   225
+  ]
+ },
+ "sum-ridge-trees-crest-diagonal": {
+  "class": "foliage",
+  "px": 37709,
+  "pctOfPlate": 0.606,
+  "plateBox": [
+   156,
+   0,
+   506,
+   315
+  ]
+ },
+ "sum-big-tree-canopy-near-right": {
+  "class": "foliage",
+  "px": 6736,
+  "pctOfPlate": 0.108,
+  "plateBox": [
+   1436,
+   462,
+   1530,
+   594
+  ]
+ },
+ "sum-forest-col-centre": {
+  "class": "foliage",
+  "px": 46306,
+  "pctOfPlate": 0.744,
+  "plateBox": [
+   196,
+   0,
+   591,
+   318
+  ]
+ },
+ "sum-ridge-trees-right-lower": {
+  "class": "foliage",
+  "px": 30444,
+  "pctOfPlate": 0.489,
+  "plateBox": [
+   2255,
+   0,
+   2512,
+   261
+  ]
+ },
+ "sum-grove-ledge-lower-right": {
+  "class": "foliage",
+  "px": 4208,
+  "pctOfPlate": 0.068,
+  "plateBox": [
+   2674,
+   388,
+   2795,
+   491
+  ]
+ },
+ "sum-blue-green-tree-lower": {
+  "class": "foliage",
+  "px": 2867,
+  "pctOfPlate": 0.046,
+  "plateBox": [
+   2248,
+   623,
+   2326,
+   674
+  ]
+ },
+ "sum-tree-stand-bottom-right": {
+  "class": "foliage",
+  "px": 6989,
+  "pctOfPlate": 0.112,
+  "plateBox": [
+   1612,
+   483,
+   1768,
+   617
+  ]
+ },
+ "sum-firs-behind-pavilion": {
+  "class": "foliage",
+  "px": 2994,
+  "pctOfPlate": 0.048,
+  "plateBox": [
+   1029,
+   598,
+   1095,
+   674
+  ]
+ },
+ "sum-spur-trees-right-mid": {
+  "class": "foliage",
+  "px": 22029,
+  "pctOfPlate": 0.354,
+  "plateBox": [
+   537,
+   164,
+   759,
+   459
+  ]
+ },
+ "sum-wooded-flank-right-edge": {
+  "class": "foliage",
+  "px": 26443,
+  "pctOfPlate": 0.425,
+  "plateBox": [
+   716,
+   0,
+   1061,
+   228
+  ]
+ },
+ "sum-dark-pines-centre-lower": {
+  "class": "foliage",
+  "px": 3634,
+  "pctOfPlate": 0.058,
+  "plateBox": [
+   2171,
+   690,
+   2237,
+   818
+  ]
+ },
+ "sum-firs-left-of-pavilion": {
+  "class": "foliage",
+  "px": 6180,
+  "pctOfPlate": 0.099,
+  "plateBox": [
+   884,
+   601,
+   998,
+   694
+  ]
+ },
+ "sum-slope-trees-upper-left": {
+  "class": "foliage",
+  "px": 42350,
+  "pctOfPlate": 0.68,
+  "plateBox": [
+   1279,
+   553,
+   1586,
+   849
+  ]
+ },
+ "sum-treeline-lower-centre": {
+  "class": "foliage",
+  "px": 36914,
+  "pctOfPlate": 0.593,
+  "plateBox": [
+   199,
+   52,
+   581,
+   375
+  ]
+ },
+ "sum-sparse-trees-bottom-centre-left": {
+  "class": "foliage",
+  "px": 3350,
+  "pctOfPlate": 0.054,
+  "plateBox": [
+   1027,
+   597,
+   1097,
+   675
+  ]
+ },
+ "sum-cliff-trees-left-edge": {
+  "class": "foliage",
+  "px": 6989,
+  "pctOfPlate": 0.112,
+  "plateBox": [
+   1612,
+   483,
+   1768,
+   617
   ]
  }
 }
