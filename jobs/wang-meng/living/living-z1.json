@@ -27,6 +27,15 @@
     ],
     "n": 96,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__cat-pine-needle-right",
+    "box": [
+     404,
+     0
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
@@ -43,6 +52,24 @@
    },
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__s-left-pines-z2",
+    "box": [
+     0,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-broadleaf-great-right",
+    "box": [
+     557,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-pine-needle-right",
     "box": [
      0,
      0
@@ -104,6 +131,15 @@
     "on": 2
    },
    {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__g-ge-fan",
+    "box": [
+     579,
+     341
+    ],
+    "n": 48,
+    "on": 2
+   },
+   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__s-pine-over-bridge",
     "box": [
      637,
@@ -113,12 +149,30 @@
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__g-ge-fan",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-tree-colour-lower-left",
     "box": [
-     579,
-     341
+     740,
+     86
     ],
-    "n": 48,
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-tree-bottom-right",
+    "box": [
+     608,
+     86
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-canopy-bottom-left",
+    "box": [
+     801,
+     247
+    ],
+    "n": 96,
     "on": 2
    }
   ]
@@ -144,6 +198,15 @@
     "on": 2
    },
    {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__g-ge-fan",
+    "box": [
+     230,
+     826
+    ],
+    "n": 48,
+    "on": 2
+   },
+   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-great-trees-upper",
     "box": [
      1345,
@@ -162,12 +225,84 @@
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__g-ge-fan",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-vine-curtain-left",
     "box": [
-     230,
-     826
+     987,
+     1373
     ],
-    "n": 48,
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-broadleaf-great-right",
+    "box": [
+     1403,
+     36
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-canopy-brick-top",
+    "box": [
+     1404,
+     99
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-colour-lower-left",
+    "box": [
+     425,
+     569
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-great-centre",
+    "box": [
+     1425,
+     424
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-bottom-right",
+    "box": [
+     302,
+     497
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-round-top-left",
+    "box": [
+     1404,
+     173
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-teal-mid-left",
+    "box": [
+     1202,
+     338
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-canopy-bottom-left",
+    "box": [
+     425,
+     807
+    ],
+    "n": 96,
     "on": 2
    }
   ]
@@ -204,6 +339,60 @@
     ],
     "n": 96,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-vine-curtain-left",
+    "box": [
+     0,
+     1217
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-canopy-bough-left-main",
+    "box": [
+     336,
+     1448
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-vine-curtain-mid",
+    "box": [
+     151,
+     1142
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-canopy-bough-left-tip",
+    "box": [
+     278,
+     1358
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-fronds-bottom-left",
+    "box": [
+     358,
+     849
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-tree-bottom-right-t013",
+    "box": [
+     156,
+     895
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
@@ -213,6 +402,42 @@
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__s-pine-over-bridge",
     "box": [
      605,
+     12
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-vine-curtain-mid",
+    "box": [
+     1348,
+     387
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-tree-colour-lower-left",
+    "box": [
+     629,
+     12
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-tree-bottom-right",
+    "box": [
+     582,
+     12
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-canopy-bottom-left",
+    "box": [
+     629,
      12
     ],
     "n": 96,

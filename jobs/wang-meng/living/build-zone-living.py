@@ -102,7 +102,8 @@ def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
                   "--grow", str(cls.get("cleanGrow", 4)),
                   "--method", cls.get("cleanMethod", "shiftmap")]
     hinge = ["python3", str(ROOT / "tools/hinge-foliage.py"),
-             "--plate", str(clean), "--source", str(wd / "plate.png"),
+             *([] if cls.get("under") == "hold" else ["--plate", str(clean)]),
+             "--source", str(wd / "plate.png"),
              "--cards", str(wd / "mask"),
              "--out", str(wd / "drawings"), "--preview", str(wd / "preview.mp4"),
              "--frames", str(cls.get("drawings", 96) * cls.get("on", 2)),
@@ -626,10 +627,23 @@ if a.stage == "cycle":
 
         fn = TECHNIQUES[cls["technique"]]
         args = (wd, cls, pivot, cx0, cy0) + ((extra,) if extra is not None else ())
+        # A REGION THAT YIELDS NO CARD IS AN ANSWER, NOT A FAILURE, and it must
+        # not take 23 other regions down with it. Catalogued leaf masses are
+        # authored at every scale: some are a bamboo tuft whose ink never reaches
+        # --min-px once the leaf mask has gated it. Skip it, say so, keep going.
+        # Anything else still stops the build.
+        empty = False
         for step in fn(*args):
             res = subprocess.run(step, cwd=ROOT, capture_output=True, text=True)
             if res.returncode != 0:
+                if "reached --min-px" in res.stderr or "no card" in res.stderr:
+                    print(f"    {uid}: no card met --min-px -- region left still",
+                          file=sys.stderr)
+                    empty = True
+                    break
                 sys.exit(f"{uid}: {Path(step[1]).name} failed\n{res.stderr[-900:]}")
+        if empty:
+            continue
         cyc = json.loads((wd / "drawings" / "cycle.json").read_text())
         draw = [np.array(Image.open(wd / "drawings" / f"dr-{i:03d}.png").convert("RGB"))
                 for i in range(cyc["drawings"])]

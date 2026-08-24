@@ -64,7 +64,11 @@ from PIL import Image
 Image.MAX_IMAGE_PIXELS = None
 
 p = argparse.ArgumentParser()
-p.add_argument('--plate', required=True, help='background with the cards removed')
+p.add_argument('--plate', help='background with the cards removed. NOT REQUIRED under '
+                    '--under hold, which never reads it: the source stays intact beneath the '
+                    'cards, so there is no hole for a clean plate to fill. Demanding one there '
+                    'forces a caller to synthesise a plate it will not use, which is the cost '
+                    'that kept foliage coverage at 8 authored regions on this painting.')
 p.add_argument('--under', choices=('clean', 'hold'), default='clean',
                help="what a card reveals when it swings off its rest position. "
                     "clean = the synthesised ground from --plate (bare silk and "
@@ -196,8 +200,18 @@ p.add_argument('--ink-close', type=int, default=1,
                     'without bridging across clusters')
 a = p.parse_args()
 
-plate = np.array(Image.open(a.plate).convert('RGB'), np.float32)
+if a.under == 'hold':
+    # Nothing is removed, so the "background with the cards removed" IS the
+    # source. Bound to it rather than read from disk so the shape check below
+    # and the metadata stay meaningful.
+    plate = None
+elif not a.plate:
+    sys.exit('--plate is required unless --under hold')
+else:
+    plate = np.array(Image.open(a.plate).convert('RGB'), np.float32)
 src = np.array(Image.open(a.source).convert('RGB'), np.float32)
+if plate is None:
+    plate = src.astype(np.float32)
 if plate.shape != src.shape:
     sys.exit(f'plate {plate.shape[:2]} and source {src.shape[:2]} must be the same size')
 H, W = plate.shape[:2]
