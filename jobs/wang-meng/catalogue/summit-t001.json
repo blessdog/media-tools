@@ -1,0 +1,267 @@
+{
+ "tile": "t001.jpg",
+ "sourceBox": [
+  1936,
+  0,
+  4136,
+  2200
+ ],
+ "_note": "Boxes are NORMALISED to the tile (0-1). ONE GREAT SUMMIT DOME fills this tile: its apex is at about (0.38,0.27), its left flank runs down-left off the tile at (0.0,0.60), and its right side drops as a sheer cliff to (0.79,0.85). Bare silk fills the upper left and the whole right quarter below y 0.50. THIS IS THE MOST TREE-RICH OF THE THREE TOP-ROW TILES, and the foliage comes in two completely different sizes that must be handled differently. FIRST, the far layer: every ridge and every terrace of the dome is lined with rows of 遠松 -- tiny conifers, each a vertical stem with layered branchlets, verified at full master resolution. They run as a narrow fringe along the left skyline from (0.39,0.28) down to (0.15,0.57), as a dark band right of the apex, as a dense forest across the mid-slope terrace at y 0.47-0.63, and along two lower ledges. These are real trees but they are drawn AT the scale of the moss dots around them, so no box containing them is tight -- each one below is a search region. SECOND, the near layer: the pine grove at the bottom left, x 0.05-0.50 below y 0.79. Those pines are ten times the size of the ridge conifers, each with a slim trunk and flat layered foliage plates, standing clear against pale rock. That grove is the best animatable subject in the entire summit band and it should carry most of the motion budget for this tile. FOUR DECOYS. (1) A HUGE VERMILION COLLECTOR'S SEAL, x 0.40-0.89, y 0.02-0.49, stamped straight over the sky and over the upper right of the dome. It is the strongest saturated colour in the whole top row of the scroll; any chroma-based foliage rule finds it instantly, and it is not landscape at all -- it is ink on top of the painting and it must be perfectly still or the forgery is obvious. (2) The right cliff edge, x 0.60-0.82 below y 0.50, has a ragged dark contour that reads as a treeline at thumbnail size; examined at master resolution it is 点苔 moss dotting packed along the cliff lip, with no stem and no crown anywhere -- this is precisely the surface family that made the rock sway last time. (3) The whole dome face between the treelines is 牛毛皴 hemp-fibre stroking plus moss; dark and busy, and stone. (4) A pale blue distant peak enters the bottom-right corner -- flat wash, far, no leaves. Depth: the ridge conifers are far and want a very small amplitude; the bottom-left pines are mid and can take a real gust.",
+ "objects": [
+  {
+   "id": "silk-empty-upper-left",
+   "name": "untouched silk, upper left",
+   "kind": "void",
+   "box": [
+    0.0,
+    0.0,
+    0.4,
+    0.27
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "no ink; the dome's left skyline first breaks this at about (0.39,0.28)"
+  },
+  {
+   "id": "silk-empty-right",
+   "name": "untouched silk, right quarter",
+   "kind": "void",
+   "box": [
+    0.79,
+    0.49,
+    1.0,
+    0.85
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "clean ground to the right of the cliff edge, above the blue peak in the corner"
+  },
+  {
+   "id": "collector-seal-vermilion",
+   "name": "large vermilion collector's seal",
+   "kind": "void",
+   "box": [
+    0.395,
+    0.015,
+    0.885,
+    0.49
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "NOT LANDSCAPE. A big square 收藏印 in 篆書 stamped over the silk and over the top right of the dome, in strong orange-red. Catalogued as void because it belongs to the picture surface, not to the depicted world. Two consequences: it is the loudest chroma in the tile and will be the first thing a colour threshold calls foliage, and because it is stamped ON TOP of the mountain, any warp applied to the rock beneath it would smear the seal and read instantly as damage. Absolutely rigid"
+  },
+  {
+   "id": "peak-dome-main",
+   "name": "the great summit dome",
+   "kind": "rock",
+   "box": [
+    0.0,
+    0.26,
+    0.8,
+    0.92
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "THE MAIN DECOY. The whole rounded mass, drawn in dense 牛毛皴 hemp-fibre strokes following the dome's curvature and stippled all over with 点苔 moss. Busy, dark in patches, and entirely stone. The tree boxes below are islands INSIDE this box, not exceptions to it: outside them, nothing on this dome moves"
+  },
+  {
+   "id": "treeline-crest-upper-left",
+   "name": "conifer fringe on the upper left skyline",
+   "kind": "tree",
+   "box": [
+    0.26,
+    0.26,
+    0.42,
+    0.41
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION. Verified at master resolution as a continuous row of tiny conifers standing on the skyline. They occupy only a narrow strip along the box's descending diagonal; above that strip is bare silk and below it is moss-dotted rock. Roughly a fifth of this box is leaf pixels"
+  },
+  {
+   "id": "treeline-left-flank",
+   "name": "conifer fringe down the left flank",
+   "kind": "tree",
+   "box": [
+    0.13,
+    0.37,
+    0.31,
+    0.61
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION, same fringe continuing down-left. The contrast between this fringe and the rock immediately under it is the clearest example in the tile of the distinction that matters: on the silhouette, stems and branchlets; two millimetres inside it, moss dots. Mask on the outline"
+  },
+  {
+   "id": "treeline-left-lower",
+   "name": "conifer fringe at the left edge",
+   "kind": "tree",
+   "box": [
+    0.0,
+    0.54,
+    0.17,
+    0.66
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "the fringe reaches the left edge here and continues into t000. Search region"
+  },
+  {
+   "id": "treeline-summit-right",
+   "name": "dark treeline right of the apex",
+   "kind": "tree",
+   "box": [
+    0.38,
+    0.27,
+    0.62,
+    0.43
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION. A dark band of massed conifers running down-right from the apex along the crest. Partly UNDER the collector's seal, which overlaps its upper right -- any mask here must exclude the seal's red pixels explicitly, because the seal sits on top of the trees and would otherwise be dragged along with them"
+  },
+  {
+   "id": "forest-mid-terrace",
+   "name": "dense conifer forest on the mid-slope terrace",
+   "kind": "tree",
+   "box": [
+    0.4,
+    0.47,
+    0.75,
+    0.63
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "the largest genuine forest in the tile and verified at master resolution -- rows of small conifers with legible stems and layered branchlets standing on stepped terraces. SEARCH REGION: the terraces themselves are inside the box and roughly half these pixels are the pale rock the trees stand on. The right end stops at x 0.75; beyond that the dark stuff is the moss-crusted cliff lip, not forest"
+  },
+  {
+   "id": "treeline-ledge-centre-left",
+   "name": "conifer row on the centre-left ledge",
+   "kind": "tree",
+   "box": [
+    0.21,
+    0.61,
+    0.39,
+    0.69
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "a single row of small conifers standing along a pale ledge, clearly separated from the rock by the ledge line under them. Search region, but a cleaner one than most in this tile"
+  },
+  {
+   "id": "forest-lower-terrace",
+   "name": "conifer group on the lower terrace",
+   "kind": "tree",
+   "box": [
+    0.39,
+    0.61,
+    0.6,
+    0.73
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "taller conifers than the ledge row to its left, standing in a loose group. Search region; the pale terrace behind them is inside the box"
+  },
+  {
+   "id": "cliff-face-right",
+   "name": "right cliff face and its moss-crusted lip",
+   "kind": "rock",
+   "box": [
+    0.58,
+    0.5,
+    0.82,
+    0.92
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "DECOY, checked at master resolution. The dome falls away here in a sheer face; along its outline runs a heavy dark ragged edge of 点苔 moss packed on the cliff lip. At thumbnail size that edge is indistinguishable from the genuine treelines elsewhere in this tile -- the difference is that here there is no vertical stem and no layered branchlet anywhere, only dots and short texture strokes following the contour. This is the family of surface that got the previous pass rejected. NEVER animate"
+  },
+  {
+   "id": "pine-grove-crest",
+   "name": "tall pine grove on the ridge crest, bottom left",
+   "kind": "tree",
+   "box": [
+    0.25,
+    0.8,
+    0.4,
+    0.93
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "THE BEST SUBJECT IN THE TILE. Full-grown pines an order of magnitude larger than the ridge conifers: each has a slim visible trunk and flat layered plates of foliage, and they stand clear against pale rock and bare silk, so their silhouettes are separable. Real wood, real leaf mass, a clean background -- this is where the motion budget for t001 belongs"
+  },
+  {
+   "id": "pine-row-left",
+   "name": "pine row descending to the left",
+   "kind": "tree",
+   "box": [
+    0.05,
+    0.85,
+    0.26,
+    1.0
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "the same grove continuing down-left along the ridge, individual trees getting smaller with distance, clipped by the bottom edge and continuing into t005. Trunks visible between the foliage plates -- hinge the plates about the trunks, do not translate the trunks"
+  },
+  {
+   "id": "pine-row-right",
+   "name": "pine row descending to the right",
+   "kind": "tree",
+   "box": [
+    0.34,
+    0.84,
+    0.5,
+    1.0
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "the grove's right arm, clipped by the bottom edge. Slightly denser and darker than the left arm"
+  },
+  {
+   "id": "ridge-under-pines",
+   "name": "pale ridge the pine grove stands on",
+   "kind": "rock",
+   "box": [
+    0.0,
+    0.88,
+    0.55,
+    1.0
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "the ridge line itself, a pale wash with a dark contour, running under all three pine boxes. The pine boxes overlap it -- that overlap is why they cannot be tight. Rigid"
+  },
+  {
+   "id": "distant-blue-peak-bottom-right",
+   "name": "blue distant peak, bottom-right corner",
+   "kind": "rock",
+   "box": [
+    0.78,
+    0.84,
+    1.0,
+    1.0
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "flat blue-grey 青綠 wash silhouette entering the corner, no texture and no leaf glyphs. Same colour-threshold trap as the far ranges in t000. NEVER animate"
+  }
+ ]
+}

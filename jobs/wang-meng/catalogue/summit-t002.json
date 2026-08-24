@@ -1,0 +1,207 @@
+{
+ "tile": "t002.jpg",
+ "sourceBox": [
+  3872,
+  0,
+  6072,
+  2200
+ ],
+ "_note": "Boxes are NORMALISED to the tile (0-1). THE INSCRIPTION TILE. Two thirds of this tile is bare silk carrying the artist's writing: a large 篆書 seal-script title down the right edge (the characters of 葛稚川移居圖) and a four-column 行書 colophon in the middle. There is NO landscape at all above y 0.66. All the terrain is crushed into the bottom third and it is the FARTHEST material in the three tiles -- two small summits seen across a great distance. The left one is a rounded mesa, x 0.10-0.52 below y 0.69, whose crest and right shoulder carry the only substantial foliage in the tile: a genuine treeline of small conifers with visible stems on the crest, broader deciduous crowns with a blue-green wash on the right shoulder, and a wooded slope running off the bottom edge. Its left face, x 0.12-0.36 below y 0.80, is bare pale rock and must stay bare. The right group is a pointed pinnacle at x 0.66-0.82 with a small treeline on the shoulder to its left and a row of washed crowns on the ridge at x 0.81-0.95. FIVE DECOYS, and three of them are unusual to this tile. (1) THE CALLIGRAPHY IS THE BIGGEST TRAP. Those brush characters are the blackest, densest ink in the entire tile -- far darker than any tree -- and they float on bare silk directly above and beside the summits. The lowest characters of the colophon descend to about y 0.72, close enough to the mesa crest that a dark-pixel foliage rule will chain them onto the treeline. Ink strokes must be excluded explicitly, and they must be perfectly rigid: a wobbling character is the most obvious possible tell that the painting has been tampered with. (2) The pinnacle's cap at x 0.69-0.77, y 0.73-0.80 is a solid dark triangular mass. Examined at 2x on the full-resolution master it is pure 点苔 -- moss dots following the stone's contour, with no stem, no crown and no branch. It is the single most convincing false positive in this tile and it is rock. (3) The slope below and right of the pinnacle is the same mottled moss-on-stone. (4) A pale blue distant peak enters the bottom-left corner: flat wash, no leaves. (5) The blue-green wash that marks the REAL crowns here is the same pigment family as the far-mountain blue, so colour alone cannot separate tree from mountain in this tile -- only the presence of a crown shape over a stem can. Depth is far everywhere; amplitudes must be the smallest of the three tiles.",
+ "objects": [
+  {
+   "id": "silk-empty-sky",
+   "name": "untouched silk above the summits",
+   "kind": "void",
+   "box": [
+    0.0,
+    0.0,
+    1.0,
+    0.66
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "bare silk apart from the writing catalogued below. No landscape whatsoever in the top two thirds of this tile"
+  },
+  {
+   "id": "inscription-title-seal-script",
+   "name": "seal-script title down the right edge",
+   "kind": "void",
+   "box": [
+    0.77,
+    0.21,
+    1.0,
+    0.64
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "NOT LANDSCAPE. Large 篆書 characters running vertically at the right edge and continuing into t003. Blackest ink in the tile. Catalogued so a dark-pixel mask can be told to exclude it. Perfectly rigid -- moving a written character is instantly legible as damage"
+  },
+  {
+   "id": "inscription-colophon",
+   "name": "running-script colophon, centre",
+   "kind": "void",
+   "box": [
+    0.33,
+    0.24,
+    0.77,
+    0.73
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "near",
+   "note": "NOT LANDSCAPE. Four vertical columns of 行書 on bare silk. THE DANGEROUS PART IS THE BOTTOM EDGE: the lowest characters reach about y 0.72, which is inside the vertical range of the mesa crest treeline at y 0.685-0.76 and only a little to its right. A connected-component or dark-threshold foliage mask will happily bridge from a character stroke to the treeline. Exclude by position and by stroke character -- calligraphy is long smooth tapering strokes, foliage is repeated small dabs. Rigid"
+  },
+  {
+   "id": "mesa-left-rock",
+   "name": "rounded mesa, bottom left",
+   "kind": "rock",
+   "box": [
+    0.1,
+    0.7,
+    0.52,
+    1.0
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "the body of the left summit: a broad pale face with wandering contour lines and light hemp-fibre texture, largely UNPAINTED and bare between about x 0.12 and x 0.36 below y 0.80. The tree boxes below sit on its crest and right shoulder only. This pale face is the easiest thing in the tile to keep still and it should stay perfectly still"
+  },
+  {
+   "id": "treeline-mesa-crest",
+   "name": "treeline along the mesa crest",
+   "kind": "tree",
+   "box": [
+    0.21,
+    0.685,
+    0.42,
+    0.76
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION. Verified on the full-resolution master: small conifers with vertical stems and layered branchlets standing along the crest, mixed with broader dabbed crowns carrying a pale blue-green wash. Genuine trees on a clean skyline. The lower third of this box is the crest rock they stand on, and the colophon's lowest characters sit just above and right of the box -- exclude both"
+  },
+  {
+   "id": "treeline-mesa-left-flank",
+   "name": "conifer row down the mesa's left flank",
+   "kind": "tree",
+   "box": [
+    0.1,
+    0.75,
+    0.23,
+    0.88
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION. A descending row of small conifers on the left shoulder, silhouetted against bare silk on their left side, which makes the outline mask reliable there. On their right the box runs into the mesa's pale face"
+  },
+  {
+   "id": "wooded-shoulder-mesa-right",
+   "name": "wooded right shoulder of the mesa",
+   "kind": "tree",
+   "box": [
+    0.3,
+    0.74,
+    0.52,
+    0.9
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION and the richest foliage in the tile: broad deciduous crowns dabbed in dark ink over a blue-green wash, overlapping each other down the shoulder. Real leaf mass, but drawn straight onto the rock with no gap, so this box contains a large fraction of stone. Mask per-pixel on the dabbed crown glyphs plus the wash beneath them"
+  },
+  {
+   "id": "wooded-slope-bottom-centre",
+   "name": "wooded slope running off the bottom edge",
+   "kind": "tree",
+   "box": [
+    0.36,
+    0.85,
+    0.65,
+    1.0
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION. The shoulder's foliage continues down and right to the bottom edge, getting darker and more matted; individual crowns stop being separable in the lower half. Continues into t006. Where crowns cannot be told apart, prefer no motion over a blanket sway"
+  },
+  {
+   "id": "pinnacle-rock-centre-right",
+   "name": "pointed rock pinnacle, centre right",
+   "kind": "rock",
+   "box": [
+    0.66,
+    0.725,
+    0.82,
+    1.0
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "THE MOST CONVINCING FALSE POSITIVE IN THE TILE. A sharp triangular peak whose cap, roughly x 0.69-0.77 and y 0.73-0.80, is a solid dark mass that reads at tile resolution as a crown of trees on a summit. Zoomed 2x on the full-resolution master it resolves into 点苔 moss dots laid in rows that follow the stone's contour: no stem, no branch, no crown outline anywhere in it. The body below the cap is the same moss over hemp-fibre stroking. This whole box is stone and it is exactly the shape of thing that made the rock sway before. NEVER animate"
+  },
+  {
+   "id": "treeline-shoulder-left-of-pinnacle",
+   "name": "small treeline on the shoulder left of the pinnacle",
+   "kind": "tree",
+   "box": [
+    0.62,
+    0.78,
+    0.71,
+    0.85
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION at the SIZE FLOOR. Three or four small dabbed crowns on thin stems, with a trace of blue-green wash, standing above the ridge line immediately left of the pinnacle. Confirmed as trees at 1.7x on the master, but they are only about 0.04 of the tile wide, so the box is padded with rock to reach the floor. Adjacent to pinnacle-rock-centre-right, which is the opposite label -- check this pair by eye if the mask looks wrong"
+  },
+  {
+   "id": "ridge-treeline-right",
+   "name": "row of washed crowns on the right ridge",
+   "kind": "tree",
+   "box": [
+    0.81,
+    0.82,
+    0.95,
+    0.89
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION. Half a dozen small deciduous crowns, dark dabs over a distinct blue-green wash, standing on the skyline of the right-hand ridge. The wash is what identifies them; note that the same pigment appears in the far mountains, so the crown-over-stem shape is the real test, not the colour. The lower half of the box is the moss-dotted ridge below them"
+  },
+  {
+   "id": "rock-slope-bottom-right",
+   "name": "mottled slope, bottom right",
+   "kind": "rock",
+   "box": [
+    0.79,
+    0.85,
+    1.0,
+    1.0
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "DECOY. Dark mottled ground below the right ridge treeline, continuing into t003 and t006. Dense and irregular enough to read as massed foliage; at master resolution it is moss dotting over hemp-fibre strokes with no tree structure. Rigid"
+  },
+  {
+   "id": "distant-blue-peak-bottom-left",
+   "name": "blue distant peak, bottom-left corner",
+   "kind": "rock",
+   "box": [
+    0.0,
+    0.925,
+    0.09,
+    1.0
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "flat blue-grey wash silhouette entering the corner, no texture, no leaf glyphs. At the size floor within this tile; it continues into t006. Same colour trap as the far ranges in t000 and the corner peak in t001. NEVER animate"
+  }
+ ]
+}

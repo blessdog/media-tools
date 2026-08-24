@@ -1,0 +1,222 @@
+{
+ "tile": "t000.jpg",
+ "sourceBox": [
+  0,
+  0,
+  2200,
+  2200
+ ],
+ "_note": "Boxes are NORMALISED to the tile (0-1). TOP-LEFT CORNER OF THE WHOLE SCROLL, and it is MOSTLY EMPTY. The entire upper 42% is untouched silk -- no ink at all -- and the left half down to y~0.80 is empty too. Everything that exists sits in two places: a great rock ridge entering at the right and descending from a flat crest at (0.55,0.45) to the bottom edge, and a small wooded knoll clipped by the bottom-left corner. THE LEAF MASS IS TINY AND IT IS ALL DISTANT. There is no close-up canopy anywhere in this tile. The real foliage is (a) a row of 遠松 distant conifers standing in silhouette ON THE SKYLINE of the ridge -- verified at 6x magnification, each one a slim vertical stem with short paired branchlets, five or six of them on the flat crest at x 0.55-0.66 and then a continuous fringe running down-right along the ridge outline; (b) a dark grove on the ridge shoulder around (0.78,0.57); (c) a clump of slender-trunked distant trees on the knoll at bottom left; and (d) a broad band of dotted deciduous foliage clipped by the bottom edge on the left, including one tree at x 0.15-0.34 whose branch fan and trunk base are legible. FOUR DECOYS. (1) THE WHOLE CLIFF FACE, x 0.43-1.0 below y 0.55, is 牛毛皴 hemp-fibre texture: long wandering parallel strokes fanning downhill, and between them thousands of 点苔 moss dabs. At thumbnail size that reads as a forested slope. Up close there is no stem and no crown anywhere in it -- it is stone, and it is the exact surface that made the rock sway in the previous automatic pass. Only the narrow band right at the OUTLINE of the ridge, where dark shapes break the silhouette against bare silk, is trees. (2) The pale blue-grey silhouettes at x 0.0-0.40, y 0.65-0.85 are far mountain ranges in flat 青綠 wash -- no texture at all, no leaf glyphs, and their colour is the only strong non-brown chroma in the tile, so a colour threshold will grab them first. (3) The pale luminous band under those ranges is mist, not a surface, and must not be given water motion. (4) The dark blob on the knoll at bottom left looked at tile resolution like it might be a hut with posts and a lit roof edge; checked against the full-resolution master it resolves into slim tree trunks with dotted crowns and a gap of bare silk -- trees, not architecture. Depth here is far throughout: any sway authored in this tile must be small in amplitude or it will read as jitter against the still ranges behind it.",
+ "objects": [
+  {
+   "id": "silk-empty-sky",
+   "name": "untouched silk, upper half",
+   "kind": "void",
+   "box": [
+    0.0,
+    0.0,
+    1.0,
+    0.42
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "literally no ink. The ridge silhouette first breaks this at (0.53,0.44). Useful as the clean background any hinge on the skyline conifers will pivot against"
+  },
+  {
+   "id": "distant-blue-ranges",
+   "name": "far mountain ranges in blue wash",
+   "kind": "rock",
+   "box": [
+    0.0,
+    0.645,
+    0.4,
+    0.855
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "DECOY FOR COLOUR PASSES. Flat blue-grey 青綠 silhouettes, three overlapping ranges, painted as a single soft wash with no contour strokes and no leaf glyphs. This is the strongest chroma in the tile and any 'not brown means foliage' rule grabs it. NEVER animate"
+  },
+  {
+   "id": "mist-valley-band",
+   "name": "pale mist band below the far ranges",
+   "kind": "void",
+   "box": [
+    0.13,
+    0.84,
+    0.46,
+    0.905
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "a luminous horizontal band of bare or barely washed silk separating the blue ranges from the wooded slope at the bottom. UNCERTAIN: this is most likely valley mist, but it may be the far surface of the river that runs through the lower scroll. Left as void rather than guessing water -- a ripple applied to mist would be worse than no motion"
+  },
+  {
+   "id": "cliff-ridge-main",
+   "name": "the great rock ridge, right two thirds",
+   "kind": "rock",
+   "box": [
+    0.43,
+    0.43,
+    1.0,
+    1.0
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "mid",
+   "note": "THE MAIN DECOY IN THIS TILE and the single most important box in the file. One continuous stone mass from the flat crest at (0.55,0.45) down to the bottom edge, drawn in long parallel 牛毛皴 hemp-fibre strokes that fan downhill and are peppered with 点苔 moss dots. At any distance the moss reads as scrub and the fanned strokes read as sprays of pine needles. Examined at 3x and 6x there is not one trunk and not one crown inside this box. The only foliage on this mass is the narrow fringe along its OUTLINE, catalogued separately below. If this box moves, the painting is broken"
+  },
+  {
+   "id": "treeline-summit-crest",
+   "name": "row of distant conifers on the flat crest",
+   "kind": "tree",
+   "box": [
+    0.54,
+    0.44,
+    0.67,
+    0.52
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "VERIFIED AT 6x. Five or six 遠松 standing upright on the flat summit table, each a slim vertical stem with short paired lateral branchlets, plus one rounded deciduous crown behind them. They break the skyline against empty silk, which makes this the cleanest hinge subject in the tile. SEARCH REGION at the lower edge: the bottom fifth of this box is the crest rock the trees stand on"
+  },
+  {
+   "id": "treeline-skyline-mid",
+   "name": "conifer fringe along the ridge silhouette",
+   "kind": "tree",
+   "box": [
+    0.61,
+    0.47,
+    0.88,
+    0.58
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "SEARCH REGION, NOT A TIGHT BOX. A continuous fringe of small conifers standing on the ridge outline as it descends to the right. The trees occupy only a narrow strip along the UPPER-RIGHT diagonal edge of this box; the lower-left half of the box is the hemp-fibre cliff face of cliff-ridge-main. Any mask built from this box must be cut against the silhouette -- everything below the outline is stone"
+  },
+  {
+   "id": "grove-dark-shoulder",
+   "name": "dark grove on the ridge shoulder",
+   "kind": "tree",
+   "box": [
+    0.72,
+    0.52,
+    0.85,
+    0.63
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "the densest, darkest ink in the tile: a massed grove sitting on the shoulder of the ridge, with conifer spikes legible along its top edge and its lower edge dissolving into the moss-dotted rock. Real trees, but the bottom third of this box is rock -- treat as a search region"
+  },
+  {
+   "id": "treeline-skyline-right",
+   "name": "conifer fringe at the right edge",
+   "kind": "tree",
+   "box": [
+    0.89,
+    0.57,
+    1.0,
+    0.65
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "the fringe continues past the right edge into t001. Same caveat: trees on the outline only, rock beneath"
+  },
+  {
+   "id": "tree-cluster-lower-spur",
+   "name": "small tree cluster on the lower spur",
+   "kind": "tree",
+   "box": [
+    0.45,
+    0.585,
+    0.55,
+    0.655
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "a handful of dark uprights standing on the edge of the lower spur where it turns down to the left, silhouetted against bare silk. At the SIZE FLOOR -- the trees themselves are only ~0.05 of the tile, the box is padded to include the ledge they stand on, so most of its area is rock. Include only if the renderer can mask on the silhouette; a box-level sway here would move the spur"
+  },
+  {
+   "id": "knoll-tree-clump",
+   "name": "distant trees on the knoll crest, bottom left",
+   "kind": "tree",
+   "box": [
+    0.04,
+    0.815,
+    0.15,
+    0.888
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "far",
+   "note": "checked against the full-resolution master because at tile resolution this reads as a small building: two straight parallel verticals and a bright notch that looked like posts and a lit roof edge. At master resolution the verticals are slim tree trunks carrying small dotted crowns and the bright notch is a gap of unpainted silk. It is a clump of distant trees, NOT architecture. Just above the size floor"
+  },
+  {
+   "id": "knoll-rock",
+   "name": "pale rock knoll under the tree clump",
+   "kind": "rock",
+   "box": [
+    0.0,
+    0.82,
+    0.17,
+    0.9
+   ],
+   "motion": "none",
+   "leavesVisible": false,
+   "depth": "far",
+   "note": "the rounded pale knoll the clump stands on, drawn with a single wandering contour and light dotting. The clump's box overlaps this one -- that overlap is why knoll-tree-clump cannot be tight"
+  },
+  {
+   "id": "wooded-slope-bottom-left",
+   "name": "wooded slope along the bottom edge, left",
+   "kind": "tree",
+   "box": [
+    0.0,
+    0.885,
+    0.42,
+    1.0
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "SEARCH REGION. A broad band of dotted deciduous foliage strung along diagonal branches, clipped by the bottom edge and continuing into t004. Real leaf marks, but the same band contains the pale diagonal hemp-fibre strokes of the slope behind them, so roughly half these pixels are rock. Mask per-pixel on the dark dotted glyphs, never on the box"
+  },
+  {
+   "id": "tree-branch-fan-bottom-left",
+   "name": "branched tree at the bottom edge",
+   "kind": "tree",
+   "box": [
+    0.145,
+    0.885,
+    0.335,
+    1.0
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "the one place in this tile where a single tree's WOOD is legible: a fan of branches converging on a trunk base at about (0.215,0.98), with dotted leaf clusters strung along each branch. Nested inside wooded-slope-bottom-left and called out separately because it is the only structure here that can be hinged as an individual tree. Clipped by the bottom edge"
+  },
+  {
+   "id": "pine-crown-bottom-right",
+   "name": "pine crown at the bottom-right corner",
+   "kind": "tree",
+   "box": [
+    0.89,
+    0.925,
+    1.0,
+    1.0
+   ],
+   "motion": "leaves",
+   "leavesVisible": true,
+   "depth": "mid",
+   "note": "the top of a pine rising above the rock in the corner, spreading branchlets clearly visible against pale silk. At the SIZE FLOOR within this tile because most of the tree is below and right of the corner -- it continues into t001 and t004, and should be animated from whichever tile holds its trunk"
+  }
+ ]
+}
