@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 13:24 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 14:07 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -104,9 +104,9 @@ LIVING LAYER — cycles registered per zone
   z1-coarse4  21 patches · 4 planes · 8 regions
   z1     46 patches · 8 planes · 23 regions
   z3w   103 patches · 5 planes · 91 regions
-  z4w    32 patches · 3 planes · 23 regions
-  z5w    13 patches · 3 planes · 9 regions
-  z6w     3 patches · 1 planes · 3 regions
+  z4w   102 patches · 6 planes · 72 regions
+  z5w    71 patches · 6 planes · 57 regions
+  z6w    80 patches · 6 planes · 66 regions
 
 REGIONS — by class, from the file the builder reads
   fall       2
@@ -143,6 +143,8 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  1c4615a  every leg of the film rebuilt through the catalogue: the summits go 0.3% to 16.7%
+2026-08-24  58481bc  STATE regenerated: z3w 46 to 103 patches, summit band catalogued and converted
 2026-08-24  b93272e  the summits become regions: 87 foliage polys where the film had 0.3% coverage
 2026-08-24  79b0384  z3w rebuilt through the catalogue: 46 patches to 103, leak 9434 to 1273
 2026-08-24  6295fac  the summits refined and unioned: the whole scroll now has a foliage decision
@@ -153,13 +155,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  3aabc70  what the catalogue thinks is foliage, over the whole scroll
 2026-08-24  9c02933  the foliage master was a union nobody could reproduce; now it is a script
 2026-08-24  4ed19e9  the mask index was a cache of a directory with no invalidation: 17 entries, 4 files
-2026-08-24  9a0bd7a  the cut-card manifests are the record; living-work's 69MB of pngs are the cutting floor
-2026-08-24  474094a  the z1 rebuild's outputs: catalogue SAM masks for the z3w band, and the reel they produced
 ```
 
 ### ⚠ UNPUSHED
 
-**16 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**18 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -169,6 +169,11 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
+ M jobs/wang-meng/film/paths/rise-z1.json
+ M jobs/wang-meng/film/paths/rise-z3w.json
+ M jobs/wang-meng/film/paths/rise-z4w.json
+ M jobs/wang-meng/film/paths/rise-z5w.json
+ M jobs/wang-meng/film/paths/rise-z6w.json
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
