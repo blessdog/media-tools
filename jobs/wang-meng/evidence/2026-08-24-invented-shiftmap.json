@@ -1,0 +1,20 @@
+{
+ "label": "shiftmap",
+ "zone": "z1",
+ "filled": "layers-filled-shiftmap",
+ "frame": 335,
+ "stack": {
+  "inventedPx": 2326409,
+  "paintedPx": 5329050,
+  "stackPctInvented": 30.39
+ },
+ "framePctInvented": 14.42,
+ "framePctInventedInk": 2.81,
+ "framePctInventedBlank": 11.61,
+ "inkDensityInvented": 19.46,
+ "inkDensityAdjacentPainted": 11.76,
+ "ringPx": 402192,
+ "overInkPct": 65.5,
+ "sheet": "jobs/wang-meng/evidence/2026-08-24-invented-shiftmap.png",
+ "clip": "jobs/wang-meng/evidence/2026-08-24-dolly-shiftmap.mp4"
+}

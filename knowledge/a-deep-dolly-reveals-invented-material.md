@@ -58,10 +58,11 @@ Three levers, and they are not exclusive:
 1. **Camera** — dolly less, or frame so that revealed area falls outside the
    eye's focus. Currently the invented material is densest immediately around
    the protagonist, which is the worst possible place for it.
-2. **Fill source** — `inpaint-planes`' own docstring says *"the source of
-   patches matters more than the algorithm."* Copying real ink from elsewhere in
-   the painting beats inventing it, bounded by
-   [[clean-plate-donor-scope]].
+2. ~~**Fill source**~~ — **REFUTED 2026-08-24, see
+   [[copied-real-ink-over-inks-worse-than-flux]].** Copying real ink was tested
+   against this exact camera and over-inks +65.5% against its collar where flux
+   over-inks +17.6%. Swapping the source does not fix fabricated brushwork; the
+   obvious swap makes it worse.
 3. **Fill quality** — steps/guidance/resolution on the generative path.
 
 **NOT a lever: `--behind`.** It is already ~16x more than the holes require.
@@ -94,5 +95,12 @@ flux is inventing about 17% more brushwork than its own neighbourhood carries.
 So the trade is smaller than the headline made it sound and its shape is
 different: the risk is not that a seventh of the painting is fake, it is that
 ~1.85% of the frame is fabricated STROKES, concentrated where the camera is
-looking hardest. Lever 2 (fill source) still dominates for the same reason —
-real ink copied from elsewhere in the scroll cannot over-ink.
+looking hardest.
+
+**AMENDED AGAIN, same day.** This paragraph originally ended "Lever 2 (fill
+source) still dominates for the same reason — real ink copied from elsewhere in
+the scroll cannot over-ink." That was a hypothesis stated as a conclusion, and
+it was refuted within the hour: see
+[[copied-real-ink-over-inks-worse-than-flux]]. **Lever 1, the camera, is what is
+left** — the invented material is densest immediately around the protagonist,
+which is both the worst place for it and the cheapest thing to change.

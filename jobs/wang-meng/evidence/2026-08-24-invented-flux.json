@@ -1,0 +1,20 @@
+{
+ "label": "flux",
+ "zone": "z1",
+ "filled": "layers-filled",
+ "frame": 335,
+ "stack": {
+  "inventedPx": 2660184,
+  "paintedPx": 5329050,
+  "stackPctInvented": 33.3
+ },
+ "framePctInvented": 14.71,
+ "framePctInventedInk": 1.85,
+ "framePctInventedBlank": 12.86,
+ "inkDensityInvented": 12.58,
+ "inkDensityAdjacentPainted": 10.7,
+ "ringPx": 399233,
+ "overInkPct": 17.6,
+ "sheet": "jobs/wang-meng/evidence/2026-08-24-invented-flux.png",
+ "clip": "jobs/wang-meng/evidence/2026-08-24-dolly-flux.mp4"
+}
