@@ -3223,6 +3223,2007 @@
     ]
    ],
    "note": "from the catalogue (t011.json): small ochre tree on the left ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-wooded-knoll-left-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2068,
+     2750
+    ],
+    [
+     2750,
+     2750
+    ],
+    [
+     2750,
+     3256
+    ],
+    [
+     2068,
+     3256
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): wooded knoll, left of centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-pines-bottom-left",
+   "class": "foliage",
+   "points": [
+    [
+     0,
+     4096
+    ],
+    [
+     528,
+     4096
+    ],
+    [
+     528,
+     4712
+    ],
+    [
+     0,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): stand of tall pines, bottom left corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-grove-village-right",
+   "class": "foliage",
+   "points": [
+    [
+     1848,
+     3876
+    ],
+    [
+     2200,
+     3876
+    ],
+    [
+     2200,
+     4712
+    ],
+    [
+     1848,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): trees around the buildings, right edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-grove-village-left",
+   "class": "foliage",
+   "points": [
+    [
+     1232,
+     3810
+    ],
+    [
+     1540,
+     3810
+    ],
+    [
+     1540,
+     4712
+    ],
+    [
+     1232,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): tall blue-green trees left of the hall. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-grove-village-centre",
+   "class": "foliage",
+   "points": [
+    [
+     1452,
+     4052
+    ],
+    [
+     1870,
+     4052
+    ],
+    [
+     1870,
+     4712
+    ],
+    [
+     1452,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): trees standing in front of and around the hall. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-forest-mid-terrace",
+   "class": "foliage",
+   "points": [
+    [
+     2816,
+     1034
+    ],
+    [
+     3586,
+     1034
+    ],
+    [
+     3586,
+     1386
+    ],
+    [
+     2816,
+     1386
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): dense conifer forest on the mid-slope terrace. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-wooded-slope-lower-left",
+   "class": "foliage",
+   "points": [
+    [
+     4672,
+     1870
+    ],
+    [
+     5442,
+     1870
+    ],
+    [
+     5442,
+     2200
+    ],
+    [
+     4672,
+     2200
+    ]
+   ],
+   "note": "from the catalogue (summit-t003.json): wooded slope along the bottom-left edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-ridge-trees-right-upper",
+   "class": "foliage",
+   "points": [
+    [
+     5610,
+     2244
+    ],
+    [
+     6072,
+     2244
+    ],
+    [
+     6072,
+     2794
+    ],
+    [
+     5610,
+     2794
+    ]
+   ],
+   "note": "from the catalogue (summit-t006.json): thin file of trees climbing the right ridge to the top corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-crest-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     0,
+     1936
+    ],
+    [
+     792,
+     1936
+    ],
+    [
+     792,
+     2255
+    ],
+    [
+     0,
+     2255
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): wooded crest along the top-left edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-tree-crown-bottom-centre",
+   "class": "foliage",
+   "points": [
+    [
+     4840,
+     3828
+    ],
+    [
+     5610,
+     3828
+    ],
+    [
+     5610,
+     4136
+    ],
+    [
+     4840,
+     4136
+    ]
+   ],
+   "note": "from the catalogue (summit-t006.json): crown of a large tree clipped by the bottom edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-wooded-slope-top-right-corner",
+   "class": "foliage",
+   "points": [
+    [
+     1738,
+     1958
+    ],
+    [
+     2200,
+     1958
+    ],
+    [
+     2200,
+     2442
+    ],
+    [
+     1738,
+     2442
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): dense wooded slope in the top-right corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-slope-trees-left",
+   "class": "foliage",
+   "points": [
+    [
+     0,
+     2842
+    ],
+    [
+     396,
+     2842
+    ],
+    [
+     396,
+     3392
+    ],
+    [
+     0,
+     3392
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): scattered trees down the left slope. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-left-flank",
+   "class": "foliage",
+   "points": [
+    [
+     2222,
+     814
+    ],
+    [
+     2618,
+     814
+    ],
+    [
+     2618,
+     1342
+    ],
+    [
+     2222,
+     1342
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): conifer fringe down the left flank. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-blue-green-tree-bottom-right",
+   "class": "foliage",
+   "points": [
+    [
+     5849,
+     4261
+    ],
+    [
+     6311,
+     4261
+    ],
+    [
+     6311,
+     4712
+    ],
+    [
+     5849,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t011.json): blue-green tree at the bottom right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-wooded-slope-upper-left",
+   "class": "foliage",
+   "points": [
+    [
+     4562,
+     1606
+    ],
+    [
+     5178,
+     1606
+    ],
+    [
+     5178,
+     1936
+    ],
+    [
+     4562,
+     1936
+    ]
+   ],
+   "note": "from the catalogue (summit-t003.json): wooded ridge slope below the crest treeline. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-ridge-trees-upper-right",
+   "class": "foliage",
+   "points": [
+    [
+     1584,
+     2578
+    ],
+    [
+     2200,
+     2578
+    ],
+    [
+     2200,
+     2886
+    ],
+    [
+     1584,
+     2886
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): dense tree line along the upper-right ridge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-summit-right",
+   "class": "foliage",
+   "points": [
+    [
+     2772,
+     594
+    ],
+    [
+     3300,
+     594
+    ],
+    [
+     3300,
+     946
+    ],
+    [
+     2772,
+     946
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): dark treeline right of the apex. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-ridge-trees-crest-diagonal",
+   "class": "foliage",
+   "points": [
+    [
+     440,
+     2710
+    ],
+    [
+     902,
+     2710
+    ],
+    [
+     902,
+     3106
+    ],
+    [
+     440,
+     3106
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): tree band down the central crest. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-autumn-tree-lower-mass",
+   "class": "foliage",
+   "points": [
+    [
+     2497,
+     4151
+    ],
+    [
+     2992,
+     4151
+    ],
+    [
+     2992,
+     4492
+    ],
+    [
+     2497,
+     4492
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): lower leaf mass of the autumn tree. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-big-tree-canopy-near-right",
+   "class": "foliage",
+   "points": [
+    [
+     3300,
+     3696
+    ],
+    [
+     3696,
+     3696
+    ],
+    [
+     3696,
+     4114
+    ],
+    [
+     3300,
+     4114
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): big deciduous tree, near ground, right of centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-forest-col-centre",
+   "class": "foliage",
+   "points": [
+    [
+     704,
+     2706
+    ],
+    [
+     1100,
+     2706
+    ],
+    [
+     1100,
+     3102
+    ],
+    [
+     704,
+     3102
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): forest standing in the central col. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-ridge-upper-right",
+   "class": "foliage",
+   "points": [
+    [
+     1540,
+     2068
+    ],
+    [
+     1914,
+     2068
+    ],
+    [
+     1914,
+     2486
+    ],
+    [
+     1540,
+     2486
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): trees marching down the upper-right ridge crest. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-ridge-trees-right-lower",
+   "class": "foliage",
+   "points": [
+    [
+     5236,
+     2596
+    ],
+    [
+     5654,
+     2596
+    ],
+    [
+     5654,
+     2970
+    ],
+    [
+     5236,
+     2970
+    ]
+   ],
+   "note": "from the catalogue (summit-t006.json): group of flat-crowned trees on the right ridge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-crest-trees-upper-left",
+   "class": "foliage",
+   "points": [
+    [
+     4628,
+     2222
+    ],
+    [
+     5046,
+     2222
+    ],
+    [
+     5046,
+     2596
+    ],
+    [
+     4628,
+     2596
+    ]
+   ],
+   "note": "from the catalogue (summit-t007.json): trees on the upper-left crest, lower half. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-crest-trees-centre-upper",
+   "class": "foliage",
+   "points": [
+    [
+     4928,
+     1936
+    ],
+    [
+     5368,
+     1936
+    ],
+    [
+     5368,
+     2288
+    ],
+    [
+     4928,
+     2288
+    ]
+   ],
+   "note": "from the catalogue (summit-t006.json): trees on the upper-centre crest, upper half. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-autumn-tree-bottom-centre",
+   "class": "foliage",
+   "points": [
+    [
+     5310,
+     4355
+    ],
+    [
+     5739,
+     4355
+    ],
+    [
+     5739,
+     4712
+    ],
+    [
+     5310,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t011.json): orange autumn canopy, bottom centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-pine-row-left",
+   "class": "foliage",
+   "points": [
+    [
+     2046,
+     1870
+    ],
+    [
+     2508,
+     1870
+    ],
+    [
+     2508,
+     2200
+    ],
+    [
+     2046,
+     2200
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): pine row descending to the left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-lower-ridge-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2332,
+     3168
+    ],
+    [
+     2904,
+     3168
+    ],
+    [
+     2904,
+     3432
+    ],
+    [
+     2332,
+     3432
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): treeline on the lower ridge below the knoll. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-skyline-mid",
+   "class": "foliage",
+   "points": [
+    [
+     1342,
+     1034
+    ],
+    [
+     1936,
+     1034
+    ],
+    [
+     1936,
+     1276
+    ],
+    [
+     1342,
+     1276
+    ]
+   ],
+   "note": "from the catalogue (summit-t000.json): conifer fringe along the ridge silhouette. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-autumn-tree-crown",
+   "class": "foliage",
+   "points": [
+    [
+     2552,
+     3893
+    ],
+    [
+     3036,
+     3893
+    ],
+    [
+     3036,
+     4184
+    ],
+    [
+     2552,
+     4184
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): crown of the red-orange autumn tree. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-diagonal-left-lower",
+   "class": "foliage",
+   "points": [
+    [
+     330,
+     3014
+    ],
+    [
+     726,
+     3014
+    ],
+    [
+     726,
+     3366
+    ],
+    [
+     330,
+     3366
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): diagonal treeline running down the left ridge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-grove-village-behind-hall",
+   "class": "foliage",
+   "points": [
+    [
+     1386,
+     3722
+    ],
+    [
+     1848,
+     3722
+    ],
+    [
+     1848,
+     4008
+    ],
+    [
+     1386,
+     4008
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): tree tops standing behind the hall roof. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-grove-ledge-lower-right",
+   "class": "foliage",
+   "points": [
+    [
+     6212,
+     3498
+    ],
+    [
+     6586,
+     3498
+    ],
+    [
+     6586,
+     3850
+    ],
+    [
+     6212,
+     3850
+    ]
+   ],
+   "note": "from the catalogue (summit-t007.json): small grove on a ledge, lower right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-blue-green-tree-lower",
+   "class": "foliage",
+   "points": [
+    [
+     4796,
+     4052
+    ],
+    [
+     5412,
+     4052
+    ],
+    [
+     5412,
+     4261
+    ],
+    [
+     4796,
+     4261
+    ]
+   ],
+   "note": "from the catalogue (summit-t010.json): lower leaf curtain of the blue-green tree. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-blue-green-mass-bottom-centre",
+   "class": "foliage",
+   "points": [
+    [
+     4485,
+     4459
+    ],
+    [
+     4980,
+     4459
+    ],
+    [
+     4980,
+     4712
+    ],
+    [
+     4485,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t011.json): blue-green leaf mass along the bottom edge, left of centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-pine-row-right",
+   "class": "foliage",
+   "points": [
+    [
+     2684,
+     1848
+    ],
+    [
+     3036,
+     1848
+    ],
+    [
+     3036,
+     2200
+    ],
+    [
+     2684,
+     2200
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): pine row descending to the right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-forest-lower-terrace",
+   "class": "foliage",
+   "points": [
+    [
+     2794,
+     1342
+    ],
+    [
+     3256,
+     1342
+    ],
+    [
+     3256,
+     1606
+    ],
+    [
+     2794,
+     1606
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): conifer group on the lower terrace. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-crest-upper-left",
+   "class": "foliage",
+   "points": [
+    [
+     2508,
+     572
+    ],
+    [
+     2860,
+     572
+    ],
+    [
+     2860,
+     902
+    ],
+    [
+     2508,
+     902
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): conifer fringe on the upper left skyline. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-tree-stand-bottom-right",
+   "class": "foliage",
+   "points": [
+    [
+     3784,
+     3828
+    ],
+    [
+     4136,
+     3828
+    ],
+    [
+     4136,
+     4136
+    ],
+    [
+     3784,
+     4136
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): tree stand, bottom right corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-tree-branch-fan-bottom-left",
+   "class": "foliage",
+   "points": [
+    [
+     319,
+     1947
+    ],
+    [
+     737,
+     1947
+    ],
+    [
+     737,
+     2200
+    ],
+    [
+     319,
+     2200
+    ]
+   ],
+   "note": "from the catalogue (summit-t000.json): branched tree at the bottom edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-autumn-tree-orange-red",
+   "class": "foliage",
+   "points": [
+    [
+     4279,
+     4382
+    ],
+    [
+     4598,
+     4382
+    ],
+    [
+     4598,
+     4712
+    ],
+    [
+     4279,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t010.json): red-orange autumn canopy, bottom left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-firs-behind-pavilion",
+   "class": "foliage",
+   "points": [
+    [
+     2310,
+     3931
+    ],
+    [
+     2618,
+     3931
+    ],
+    [
+     2618,
+     4272
+    ],
+    [
+     2310,
+     4272
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): dark fir stand behind and right of the pavilion. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-ridge-trees-top-edge",
+   "class": "foliage",
+   "points": [
+    [
+     330,
+     2512
+    ],
+    [
+     792,
+     2512
+    ],
+    [
+     792,
+     2732
+    ],
+    [
+     330,
+     2732
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): tree file along the crest at the top edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-left-lower",
+   "class": "foliage",
+   "points": [
+    [
+     1936,
+     1188
+    ],
+    [
+     2310,
+     1188
+    ],
+    [
+     2310,
+     1452
+    ],
+    [
+     1936,
+     1452
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): conifer fringe at the left edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-spur-trees-right-mid",
+   "class": "foliage",
+   "points": [
+    [
+     1452,
+     3304
+    ],
+    [
+     1760,
+     3304
+    ],
+    [
+     1760,
+     3612
+    ],
+    [
+     1452,
+     3612
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): pines on a rock spur, centre right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-pine-grove-crest",
+   "class": "foliage",
+   "points": [
+    [
+     2486,
+     1760
+    ],
+    [
+     2816,
+     1760
+    ],
+    [
+     2816,
+     2046
+    ],
+    [
+     2486,
+     2046
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): tall pine grove on the ridge crest, bottom left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-mid-left-ridge",
+   "class": "foliage",
+   "points": [
+    [
+     352,
+     2376
+    ],
+    [
+     682,
+     2376
+    ],
+    [
+     682,
+     2662
+    ],
+    [
+     352,
+     2662
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): treeline on the middle-left ridge crest. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-autumn-tree-yellow",
+   "class": "foliage",
+   "points": [
+    [
+     4386,
+     4173
+    ],
+    [
+     4751,
+     4173
+    ],
+    [
+     4751,
+     4426
+    ],
+    [
+     4386,
+     4426
+    ]
+   ],
+   "note": "from the catalogue (summit-t011.json): yellow-ochre autumn canopy, clipped by the left edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-slope-trees-lower-centre",
+   "class": "foliage",
+   "points": [
+    [
+     3256,
+     4250
+    ],
+    [
+     3586,
+     4250
+    ],
+    [
+     3586,
+     4525
+    ],
+    [
+     3256,
+     4525
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): dark trees down the gully, lower centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-left-flank-upper",
+   "class": "foliage",
+   "points": [
+    [
+     66,
+     2200
+    ],
+    [
+     396,
+     2200
+    ],
+    [
+     396,
+     2464
+    ],
+    [
+     66,
+     2464
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): treeline on the left flank, upper. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-forest-slope-upper-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2420,
+     2178
+    ],
+    [
+     2750,
+     2178
+    ],
+    [
+     2750,
+     2442
+    ],
+    [
+     2420,
+     2442
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): forest on the slope below the upper crests. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-tree-stand-bluff-centre-right",
+   "class": "foliage",
+   "points": [
+    [
+     1517,
+     3388
+    ],
+    [
+     1870,
+     3388
+    ],
+    [
+     1870,
+     3630
+    ],
+    [
+     1517,
+     3630
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): tree stand on the bluff above the house. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-wooded-flank-right-edge",
+   "class": "foliage",
+   "points": [
+    [
+     1958,
+     2640
+    ],
+    [
+     2200,
+     2640
+    ],
+    [
+     2200,
+     2992
+    ],
+    [
+     1958,
+     2992
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): dark wooded flank at the right edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-dark-pines-centre",
+   "class": "foliage",
+   "points": [
+    [
+     3014,
+     3920
+    ],
+    [
+     3256,
+     3920
+    ],
+    [
+     3256,
+     4272
+    ],
+    [
+     3014,
+     4272
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): dark ink pine cluster, centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-dark-pines-centre-lower",
+   "class": "foliage",
+   "points": [
+    [
+     4991,
+     4272
+    ],
+    [
+     5266,
+     4272
+    ],
+    [
+     5266,
+     4580
+    ],
+    [
+     4991,
+     4580
+    ]
+   ],
+   "note": "from the catalogue (summit-t011.json): dark pine clump below the blue-green tree. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-firs-left-of-pavilion",
+   "class": "foliage",
+   "points": [
+    [
+     1980,
+     4019
+    ],
+    [
+     2310,
+     4019
+    ],
+    [
+     2310,
+     4272
+    ],
+    [
+     1980,
+     4272
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): dark fir stand left of the pavilion. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-mesa-left-flank",
+   "class": "foliage",
+   "points": [
+    [
+     4092,
+     1650
+    ],
+    [
+     4378,
+     1650
+    ],
+    [
+     4378,
+     1936
+    ],
+    [
+     4092,
+     1936
+    ]
+   ],
+   "note": "from the catalogue (summit-t002.json): conifer row down the mesa's left flank. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-tree-stand-left-lower",
+   "class": "foliage",
+   "points": [
+    [
+     88,
+     2816
+    ],
+    [
+     396,
+     2816
+    ],
+    [
+     396,
+     3080
+    ],
+    [
+     88,
+     3080
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): tree stand on the left slope, lower. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-ledge-trees-right",
+   "class": "foliage",
+   "points": [
+    [
+     1870,
+     3128
+    ],
+    [
+     2200,
+     3128
+    ],
+    [
+     2200,
+     3370
+    ],
+    [
+     1870,
+     3370
+    ]
+   ],
+   "note": "from the catalogue (summit-t008.json): tree cluster on a ledge, right side. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-forest-crest-top-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2200,
+     1936
+    ],
+    [
+     2596,
+     1936
+    ],
+    [
+     2596,
+     2134
+    ],
+    [
+     2200,
+     2134
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): forest on the crest above centre-left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-slope-trees-upper-left",
+   "class": "foliage",
+   "points": [
+    [
+     3135,
+     4085
+    ],
+    [
+     3432,
+     4085
+    ],
+    [
+     3432,
+     4349
+    ],
+    [
+     3135,
+     4349
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): band of dark trees on the slope, upper left of the ravine. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-forest-ridge-upper-right-of-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2376,
+     1980
+    ],
+    [
+     2728,
+     1980
+    ],
+    [
+     2728,
+     2200
+    ],
+    [
+     2376,
+     2200
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): forest on the ridge right of the top-centre crest. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-mesa-crest",
+   "class": "foliage",
+   "points": [
+    [
+     4334,
+     1507
+    ],
+    [
+     4796,
+     1507
+    ],
+    [
+     4796,
+     1672
+    ],
+    [
+     4334,
+     1672
+    ]
+   ],
+   "note": "from the catalogue (summit-t002.json): treeline along the mesa crest. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-blue-green-mass-right-edge",
+   "class": "foliage",
+   "points": [
+    [
+     6300,
+     4448
+    ],
+    [
+     6586,
+     4448
+    ],
+    [
+     6586,
+     4712
+    ],
+    [
+     6300,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t011.json): blue-green leaf mass clipped by the right edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-blue-green-tree-lower-mass",
+   "class": "foliage",
+   "points": [
+    [
+     3234,
+     3898
+    ],
+    [
+     3586,
+     3898
+    ],
+    [
+     3586,
+     4107
+    ],
+    [
+     3234,
+     4107
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): lower leaf curtain of the blue-green tree. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-tree-stand-ridge-right-of-col",
+   "class": "foliage",
+   "points": [
+    [
+     1100,
+     2706
+    ],
+    [
+     1430,
+     2706
+    ],
+    [
+     1430,
+     2926
+    ],
+    [
+     1100,
+     2926
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): tree stand on the ridge right of the col. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-lower-centre",
+   "class": "foliage",
+   "points": [
+    [
+     748,
+     3036
+    ],
+    [
+     1078,
+     3036
+    ],
+    [
+     1078,
+     3256
+    ],
+    [
+     748,
+     3256
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): treeline on the lower central ridge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-ledge-centre-left",
+   "class": "foliage",
+   "points": [
+    [
+     2398,
+     1342
+    ],
+    [
+     2794,
+     1342
+    ],
+    [
+     2794,
+     1517
+    ],
+    [
+     2398,
+     1517
+    ]
+   ],
+   "note": "from the catalogue (summit-t001.json): conifer row on the centre-left ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-grove-dark-shoulder",
+   "class": "foliage",
+   "points": [
+    [
+     1584,
+     1144
+    ],
+    [
+     1870,
+     1144
+    ],
+    [
+     1870,
+     1386
+    ],
+    [
+     1584,
+     1386
+    ]
+   ],
+   "note": "from the catalogue (summit-t000.json): dark grove on the ridge shoulder. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-autumn-tree-tan-right",
+   "class": "foliage",
+   "points": [
+    [
+     4741,
+     4195
+    ],
+    [
+     4994,
+     4195
+    ],
+    [
+     4994,
+     4459
+    ],
+    [
+     4741,
+     4459
+    ]
+   ],
+   "note": "from the catalogue (summit-t010.json): tan autumn canopy, right of the yellow one. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-dark-pines-bottom-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2475,
+     4459
+    ],
+    [
+     2728,
+     4459
+    ],
+    [
+     2728,
+     4712
+    ],
+    [
+     2475,
+     4712
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): dark pines along the bottom edge, centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-foliage-bottom-left-of-house",
+   "class": "foliage",
+   "points": [
+    [
+     1232,
+     3960
+    ],
+    [
+     1584,
+     3960
+    ],
+    [
+     1584,
+     4136
+    ],
+    [
+     1232,
+     4136
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): near foliage at the bottom edge, left of the house. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-slope-trees-right",
+   "class": "foliage",
+   "points": [
+    [
+     3520,
+     4096
+    ],
+    [
+     3740,
+     4096
+    ],
+    [
+     3740,
+     4371
+    ],
+    [
+     3520,
+     4371
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): band of dark trees on the slope, right of the ravine. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-ridge-grove-bottom-right",
+   "class": "foliage",
+   "points": [
+    [
+     3850,
+     4426
+    ],
+    [
+     4114,
+     4426
+    ],
+    [
+     4114,
+     4646
+    ],
+    [
+     3850,
+     4646
+    ]
+   ],
+   "note": "from the catalogue (summit-t009.json): pine grove on the ridge crest, bottom right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-tree-crowns-peak-right",
+   "class": "foliage",
+   "points": [
+    [
+     3586,
+     3168
+    ],
+    [
+     3872,
+     3168
+    ],
+    [
+     3872,
+     3366
+    ],
+    [
+     3586,
+     3366
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): tree crowns capping the right-hand peak. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-forest-crest-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     1980,
+     2068
+    ],
+    [
+     2288,
+     2068
+    ],
+    [
+     2288,
+     2244
+    ],
+    [
+     1980,
+     2244
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): forest on the top-left crest. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-tree-group-left-lower-isolated",
+   "class": "foliage",
+   "points": [
+    [
+     506,
+     3476
+    ],
+    [
+     726,
+     3476
+    ],
+    [
+     726,
+     3718
+    ],
+    [
+     506,
+     3718
+    ]
+   ],
+   "note": "from the catalogue (summit-t004.json): isolated tree group low on the left slope. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-summit-crest",
+   "class": "foliage",
+   "points": [
+    [
+     1188,
+     968
+    ],
+    [
+     1474,
+     968
+    ],
+    [
+     1474,
+     1144
+    ],
+    [
+     1188,
+     1144
+    ]
+   ],
+   "note": "from the catalogue (summit-t000.json): row of distant conifers on the flat crest. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-ridge-treeline-right",
+   "class": "foliage",
+   "points": [
+    [
+     5654,
+     1804
+    ],
+    [
+     5962,
+     1804
+    ],
+    [
+     5962,
+     1958
+    ],
+    [
+     5654,
+     1958
+    ]
+   ],
+   "note": "from the catalogue (summit-t002.json): row of washed crowns on the right ridge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-sparse-trees-bottom-centre-left",
+   "class": "foliage",
+   "points": [
+    [
+     2376,
+     3938
+    ],
+    [
+     2596,
+     3938
+    ],
+    [
+     2596,
+     4136
+    ],
+    [
+     2376,
+     4136
+    ]
+   ],
+   "note": "from the catalogue (summit-t005.json): sparse thin trees, bottom centre-left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-cliff-trees-left-edge",
+   "class": "foliage",
+   "points": [
+    [
+     3872,
+     3821
+    ],
+    [
+     4059,
+     3821
+    ],
+    [
+     4059,
+     4052
+    ],
+    [
+     3872,
+     4052
+    ]
+   ],
+   "note": "from the catalogue (summit-t010.json): dark cliff trees clipped by the left edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-skyline-right",
+   "class": "foliage",
+   "points": [
+    [
+     1958,
+     1254
+    ],
+    [
+     2200,
+     1254
+    ],
+    [
+     2200,
+     1430
+    ],
+    [
+     1958,
+     1430
+    ]
+   ],
+   "note": "from the catalogue (summit-t000.json): conifer fringe at the right edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-pine-crown-bottom-right",
+   "class": "foliage",
+   "points": [
+    [
+     1958,
+     2035
+    ],
+    [
+     2200,
+     2035
+    ],
+    [
+     2200,
+     2200
+    ],
+    [
+     1958,
+     2200
+    ]
+   ],
+   "note": "from the catalogue (summit-t000.json): pine crown at the bottom-right corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-knoll-tree-clump",
+   "class": "foliage",
+   "points": [
+    [
+     88,
+     1792
+    ],
+    [
+     330,
+     1792
+    ],
+    [
+     330,
+     1953
+    ],
+    [
+     88,
+     1953
+    ]
+   ],
+   "note": "from the catalogue (summit-t000.json): distant trees on the knoll crest, bottom left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-ridge-trees-right-flank",
+   "class": "foliage",
+   "points": [
+    [
+     6212,
+     1771
+    ],
+    [
+     6388,
+     1771
+    ],
+    [
+     6388,
+     1991
+    ],
+    [
+     6212,
+     1991
+    ]
+   ],
+   "note": "from the catalogue (summit-t003.json): three individual trees on the right ridge line. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-tree-cluster-lower-spur",
+   "class": "foliage",
+   "points": [
+    [
+     990,
+     1287
+    ],
+    [
+     1210,
+     1287
+    ],
+    [
+     1210,
+     1441
+    ],
+    [
+     990,
+     1441
+    ]
+   ],
+   "note": "from the catalogue (summit-t000.json): small tree cluster on the lower spur. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "sum-treeline-shoulder-left-of-pinnacle",
+   "class": "foliage",
+   "points": [
+    [
+     5236,
+     1716
+    ],
+    [
+     5434,
+     1716
+    ],
+    [
+     5434,
+     1870
+    ],
+    [
+     5236,
+     1870
+    ]
+   ],
+   "note": "from the catalogue (summit-t002.json): small treeline on the shoulder left of the pinnacle. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
   }
  ],
  "excludes": [
