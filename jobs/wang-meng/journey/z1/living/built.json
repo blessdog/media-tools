@@ -1,239 +1,5 @@
 [
  {
-  "plane": "left-cliff-wall",
-  "region": "w-gorge-fall",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-gorge-fall",
-  "box": [
-   551,
-   19
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 6413,
-  "movedPx": 1857,
-  "crop": [
-   551,
-   19
-  ],
-  "class": "fall"
- },
- {
-  "plane": "gorge-wall-right",
-  "region": "w-gorge-fall",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__w-gorge-fall",
-  "box": [
-   41,
-   19
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 3877,
-  "movedPx": 1198,
-  "crop": [
-   551,
-   19
-  ],
-  "class": "fall"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "w-midstream",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-midstream",
-  "box": [
-   228,
-   283
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 51090,
-  "movedPx": 2045,
-  "crop": [
-   228,
-   283
-  ],
-  "class": "wave"
- },
- {
-  "plane": "upper-stream-water",
-  "region": "w-midstream",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-midstream",
-  "box": [
-   242,
-   0
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 114907,
-  "movedPx": 25977,
-  "crop": [
-   228,
-   283
-  ],
-  "class": "wave"
- },
- {
-  "plane": "trestle-bridge-ge",
-  "region": "w-midstream",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-midstream",
-  "box": [
-   308,
-   0
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 8004,
-  "movedPx": 106,
-  "crop": [
-   228,
-   283
-  ],
-  "class": "wave"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "w-midstream",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-midstream",
-  "box": [
-   48,
-   356
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 13734,
-  "movedPx": 3083,
-  "crop": [
-   228,
-   283
-  ],
-  "class": "wave"
- },
- {
-  "plane": "upper-stream-water",
-  "region": "w-lower-pool",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-lower-pool",
-  "box": [
-   342,
-   430
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 9804,
-  "movedPx": 2523,
-  "crop": [
-   333,
-   920
-  ],
-  "class": "wave"
- },
- {
-  "plane": "resting-ledge",
-  "region": "w-lower-pool",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/resting-ledge__w-lower-pool",
-  "box": [
-   333,
-   192
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 3565,
-  "movedPx": 28,
-  "crop": [
-   333,
-   920
-  ],
-  "class": "wave"
- },
- {
-  "plane": "trestle-bridge-ge",
-  "region": "w-lower-pool",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-lower-pool",
-  "box": [
-   347,
-   211
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 9073,
-  "movedPx": 503,
-  "crop": [
-   333,
-   920
-  ],
-  "class": "wave"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "w-lower-pool",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-lower-pool",
-  "box": [
-   36,
-   701
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 3316,
-  "movedPx": 615,
-  "crop": [
-   333,
-   920
-  ],
-  "class": "wave"
- },
- {
-  "plane": "upper-stream-water",
-  "region": "g-ge-fan",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__g-ge-fan",
-  "box": [
-   607,
-   560
-  ],
-  "n": 48,
-  "on": 2,
-  "ownPx": 645,
-  "movedPx": 69,
-  "crop": [
-   579,
-   1050
-  ],
-  "class": "figure"
- },
- {
-  "plane": "trestle-bridge-ge",
-  "region": "g-ge-fan",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__g-ge-fan",
-  "box": [
-   579,
-   341
-  ],
-  "n": 48,
-  "on": 2,
-  "ownPx": 5572,
-  "movedPx": 1619,
-  "crop": [
-   579,
-   1050
-  ],
-  "class": "figure"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "g-ge-fan",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__g-ge-fan",
-  "box": [
-   230,
-   826
-  ],
-  "n": 48,
-  "on": 2,
-  "ownPx": 1513,
-  "movedPx": 16,
-  "crop": [
-   579,
-   1050
-  ],
-  "class": "figure"
- },
- {
   "plane": "right-hill-front-trees",
   "region": "s-great-trees-upper",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-great-trees-upper",
@@ -826,5 +592,239 @@
    956
   ],
   "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "w-gorge-fall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-gorge-fall",
+  "box": [
+   551,
+   19
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 6413,
+  "movedPx": 1857,
+  "crop": [
+   551,
+   19
+  ],
+  "class": "fall"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "w-gorge-fall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__w-gorge-fall",
+  "box": [
+   41,
+   19
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 3877,
+  "movedPx": 1198,
+  "crop": [
+   551,
+   19
+  ],
+  "class": "fall"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "w-midstream",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-midstream",
+  "box": [
+   228,
+   283
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 51090,
+  "movedPx": 2045,
+  "crop": [
+   228,
+   283
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "upper-stream-water",
+  "region": "w-midstream",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-midstream",
+  "box": [
+   242,
+   0
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 114907,
+  "movedPx": 25977,
+  "crop": [
+   228,
+   283
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "trestle-bridge-ge",
+  "region": "w-midstream",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-midstream",
+  "box": [
+   308,
+   0
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 8004,
+  "movedPx": 106,
+  "crop": [
+   228,
+   283
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "w-midstream",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-midstream",
+  "box": [
+   48,
+   356
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 13734,
+  "movedPx": 3083,
+  "crop": [
+   228,
+   283
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "upper-stream-water",
+  "region": "w-lower-pool",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-lower-pool",
+  "box": [
+   342,
+   430
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 9804,
+  "movedPx": 2523,
+  "crop": [
+   333,
+   920
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "resting-ledge",
+  "region": "w-lower-pool",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/resting-ledge__w-lower-pool",
+  "box": [
+   333,
+   192
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 3565,
+  "movedPx": 28,
+  "crop": [
+   333,
+   920
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "trestle-bridge-ge",
+  "region": "w-lower-pool",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-lower-pool",
+  "box": [
+   347,
+   211
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 9073,
+  "movedPx": 503,
+  "crop": [
+   333,
+   920
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "w-lower-pool",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-lower-pool",
+  "box": [
+   36,
+   701
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 3316,
+  "movedPx": 615,
+  "crop": [
+   333,
+   920
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "upper-stream-water",
+  "region": "g-ge-fan",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__g-ge-fan",
+  "box": [
+   607,
+   560
+  ],
+  "n": 48,
+  "on": 2,
+  "ownPx": 645,
+  "movedPx": 69,
+  "crop": [
+   579,
+   1050
+  ],
+  "class": "figure"
+ },
+ {
+  "plane": "trestle-bridge-ge",
+  "region": "g-ge-fan",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__g-ge-fan",
+  "box": [
+   579,
+   341
+  ],
+  "n": 48,
+  "on": 2,
+  "ownPx": 5572,
+  "movedPx": 1619,
+  "crop": [
+   579,
+   1050
+  ],
+  "class": "figure"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "g-ge-fan",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__g-ge-fan",
+  "box": [
+   230,
+   826
+  ],
+  "n": 48,
+  "on": 2,
+  "ownPx": 1513,
+  "movedPx": 16,
+  "crop": [
+   579,
+   1050
+  ],
+  "class": "figure"
  }
 ]

@@ -1,51 +1,230 @@
 {
- "right-gorge-wall-high": {
+ "compound-approach-path": {
   "patches": [
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-gorge-foreground-01",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-gorge-foreground",
     "box": [
-     569,
-     1930
+     215,
+     1670
     ],
     "n": 96,
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-gorge-foreground-02",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__cat-tree-weeping-upper-right",
     "box": [
-     178,
-     1936
+     415,
+     671
     ],
     "n": 96,
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-right-rust-tree-01",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__cat-tree-mid-round",
     "box": [
-     2086,
-     1565
+     288,
+     1671
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "gully-footbridge": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-gorge-foreground",
+    "box": [
+     355,
+     2081
     ],
     "n": 96,
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-right-rust-tree-02",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-grove-lower-left",
     "box": [
-     2143,
-     1756
+     30,
+     1456
     ],
     "n": 96,
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__w-compound-fall",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-teal-upper-left",
     "box": [
-     1201,
-     991
+     64,
+     923
     ],
-    "n": 36,
+    "n": 96,
     "on": 2
    },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-teal-above-ge-hong",
+    "box": [
+     30,
+     1457
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-mid-round",
+    "box": [
+     358,
+     2081
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-canopy-top-centre-left",
+    "box": [
+     1741,
+     817
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-pines-bottom-left",
+    "box": [
+     0,
+     589
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-grove-village-right",
+    "box": [
+     691,
+     570
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-grove-village-left",
+    "box": [
+     510,
+     606
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-grove-village-centre",
+    "box": [
+     487,
+     597
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-ridge-trees-crest-diagonal",
+    "box": [
+     92,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-big-tree-canopy-near-right",
+    "box": [
+     1372,
+     398
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-forest-col-centre",
+    "box": [
+     132,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-ridge-trees-right-lower",
+    "box": [
+     2191,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-tree-stand-bottom-right",
+    "box": [
+     1548,
+     427
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-firs-behind-pavilion",
+    "box": [
+     965,
+     534
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-firs-left-of-pavilion",
+    "box": [
+     820,
+     537
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-slope-trees-upper-left",
+    "box": [
+     1215,
+     489
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-treeline-lower-centre",
+    "box": [
+     135,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-sparse-trees-bottom-centre-left",
+    "box": [
+     963,
+     533
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-cliff-trees-left-edge",
+    "box": [
+     1548,
+     427
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "right-gorge-wall-high": {
+  "patches": [
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-gorge-foreground",
     "box": [
@@ -285,266 +464,6 @@
     "box": [
      1011,
      419
-    ],
-    "n": 96,
-    "on": 2
-   }
-  ]
- },
- "compound-approach-path": {
-  "patches": [
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-gorge-foreground-03",
-    "box": [
-     278,
-     1670
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-gorge-foreground-04",
-    "box": [
-     215,
-     1719
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-gorge-foreground",
-    "box": [
-     215,
-     1670
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__cat-tree-weeping-upper-right",
-    "box": [
-     415,
-     671
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__cat-tree-mid-round",
-    "box": [
-     288,
-     1671
-    ],
-    "n": 96,
-    "on": 2
-   }
-  ]
- },
- "gully-footbridge": {
-  "patches": [
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-gorge-foreground-03",
-    "box": [
-     355,
-     2081
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__w-compound-fall",
-    "box": [
-     1771,
-     1143
-    ],
-    "n": 36,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__s-gorge-foreground",
-    "box": [
-     355,
-     2081
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-grove-lower-left",
-    "box": [
-     30,
-     1456
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-teal-upper-left",
-    "box": [
-     64,
-     923
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-teal-above-ge-hong",
-    "box": [
-     30,
-     1457
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-mid-round",
-    "box": [
-     358,
-     2081
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-canopy-top-centre-left",
-    "box": [
-     1741,
-     817
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-pines-bottom-left",
-    "box": [
-     0,
-     589
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-grove-village-right",
-    "box": [
-     691,
-     570
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-grove-village-left",
-    "box": [
-     510,
-     606
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-grove-village-centre",
-    "box": [
-     487,
-     597
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-ridge-trees-crest-diagonal",
-    "box": [
-     92,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-big-tree-canopy-near-right",
-    "box": [
-     1372,
-     398
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-forest-col-centre",
-    "box": [
-     132,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-ridge-trees-right-lower",
-    "box": [
-     2191,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-tree-stand-bottom-right",
-    "box": [
-     1548,
-     427
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-firs-behind-pavilion",
-    "box": [
-     965,
-     534
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-firs-left-of-pavilion",
-    "box": [
-     820,
-     537
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-slope-trees-upper-left",
-    "box": [
-     1215,
-     489
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-treeline-lower-centre",
-    "box": [
-     135,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-sparse-trees-bottom-centre-left",
-    "box": [
-     963,
-     533
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-cliff-trees-left-edge",
-    "box": [
-     1548,
-     427
     ],
     "n": 96,
     "on": 2

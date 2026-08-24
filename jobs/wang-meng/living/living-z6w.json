@@ -2,24 +2,6 @@
  "compound-approach-path": {
   "patches": [
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__w-compound-fall",
-    "box": [
-     1770,
-     451
-    ],
-    "n": 36,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-right-rust-tree-01",
-    "box": [
-     2654,
-     1025
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-right-rust-tree",
     "box": [
      2654,

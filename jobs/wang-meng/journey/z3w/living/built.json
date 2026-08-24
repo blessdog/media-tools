@@ -1,168 +1,6 @@
 [
  {
   "plane": "left-cliff-wall",
-  "region": "w-gorge-fall",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__w-gorge-fall",
-  "box": [
-   533,
-   1678
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 27949,
-  "movedPx": 6993,
-  "crop": [
-   533,
-   1678
-  ],
-  "class": "fall"
- },
- {
-  "plane": "gorge-wall-right",
-  "region": "w-gorge-fall",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/gorge-wall-right__w-gorge-fall",
-  "box": [
-   46,
-   184
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 1160,
-  "movedPx": 185,
-  "crop": [
-   533,
-   1678
-  ],
-  "class": "fall"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "w-compound-fall",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__w-compound-fall",
-  "box": [
-   1770,
-   106
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 15871,
-  "movedPx": 6311,
-  "crop": [
-   1770,
-   106
-  ],
-  "class": "fall"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "w-midstream",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__w-midstream",
-  "box": [
-   228,
-   2371
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 92164,
-  "movedPx": 9144,
-  "crop": [
-   228,
-   2371
-  ],
-  "class": "wave"
- },
- {
-  "plane": "upper-stream-rocks",
-  "region": "w-midstream",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/upper-stream-rocks__w-midstream",
-  "box": [
-   240,
-   0
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 89568,
-  "movedPx": 21890,
-  "crop": [
-   228,
-   2371
-  ],
-  "class": "wave"
- },
- {
-  "plane": "resting-ledge",
-  "region": "w-midstream",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/resting-ledge__w-midstream",
-  "box": [
-   261,
-   0
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 5247,
-  "movedPx": 526,
-  "crop": [
-   228,
-   2371
-  ],
-  "class": "wave"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "w-lower-pool",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__w-lower-pool",
-  "box": [
-   448,
-   3029
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 6686,
-  "movedPx": 933,
-  "crop": [
-   333,
-   3007
-  ],
-  "class": "wave"
- },
- {
-  "plane": "resting-ledge",
-  "region": "w-lower-pool",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/resting-ledge__w-lower-pool",
-  "box": [
-   333,
-   194
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 18443,
-  "movedPx": 2231,
-  "crop": [
-   333,
-   3007
-  ],
-  "class": "wave"
- },
- {
-  "plane": "pine-over-bridge",
-  "region": "w-lower-pool",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__w-lower-pool",
-  "box": [
-   0,
-   103
-  ],
-  "n": 36,
-  "on": 2,
-  "ownPx": 651,
-  "movedPx": 59,
-  "crop": [
-   333,
-   3007
-  ],
-  "class": "wave"
- },
- {
-  "plane": "left-cliff-wall",
   "region": "s-great-trees-upper-01",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper-01",
   "box": [
@@ -1852,5 +1690,167 @@
    0
   ],
   "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "w-gorge-fall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__w-gorge-fall",
+  "box": [
+   533,
+   1678
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 27949,
+  "movedPx": 6993,
+  "crop": [
+   533,
+   1678
+  ],
+  "class": "fall"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "w-gorge-fall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/gorge-wall-right__w-gorge-fall",
+  "box": [
+   46,
+   184
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 1160,
+  "movedPx": 185,
+  "crop": [
+   533,
+   1678
+  ],
+  "class": "fall"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "w-compound-fall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__w-compound-fall",
+  "box": [
+   1770,
+   106
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 15871,
+  "movedPx": 6311,
+  "crop": [
+   1770,
+   106
+  ],
+  "class": "fall"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "w-midstream",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__w-midstream",
+  "box": [
+   228,
+   2371
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 92164,
+  "movedPx": 9144,
+  "crop": [
+   228,
+   2371
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "upper-stream-rocks",
+  "region": "w-midstream",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/upper-stream-rocks__w-midstream",
+  "box": [
+   240,
+   0
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 89568,
+  "movedPx": 21890,
+  "crop": [
+   228,
+   2371
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "resting-ledge",
+  "region": "w-midstream",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/resting-ledge__w-midstream",
+  "box": [
+   261,
+   0
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 5247,
+  "movedPx": 526,
+  "crop": [
+   228,
+   2371
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "w-lower-pool",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__w-lower-pool",
+  "box": [
+   448,
+   3029
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 6686,
+  "movedPx": 933,
+  "crop": [
+   333,
+   3007
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "resting-ledge",
+  "region": "w-lower-pool",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/resting-ledge__w-lower-pool",
+  "box": [
+   333,
+   194
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 18443,
+  "movedPx": 2231,
+  "crop": [
+   333,
+   3007
+  ],
+  "class": "wave"
+ },
+ {
+  "plane": "pine-over-bridge",
+  "region": "w-lower-pool",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__w-lower-pool",
+  "box": [
+   0,
+   103
+  ],
+  "n": 36,
+  "on": 2,
+  "ownPx": 651,
+  "movedPx": 59,
+  "crop": [
+   333,
+   3007
+  ],
+  "class": "wave"
  }
 ]
