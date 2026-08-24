@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 14:55 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 15:27 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -119,12 +119,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (220) · 0 violation(s)
 
 DELIVERABLES
-  jobs/wang-meng/film/RISE-z1.mp4
   jobs/wang-meng/film/THE-RISE.mp4
-  jobs/wang-meng/film/SUBTLE-REEL.mp4
-  jobs/wang-meng/film/SHOT-focus-slope.mp4
-  jobs/wang-meng/film/SHOT-focus-ge.mp4
-  jobs/wang-meng/film/SHOT-focus-water.mp4
+  jobs/wang-meng/film/RISE-z6w.mp4
+  jobs/wang-meng/film/RISE-z5w.mp4
+  jobs/wang-meng/film/RISE-z4w.mp4
+  jobs/wang-meng/film/RISE-z3w.mp4
+  jobs/wang-meng/film/RISE-z1.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 
 RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
@@ -143,6 +143,9 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  fcb6be5  check-holes sampled 3 frames of 4,631 and called it a verdict
+2026-08-24  38e6ec4  journal: the polygon was the classifier, and three manifests that lied
+2026-08-24  45b1879  STATE regenerated: five zones rebuilt, stale gust patches pruned
 2026-08-24  a07126f  the stale gust patches drop out: 64 registered entries pointed at superseded cuts
 2026-08-24  6323b51  register refuses a patch whose drawings do not exist
 2026-08-24  2794fb7  STATE regenerated: all five film legs rebuilt, 209 foliage regions
@@ -152,14 +155,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  79b0384  z3w rebuilt through the catalogue: 46 patches to 103, leak 9434 to 1273
 2026-08-24  6295fac  the summits refined and unioned: the whole scroll now has a foliage decision
 2026-08-24  1798c6a  STATE and the z3w mask sheet, mid-rebuild after the duplicate polys came out
-2026-08-24  7ea283f  two guards that were written down and never enforced: the fence and the dedup
-2026-08-24  9210f58  the summit band is catalogued: 12 tiles, 225 objects, 123 leaf masses
-2026-08-24  abea32c  retire dark-accent: the polygon was the classifier, not the rule
 ```
 
 ### ⚠ UNPUSHED
 
-**21 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**24 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
