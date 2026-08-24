@@ -23,7 +23,7 @@ Per checks-start-in-observation this REPORTS and exits 0; --strict arms it.
 
 usage:
   check-holes.py --frames DIR [--every N] [--min-px 2000] [--strict]
-  check-holes.py --video FILE [...]
+  check-holes.py --video FILE [--every N]   # N frames apart, throughout
 """
 import argparse, glob, json, os, subprocess, sys, tempfile
 import numpy as np
@@ -69,8 +69,10 @@ def holes_in(path, min_px, margin):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--frames", help="a directory of rendered PNGs")
-    ap.add_argument("--video", help="an mp4; first, middle and last frames are checked")
-    ap.add_argument("--every", type=int, default=24, help="frames dir: check every Nth")
+    ap.add_argument("--video", help="an mp4; sampled every --every frames throughout")
+    ap.add_argument("--every", type=int, default=24,
+                    help="check every Nth frame (a frames dir), or the equivalent "
+                         "interval in a video. 24 = about one per second")
     ap.add_argument("--min-px", type=int, default=2000)
     ap.add_argument("--margin", type=int, default=310,
                     help="px of frame edge that may legitimately be empty")
@@ -83,10 +85,19 @@ def main():
         dur = float(subprocess.run(
             ["ffprobe", "-v", "error", "-show_entries", "format=duration",
              "-of", "csv=p=0", a.video], capture_output=True, text=True).stdout.strip())
-        for tag, ss in (("first", 0.0), ("mid", dur / 2), ("last", max(0.0, dur - 0.1))):
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(ss),
-                            "-i", a.video, "-frames:v", "1", f"{tmp}/{tag}.png"], check=True)
-        files = [f"{tmp}/first.png", f"{tmp}/mid.png", f"{tmp}/last.png"]
+        # SAMPLE THE WHOLE THING, NOT THREE FRAMES. This path used to pull first,
+        # middle and last, which cannot see a defect that appears partway through
+        # a leg -- and that is the shape of the defects it exists to catch: a
+        # patch offset only bites at certain camZ, so it opens and closes inside
+        # a shot. On the 193s THE-RISE that sampled 3 of 4,631 frames, a 0.06%
+        # look reported as a verdict. --every is seconds-between-samples here.
+        step = max(0.25, float(a.every) / 24.0)
+        stamps = [i * step for i in range(int(dur / step) + 1)]
+        stamps[-1] = min(stamps[-1], max(0.0, dur - 0.1))
+        # one decode pass, not one ffmpeg invocation per stamp
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", a.video,
+                        "-vf", f"fps=1/{step}", f"{tmp}/s%05d.png"], check=True)
+        files = sorted(glob.glob(f"{tmp}/s*.png"))
     else:
         files = sorted(glob.glob(f"{a.frames}/*.png"))[::max(1, a.every)]
 
