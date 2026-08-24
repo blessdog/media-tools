@@ -10,9 +10,9 @@ scope: >
   ending at fov 1.70). The PERCENTAGES are specific to this stack and this
   camera; the mechanism is general to any layered-depth stack with generative
   fills.
-verified-on: 2026-08-23
+verified-on: 2026-08-24
 evidence:
-  - jobs/wang-meng/evidence/2026-08-23-a-seventh-of-the-frame-is-invented.png
+  - jobs/wang-meng/evidence/2026-08-24-invented-material-outlined.png
 asked-as:
   - how deep can the camera go
   - why does the bridge look like mush up close
@@ -20,6 +20,8 @@ asked-as:
   - what limits the dolly
   - is the fill quality good enough
   - the ground around the figure looks wrong
+  - does the inpainted material look like the painting
+  - how much invented brushwork is on screen
 ---
 
 ## The fill works. That is the problem.
@@ -63,3 +65,34 @@ Three levers, and they are not exclusive:
 3. **Fill quality** — steps/guidance/resolution on the generative path.
 
 **NOT a lever: `--behind`.** It is already ~16x more than the holes require.
+
+## AMENDED 2026-08-24 — 14.7% is the wrong headline; 1.85% is the number
+
+The first render of this filled every invented pixel solid magenta and Ryan
+could not read it (*"a toddler went around with a pink marker"*). Rebuilt as
+BOUNDARY OUTLINES with 1:1 crops — see
+[[an-overlay-must-not-hide-the-thing-it-measures]] — and re-measured, the frame
+splits in two:
+
+| population | % of deepest frame |
+|---|---|
+| invented and BLANK (silk, wash, empty ground) | **12.86%** |
+| invented and CARRYING INK (fabricated brushwork) | **1.85%** |
+| total invented | 14.71% |
+
+Ink = darker than its own 31px local median by >12 levels. The reproduction from
+the marker stack is exact on the stack figure (2,660,184 / 5,329,050 = 33.3%);
+the frame figure moved 14.29 → 14.71 because this pass rendered the marker with
+`--fill black` throughout rather than mixing fills.
+
+**And the fill is not timid — it is slightly over-inking.** Against the local
+null (a 36px collar of real painting immediately around each invented region,
+which controls for the flat robe and empty river that drag a whole-frame
+average down): ink density **12.6% inside the fill vs 10.75% right beside it**.
+flux is inventing about 17% more brushwork than its own neighbourhood carries.
+
+So the trade is smaller than the headline made it sound and its shape is
+different: the risk is not that a seventh of the painting is fake, it is that
+~1.85% of the frame is fabricated STROKES, concentrated where the camera is
+looking hardest. Lever 2 (fill source) still dominates for the same reason —
+real ink copied from elsewhere in the scroll cannot over-ink.
