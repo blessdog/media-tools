@@ -32,7 +32,15 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--zone", required=True)
 ap.add_argument("--from-y", type=float, required=True, help="camera CENTRE, master px, at t=0")
 ap.add_argument("--to-y", type=float, required=True, help="camera CENTRE, master px, at the end")
-ap.add_argument("--rate", type=float, default=110.0, help="master px per second of rise")
+ap.add_argument("--rate", type=float, default=80.0,
+                help="master px per second of rise. Was 110 until 2026-08-24; "
+                     "Ryan on the re-authored legs: 'some of the shots were "
+                     "panning too fast'")
+ap.add_argument("--approach", type=float, default=5.0,
+                help="seconds to move in on a target, and the same to come back "
+                     "out. Was 3.5, which made the approach the FASTEST move in "
+                     "the leg -- it covers the most distance in the least time, "
+                     "so slowing the traverse alone would not have fixed it")
 ap.add_argument("--pushes", type=int, default=2, help="max approach moments in this leg")
 ap.add_argument("--breathe-floor", type=float, default=0.07,
                 help="camZ the breath never goes BELOW except at the leg seams. "
@@ -171,12 +179,12 @@ for c in targets:
     # notice it, then move toward it -- 3.5s in, 3s held, 3.5s back out
     fov_in = WIDE / a.push_fov      # smaller push_fov = closer
     xi, yi = clamp_key(*norm(c["mx"], c["my"]), fov_in)
-    t += 3.5
+    t += a.approach
     keys.append({"t": round(t, 2), "x": xi, "y": yi, "fov": round(fov_in, 4),
                  "_at": c["id"]})
     t += 3.0
     keys.append({"t": round(t, 2), "x": xi, "y": yi, "fov": round(fov_in, 4)})
-    t += 3.5
+    t += a.approach
     keys.append({"t": round(t, 2), "x": xw, "y": yw, "fov": round(WIDE, 4)})
     prev_my = c["my"]
     # settle back to cruise rather than parking at the plate edge

@@ -93,6 +93,18 @@ p.add_argument('--gust-travel', type=float, default=1500.0,
                help='px the gust front crosses in one cycle')
 p.add_argument('--gust-rest', type=float, default=0.15,
                help='idle amplitude between gusts, as a fraction of --swing')
+p.add_argument('--swing-px', type=float, default=0.0,
+               help='hold DISPLACEMENT constant instead of angle: give every '
+                    'card the angle that moves its mean leaf pixel this many px '
+                    'at gust peak, clamped to --swing-min/--swing. 0 = off, use '
+                    'a flat --swing. WHY: a card turns about its own pivot, so a '
+                    'pixel moves r*sin(theta) -- one angle across cards of very '
+                    'different size means the small ones barely move. Measured '
+                    '2026-08-24 over 50 z5w regions: below the median 488 ink '
+                    'px/card a region moves 28%% of its leaf, above it 43%%.')
+p.add_argument('--swing-min', type=float, default=2.0,
+               help='floor for --swing-px, degrees. Below this a hinge reads as '
+                    'jitter rather than sway')
 p.add_argument('--phase', type=float, default=0.0,
                help='shift this whole region along the gust clock, in cycles. '
                     'A GUST TRAVELS THROUGH THE PAINTING -- Ryan, 2026-08-24: '
@@ -536,6 +548,25 @@ amin = min(c['along'] for c in cards)
 for c in cards:
     c['delay'] = (c['along'] - amin) / max(a.gust_travel, 1e-3)
 
+# PER-CARD SWING, so displacement rather than angle is what is held constant.
+# r is the mean distance of the card's own ink from its pivot; the angle that
+# moves that mean pixel --swing-px is asin(px / r).
+if a.swing_px > 0:
+    for c in cards:
+        ys, xs = np.nonzero(c['al'][..., 0] if c['al'].ndim == 3 else c['al'])
+        if len(xs) == 0:
+            c['swing'] = a.swing
+            continue
+        r = float(np.mean(np.hypot(xs - c['pivot'][0], ys - c['pivot'][1])))
+        if r < 1.0:
+            c['swing'] = a.swing_min
+            continue
+        deg = np.degrees(np.arcsin(min(1.0, a.swing_px / r)))
+        c['swing'] = float(min(a.swing, max(a.swing_min, deg)))
+else:
+    for c in cards:
+        c['swing'] = a.swing
+
 ga, gh, gd = (float(q) for q in a.gust.split(','))
 if ga + gh + gd >= 0.95:
     sys.exit('--gust A+H+D must leave calm air in the loop: keep the sum under 0.95')
@@ -619,7 +650,8 @@ for k in range(ndraw):
         # on the A/B was "it looked better before the turbulent spectrum. I don't
         # want that. I like the subtleness of it."
         ph = 2 * np.pi * ((t - c['delay'] - a.phase) + c['seed'])
-        ang = a.swing * act * np.sin(ph) + a.flutter * act * np.sin(3 * ph + 1.7)
+        sw = c['swing']
+        ang = sw * act * np.sin(ph) + a.flutter * act * np.sin(3 * ph + 1.7)
         peak = max(peak, abs(float(ang)))
         x0, y0, x1, y1 = c['box']
         M = cv2.getRotationMatrix2D(c['pivot'], float(ang), 1.0)
