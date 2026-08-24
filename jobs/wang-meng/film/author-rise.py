@@ -34,7 +34,18 @@ ap.add_argument("--from-y", type=float, required=True, help="camera CENTRE, mast
 ap.add_argument("--to-y", type=float, required=True, help="camera CENTRE, master px, at the end")
 ap.add_argument("--rate", type=float, default=110.0, help="master px per second of rise")
 ap.add_argument("--pushes", type=int, default=2, help="max approach moments in this leg")
-ap.add_argument("--breathe", type=float, default=0.18,
+ap.add_argument("--breathe-floor", type=float, default=0.12,
+                help="camZ the breath never goes BELOW except at the leg seams. "
+                     "A traverse at camZ=0 is a pan BY CONSTRUCTION -- measured "
+                     "2026-08-21, collapsing all 13 plane depths onto one changed "
+                     "0 of 2,073,600 px. The old breath returned to 0 every "
+                     "period and 21-67%% of each leg's keys sat there, so those "
+                     "stretches were Ken Burns pans with the parallax machinery "
+                     "switched off. Ryan, 2026-08-24: 'if you're zoomed in at the "
+                     "same crop shot the entire time it doesn't show off the "
+                     "parallaxing. You got to pull out and go forward, push in "
+                     "and go.'")
+ap.add_argument("--breathe", type=float, default=0.45,
                 help="peak camZ of the breath. Depth on this painting comes from "
                      "DIFFERENTIAL SCALE, never from sliding or deforming planes "
                      "(knowledge/depth-may-resize-never-deform.md). 0.18 is "
@@ -153,10 +164,26 @@ else:
 # breath at all -- z5w came out 9.2s long with z pinned at 0.000. Clamp the
 # period to the leg so every leg gets at least one full breath.
 PERIOD = min(a.breathe_period, max(t, 6.0))
+# The seam taper. Long enough to be invisible under the 0.8s crossfade, short
+# enough that it does not flatten the leg: 2.5s each end.
+SEAM = min(2.5, t / 4.0)
 
 
 def breath(tt):
-    return a.breathe * 0.5 * (1 - math.cos(2 * math.pi * tt / PERIOD))
+    """A breath that never settles, tapered to 0 only at the leg's two seams.
+
+    The old form was a raised cosine from 0 to --breathe, so it passed through
+    zero depth once per period and the leg's own keys landed in those troughs.
+    Now it swings between --breathe-floor and --breathe, and a separate seam
+    taper brings it to 0 across the first and last SEAM seconds so consecutive
+    legs still dissolve at the composition the painting actually is.
+    """
+    lo, hi = a.breathe_floor, a.breathe
+    v = lo + (hi - lo) * 0.5 * (1 - math.cos(2 * math.pi * tt / PERIOD))
+    edge = min(tt, max(t - tt, 0.0))
+    if edge < SEAM:
+        v *= 0.5 * (1 - math.cos(math.pi * max(edge, 0.0) / SEAM))
+    return v
 
 if a.breathe:
     half = PERIOD / 2.0
