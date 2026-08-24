@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 15:27 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 15:51 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -143,6 +143,8 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  8f910b9  the rise paths re-authored: approaches now land on catalogued trees
+2026-08-24  5532d20  STATE regenerated: THE-RISE rebuilt from the catalogue, 193 frames checked intact
 2026-08-24  fcb6be5  check-holes sampled 3 frames of 4,631 and called it a verdict
 2026-08-24  38e6ec4  journal: the polygon was the classifier, and three manifests that lied
 2026-08-24  45b1879  STATE regenerated: five zones rebuilt, stale gust patches pruned
@@ -153,13 +155,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  58481bc  STATE regenerated: z3w 46 to 103 patches, summit band catalogued and converted
 2026-08-24  b93272e  the summits become regions: 87 foliage polys where the film had 0.3% coverage
 2026-08-24  79b0384  z3w rebuilt through the catalogue: 46 patches to 103, leak 9434 to 1273
-2026-08-24  6295fac  the summits refined and unioned: the whole scroll now has a foliage decision
-2026-08-24  1798c6a  STATE and the z3w mask sheet, mid-rebuild after the duplicate polys came out
 ```
 
 ### ⚠ UNPUSHED
 
-**24 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**26 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -169,11 +169,7 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/film/paths/rise-z1.json
- M jobs/wang-meng/film/paths/rise-z3w.json
- M jobs/wang-meng/film/paths/rise-z4w.json
- M jobs/wang-meng/film/paths/rise-z5w.json
- M jobs/wang-meng/film/paths/rise-z6w.json
+?? jobs/wang-meng/evidence/2026-08-24-gust-and-fov-diagnosis.png
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
