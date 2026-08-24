@@ -33,7 +33,7 @@ cel water was proven at (STATE 2026-08-19 night, scale law 3).
   --stage register  write living/living-<zone>.json for compile-flight
   --stage audit     what-moved heat map -> living/evidence-living-<zone>.png
 """
-import argparse, json, subprocess, sys
+import argparse, json, os, subprocess, sys
 from pathlib import Path
 import cv2
 import numpy as np
@@ -736,15 +736,32 @@ if a.stage == "cycle":
 # ------------------------------------------------------------- register -----
 if a.stage == "register":
     built = json.loads((OUT / "built.json").read_text())
-    living = {}
+    living, ghosts = {}, []
     for b in built:
+        # A PATCH WITH NO DRAWINGS IS NOT A PATCH. built.json accumulates across
+        # runs, so registering a class whose cycle stage was never run for it
+        # writes an entry pointing at an empty directory -- and the failure does
+        # not surface here, it surfaces as a FileNotFoundError inside
+        # render-parallax minutes later, with nothing to say which stage was
+        # skipped. Measured 2026-08-24: z3w registered foliage,wave,fall,figure
+        # after a cycle run of foliage alone, and 37 of its patches pointed at
+        # nothing. Refuse them here, where the cause is still legible.
+        if not os.path.exists(os.path.join(b["dir"], "000.png")):
+            ghosts.append(b["region"])
+            continue
         living.setdefault(b["plane"], {"patches": []})["patches"].append(
             {"dir": b["dir"], "box": b["box"], "n": b["n"], "on": b["on"]})
+    if ghosts:
+        byreg = sorted(set(ghosts))
+        print(f"    NOT REGISTERED -- {len(ghosts)} patch(es) across {len(byreg)} "
+              f"region(s) have no drawings on disk: {', '.join(byreg)}\n"
+              f"    Run --stage cycle for their classes before registering them.",
+              file=sys.stderr)
     out = HERE / f"living-{a.zone}.json"
     out.write_text(json.dumps(living, indent=1))
     print(json.dumps({"out": str(out), "planes": sorted(living),
-                      "patches": sum(len(v["patches"]) for v in living.values())},
-                     indent=1))
+                      "patches": sum(len(v["patches"]) for v in living.values()),
+                      "skippedNoDrawings": len(ghosts)}, indent=1))
 
 # ---------------------------------------------------------------- audit -----
 if a.stage == "audit":

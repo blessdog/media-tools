@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 14:07 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 14:23 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -119,12 +119,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (220) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/RISE-z1.mp4
   jobs/wang-meng/film/THE-RISE.mp4
   jobs/wang-meng/film/SUBTLE-REEL.mp4
   jobs/wang-meng/film/SHOT-focus-slope.mp4
   jobs/wang-meng/film/SHOT-focus-ge.mp4
   jobs/wang-meng/film/SHOT-focus-water.mp4
-  jobs/wang-meng/film/RISE-z1.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 
 RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
@@ -143,6 +143,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  2794fb7  STATE regenerated: all five film legs rebuilt, 209 foliage regions
 2026-08-24  1c4615a  every leg of the film rebuilt through the catalogue: the summits go 0.3% to 16.7%
 2026-08-24  58481bc  STATE regenerated: z3w 46 to 103 patches, summit band catalogued and converted
 2026-08-24  b93272e  the summits become regions: 87 foliage polys where the film had 0.3% coverage
@@ -154,12 +155,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  abea32c  retire dark-accent: the polygon was the classifier, not the rule
 2026-08-24  3aabc70  what the catalogue thinks is foliage, over the whole scroll
 2026-08-24  9c02933  the foliage master was a union nobody could reproduce; now it is a script
-2026-08-24  4ed19e9  the mask index was a cache of a directory with no invalidation: 17 entries, 4 files
 ```
 
 ### ⚠ UNPUSHED
 
-**18 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**19 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -174,6 +174,7 @@ git push origin main
  M jobs/wang-meng/film/paths/rise-z4w.json
  M jobs/wang-meng/film/paths/rise-z5w.json
  M jobs/wang-meng/film/paths/rise-z6w.json
+ M jobs/wang-meng/living/build-zone-living.py
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
