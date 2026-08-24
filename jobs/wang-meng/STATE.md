@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 12:26 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 13:03 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -64,7 +64,6 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · a-transform-cannot-change-an-expression Character animation on a painted or drawn source. The MEASUREMENTS are from 葛稚川移居圖's Ge Ho
   · band-02-was-already-animated-once The Ge Hong / deer / trestle-bridge scene, master box roughly [901, 10604, 2585, 13599]. F
   · branch-radius-scales-with-the-tree hinge-foliage's branch/leaf split on 葛稚川移居圖, and by the same mechanism any painting where 
-  · canopy-read-distant    DISTANT ridges only -- the summits, master y < ~3850, verified on z6w. NOT valid near; the
   · canopy-read-near       NEAR foliage only -- the compound canopies and the gorge, master y > ~3850. NOT valid on d
   · clean-plate-donor-scope Any clean-plate fill whose hole is SURROUNDED BY MATERIAL OF THE SAME KIND as the thing be
   · depth-is-authored      Whole-painting depth on 葛稚川移居圖 and, by the same mechanism, any painting built on 散点透視 rath
@@ -82,6 +81,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · the-resolve-substrate-is-already-built Facts read off this machine on 2026-08-22. Applies to any plan that proposes building agen
 
 REFUTED — already tried, do NOT retry
+  ✗ a-percentile-cannot-reject-a-region A percentile is defined relative to its own input, so it ALWAYS returns something -- give it a blank
   ✗ canopy-by-texture-statistics At distance Wang Meng's 牛毛皴 (hemp-fibre texture strokes) covers rock and forest alike, so the ridge 
   ✗ copied-real-ink-over-inks-worse-than-flux Patch synthesis chooses donors by TEXTURE MATCH, and a hole beside dense hatching matches dense hatc
   ✗ mist-as-ink            There is no mist ink in this painting. What reads as mist is 留白 -- bare ground, negative space, the 
@@ -143,23 +143,23 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  7ea283f  two guards that were written down and never enforced: the fence and the dedup
+2026-08-24  9210f58  the summit band is catalogued: 12 tiles, 225 objects, 123 leaf masses
+2026-08-24  abea32c  retire dark-accent: the polygon was the classifier, not the rule
+2026-08-24  3aabc70  what the catalogue thinks is foliage, over the whole scroll
+2026-08-24  9c02933  the foliage master was a union nobody could reproduce; now it is a script
+2026-08-24  4ed19e9  the mask index was a cache of a directory with no invalidation: 17 entries, 4 files
+2026-08-24  9a0bd7a  the cut-card manifests are the record; living-work's 69MB of pngs are the cutting floor
+2026-08-24  474094a  the z1 rebuild's outputs: catalogue SAM masks for the z3w band, and the reel they produced
+2026-08-24  afef054  STATE regenerated: z1 living layer 21 to 46 patches, foliage regions 8 to 122
 2026-08-24  080052c  the coverage denominator was the retired colour gate; the catalogue is the decider
 2026-08-24  f7e0d35  z1's living layer rebuilt from the catalogue: 46 patches, foliage 8 to 33
 2026-08-24  f9d42fb  the foliage masks were never actually committed -- a blanket jobs/** ignore ate them
-2026-08-24  3fc36ff  gitignore the derived stacks: 2.7GB of measure-work frames are reproducible
-2026-08-24  c0ed21b  the subtle reel, reframed: fov floors computed, focus-trees replaced
-2026-08-24  2c25f8b  STATE regenerated: colour gate retired, catalogue decides foliage
-2026-08-24  708db94  retire the colour gate: a catalogue decides what is foliage, not a threshold
-2026-08-24  321d230  the catalogue replaces the colour gate: rock leaf-ink 64% to 9.5%
-2026-08-24  557efc8  the bottom of the scroll is catalogued: 170 objects, 58 leaf masses
-2026-08-24  9ccf63f  the loop Ryan ruled on: the rock moves
-2026-08-24  24cb815  two vision models probed for foliage-vs-rock, then set aside for the catalogue
-2026-08-24  38e7fea  whole-plate foliage pass: coverage 6.9% to 56.6%, but the rock moves
 ```
 
 ### ⚠ UNPUSHED
 
-**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**12 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -169,36 +169,82 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/film/SHOT-focus-ge.mp4
- M jobs/wang-meng/film/SHOT-focus-slope.mp4
- M jobs/wang-meng/film/SUBTLE-REEL.mp4
- M jobs/wang-meng/journey/z1/living-masks/index.json
- M jobs/wang-meng/journey/z1/living-work/s-great-trees-lower/drawings/cycle.json
- M jobs/wang-meng/journey/z1/living-work/s-great-trees-upper/drawings/cycle.json
- M jobs/wang-meng/journey/z1/living-work/s-left-pines-z2/drawings/cycle.json
- M jobs/wang-meng/journey/z1/living-work/s-pine-over-bridge/drawings/cycle.json
- M jobs/wang-meng/journey/z1/living/built.json
-?? jobs/wang-meng/catalogue/sam/
-?? jobs/wang-meng/journey/z1/living-work/cat-broadleaf-great-right/
-?? jobs/wang-meng/journey/z1/living-work/cat-canopy-bottom-left/
-?? jobs/wang-meng/journey/z1/living-work/cat-canopy-bough-left-main/
-?? jobs/wang-meng/journey/z1/living-work/cat-canopy-bough-left-tip/
-?? jobs/wang-meng/journey/z1/living-work/cat-canopy-brick-top/
-?? jobs/wang-meng/journey/z1/living-work/cat-fronds-bottom-left/
-?? jobs/wang-meng/journey/z1/living-work/cat-pine-needle-right/
-?? jobs/wang-meng/journey/z1/living-work/cat-pine-top-roots/
-?? jobs/wang-meng/journey/z1/living-work/cat-tree-bottom-right-t013/
-?? jobs/wang-meng/journey/z1/living-work/cat-tree-bottom-right/
-?? jobs/wang-meng/journey/z1/living-work/cat-tree-colour-lower-left/
-?? jobs/wang-meng/journey/z1/living-work/cat-tree-great-centre/
-?? jobs/wang-meng/journey/z1/living-work/cat-tree-round-top-left/
-?? jobs/wang-meng/journey/z1/living-work/cat-tree-teal-mid-left/
-?? jobs/wang-meng/journey/z1/living-work/cat-vine-curtain-left/
-?? jobs/wang-meng/journey/z1/living-work/cat-vine-curtain-mid/
-?? jobs/wang-meng/journey/z1/living-work/s-great-trees-lower/exclude/
-?? jobs/wang-meng/journey/z1/living-work/s-great-trees-upper/exclude/
-?? jobs/wang-meng/journey/z1/living-work/s-left-pines-z2/exclude/
-?? jobs/wang-meng/journey/z1/living-work/s-pine-over-bridge/exclude/
+ M jobs/wang-meng/catalogue/sam-summit/t000-trees.png
+ M jobs/wang-meng/journey/z3w/living-masks/index.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living/built.json
+ M jobs/wang-meng/living/evidence-masks-z3w.png
+?? jobs/wang-meng/catalogue/foliage-master-summit.png
+?? jobs/wang-meng/catalogue/sam-summit/t001-trees.png
+?? jobs/wang-meng/catalogue/sam-summit/t002-trees.png
+?? jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-great-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-top-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-top-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-brick-top/
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-dense-bottom-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-dense-bottom/
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-foreground-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-foreground/
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-band/
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-centre-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-conifers-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-fronds-bottom-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-great-tree-top-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-grove-bottom-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-grove-left-upper/
+?? jobs/wang-meng/journey/z3w/living-work/cat-grove-lower-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-ochre/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-orange/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-rust-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-bottom-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-centre/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-right-t015/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-top-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-left-spread/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-bottom-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-top-centre/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-top-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-top-roots/
+?? jobs/wang-meng/journey/z3w/living-work/cat-thicket-bottom/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre-t002/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre-t005/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t003/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t005/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t013/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-brick-centre/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-colour-lower-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-great-centre/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-left-edge/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-lower-round/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-mid-round/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-right-edge/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-round-top-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-above-ge-hong/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-bottom-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-centre-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-mid-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-upper-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-top-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-weeping-upper-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-willow-top-left/
+?? jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/exclude/
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
