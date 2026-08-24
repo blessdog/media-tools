@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 08:47 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 09:23 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -98,6 +98,7 @@ OPEN — plans, NOT specs. proven: false. Do not build against these.
 
 ```
 LIVING LAYER — cycles registered per zone
+  z1-coarse4  21 patches · 4 planes · 8 regions
   z1     21 patches · 8 planes · 8 regions
   z3w    46 patches · 5 planes · 37 regions
   z4w    32 patches · 3 planes · 23 regions
@@ -115,12 +116,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (19) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/SUBTLE-REEL.mp4
+  jobs/wang-meng/film/SHOT-focus-trees.mp4
+  jobs/wang-meng/film/SHOT-focus-ge.mp4
+  jobs/wang-meng/film/SHOT-focus-water.mp4
   jobs/wang-meng/film/THE-RISE.mp4
   jobs/wang-meng/film/RISE-z1.mp4
-  jobs/wang-meng/film/RISE-z6w.mp4
-  jobs/wang-meng/film/RISE-z5w.mp4
-  jobs/wang-meng/film/RISE-z4w.mp4
-  jobs/wang-meng/film/RISE-z3w.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 
 RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
@@ -139,6 +140,9 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  af1a4f9  the subtle reel: three focus shots on four planes, crossfaded
+2026-08-24  bbdcc2d  four planes instead of twelve: invented ink falls by a third at the same fill
+2026-08-24  323a31a  STATE regenerated: fill-source lever refuted, frame-zero check restated
 2026-08-24  632fdc6  the deep half of the dolly is nearly free: invented INK flattens at camZ 0.33
 2026-08-24  ee3e00f  the frame-zero control was never byte-exact, so it could not see a leak
 2026-08-24  94d2d82  real ink over-inks worse than flux: the fill-source lever is refuted
@@ -148,14 +152,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  00ae5d2  STATE regenerated
 2026-08-24  81acece  the invented-material overlay was unreadable -- outlines, 1:1 crops, and the ink split
 2026-08-24  7ba371d  STATE regenerated: relief at 100% of eligible planes
-2026-08-24  6dbc48b  relief coverage counts ELIGIBLE planes, not all planes -- 42% was a phantom gap
-2026-08-24  4ff40a6  STATE regenerated: invented-material verdict landed, 48 live claims
-2026-08-23  e66da62  a deep dolly reveals invented material: 14.29% of the deepest frame is flux, not Wang Meng
 ```
 
 ### ⚠ UNPUSHED
 
-**4 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**7 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -165,7 +166,14 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
+ M jobs/wang-meng/film/SHOT-focus-ge.mp4
+ M jobs/wang-meng/film/SHOT-focus-trees.mp4
+ M jobs/wang-meng/film/SUBTLE-REEL.mp4
+ M jobs/wang-meng/journey/remap-living.py
+ M jobs/wang-meng/living/living-z1-coarse4.json
+?? jobs/wang-meng/journey/z1/layers-filled-coarse4/
 ?? jobs/wang-meng/journey/z1/layers-filled-shiftmap/
+?? jobs/wang-meng/journey/z1/layers-pinned-coarse4/
 ?? jobs/wang-meng/journey/z1/measure-work/
 ```
 
