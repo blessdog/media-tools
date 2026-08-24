@@ -40,8 +40,10 @@ fi
 
 if [[ $stage == concat || $stage == all ]]; then
   tmp=$F/frames/_x; rm -rf $tmp; mkdir -p $tmp
-  prev=$F/SHOT-$SHOTS[1]; i=0
-  for s in ${SHOTS[@]:1}; do
+  # BRACE THE SUBSCRIPT AND KEEP THE EXTENSION: `$F/SHOT-$SHOTS[1]` expands to a
+  # path with no .mp4 and ffmpeg fails on the first join.
+  prev=$F/SHOT-${SHOTS[1]}.mp4; i=0
+  for s in ${SHOTS[2,-1]}; do
     dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 $prev)
     off=$(python3 -c "print(max(0.0, $dur - $X))")
     out=$tmp/chain-$i.mp4
