@@ -1,0 +1,20 @@
+{
+ "label": "coarse4",
+ "zone": "z1",
+ "filled": "layers-filled-coarse4",
+ "frame": 335,
+ "stack": {
+  "inventedPx": 1438828,
+  "paintedPx": 5329050,
+  "stackPctInvented": 21.26
+ },
+ "framePctInvented": 7.65,
+ "framePctInventedInk": 1.85,
+ "framePctInventedBlank": 5.8,
+ "inkDensityInvented": 24.19,
+ "inkDensityAdjacentPainted": 7.47,
+ "ringPx": 160301,
+ "overInkPct": 223.8,
+ "sheet": "jobs/wang-meng/evidence/2026-08-24-invented-coarse4.png",
+ "clip": "jobs/wang-meng/evidence/2026-08-24-dolly-coarse4.mp4"
+}

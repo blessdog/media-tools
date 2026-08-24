@@ -44,12 +44,12 @@ def sh(cmd):
     subprocess.run(cmd, cwd=REPO, check=True)
 
 
-def build_marker(zone, filled_dir, out):
+def build_marker(zone, filled_dir, out, pinned_dir="layers-pinned"):
     """WHITE = invented, BLACK = the painter's own ink. Alpha is copied through
     unchanged so the marker stack projects with exactly the same geometry."""
     Z = f"{REPO}/{J}/journey/{zone}"
     filled = json.load(open(f"{Z}/{filled_dir}/layers.json"))
-    pinned = json.load(open(f"{Z}/layers-pinned/layers.json"))
+    pinned = json.load(open(f"{Z}/{pinned_dir}/layers.json"))
     pin_by = {p["name"]: p for p in pinned["planeList"] if p.get("layer")}
     tot_inv = tot_paint = 0
     for p in filled["planeList"]:
@@ -60,7 +60,7 @@ def build_marker(zone, filled_dir, out):
         keep = np.zeros_like(fa)
         q = pin_by.get(p["name"])
         if q is not None:
-            pa = np.asarray(Image.open(f"{Z}/layers-pinned/{q['layer']}")
+            pa = np.asarray(Image.open(f"{Z}/{pinned_dir}/{q['layer']}")
                             .convert("RGBA").split()[3]) > 0
             dx = q["offset"][0] - p["offset"][0]
             dy = q["offset"][1] - p["offset"][1]
@@ -112,6 +112,8 @@ def main():
     ap.add_argument("--label", required=True, help="what made this fill, e.g. flux / shiftmap")
     ap.add_argument("--path", default=f"{J}/film/paths/ab-ge-corrected.json")
     ap.add_argument("--frame", type=int, default=335, help="the deepest frame of the dolly")
+    ap.add_argument("--pinned", default="layers-pinned",
+                    help="the PRE-FILL stack this fill was made from")
     ap.add_argument("--work", default=None)
     a = ap.parse_args()
 
@@ -121,7 +123,7 @@ def main():
     shutil.rmtree(marker_stack, ignore_errors=True)
     os.makedirs(marker_stack)
 
-    stack = build_marker(a.zone, a.filled, marker_stack)
+    stack = build_marker(a.zone, a.filled, marker_stack, a.pinned)
     print(json.dumps(stack), file=sys.stderr)
 
     real_dir, mark_dir = f"{work}/f-real", f"{work}/f-marker"
