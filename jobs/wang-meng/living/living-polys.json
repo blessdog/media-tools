@@ -3223,6 +3223,1846 @@
     ]
    ],
    "note": "from the catalogue (t011.json): small ochre tree on the left ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-broadleaf-great-right",
+   "class": "foliage",
+   "points": [
+    [
+     2728,
+     8936
+    ],
+    [
+     4136,
+     8936
+    ],
+    [
+     4136,
+     10784
+    ],
+    [
+     2728,
+     10784
+    ]
+   ],
+   "note": "from the catalogue (t009.json): the great broadleaf tree filling the right half. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-dense-bottom-right",
+   "class": "foliage",
+   "points": [
+    [
+     5244,
+     11362
+    ],
+    [
+     6586,
+     11362
+    ],
+    [
+     6586,
+     12594
+    ],
+    [
+     5244,
+     12594
+    ]
+   ],
+   "note": "from the catalogue (t015.json): dense round-leaf mass filling the bottom right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-brick-top",
+   "class": "foliage",
+   "points": [
+    [
+     4158,
+     10394
+    ],
+    [
+     5852,
+     10394
+    ],
+    [
+     5852,
+     11186
+    ],
+    [
+     4158,
+     11186
+    ]
+   ],
+   "note": "from the catalogue (t014.json): brick-dash canopy band across the top. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-dense-bottom",
+   "class": "foliage",
+   "points": [
+    [
+     4730,
+     11780
+    ],
+    [
+     6072,
+     11780
+    ],
+    [
+     6072,
+     12594
+    ],
+    [
+     4730,
+     12594
+    ]
+   ],
+   "note": "from the catalogue (t014.json): dense round-leaf mass across the bottom right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-great-tree-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     154,
+     8584
+    ],
+    [
+     1430,
+     8584
+    ],
+    [
+     1430,
+     9376
+    ],
+    [
+     154,
+     9376
+    ]
+   ],
+   "note": "from the catalogue (t008.json): big teal round-leaf tree spreading across the top left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-grove-bottom-right",
+   "class": "foliage",
+   "points": [
+    [
+     2838,
+     6142
+    ],
+    [
+     4136,
+     6142
+    ],
+    [
+     4136,
+     6912
+    ],
+    [
+     2838,
+     6912
+    ]
+   ],
+   "note": "from the catalogue (t001.json): grove of teal and rust trees across the bottom right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-needle-right",
+   "class": "foliage",
+   "points": [
+    [
+     1210,
+     9442
+    ],
+    [
+     2200,
+     9442
+    ],
+    [
+     2200,
+     10388
+    ],
+    [
+     1210,
+     10388
+    ]
+   ],
+   "note": "from the catalogue (t008.json): blue-green needle pine on the right ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-fronds-bottom-left",
+   "class": "foliage",
+   "points": [
+    [
+     4386,
+     11802
+    ],
+    [
+     5376,
+     11802
+    ],
+    [
+     5376,
+     12594
+    ],
+    [
+     4386,
+     12594
+    ]
+   ],
+   "note": "from the catalogue (t015.json): feathered fronds across the bottom left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-needle-bottom-right",
+   "class": "foliage",
+   "points": [
+    [
+     5420,
+     10124
+    ],
+    [
+     6586,
+     10124
+    ],
+    [
+     6586,
+     10784
+    ],
+    [
+     5420,
+     10784
+    ]
+   ],
+   "note": "from the catalogue (t011.json): dark needle pines across the bottom right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-thicket-bottom",
+   "class": "foliage",
+   "points": [
+    [
+     4268,
+     10256
+    ],
+    [
+     5632,
+     10256
+    ],
+    [
+     5632,
+     10784
+    ],
+    [
+     4268,
+     10784
+    ]
+   ],
+   "note": "from the catalogue (t010.json): dense band of brick-mark foliage along the bottom. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-willow-top-centre",
+   "class": "foliage",
+   "points": [
+    [
+     5310,
+     6692
+    ],
+    [
+     6432,
+     6692
+    ],
+    [
+     6432,
+     7330
+    ],
+    [
+     5310,
+     7330
+    ]
+   ],
+   "note": "from the catalogue (t007.json): big ochre and rust hanging-leaf tree on the ridge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-foliage-right-wall",
+   "class": "foliage",
+   "points": [
+    [
+     3520,
+     11054
+    ],
+    [
+     4136,
+     11054
+    ],
+    [
+     4136,
+     12154
+    ],
+    [
+     3520,
+     12154
+    ]
+   ],
+   "note": "from the catalogue (t013.json): wall of teal foliage down the right edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-left-spread",
+   "class": "foliage",
+   "points": [
+    [
+     1936,
+     7286
+    ],
+    [
+     2772,
+     7286
+    ],
+    [
+     2772,
+     8034
+    ],
+    [
+     1936,
+     8034
+    ]
+   ],
+   "note": "from the catalogue (t005.json): old blue-green pine spreading left over the ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-colour-lower-left",
+   "class": "foliage",
+   "points": [
+    [
+     1936,
+     11604
+    ],
+    [
+     2728,
+     11604
+    ],
+    [
+     2728,
+     12374
+    ],
+    [
+     1936,
+     12374
+    ]
+   ],
+   "note": "from the catalogue (t013.json): teal tree with red-tipped leaves at the lower left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-top-band",
+   "class": "foliage",
+   "points": [
+    [
+     5046,
+     4712
+    ],
+    [
+     6102,
+     4712
+    ],
+    [
+     6102,
+     5262
+    ],
+    [
+     5046,
+     5262
+    ]
+   ],
+   "note": "from the catalogue (t003.json): band of teal and ochre trees along the top. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-great-centre",
+   "class": "foliage",
+   "points": [
+    [
+     4334,
+     11186
+    ],
+    [
+     5522,
+     11186
+    ],
+    [
+     5522,
+     11670
+    ],
+    [
+     4334,
+     11670
+    ]
+   ],
+   "note": "from the catalogue (t014.json): the big round-leaf tree through the centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2662,
+     7308
+    ],
+    [
+     3476,
+     7308
+    ],
+    [
+     3476,
+     8012
+    ],
+    [
+     2662,
+     8012
+    ]
+   ],
+   "note": "from the catalogue (t005.json): blue-green pine cluster mid-tile. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-maple-orange",
+   "class": "foliage",
+   "points": [
+    [
+     1298,
+     7440
+    ],
+    [
+     2068,
+     7440
+    ],
+    [
+     2068,
+     8144
+    ],
+    [
+     1298,
+     8144
+    ]
+   ],
+   "note": "from the catalogue (t004.json): orange-red maple on the cliff shoulder. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-needle-left",
+   "class": "foliage",
+   "points": [
+    [
+     22,
+     7814
+    ],
+    [
+     814,
+     7814
+    ],
+    [
+     814,
+     8496
+    ],
+    [
+     22,
+     8496
+    ]
+   ],
+   "note": "from the catalogue (t004.json): blue-green needle pine lower left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-bottom-right",
+   "class": "foliage",
+   "points": [
+    [
+     1606,
+     11714
+    ],
+    [
+     2200,
+     11714
+    ],
+    [
+     2200,
+     12594
+    ],
+    [
+     1606,
+     12594
+    ]
+   ],
+   "note": "from the catalogue (t012.json): lobed-leaf tree reaching in from the right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-dark-top-right",
+   "class": "foliage",
+   "points": [
+    [
+     5442,
+     10394
+    ],
+    [
+     6432,
+     10394
+    ],
+    [
+     6432,
+     10922
+    ],
+    [
+     5442,
+     10922
+    ]
+   ],
+   "note": "from the catalogue (t015.json): dark needle pine across the top right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-grove-lower-left",
+   "class": "foliage",
+   "points": [
+    [
+     44,
+     5944
+    ],
+    [
+     814,
+     5944
+    ],
+    [
+     814,
+     6582
+    ],
+    [
+     44,
+     6582
+    ]
+   ],
+   "note": "from the catalogue (t000.json): ochre, rust and teal grove at the lower left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-foreground-left",
+   "class": "foliage",
+   "points": [
+    [
+     3872,
+     8232
+    ],
+    [
+     4598,
+     8232
+    ],
+    [
+     4598,
+     8848
+    ],
+    [
+     3872,
+     8848
+    ]
+   ],
+   "note": "from the catalogue (t006.json): teal foreground canopy at the bottom left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-maple-rust-left",
+   "class": "foliage",
+   "points": [
+    [
+     1980,
+     9266
+    ],
+    [
+     2904,
+     9266
+    ],
+    [
+     2904,
+     9750
+    ],
+    [
+     1980,
+     9750
+    ]
+   ],
+   "note": "from the catalogue (t009.json): rust and pink dot-cluster tree on the left ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-foreground",
+   "class": "foliage",
+   "points": [
+    [
+     132,
+     8430
+    ],
+    [
+     1166,
+     8430
+    ],
+    [
+     1166,
+     8848
+    ],
+    [
+     132,
+     8848
+    ]
+   ],
+   "note": "from the catalogue (t004.json): foreground canopy along the bottom edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-maple-red",
+   "class": "foliage",
+   "points": [
+    [
+     3080,
+     7154
+    ],
+    [
+     3674,
+     7154
+    ],
+    [
+     3674,
+     7880
+    ],
+    [
+     3080,
+     7880
+    ]
+   ],
+   "note": "from the catalogue (t005.json): red-orange autumn maple. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-top-roots",
+   "class": "foliage",
+   "points": [
+    [
+     2904,
+     10394
+    ],
+    [
+     3916,
+     10394
+    ],
+    [
+     3916,
+     10812
+    ],
+    [
+     2904,
+     10812
+    ]
+   ],
+   "note": "from the catalogue (t013.json): pine on the clifftop with roots gripping the edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-brick-centre",
+   "class": "foliage",
+   "points": [
+    [
+     5134,
+     10856
+    ],
+    [
+     5970,
+     10856
+    ],
+    [
+     5970,
+     11362
+    ],
+    [
+     5134,
+     11362
+    ]
+   ],
+   "note": "from the catalogue (t015.json): brick-dash canopy through the centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     4386,
+     6758
+    ],
+    [
+     5156,
+     6758
+    ],
+    [
+     5156,
+     7286
+    ],
+    [
+     4386,
+     7286
+    ]
+   ],
+   "note": "from the catalogue (t007.json): teal dot-cluster pine below the ochre tree. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-maple-left",
+   "class": "foliage",
+   "points": [
+    [
+     0,
+     5284
+    ],
+    [
+     638,
+     5284
+    ],
+    [
+     638,
+     5878
+    ],
+    [
+     0,
+     5878
+    ]
+   ],
+   "note": "from the catalogue (t000.json): big orange-rust maple down the left edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-broadleaf-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     3872,
+     8584
+    ],
+    [
+     4686,
+     8584
+    ],
+    [
+     4686,
+     9046
+    ],
+    [
+     3872,
+     9046
+    ]
+   ],
+   "note": "from the catalogue (t010.json): broadleaf crown reaching in from the top left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-broadleaf-top-right",
+   "class": "foliage",
+   "points": [
+    [
+     3586,
+     8584
+    ],
+    [
+     4136,
+     8584
+    ],
+    [
+     4136,
+     9244
+    ],
+    [
+     3586,
+     9244
+    ]
+   ],
+   "note": "from the catalogue (t009.json): upper crown of the same broadleaf, top right corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-round-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     4246,
+     10702
+    ],
+    [
+     5126,
+     10702
+    ],
+    [
+     5126,
+     11098
+    ],
+    [
+     4246,
+     11098
+    ]
+   ],
+   "note": "from the catalogue (t014.json): round-cluster tree under the brick band. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-bottom-right-t005",
+   "class": "foliage",
+   "points": [
+    [
+     3608,
+     8210
+    ],
+    [
+     4136,
+     8210
+    ],
+    [
+     4136,
+     8848
+    ],
+    [
+     3608,
+     8848
+    ]
+   ],
+   "note": "from the catalogue (t005.json): teal tree at the lower right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-bottom-right-t013",
+   "class": "foliage",
+   "points": [
+    [
+     3586,
+     12000
+    ],
+    [
+     4136,
+     12000
+    ],
+    [
+     4136,
+     12594
+    ],
+    [
+     3586,
+     12594
+    ]
+   ],
+   "note": "from the catalogue (t013.json): teal tree at the bottom right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-dark-right",
+   "class": "foliage",
+   "points": [
+    [
+     5632,
+     11164
+    ],
+    [
+     6072,
+     11164
+    ],
+    [
+     6072,
+     11890
+    ],
+    [
+     5632,
+     11890
+    ]
+   ],
+   "note": "from the catalogue (t014.json): dark needle pine down the right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-lower-round",
+   "class": "foliage",
+   "points": [
+    [
+     528,
+     8122
+    ],
+    [
+     1122,
+     8122
+    ],
+    [
+     1122,
+     8650
+    ],
+    [
+     528,
+     8650
+    ]
+   ],
+   "note": "from the catalogue (t004.json): round-leaf tree below the pine. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-bottom-right",
+   "class": "foliage",
+   "points": [
+    [
+     5500,
+     10278
+    ],
+    [
+     6072,
+     10278
+    ],
+    [
+     6072,
+     10784
+    ],
+    [
+     5500,
+     10784
+    ]
+   ],
+   "note": "from the catalogue (t010.json): dark needle pine at the bottom right. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-brick-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2992,
+     5372
+    ],
+    [
+     3586,
+     5372
+    ],
+    [
+     3586,
+     5790
+    ],
+    [
+     2992,
+     5790
+    ]
+   ],
+   "note": "from the catalogue (t001.json): rust brick-mark tree in the centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-bottom-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2354,
+     6604
+    ],
+    [
+     3102,
+     6604
+    ],
+    [
+     3102,
+     6912
+    ],
+    [
+     2354,
+     6912
+    ]
+   ],
+   "note": "from the catalogue (t001.json): teal tree at the bottom centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-maple-bottom-left",
+   "class": "foliage",
+   "points": [
+    [
+     3872,
+     6450
+    ],
+    [
+     4356,
+     6450
+    ],
+    [
+     4356,
+     6912
+    ],
+    [
+     3872,
+     6912
+    ]
+   ],
+   "note": "from the catalogue (t002.json): red-orange cluster tree at the bottom left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     2288,
+     6648
+    ],
+    [
+     2772,
+     6648
+    ],
+    [
+     2772,
+     7110
+    ],
+    [
+     2288,
+     7110
+    ]
+   ],
+   "note": "from the catalogue (t005.json): small teal tree on the upper ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-maple-ochre",
+   "class": "foliage",
+   "points": [
+    [
+     3014,
+     7880
+    ],
+    [
+     3542,
+     7880
+    ],
+    [
+     3542,
+     8298
+    ],
+    [
+     3014,
+     8298
+    ]
+   ],
+   "note": "from the catalogue (t005.json): ochre-yellow tree below the red maple. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-conifers-right",
+   "class": "foliage",
+   "points": [
+    [
+     1540,
+     5438
+    ],
+    [
+     1936,
+     5438
+    ],
+    [
+     1936,
+     5988
+    ],
+    [
+     1540,
+     5988
+    ]
+   ],
+   "note": "from the catalogue (t000.json): tall slim conifers on the right bank. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-teal-centre-right",
+   "class": "foliage",
+   "points": [
+    [
+     3146,
+     5548
+    ],
+    [
+     3806,
+     5548
+    ],
+    [
+     3806,
+     5878
+    ],
+    [
+     3146,
+     5878
+    ]
+   ],
+   "note": "from the catalogue (t001.json): teal round-leaf tree below and right of it. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-trees-bottom-centre",
+   "class": "foliage",
+   "points": [
+    [
+     5684,
+     6538
+    ],
+    [
+     6256,
+     6538
+    ],
+    [
+     6256,
+     6912
+    ],
+    [
+     5684,
+     6912
+    ]
+   ],
+   "note": "from the catalogue (t003.json): bare saplings over ochre foliage, bottom centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-maple-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     3872,
+     4756
+    ],
+    [
+     4312,
+     4756
+    ],
+    [
+     4312,
+     5240
+    ],
+    [
+     3872,
+     5240
+    ]
+   ],
+   "note": "from the catalogue (t002.json): orange-red maple in the top left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-left-edge",
+   "class": "foliage",
+   "points": [
+    [
+     3872,
+     9266
+    ],
+    [
+     4158,
+     9266
+    ],
+    [
+     4158,
+     9992
+    ],
+    [
+     3872,
+     9992
+    ]
+   ],
+   "note": "from the catalogue (t010.json): teal and pink round-leaf tree down the left edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-bottom-centre-t005",
+   "class": "foliage",
+   "points": [
+    [
+     2662,
+     8540
+    ],
+    [
+     3300,
+     8540
+    ],
+    [
+     3300,
+     8848
+    ],
+    [
+     2662,
+     8848
+    ]
+   ],
+   "note": "from the catalogue (t005.json): teal crown entering from below. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-bottom-centre-t002",
+   "class": "foliage",
+   "points": [
+    [
+     4334,
+     6472
+    ],
+    [
+     4774,
+     6472
+    ],
+    [
+     4774,
+     6912
+    ],
+    [
+     4334,
+     6912
+    ]
+   ],
+   "note": "from the catalogue (t002.json): teal tree at the bottom centre. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-teal-upper-left",
+   "class": "foliage",
+   "points": [
+    [
+     286,
+     4954
+    ],
+    [
+     792,
+     4954
+    ],
+    [
+     792,
+     5328
+    ],
+    [
+     286,
+     5328
+    ]
+   ],
+   "note": "from the catalogue (t000.json): teal round-leaf tree on the upper left ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-willow-ochre-upper-left",
+   "class": "foliage",
+   "points": [
+    [
+     4716,
+     4932
+    ],
+    [
+     5156,
+     4932
+    ],
+    [
+     5156,
+     5350
+    ],
+    [
+     4716,
+     5350
+    ]
+   ],
+   "note": "from the catalogue (t003.json): ochre and rust hanging-leaf tree upper left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-right-teal",
+   "class": "foliage",
+   "points": [
+    [
+     1782,
+     7462
+    ],
+    [
+     2200,
+     7462
+    ],
+    [
+     2200,
+     7902
+    ],
+    [
+     1782,
+     7902
+    ]
+   ],
+   "note": "from the catalogue (t004.json): teal canopy at the right edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-willow-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     4452,
+     6648
+    ],
+    [
+     5090,
+     6648
+    ],
+    [
+     5090,
+     6934
+    ],
+    [
+     4452,
+     6934
+    ]
+   ],
+   "note": "from the catalogue (t007.json): ochre hanging-leaf tree in the top left corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-top-right",
+   "class": "foliage",
+   "points": [
+    [
+     5970,
+     4712
+    ],
+    [
+     6586,
+     4712
+    ],
+    [
+     6586,
+     4998
+    ],
+    [
+     5970,
+     4998
+    ]
+   ],
+   "note": "from the catalogue (t003.json): teal and ochre trees at the top right corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-needle-left-t009",
+   "class": "foliage",
+   "points": [
+    [
+     1936,
+     9508
+    ],
+    [
+     2244,
+     9508
+    ],
+    [
+     2244,
+     10080
+    ],
+    [
+     1936,
+     10080
+    ]
+   ],
+   "note": "from the catalogue (t009.json): blue needle pine at the left edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-teal-mid-left",
+   "class": "foliage",
+   "points": [
+    [
+     3872,
+     11054
+    ],
+    [
+     4400,
+     11054
+    ],
+    [
+     4400,
+     11384
+    ],
+    [
+     3872,
+     11384
+    ]
+   ],
+   "note": "from the catalogue (t014.json): teal round-leaf tree at the left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-teal-above-ge-hong",
+   "class": "foliage",
+   "points": [
+    [
+     220,
+     6208
+    ],
+    [
+     704,
+     6208
+    ],
+    [
+     704,
+     6560
+    ],
+    [
+     220,
+     6560
+    ]
+   ],
+   "note": "from the catalogue (t000.json): teal round-leaf tree just above the figure. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-weeping-upper-right",
+   "class": "foliage",
+   "points": [
+    [
+     1364,
+     5042
+    ],
+    [
+     1782,
+     5042
+    ],
+    [
+     1782,
+     5438
+    ],
+    [
+     1364,
+     5438
+    ]
+   ],
+   "note": "from the catalogue (t000.json): dark hanging-leaf tree below the pavilion. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-dark-right-t015",
+   "class": "foliage",
+   "points": [
+    [
+     6190,
+     10856
+    ],
+    [
+     6586,
+     10856
+    ],
+    [
+     6586,
+     11274
+    ],
+    [
+     6190,
+     11274
+    ]
+   ],
+   "note": "from the catalogue (t015.json): dark needle pine at the right edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-top-centre",
+   "class": "foliage",
+   "points": [
+    [
+     2948,
+     4756
+    ],
+    [
+     3432,
+     4756
+    ],
+    [
+     3432,
+     5086
+    ],
+    [
+     2948,
+     5086
+    ]
+   ],
+   "note": "from the catalogue (t001.json): teal pine on the upper ridge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-top-right",
+   "class": "foliage",
+   "points": [
+    [
+     3652,
+     6648
+    ],
+    [
+     4136,
+     6648
+    ],
+    [
+     4136,
+     6978
+    ],
+    [
+     3652,
+     6978
+    ]
+   ],
+   "note": "from the catalogue (t005.json): red tree at the top right corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-bottom-left",
+   "class": "foliage",
+   "points": [
+    [
+     1936,
+     12264
+    ],
+    [
+     2420,
+     12264
+    ],
+    [
+     2420,
+     12594
+    ],
+    [
+     1936,
+     12594
+    ]
+   ],
+   "note": "from the catalogue (t013.json): denser canopy below it, clipped by the bottom edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-grove-left-upper",
+   "class": "foliage",
+   "points": [
+    [
+     2002,
+     5394
+    ],
+    [
+     2420,
+     5394
+    ],
+    [
+     2420,
+     5768
+    ],
+    [
+     2002,
+     5768
+    ]
+   ],
+   "note": "from the catalogue (t001.json): grove of slim teal trees on the left terrace. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-teal-bottom-left",
+   "class": "foliage",
+   "points": [
+    [
+     4386,
+     6340
+    ],
+    [
+     4760,
+     6340
+    ],
+    [
+     4760,
+     6758
+    ],
+    [
+     4386,
+     6758
+    ]
+   ],
+   "note": "from the catalogue (t003.json): teal round-leaf tree at the bottom left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-right-edge",
+   "class": "foliage",
+   "points": [
+    [
+     6366,
+     6648
+    ],
+    [
+     6586,
+     6648
+    ],
+    [
+     6586,
+     7308
+    ],
+    [
+     6366,
+     7308
+    ]
+   ],
+   "note": "from the catalogue (t007.json): teal and ochre canopy at the right edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-teal-left",
+   "class": "foliage",
+   "points": [
+    [
+     3872,
+     5284
+    ],
+    [
+     4268,
+     5284
+    ],
+    [
+     4268,
+     5614
+    ],
+    [
+     3872,
+     5614
+    ]
+   ],
+   "note": "from the catalogue (t002.json): teal round-leaf tree on the left ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-bottom-right-t003",
+   "class": "foliage",
+   "points": [
+    [
+     6322,
+     6428
+    ],
+    [
+     6586,
+     6428
+    ],
+    [
+     6586,
+     6912
+    ],
+    [
+     6322,
+     6912
+    ]
+   ],
+   "note": "from the catalogue (t003.json): teal tree at the bottom right corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-ochre-bottom",
+   "class": "foliage",
+   "points": [
+    [
+     4752,
+     6626
+    ],
+    [
+     5192,
+     6626
+    ],
+    [
+     5192,
+     6912
+    ],
+    [
+     4752,
+     6912
+    ]
+   ],
+   "note": "from the catalogue (t002.json): ochre hanging-leaf tree at the bottom. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-upper-teal",
+   "class": "foliage",
+   "points": [
+    [
+     484,
+     7198
+    ],
+    [
+     924,
+     7198
+    ],
+    [
+     924,
+     7484
+    ],
+    [
+     484,
+     7484
+    ]
+   ],
+   "note": "from the catalogue (t004.json): teal tree leaning right off the upper ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-mid-round",
+   "class": "foliage",
+   "points": [
+    [
+     946,
+     7374
+    ],
+    [
+     1342,
+     7374
+    ],
+    [
+     1342,
+     7682
+    ],
+    [
+     946,
+     7682
+    ]
+   ],
+   "note": "from the catalogue (t004.json): round-leaf teal tree mid-tile. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-pink-by-hall",
+   "class": "foliage",
+   "points": [
+    [
+     2200,
+     4998
+    ],
+    [
+     2508,
+     4998
+    ],
+    [
+     2508,
+     5350
+    ],
+    [
+     2200,
+     5350
+    ]
+   ],
+   "note": "from the catalogue (t001.json): pink and rust tree beside the hall. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-maple-top-left-t006",
+   "class": "foliage",
+   "points": [
+    [
+     3872,
+     6648
+    ],
+    [
+     4246,
+     6648
+    ],
+    [
+     4246,
+     6912
+    ],
+    [
+     3872,
+     6912
+    ]
+   ],
+   "note": "from the catalogue (t006.json): red maple in the top left corner. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-top-left",
+   "class": "foliage",
+   "points": [
+    [
+     4386,
+     8584
+    ],
+    [
+     4672,
+     8584
+    ],
+    [
+     4672,
+     8914
+    ],
+    [
+     4386,
+     8914
+    ]
+   ],
+   "note": "from the catalogue (t011.json): round-leaf canopy clipped at the top left. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-rust-top-right",
+   "class": "foliage",
+   "points": [
+    [
+     1936,
+     9376
+    ],
+    [
+     2200,
+     9376
+    ],
+    [
+     2200,
+     9728
+    ],
+    [
+     1936,
+     9728
+    ]
+   ],
+   "note": "from the catalogue (t008.json): rust dot-cluster tree at the right edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-canopy-top-centre-left",
+   "class": "foliage",
+   "points": [
+    [
+     4224,
+     4712
+    ],
+    [
+     4554,
+     4712
+    ],
+    [
+     4554,
+     4954
+    ],
+    [
+     4224,
+     4954
+    ]
+   ],
+   "note": "from the catalogue (t002.json): teal canopy along the top edge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-bottom-right-t004",
+   "class": "foliage",
+   "points": [
+    [
+     1056,
+     8650
+    ],
+    [
+     1452,
+     8650
+    ],
+    [
+     1452,
+     8848
+    ],
+    [
+     1056,
+     8848
+    ]
+   ],
+   "note": "from the catalogue (t004.json): small teal tree at the bottom. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-rust-by-pavilion",
+   "class": "foliage",
+   "points": [
+    [
+     1320,
+     4932
+    ],
+    [
+     1606,
+     4932
+    ],
+    [
+     1606,
+     5152
+    ],
+    [
+     1320,
+     5152
+    ]
+   ],
+   "note": "from the catalogue (t000.json): rust tree beside the upper pavilion. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-pine-right-edge",
+   "class": "foliage",
+   "points": [
+    [
+     6344,
+     5152
+    ],
+    [
+     6586,
+     5152
+    ],
+    [
+     6586,
+     5394
+    ],
+    [
+     6344,
+     5394
+    ]
+   ],
+   "note": "from the catalogue (t003.json): needle pine on the right cliff shoulder. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
+  },
+  {
+   "id": "cat3-tree-ochre-left",
+   "class": "foliage",
+   "points": [
+    [
+     4386,
+     9024
+    ],
+    [
+     4584,
+     9024
+    ],
+    [
+     4584,
+     9222
+    ],
+    [
+     4386,
+     9222
+    ]
+   ],
+   "note": "from the catalogue (t011.json): small ochre tree on the left ledge. The box is a FENCE; classes.foliage.leafMask gates which ink inside it moves."
   }
  ],
  "excludes": [

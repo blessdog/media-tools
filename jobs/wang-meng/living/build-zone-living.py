@@ -452,6 +452,15 @@ if a.stage == "masks":
     _live = {q["id"]: q["class"] for q in POLYS["polys"]}
     for _k in [k for k in index if k not in _live]:
         del index[_k]
+    # RECONCILE AGAINST THE DIRECTORY TOO, not just the poly list. The index is
+    # a cache of what is ON DISK and nothing invalidated it when a mask png went
+    # away: z3w's index claimed 17 regions while 4 pngs existed, and the overlay
+    # loop below -- which reads EVERY entry -- died on the first ghost. An index
+    # entry with no file is not a region, it is a memory of one.
+    for _k in [k for k in index if not (MASKD / f"{k}.png").exists()]:
+        print(f"    index: {_k} has no mask png -- dropping the ghost entry",
+              file=sys.stderr)
+        del index[_k]
     for _k, _v in index.items():
         if isinstance(_v, dict) and _v.get("class") != _live[_k]:
             print(f"    index: {_k} class {_v.get('class')} -> {_live[_k]}", file=sys.stderr)

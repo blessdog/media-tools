@@ -1,0 +1,215 @@
+{
+ "tool": "tile-image",
+ "image": "corpus/grabs/wang-meng-\u738b\u8499_ge-zhichuan-moving-to-the-mountains-\u845b\u7a1a\u5ddd\u79fb\u5c45\u5716.png",
+ "sourceSize": [
+  6586,
+  15923
+ ],
+ "box": [
+  0,
+  0,
+  6586,
+  4712
+ ],
+ "tile": 2200,
+ "overlap": 0.12,
+ "maxSide": 1400,
+ "grid": [
+  3,
+  4
+ ],
+ "tiles": [
+  {
+   "file": "t000.jpg",
+   "row": 0,
+   "col": 0,
+   "sourceBox": [
+    0,
+    0,
+    2200,
+    2200
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t001.jpg",
+   "row": 0,
+   "col": 1,
+   "sourceBox": [
+    1936,
+    0,
+    4136,
+    2200
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t002.jpg",
+   "row": 0,
+   "col": 2,
+   "sourceBox": [
+    3872,
+    0,
+    6072,
+    2200
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t003.jpg",
+   "row": 0,
+   "col": 3,
+   "sourceBox": [
+    4386,
+    0,
+    6586,
+    2200
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t004.jpg",
+   "row": 1,
+   "col": 0,
+   "sourceBox": [
+    0,
+    1936,
+    2200,
+    4136
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t005.jpg",
+   "row": 1,
+   "col": 1,
+   "sourceBox": [
+    1936,
+    1936,
+    4136,
+    4136
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t006.jpg",
+   "row": 1,
+   "col": 2,
+   "sourceBox": [
+    3872,
+    1936,
+    6072,
+    4136
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t007.jpg",
+   "row": 1,
+   "col": 3,
+   "sourceBox": [
+    4386,
+    1936,
+    6586,
+    4136
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t008.jpg",
+   "row": 2,
+   "col": 0,
+   "sourceBox": [
+    0,
+    2512,
+    2200,
+    4712
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t009.jpg",
+   "row": 2,
+   "col": 1,
+   "sourceBox": [
+    1936,
+    2512,
+    4136,
+    4712
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t010.jpg",
+   "row": 2,
+   "col": 2,
+   "sourceBox": [
+    3872,
+    2512,
+    6072,
+    4712
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  },
+  {
+   "file": "t011.jpg",
+   "row": 2,
+   "col": 3,
+   "sourceBox": [
+    4386,
+    2512,
+    6586,
+    4712
+   ],
+   "tileSize": [
+    1400,
+    1400
+   ],
+   "scale": 0.6364
+  }
+ ]
+}
