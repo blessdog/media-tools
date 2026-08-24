@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 07:38 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 07:53 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -137,6 +137,8 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  81acece  the invented-material overlay was unreadable -- outlines, 1:1 crops, and the ink split
+2026-08-24  7ba371d  STATE regenerated: relief at 100% of eligible planes
 2026-08-24  6dbc48b  relief coverage counts ELIGIBLE planes, not all planes -- 42% was a phantom gap
 2026-08-24  4ff40a6  STATE regenerated: invented-material verdict landed, 48 live claims
 2026-08-23  e66da62  a deep dolly reveals invented material: 14.29% of the deepest frame is flux, not Wang Meng
@@ -147,11 +149,23 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-23  b7d5a67  z6w relief sheet: first output of build-relief running inside the zone chain
 2026-08-23  3d99868  rebuild-zones.sh: resume the five reaped zones, log into the repo
 2026-08-22  0e9f3e2  disocclusion measured at 6px -- I predicted 160 and the real defect is tone
-2026-08-22  790f9e3  six zone plates re-cut from their tracked sidecars -- recoverability confirmed
-2026-08-22  5690927  STATE regenerated: relief coverage now counted per zone, 3 of 74 planes
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
+
+### Uncommitted
+
+```
+ M jobs/wang-meng/STATE.md
+```
+
+*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
