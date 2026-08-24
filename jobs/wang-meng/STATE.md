@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 09:23 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 11:57 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 50 live claims: 50 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 53 live claims: 53 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -39,25 +39,28 @@ LAWS — absolute, no exceptions
   · depth-may-resize-never-deform: Depth may change how big things are relative to each other. It may never
   · grading-is-not-geometry: A card with a soft edge is still a card.
   · invented-ink-is-allowed-in-the-painters-hand: Ryan, 2026-08-21, asked whether the servant boy could wave when both his hands
+  · leaves-hold-under-leaves: The movement of these leaves and the background of the canvas should be the
   · naming-a-substance-requests-footage: Naming a physical substance in a motion prompt requests FOOTAGE of it. Write
   · perspective-falloff-is-hyperbolic-on-purpose: Space depth planes evenly in z. The uneven scale response that produces is
   · rigid-cards-preserve-the-brushwork: Ryan, 2026-08-21, having asked for per-leaf twinkle that morning and seen it by
   · share-your-ground: Every figure rides the depth of the surface that supports it. The party on
   · the-camera-moves-toward-motion: Ryan, 2026-08-21, on the station reel: "the way people investigate things, they
+  · the-fov-floor-comes-from-the-focus-point: render-parallax's scale equals fov exactly — measured 2026-08-24, a stated fov
   · what-moves: just the delicate things move. Their robes, the water ripples, leaves on
 
 PROCEDURES — the routes that are currently believed
   · depth-comes-from-the-breath answers which-renderer-for-a-camera-move   (sibling: light-parallax-is-011-and-continuous)
   · figure-motion          answers how-to-move-a-figure   (sibling: foliage-motion)
   · foliage-motion         answers how-to-move-foliage   (sibling: water-motion)
-  · leaf-is-colour-rock-is-graphite answers how-are-leaf-strokes-separated-from-rock-strokes   (sibling: no-whole-tree-to-segment)
   · sam-click-trunks-not-canopies answers how-to-prompt-sam-on-this-painting   (sibling: no-whole-tree-to-segment)
   · sam-environment        answers how-to-run-a-torch-tool-in-this-repo   (sibling: no-whole-tree-to-segment)
   · shot-vocabulary        answers which-camera-move-for-a-station   (sibling: camera-light-parallax)
+  · the-catalogue-decides-what-is-foliage answers how-are-leaf-strokes-separated-from-rock-strokes   (sibling: no-whole-tree-to-segment)
   · water-motion           answers how-to-move-water   (sibling: foliage-motion)
 
 VERDICTS — measured, and SCOPED; check the scope before reusing
   · a-deep-dolly-reveals-invented-material jobs/wang-meng/journey/z1, 12 planes inpainted at --behind 100 with flux-fill-pro, under a
+  · a-living-layer-is-baked-against-its-stack jobs/wang-meng's living cycles and any patch cycle produced by build-zone-living.py. Measu
   · a-transform-cannot-change-an-expression Character animation on a painted or drawn source. The MEASUREMENTS are from 葛稚川移居圖's Ge Ho
   · band-02-was-already-animated-once The Ge Hong / deer / trestle-bridge scene, master box roughly [901, 10604, 2585, 13599]. F
   · branch-radius-scales-with-the-tree hinge-foliage's branch/leaf split on 葛稚川移居圖, and by the same mechanism any painting where 
@@ -117,7 +120,7 @@ ROUTING — knowledge store vs config vs implementation
 
 DELIVERABLES
   jobs/wang-meng/film/SUBTLE-REEL.mp4
-  jobs/wang-meng/film/SHOT-focus-trees.mp4
+  jobs/wang-meng/film/SHOT-focus-slope.mp4
   jobs/wang-meng/film/SHOT-focus-ge.mp4
   jobs/wang-meng/film/SHOT-focus-water.mp4
   jobs/wang-meng/film/THE-RISE.mp4
@@ -140,23 +143,23 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  708db94  retire the colour gate: a catalogue decides what is foliage, not a threshold
+2026-08-24  321d230  the catalogue replaces the colour gate: rock leaf-ink 64% to 9.5%
+2026-08-24  557efc8  the bottom of the scroll is catalogued: 170 objects, 58 leaf masses
+2026-08-24  9ccf63f  the loop Ryan ruled on: the rock moves
+2026-08-24  24cb815  two vision models probed for foliage-vs-rock, then set aside for the catalogue
+2026-08-24  38e7fea  whole-plate foliage pass: coverage 6.9% to 56.6%, but the rock moves
+2026-08-24  5e73f8f  measure foliage coverage: only 6.9% of z1's leaf ink ever moves
+2026-08-24  0da3d30  leaves hold under leaves: a swinging foliage card should reveal foliage, not ground
+2026-08-24  7203b07  a living layer is baked against its stack, and a cream bar is arithmetic
+2026-08-24  b675fdd  STATE regenerated: coarse-plane experiment in flight
 2026-08-24  af1a4f9  the subtle reel: three focus shots on four planes, crossfaded
 2026-08-24  bbdcc2d  four planes instead of twelve: invented ink falls by a third at the same fill
-2026-08-24  323a31a  STATE regenerated: fill-source lever refuted, frame-zero check restated
-2026-08-24  632fdc6  the deep half of the dolly is nearly free: invented INK flattens at camZ 0.33
-2026-08-24  ee3e00f  the frame-zero control was never byte-exact, so it could not see a leak
-2026-08-24  94d2d82  real ink over-inks worse than flux: the fill-source lever is refuted
-2026-08-24  8d85b29  ge hong moves one fourth: the fan swings, sleeve/hem/head masks are cut and unused
-2026-08-24  f6b8633  STATE regenerated
-2026-08-24  6aa79c5  journal: two numbers that were lying, and one picture that was worse
-2026-08-24  00ae5d2  STATE regenerated
-2026-08-24  81acece  the invented-material overlay was unreadable -- outlines, 1:1 crops, and the ink split
-2026-08-24  7ba371d  STATE regenerated: relief at 100% of eligible planes
 ```
 
 ### ⚠ UNPUSHED
 
-**7 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**17 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -167,10 +170,12 @@ git push origin main
 ```
  M jobs/wang-meng/STATE.md
  M jobs/wang-meng/film/SHOT-focus-ge.mp4
- M jobs/wang-meng/film/SHOT-focus-trees.mp4
+ D jobs/wang-meng/film/SHOT-focus-trees.mp4
+ M jobs/wang-meng/film/SHOT-focus-water.mp4
  M jobs/wang-meng/film/SUBTLE-REEL.mp4
- M jobs/wang-meng/journey/remap-living.py
+ D jobs/wang-meng/film/paths/shot-focus-trees.json
  M jobs/wang-meng/living/living-z1-coarse4.json
+?? jobs/wang-meng/film/SHOT-focus-slope.mp4
 ?? jobs/wang-meng/journey/z1/layers-filled-coarse4/
 ?? jobs/wang-meng/journey/z1/layers-filled-shiftmap/
 ?? jobs/wang-meng/journey/z1/layers-pinned-coarse4/
