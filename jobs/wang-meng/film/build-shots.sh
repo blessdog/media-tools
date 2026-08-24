@@ -12,9 +12,18 @@ cd "$(dirname "$0")/../../.."
 J=jobs/wang-meng
 F=$J/film
 stage=${1:-all}
-STACK=$J/journey/z1/layers-filled-coarse4
-LIVING=$J/living/living-z1-coarse4.json
-SHOTS=(focus-water focus-ge focus-trees)
+# THE 12-PLANE STACK IS THE ONE THAT SHIPS TODAY. The 4-plane merge measures
+# better on invented ink, but its living layer cannot be remapped onto it: the
+# cycles are rendered against the FINE stack's filled textures (each plane's own
+# inpainted band included), so on a merged card 12 of 21 patches stamp fine-plane
+# fill over real painting. Measured 2026-08-24. The coarse route needs
+# build-zone-living.py re-run against the merged stack; until then it renders
+# without motion, which MOTION BEFORE CAMERA forbids.
+STACK=${STACK:-$J/journey/z1/layers-filled}
+LIVING=${LIVING:-$J/living/living-z1.json}
+GEOM=(--geometry $J/journey/z1/geometry.json)
+[[ $STACK == *coarse* ]] && GEOM=()      # geometry is keyed by plane name
+SHOTS=(focus-water focus-ge focus-slope)
 X=0.8                                   # crossfade seconds
 
 if [[ $stage == render || $stage == all ]]; then
@@ -22,15 +31,13 @@ if [[ $stage == render || $stage == all ]]; then
     d=$F/frames/shot-$s
     rm -rf $d; mkdir -p $d
     print -u2 "== $s"
-    # NO --relief and NO --geometry: both are keyed by PLANE NAME and the merged
-    # planes have new names. A merged plane also mixes roles (water + rock), so a
-    # single tilt for it would be wrong even if the name matched. Re-deriving
-    # per-merged-plane geometry is open work, not a silent default.
+    # --relief stays off for now: it is keyed by plane name like --geometry, and
+    # it only engages when camZ != 0, so it belongs with a verdict on the shot.
     python3 tools/render-parallax.py \
       --layers $STACK --path $F/paths/shot-$s.json \
       --out $d --width 1920 --height 1080 --fps 24 \
       --z-step 0.30 --plane-fit --no-base \
-      --living $LIVING > /dev/null
+      $GEOM --living $LIVING > /dev/null
     ffmpeg -y -loglevel error -framerate 24 -i $d/%05d.png \
       -c:v libx264 -crf 16 -pix_fmt yuv420p $F/SHOT-$s.mp4
     [[ -s $F/SHOT-$s.mp4 ]] && rm -rf $d

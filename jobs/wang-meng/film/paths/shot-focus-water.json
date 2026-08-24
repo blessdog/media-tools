@@ -1,13 +1,13 @@
 {
  "fps": 24,
  "duration": 9.0,
- "_note": "SUBTLE SHOT, coarse 4-plane stack. Focus: the water at the foot of the scroll; foreground rock (depth 18) in front of it. z ramps 0->0.11 continuously (light-parallax-is-011-and-continuous); fov creeps 2% per key, which is a settle, not a push. Keys are POSES, 4.5s apart -- sample() eases to zero velocity at every key.",
+ "_note": "SUBTLE SHOT. Focus: the water at the foot of the scroll (depth 16); foreground rock at 18 in front. fov floor 1.727 derived from the focus point so no cream bar is possible; z ramps 0->0.11 continuously; keys are POSES 4.5s apart.",
  "keys": [
   {
    "t": 0.0,
    "x": 0.278,
    "y": 0.837,
-   "fov": 1.02,
+   "fov": 1.8653,
    "z": 0.0,
    "ry": 0.0,
    "rx": -0.0
@@ -16,7 +16,7 @@
    "t": 4.5,
    "x": 0.282,
    "y": 0.834,
-   "fov": 1.0404,
+   "fov": 1.9026,
    "z": 0.0605,
    "ry": 0.033,
    "rx": -0.0165
@@ -25,7 +25,7 @@
    "t": 9.0,
    "x": 0.286,
    "y": 0.831,
-   "fov": 1.0608,
+   "fov": 1.9399,
    "z": 0.11,
    "ry": 0.06,
    "rx": -0.03

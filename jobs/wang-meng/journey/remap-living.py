@@ -16,9 +16,19 @@ pixels now live at a different origin, so every box shifts by
 (offset(P) - offset(M)). merged layers.json records `members`, which is what
 makes this a remap and not a rebuild.
 
+BOTH OFFSETS MUST COME FROM THE STACKS THAT ARE ACTUALLY RENDERED, i.e. the
+FILLED ones. inpaint-planes --behind grows each layer box, so a plane's offset
+in layers-pinned and layers-filled differ by up to --behind px -- measured on
+z1: left-bank-rocks moves [-100, -96], right-hill-front-trees [-97, -95].
+Reading the source offset from the pinned stack put every patch up to 100 px
+off, which pasted each patch's blank corners over the painting: the 2026-08-24
+reel came out with torn rectangles through the middle of the frame and two
+cream holes of 200x277 and 140x91 px AT REST. The tell that it was patches and
+not planes: the artefacts were RECTANGULAR and patch-sized.
+
 usage:
-  remap-living.py --living living/living-z1.json --fine journey/z1/layers-pinned
-                  --coarse journey/z1/layers-pinned-coarse4 --out living/living-z1-coarse4.json
+  remap-living.py --living living/living-z1.json --fine journey/z1/layers-filled
+                  --coarse journey/z1/layers-filled-coarse4 --out living/living-z1-coarse4.json
 """
 import argparse, json
 
@@ -26,8 +36,13 @@ import argparse, json
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--living", required=True)
-    ap.add_argument("--fine", required=True, help="the stack the living layer was built against")
-    ap.add_argument("--coarse", required=True, help="a stack from merge-planes.py")
+    ap.add_argument("--fine", required=True,
+                    help="the FILLED fine stack the living layer's boxes are relative to. "
+                         "NOT the pinned stack: inpaint-planes --behind grows every layer box, "
+                         "so pinned and filled offsets differ by up to --behind px (measured 100 "
+                         "on z1) and using the wrong one pastes every patch that far off.")
+    ap.add_argument("--coarse", required=True,
+                    help="the FILLED coarse stack that will actually be RENDERED, for the same reason")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
 

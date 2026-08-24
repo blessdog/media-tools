@@ -472,9 +472,21 @@ def main() -> int:
                         # that is over a gigabyte for no reuse.
                         comp = p["orig"].copy()
                         for q, ti in zip(lv["patches"], key):
-                            comp.paste(Image.open(
-                                Path(q["dir"]) / f"{ti:03d}.png").convert("RGBA"),
-                                tuple(q["box"]))
+                            patch = Image.open(
+                                Path(q["dir"]) / f"{ti:03d}.png").convert("RGBA")
+                            # PASTE THROUGH THE PATCH'S OWN ALPHA. Without the
+                            # mask the patch's transparent border REPLACES the
+                            # plane's alpha, which silently punches holes in the
+                            # painting wherever the patch was cut from a plane
+                            # whose silhouette differs from the one it lands on
+                            # -- exactly what merged planes do (measured
+                            # 2026-08-24: two holes of 16,383 and 5,798 px in
+                            # the focus-ge shot, at REST). Where the patch and
+                            # the plane share a silhouette, which is every
+                            # unmerged stack, masked and unmasked are identical,
+                            # so this makes the invariant above TRUE instead of
+                            # assumed.
+                            comp.paste(patch, tuple(q["box"]), patch)
                         held = (key, comp)
                         living_cache[p["name"]] = held
                     p["img"] = held[1]

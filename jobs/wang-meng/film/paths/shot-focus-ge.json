@@ -1,13 +1,13 @@
 {
  "fps": 24,
  "duration": 9.0,
- "_note": "SUBTLE SHOT, coarse 4-plane stack. Focus: Ge Hong on the trestle bridge (depth 14); knoll and bank-path in front, cliff walls at 9 behind. z ramps 0->0.11 continuously (light-parallax-is-011-and-continuous); fov creeps 2% per key, which is a settle, not a push. Keys are POSES, 4.5s apart -- sample() eases to zero velocity at every key.",
+ "_note": "SUBTLE SHOT. Focus: Ge Hong on the trestle bridge (depth 14); knoll and bank-path in front, cliff walls at 9 behind. fov floor 1.441 derived from the focus point so no cream bar is possible; z ramps 0->0.11 continuously; keys are POSES 4.5s apart.",
  "keys": [
   {
    "t": 0.0,
    "x": 0.334,
    "y": 0.48,
-   "fov": 0.96,
+   "fov": 1.5563,
    "z": 0.0,
    "ry": 0.0,
    "rx": -0.0
@@ -16,7 +16,7 @@
    "t": 4.5,
    "x": 0.338,
    "y": 0.477,
-   "fov": 0.9792,
+   "fov": 1.5874,
    "z": 0.0605,
    "ry": 0.033,
    "rx": -0.0165
@@ -25,7 +25,7 @@
    "t": 9.0,
    "x": 0.342,
    "y": 0.474,
-   "fov": 0.9984,
+   "fov": 1.6186,
    "z": 0.11,
    "ry": 0.06,
    "rx": -0.03
