@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-23 17:23 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 07:31 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 47 live claims: 47 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 48 live claims: 48 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -57,6 +57,7 @@ PROCEDURES — the routes that are currently believed
   · water-motion           answers how-to-move-water   (sibling: foliage-motion)
 
 VERDICTS — measured, and SCOPED; check the scope before reusing
+  · a-deep-dolly-reveals-invented-material jobs/wang-meng/journey/z1, 12 planes inpainted at --behind 100 with flux-fill-pro, under a
   · a-transform-cannot-change-an-expression Character animation on a painted or drawn source. The MEASUREMENTS are from 葛稚川移居圖's Ge Ho
   · band-02-was-already-animated-once The Ge Hong / deer / trestle-bridge scene, master box roughly [901, 10604, 2585, 13599]. F
   · branch-radius-scales-with-the-tree hinge-foliage's branch/leaf split on 葛稚川移居圖, and by the same mechanism any painting where 
@@ -140,6 +141,8 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-23  e66da62  a deep dolly reveals invented material: 14.29% of the deepest frame is flux, not Wang Meng
+2026-08-23  89ad6b9  STATE regenerated: relief at 31 of 74 planes across all seven zones
 2026-08-23  8151dad  all five zones rebuilt in 44:53 -- relief coverage 4% to 42%
 2026-08-23  1e60a44  z3w rebuilt with its living layer intact -- relief coverage 4% to 27%
 2026-08-23  d4949dc  the rebuild reproduces the originals byte-for-byte except wall-clock timing
@@ -150,11 +153,15 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-22  5690927  STATE regenerated: relief coverage now counted per zone, 3 of 74 planes
 2026-08-22  f6e80a6  build-relief promoted to a tool, and wired into build-zone.sh where it belonged
 2026-08-22  bcc959e  STATE regenerated: transform-vs-replacement verdict landed
-2026-08-22  a926435  a transform cannot change an expression -- I oversold the ink transform
-2026-08-22  79eef20  STATE regenerated: check-camera-plan and the absence law landed
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
 
 ### Uncommitted
 
