@@ -432,60 +432,6 @@
   "class": "foliage"
  },
  {
-  "plane": "trestle-bridge-ge",
-  "region": "cat-tree-bottom-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-tree-bottom-right",
-  "box": [
-   608,
-   86
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 69441,
-  "movedPx": 44075,
-  "crop": [
-   608,
-   721
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "cat-tree-bottom-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-bottom-right",
-  "box": [
-   302,
-   497
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 7324,
-  "movedPx": 920,
-  "crop": [
-   608,
-   721
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "bank-path",
-  "region": "cat-tree-bottom-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-tree-bottom-right",
-  "box": [
-   582,
-   12
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 8848,
-  "movedPx": 928,
-  "crop": [
-   608,
-   721
-  ],
-  "class": "foliage"
- },
- {
   "plane": "right-hill-front-trees",
   "region": "cat-tree-round-top-left",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-round-top-left",
@@ -826,5 +772,59 @@
    1050
   ],
   "class": "figure"
+ },
+ {
+  "plane": "trestle-bridge-ge",
+  "region": "cat-tree-bottom-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-tree-bottom-right",
+  "box": [
+   608,
+   86
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 69441,
+  "movedPx": 50884,
+  "crop": [
+   608,
+   721
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-tree-bottom-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-bottom-right",
+  "box": [
+   302,
+   497
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 7324,
+  "movedPx": 1111,
+  "crop": [
+   608,
+   721
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "cat-tree-bottom-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-tree-bottom-right",
+  "box": [
+   582,
+   12
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 8848,
+  "movedPx": 1002,
+  "crop": [
+   608,
+   721
+  ],
+  "class": "foliage"
  }
 ]
