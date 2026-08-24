@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 16:20 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 17:17 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -20,7 +20,9 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
     why: Raised 2026-08-21 while the first full assembly was being built. He said 'for now yes, continue what you
 ? verify-remote-resolves   (2026-08-20)
     verify the remote RESOLVES, not just that it exists
-    why: having an origin is not the same as being backed up. Measured 2026-08-20: 8 repos had a remote pointing
+    why: having an origin is not the same as being backed up. Measured 2026-08-20: 8 repos had a remote pointing 
+? why-only-half-the-leaf-in-a-region-moves   (2026-08-24)
+    Inside regions that DO carry patches, ~40% of the catalogued leaf ink changes
 ```
 
 ## What this project knows
@@ -28,7 +30,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 54 live claims: 54 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 55 live claims: 55 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -93,7 +95,8 @@ OPEN — plans, NOT specs. proven: false. Do not build against these.
   ? merge-the-two-region-catalogues-into-one Why it matters: regions.json and living-polys.json BOTH carry a class per region, and only
   ? mist-card              A translucent band drifting on its own plane -- the multiplane technique from
   ? museum-edition-curator-directed-emphasis-a-narra Why it matters: Raised 2026-08-21 while the first full assembly was being built. He said '
-  ? verify-remote-resolves Why it matters: having an origin is not the same as being backed up. Measured 2026-08-20:
+  ? verify-remote-resolves Why it matters: having an origin is not the same as being backed up. Measured 2026-08-20: 
+  ? why-only-half-the-leaf-in-a-region-moves Inside regions that DO carry patches, ~40% of the catalogued leaf ink changes
 ```
 
 ## Where the work stands
@@ -146,6 +149,10 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  6d75041  the traverse rests slightly IN, so the pull-out is a real move
+2026-08-24  4eb8921  OPEN: why only ~40% of the leaf inside a region moves, four dead ends closed
+2026-08-24  8531032  the Ge Hong tree's cycle back to the approved single sine after the spectrum test
+2026-08-24  712a321  STATE regenerated: 39 far-ridge regions retired, camZ ceiling recorded
 2026-08-24  90fb682  0.18 camZ is a ceiling: 0.45 tore the canvas, and I showed it before checking
 2026-08-24  95c9bc5  the breath returned to zero depth and zero depth is a pan, provably
 2026-08-24  1490855  REJECTED: the turbulence spectrum. Ryan prefers the subtle single sine
@@ -154,15 +161,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  8f910b9  the rise paths re-authored: approaches now land on catalogued trees
 2026-08-24  5532d20  STATE regenerated: THE-RISE rebuilt from the catalogue, 193 frames checked intact
 2026-08-24  fcb6be5  check-holes sampled 3 frames of 4,631 and called it a verdict
-2026-08-24  38e6ec4  journal: the polygon was the classifier, and three manifests that lied
-2026-08-24  45b1879  STATE regenerated: five zones rebuilt, stale gust patches pruned
-2026-08-24  a07126f  the stale gust patches drop out: 64 registered entries pointed at superseded cuts
-2026-08-24  6323b51  register refuses a patch whose drawings do not exist
 ```
 
 ### ⚠ UNPUSHED
 
-**31 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**35 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -172,8 +175,6 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/journey/z1/living-work/cat-tree-bottom-right/drawings/cycle.json
- M jobs/wang-meng/journey/z1/living/built.json
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
