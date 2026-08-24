@@ -44,6 +44,17 @@ def main():
     ap.add_argument("--catalogue", required=True, help="glob of tNNN.json label files")
     ap.add_argument("--prefix", default="cat")
     ap.add_argument("--iou", type=float, default=0.45)
+    ap.add_argument("--skip-depth", default="",
+                    help="comma-separated catalogue depths to leave STILL. "
+                         "Ryan, 2026-08-24, on the summit contact sheet: 'please "
+                         "don't try and animate these tiny single pencil stroke "
+                         "trees right on the ridges of the mountain. Just leave "
+                         "those alone.' Past a certain distance Wang Meng draws a "
+                         "whole tree as ONE tapered stroke -- there is no "
+                         "separable leaf mass to hinge, so a swing moves the "
+                         "entire tree like a windscreen wiper. The labellers "
+                         "already recorded that judgement per object as depth; "
+                         "this is where it is spent.")
     ap.add_argument("--min-master-px", type=int, default=90,
                     help="skip a box smaller than this on its short side; below "
                          "~40px of ink a hinge reads as jitter (figure-motion)")
@@ -59,15 +70,19 @@ def main():
             raise SystemExit(f"{f}: tile {d['tile']!r} is not in {a.tiles}")
         sx0, sy0, sx1, sy1 = t["sourceBox"]
         tw, th = sx1 - sx0, sy1 - sy0
+        skip = {q.strip() for q in a.skip_depth.split(",") if q.strip()}
         for o in d["objects"]:
             if o.get("kind") != "tree" or not o.get("leavesVisible"):
+                continue
+            if o.get("depth") in skip:
                 continue
             bx = o["box"]
             m = [sx0 + bx[0] * tw, sy0 + bx[1] * th, sx0 + bx[2] * tw, sy0 + bx[3] * th]
             if min(m[2] - m[0], m[3] - m[1]) < a.min_master_px:
                 continue
             found.append({"id": f"{a.prefix}-{o['id']}", "box": [int(v) for v in m],
-                          "src": os.path.basename(f), "name": o.get("name", "")})
+                          "src": os.path.basename(f), "name": o.get("name", ""),
+                          "depth": o.get("depth", "?")})
 
     # TWO MERGE RULES, because one is not enough. Overlapping tiles catalogue the
     # same tree twice and the two agents do not draw the identical box, so plain
@@ -94,7 +109,7 @@ def main():
         if n:
             r["id"] = f"{r['id']}-{r['src'].split('-')[-1][:-5]}"
 
-    polys = [{"id": r["id"], "class": "foliage",
+    polys = [{"id": r["id"], "class": "foliage", "depth": r["depth"],
               "points": [[r["box"][0], r["box"][1]], [r["box"][2], r["box"][1]],
                          [r["box"][2], r["box"][3]], [r["box"][0], r["box"][3]]],
               "note": f"from the catalogue ({r['src']}): {r['name']}. The box is a "

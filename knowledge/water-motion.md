@@ -26,6 +26,10 @@ asked-as:
   - animate a waterfall
 ---
 
+**Make the water move** with animate-strokes, never with cards. The water in
+this painting is drawn as thin ripple arcs and fall threads: they quiver in
+place, uncover no ground, and carry no structure that has to stay still.
+
 ## The raw trace
 
 Proven on z1 and on four upper zones. What is measured:

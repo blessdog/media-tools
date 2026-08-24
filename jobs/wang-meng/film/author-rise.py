@@ -34,7 +34,7 @@ ap.add_argument("--from-y", type=float, required=True, help="camera CENTRE, mast
 ap.add_argument("--to-y", type=float, required=True, help="camera CENTRE, master px, at the end")
 ap.add_argument("--rate", type=float, default=110.0, help="master px per second of rise")
 ap.add_argument("--pushes", type=int, default=2, help="max approach moments in this leg")
-ap.add_argument("--breathe-floor", type=float, default=0.12,
+ap.add_argument("--breathe-floor", type=float, default=0.07,
                 help="camZ the breath never goes BELOW except at the leg seams. "
                      "A traverse at camZ=0 is a pan BY CONSTRUCTION -- measured "
                      "2026-08-21, collapsing all 13 plane depths onto one changed "
@@ -45,7 +45,13 @@ ap.add_argument("--breathe-floor", type=float, default=0.12,
                      "same crop shot the entire time it doesn't show off the "
                      "parallaxing. You got to pull out and go forward, push in "
                      "and go.'")
-ap.add_argument("--breathe", type=float, default=0.45,
+# 0.18 IS A CEILING, NOT A STARTING POINT. Raised to 0.45 on 2026-08-24 to
+# buy parallax and it TORE THE PAINTING: at that separation the disocclusion
+# behind the near cliff is wider than the fill can cover, and check-holes found
+# 2 of 16 frames holed, largest 4,198px. Ryan: "whatever you did to the right
+# tore the canvas, tore a huge asshole in the canvas." The flatness was never
+# the peak being too low -- it was the breath RETURNING TO ZERO mid-leg.
+ap.add_argument("--breathe", type=float, default=0.18,
                 help="peak camZ of the breath. Depth on this painting comes from "
                      "DIFFERENTIAL SCALE, never from sliding or deforming planes "
                      "(knowledge/depth-may-resize-never-deform.md). 0.18 is "
