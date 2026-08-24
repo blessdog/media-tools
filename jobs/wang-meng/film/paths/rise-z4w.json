@@ -1,7 +1,7 @@
 {
  "fps": 24,
  "duration": 19.98,
- "_note": "leg of the continuous rise, zone z4w, master centre 6600 -> 5502 at 110px/s. Approaches: w-compound-fall",
+ "_note": "leg of the continuous rise, zone z4w, master centre 6600 -> 5502 at 110px/s. Approaches: cat-grove-bottom-right",
  "keys": [
   {
    "t": 0.0,
@@ -11,26 +11,33 @@
    "z": 0.0
   },
   {
-   "t": 9.96,
+   "t": 0.1,
    "x": 0.5,
-   "y": 0.322,
+   "y": 0.5104,
    "fov": 1.0,
-   "z": 0.18
+   "z": 0.0
   },
   {
-   "t": 13.46,
-   "x": 0.6629,
-   "y": 0.322,
+   "t": 3.6,
+   "x": 0.5085,
+   "y": 0.5104,
    "fov": 1.6129,
-   "_at": "w-compound-fall",
-   "z": 0.1316
+   "_at": "cat-grove-bottom-right",
+   "z": 0.0518
   },
   {
-   "t": 16.46,
-   "x": 0.6629,
-   "y": 0.322,
+   "t": 6.6,
+   "x": 0.5085,
+   "y": 0.5104,
    "fov": 1.6129,
-   "z": 0.0498
+   "z": 0.1335
+  },
+  {
+   "t": 10.1,
+   "x": 0.5,
+   "y": 0.5104,
+   "fov": 1.0,
+   "z": 0.1799
   },
   {
    "t": 19.98,

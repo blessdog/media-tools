@@ -1,7 +1,7 @@
 {
  "fps": 24,
- "duration": 24.01,
- "_note": "leg of the continuous rise, zone z6w, master centre 4493 -> 1852 at 110px/s. Approaches: none animated in range",
+ "duration": 34.01,
+ "_note": "leg of the continuous rise, zone z6w, master centre 4493 -> 1852 at 110px/s. Approaches: sum-wooded-slope-lower-left",
  "keys": [
   {
    "t": 0.0,
@@ -18,7 +18,29 @@
    "z": 0.18
   },
   {
-   "t": 24.01,
+   "t": 22.34,
+   "x": 0.5,
+   "y": 0.2991,
+   "fov": 1.0,
+   "z": 0.0084
+  },
+  {
+   "t": 25.84,
+   "x": 0.69,
+   "y": 0.2991,
+   "fov": 1.6129,
+   "_at": "sum-wooded-slope-lower-left",
+   "z": 0.0102
+  },
+  {
+   "t": 28.84,
+   "x": 0.69,
+   "y": 0.2991,
+   "fov": 1.6129,
+   "z": 0.0631
+  },
+  {
+   "t": 34.01,
    "x": 0.5,
    "y": 0.2722,
    "fov": 1.0,

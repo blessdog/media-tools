@@ -1,7 +1,7 @@
 {
  "fps": 24,
  "duration": 52.96,
- "_note": "leg of the continuous rise, zone z1, master centre 14626 -> 11000 at 110px/s. Approaches: s-pine-over-bridge, w-midstream",
+ "_note": "leg of the continuous rise, zone z1, master centre 14626 -> 11000 at 110px/s. Approaches: cat-tree-bottom-right, w-midstream",
  "keys": [
   {
    "t": 0.0,
@@ -13,38 +13,45 @@
   {
    "t": 12.0,
    "x": 0.5,
-   "y": 0.5863,
+   "y": 0.5864,
    "fov": 1.0,
    "z": 0.18
   },
   {
-   "t": 23.55,
+   "t": 22.72,
    "x": 0.5,
-   "y": 0.3855,
+   "y": 0.4,
    "fov": 1.0,
-   "z": 0.0006
+   "z": 0.005
   },
   {
-   "t": 27.05,
-   "x": 0.4411,
-   "y": 0.3855,
+   "t": 26.22,
+   "x": 0.4396,
+   "y": 0.4,
    "fov": 1.6129,
-   "_at": "s-pine-over-bridge",
-   "z": 0.0272
+   "_at": "cat-tree-bottom-right",
+   "z": 0.0148
   },
   {
-   "t": 30.05,
-   "x": 0.4411,
-   "y": 0.3855,
+   "t": 29.22,
+   "x": 0.4396,
+   "y": 0.4,
    "fov": 1.6129,
-   "z": 0.0912
+   "z": 0.0717
   },
   {
-   "t": 33.55,
+   "t": 32.72,
    "x": 0.5,
-   "y": 0.3855,
+   "y": 0.4,
    "fov": 1.0,
-   "z": 0.1621
+   "z": 0.1488
+  },
+  {
+   "t": 36.0,
+   "x": 0.5,
+   "y": 0.343,
+   "fov": 1.0,
+   "z": 0.18
   },
   {
    "t": 42.02,

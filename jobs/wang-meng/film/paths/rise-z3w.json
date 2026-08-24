@@ -1,7 +1,7 @@
 {
  "fps": 24,
  "duration": 70.0,
- "_note": "leg of the continuous rise, zone z3w, master centre 11000 -> 6600 at 110px/s. Approaches: s-gorge-big-canopy, s-left-clifftop-pine, s-gorge-foreground",
+ "_note": "leg of the continuous rise, zone z3w, master centre 11000 -> 6600 at 110px/s. Approaches: cat-broadleaf-great-right, s-gorge-big-canopy, s-gorge-foreground",
  "keys": [
   {
    "t": 0.0,
@@ -11,33 +11,33 @@
    "z": 0.0
   },
   {
-   "t": 12.0,
+   "t": 11.04,
    "x": 0.5,
-   "y": 0.6183,
+   "y": 0.6437,
    "fov": 1.0,
-   "z": 0.18
+   "z": 0.1772
   },
   {
-   "t": 18.95,
+   "t": 14.54,
+   "x": 0.5375,
+   "y": 0.6437,
+   "fov": 1.6129,
+   "_at": "cat-broadleaf-great-right",
+   "z": 0.1608
+  },
+  {
+   "t": 17.54,
+   "x": 0.5375,
+   "y": 0.6437,
+   "fov": 1.6129,
+   "z": 0.1008
+  },
+  {
+   "t": 21.04,
    "x": 0.5,
-   "y": 0.5334,
+   "y": 0.6437,
    "fov": 1.0,
-   "z": 0.0678
-  },
-  {
-   "t": 22.45,
-   "x": 0.562,
-   "y": 0.5334,
-   "fov": 1.6129,
-   "_at": "s-gorge-big-canopy",
-   "z": 0.0073
-  },
-  {
-   "t": 25.45,
-   "x": 0.562,
-   "y": 0.5334,
-   "fov": 1.6129,
-   "z": 0.0064
+   "z": 0.0257
   },
   {
    "t": 28.95,
@@ -47,33 +47,26 @@
    "z": 0.0656
   },
   {
-   "t": 33.74,
-   "x": 0.5,
-   "y": 0.4664,
-   "fov": 1.0,
-   "z": 0.1647
-  },
-  {
-   "t": 37.24,
-   "x": 0.31,
-   "y": 0.4664,
+   "t": 32.45,
+   "x": 0.562,
+   "y": 0.5334,
    "fov": 1.6129,
-   "_at": "s-left-clifftop-pine",
-   "z": 0.1753
+   "_at": "s-gorge-big-canopy",
+   "z": 0.1438
   },
   {
-   "t": 40.24,
-   "x": 0.31,
-   "y": 0.4664,
+   "t": 35.45,
+   "x": 0.562,
+   "y": 0.5334,
    "fov": 1.6129,
-   "z": 0.13
+   "z": 0.1791
   },
   {
-   "t": 43.74,
+   "t": 38.95,
    "x": 0.5,
-   "y": 0.4664,
+   "y": 0.5334,
    "fov": 1.0,
-   "z": 0.0504
+   "z": 0.1545
   },
   {
    "t": 48.39,
