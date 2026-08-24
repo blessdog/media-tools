@@ -65,6 +65,12 @@ Image.MAX_IMAGE_PIXELS = None
 
 p = argparse.ArgumentParser()
 p.add_argument('--plate', required=True, help='background with the cards removed')
+p.add_argument('--under', choices=('clean', 'hold'), default='clean',
+               help="what a card reveals when it swings off its rest position. "
+                    "clean = the synthesised ground from --plate (bare silk and "
+                    "rock under a tree). hold = the SOURCE, i.e. the original "
+                    "leaves held still, so foliage is revealed behind foliage "
+                    "and there is no hole to fill. See leaves-hold-under-leaves.")
 p.add_argument('--source', required=True, help='image the card pixels come from')
 p.add_argument('--cards', required=True, help='mask dir: layers.json + masks/')
 p.add_argument('--only', default=None, help='restrict to one card by name')
@@ -534,20 +540,41 @@ def envelope(u):
 #
 # The clean plate is only needed where a card CAN VACATE, which is exactly each
 # card's rest footprint. Everywhere else the painting stands.
-vacate = np.zeros((H, W), bool)
-for c in cards:
-    x0, y0, x1, y1 = c['box']
-    # SOLID, not the feathered extent. Inside the ramp band the card's alpha is
-    # < 1, so if the base there were the clean plate the composite would mix
-    # plate and ink and thin the outline. With the base left as source, a card
-    # at rest composites source-over-source and is bit-exact; the cost is a
-    # ~2px ghost of the old edge once it swings, which is smaller than the swing.
-    vacate[y0:y1, x0:x1] |= (np.squeeze(c['solid']) > 0.5)
+#
+# --under hold: DO NOT PUNCH THE PLATE THROUGH AT ALL. Ryan, 2026-08-24, looking
+# at the pine over the bridge: "the movement of these leaves and the background
+# of the canvas should be the same leaves, so it doesn't look like it tears
+# anything like the trunk of this tree, but instead it just moves the set of
+# leaves off to the side, so right behind it is still a set of leaves."
+#
+# That is the cel-animation double layer: the held under-layer of a moving
+# foliage cel is more foliage. With the source left intact underneath, the
+# sliver a card vacates shows the ORIGINAL leaf strokes rather than synthesised
+# ground, so there is no hole to fill and nothing to tear at the trunk. It also
+# stays inside clean-plate-donor-scope, which bans SYNTHESISING foliage into a
+# foliage-shaped hole -- a held copy of the same card invents nothing; those
+# marks are Wang Meng's and they were already there.
+#
+# The cost is a doubled edge at the swing extremes, bounded by the swing itself
+# (6 deg on this painting), against a guaranteed bare-ground reveal otherwise.
 base = src.astype(np.float32).copy()
-base[vacate] = plate[vacate]
-print(f'base: source everywhere except {int(vacate.sum()):,}px of card footprint '
-      f'({100*vacate.sum()/(H*W):.1f}% of the crop) where the clean plate shows',
-      file=sys.stderr)
+if a.under == 'clean':
+    vacate = np.zeros((H, W), bool)
+    for c in cards:
+        x0, y0, x1, y1 = c['box']
+        # SOLID, not the feathered extent. Inside the ramp band the card's alpha
+        # is < 1, so if the base there were the clean plate the composite would
+        # mix plate and ink and thin the outline. With the base left as source, a
+        # card at rest composites source-over-source and is bit-exact; the cost
+        # is a ~2px ghost of the old edge once it swings.
+        vacate[y0:y1, x0:x1] |= (np.squeeze(c['solid']) > 0.5)
+    base[vacate] = plate[vacate]
+    print(f'base: source everywhere except {int(vacate.sum()):,}px of card '
+          f'footprint ({100*vacate.sum()/(H*W):.1f}% of the crop) where the '
+          f'clean plate shows', file=sys.stderr)
+else:
+    print('base: SOURCE EVERYWHERE (--under hold) -- a card vacating reveals the '
+          'original leaves, never synthesised ground', file=sys.stderr)
 
 ndraw = max(1, a.frames // max(a.on, 1))
 outd = Path(a.out); outd.mkdir(parents=True, exist_ok=True)
