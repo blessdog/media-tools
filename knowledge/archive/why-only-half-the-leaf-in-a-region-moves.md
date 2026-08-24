@@ -2,7 +2,8 @@
 id: why-only-half-the-leaf-in-a-region-moves
 kind: open
 conflict-key: why-does-leaf-inside-an-animated-region-not-move
-status: live
+status: superseded
+superseded-by: a-card-that-exists-moves-fine
 supersedes: []
 proven: false
 verified-on: 2026-08-24

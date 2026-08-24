@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+"""Is the foliage deficit a CUTTING problem or an AMPLITUDE problem?
+
+One job: draw the two-step loss from painted leaf -> leaf under a card ->
+leaf that visibly moves, against the measured ceiling, so the answer is
+readable instead of arguable.
+
+WHY. Ryan, 2026-08-24: "I don't think you've still been able to animate the
+foliage." The swing parameter had been moved four times in three days without
+the number improving, because coverage was reported as ONE figure and one figure
+cannot say whether the leaf failed to move or was never cut.
+
+THE CEILING IS MEASURED, NOT ASSUMED. Translating the whole z1 plate rigidly by
+1px registers 63.1% of its leaf ink as changed under the same >6-level rule --
+ink sliding inside a dense mass looks identical to itself. So 63% is the most
+any real animation can score, and a bar near it is DONE, not weak.
+
+usage:  plot-coverage-split.py --split evidence-coverage-split.json --out x.png
+"""
+import argparse, json
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+SURFACE, INK, MUTED = "#16191d", "#e8e6e1", "#8b9199"
+LEAF, CARDED, MOVES, CEIL = "#2a3b38", "#3f8f84", "#c9a227", "#e0574a"
+
+ap = argparse.ArgumentParser()
+ap.add_argument("--split", required=True)
+ap.add_argument("--out", required=True)
+a = ap.parse_args()
+
+d = json.load(open(a.split))
+rows = d["zones"]
+ceil = d["ceilingPct"]
+names = [r["zone"] for r in rows][::-1]
+carded = [r["cardCoveragePct"] for r in rows][::-1]
+moves = [r["foliageCoveragePct"] for r in rows][::-1]
+
+fig, ax = plt.subplots(figsize=(10.5, 5.4))
+fig.patch.set_facecolor(SURFACE); ax.set_facecolor(SURFACE)
+ax.barh(names, [100] * len(names), color=LEAF, height=0.66, label="painted leaf in the zone")
+ax.barh(names, carded, color=CARDED, height=0.66, label="has a card over it")
+ax.barh(names, moves, color=MOVES, height=0.42, label="visibly moves")
+ax.axvline(ceil, color=CEIL, lw=2, ls=(0, (5, 3)))
+ax.text(ceil + 1.2, len(names) - 0.35, f"ceiling {ceil:.0f}%\na rigid 1px shift\nof the whole plate\nscores this",
+        color=CEIL, fontsize=9, va="top")
+
+for i, (c, m) in enumerate(zip(carded, moves)):
+    ax.text(c + 1.0, i + 0.20, f"{c:.0f}% cut", color=CARDED, fontsize=9, va="center")
+    ax.text(m + 1.0, i - 0.16, f"{m:.0f}% moves", color=MOVES, fontsize=9, va="center")
+
+s = d["scroll"]
+ax.set_title(
+    "the leaves are not under-swung — they are un-cut\n"
+    f"whole scroll: {100*s['leafInkUnderACardPx']/s['leafInkPx']:.0f}% of the painted leaf has a card on it, "
+    f"and {100*s['leafInkThatMovesPx']/s['leafInkUnderACardPx']:.0f}% of THAT moves",
+    color=INK, fontsize=13, loc="left", pad=14)
+ax.set_xlabel("% of the zone's painted leaf ink", color=MUTED, fontsize=10)
+ax.set_xlim(0, 108)
+ax.tick_params(colors=MUTED, labelsize=10)
+for sp in ("top", "right", "bottom"): ax.spines[sp].set_visible(False)
+ax.spines["left"].set_color("#2b3037")
+ax.grid(axis="x", color="#2b3037", lw=0.6); ax.set_axisbelow(True)
+lg = ax.legend(loc="lower right", frameon=False, fontsize=9)
+for t in lg.get_texts(): t.set_color(MUTED)
+fig.tight_layout(); fig.savefig(a.out, dpi=150, facecolor=SURFACE)
+print(a.out)

@@ -102,6 +102,12 @@ def main():
     leaf = leaf & ink                       # painted leaf = ink on leaf wash
 
     animated = np.zeros((H, W), bool)
+    # WAS IT EVEN CUT? Separate from "did it move". A leaf pixel with no card
+    # over it CANNOT move whatever the swing is, and a leaf pixel under a card
+    # that does not visibly change is a different bug with a different fix.
+    # Conflating them is what kept this project tuning amplitude for two weeks
+    # while the real loss was upstream. Added 2026-08-24.
+    carded = np.zeros((H, W), bool)
     regions, planes = {}, {}
     # A UNION, NOT A SUM. Cards from different regions overlap -- a canopy and
     # the bough under it are two patches over the same pixels -- so adding their
@@ -140,11 +146,24 @@ def main():
             if sx1 <= sx0 or sy1 <= sy0:
                 continue
             sub = moves[sy0 - y0:sy1 - y0, sx0 - x0:sx1 - x0]
-            regions.setdefault(rid, {"px": 0, "tool": klass})
+            for mf in glob.glob(f"{REPO}/{J}/journey/{a.zone}/living-work/{rid}/mask/masks/*.png"):
+                mm = np.asarray(Image.open(mf).convert("L"))
+                if mm.shape != (h, w):
+                    mm = cv2.resize(mm, (w, h), interpolation=cv2.INTER_NEAREST)
+                carded[sy0:sy1, sx0:sx1] |= (mm > 127)[sy0 - y0:sy1 - y0, sx0 - x0:sx1 - x0]
+            regions.setdefault(rid, {"px": 0, "tool": klass, "leafPx": 0})
             cell = np.zeros((H, W), bool)
             cell[sy0:sy1, sx0:sx1] = sub
             animated |= cell
             regions[rid]["px"] += int((cell & leaf).sum())
+            # HOW MUCH LEAF THIS REGION EVEN HAS. Without it a small moving
+            # count is unreadable: a region can be quiet because it is TINY or
+            # because its cards barely turn, and those need opposite fixes.
+            # Added 2026-08-24 after the z1 tail (82x spread, 254 px at the
+            # bottom) could not be diagnosed from the moving count alone.
+            box = np.zeros((H, W), bool)
+            box[sy0:sy1, sx0:sx1] = True
+            regions[rid]["leafPx"] += int((box & leaf).sum())
             off = int((cell & ink & ~leaf).sum())
             regions[rid]["offLeaf"] = regions[rid].get("offLeaf", 0) + off
             if poly_class.get(rid) == "foliage":
@@ -159,8 +178,16 @@ def main():
         "silkA": round(silk_a, 1), "greenWashPx": g, "orangeWashPx": o,
         "leafInkPx": tot, "leafInkPctOfPlate": round(100.0 * tot / (W * H), 2),
         "movingPx": int(animated.sum()),
+        "leafInkUnderACardPx": int((leaf & carded).sum()),
+        "cardCoveragePct": round(100.0 * (leaf & carded).sum() / tot, 1) if tot else 0.0,
         "leafInkThatMovesPx": cov,
         "foliageCoveragePct": round(100.0 * cov / tot, 1) if tot else 0.0,
+        # of the leaf that IS carded, how much visibly changes. The control for
+        # this is a rigid 1px translation of the whole plate, which registers
+        # 63% of z1's leaf ink as moving -- so a figure far below that is real
+        # stillness, not a blind metric. See knowledge/a-rigid-1px-shift-moves-63pct.md
+        "movingShareOfCardedPct": round(100.0 * cov / (leaf & carded).sum(), 1)
+        if (leaf & carded).any() else 0.0,
         # THE LEAK. Ink that moves and is NOT leaf -- rock, water, bridge deck.
         # This is the number Ryan's eye caught before any metric did, so it is
         # reported beside coverage and never instead of it.
@@ -173,6 +200,15 @@ def main():
                             sorted(regions.items(), key=lambda r: -r[1].get("offLeaf", 0))
                             if v.get("offLeaf")},
         "regions": {k: v["px"] for k, v in sorted(regions.items(), key=lambda r: -r[1]["px"])},
+        # px moved / px of leaf inside the same patches. A region at 0.05 is
+        # quiet because it barely turns; a region at 0.6 with a small px count
+        # is simply a small tree and is behaving correctly.
+        "regionMoveFraction": {
+            k: round(v["px"] / v["leafPx"], 3) if v.get("leafPx") else None
+            for k, v in sorted(regions.items(),
+                               key=lambda r: -(r[1]["px"] / r[1]["leafPx"] if r[1].get("leafPx") else 0))},
+        "regionLeafPx": {k: v.get("leafPx", 0) for k, v in
+                         sorted(regions.items(), key=lambda r: -r[1].get("leafPx", 0))},
     }, indent=1))
 
 

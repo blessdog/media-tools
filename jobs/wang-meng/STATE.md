@@ -149,6 +149,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  6fca38f  swing by DISPLACEMENT, not angle: distant foliage moves 4-8x, the near tree 7%
 2026-08-24  f660f09  STATE regenerated: rise paths re-authored with a cruising wide
 2026-08-24  6d75041  the traverse rests slightly IN, so the pull-out is a real move
 2026-08-24  4eb8921  OPEN: why only ~40% of the leaf inside a region moves, four dead ends closed
@@ -160,32 +161,15 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  5f1dd36  wind gets a floor and a spectrum: 37% dead frames to 0, same peak swing
 2026-08-24  3cddd9a  diagnosed: the wind has no base component and the film has two framings
 2026-08-24  8f910b9  the rise paths re-authored: approaches now land on catalogued trees
-2026-08-24  5532d20  STATE regenerated: THE-RISE rebuilt from the catalogue, 193 frames checked intact
 ```
 
 ### ⚠ UNPUSHED
 
-**36 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**37 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
 ```
-
-### Uncommitted
-
-```
- M jobs/wang-meng/STATE.md
- M jobs/wang-meng/film/author-rise.py
- M jobs/wang-meng/film/paths/rise-z1.json
- M jobs/wang-meng/film/paths/rise-z3w.json
- M jobs/wang-meng/film/paths/rise-z4w.json
- M jobs/wang-meng/film/paths/rise-z5w.json
- M jobs/wang-meng/film/paths/rise-z6w.json
- M tools/hinge-foliage.py
-?? jobs/wang-meng/evidence/2026-08-24-canyon-new-camera.mp4
-```
-
-*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
