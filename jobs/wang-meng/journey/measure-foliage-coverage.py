@@ -102,7 +102,13 @@ def main():
     leaf = leaf & ink                       # painted leaf = ink on leaf wash
 
     animated = np.zeros((H, W), bool)
-    regions, planes, foliage_off = {}, {}, [0]
+    regions, planes = {}, {}
+    # A UNION, NOT A SUM. Cards from different regions overlap -- a canopy and
+    # the bough under it are two patches over the same pixels -- so adding their
+    # off-leaf counts double-counts the shared pixels. The first version of this
+    # summed, and reported a foliage leak LARGER than the total leak it is a
+    # subset of, which is how the bug announced itself.
+    foliage_animated = np.zeros((H, W), bool)
     for pname, entry in living.items():
         P = fine.get(pname)
         if P is None:
@@ -142,8 +148,9 @@ def main():
             off = int((cell & ink & ~leaf).sum())
             regions[rid]["offLeaf"] = regions[rid].get("offLeaf", 0) + off
             if poly_class.get(rid) == "foliage":
-                planes[pname] = planes.get(pname, 0) + off
-                foliage_off[0] += off
+                foliage_animated |= cell
+                planes.setdefault(pname, np.zeros((H, W), bool))
+                planes[pname] |= cell
 
     tot = int(leaf.sum())
     cov = int((leaf & animated).sum())
@@ -158,8 +165,10 @@ def main():
         # This is the number Ryan's eye caught before any metric did, so it is
         # reported beside coverage and never instead of it.
         "movingInkOffLeafPx": int((animated & ink & ~leaf).sum()),
-        "foliageInkOffLeafPx": foliage_off[0],
-        "leakByPlane": dict(sorted(planes.items(), key=lambda r: -r[1])),
+        "foliageInkOffLeafPx": int((foliage_animated & ink & ~leaf).sum()),
+        "leakByPlane": dict(sorted(
+            ((k, int((v & ink & ~leaf).sum())) for k, v in planes.items()),
+            key=lambda r: -r[1])),
         "offLeafByRegion": {k: v["offLeaf"] for k, v in
                             sorted(regions.items(), key=lambda r: -r[1].get("offLeaf", 0))
                             if v.get("offLeaf")},
