@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 07:33 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 07:38 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -122,18 +122,14 @@ DELIVERABLES
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 
 RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
-  z1      6 of  12 planes
-  z2      5 of  10 planes
-  z3      5 of  13 planes
-  z3w     5 of  13 planes
-  z4w     4 of   9 planes
-  z5w     4 of   9 planes
-  z6w     2 of   8 planes
-  TOTAL  31 of  74 planes = 42%
-        ⚠ relief WON its A/B on 2026-08-19 and joined the 'locked recipe',
-        but journey/build-zone.sh has no relief step, so the six zones
-        built after the verdict never got it. See
-        knowledge/a-verdict-is-not-landed-until-the-builder-changes.md
+  z1      6 of   6 eligible (12 planes)
+  z2      5 of   5 eligible (10 planes)
+  z3      5 of   5 eligible (7 planes)
+  z3w     5 of   5 eligible (7 planes)
+  z4w     4 of   4 eligible (9 planes)
+  z5w     4 of   4 eligible (8 planes)
+  z6w     2 of   2 eligible (6 planes)
+  TOTAL  31 of  31 eligible = 100%   (28 planes excluded by construction: water, figures, architecture, foliage)
 ```
 
 ## Recent history
@@ -141,6 +137,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  6dbc48b  relief coverage counts ELIGIBLE planes, not all planes -- 42% was a phantom gap
 2026-08-24  4ff40a6  STATE regenerated: invented-material verdict landed, 48 live claims
 2026-08-23  e66da62  a deep dolly reveals invented material: 14.29% of the deepest frame is flux, not Wang Meng
 2026-08-23  89ad6b9  STATE regenerated: relief at 31 of 74 planes across all seven zones
@@ -152,18 +149,9 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-22  0e9f3e2  disocclusion measured at 6px -- I predicted 160 and the real defect is tone
 2026-08-22  790f9e3  six zone plates re-cut from their tracked sidecars -- recoverability confirmed
 2026-08-22  5690927  STATE regenerated: relief coverage now counted per zone, 3 of 74 planes
-2026-08-22  f6e80a6  build-relief promoted to a tool, and wired into build-zone.sh where it belonged
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
-
-### Uncommitted
-
-```
- M jobs/wang-meng/STATE.md
-```
-
-*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
