@@ -91,16 +91,8 @@ p.add_argument('--angle', type=float, default=8.0, help='wind direction, degrees
 p.add_argument('--gust', default='0.10,0.08,0.22', help='attack,hold,decay as cycle fractions')
 p.add_argument('--gust-travel', type=float, default=1500.0,
                help='px the gust front crosses in one cycle')
-p.add_argument('--gust-rest', type=float, default=0.35,
-               help='BASE WIND amplitude between gusts, as a fraction of --swing. '
-                    'Never 0: standard practice is two components, a directional '
-                    'wind that never stops plus turbulence, with gusts as pulses '
-                    'ON TOP. Raised from 0.15 on 2026-08-24 -- see --base-rate')
-p.add_argument('--base-rate', type=int, default=6,
-               help='oscillations of the BASE wind per cycle. MUST be an integer '
-                    'or the loop does not close. Was effectively 1, i.e. one sway '
-                    'per 8s cycle = 0.125Hz, which is far below anything that '
-                    'reads as wind; foliage stirs at roughly 0.5-2Hz')
+p.add_argument('--gust-rest', type=float, default=0.15,
+               help='idle amplitude between gusts, as a fraction of --swing')
 p.add_argument('--phase', type=float, default=0.0,
                help='shift this whole region along the gust clock, in cycles. '
                     'A GUST TRAVELS THROUGH THE PAINTING -- Ryan, 2026-08-24: '
@@ -108,11 +100,7 @@ p.add_argument('--phase', type=float, default=0.0,
                     'region --gust-travel does that; ACROSS regions the caller '
                     'stages it by passing a phase taken from the plane depth, so '
                     'the far planes lead and the near ones answer')
-p.add_argument('--gusts', type=int, default=2,
-               help='gust pulses per cycle. Integer, for the same loop reason. '
-                    'One pulse per 8s left 20-33%% of the cycle under 15%% of peak '
-                    'motion -- Ryan, 2026-08-24: "one second it will wave, like '
-                    'kind of awkwardly, unrealistically"')
+
 p.add_argument('--feather', type=int, default=2)
 p.add_argument('--min-px', type=int, default=80, help='smallest card worth hinging')
 p.add_argument('--branch-radius', default='auto',
@@ -548,13 +536,6 @@ amin = min(c['along'] for c in cards)
 for c in cards:
     c['delay'] = (c['along'] - amin) / max(a.gust_travel, 1e-3)
 
-# THE SPECTRUM. Rates are integers (the loop must close) and deliberately not
-# harmonics of each other, so the sum does not resolve into an obvious beat.
-# Amplitude falls with rate, which is what makes it read as air rather than as
-# three sine waves added together.
-TURB = [(a.base_rate, 1.00, 0), (a.base_rate + 3, 0.55, 1), (a.base_rate + 7, 0.30, 2)]
-TURB_NORM = sum(amp for _, amp, _ in TURB)
-
 ga, gh, gd = (float(q) for q in a.gust.split(','))
 if ga + gh + gd >= 0.95:
     sys.exit('--gust A+H+D must leave calm air in the loop: keep the sum under 0.95')
@@ -566,7 +547,7 @@ def envelope(u):
     the envelope is zero at both ends of each pulse window, so N pulses tile the
     cycle exactly however large N is.
     """
-    u = (u * max(1, a.gusts)) % 1.0
+    u = u % 1.0
     if u < ga:
         return 0.5 - 0.5 * np.cos(np.pi * u / ga)
     if u < ga + gh:
@@ -631,21 +612,14 @@ for k in range(ndraw):
     for c in cards:
         e = envelope(t - c['delay'])
         act = a.gust_rest + (1 - a.gust_rest) * e
-        # TURBULENCE IS A SPECTRUM, NOT A SINE. One sinusoid at one rate puts
-        # every card in lockstep on a perfectly repeating arc -- Ryan, 2026-08-24:
-        # "a single little bushel of leaves will move robotically for two seconds
-        # and then stop." Real wind is broadband, so sum a few integer rates with
-        # falling amplitude (a 1/f-ish spectrum, which is what turbulence looks
-        # like) and give every card its OWN phase per rate. Integer rates keep
-        # the loop seamless; coprime-ish spacing means the sum does not visibly
-        # repeat inside one cycle; independent phases mean no two cards agree.
-        tt = t - c['delay'] - a.phase
-        ang = 0.0
-        for rate, amp, hcount in TURB:   # NOT k -- k is the frame index
-            ang += amp * np.sin(2 * np.pi * (rate * tt + (c['seed'] * (hcount + 1)) % 1.0))
-        ang *= a.swing * act / TURB_NORM
-        ang += a.flutter * act * np.sin(
-            2 * np.pi * (3 * a.base_rate * tt + c['seed'] * 1.7))
+        # ONE SINE, DELIBERATELY. A broadband turbulence spectrum was built and
+        # REJECTED here on 2026-08-24 -- see knowledge/subtle-beats-continuous-
+        # for-this-painting.md. It removed every still frame and multiplied
+        # frame-to-frame motion by 87x at identical peak swing, and Ryan's verdict
+        # on the A/B was "it looked better before the turbulent spectrum. I don't
+        # want that. I like the subtleness of it."
+        ph = 2 * np.pi * ((t - c['delay'] - a.phase) + c['seed'])
+        ang = a.swing * act * np.sin(ph) + a.flutter * act * np.sin(3 * ph + 1.7)
         peak = max(peak, abs(float(ang)))
         x0, y0, x1, y1 = c['box']
         M = cv2.getRotationMatrix2D(c['pivot'], float(ang), 1.0)
@@ -695,8 +669,7 @@ for k in range(ndraw):
     'tool': 'hinge-foliage', 'drawings': ndraw, 'on': a.on, 'fps': a.fps,
     'cards': len(cards), 'fromInk': a.from_ink, 'swingDeg': a.swing, 'peakAngleDeg': round(peak, 2),
     'gust': a.gust, 'gustTravel': a.gust_travel, 'gustRest': a.gust_rest,
-    'baseRate': a.base_rate, 'gusts': a.gusts, 'phase': a.phase,
-    'turbulence': [[r, amp] for r, amp, _ in TURB],
+    'phase': a.phase,
     'angle': a.angle, 'flutter': a.flutter,
     'branchRadius': branch_radii[0] if len(set(branch_radii)) == 1 else branch_radii,
     'branchRadiusMode': str(a.branch_radius), 'branchRatio': a.branch_ratio, 'attachMax': a.attach_max,
