@@ -28,6 +28,19 @@ for j in $C/z1lower-t0*.json; do
   out=$C/sam-z1lower/$t-trees.png
   [[ -f $out ]] && { echo "skip $t (done)"; continue; }
   echo "== $t"
+  # A TILE WITH NO FOLIAGE IS AN ANSWER, NOT A FAILURE. t000 and t004 are pure
+  # rock, river and seals; refine-mask-sam has nothing to prompt with, prints
+  # nothing, and `set -e` used to take the whole run down with it. Write an
+  # empty mask so the composite still has a tile there.
+  ntree=$(python3 -c "import json,sys; d=json.load(open('$j')); print(sum(1 for o in d['objects'] if o.get('kind')=='tree' and o.get('leavesVisible')))")
+  if [[ $ntree -eq 0 ]]; then
+    python3 -c "
+from PIL import Image
+im = Image.open('$C/tiles-z1lower/$t.jpg')
+Image.new('L', im.size, 0).save('$out')
+print('   no foliage catalogued -- empty mask written')"
+    continue
+  fi
   ~/.venvs/media-tools/bin/python $ROOT/tools/refine-mask-sam.py \
     --image $C/tiles-z1lower/$t.jpg --boxes $j --kinds tree \
     --out $out --multimask 2>/dev/null \
