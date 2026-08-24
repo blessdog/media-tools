@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 07:31 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 07:33 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -141,6 +141,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  4ff40a6  STATE regenerated: invented-material verdict landed, 48 live claims
 2026-08-23  e66da62  a deep dolly reveals invented material: 14.29% of the deepest frame is flux, not Wang Meng
 2026-08-23  89ad6b9  STATE regenerated: relief at 31 of 74 planes across all seven zones
 2026-08-23  8151dad  all five zones rebuilt in 44:53 -- relief coverage 4% to 42%
@@ -152,16 +153,9 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-22  790f9e3  six zone plates re-cut from their tracked sidecars -- recoverability confirmed
 2026-08-22  5690927  STATE regenerated: relief coverage now counted per zone, 3 of 74 planes
 2026-08-22  f6e80a6  build-relief promoted to a tool, and wired into build-zone.sh where it belonged
-2026-08-22  bcc959e  STATE regenerated: transform-vs-replacement verdict landed
 ```
 
-### ⚠ UNPUSHED
-
-**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 

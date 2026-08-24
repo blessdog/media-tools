@@ -50,24 +50,41 @@ printf "  Desktop symlink: "; readlink ~/Desktop/WANG-MENG-LATEST.mp4 2>/dev/nul
 echo
 echo "RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)"
 python3 - <<'PY2'
-import json, glob, os
-tot_r = tot_p = 0
+import json, glob, os, sys, importlib.util
+# SSOT: which planes are ELIGIBLE for relief is decided by build-relief.py's own
+# classifier, never by a second copy of the word list here. Measured 2026-08-24:
+# this block reported "31 of 74 = 42%" and warned that build-zone.sh had no
+# relief step -- but the step had been wired in two days earlier and every zone
+# rebuilt through it. 74 was never the target; water, figures and architecture
+# are excluded by construction. A status line that counts the wrong denominator
+# invents a gap and sends the next session to fix a bug that is not there.
+spec = importlib.util.spec_from_file_location("br", "tools/build-relief.py")
+br = importlib.util.module_from_spec(spec)
+sys.argv = ["build-relief.py"]
+spec.loader.exec_module(br)
+
+tot_r = tot_e = tot_p = 0
+short = []
 for d in sorted(glob.glob('jobs/wang-meng/journey/z*/')):
     z = os.path.basename(d.rstrip('/'))
     lj = os.path.join(d, 'layers-filled', 'layers.json')
     if not os.path.exists(lj):
         continue
-    planes = json.load(open(lj)).get('planes', 0)
+    meta = json.load(open(lj))
+    planes = [p for p in meta.get('planeList', []) if p.get('layer')]
+    elig = [p for p in planes if br.role(p['name'], False)]
     rj = os.path.join(d, 'relief.json')
     n = len(json.load(open(rj))) if os.path.exists(rj) else 0
-    tot_r += n; tot_p += planes
-    flag = '' if n else '   ⚠ NO relief.json'
-    print(f"  {z:5s} {n:3d} of {planes:3d} planes{flag}")
-pct = 100.0 * tot_r / tot_p if tot_p else 0
-print(f"  TOTAL {tot_r:3d} of {tot_p:3d} planes = {pct:.0f}%")
-if pct < 90:
-    print(f"        ⚠ relief WON its A/B on 2026-08-19 and joined the 'locked recipe',")
-    print(f"        but journey/build-zone.sh has no relief step, so the six zones")
-    print(f"        built after the verdict never got it. See")
-    print(f"        knowledge/a-verdict-is-not-landed-until-the-builder-changes.md")
+    tot_r += n; tot_e += len(elig); tot_p += len(planes)
+    flag = '' if n >= len(elig) else '   ⚠ MISSING'
+    if n < len(elig):
+        short.append(z)
+    print(f"  {z:5s} {n:3d} of {len(elig):3d} eligible ({len(planes)} planes){flag}")
+pct = 100.0 * tot_r / tot_e if tot_e else 0
+print(f"  TOTAL {tot_r:3d} of {tot_e:3d} eligible = {pct:.0f}%   "
+      f"({tot_p - tot_e} planes excluded by construction: water, figures, architecture, foliage)")
+if short:
+    print(f"        ⚠ relief missing on eligible planes in: {', '.join(short)}")
+    print(f"        run jobs/wang-meng/journey/build-zone.sh, or tools/build-relief.py directly.")
+    print(f"        See knowledge/a-verdict-is-not-landed-until-the-builder-changes.md")
 PY2
