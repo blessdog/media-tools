@@ -43,7 +43,7 @@ print('   no foliage catalogued -- empty mask written')"
   fi
   ~/.venvs/media-tools/bin/python $ROOT/tools/refine-mask-sam.py \
     --image $C/tiles-z1lower/$t.jpg --boxes $j --kinds tree \
-    --out $out --multimask 2>/dev/null \
+    --out $out --multimask --fence 2>/dev/null \
     | python3 -c "import sys,json; d=json.load(sys.stdin); print('   boxes',d['boxes'],'coverage',d['coverage'],'maxFill',round(max((b['fillOfBox'] for b in d['perBox']),default=0),3))"
 done
 

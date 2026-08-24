@@ -38,6 +38,10 @@ p.add_argument('--thresh', type=int, default=128)
 p.add_argument('--min-area', type=int, default=400, help='ignore proposal blobs smaller than this')
 p.add_argument('--pad', type=int, default=6, help='px added to each box before prompting')
 p.add_argument('--multimask', action='store_true', help='keep SAM\'s highest-scoring of three, not the single mask')
+p.add_argument('--fence', action='store_true',
+               help='clip each mask to its own prompt box. A catalogued box is a '
+                    'FENCE drawn by someone who looked at the picture; a mask that '
+                    'leaves it was never authorised by anyone')
 p.add_argument('--device', default='mps')
 a = p.parse_args()
 
@@ -86,9 +90,25 @@ with torch.no_grad():
         # SAM asked with a box around a canopy sometimes answers with the CLIFF the
         # canopy sits on. A mask that fills its own prompt box is that failure, so
         # record the fill and let the caller drop it.
-        area = float(m.sum()); boxarea = max(1.0, (b[2] - b[0]) * (b[3] - b[1]))
+        boxarea = max(1.0, (b[2] - b[0]) * (b[3] - b[1]))
+        raw = float(m.sum())
+        # THE BOX IS A FENCE. Measured on the summit band 2026-08-24: prompting
+        # with a grove on a ledge (summit t007, box [1156,988,1400,1224]) came
+        # back with 93,791 px against a 57,584 px box -- SAM answered with the
+        # LEDGE. fillOfBox has recorded that since the tool was written and no
+        # caller ever acted on it, which is a diagnostic that costs its own
+        # measurement and prevents nothing. Clipping is the whole fix: a pixel
+        # outside the fence was never authorised by anyone who looked.
+        if a.fence:
+            fenced = np.zeros_like(m)
+            x0, y0, x1, y1 = (int(round(v)) for v in b)
+            fenced[max(0, y0):y1, max(0, x0):x1] = m[max(0, y0):y1, max(0, x0):x1]
+            m = fenced
+        area = float(m.sum())
         per.append({'box': [round(v) for v in b], 'area': int(area),
-                    'fillOfBox': round(area / boxarea, 3), 'iou': round(float(scores[k]), 3)})
+                    'fillOfBox': round(area / boxarea, 3),
+                    'spillRatio': round((raw - area) / boxarea, 3),
+                    'iou': round(float(scores[k]), 3)})
         union |= m
 Image.fromarray((union * 255).astype(np.uint8)).save(a.out)
 if a.overlay:

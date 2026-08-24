@@ -110,10 +110,33 @@ def main():
         lp = f"{REPO}/jobs/wang-meng/living/living-polys.json"
         d = json.load(open(lp))
         have = {p["id"] for p in d["polys"]}
-        add = [p for p in polys if p["id"] not in have]
+
+        # DEDUP AGAINST WHAT IS ALREADY THERE, BY GEOMETRY. An id check is not
+        # enough and failed exactly once, on 2026-08-24: this band had already
+        # been converted under the prefix `cat`, a second run used `cat3`, and
+        # every one of its 80 polys was an EXACT duplicate that the id check
+        # waved through. z3w then cut 115 cycles with two sets of cards hinging
+        # against each other on the same canopies. The run's own dedup compares
+        # only within itself, so the file it writes into must be compared too.
+        def bbox(q):
+            xs = [x for x, _ in q["points"]]; ys = [y for _, y in q["points"]]
+            return [min(xs), min(ys), max(xs), max(ys)]
+        existing = [(q["id"], bbox(q)) for q in d["polys"]]
+        add, clash = [], []
+        for q in polys:
+            qb = bbox(q)
+            hit = next((eid for eid, eb in existing if iou(qb, eb) > a.iou), None)
+            if hit or q["id"] in have:
+                clash.append((q["id"], hit or "same id"))
+                continue
+            add.append(q)
+            existing.append((q["id"], qb))
         d["polys"].extend(add)
         json.dump(d, open(lp, "w"), indent=1, ensure_ascii=False)
-        print(f"\nadded {len(add)} polys to living-polys.json (now {len(d['polys'])})")
+        for qid, hit in clash:
+            print(f"  already present: {qid}  ->  {hit}")
+        print(f"\nadded {len(add)} polys to living-polys.json (now {len(d['polys'])}), "
+              f"{len(clash)} already present")
 
 
 if __name__ == "__main__":
