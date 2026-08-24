@@ -10,11 +10,16 @@ animated at all... you are still applying changes to only a small portion of the
 canvas." Coverage was never measured, only felt, and a coverage claim that is
 felt is exactly the kind that survives for weeks.
 
-WHAT COUNTS AS LEAF. The same rule the cutter uses, so the two cannot disagree
--- leaf-is-colour-rock-is-graphite. Colour lives in the mid-tone WASH under the
-strokes, never in the strokes: green = Lab a at least --leaf-da below the silk's
-median a; orange = hue <= 28 deg at saturation >= 0.34; both restricted to
-mid-tone pixels so neither bare silk nor black stroke can qualify.
+WHAT COUNTS AS LEAF. Whatever the CATALOGUE says -- the-catalogue-decides-what-
+is-foliage. Pass --leaf-mask with the master-px mask the cutter itself was gated
+by, and the measurement and the cut cannot disagree about the subject.
+
+The colour gate (green = Lab a at least --leaf-da below the silk's median a;
+orange = hue <= 28 deg at sat >= 0.34, on mid-tone wash only) is still here as
+the FALLBACK for a zone with no catalogue, and it is why this script exists in
+the shape it does. It is retired as the decider: run over the whole z1 plate it
+called 585k px leaf, including the ochre foreground boulders, and cutting to it
+made the rock sway. Ryan, 2026-08-24: "unfortunately the rock moves."
 
 WHAT COUNTS AS LEAF, PRECISELY. The wash mask alone is not the answer: dilated,
 it covers 60% of the z1 plate, because a wash is broad and the strokes on it are
@@ -59,12 +64,32 @@ def main():
     ap.add_argument("--zone", default="z1")
     ap.add_argument("--living", default=None)
     ap.add_argument("--leaf-da", type=float, default=2.5)
+    ap.add_argument("--leaf-mask", default=None,
+                    help="master-px foliage mask; makes the CATALOGUE the "
+                         "denominator instead of the retired colour gate")
     a = ap.parse_args()
 
     Z = f"{REPO}/{J}/journey/{a.zone}"
     plate = np.asarray(Image.open(f"{Z}/plate.png").convert("RGB"))
     H, W = plate.shape[:2]
-    leaf, silk_a, g, o = leaf_mask(plate, a.leaf_da)
+    if a.leaf_mask:
+        # Same transform the builder uses to crop the catalogue per region, done
+        # once for the whole plate: master = masterBox origin + plate px * K.
+        box = json.load(open(f"{Z}/plate.json"))["masterBox"]
+        big = np.asarray(Image.open(a.leaf_mask).convert("L"))[box[1]:box[3], box[0]:box[2]]
+        # INTER_AREA then threshold, never NEAREST: a thin leaf spray downsampled
+        # 2.34x vanishes under point sampling.
+        leaf = cv2.resize(big.astype(np.float32), (W, H), interpolation=cv2.INTER_AREA) > 40
+        decider, silk_a, g, o = os.path.basename(a.leaf_mask), 0.0, 0, 0
+    else:
+        leaf, silk_a, g, o = leaf_mask(plate, a.leaf_da)
+        decider = f"colour gate (RETIRED as decider), leaf-da {a.leaf_da}"
+
+    # A REGION'S CLASS DECIDES WHETHER ITS OFF-LEAF MOTION IS A LEAK. Water
+    # moving is the point; a fan moving is the point. Only foliage cutting into
+    # rock is the failure this measurement exists to catch.
+    poly_class = {r["id"]: r.get("class") for r in
+             json.load(open(f"{REPO}/{J}/living/living-polys.json"))["polys"]}
 
     living_path = a.living or f"{REPO}/{J}/living/living-{a.zone}.json"
     living = json.load(open(living_path))
@@ -77,7 +102,7 @@ def main():
     leaf = leaf & ink                       # painted leaf = ink on leaf wash
 
     animated = np.zeros((H, W), bool)
-    regions = {}
+    regions, planes, foliage_off = {}, {}, [0]
     for pname, entry in living.items():
         P = fine.get(pname)
         if P is None:
@@ -114,16 +139,30 @@ def main():
             cell[sy0:sy1, sx0:sx1] = sub
             animated |= cell
             regions[rid]["px"] += int((cell & leaf).sum())
+            off = int((cell & ink & ~leaf).sum())
+            regions[rid]["offLeaf"] = regions[rid].get("offLeaf", 0) + off
+            if poly_class.get(rid) == "foliage":
+                planes[pname] = planes.get(pname, 0) + off
+                foliage_off[0] += off
 
     tot = int(leaf.sum())
     cov = int((leaf & animated).sum())
     print(json.dumps({
-        "zone": a.zone, "plate": [W, H],
+        "zone": a.zone, "plate": [W, H], "decider": decider,
         "silkA": round(silk_a, 1), "greenWashPx": g, "orangeWashPx": o,
         "leafInkPx": tot, "leafInkPctOfPlate": round(100.0 * tot / (W * H), 2),
         "movingPx": int(animated.sum()),
         "leafInkThatMovesPx": cov,
         "foliageCoveragePct": round(100.0 * cov / tot, 1) if tot else 0.0,
+        # THE LEAK. Ink that moves and is NOT leaf -- rock, water, bridge deck.
+        # This is the number Ryan's eye caught before any metric did, so it is
+        # reported beside coverage and never instead of it.
+        "movingInkOffLeafPx": int((animated & ink & ~leaf).sum()),
+        "foliageInkOffLeafPx": foliage_off[0],
+        "leakByPlane": dict(sorted(planes.items(), key=lambda r: -r[1])),
+        "offLeafByRegion": {k: v["offLeaf"] for k, v in
+                            sorted(regions.items(), key=lambda r: -r[1].get("offLeaf", 0))
+                            if v.get("offLeaf")},
         "regions": {k: v["px"] for k, v in sorted(regions.items(), key=lambda r: -r[1]["px"])},
     }, indent=1))
 
