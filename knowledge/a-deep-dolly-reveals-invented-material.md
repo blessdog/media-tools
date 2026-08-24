@@ -97,6 +97,32 @@ different: the risk is not that a seventh of the painting is fake, it is that
 ~1.85% of the frame is fabricated STROKES, concentrated where the camera is
 looking hardest.
 
+## MEASURED 2026-08-24 — the cost curve, and "dolly less" is the weak half of lever 1
+
+Scored at every 15th frame of the same dolly, from renders already on disk
+(no new render, no cost). The two populations behave completely differently:
+
+| camZ | total invented, % of frame | invented INK, % of frame |
+|---|---|---|
+| 0.00 | 0.00 | 0.00 |
+| 0.13 | 1.69 | 0.44 |
+| 0.21 | 3.50 | 0.90 |
+| **0.33** | **7.26** | **1.61** |
+| 0.42 | 7.57 | 1.49 |
+| 0.55 | 9.58 | 1.51 |
+| **0.70** | **14.63** | **1.85** |
+
+**Fabricated brushwork flattens at camZ ≈ 0.33 and never really rises again.**
+Going 0.33 → 0.70 DOUBLES the invented area (7.26% → 14.63%) and buys only
+**0.24 points** of extra invented ink. Everything the deeper half of the dolly
+reveals is blank silk and wash — material with no strokes in it to be wrong.
+
+So "dolly less" costs a great deal of parallax to buy almost nothing: the
+expensive population is already fully paid for by camZ 0.33. **What is left of
+lever 1 is WHERE, not how far** — the invented material is densest immediately
+around Ge Hong, and reframing so the revealed band falls outside the eye's path
+is free. Chart: `jobs/wang-meng/evidence/2026-08-24-depth-cost-curve.png`.
+
 **AMENDED AGAIN, same day.** This paragraph originally ended "Lever 2 (fill
 source) still dominates for the same reason — real ink copied from elsewhere in
 the scroll cannot over-ink." That was a hypothesis stated as a conclusion, and
