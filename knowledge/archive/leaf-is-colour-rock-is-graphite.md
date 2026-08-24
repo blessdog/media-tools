@@ -2,8 +2,10 @@
 id: leaf-is-colour-rock-is-graphite
 kind: procedure
 conflict-key: how-are-leaf-strokes-separated-from-rock-strokes
-status: live
+status: superseded
 supersedes: []
+superseded-by: the-catalogue-decides-what-is-foliage
+superseded-on: 2026-08-24
 sibling: no-whole-tree-to-segment
 applies-when: >
   cutting foliage cards from ink on 葛稚川移居圖 (hinge-foliage --from-ink), or
