@@ -62,6 +62,15 @@ ap.add_argument("--breathe-period", type=float, default=24.0,
                 help="seconds per full breath, in and back out. Keys are POSES: "
                      "sample() eases to zero velocity at every key, so breath "
                      "keys land no closer than period/2 apart.")
+ap.add_argument("--drift-fov", type=float, default=0.86,
+                help="how far the WIDE framing drifts between approaches, as a "
+                     "fraction of WIDE. The camera used to SIT at exactly WIDE "
+                     "for 11-23s and then snap to the push and back, so the whole "
+                     "film held two framings and nothing between them. Ryan, "
+                     "2026-08-24: 'if you are zoomed in at the same crop shot the "
+                     "entire time it doesn't show off the parallaxing. You got to "
+                     "pull out and go forward, push in and go.' A wide that "
+                     "breathes is also what makes the next push mean something.")
 ap.add_argument("--push-fov", type=float, default=0.62,
                 help="fraction of the WIDE framing visible at the closest point; "
                      "0.62 shows 62%% of the width, i.e. fov = 1/0.62")
@@ -131,10 +140,32 @@ keys, t = [], 0.0
 x_w, y_w = clamp_key(0.5, norm(0, a.from_y)[1], WIDE)
 keys.append({"t": 0.0, "x": x_w, "y": y_w, "fov": round(WIDE, 4)})
 
+# THE WIDE IS NOT ONE NUMBER. Alternating a held WIDE with a held push gives
+# the film exactly two framings; the traverse between approaches is where a
+# pull-out lives, and it was flat. Each traverse now drifts OUT to
+# WIDE*--drift-fov and back, so the camera is always either opening up or
+# closing in and the arrival at a target is a change of direction, not a snap
+# out of stillness. fov below WIDE would show the mount, so the drift is
+# strictly a widening of the CLOSER end, never past the plate edge.
+# THE TRAVERSE RESTS SLIGHTLY IN, SO THE PULL-OUT IS A REAL MOVE. Resting at
+# WIDE means resting at the plate edge, and from there the only direction is
+# closer -- which is how the film ended up alternating two framings with a snap
+# between them. Rest at CRUISE instead and open to WIDE just before each
+# approach, so every target arrives as OUT, then FORWARD.
+CRUISE = WIDE / a.drift_fov            # a touch closer than the plate edge
 prev_my = a.from_y
+keys[0]["fov"] = round(CRUISE, 4)
+keys[0]["x"], keys[0]["y"] = clamp_key(0.5, norm(0, a.from_y)[1], CRUISE)
 for c in targets:
-    # rise until the target sits in frame
-    t += abs(prev_my - c["my"]) / a.rate
+    leg_t = abs(prev_my - c["my"]) / a.rate
+    # cruise most of the traverse, then OPEN to the plate edge for the last
+    # ~2.5s before the target is reached: the pull-out that earns the push.
+    if leg_t > 5.0:
+        tm = t + leg_t * 0.60
+        ym = norm(0, prev_my)[1] + (norm(0, c["my"])[1] - norm(0, prev_my)[1]) * 0.60
+        xm, ym = clamp_key(0.5, ym, CRUISE)
+        keys.append({"t": round(tm, 2), "x": xm, "y": ym, "fov": round(CRUISE, 4)})
+    t += leg_t
     xw, yw = clamp_key(0.5, norm(0, c["my"])[1], WIDE)
     keys.append({"t": round(t, 2), "x": xw, "y": yw, "fov": round(WIDE, 4)})
     # notice it, then move toward it -- 3.5s in, 3s held, 3.5s back out
@@ -148,13 +179,17 @@ for c in targets:
     t += 3.5
     keys.append({"t": round(t, 2), "x": xw, "y": yw, "fov": round(WIDE, 4)})
     prev_my = c["my"]
+    # settle back to cruise rather than parking at the plate edge
+    t += 2.0
+    xc, yc = clamp_key(0.5, norm(0, c["my"])[1], CRUISE)
+    keys.append({"t": round(t, 2), "x": xc, "y": yc, "fov": round(CRUISE, 4)})
 
 t += abs(prev_my - a.to_y) / a.rate
-xe, ye = clamp_key(0.5, norm(0, a.to_y)[1], WIDE)
+xe, ye = clamp_key(0.5, norm(0, a.to_y)[1], CRUISE)
 # The closing pose. If the rise ends within 3s of the last key, MOVE that key
 # rather than adding one -- a sub-3s gap stutters, because sample() eases to
 # zero velocity at both ends of every segment.
-_end = {"t": round(t, 2), "x": xe, "y": ye, "fov": round(WIDE, 4)}
+_end = {"t": round(t, 2), "x": xe, "y": ye, "fov": round(CRUISE, 4)}
 if keys and t - keys[-1]["t"] < 3.0:
     keys[-1] = _end
 else:
