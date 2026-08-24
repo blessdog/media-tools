@@ -34,6 +34,13 @@ __pycache__/
 !jobs/wang-meng/living/inventory-overlay.png
 !jobs/wang-meng/living/evidence-*.png
 !jobs/wang-meng/living/native/*/mask-overlay.png
+# THE CATALOGUE'S FOLIAGE MASKS ARE CONFIG, NOT INTERMEDIATES. regions.json
+# names foliage-master.png as classes.foliage.leafMask, so a clone without it
+# cannot build -- gates-must-survive-a-clone. They are ~250KB each (a binary
+# mask compresses hard) and they encode four agents' labelling work, which is
+# the expensive part of this repo and is NOT cheaply reproducible.
+!jobs/wang-meng/catalogue/foliage-master*.png
+!jobs/wang-meng/catalogue/sam*/*.png
 !jobs/wang-meng/living/native/*/motion-heat.png
 !jobs/wang-meng/living/native/*/vmin-compare.png
 !jobs/wang-meng/film/*.mp4

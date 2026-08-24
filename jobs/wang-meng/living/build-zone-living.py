@@ -114,6 +114,12 @@ def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
              "--gust-travel", str(cls.get("gust-travel", 1500)),
              "--gust-rest", str(cls.get("gust-rest", 0.15)),
              "--min-px", str(cls.get("minPx", 80)),
+             # LEAVES HOLD UNDER LEAVES. `hold` leaves the source intact beneath
+             # the cards, so a swing reveals the original leaf strokes instead of
+             # a synthesised plate -- and with no hole to fill, a region no longer
+             # needs a clean plate at all, which is what kept coverage at 8
+             # regions. knowledge/leaves-hold-under-leaves.md
+             "--under", str(cls.get("under", "clean")),
              *(["--leaf-mask", str(wd / "leaf-mask.png")]
                if cls.get("leafMask") and (wd / "leaf-mask.png").exists() else []),
              *(["--leaf-marks",
@@ -133,6 +139,13 @@ def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
              "--ink-offset", str(cls.get("inkOffset", 0.11)),
              "--ink-close", str(cls.get("inkClose", 1))]
     hinge += ["--from-ink"] if cls.get("fromInk", True) else ["--whole-mask"]
+    # UNDER:HOLD MAKES THE CLEAN PLATE DEAD WEIGHT. hinge-foliage never reads
+    # --plate in that mode -- the source stays intact beneath the cards -- and
+    # synthesising a plate per region was the expensive step that kept foliage at
+    # 8 authored regions. Skipping it is what makes 114 catalogued regions
+    # affordable. The path is still passed so the tool's contract is unchanged.
+    if cls.get("under") == "hold":
+        return [hinge]
     return [plate_step, hinge]
 
 
