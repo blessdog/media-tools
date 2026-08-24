@@ -86,5 +86,181 @@
    740,
    1195
   ]
+ },
+ "cat-vine-curtain-left": {
+  "class": "foliage",
+  "px": 5173,
+  "pctOfPlate": 0.097,
+  "plateBox": [
+   1400,
+   1373,
+   1502,
+   1716
+  ]
+ },
+ "cat-canopy-bough-left-main": {
+  "class": "foliage",
+  "px": 27039,
+  "pctOfPlate": 0.507,
+  "plateBox": [
+   1754,
+   1604,
+   1971,
+   1886
+  ]
+ },
+ "cat-vine-curtain-mid": {
+  "class": "foliage",
+  "px": 4878,
+  "pctOfPlate": 0.092,
+  "plateBox": [
+   1569,
+   1298,
+   1646,
+   1568
+  ]
+ },
+ "cat-canopy-bough-left-tip": {
+  "class": "foliage",
+  "px": 33790,
+  "pctOfPlate": 0.634,
+  "plateBox": [
+   1696,
+   1514,
+   1971,
+   1834
+  ]
+ },
+ "cat-broadleaf-great-right": {
+  "class": "foliage",
+  "px": 131696,
+  "pctOfPlate": 2.471,
+  "plateBox": [
+   1138,
+   0,
+   1888,
+   563
+  ]
+ },
+ "cat-canopy-brick-top": {
+  "class": "foliage",
+  "px": 6463,
+  "pctOfPlate": 0.121,
+  "plateBox": [
+   1842,
+   387,
+   1952,
+   593
+  ]
+ },
+ "cat-pine-needle-right": {
+  "class": "foliage",
+  "px": 89313,
+  "pctOfPlate": 1.676,
+  "plateBox": [
+   468,
+   0,
+   964,
+   459
+  ]
+ },
+ "cat-fronds-bottom-left": {
+  "class": "foliage",
+  "px": 23698,
+  "pctOfPlate": 0.445,
+  "plateBox": [
+   1776,
+   1001,
+   1971,
+   1206
+  ]
+ },
+ "cat-tree-colour-lower-left": {
+  "class": "foliage",
+  "px": 58555,
+  "pctOfPlate": 1.099,
+  "plateBox": [
+   804,
+   857,
+   1175,
+   1308
+  ]
+ },
+ "cat-tree-great-centre": {
+  "class": "foliage",
+  "px": 4284,
+  "pctOfPlate": 0.08,
+  "plateBox": [
+   1865,
+   712,
+   1971,
+   778
+  ]
+ },
+ "cat-tree-bottom-right": {
+  "class": "foliage",
+  "px": 86242,
+  "pctOfPlate": 1.618,
+  "plateBox": [
+   672,
+   785,
+   1061,
+   1378
+  ]
+ },
+ "cat-pine-top-roots": {
+  "class": "foliage",
+  "px": 2132,
+  "pctOfPlate": 0.04,
+  "plateBox": [
+   1307,
+   355,
+   1371,
+   420
+  ]
+ },
+ "cat-tree-round-top-left": {
+  "class": "foliage",
+  "px": 5013,
+  "pctOfPlate": 0.094,
+  "plateBox": [
+   1841,
+   461,
+   1919,
+   594
+  ]
+ },
+ "cat-tree-bottom-right-t013": {
+  "class": "foliage",
+  "px": 10735,
+  "pctOfPlate": 0.201,
+  "plateBox": [
+   1570,
+   1049,
+   1736,
+   1172
+  ]
+ },
+ "cat-tree-teal-mid-left": {
+  "class": "foliage",
+  "px": 18829,
+  "pctOfPlate": 0.353,
+  "plateBox": [
+   1642,
+   625,
+   1887,
+   757
+  ]
+ },
+ "cat-canopy-bottom-left": {
+  "class": "foliage",
+  "px": 35032,
+  "pctOfPlate": 0.657,
+  "plateBox": [
+   865,
+   1020,
+   1153,
+   1311
+  ]
  }
 }
