@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 15:51 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 16:20 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 53 live claims: 53 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 54 live claims: 54 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -66,6 +66,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · branch-radius-scales-with-the-tree hinge-foliage's branch/leaf split on 葛稚川移居圖, and by the same mechanism any painting where 
   · canopy-read-near       NEAR foliage only -- the compound canopies and the gorge, master y > ~3850. NOT valid on d
   · clean-plate-donor-scope Any clean-plate fill whose hole is SURROUNDED BY MATERIAL OF THE SAME KIND as the thing be
+  · depth-018-is-a-ceiling-the-fill-cannot-exceed camZ on the 葛稚川移居圖 plane stacks at --z-step 0.30, all zones. A ceiling on the PEAK only; i
   · depth-is-authored      Whole-painting depth on 葛稚川移居圖 and, by the same mechanism, any painting built on 散点透視 rath
   · disocclusion-is-solved-the-boundary-tone-is-not jobs/wang-meng/journey/z1's 12-plane stack, inpainted at --behind 100, under the ab-ge-cor
   · frame-zero-is-not-byte-exact-under-plane-fit render-parallax --plane-fit over a stack that has been through inpaint-planes --behind N. 
@@ -106,17 +107,19 @@ LIVING LAYER — cycles registered per zone
   z3w    75 patches · 5 planes · 65 regions
   z4w    77 patches · 6 planes · 54 regions
   z5w    62 patches · 6 planes · 50 regions
+        ⚠ STALE, no longer an animated region: sum-ridge-trees-crest-diagonal, sum-ridge-trees-right-lower, sum-ridge-trees-upper-right, sum-spur-trees-right-mid
   z6w    78 patches · 6 planes · 64 regions
+        ⚠ STALE, no longer an animated region: sum-crest-trees-centre-upper, sum-forest-crest-top-left, sum-forest-lower-terrace, sum-forest-mid-terrace, sum-forest-ridge-upper-right-of-centre, sum-forest-slope-upper-centre, sum-grove-dark-shoulder, sum-ridge-trees-crest-diagonal, sum-ridge-trees-right-lower, sum-ridge-trees-right-upper, sum-ridge-trees-upper-right, sum-spur-trees-right-mid, sum-tree-cluster-lower-spur, sum-treeline-crest-top-left, sum-treeline-left-flank, sum-treeline-left-flank-upper, sum-treeline-left-lower, sum-treeline-mid-left-ridge, sum-treeline-skyline-right, sum-treeline-summit-right, sum-wooded-slope-lower-left, sum-wooded-slope-top-right-corner, sum-wooded-slope-upper-left
 
 REGIONS — by class, from the file the builder reads
   fall       2
   figure     1
-  foliage    209
+  foliage    170
   still      6
   wave       2
 
 ROUTING — knowledge store vs config vs implementation
-  regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (220) · 0 violation(s)
+  regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (181) · 0 violation(s)
 
 DELIVERABLES
   jobs/wang-meng/film/THE-RISE.mp4
@@ -143,6 +146,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  90fb682  0.18 camZ is a ceiling: 0.45 tore the canvas, and I showed it before checking
+2026-08-24  95c9bc5  the breath returned to zero depth and zero depth is a pan, provably
+2026-08-24  1490855  REJECTED: the turbulence spectrum. Ryan prefers the subtle single sine
+2026-08-24  5f1dd36  wind gets a floor and a spectrum: 37% dead frames to 0, same peak swing
+2026-08-24  3cddd9a  diagnosed: the wind has no base component and the film has two framings
 2026-08-24  8f910b9  the rise paths re-authored: approaches now land on catalogued trees
 2026-08-24  5532d20  STATE regenerated: THE-RISE rebuilt from the catalogue, 193 frames checked intact
 2026-08-24  fcb6be5  check-holes sampled 3 frames of 4,631 and called it a verdict
@@ -150,16 +158,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  45b1879  STATE regenerated: five zones rebuilt, stale gust patches pruned
 2026-08-24  a07126f  the stale gust patches drop out: 64 registered entries pointed at superseded cuts
 2026-08-24  6323b51  register refuses a patch whose drawings do not exist
-2026-08-24  2794fb7  STATE regenerated: all five film legs rebuilt, 209 foliage regions
-2026-08-24  1c4615a  every leg of the film rebuilt through the catalogue: the summits go 0.3% to 16.7%
-2026-08-24  58481bc  STATE regenerated: z3w 46 to 103 patches, summit band catalogued and converted
-2026-08-24  b93272e  the summits become regions: 87 foliage polys where the film had 0.3% coverage
-2026-08-24  79b0384  z3w rebuilt through the catalogue: 46 patches to 103, leak 9434 to 1273
 ```
 
 ### ⚠ UNPUSHED
 
-**26 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**31 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -169,7 +172,8 @@ git push origin main
 
 ```
  M jobs/wang-meng/STATE.md
-?? jobs/wang-meng/evidence/2026-08-24-gust-and-fov-diagnosis.png
+ M jobs/wang-meng/journey/z1/living-work/cat-tree-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z1/living/built.json
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
