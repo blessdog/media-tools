@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 08:12 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 08:47 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 48 live claims: 48 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 50 live claims: 50 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -66,6 +66,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · clean-plate-donor-scope Any clean-plate fill whose hole is SURROUNDED BY MATERIAL OF THE SAME KIND as the thing be
   · depth-is-authored      Whole-painting depth on 葛稚川移居圖 and, by the same mechanism, any painting built on 散点透視 rath
   · disocclusion-is-solved-the-boundary-tone-is-not jobs/wang-meng/journey/z1's 12-plane stack, inpainted at --behind 100, under the ab-ge-cor
+  · frame-zero-is-not-byte-exact-under-plane-fit render-parallax --plane-fit over a stack that has been through inpaint-planes --behind N. 
   · gates-must-survive-a-clone Any repo whose correctness depends on hooks, checkers or generated files. Measured on medi
   · hinge-at-the-attachment Cut-out foliage cards in ink painting, where leaves are drawn as separate sprays hanging o
   · interior-disocclusion-is-tearing hinge-foliage cut-out cards over a clean plate, on 葛稚川移居圖. Measured 2026-08-21 on z1's fou
@@ -79,6 +80,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
 
 REFUTED — already tried, do NOT retry
   ✗ canopy-by-texture-statistics At distance Wang Meng's 牛毛皴 (hemp-fibre texture strokes) covers rock and forest alike, so the ridge 
+  ✗ copied-real-ink-over-inks-worse-than-flux Patch synthesis chooses donors by TEXTURE MATCH, and a hole beside dense hatching matches dense hatc
   ✗ mist-as-ink            There is no mist ink in this painting. What reads as mist is 留白 -- bare ground, negative space, the 
   ✗ no-whole-tree-to-segment There is no whole-tree SHAPE in this painting to find. Wang Meng draws a tree as separate marks over
   ✗ translation-parallax-is-refuted-on-a-cut-painting The planes are a decomposition of ONE continuous composition, not independent cels, so plane B's bru
@@ -137,6 +139,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  632fdc6  the deep half of the dolly is nearly free: invented INK flattens at camZ 0.33
+2026-08-24  ee3e00f  the frame-zero control was never byte-exact, so it could not see a leak
+2026-08-24  94d2d82  real ink over-inks worse than flux: the fill-source lever is refuted
+2026-08-24  8d85b29  ge hong moves one fourth: the fan swings, sleeve/hem/head masks are cut and unused
+2026-08-24  f6b8633  STATE regenerated
 2026-08-24  6aa79c5  journal: two numbers that were lying, and one picture that was worse
 2026-08-24  00ae5d2  STATE regenerated
 2026-08-24  81acece  the invented-material overlay was unreadable -- outlines, 1:1 crops, and the ink split
@@ -144,14 +151,25 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  6dbc48b  relief coverage counts ELIGIBLE planes, not all planes -- 42% was a phantom gap
 2026-08-24  4ff40a6  STATE regenerated: invented-material verdict landed, 48 live claims
 2026-08-23  e66da62  a deep dolly reveals invented material: 14.29% of the deepest frame is flux, not Wang Meng
-2026-08-23  89ad6b9  STATE regenerated: relief at 31 of 74 planes across all seven zones
-2026-08-23  8151dad  all five zones rebuilt in 44:53 -- relief coverage 4% to 42%
-2026-08-23  1e60a44  z3w rebuilt with its living layer intact -- relief coverage 4% to 27%
-2026-08-23  d4949dc  the rebuild reproduces the originals byte-for-byte except wall-clock timing
-2026-08-23  b7d5a67  z6w relief sheet: first output of build-relief running inside the zone chain
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**4 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
+
+### Uncommitted
+
+```
+ M jobs/wang-meng/STATE.md
+?? jobs/wang-meng/journey/z1/layers-filled-shiftmap/
+?? jobs/wang-meng/journey/z1/measure-work/
+```
+
+*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
