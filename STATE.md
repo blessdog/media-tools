@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 12:02 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 12:11 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -160,6 +160,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  a1fceb8  strip the marking scene to the painting and a pen: no seeded boxes, no camera, opens in Draw mode
 2026-08-25  e6034c5  correct the stale Blender-version notes in blender-multiplane.py
 2026-08-25  f16694a  author region outlines and pivots by hand in Blender: the mark round-trips at 0px error
 2026-08-25  7371b7f  report: the pen and the bushel — due diligence on the XP-Pen + Blender authoring surface
@@ -171,7 +172,6 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  ac3673d  reap 7.4GB of probe frame dumps: the journey 25GB was living/, never layers-*
 2026-08-25  5343ecb  HANDOFF.md: the cleanup pass, with the rootless-session warning first
 2026-08-25  a86a436  one document per layer: STATUS.md, NEXT-SESSION.md and journey-phase1 moved out of the live tree
-2026-08-25  e1f7987  ONE PLAN.md: merge the RISE 5 phases with the live parts of the 08-21 plan
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*

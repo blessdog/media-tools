@@ -115,6 +115,14 @@ for name in classes + ['pivot']:
 for stray in [l for l in gpd.layers if l.name == 'Layer']:
     gpd.layers.remove(stray)
 
+# Every layer needs a FRAME at the current scene frame before Blender will accept
+# a stroke on it -- without one the first pen-down fails with "No Grease Pencil
+# frame to draw on". A freshly created layer has none, and the only reason the
+# seeded build worked is that seeding happened to create them as a side effect.
+for lay in gpd.layers:
+    if len(lay.frames) == 0:
+        lay.frames.new(scene.frame_current)
+
 # One material per class, so what you are marking is obvious while you mark it
 # and a mis-filed stroke is visible instead of silent.
 gp.data.materials.clear()          # 'Black' ships with show_stroke=False, so a
@@ -216,6 +224,11 @@ for mode in ('PAINT_GREASE_PENCIL', 'PAINT_GPENCIL', 'GPENCIL_PAINT'):
     except (TypeError, RuntimeError):
         continue
 
+undrawable = [l.name for l in gpd.layers if len(l.frames) == 0]
+if undrawable:
+    sys.exit(f'refusing to save: no frame on {undrawable} -- Blender would '
+             f'reject the first stroke with "No Grease Pencil frame to draw on"')
+
 Path(a.out).parent.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.save_as_mainfile(filepath=str(Path(a.out).resolve()))
 
@@ -229,4 +242,5 @@ print(json.dumps({
     'layers': classes + ['pivot'],
     'seededStrokes': seeded,
     'openedInMode': entered,
+    'frames': {l.name: len(l.frames) for l in gpd.layers},
 }, indent=1))
