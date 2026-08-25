@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 18:05 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 18:20 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -147,6 +147,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  83d42a8  grow the polygon before the catalogue intersect: z1 card coverage 56.9% -> 99.1%
 2026-08-24  696b1b3  canopyRule=catalogue: the density heuristic was discarding 60% of located leaf
 2026-08-24  2c83e57  the foliage is UN-CUT, not under-swung: 38.5% of the leaf has a card on it
 2026-08-24  6fca38f  swing by DISPLACEMENT, not angle: distant foliage moves 4-8x, the near tree 7%
@@ -158,12 +159,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  90fb682  0.18 camZ is a ceiling: 0.45 tore the canvas, and I showed it before checking
 2026-08-24  95c9bc5  the breath returned to zero depth and zero depth is a pan, provably
 2026-08-24  1490855  REJECTED: the turbulence spectrum. Ryan prefers the subtle single sine
-2026-08-24  5f1dd36  wind gets a floor and a spectrum: 37% dead frames to 0, same peak swing
 ```
 
 ### ⚠ UNPUSHED
 
-**39 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**40 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main

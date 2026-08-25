@@ -329,57 +329,6 @@ def regions_here():
     return out
 
 
-def dark_accent_mask(poly_mask, plate_rgb, cls):
-    """The canopy on a DISTANT ridge: the darkest accents, and nothing else.
-
-    The density+compactness read below is tuned on the compound canopies and
-    it does not survive the trip up the scroll. Measured on s-summit-crest-left
-    (living/_probe-canopy-*.png, _probe-master-*.png): the tuned numbers claim
-    36-46% of the crop, and three attempted fixes all failed to shrink it onto
-    the trees --
-
-      * a tighter window and a harder ink threshold (still the whole shoulder),
-      * high-pass texture energy, at plate res AND at master res (0.64% ->
-        0.63% of plate: no effect),
-      * local contrast at master res (44.8% -> 29%, still the shoulder).
-
-    The mechanism they all miss: up here Wang Meng's 牛毛皴 covers rock and
-    forest alike, so no local texture statistic separates them -- the shoulder
-    really is a dense, compact, high-contrast field of ink. What DOES separate
-    them is plain tone. The trees at this distance are painted as the darkest
-    accents on a mid-tone slope: the darkest 2-3% of the box lands on tree
-    mass and on the crest ribbon and nowhere else (living/evidence-summit-darkness-map.png,
-    living/evidence-summit-dark-accents.png). So take the darkest N%, close it into coherent
-    masses, drop the specks, and grow it a little for the warp's feather.
-
-    Conservative by construction -- the paler pines on the left of that same
-    crest are not claimed. Coverage is widened after a verdict on the look,
-    never before.
-    """
-    grow = cv2.dilate(poly_mask, cv2.getStructuringElement(
-        cv2.MORPH_ELLIPSE, (2 * a.canopy_grow + 1,) * 2))
-    sel = grow > 128
-    v = cv2.cvtColor(plate_rgb, cv2.COLOR_RGB2HSV)[..., 2].astype(np.float32) / 255
-    t = float(np.percentile(v[sel], cls.get("accentPct", 3.0)))
-    m = ((v < t) & sel).astype(np.uint8)
-    m = cv2.morphologyEx(m, cv2.MORPH_CLOSE, cv2.getStructuringElement(
-        cv2.MORPH_ELLIPSE, (cls.get("accentClose", 9),) * 2))
-    n, lab, st, cen = cv2.connectedComponentsWithStats(m, 8)
-    inside = poly_mask > 128
-    keep = np.zeros_like(m)
-    for i in range(1, n):
-        if st[i, 4] < cls.get("accentMin", 110):
-            continue
-        cy, cx = int(round(cen[i][1])), int(round(cen[i][0]))
-        if inside[cy, cx]:
-            keep[lab == i] = 1
-    g = cls.get("accentGrow", 5)
-    if g:
-        keep = cv2.dilate(keep, cv2.getStructuringElement(
-            cv2.MORPH_ELLIPSE, (g,) * 2))
-    return (keep * 255).astype(np.uint8)
-
-
 _CATALOGUE_CACHE = {}
 
 
@@ -469,12 +418,18 @@ def canopy_mask(poly_mask, plate_rgb, cls):
     """
     if cls.get("canopyRule") == "catalogue":
         m = catalogue_mask(poly_mask, cls)
-        if m is not None:
-            return m
-        print("    canopyRule=catalogue but no leafMask on disk -- "
-              "falling back to density", file=sys.stderr)
-    if cls.get("canopyRule") == "dark-accent":
-        return dark_accent_mask(poly_mask, plate_rgb, cls)
+        if m is None:
+            # NOT A FALLBACK. A quiet downgrade to density is exactly what hid
+            # this bug for three days: it produced masks that looked like masks
+            # and carried 57% less leaf, and nothing in the output said so.
+            # Build it (catalogue/sam-all-tiles.sh) or set canopyRule off on
+            # purpose -- do not let the pipeline decide silently.
+            sys.exit(f"canopyRule=catalogue but classes.{cls.get('technique','?')}"
+                     f".leafMask is missing or not on disk. Build it with "
+                     f"jobs/wang-meng/catalogue/sam-all-tiles.sh, or change the "
+                     f"rule deliberately. Falling back to the density read would "
+                     f"cost ~57% of the leaf without saying so.")
+        return m
     grow = cv2.dilate(poly_mask, cv2.getStructuringElement(
         cv2.MORPH_ELLIPSE, (2 * a.canopy_grow + 1,) * 2))
     sel = grow > 128
