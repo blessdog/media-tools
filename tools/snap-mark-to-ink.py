@@ -31,7 +31,11 @@ Image.MAX_IMAGE_PIXELS = None
 p = argparse.ArgumentParser(prog='snap-mark-to-ink.py')
 p.add_argument('--marks', required=True, help='polys in MASTER px, from blender-read-marks')
 p.add_argument('--image', required=True, help='the master painting')
-p.add_argument('--foliage', help='authored foliage mask at master size; limits the snap to real foliage territory')
+p.add_argument('--foliage', default='jobs/wang-meng/catalogue/foliage-master.png',
+               help='authored foliage mask at master size; limits the snap to real foliage '
+                    'territory. Defaults to the WHOLE-SCROLL union (23.4%% cover, y 585-15922). '
+                    'The per-band masks (foliage-master-z3w etc.) each cover one band only, and '
+                    'using one silently drops every tree outside it')
 p.add_argument('--out', required=True)
 p.add_argument('--sheet', help='before/after PNG so the snap can be judged by eye')
 p.add_argument('--ink-delta', type=int, default=18,

@@ -63,7 +63,17 @@ plate = json.loads(plate_path.read_text())
 IW, IH = plate['size']
 MX0, MY0 = plate['masterBox'][0], plate['masterBox'][1]
 K = plate['masterPxPerRegionPx']
-img_path = Path(a.image).resolve() if a.image else plate_path.with_name('plate.png')
+# plate.json already names its own image in `out`; trust that before guessing a
+# filename, so a plate written under any name still resolves.
+if a.image:
+    img_path = Path(a.image).resolve()
+elif plate.get('out'):
+    cand = Path(plate['out'])
+    img_path = (cand if cand.is_absolute() else Path.cwd() / cand).resolve()
+    if not img_path.exists():
+        img_path = plate_path.with_name(Path(plate['out']).name)
+else:
+    img_path = plate_path.with_name('plate.png')
 if not img_path.exists():
     sys.exit(f'image not found: {img_path}')
 
