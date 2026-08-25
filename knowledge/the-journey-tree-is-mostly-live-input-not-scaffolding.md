@@ -20,6 +20,9 @@ asked-as:
   - why is jobs/wang-meng 25GB
   - is the living directory scaffolding or an input
   - which journey directories are read by a live tool
+  - does rebuilding the living cycles cost money
+  - will phase 0 invalidate the baked cycles
+  - how do I free disk space on wang-meng
 ---
 
 ## The 25GB was never the `layers-*` stages — it is the baked living layer, which is a live input
@@ -47,15 +50,52 @@ superset. It is 47MB and re-running the chain without it costs a re-segment, so
 it is kept as a chain input, not reaped. **The category is not where the space
 is, so the containment rule bought nothing here.**
 
-**`living/` is a live render input and must not be reaped.**
+**`living/` is a live render input, and reaping it costs TIME, not money.**
 `jobs/wang-meng/living/living-z<zone>.json` names every patch by ABSOLUTE path
 into `journey/<zone>/living/<plane>__<region>/`, and `render-parallax.py --living`
-opens those PNGs at every flight render. It is 16.8GB and it is not scaffolding.
-It is also not cheaply rebuildable: `layers-filled` is produced by
-`inpaint-planes --method flux`, a generative step, and the cycles are baked
-against that specific stack (see
-[[a-living-layer-is-baked-against-its-stack]]). Reaping it trades a paid
-regeneration for disk.
+opens those PNGs at every flight render. Delete them today and rendering breaks
+until they are rebuilt.
+
+**CORRECTED 2026-08-25 — the earlier version of this claim said reaping `living/`
+"trades a paid generative regeneration for disk". That was wrong**, and the error
+was conflating the cycles with the stack they were rendered against:
+
+| | size | made by | costs |
+|---|---|---|---|
+| `journey/z*/layers-filled` | 171 MB | `inpaint-planes --method flux` | **paid GPU** |
+| `journey/z*/living` | 16.3 GB | `hinge-foliage.py` → `build-zone-living.py` | **CPU only** |
+
+Verified: both cutters import only `numpy`, `cv2` and `PIL` — **zero torch
+imports**. The flux-generated artifact is the 171MB `layers-filled`, and nothing
+in this cleanup or in PLAN.md Phase 0 touches it. The 16GB sitting on top of it
+is pure CPU output. **One cost is recoverable with time and the other is not, so
+the distinction decides what you are allowed to delete.**
+
+**And the number that reframes the whole question: 98.5% of the cache is foliage,
+and Phase 0 re-cuts every foliage card.**
+
+```
+foliage   17.25 GB   98.5%   510 region dirs   <- PHASE 0 re-cuts every one
+water      0.25 GB    1.4%    24
+figure     0.02 GB    0.1%     5
+```
+
+(Measured over 539 region dirs / 16.31 GB on disk; `sum-*` summit regions are
+trees and count as foliage.) PLAN.md Phase 0 changes the branch-radius basis
+**across all 170 regions**, so it does not preserve any foliage cut — it replaces
+them wholesale. Only ~0.3GB of water and figure cycles survives it.
+
+**So this was never a preservation question, and it should not be audited as
+one.** The disk problem and the Phase 0 problem are the SAME problem: nobody
+should spend a session carefully auditing 17GB that the next real piece of work
+regenerates. **The order is: fix the cut, rebuild the cycles, and the disk
+resolves itself because the rebuild overwrites.**
+
+**One number nobody has, and it should not be guessed:** wall-clock for a full
+scroll cycle rebuild. It has been done — commit `a0be4d0`, *"the whole scroll
+rebuilt on the catalogue: moving leaf 19.4% -> 67.9%"* — so it is a known
+quantity to somebody, just not measured here. **Time the first zone before
+committing to all five.**
 
 **What WAS scaffolding, and was reaped 2026-08-25 (7.4GB, nothing tracked lost):**
 

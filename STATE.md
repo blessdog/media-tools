@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 11:20 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 11:26 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -159,6 +159,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  73be5d1  retire the cleanup handoff: the pass is done, with two corrections to its premises
 2026-08-25  cf685ef  type the ten inkwash probe jobs: six claims, and two dead routes annotated
 2026-08-25  ac3673d  reap 7.4GB of probe frame dumps: the journey 25GB was living/, never layers-*
 2026-08-25  5343ecb  HANDOFF.md: the cleanup pass, with the rootless-session warning first
@@ -170,12 +171,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  7851e41  measured: Frame By Plane registers 63 of 353 operators headless, and zero importers
 2026-08-25  633676e  blender-multiplane: the camera moves into Blender, and the parallax is real
 2026-08-25  7f4709d  card sheets built for the three compared trees; STATE regenerated
-2026-08-25  7684ced  research: an authoring surface for cutout rigs, and the SAM on disk is two generations old
 ```
 
 ### ⚠ UNPUSHED
 
-**2 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -184,9 +184,7 @@ git push origin main
 ### Uncommitted
 
 ```
-RM knowledge/handoff-cleanup-pass.md -> knowledge/archive/handoff-cleanup-pass.md
- M knowledge/water-motion.md
-?? knowledge/the-2026-08-25-cleanup-pass-is-done.md
+ M STATE.md
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
