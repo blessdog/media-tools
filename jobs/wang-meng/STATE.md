@@ -3,13 +3,15 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 10:47 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 11:01 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
 Every `kind: open` claim in the store. These are PLANS, not specs — `proven: false`. Do not build against one without a verdict.
 
 ```
+? handoff-cleanup-pass   (2026-08-25)
+    READ `jobs/wang-meng/HANDOFF.md` — the cleanup pass, in order
 ? merge-the-two-region-catalogues-into-one   (2026-08-20)
     merge the two region catalogues into one
     why: regions.json and living-polys.json BOTH carry a class per region, and only living-polys.json is executed
@@ -30,7 +32,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 59 live claims: 59 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 60 live claims: 60 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -96,6 +98,7 @@ REFUTED — already tried, do NOT retry
   ✗ translation-parallax-is-refuted-on-a-cut-painting The planes are a decomposition of ONE continuous composition, not independent cels, so plane B's bru
 
 OPEN — plans, NOT specs. proven: false. Do not build against these.
+  ? handoff-cleanup-pass   Ryan, 2026-08-25: "clean everything up and get all of our everything, all the
   ? merge-the-two-region-catalogues-into-one Why it matters: regions.json and living-polys.json BOTH carry a class per region, and only
   ? mist-card              A translucent band drifting on its own plane -- the multiplane technique from
   ? museum-edition-curator-directed-emphasis-a-narra Why it matters: Raised 2026-08-21 while the first full assembly was being built. He said '
@@ -151,6 +154,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  5343ecb  HANDOFF.md: the cleanup pass, with the rootless-session warning first
 2026-08-25  a86a436  one document per layer: STATUS.md, NEXT-SESSION.md and journey-phase1 moved out of the live tree
 2026-08-25  e1f7987  ONE PLAN.md: merge the RISE 5 phases with the live parts of the 08-21 plan
 2026-08-25  2ac205b  STATE regenerated: the RISE 5 plan surfaces at the top of what is open
@@ -162,7 +166,6 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  7684ced  research: an authoring surface for cutout rigs, and the SAM on disk is two generations old
 2026-08-25  1a0c4f6  the other trees are SHREDDED, not badly swung: 113 of 147 cards hinge on nothing
 2026-08-25  1271663  RISE 5 design: one unbroken rise, fov ceiling 2.2, ridge pines held
-2026-08-25  332acc0  a tree welded to rock cannot be carded: the ridge pines were moving the mountains
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
