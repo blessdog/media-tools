@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 07:52 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 07:58 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -122,12 +122,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (181) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/THE-RISE.mp4
   jobs/wang-meng/film/RISE-z6w.mp4
   jobs/wang-meng/film/RISE-z5w.mp4
   jobs/wang-meng/film/RISE-z4w.mp4
   jobs/wang-meng/film/RISE-z3w.mp4
   jobs/wang-meng/film/RISE-z1.mp4
-  jobs/wang-meng/film/THE-RISE.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 
 RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
@@ -146,6 +146,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  e91ca89  journal: the density rule was eating the leaves, and swing was never the problem
 2026-08-25  64faeb8  STATE regenerated: the 680-line uncommitted block is gone, the rebuild is in
 2026-08-24  a0be4d0  the whole scroll rebuilt on the catalogue: moving leaf 19.4% -> 67.9%
 2026-08-24  cfec3f6  STATE regenerated: living layer 260 -> 510 patches after the catalogue rebuild
@@ -157,12 +158,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  6fca38f  swing by DISPLACEMENT, not angle: distant foliage moves 4-8x, the near tree 7%
 2026-08-24  f660f09  STATE regenerated: rise paths re-authored with a cruising wide
 2026-08-24  6d75041  the traverse rests slightly IN, so the pull-out is a real move
-2026-08-24  4eb8921  OPEN: why only ~40% of the leaf inside a region moves, four dead ends closed
 ```
 
 ### ⚠ UNPUSHED
 
-**45 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**46 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
