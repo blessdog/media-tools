@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 07:51 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 07:52 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -146,6 +146,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  64faeb8  STATE regenerated: the 680-line uncommitted block is gone, the rebuild is in
 2026-08-24  a0be4d0  the whole scroll rebuilt on the catalogue: moving leaf 19.4% -> 67.9%
 2026-08-24  cfec3f6  STATE regenerated: living layer 260 -> 510 patches after the catalogue rebuild
 2026-08-24  2904d99  write the claim hinge-foliage.py has been citing since it was reverted
@@ -157,24 +158,15 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  f660f09  STATE regenerated: rise paths re-authored with a cruising wide
 2026-08-24  6d75041  the traverse rests slightly IN, so the pull-out is a real move
 2026-08-24  4eb8921  OPEN: why only ~40% of the leaf inside a region moves, four dead ends closed
-2026-08-24  8531032  the Ge Hong tree's cycle back to the approved single sine after the spectrum test
 ```
 
 ### ⚠ UNPUSHED
 
-**44 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**45 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
 ```
-
-### Uncommitted
-
-```
- M jobs/wang-meng/STATE.md
-```
-
-*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
