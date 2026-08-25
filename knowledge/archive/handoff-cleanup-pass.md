@@ -2,8 +2,9 @@
 id: handoff-cleanup-pass
 kind: open
 conflict-key: what-is-the-current-cleanup-task
-status: live
+status: superseded
 supersedes: []
+superseded-by: the-2026-08-25-cleanup-pass-is-done
 proven: false
 verified-on: 2026-08-25
 evidence:

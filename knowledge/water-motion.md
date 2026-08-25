@@ -26,7 +26,11 @@ asked-as:
   - animate a waterfall
 ---
 
-**Make the water move** with animate-strokes, never with cards. The water in
+## Make the water move with animate-strokes, never with cards
+
+**Water here means ripples and waterfall threads** — animate a waterfall, animate ripples, make the water move: all one answer.
+
+Move the water with animate-strokes, never with cards. The water in
 this painting is drawn as thin ripple arcs and fall threads: they quiver in
 place, uncover no ground, and carry no structure that has to stay still.
 
