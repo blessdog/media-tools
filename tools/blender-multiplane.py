@@ -12,9 +12,11 @@ PRIOR ART (searched 2026-08-25, per LAW #0 — do not delete this block):
   · Frame By Plane — free GPL-3.0 Blender add-on, github.com/Cre-Pan/frame-by-plane.
     Image planes at camera depth, multiplane camera setups, parallax, cutout
     animation, 62 effects, and it imports layered PSD/PROCREATE preserving
-    transparency and layer order. Requires Blender 5.2 LTS; this machine has
-    5.1.2. IT IS THE RIGHT TOOL for the authoring half and should be adopted the
-    moment Blender is upgraded — this script is not a replacement for it.
+    transparency and layer order. Requires Blender 5.2 LTS. UPDATED
+    2026-08-25: this machine is on 5.2.1 LTS now, so that blocker is GONE and the
+    add-on is installable today. IT IS THE RIGHT TOOL for the authoring half of
+    LAYERED art — but note it imports layers someone else already cut; deciding
+    WHICH INK IS ONE BUSHEL is authored via tools/blender-mark-scene.py.
   · Blender "Images as Planes" (built in) — does the import, not the depth rig.
   · After Effects 3D layers + camera — industry default, not scriptable from
     this pipeline, not free.
@@ -24,9 +26,10 @@ PRIOR ART (searched 2026-08-25, per LAW #0 — do not delete this block):
   true: Frame By Plane is a UI add-on for a human arranging artwork. This repo
   needs the same scene built HEADLESS from an existing layers.json that SAM
   already cut, with the plane tilts a previous verdict measured. That is 90
-  lines of bpy against an add-on that cannot be driven from a shell. When
-  Blender is on 5.2 and Ryan is authoring in Procreate, the authoring path is
-  Frame By Plane and this file's only job is the headless render.
+  lines of bpy against an add-on that cannot be driven from a shell. UPDATED 2026-08-25: the
+  Procreate half of that sentence is DEAD — the pen surface is an XP-Pen Deco
+  driving this Mac, not an iPad, so authoring happens in Blender itself
+  (tools/blender-mark-scene.py) and no Procreate round trip exists.
 
 WHAT THIS REPLACES: tools/render-parallax.py (639 lines) — a hand-rolled
 multiplane camera with its own projection maths, written while Blender sat
