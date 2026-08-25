@@ -1,28 +1,221 @@
-# 葛稚川移居圖 — the plan
+# RISE 5 — the locked plan
 
-Written 2026-08-21, after a week of fragments and no film. Ryan: *"First, tell
-me what we're doing, where we're going. In simple terms."* This file is the
-answer, and it is the SSOT for what "done" means. `STATE.md` is generated and
-says what exists right now; this says what we are aiming at.
+*2026-08-25. Supersedes `archive/superseded-plans/2026-08-25-rise5-design-ONE-UNBROKEN-RISE.md`.*
+*READ THIS FIRST after any compaction or new session.*
+
+---
 
 ## The end state
 
-A film in which Wang Meng's scroll is **alive** — water runs, foliage stirs in
-gusts, the figures move — and a camera travels up through it from the river at
-the bottom to the summits at the top, at a pace a narrator can talk over.
-1920×1080. Roughly three minutes for the silent pass; longer once narration
-sets the pace.
+A film of 葛稚川移居圖 in which **the mountain is alive and a camera explores it.**
+Under four minutes. Rendered through **Blender**, not the hand-rolled renderer.
 
-Two derivatives fall out of the same assets and are not separate projects:
+Ryan's framing, 2026-08-25:
 
-- **Indefinite mode.** The motion is already endless — cycles are indexed
-  `(frame // hold) % count` (`tools/render-living.py:119`) — so a screensaver
-  needs a closed-loop camera path and cycle lengths that do not re-sync, not
-  new animation.
-- **Museum edition.** A curator narrates and the film responds: highlight the
-  passage they are pointing at, bolden its lines, dim the surround, hold.
-  Every region already has a mask, which is exactly what an emphasis layer
-  needs.
+> "Think about the whole painting as the mountains alive. And we are capturing it
+> through these beautiful shots as we kind of go from a wide angle and crop in,
+> pan around as we zoom out. Should go in and out, left, up, down, right."
+
+Three things must be simultaneously true, and none of them is true today:
+
+1. **The foliage cut is bushels, not confetti.** Today only the tree beside Ge is
+   cut correctly (19 cards). `s-great-trees-upper` gets 147 cards, 113 of which
+   hinge on nothing.
+2. **The motion is scattered, gentle and sparse.** A couple of swings, a second
+   or two of quiet, then a smaller shuffle in a *different direction*. Most trees
+   never move. Never exactly one moving thing in a frame.
+3. **The camera does real shot work**, in and out and around, with actual
+   parallax — measured, not asserted.
+
+---
+
+## What is already settled — do not re-litigate
+
+| settled | detail |
+|---|---|
+| **Renderer** | Blender 5.2.1 LTS. `tools/blender-multiplane.py` builds the scene headless; measured 0.75 s/frame, parallax differential **1.091×** at a 43.3% dolly vs THE-RISE's **1.009×** at 5.5%. |
+| **Authoring surface** | Frame By Plane 7.1.18, in the GUI. Its importers do **not** register headless (63 of 353 operators register in `-b`, zero importers) — `knowledge/frame-by-plane-importers-are-gui-only.md`. |
+| **Ridge pines are HELD** | A tree whose ink is continuous with the rock has no card boundary. `knowledge/store/a-tree-welded-to-rock-cannot-be-carded.md`. This retires the summit-coverage goal — 52.3% was measuring the defect. |
+| **Swing math untouched** | Ryan approved the tree beside Ge at `carrier 1`, `swing 6`, `flutter 0.15`, `gust 0.10,0.08,0.22`, `gust-rest 0.15`, `under: hold`. That approval is for **that tree**, not the technique everywhere. |
+| **`under: hold`** | A swinging card reveals more leaves, never bare ground. |
+| **Water is fine** | The **waterfall** is the gap, not the water. |
+| **No regeneration** | Cinemagraph models (DreamLoop, LTX, Loopa) repaint brushwork. Wrong technique here, permanently. |
+| **RISE 4 shots** | Retired at tag `hard-pivot-rise5-prep`. Nothing gets assembled from existing renders. |
+
+---
+
+## Phase map
+
+Each phase ends in something Ryan looks at. Phases 0–2 are strictly ordered;
+3 and 4 can run in either order once 2 lands.
+
+```
+  0  THE CUT          bushels on every tree, not just Ge's
+  1  THE MOTION       scattered gentle events, varied direction
+  2  WHAT MOVES       sparse; ridge pines held; never one lone mover
+  2b THE FIGURES      not one figure moves — carried from the 08-21 plan
+  3  THE WATERFALL    the one thing that visibly does not move
+  4  THE SHOTS        Blender camera work; the Blender depth ceiling is UNMEASURED
+  4b THE CATALOGUE    y 0–4712 and 12594–15923 uncatalogued; runs alongside
+  5  ASSEMBLE         cut, review, ship to the Desktop symlink
+```
+
+Phases 0–2 are the deliverable: MAKE THE PICTURE MOVE. Phase 4 is the camera and
+it comes last on purpose — see *Two jobs* below, and the MOTION BEFORE CAMERA law.
+
+---
+
+## PHASE 0 — the cut
+
+**The defect, measured.** Identical class settings on all three trees, no
+per-region overrides anywhere:
+
+| tree | cards | hinged at a branch | hinged at an arbitrary foot |
+|---|---|---|---|
+| `s-pine-over-bridge` (broadleaf, APPROVED) | 19 | 12 | 7 |
+| `s-gorge-big-canopy` | 59 | 55 | 4 |
+| `s-great-trees-upper` | **147** | 34 | **113** |
+
+**Mechanism.** `branchRadius auto` = 0.55 × that tree's own p99 stroke
+half-width. It reproduces Ryan's 5 on Ge's tree and yields 2–3 on trees drawn
+with thinner strokes. A 2px morphological opening cannot isolate a branch, so
+the cutter slices at every thin neck and shreds one spray into worms.
+
+**Work.** Find a basis for the branch radius that holds across all 170 regions.
+Candidates to test, cheapest first — but **LAW #0 applies: search for how cutout
+riggers solve limb detection before writing any of these.**
+- scale from crown size / card area rather than stroke width
+- skeletonise the ink and cut at junctions rather than at thin necks
+- SAM/Roboflow: let a click define the bushel and skip the automatic cut entirely
+
+**Done when:**
+- `s-pine-over-bridge` still produces **19 cards**, unchanged. If Ge's tree moves,
+  the fix is wrong.
+- No region has more than **35% of its cards hinged at a foot**. (`cardsFoot /
+  cards` in each `drawings/cycle.json`. Today: pine 37%, gorge 7%, great-trees
+  77%.) *This number is CHOSEN, not measured — revisit once three trees pass.*
+- A `--card-sheet` contact strip of six trees, opened for Ryan, reads as bushels.
+
+**Evidence lands:** `jobs/wang-meng/evidence/cards/`
+
+---
+
+## PHASE 1 — the motion
+
+**What Ryan asked for, in his words:**
+
+> "I want the trees to blow naturally, not faster. Just a couple of swings. And
+> then a second or two later, have it gently breeze again, a tiny little shuffle.
+> Move in a different direction. Just tiny little movements here and there. Not
+> just a single one, and then dead."
+
+**What is built.** One gust envelope, one sine, one wind direction (`--angle 8`),
+all cards on one clock offset by position. Attack+hold+decay = 0.40 of an 8s
+loop, so 60% of every loop sits at 15% amplitude. That is literally "two or
+three movements, then dead still."
+
+**What the model needs to become.** Several small events per loop, at
+**irregular** spacing, each with **its own direction**, none of them larger than
+today's peak. Explicitly:
+- **not faster** — Ryan said so directly
+- **not bigger** — amplitude is ruled out twice
+- **not the broadband turbulence** — refuted 2026-08-24, `knowledge/subtle-beats-continuous-for-this-painting.md`
+
+**Open question for Ryan, needed before building:** roughly **three or four
+events per 8 seconds**, or slower — a few events per **twenty** seconds? He was
+asked and the conversation moved on. *Assumption if unanswered: 3 events per 8s
+loop, the largest at today's peak and the others at 40–60% of it.*
+
+**Done when:**
+- An A/B of one tree, current vs new, opened for Ryan, and he says the rhythm is
+  right.
+- The loop still closes seamlessly (measured: frame 0 vs frame N-1 seam).
+- Peak degrees unchanged from today's approved value.
+
+**Evidence lands:** `jobs/wang-meng/evidence/`
+
+---
+
+## PHASE 2 — what moves at all
+
+> "Most of the trees on the canvas — I don't even want most of them animated,
+> just little specks here and there in a shot. Not every tree needs to be moving
+> like a full windstorm is blowing through."
+
+And the failure mode he named:
+
+> "It's weird when you're on a shot for about five ten seconds and one single
+> bush in the middle of the shot moves, has two or three movements, and then is
+> dead still."
+
+**Work.**
+1. Ryan marks the sheets. Four contact sheets exist at
+   `jobs/wang-meng/evidence/weld/sheet-{0..3}.png`, cells numbered **000 at the
+   river to 169 at the summit**. He marks the few that should be alive;
+   everything unmarked is held. This also resolves the ridge pines for free.
+2. Add `held: true` per region in `regions.json`; the builder skips them.
+3. **The lone-mover rule:** no shot may contain exactly one live region. Enforced
+   as a check against the shot's frustum, not as a guideline.
+
+**Done when:**
+- Every one of the 170 regions has an explicit alive/held flag.
+- `check` reports zero shots with exactly one live region.
+- The summit renders with no foliage motion and does not read as dead.
+
+---
+
+## PHASE 3 — the waterfall
+
+> "The water looks fine as well. Where I'm telling you that it's not animated is
+> like the waterfall."
+
+`w-gorge-fall`, `w-compound-fall`, `w-lower-pool`, `w-midstream` are all **built**
+and the previous film simply never framed them. Two possibilities and they need
+separating with pixels, not reasoning: the shots missed them, or the fall motion
+is invisible at shipping framing.
+
+**Done when:** each of the four renders at the fov the film actually uses, opened
+for Ryan, and each visibly moves — or is diagnosed with a mechanism.
+
+---
+
+## PHASE 4 — the shots
+
+**Vocabulary is already written**: `jobs/wang-meng/film/MOVES.md` — push in, pull
+out, pan, tilt, diagonal drift, anchored zoom, drifting anchor, opposition move,
+hold-move-hold, speed ramp, breathing. Ryan's complaint is that it is
+underutilised, not that it is missing.
+
+**Rules that bind every shot:**
+- **fov ceiling 2.2**, and the frame must always contain a *region* — a gorge
+  mouth, a bank, a compound — never one tree centred and isolated.
+- **Real z travel.** `check-camera-plan.py` gates the plan before a frame
+  renders. Target differential ≥ **1.05×** near-vs-far growth. THE-RISE was
+  1.009×. *Chosen, not measured — revisit after the first three shots.*
+- **No recycling.** Every shot renders fresh through Blender.
+- Under four minutes total.
+
+**Work.** `blender-multiplane.py` must gain: image-sequence textures per plane
+(so the living layer plays), and camera paths read from a shot JSON.
+
+**Done when:** every shot passes the camera gate, and a contact sheet of first
+frames is opened for Ryan before any full render.
+
+---
+
+## PHASE 5 — assemble
+
+Cut, review, `~/Desktop/WANG-MENG-LATEST.mp4` refreshed, journal entry appended,
+README era updated.
+
+---
+
+## CARRIED FORWARD from the 2026-08-21 plan — still live, was missing above
+
+The 2026-08-21 `PLAN.md` was written after "a week of fragments and no film" and
+called itself the SSOT. This document replaces it (archived at
+`archive/superseded-plans/2026-08-21-PLAN.md`), and these parts of it are
+UNCHANGED and still binding.
 
 ## Two jobs, and they are not the same job
 
@@ -31,92 +224,13 @@ Two derivatives fall out of the same assets and are not separate projects:
    like progress, which is why it keeps getting done first. See the MOTION
    BEFORE CAMERA law in `../../CLAUDE.md`.
 
-## Where each phase stands
+### PHASE 2b — THE FIGURES · *the omission in the plan above*
 
-Every benchmark below is a thing that can be looked at or counted, not a
-feeling. "Pass" means Ryan has seen it and said so, or a number is on the
-board.
+**Not one figure moves.** This was called "the real gap" on 2026-08-21 and the
+RISE 5 plan above did not mention it at all. The `what-moves` LAW names robes
+first: *"just the delicate things move. Their robes, the water ripples, leaves."*
 
-### Phase 0 — THE RISE · **DONE 2026-08-21**
-
-`film/THE-RISE.mp4`, 172.96s / 4151 frames / 1920×1080, shipped via
-`~/Desktop/WANG-MENG-LATEST.mp4`. The film exists.
-
-### Phase 0b — Depth · **SETTLED 2026-08-21**
-
-Not in the original plan, which was the plan's biggest omission — Ryan:
-*"I'm reading the plan and I see nothing about parallax. I really want the 2.5D."*
-
-Then the finding that mattered: **the plane stack was contributing nothing.**
-Rendering a traverse with all 13 depths collapsed onto one changed **0 of
-2,073,600 pixels**. Every "parallax" shot for weeks was a pan.
-
-Four techniques tried, one survives:
-
-| technique | changes | verdict |
-|---|---|---|
-| multiplane truck | where things are, permanently | refuted |
-| sheet warp | the shape of the brushwork | rejected |
-| disparity spacing | evens the falloff | refuted — makes a diorama |
-| **breath (z, differential scale)** | how big things are, returns to 0 | **approved** |
-
-Law: depth may resize, never deform. Setting: cosine breath, peak `z` 0.18,
-period clamped to the leg, every leg starting and ending at rest.
-
-**Still open here** — two verdicts and one untried option:
-- does relief read as surface or bulge on the z1 cliff walls?
-- does 0.18 hold across the 70s leg the way it did across 10?
-- tilt at 1×, which the kit records as never fairly tested (rejected at 4×
-  exaggeration, before `--plane-fit` existed, and never dialled back).
-
-### ~~Phase 0 — THE RISE v1~~ (superseded by the above)
-
-The first assembly. Everything currently animated, one continuous pass,
-bottom to top, with the camera moving toward motion and nothing hidden.
-
-| | |
-|---|---|
-| Build | `film/build-rise.sh` → `film/THE-RISE.mp4` |
-| Length | 176s — z1 53s, z3w 70s, z4w 20s, z5w 9s, z6w 24s |
-| Benchmark | one file, 1920×1080, plays end to end without a black frame or a cream bar |
-| Benchmark | at least one approach per zone that has animation; **zero** invented moves in zones that have none |
-| Pass | Ryan watches it through and can name what is dead in it |
-
-The last 33 seconds are a straight rise with nothing moving. That is not an
-oversight, it is the report.
-
-### Phase 1 — Close the water gaps · **hours**
-
-**CORRECTED 2026-08-21 after opening the mask overlays.** It is not six, and
-they cannot simply be switched on. The cycles on disk feed `render-living`,
-the master-space 2D renderer; the film's legs use `render-parallax` with the
-per-zone plane stacks, which builds its own cycles from polygons in
-`living-polys.json`. So these regions need **polygons authored by eye**, the
-same loop the 31 stations used — real work, not a config edit.
-
-| Region | Mask verdict (blue = what would move) |
-|---|---|
-| `w-river-entry` | **good** — on the open water |
-| `w-river-foreground` | **good** — on the water between the rocks |
-| `w-bridge-rapids` | **bad** — much of it is on the trestle bridge itself |
-| `f-station8-fall` | **usable** — tracks the column, spills onto rock |
-| `w-upper-stream` | **refuted** — confetti over rock; already recorded as "not a stream" |
-| `f-left-tall-fall` | **refuted** — speckle over canopy; already recorded as bare cliff |
-
-| | |
-|---|---|
-| Benchmark | z1 `built.json` goes 18 → ~24 patches |
-| Benchmark | all six ids appear in `journey/*/living-masks/index.json` |
-| Benchmark | the opening shot of THE RISE has moving water in it — right now the river the film opens on is a still |
-| Risk | the two boxes refuted by eye (`f-left-tall-fall` is bare cliff; `w-upper-stream` is the same fall's lower half) must be re-cut from the corrected polygons, not from the old boxes |
-
-The deeper fix — merging the two region catalogues into one file — is an
-`open` claim marked `proven: false` and needs a verdict before anyone touches
-it. Phase 1 is the additive version and is reversible.
-
-### Phase 2 — The figures · **the real gap**
-
-Not one figure moves. Ten figures are catalogued and `living/cycles/` holds
+Ten figures are catalogued and `living/cycles/` holds
 exactly one thing: `bridge-proto`, a 73-frame cycle of the Ge Hong scene made
 earlier and never wired in.
 
@@ -134,26 +248,7 @@ earlier and never wired in.
 | Benchmark | Ryan spots the movement in THE RISE **without being told where to look** |
 | Law that governs it | existing marks move rigidly and are never deformed; new marks may be drawn in Wang's hand |
 
-### Phase 3 — The summits · **needs a verdict, not work**
-
-z5w has 13 patches, z6w has 3. Thirteen `gust-far` summit polys were built and
-then removed the same day — Ryan: *"peaks shouldnt wobble."* Mist was refuted
-outright: there is no mist ink in this painting, the mist is bare silk.
-
-So the question is not "how do we animate the summits," it is **"should the
-summits move at all?"** Two honest answers:
-
-- **They are correctly still**, and the camera passes through them faster and
-  ends on a held frame. Costs nothing, and may be the better film.
-- **The distant foliage stirs at half amplitude**, which is what `gust-far`
-  was, rebuilt without the polys that wobbled rock.
-
-| | |
-|---|---|
-| Benchmark | a verdict in the store answering `should-the-summits-move`, with the A/B that decided it |
-| Pass | either answer, recorded — an unanswered question here blocks the film's last 33 seconds |
-
-### Phase 4 — Finish the catalogue · **background work**
+### PHASE 4b — THE CATALOGUE GAP · *background, runs alongside anything*
 
 185 detections merged to 136 objects: 108 tree, 38 rock, 10 figure, 10 water,
 7 trunk, 3 building, 3 structure, 2 void, 1 seal, 3 unknown. It covers only
@@ -165,33 +260,48 @@ top are uncatalogued, which is why the summits have no authored regions.
 | Benchmark | catalogue spans y 0–15923 with no gap |
 | Benchmark | every `tree` carrying `leavesVisible: true` has a foliage decision — animated, or `still` with a reason |
 
-### Phase 5 — Narration · **after the picture is finished**
+### DEPTH — what is approved, and one open number
 
-The camera pace is currently set by a constant (110 master px/s). Once there
-is a script, the pace is set by the sentence being spoken, and the approaches
-land on the beat where the narrator names the thing. Not before.
+Approved technique is **breath**: camZ as a cosine laid across the leg, never a
+permanent travel. `depth-may-resize-never-deform`. Multiplane truck, sheet warp
+and disparity spacing are all REFUTED.
 
-### Phase 6 — Indefinite mode and the museum edition
-
-Bookmarked, not scheduled. Both are camera-and-composite work over assets that
-already exist; neither needs new animation.
-
-| | |
-|---|---|
-| Indefinite | closed-loop camera path + co-prime cycle lengths (water 36, foliage 96 currently re-sync every 8s) |
-| Museum | per-region emphasis layer — highlight, bolden, dim the surround — driven by narration cues |
-
-## The order, and why
-
-Phase 1 before Phase 2 because six finished cycles sitting unwired is the
-cheapest motion in the project and it fixes the film's opening shot. Phase 2
-before Phase 3 because a moving figure is what makes a viewer lean in, and
-because Phase 3 may turn out to be a decision rather than a build. Phase 4
-runs alongside anything. Phases 5 and 6 are downstream of a finished picture
-and must not be started early — that is the corner that keeps getting cut.
+- **render-parallax units:** peak camZ **0.18** at `--z-step 0.30` is a measured
+  ceiling. 0.45 tore the canvas. AND the opposite failure is real — 13–31% of
+  every leg sat at camZ < 0.02, which is a pan by construction.
+- **Blender units are NOT the same parameter.** Measured 2026-08-25: a dolly of
+  0.52 world units (43.3% of stack depth) on z3w returns `check-holes: intact,
+  0 holes, 0 cream bars` across 12 sampled frames. **The Blender ceiling has not
+  been found and must be measured before Phase 4 authors anything.** Do not
+  carry 0.18 across; it is a number from a different renderer's projection.
 
 ## The rule that governs all of it
 
 Assemble and show the whole thing at every phase boundary. A per-region test
 strip is a diagnostic, never a deliverable. The week that produced no film
 produced dozens of them.
+
+---
+
+## What I still need from Ryan
+
+Neither blocks Phase 0. Both are asked again at the phase that needs them.
+
+1. **Phase 1:** event frequency — ~3–4 per 8s, or a few per 20s?
+2. **Phase 2:** the marked sheets. Cells 000 (river) → 169 (summit).
+3. *(Not on the critical path)* whether an iPad exists, which decides whether the
+   Procreate → Frame By Plane authoring path is real or theoretical.
+
+---
+
+## Standing constraints
+
+- **LAW #0** — search before building anything in any phase; search again after
+  each failure, with the words the failure taught.
+- **LAW #0.5** — Ryan's architecture calls are decisions. Open ones live in
+  `~/.claude/knowledge/directives.json`.
+- **LAW #0.6** — archive, never delete. Superseded implementations move to
+  `archive/` with a header, still runnable.
+- **LAW #1** — name a visual, `open` it in the same turn.
+- **Evidence lands in the repo at creation time.** Commit at the moment of
+  learning.

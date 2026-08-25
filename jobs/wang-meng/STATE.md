@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 10:35 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 10:36 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -19,7 +19,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
     MUSEUM EDITION: curator-directed emphasis. A narrator points at part of the painting and the film responds -- 
     why: Raised 2026-08-21 while the first full assembly was being built. He said 'for now yes, continue what you
 ? rise5-is-the-current-plan   (2026-08-25)
-    READ `docs/plans/2026-08-25-rise5-plan.md` BEFORE DOING ANYTHING ON THE FILM
+    READ `jobs/wang-meng/PLAN.md` BEFORE DOING ANYTHING ON THE FILM
 ? verify-remote-resolves   (2026-08-20)
     verify the remote RESOLVES, not just that it exists
     why: having an origin is not the same as being backed up. Measured 2026-08-20: 8 repos had a remote pointing
@@ -151,6 +151,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  2ac205b  STATE regenerated: the RISE 5 plan surfaces at the top of what is open
 2026-08-25  aadf435  open claim: RISE 5 plan is the entry point, findable after a compaction
 2026-08-25  1bbcc78  RISE 5 locked plan: the cut, the motion, what moves, the waterfall, the shots
 2026-08-25  7851e41  measured: Frame By Plane registers 63 of 353 operators headless, and zero importers
@@ -162,18 +163,9 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  332acc0  a tree welded to rock cannot be carded: the ridge pines were moving the mountains
 2026-08-25  6b8c58e  restore the approved pine to carrier 1; RISE 5 spec picture
 2026-08-25  01f315f  STATE regenerated: the carrier fix and the RISE 5 pivot land in the status
-2026-08-25  4a2d991  the animatronic wave: the branch clock and the gust clock were the same clock
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
-
-### Uncommitted
-
-```
- M jobs/wang-meng/STATE.md
-```
-
-*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 

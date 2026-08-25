@@ -7,7 +7,7 @@ supersedes: []
 proven: false
 verified-on: 2026-08-25
 evidence:
-  - docs/plans/2026-08-25-rise5-plan.md
+  - jobs/wang-meng/PLAN.md
 asked-as:
   - what are we working on
   - what is the plan
@@ -17,7 +17,7 @@ asked-as:
   - what phase are we on
 ---
 
-## READ `docs/plans/2026-08-25-rise5-plan.md` BEFORE DOING ANYTHING ON THE FILM
+## READ `jobs/wang-meng/PLAN.md` BEFORE DOING ANYTHING ON THE FILM
 
 RISE 4 was rejected in full on 2026-08-25 and the shot list retired at tag
 `hard-pivot-rise5-prep`. The one-unbroken-rise design written that morning was

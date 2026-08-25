@@ -14,7 +14,7 @@
 > **Why it is kept:** the zone-overlap arithmetic (z1→z3w = 2,998 master px = 66s
 > of dissolve room) and the z1-is-only-70%-wide constraint are measured facts
 > that any future cut-free passage would need again. Superseded by
-> `docs/plans/2026-08-25-rise5-plan.md`.
+> `jobs/wang-meng/PLAN.md`.
 
 # RISE 5 — one unbroken rise
 
