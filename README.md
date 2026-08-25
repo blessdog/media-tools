@@ -293,6 +293,15 @@ The film is mid-rebuild against a locked plan — `jobs/wang-meng/PLAN.md`, phas
 3. **The camera does real shot work**, with parallax that is measured rather than
    asserted.
 
+Phase 0 is also, quietly, the disk plan. `journey/z*/living/` holds 16.3GB of
+baked cycle frames and **98.5% of it is foliage** — which Phase 0 re-cuts
+wholesale by changing the branch-radius basis across all 170 regions. Only
+~0.3GB of water and figure cycles survives. So the cache is not something to
+audit or preserve; it is something the next real piece of work overwrites. Fix
+the cut, rebuild, and the disk resolves itself. (The cycles are CPU-only output
+of `hinge-foliage.py` — zero torch. The *paid* artifact is the 171MB
+`layers-filled` from `inpaint-planes --method flux`, which nothing here touches.)
+
 **The open architectural call:** move the multiplane camera, parallax and cutout
 work into **Blender** rather than the hand-rolled renderer. Named in this repo's
 own design doc on day one — and 2,208 lines of multiplane camera, cutout rigging
