@@ -1,3 +1,21 @@
+> **SUPERSEDED 2026-08-25, same day it was written. ARCHIVED, NOT DELETED —
+> LAW #0.6: a dead end is data.**
+>
+> **What it got right and is still live:** ridge pines held; fov ceiling 2.2 with
+> a region in frame rather than a single tree; the swing math untouched; the
+> water regions already built; parallax measured at 5.5% of stack depth.
+>
+> **What killed it:** the "one unbroken rise, no cuts, 5:00" shape. Ryan, hours
+> later: *"What I don't want is a slow pan, the same path we've been doing over
+> and over… I want to start over. It doesn't need to be a four-minute movie
+> either."* He wants the painting treated as alive and covered by REAL SHOTS —
+> wide, crop in, pan around, zoom out, in and out, left, up, down, right.
+>
+> **Why it is kept:** the zone-overlap arithmetic (z1→z3w = 2,998 master px = 66s
+> of dissolve room) and the z1-is-only-70%-wide constraint are measured facts
+> that any future cut-free passage would need again. Superseded by
+> `docs/plans/2026-08-25-rise5-plan.md`.
+
 # RISE 5 — one unbroken rise
 
 *Design, 2026-08-25. Supersedes the RISE 4 shot list, retired at tag
