@@ -114,6 +114,7 @@ def _foliage_motion(wd, cls, pivot, cx0, cy0, exclude=None):
              "--gust", str(cls.get("gust", "0.10,0.08,0.22")),
              "--gust-travel", str(cls.get("gust-travel", 1500)),
              "--gust-rest", str(cls.get("gust-rest", 0.15)),
+             "--carrier", str(cls.get("carrier", 1)),
              "--min-px", str(cls.get("minPx", 80)),
              # LEAVES HOLD UNDER LEAVES. `hold` leaves the source intact beneath
              # the cards, so a swing reveals the original leaf strokes instead of

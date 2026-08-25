@@ -113,6 +113,23 @@ p.add_argument('--phase', type=float, default=0.0,
                     'stages it by passing a phase taken from the plane depth, so '
                     'the far planes lead and the near ones answer')
 
+p.add_argument('--carrier', type=int, default=1,
+               help='how many times a card swings back and forth WITHIN one gust '
+                    'cycle. THE ANIMATRONIC WAVE (Ryan, 2026-08-25): "it\'s almost '
+                    'like the trees are animatronics, and then once in a while '
+                    'they\'ll wave at you". At the default 1 the carrier sine and '
+                    'the gust envelope share one clock, so on a 96-drawing loop '
+                    'the branch takes 8s for a single out-and-back and completes '
+                    'only 40%% of it before the envelope decays -- one wave, then '
+                    '4.8s of near-stillness. A branch has its own natural period '
+                    '(~1-2s) that is much shorter than a gust, so raise this to '
+                    'separate the two clocks. This is a RATE change, not an '
+                    'amplitude one: peak degrees are unchanged, which is what '
+                    'keeps it clear of the two amplitude rejections. It is also '
+                    'NOT the refuted broadband turbulence -- still one sine, still '
+                    'one frequency, just not the gust\'s. Must be an integer or '
+                    'the loop will not close.')
+
 p.add_argument('--feather', type=int, default=2)
 p.add_argument('--min-px', type=int, default=80, help='smallest card worth hinging')
 p.add_argument('--branch-radius', default='auto',
@@ -570,6 +587,8 @@ else:
 ga, gh, gd = (float(q) for q in a.gust.split(','))
 if ga + gh + gd >= 0.95:
     sys.exit('--gust A+H+D must leave calm air in the loop: keep the sum under 0.95')
+if a.carrier < 1:
+    sys.exit('--carrier must be an integer >= 1; a non-integer breaks the loop seam')
 
 def envelope(u):
     """attack -> hold -> decay -> calm, zero at both ends so the loop closes.
@@ -649,7 +668,7 @@ for k in range(ndraw):
         # frame-to-frame motion by 87x at identical peak swing, and Ryan's verdict
         # on the A/B was "it looked better before the turbulent spectrum. I don't
         # want that. I like the subtleness of it."
-        ph = 2 * np.pi * ((t - c['delay'] - a.phase) + c['seed'])
+        ph = 2 * np.pi * (a.carrier * (t - c['delay'] - a.phase) + c['seed'])
         sw = c['swing']
         ang = sw * act * np.sin(ph) + a.flutter * act * np.sin(3 * ph + 1.7)
         peak = max(peak, abs(float(ang)))
@@ -701,6 +720,7 @@ for k in range(ndraw):
     'tool': 'hinge-foliage', 'drawings': ndraw, 'on': a.on, 'fps': a.fps,
     'cards': len(cards), 'fromInk': a.from_ink, 'swingDeg': a.swing, 'peakAngleDeg': round(peak, 2),
     'gust': a.gust, 'gustTravel': a.gust_travel, 'gustRest': a.gust_rest,
+    'carrier': a.carrier, 'branchPeriodSec': round(ndraw * a.on / a.fps / a.carrier, 2),
     'phase': a.phase,
     'angle': a.angle, 'flutter': a.flutter,
     'branchRadius': branch_radii[0] if len(set(branch_radii)) == 1 else branch_radii,
