@@ -702,42 +702,6 @@
   "class": "wave"
  },
  {
-  "plane": "left-cliff-wall",
-  "region": "s-great-trees-upper",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper",
-  "box": [
-   1652,
-   2266
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 839661,
-  "movedPx": 577493,
-  "crop": [
-   1652,
-   2266
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "left-cliff-wall",
-  "region": "s-gorge-big-canopy",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy",
-  "box": [
-   1120,
-   1451
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 187728,
-  "movedPx": 72825,
-  "crop": [
-   1120,
-   1451
-  ],
-  "class": "foliage"
- },
- {
   "plane": "gorge-wall-right",
   "region": "s-left-pines-z2",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/gorge-wall-right__s-left-pines-z2",
@@ -2264,6 +2228,42 @@
   "crop": [
    637,
    2881
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "s-gorge-big-canopy",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy",
+  "box": [
+   1120,
+   1451
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 187728,
+  "movedPx": 72825,
+  "crop": [
+   1120,
+   1451
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "s-great-trees-upper",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-great-trees-upper",
+  "box": [
+   1652,
+   2266
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 839661,
+  "movedPx": 577493,
+  "crop": [
+   1652,
+   2266
   ],
   "class": "foliage"
  }

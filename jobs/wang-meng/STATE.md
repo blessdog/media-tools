@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 09:15 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 09:57 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,10 +28,11 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 56 live claims: 56 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 57 live claims: 57 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
+  · a-tree-welded-to-rock-cannot-be-carded: That's not a pine. Pines have needles. Those are leaves. The pines are the
   · a-verdict-is-not-landed-until-the-builder-changes: Measured on 2026-08-22, from the commit log of a single night.
   · an-absence-is-invisible-in-the-output: Ryan, 2026-08-22, from memory, about eleven days of renders that had all been
   · camera-light-parallax: Don't forget it's not just about tree animation, we're still doing parallax
@@ -146,39 +147,29 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  7684ced  research: an authoring surface for cutout rigs, and the SAM on disk is two generations old
+2026-08-25  1a0c4f6  the other trees are SHREDDED, not badly swung: 113 of 147 cards hinge on nothing
+2026-08-25  1271663  RISE 5 design: one unbroken rise, fov ceiling 2.2, ridge pines held
+2026-08-25  332acc0  a tree welded to rock cannot be carded: the ridge pines were moving the mountains
+2026-08-25  6b8c58e  restore the approved pine to carrier 1; RISE 5 spec picture
+2026-08-25  01f315f  STATE regenerated: the carrier fix and the RISE 5 pivot land in the status
 2026-08-25  4a2d991  the animatronic wave: the branch clock and the gust clock were the same clock
 2026-08-25  b6b2183  STATE regenerated: film timestamp after the 08-25 rebuild
 2026-08-25  4f7422c  STATE regenerated: journal entry and the 08-25 film land in the status
 2026-08-25  e91ca89  journal: the density rule was eating the leaves, and swing was never the problem
 2026-08-25  64faeb8  STATE regenerated: the 680-line uncommitted block is gone, the rebuild is in
 2026-08-24  a0be4d0  the whole scroll rebuilt on the catalogue: moving leaf 19.4% -> 67.9%
-2026-08-24  cfec3f6  STATE regenerated: living layer 260 -> 510 patches after the catalogue rebuild
-2026-08-24  2904d99  write the claim hinge-foliage.py has been citing since it was reverted
-2026-08-24  850bd67  delete the dead dark-accent rule; a missing catalogue is now a hard error
-2026-08-24  83d42a8  grow the polygon before the catalogue intersect: z1 card coverage 56.9% -> 99.1%
-2026-08-24  696b1b3  canopyRule=catalogue: the density heuristic was discarding 60% of located leaf
-2026-08-24  2c83e57  the foliage is UN-CUT, not under-swung: 38.5% of the leaf has a card on it
 ```
 
-### ⚠ UNPUSHED
-
-**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/drawings/cycle.json
  M jobs/wang-meng/journey/z3w/living/built.json
- M jobs/wang-meng/living/living-z3w.json
-?? jobs/wang-meng/evidence/2026-08-25-rise5-spec.png
-?? jobs/wang-meng/living/_carrier-pinebridge-1.mp4
-?? jobs/wang-meng/living/_carrier-pinebridge-3.mp4
-?? jobs/wang-meng/living/_carrier-pinebridge-6.mp4
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
