@@ -416,15 +416,31 @@ def catalogue_mask(poly_mask, cls):
         sub = big.crop((int(X0), int(Y0), int(X0 + PW * K), int(Y0 + PH * K)))
         _CATALOGUE_CACHE[fmp] = np.array(sub.resize((PW, PH), Image.NEAREST)) > 127
     leaf = _CATALOGUE_CACHE[fmp]
-    m = ((poly_mask > 128) & leaf).astype(np.uint8)
+    # GROW THE POLYGON BEFORE INTERSECTING, then keep only masses whose centroid
+    # is inside the ORIGINAL polygon. Same structure canopy_mask used and for the
+    # same reason: several polygons on this painting are drawn smaller than the
+    # tree they name, and a canopy that straddles the edge must come out whole
+    # rather than sliced along a straight line. Clipping strictly to the polygon
+    # cost s-pine-over-bridge half its leaf (24,752 -> 12,299) on the first
+    # version of this rule -- and that is the pine Ryan approved the sway on.
+    # The catalogue is what makes the grow safe: density reaching 120px past a
+    # polygon could land on rock, an intersection with a pixel-exact leaf mask
+    # cannot.
+    grow = cv2.dilate(poly_mask, cv2.getStructuringElement(
+        cv2.MORPH_ELLIPSE, (2 * a.canopy_grow + 1,) * 2))
+    m = ((grow > 128) & leaf).astype(np.uint8)
     c = int(cls.get("catalogueClose", 11))
     if c:
         m = cv2.morphologyEx(m, cv2.MORPH_CLOSE,
                              cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (c, c)))
-    n, lab, st, _ = cv2.connectedComponentsWithStats(m, 8)
+    n, lab, st, cen = cv2.connectedComponentsWithStats(m, 8)
+    inside = poly_mask > 128
     keep = np.zeros_like(m)
     for i in range(1, n):
-        if st[i, 4] >= int(cls.get("catalogueMin", 60)):
+        if st[i, 4] < int(cls.get("catalogueMin", 60)):
+            continue
+        cx, cy = int(round(cen[i][0])), int(round(cen[i][1]))
+        if 0 <= cy < inside.shape[0] and 0 <= cx < inside.shape[1] and inside[cy, cx]:
             keep[lab == i] = 1
     g = int(cls.get("catalogueGrow", 3))
     if g:
