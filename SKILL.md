@@ -63,6 +63,8 @@ the same command that creates the file.
 | `inpaint-planes.py` | plane stack → each plane painted on BEHIND its occluders, so a dolly opens no holes |
 | `pin-objects.py` | plane stack + object masks → no painted object straddles two depths |
 | `render-warp.py` | objects + depths + camera path → frames, as ONE continuous warp; rigid objects, strain in the wash, no holes, NO occlusion |
+| `blender-mark-scene.py` | plate.json → a Blender scene you DRAW region outlines and pivots on (run inside Blender) |
+| `blender-read-marks.py` | that scene → polygons + pivots in MASTER px, shaped like living-polys.json |
 | `render-living.py` | master + per-region animation cycles + camera path → frames; 2D Ken Burns window over a LIVING painting (cycles composited per frame, cost O(window)) |
 
 Internals (not tools): `_env` `_replicate` `_comfy` `_fleet` `_uso` `_hunyuan`.
@@ -92,6 +94,7 @@ matches a keyword — that is exactly how 2026-08-20 happened.
 | "the water should move" — ripples, a fall, a surface | `animate-strokes` — displaces the painter's own ink in place, and it loops. Never a video model |
 | "the leaves should stir" / "a limb, branch, rope or rail should swing" | `cut-stroke` → `clean-plate` → a hinge rig (`walk-figure --limbs` is the proven one). NOT `animate-strokes` — see the test below |
 | **the test that splits those two rows** | Does the thing UNCOVER GROUND when it moves, or does it have STRUCTURE THAT MUST STAY PUT? Either yes → cut-out card on a pivot. A displacement field cannot hold a trunk still while its leaves move, and it has no real background to reveal — `animate-strokes` fills holes with `cv2.INPAINT_TELEA`, the averaging inpainter `clean-plate` exists to replace. Both yeses were true of foliage and it took a human to notice (2026-08-20) |
+| "which ink is ONE tree/bushel?" / "the cut is confetti, not bushels" / "I need to point at a specific thing" | `blender-mark-scene` → draw → `blender-read-marks`. **Do not reach for a segmenter first.** `no-whole-tree-to-segment` is refuted from five directions: Wang Meng draws a tree as separate marks over bare silk, so there is no enclosing contour to find and the judgement is not in the pixels. SAM is for TIGHTENING a mark you already drew, never for deciding which marks are one tree |
 | "a figure should cross the frame" | `crop-region` → `clean-plate` → `walk-figure --window/--pan` |
 | "the figure moved and left a hole" | `clean-plate` (and the plate must lose the WHOLE thing that moves) |
 | "where did this crop come from?" | `locate-crop` → crop.json, then every tool reads it |

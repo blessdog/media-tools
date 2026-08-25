@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 11:43 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 11:50 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -159,6 +159,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  7371b7f  report: the pen and the bushel — due diligence on the XP-Pen + Blender authoring surface
 2026-08-25  6ebe886  STATE regenerated: the unpushed warning clears, README and the cost correction land
 2026-08-25  b98f704  README: the front page is the post-mortem
 2026-08-25  91ae357  correct the living-cache cost: CPU not flux, and Phase 0 invalidates 98.5% of it
@@ -170,7 +171,6 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  e1f7987  ONE PLAN.md: merge the RISE 5 phases with the live parts of the 08-21 plan
 2026-08-25  2ac205b  STATE regenerated: the RISE 5 plan surfaces at the top of what is open
 2026-08-25  aadf435  open claim: RISE 5 plan is the entry point, findable after a compaction
-2026-08-25  1bbcc78  RISE 5 locked plan: the cut, the motion, what moves, the waterfall, the shots
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
