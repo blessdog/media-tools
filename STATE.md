@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 11:26 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 11:42 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -159,6 +159,8 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  b98f704  README: the front page is the post-mortem
+2026-08-25  91ae357  correct the living-cache cost: CPU not flux, and Phase 0 invalidates 98.5% of it
 2026-08-25  73be5d1  retire the cleanup handoff: the pass is done, with two corrections to its premises
 2026-08-25  cf685ef  type the ten inkwash probe jobs: six claims, and two dead routes annotated
 2026-08-25  ac3673d  reap 7.4GB of probe frame dumps: the journey 25GB was living/, never layers-*
@@ -169,17 +171,9 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  aadf435  open claim: RISE 5 plan is the entry point, findable after a compaction
 2026-08-25  1bbcc78  RISE 5 locked plan: the cut, the motion, what moves, the waterfall, the shots
 2026-08-25  7851e41  measured: Frame By Plane registers 63 of 353 operators headless, and zero importers
-2026-08-25  633676e  blender-multiplane: the camera moves into Blender, and the parallax is real
-2026-08-25  7f4709d  card sheets built for the three compared trees; STATE regenerated
 ```
 
-### ⚠ UNPUSHED
-
-**3 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
