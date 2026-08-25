@@ -55,7 +55,7 @@ p.add_argument('--classes', default='foliage,water,figure',
                help='one Grease Pencil layer per class, plus a pivot layer')
 p.add_argument('--span', type=float, default=20.0,
                help='Blender units across the longest side (keeps viewport clipping sane)')
-p.add_argument('--seed-from', help='existing living-polys.json: draw its polys in as reference')
+p.add_argument('--seed-from', help='existing living-polys.json: draw its polys in as faint reference. OFF by default -- 177 of 181 of them are 4-point BOXES, which look like rectilinear junk over the art and are not examples of what a bushel outline should be')
 a = p.parse_args(argv)
 
 plate_path = Path(a.plate).resolve()
@@ -117,13 +117,18 @@ for stray in [l for l in gpd.layers if l.name == 'Layer']:
 
 # One material per class, so what you are marking is obvious while you mark it
 # and a mis-filed stroke is visible instead of silent.
+gp.data.materials.clear()          # 'Black' ships with show_stroke=False, so a
+                                   # stroke assigned to it renders as nothing
+                                   # recognisable -- that was the black triangle.
 PALETTE = {
     'foliage': (0.15, 0.85, 0.35, 1.0),
     'water':   (0.20, 0.55, 1.00, 1.0),
     'figure':  (1.00, 0.35, 0.75, 1.0),
     'pivot':   (1.00, 0.85, 0.10, 1.0),
 }
+MAT_INDEX = {}
 for name in classes + ['pivot']:
+    MAT_INDEX[name] = len(gp.data.materials)
     mat = bpy.data.materials.new(f'mark-{name}')
     bpy.data.materials.create_gpencil_data(mat)
     mat.grease_pencil.color = PALETTE.get(name, (0.9, 0.9, 0.9, 1.0))
@@ -145,35 +150,35 @@ if a.seed_from:
     by_class = {}
     for poly in polys:
         by_class.setdefault(poly.get('class', 'foliage'), []).append(poly)
+    MX1, MY1 = MX0 + IW * K, MY0 + IH * K
     for cls, items in by_class.items():
         lay = gpd.layers.get(f'ref-{cls}') or gpd.layers.new(f'ref-{cls}')
         lay.lock = True
+        lay.opacity = 0.25
         frame = lay.frames.new(1) if len(lay.frames) == 0 else lay.frames[0]
         drawing = frame.drawing
         for poly in items:
             pts = poly.get('points') or []
             if len(pts) < 2:
                 continue
+            # A poly from another zone lands hundreds of units off the plate and
+            # reads as sprawl around the painting. 85 of 181 did exactly that.
+            cx = sum(q[0] for q in pts) / len(pts)
+            cy = sum(q[1] for q in pts) / len(pts)
+            if not (MX0 <= cx <= MX1 and MY0 <= cy <= MY1):
+                continue
             drawing.add_strokes([len(pts)])
             stroke = drawing.strokes[-1]
+            stroke.material_index = MAT_INDEX.get(cls, 0)
             for i, (mx, my) in enumerate(pts):
                 stroke.points[i].position = (
                     (mx - MX0) / K * S, -(my - MY0) / K * S, 0.0)
             seeded += 1
 
-# ---- a camera, so the whole plate is framed on open ------------------------
-cam_data = bpy.data.cameras.new('mark-cam')
-cam_data.type = 'ORTHO'
-cam_data.ortho_scale = max(IW, IH) * S
-cam_data.clip_end = 1000.0
-cam = bpy.data.objects.new('mark-cam', cam_data)
-cam.location = (IW * S / 2, -IH * S / 2, 10.0)
-scene.collection.objects.link(cam)
-scene.camera = cam
-
 # ---- open ready to draw ------------------------------------------------------
-# A scene that needs five clicks of setup before the first mark is a scene that
-# does not get used. Frame the plate, look straight down it, and be in Draw mode.
+# A scene that needs setup before the first mark is a scene that does not get
+# used. Frame the plate, look straight down it, and land in Draw mode with the
+# right layer and colour already active.
 gpd.layers.active = gpd.layers[classes[0]]
 cx, cy = IW * S / 2.0, -IH * S / 2.0
 for screen in bpy.data.screens:
@@ -187,6 +192,9 @@ for screen in bpy.data.screens:
             space.overlay.show_floor = False
             space.overlay.show_axis_x = False
             space.overlay.show_axis_y = False
+            space.overlay.show_cursor = False
+            space.overlay.show_object_origins = False
+            space.overlay.show_relationship_lines = False
             space.clip_start = 0.01
             space.clip_end = 10000.0
             r3d = space.region_3d
@@ -197,6 +205,16 @@ for screen in bpy.data.screens:
 
 bpy.context.view_layer.objects.active = gp
 gp.select_set(True)
+gp.active_material_index = MAT_INDEX[classes[0]]
+
+entered = None
+for mode in ('PAINT_GREASE_PENCIL', 'PAINT_GPENCIL', 'GPENCIL_PAINT'):
+    try:
+        bpy.ops.object.mode_set(mode=mode)
+        entered = mode
+        break
+    except (TypeError, RuntimeError):
+        continue
 
 Path(a.out).parent.mkdir(parents=True, exist_ok=True)
 bpy.ops.wm.save_as_mainfile(filepath=str(Path(a.out).resolve()))
@@ -210,4 +228,5 @@ print(json.dumps({
     'blenderUnitsPerImagePx': round(S, 8),
     'layers': classes + ['pivot'],
     'seededStrokes': seeded,
+    'openedInMode': entered,
 }, indent=1))

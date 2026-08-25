@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 11:50 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 12:02 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -30,7 +30,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 67 live claims: 67 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 68 live claims: 68 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -56,6 +56,7 @@ PROCEDURES — the routes that are currently believed
   · figure-motion          answers how-to-move-a-figure   (sibling: foliage-motion)
   · flf2v-paints-one-image-into-another answers how-to-transition-between-two-stills-in-the-ink-medium   (sibling: style-is-solved-control-is-the-problem)
   · foliage-motion         answers how-to-move-foliage   (sibling: water-motion)
+  · marks-are-authored-in-blender answers how-is-a-region-outline-and-pivot-authored   (sibling: no-whole-tree-to-segment)
   · sam-click-trunks-not-canopies answers how-to-prompt-sam-on-this-painting   (sibling: no-whole-tree-to-segment)
   · sam-environment        answers how-to-run-a-torch-tool-in-this-repo   (sibling: no-whole-tree-to-segment)
   · shot-vocabulary        answers which-camera-move-for-a-station   (sibling: camera-light-parallax)
@@ -159,6 +160,8 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  e6034c5  correct the stale Blender-version notes in blender-multiplane.py
+2026-08-25  f16694a  author region outlines and pivots by hand in Blender: the mark round-trips at 0px error
 2026-08-25  7371b7f  report: the pen and the bushel — due diligence on the XP-Pen + Blender authoring surface
 2026-08-25  6ebe886  STATE regenerated: the unpushed warning clears, README and the cost correction land
 2026-08-25  b98f704  README: the front page is the post-mortem
@@ -169,8 +172,6 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  5343ecb  HANDOFF.md: the cleanup pass, with the rootless-session warning first
 2026-08-25  a86a436  one document per layer: STATUS.md, NEXT-SESSION.md and journey-phase1 moved out of the live tree
 2026-08-25  e1f7987  ONE PLAN.md: merge the RISE 5 phases with the live parts of the 08-21 plan
-2026-08-25  2ac205b  STATE regenerated: the RISE 5 plan surfaces at the top of what is open
-2026-08-25  aadf435  open claim: RISE 5 plan is the entry point, findable after a compaction
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
