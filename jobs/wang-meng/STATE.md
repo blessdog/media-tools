@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 10:36 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 10:47 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -151,6 +151,8 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  a86a436  one document per layer: STATUS.md, NEXT-SESSION.md and journey-phase1 moved out of the live tree
+2026-08-25  e1f7987  ONE PLAN.md: merge the RISE 5 phases with the live parts of the 08-21 plan
 2026-08-25  2ac205b  STATE regenerated: the RISE 5 plan surfaces at the top of what is open
 2026-08-25  aadf435  open claim: RISE 5 plan is the entry point, findable after a compaction
 2026-08-25  1bbcc78  RISE 5 locked plan: the cut, the motion, what moves, the waterfall, the shots
@@ -161,8 +163,6 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  1a0c4f6  the other trees are SHREDDED, not badly swung: 113 of 147 cards hinge on nothing
 2026-08-25  1271663  RISE 5 design: one unbroken rise, fov ceiling 2.2, ridge pines held
 2026-08-25  332acc0  a tree welded to rock cannot be carded: the ridge pines were moving the mountains
-2026-08-25  6b8c58e  restore the approved pine to carrier 1; RISE 5 spec picture
-2026-08-25  01f315f  STATE regenerated: the carrier fix and the RISE 5 pivot land in the status
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
