@@ -22,7 +22,15 @@ asked-as:
 
 ## There is a finished 73-frame cycle of this scene, and it is NOT the deliverable
 
-`jobs/wang-meng/living/cycles/bridge-proto/` — 73 frames, 720x1280, of exactly
+**ROUTE CORRECTED 2026-08-25 — the frames are gone; the mp4 is the artifact.**
+`jobs/wang-meng/living/cycles/bridge-proto/` no longer exists. The PNG frames
+were never tracked (`git ls-tree -r 3146018 | grep bridge-proto` returns 0), so
+they are not recoverable from history. What survives, and what this claim now
+routes to, is the encoded cycle:
+`jobs/wang-meng/evidence/2026-08-21-band02-bridge-proto.mp4` (733KB, present).
+To get frames back, re-render from the cycle manifest rather than hunting a SHA.
+
+It was — 73 frames, 720x1280, of exactly
 the scene: Ge Hong with his fan on the trestle bridge, the pack animal with the
 red-tipped bundle, the red-tipped tree, the stream with ripples, two porters
 below. **Measured: 4.67% of the frame moves, loop seam 0.81 levels** — a real,

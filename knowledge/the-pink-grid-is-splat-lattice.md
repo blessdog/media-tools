@@ -27,9 +27,16 @@ Ryan, 2026-08-21, holding a screenshot: *"Are you able to find how this picture
 was created with the pink grid? Because that's when we were really cooking."*
 
     python3 tools/probe-parallax.py \
-      --image jobs/wang-meng/motion/shot-real.png \
-      --depth jobs/wang-meng/motion/pan/depth-authored.png \
+      --image <any image>.png --depth <its depth>.png \
       --marks --out probe.mp4
+
+**ROUTE CORRECTED 2026-08-25.** The original invocation named
+`jobs/wang-meng/motion/shot-real.png` and `jobs/wang-meng/motion/pan/depth-authored.png`.
+Neither is on disk and neither was ever tracked, so the exact pair is not
+recoverable. That costs nothing here: the scope of this claim is explicitly
+"any image+depth pair", so the command shape IS the claim. The rendered result
+is preserved as `jobs/wang-meng/evidence/2026-08-21-pink-grid-reproduced.png`
+and `.mp4`, both present.
 
 **The grid is not drawn.** `probe-parallax` FORWARD-SPLATS every pixel far-to-near
 through a z-buffer instead of resampling. As the image expands, splatted pixels
