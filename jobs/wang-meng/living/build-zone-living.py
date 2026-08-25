@@ -380,6 +380,58 @@ def dark_accent_mask(poly_mask, plate_rgb, cls):
     return (keep * 255).astype(np.uint8)
 
 
+_CATALOGUE_CACHE = {}
+
+
+def catalogue_mask(poly_mask, cls):
+    """Card territory = the authored polygon AND the catalogue's own leaf mask.
+
+    THE THIRD WHERE-DECIDER. the-catalogue-decides-what-is-foliage says the
+    catalogue answers WHAT, SAM answers WHERE, and the ink cut answers WHICH.
+    canopy_mask below is a FOURTH answer to WHERE -- a density+compactness
+    texture read -- and it runs AFTER the first two have already answered
+    pixel-exactly. Measured 2026-08-24 across all five zones: the authored
+    polygons enclose 902,771 px of catalogued leaf ink and canopy_mask hands
+    299,858 of it to the cutter, i.e. it discards two thirds of the leaf we had
+    already located. That is the whole of the foliage deficit Ryan has been
+    describing for three days as "you still haven't animated the foliage".
+
+    So where a catalogue mask exists, IT is the territory. Density is the
+    fallback for a region the catalogue never saw, which is what it was written
+    for -- it predates the catalogue entirely.
+
+    Closed before use: the catalogue mask is per-STROKE, and a card wants a
+    bushel. Closing joins the marks of one spray into one body without
+    reaching across the gap to the next tree, which is the same reason
+    hinge-foliage cuts cards from connected components of ink.
+    """
+    fm = cls.get("leafMask")
+    if not fm:
+        return None
+    fmp = (HERE / fm) if not Path(fm).is_absolute() else Path(fm)
+    if not fmp.exists():
+        return None
+    if fmp not in _CATALOGUE_CACHE:
+        big = Image.open(fmp).convert("L")
+        sub = big.crop((int(X0), int(Y0), int(X0 + PW * K), int(Y0 + PH * K)))
+        _CATALOGUE_CACHE[fmp] = np.array(sub.resize((PW, PH), Image.NEAREST)) > 127
+    leaf = _CATALOGUE_CACHE[fmp]
+    m = ((poly_mask > 128) & leaf).astype(np.uint8)
+    c = int(cls.get("catalogueClose", 11))
+    if c:
+        m = cv2.morphologyEx(m, cv2.MORPH_CLOSE,
+                             cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (c, c)))
+    n, lab, st, _ = cv2.connectedComponentsWithStats(m, 8)
+    keep = np.zeros_like(m)
+    for i in range(1, n):
+        if st[i, 4] >= int(cls.get("catalogueMin", 60)):
+            keep[lab == i] = 1
+    g = int(cls.get("catalogueGrow", 3))
+    if g:
+        keep = cv2.dilate(keep, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (g, g)))
+    return (keep * 255).astype(np.uint8)
+
+
 def canopy_mask(poly_mask, plate_rgb, cls):
     """The canopy inside an authored box, by local ink DENSITY.
 
@@ -399,6 +451,12 @@ def canopy_mask(poly_mask, plate_rgb, cls):
     instead of being sliced along a straight line, which is what a warp would
     have torn.
     """
+    if cls.get("canopyRule") == "catalogue":
+        m = catalogue_mask(poly_mask, cls)
+        if m is not None:
+            return m
+        print("    canopyRule=catalogue but no leafMask on disk -- "
+              "falling back to density", file=sys.stderr)
     if cls.get("canopyRule") == "dark-accent":
         return dark_accent_mask(poly_mask, plate_rgb, cls)
     grow = cv2.dilate(poly_mask, cv2.getStructuringElement(

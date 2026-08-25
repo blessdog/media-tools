@@ -10,6 +10,18 @@ applies-when: >
   deciding WHICH INK IS FOLIAGE anywhere on 葛稚川移居圖, and by the same
   mechanism on any painting where the classes are drawn rather than
   photographed. Always, now -- not only for whole-plate passes.
+route-also: >
+  AND IT DECIDES THE CARD TERRITORY, not only which ink inside a card may move.
+  build-zone-living's canopy_mask was a FOURTH answer to WHERE -- a
+  density+compactness texture read -- running after the catalogue and SAM had
+  already answered pixel-exactly. Measured 2026-08-24 across all five zones:
+  the authored polygons enclose 91.4% of the catalogued leaf ink and canopy_mask
+  handed 36.0% to the cutter, discarding 60% of leaf we had already located.
+  Set classes.foliage.canopyRule = "catalogue". On cat-broadleaf-great-right
+  that took leaf under the cards 29,919 -> 62,910 px and off-leaf ink under them
+  7,641 -> 787 (purity 79.7% -> 98.8%), and the rendered cycle went from 14.6%
+  to 70.3% of its leaf visibly moving. Density stays as the fallback for a
+  region the catalogue never saw, which is what it was written for.
 not-when: >
   deciding which pixels inside a foliage region are painted MARK. That is the
   ink cut and it is a threshold question, correctly. The catalogue answers WHAT,

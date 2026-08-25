@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 17:34 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 17:58 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -20,9 +20,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
     why: Raised 2026-08-21 while the first full assembly was being built. He said 'for now yes, continue what you
 ? verify-remote-resolves   (2026-08-20)
     verify the remote RESOLVES, not just that it exists
-    why: having an origin is not the same as being backed up. Measured 2026-08-20: 8 repos had a remote pointing 
-? why-only-half-the-leaf-in-a-region-moves   (2026-08-24)
-    Inside regions that DO carry patches, ~40% of the catalogued leaf ink changes
+    why: having an origin is not the same as being backed up. Measured 2026-08-20: 8 repos had a remote pointing
 ```
 
 ## What this project knows
@@ -61,6 +59,7 @@ PROCEDURES — the routes that are currently believed
   · water-motion           answers how-to-move-water   (sibling: foliage-motion)
 
 VERDICTS — measured, and SCOPED; check the scope before reusing
+  · a-card-that-exists-moves-fine 葛稚川移居圖 foliage cut by hinge-foliage.py, measured on the z1 plate 2026-08-24 against catalo
   · a-deep-dolly-reveals-invented-material jobs/wang-meng/journey/z1, 12 planes inpainted at --behind 100 with flux-fill-pro, under a
   · a-living-layer-is-baked-against-its-stack jobs/wang-meng's living cycles and any patch cycle produced by build-zone-living.py. Measu
   · a-transform-cannot-change-an-expression Character animation on a painted or drawn source. The MEASUREMENTS are from 葛稚川移居圖's Ge Ho
@@ -95,8 +94,7 @@ OPEN — plans, NOT specs. proven: false. Do not build against these.
   ? merge-the-two-region-catalogues-into-one Why it matters: regions.json and living-polys.json BOTH carry a class per region, and only
   ? mist-card              A translucent band drifting on its own plane -- the multiplane technique from
   ? museum-edition-curator-directed-emphasis-a-narra Why it matters: Raised 2026-08-21 while the first full assembly was being built. He said '
-  ? verify-remote-resolves Why it matters: having an origin is not the same as being backed up. Measured 2026-08-20: 
-  ? why-only-half-the-leaf-in-a-region-moves Inside regions that DO carry patches, ~40% of the catalogued leaf ink changes
+  ? verify-remote-resolves Why it matters: having an origin is not the same as being backed up. Measured 2026-08-20:
 ```
 
 ## Where the work stands
@@ -149,6 +147,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  2c83e57  the foliage is UN-CUT, not under-swung: 38.5% of the leaf has a card on it
 2026-08-24  6fca38f  swing by DISPLACEMENT, not angle: distant foliage moves 4-8x, the near tree 7%
 2026-08-24  f660f09  STATE regenerated: rise paths re-authored with a cruising wide
 2026-08-24  6d75041  the traverse rests slightly IN, so the pull-out is a real move
@@ -160,16 +159,23 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  1490855  REJECTED: the turbulence spectrum. Ryan prefers the subtle single sine
 2026-08-24  5f1dd36  wind gets a floor and a spectrum: 37% dead frames to 0, same peak swing
 2026-08-24  3cddd9a  diagnosed: the wind has no base component and the film has two framings
-2026-08-24  8f910b9  the rise paths re-authored: approaches now land on catalogued trees
 ```
 
 ### ⚠ UNPUSHED
 
-**37 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**38 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
 ```
+
+### Uncommitted
+
+```
+ M jobs/wang-meng/STATE.md
+```
+
+*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 

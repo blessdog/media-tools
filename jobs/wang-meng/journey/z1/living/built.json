@@ -252,24 +252,6 @@
   "class": "foliage"
  },
  {
-  "plane": "gorge-wall-right",
-  "region": "cat-broadleaf-great-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-broadleaf-great-right",
-  "box": [
-   557,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 125721,
-  "movedPx": 17264,
-  "crop": [
-   1074,
-   0
-  ],
-  "class": "foliage"
- },
- {
   "plane": "right-hill-front-trees",
   "region": "cat-broadleaf-great-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-broadleaf-great-right",
@@ -824,6 +806,24 @@
   "crop": [
    608,
    721
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "cat-broadleaf-great-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-broadleaf-great-right",
+  "box": [
+   583,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 206666,
+  "movedPx": 124818,
+  "crop": [
+   1100,
+   0
   ],
   "class": "foliage"
  }
