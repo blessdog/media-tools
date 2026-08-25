@@ -1,113 +1,5 @@
 [
  {
-  "plane": "right-hill-front-trees",
-  "region": "s-great-trees-upper",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-great-trees-upper",
-  "box": [
-   1345,
-   36
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 13972,
-  "movedPx": 4488,
-  "crop": [
-   1718,
-   253
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "great-trees-knoll",
-  "region": "s-great-trees-upper",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-upper",
-  "box": [
-   364,
-   170
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 16198,
-  "movedPx": 12252,
-  "crop": [
-   1718,
-   253
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "great-trees-knoll",
-  "region": "s-great-trees-lower",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-lower",
-  "box": [
-   398,
-   1472
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 18624,
-  "movedPx": 14331,
-  "crop": [
-   1752,
-   1564
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "trestle-bridge-ge",
-  "region": "s-pine-over-bridge",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__s-pine-over-bridge",
-  "box": [
-   637,
-   86
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 63653,
-  "movedPx": 44052,
-  "crop": [
-   636,
-   715
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "s-pine-over-bridge",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-pine-over-bridge",
-  "box": [
-   302,
-   491
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 6814,
-  "movedPx": 852,
-  "crop": [
-   636,
-   715
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "bank-path",
-  "region": "s-pine-over-bridge",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__s-pine-over-bridge",
-  "box": [
-   605,
-   12
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 3363,
-  "movedPx": 978,
-  "crop": [
-   636,
-   715
-  ],
-  "class": "foliage"
- },
- {
   "plane": "left-cliff-wall",
   "region": "s-left-pines-z2",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__s-left-pines-z2",
@@ -122,78 +14,6 @@
   "crop": [
    452,
    0
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "gorge-wall-right",
-  "region": "s-left-pines-z2",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__s-left-pines-z2",
-  "box": [
-   0,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 72591,
-  "movedPx": 27711,
-  "crop": [
-   452,
-   0
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "cat-vine-curtain-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-vine-curtain-left",
-  "box": [
-   987,
-   1373
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 1369,
-  "movedPx": 85,
-  "crop": [
-   1336,
-   1309
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "great-trees-knoll",
-  "region": "cat-vine-curtain-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-vine-curtain-left",
-  "box": [
-   0,
-   1217
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 3633,
-  "movedPx": 345,
-  "crop": [
-   1336,
-   1309
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "great-trees-knoll",
-  "region": "cat-canopy-bough-left-main",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-canopy-bough-left-main",
-  "box": [
-   336,
-   1448
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 27039,
-  "movedPx": 20740,
-  "crop": [
-   1690,
-   1540
   ],
   "class": "foliage"
  },
@@ -216,42 +36,6 @@
   "class": "foliage"
  },
  {
-  "plane": "great-trees-knoll",
-  "region": "cat-vine-curtain-mid",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-vine-curtain-mid",
-  "box": [
-   151,
-   1142
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 3512,
-  "movedPx": 868,
-  "crop": [
-   1505,
-   1234
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "great-trees-knoll",
-  "region": "cat-canopy-bough-left-tip",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-canopy-bough-left-tip",
-  "box": [
-   278,
-   1358
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 33790,
-  "movedPx": 23532,
-  "crop": [
-   1632,
-   1450
-  ],
-  "class": "foliage"
- },
- {
   "plane": "right-hill-front-trees",
   "region": "cat-broadleaf-great-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-broadleaf-great-right",
@@ -270,24 +54,6 @@
   "class": "foliage"
  },
  {
-  "plane": "right-hill-front-trees",
-  "region": "cat-canopy-brick-top",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-canopy-brick-top",
-  "box": [
-   1404,
-   99
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 6350,
-  "movedPx": 1733,
-  "crop": [
-   1778,
-   323
-  ],
-  "class": "foliage"
- },
- {
   "plane": "left-cliff-wall",
   "region": "cat-pine-needle-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__cat-pine-needle-right",
@@ -302,222 +68,6 @@
   "crop": [
    404,
    0
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "gorge-wall-right",
-  "region": "cat-pine-needle-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-pine-needle-right",
-  "box": [
-   0,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 72667,
-  "movedPx": 27607,
-  "crop": [
-   404,
-   0
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "great-trees-knoll",
-  "region": "cat-fronds-bottom-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-fronds-bottom-left",
-  "box": [
-   358,
-   849
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 23242,
-  "movedPx": 18866,
-  "crop": [
-   1712,
-   937
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "trestle-bridge-ge",
-  "region": "cat-tree-colour-lower-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-tree-colour-lower-left",
-  "box": [
-   740,
-   86
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 50059,
-  "movedPx": 18631,
-  "crop": [
-   740,
-   793
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "cat-tree-colour-lower-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-colour-lower-left",
-  "box": [
-   425,
-   569
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 3893,
-  "movedPx": 149,
-  "crop": [
-   740,
-   793
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "bank-path",
-  "region": "cat-tree-colour-lower-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-tree-colour-lower-left",
-  "box": [
-   629,
-   12
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 4572,
-  "movedPx": 213,
-  "crop": [
-   740,
-   793
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "cat-tree-great-centre",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-great-centre",
-  "box": [
-   1425,
-   424
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 4284,
-  "movedPx": 1793,
-  "crop": [
-   1801,
-   648
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "cat-tree-round-top-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-round-top-left",
-  "box": [
-   1404,
-   173
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 4879,
-  "movedPx": 2029,
-  "crop": [
-   1777,
-   397
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "great-trees-knoll",
-  "region": "cat-tree-bottom-right-t013",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-tree-bottom-right-t013",
-  "box": [
-   156,
-   895
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 10422,
-  "movedPx": 4397,
-  "crop": [
-   1506,
-   985
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "cat-tree-teal-mid-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-teal-mid-left",
-  "box": [
-   1202,
-   338
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 18816,
-  "movedPx": 3901,
-  "crop": [
-   1578,
-   561
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "trestle-bridge-ge",
-  "region": "cat-canopy-bottom-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-canopy-bottom-left",
-  "box": [
-   801,
-   247
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 27441,
-  "movedPx": 12235,
-  "crop": [
-   801,
-   956
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "right-hill-front-trees",
-  "region": "cat-canopy-bottom-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-canopy-bottom-left",
-  "box": [
-   425,
-   807
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 2394,
-  "movedPx": 188,
-  "crop": [
-   801,
-   956
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "bank-path",
-  "region": "cat-canopy-bottom-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-canopy-bottom-left",
-  "box": [
-   629,
-   12
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 5195,
-  "movedPx": 301,
-  "crop": [
-   801,
-   956
   ],
   "class": "foliage"
  },
@@ -702,6 +252,132 @@
   "class": "wave"
  },
  {
+  "plane": "right-hill-front-trees",
+  "region": "s-great-trees-upper",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-great-trees-upper",
+  "box": [
+   1276,
+   31
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 78397,
+  "movedPx": 40178,
+  "crop": [
+   1652,
+   253
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "s-great-trees-upper",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-upper",
+  "box": [
+   318,
+   161
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 37084,
+  "movedPx": 29095,
+  "crop": [
+   1652,
+   253
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "s-great-trees-lower",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-lower",
+  "box": [
+   341,
+   1021
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 112850,
+  "movedPx": 57395,
+  "crop": [
+   1695,
+   1113
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "trestle-bridge-ge",
+  "region": "s-pine-over-bridge",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__s-pine-over-bridge",
+  "box": [
+   638,
+   86
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 70304,
+  "movedPx": 55616,
+  "crop": [
+   637,
+   794
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "s-pine-over-bridge",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-pine-over-bridge",
+  "box": [
+   330,
+   570
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 4628,
+  "movedPx": 1289,
+  "crop": [
+   637,
+   794
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "s-pine-over-bridge",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__s-pine-over-bridge",
+  "box": [
+   629,
+   13
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2876,
+  "movedPx": 1311,
+  "crop": [
+   637,
+   794
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "s-left-pines-z2",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__s-left-pines-z2",
+  "box": [
+   0,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 99071,
+  "movedPx": 56254,
+  "crop": [
+   455,
+   0
+  ],
+  "class": "foliage"
+ },
+ {
   "plane": "upper-stream-water",
   "region": "g-ge-fan",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__g-ge-fan",
@@ -756,56 +432,578 @@
   "class": "figure"
  },
  {
-  "plane": "trestle-bridge-ge",
-  "region": "cat-tree-bottom-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-tree-bottom-right",
+  "plane": "great-trees-knoll",
+  "region": "cat-veil-foliage-upper-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-veil-foliage-upper-left",
   "box": [
-   608,
-   86
+   115,
+   1004
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 69441,
-  "movedPx": 50884,
+  "ownPx": 131696,
+  "movedPx": 63314,
   "crop": [
-   608,
-   721
+   1469,
+   1096
   ],
   "class": "foliage"
  },
  {
   "plane": "right-hill-front-trees",
-  "region": "cat-tree-bottom-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-bottom-right",
+  "region": "cat-vine-curtain-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-vine-curtain-left",
   "box": [
-   302,
-   497
+   906,
+   992
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 7324,
-  "movedPx": 1111,
+  "ownPx": 8541,
+  "movedPx": 1688,
   "crop": [
-   608,
-   721
+   1281,
+   1135
   ],
   "class": "foliage"
  },
  {
   "plane": "bank-path",
-  "region": "cat-tree-bottom-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-tree-bottom-right",
+  "region": "cat-vine-curtain-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-vine-curtain-left",
   "box": [
-   582,
-   12
+   1107,
+   170
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 8848,
-  "movedPx": 1002,
+  "ownPx": 2191,
+  "movedPx": 470,
   "crop": [
-   608,
-   721
+   1281,
+   1135
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-vine-curtain-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-vine-curtain-left",
+  "box": [
+   0,
+   1043
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 71438,
+  "movedPx": 34429,
+  "crop": [
+   1281,
+   1135
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-veil-foliage-centre-lower",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-veil-foliage-centre-lower",
+  "box": [
+   250,
+   1530
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 61983,
+  "movedPx": 36349,
+  "crop": [
+   1604,
+   1622
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-canopy-bough-left-main",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-canopy-bough-left-main",
+  "box": [
+   284,
+   1337
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 73606,
+  "movedPx": 46674,
+  "crop": [
+   1638,
+   1429
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-canopy-left-shoulder",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-canopy-left-shoulder",
+  "box": [
+   545,
+   1345
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 1395,
+  "movedPx": 452,
+  "crop": [
+   1899,
+   1437
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-vine-curtain-leaves",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-vine-curtain-leaves",
+  "box": [
+   240,
+   1486
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 77232,
+  "movedPx": 49419,
+  "crop": [
+   1590,
+   1578
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-veil-foliage-left-lower",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-veil-foliage-left-lower",
+  "box": [
+   1213,
+   1422
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 1772,
+  "movedPx": 103,
+  "crop": [
+   1469,
+   1613
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "cat-veil-foliage-left-lower",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-veil-foliage-left-lower",
+  "box": [
+   1295,
+   536
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5543,
+  "movedPx": 648,
+  "crop": [
+   1469,
+   1613
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-veil-foliage-left-lower",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-veil-foliage-left-lower",
+  "box": [
+   137,
+   1521
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 80312,
+  "movedPx": 43905,
+  "crop": [
+   1469,
+   1613
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-vine-curtain-mid",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-vine-curtain-mid",
+  "box": [
+   976,
+   872
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 8044,
+  "movedPx": 1606,
+  "crop": [
+   1352,
+   1096
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-vine-curtain-mid",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-vine-curtain-mid",
+  "box": [
+   0,
+   1004
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 119761,
+  "movedPx": 64979,
+  "crop": [
+   1352,
+   1096
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "foreground-rock-mass",
+  "region": "cat-bamboo-clump-lower-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/foreground-rock-mass__cat-bamboo-clump-lower-left",
+  "box": [
+   1097,
+   272
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 26080,
+  "movedPx": 9424,
+  "crop": [
+   1698,
+   2457
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-veil-foliage-left-mid",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-veil-foliage-left-mid",
+  "box": [
+   235,
+   1267
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 87961,
+  "movedPx": 52200,
+  "crop": [
+   1587,
+   1359
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-vine-tangle-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-vine-tangle-right",
+  "box": [
+   115,
+   1004
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 106509,
+  "movedPx": 54230,
+  "crop": [
+   1469,
+   1096
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-canopy-upper-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-canopy-upper-left",
+  "box": [
+   275,
+   1486
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 57243,
+  "movedPx": 37799,
+  "crop": [
+   1629,
+   1578
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "foreground-rock-mass",
+  "region": "cat-orchid-tuft-midright",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/foreground-rock-mass__cat-orchid-tuft-midright",
+  "box": [
+   869,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 13693,
+  "movedPx": 8480,
+  "crop": [
+   1467,
+   2132
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-shrub-on-rock-lower-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-shrub-on-rock-lower-right",
+  "box": [
+   1213,
+   1502
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 566,
+  "movedPx": 16,
+  "crop": [
+   1461,
+   1726
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "cat-shrub-on-rock-lower-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-shrub-on-rock-lower-right",
+  "box": [
+   1287,
+   728
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5076,
+  "movedPx": 1160,
+  "crop": [
+   1461,
+   1726
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-shrub-on-rock-lower-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-shrub-on-rock-lower-right",
+  "box": [
+   137,
+   1634
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 13213,
+  "movedPx": 1525,
+  "crop": [
+   1461,
+   1726
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-canopy-bough-left-tip",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-canopy-bough-left-tip",
+  "box": [
+   235,
+   1314
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 79620,
+  "movedPx": 46317,
+  "crop": [
+   1587,
+   1406
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-far-bank-sprigs",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-far-bank-sprigs",
+  "box": [
+   1213,
+   1502
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 566,
+  "movedPx": 14,
+  "crop": [
+   1469,
+   1726
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "cat-far-bank-sprigs",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-far-bank-sprigs",
+  "box": [
+   1295,
+   728
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 4937,
+  "movedPx": 1207,
+  "crop": [
+   1469,
+   1726
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-far-bank-sprigs",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-far-bank-sprigs",
+  "box": [
+   137,
+   1634
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 13213,
+  "movedPx": 1389,
+  "crop": [
+   1469,
+   1726
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "cat-weeds-bank-thicket-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-weeds-bank-thicket-left",
+  "box": [
+   1287,
+   728
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5076,
+  "movedPx": 1243,
+  "crop": [
+   1461,
+   1749
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-weeds-bank-thicket-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-weeds-bank-thicket-left",
+  "box": [
+   137,
+   1658
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 12467,
+  "movedPx": 1402,
+  "crop": [
+   1461,
+   1749
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-weeds-bank-right-edge-upper",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-weeds-bank-right-edge-upper",
+  "box": [
+   284,
+   1652
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5227,
+  "movedPx": 824,
+  "crop": [
+   1638,
+   1744
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "foreground-rock-mass",
+  "region": "cat-orchid-tuft-left-edge",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/foreground-rock-mass__cat-orchid-tuft-left-edge",
+  "box": [
+   988,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 4526,
+  "movedPx": 1476,
+  "crop": [
+   1589,
+   2132
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-weeds-bank-thicket-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-weeds-bank-thicket-centre",
+  "box": [
+   1213,
+   1502
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 566,
+  "movedPx": 27,
+  "crop": [
+   1461,
+   1726
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "cat-weeds-bank-thicket-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-weeds-bank-thicket-centre",
+  "box": [
+   1287,
+   728
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5076,
+  "movedPx": 1331,
+  "crop": [
+   1461,
+   1726
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-weeds-bank-thicket-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-weeds-bank-thicket-centre",
+  "box": [
+   137,
+   1634
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 13213,
+  "movedPx": 1682,
+  "crop": [
+   1461,
+   1726
   ],
   "class": "foliage"
  },
@@ -814,15 +1012,447 @@
   "region": "cat-broadleaf-great-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-broadleaf-great-right",
   "box": [
-   583,
+   553,
    0
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 206666,
-  "movedPx": 124818,
+  "ownPx": 207632,
+  "movedPx": 125609,
   "crop": [
-   1100,
+   1070,
+   0
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-canopy-brick-top",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-canopy-brick-top",
+  "box": [
+   1215,
+   31
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 64008,
+  "movedPx": 36235,
+  "crop": [
+   1591,
+   253
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "cat-pine-needle-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-pine-needle-right",
+  "box": [
+   0,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 93803,
+  "movedPx": 54589,
+  "crop": [
+   455,
+   0
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-fronds-bottom-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-fronds-bottom-left",
+  "box": [
+   349,
+   850
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 35909,
+  "movedPx": 24454,
+  "crop": [
+   1703,
+   942
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-thicket-bottom",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-thicket-bottom",
+  "box": [
+   1399,
+   31
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 32384,
+  "movedPx": 20525,
+  "crop": [
+   1771,
+   253
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-thicket-bottom",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-thicket-bottom",
+  "box": [
+   417,
+   161
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 1127,
+  "movedPx": 228,
+  "crop": [
+   1771,
+   253
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-foliage-right-wall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-foliage-right-wall",
+  "box": [
+   1078,
+   255
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 72176,
+  "movedPx": 28283,
+  "crop": [
+   1454,
+   479
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "trestle-bridge-ge",
+  "region": "cat-tree-colour-lower-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-tree-colour-lower-left",
+  "box": [
+   642,
+   86
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 88601,
+  "movedPx": 67239,
+  "crop": [
+   642,
+   794
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-tree-colour-lower-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-colour-lower-left",
+  "box": [
+   330,
+   570
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 4992,
+  "movedPx": 1317,
+  "crop": [
+   642,
+   794
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "cat-tree-colour-lower-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-tree-colour-lower-left",
+  "box": [
+   629,
+   13
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2918,
+  "movedPx": 1123,
+  "crop": [
+   642,
+   794
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-tree-great-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-great-centre",
+  "box": [
+   1419,
+   410
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 9065,
+  "movedPx": 5186,
+  "crop": [
+   1795,
+   634
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "trestle-bridge-ge",
+  "region": "cat-tree-bottom-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-tree-bottom-right",
+  "box": [
+   638,
+   86
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 74354,
+  "movedPx": 58407,
+  "crop": [
+   637,
+   794
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-tree-bottom-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-bottom-right",
+  "box": [
+   330,
+   570
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 4703,
+  "movedPx": 1316,
+  "crop": [
+   637,
+   794
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "cat-tree-bottom-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-tree-bottom-right",
+  "box": [
+   629,
+   13
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2918,
+  "movedPx": 1316,
+  "crop": [
+   637,
+   794
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "cat-maple-rust-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-maple-rust-left",
+  "box": [
+   264,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 22553,
+  "movedPx": 5970,
+  "crop": [
+   781,
+   0
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "cat-pine-top-roots",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-pine-top-roots",
+  "box": [
+   572,
+   156
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 99656,
+  "movedPx": 69276,
+  "crop": [
+   1089,
+   156
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-tree-round-top-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-round-top-left",
+  "box": [
+   1257,
+   63
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 54026,
+  "movedPx": 26199,
+  "crop": [
+   1633,
+   287
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "great-trees-knoll",
+  "region": "cat-tree-bottom-right-t013",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__cat-tree-bottom-right-t013",
+  "box": [
+   4,
+   895
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 67726,
+  "movedPx": 33412,
+  "crop": [
+   1354,
+   979
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "cat-tree-left-edge",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-tree-left-edge",
+  "box": [
+   1072,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 13930,
+  "movedPx": 3283,
+  "crop": [
+   1589,
+   0
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "cat-pine-needle-left-t009",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-pine-needle-left-t009",
+  "box": [
+   125,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 68748,
+  "movedPx": 40245,
+  "crop": [
+   642,
+   0
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-tree-teal-mid-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-tree-teal-mid-left",
+  "box": [
+   1093,
+   214
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 74068,
+  "movedPx": 33378,
+  "crop": [
+   1469,
+   438
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "trestle-bridge-ge",
+  "region": "cat-canopy-bottom-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__cat-canopy-bottom-left",
+  "box": [
+   762,
+   366
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 13343,
+  "movedPx": 8265,
+  "crop": [
+   762,
+   1075
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "right-hill-front-trees",
+  "region": "cat-canopy-bottom-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__cat-canopy-bottom-left",
+  "box": [
+   387,
+   864
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3778,
+  "movedPx": 708,
+  "crop": [
+   762,
+   1075
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "bank-path",
+  "region": "cat-canopy-bottom-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__cat-canopy-bottom-left",
+  "box": [
+   629,
+   13
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2876,
+  "movedPx": 883,
+  "crop": [
+   762,
+   1075
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gorge-wall-right",
+  "region": "cat-tree-rust-top-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__cat-tree-rust-top-right",
+  "box": [
+   245,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 6722,
+  "movedPx": 2676,
+  "crop": [
+   762,
    0
   ],
   "class": "foliage"
