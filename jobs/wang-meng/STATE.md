@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 20:32 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 21:46 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -28,7 +28,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 55 live claims: 55 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 56 live claims: 56 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -79,6 +79,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · parallax-needs-differential-RATE-not-depth render-parallax.py with --plane-fit, on any plane stack, for any TRAVERSE (a camera move w
   · perception-needs-a-boundary-model-too CLIPSeg (CIDAS/clipseg-rd64-refined) as the SOLE decider of which ink is foliage on 葛稚川移居圖
   · plan-planes-at-shot-scale Planning a depth-plane stack for a camera that will be CLOSE to the surface. Measured on z
+  · subtle-beats-continuous-for-this-painting foliage motion on 葛稚川移居圖 via hinge-foliage.py. About the SPECTRUM of the angle signal, not
   · the-pink-grid-is-splat-lattice probe-parallax.py --marks on any image+depth pair. The GRID is a property of forward splat
   · the-resolve-substrate-is-already-built Facts read off this machine on 2026-08-22. Applies to any plan that proposes building agen
 
@@ -104,13 +105,11 @@ OPEN — plans, NOT specs. proven: false. Do not build against these.
 ```
 LIVING LAYER — cycles registered per zone
   z1-coarse4  21 patches · 4 planes · 8 regions
-  z1     46 patches · 8 planes · 23 regions
-  z3w    75 patches · 5 planes · 65 regions
-  z4w    77 patches · 6 planes · 54 regions
-  z5w    62 patches · 6 planes · 50 regions
-        ⚠ STALE, no longer an animated region: sum-ridge-trees-crest-diagonal, sum-ridge-trees-right-lower, sum-ridge-trees-upper-right, sum-spur-trees-right-mid
-  z6w    78 patches · 6 planes · 64 regions
-        ⚠ STALE, no longer an animated region: sum-crest-trees-centre-upper, sum-forest-crest-top-left, sum-forest-lower-terrace, sum-forest-mid-terrace, sum-forest-ridge-upper-right-of-centre, sum-forest-slope-upper-centre, sum-grove-dark-shoulder, sum-ridge-trees-crest-diagonal, sum-ridge-trees-right-lower, sum-ridge-trees-right-upper, sum-ridge-trees-upper-right, sum-spur-trees-right-mid, sum-tree-cluster-lower-spur, sum-treeline-crest-top-left, sum-treeline-left-flank, sum-treeline-left-flank-upper, sum-treeline-left-lower, sum-treeline-mid-left-ridge, sum-treeline-skyline-right, sum-treeline-summit-right, sum-wooded-slope-lower-left, sum-wooded-slope-top-right-corner, sum-wooded-slope-upper-left
+  z1     81 patches · 9 planes · 46 regions
+  z3w    98 patches · 5 planes · 87 regions
+  z4w   131 patches · 9 planes · 84 regions
+  z5w   104 patches · 6 planes · 76 regions
+  z6w    96 patches · 6 planes · 67 regions
 
 REGIONS — by class, from the file the builder reads
   fall       2
@@ -147,6 +146,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  2904d99  write the claim hinge-foliage.py has been citing since it was reverted
 2026-08-24  850bd67  delete the dead dark-accent rule; a missing catalogue is now a hard error
 2026-08-24  83d42a8  grow the polygon before the catalogue intersect: z1 card coverage 56.9% -> 99.1%
 2026-08-24  696b1b3  canopyRule=catalogue: the density heuristic was discarding 60% of located leaf
@@ -158,16 +158,699 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  8531032  the Ge Hong tree's cycle back to the approved single sine after the spectrum test
 2026-08-24  712a321  STATE regenerated: 39 far-ridge regions retired, camZ ceiling recorded
 2026-08-24  90fb682  0.18 camZ is a ceiling: 0.45 tore the canvas, and I showed it before checking
-2026-08-24  95c9bc5  the breath returned to zero depth and zero depth is a pan, provably
 ```
 
 ### ⚠ UNPUSHED
 
-**41 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**42 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
 ```
+
+### Uncommitted
+
+```
+ M jobs/wang-meng/STATE.md
+ M jobs/wang-meng/journey/z3w/living-masks/index.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-great-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-great-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-great-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-top-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-top-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-top-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-brick-top/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-brick-top/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-brick-top/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-dense-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-dense-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-dense-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-dense-bottom/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-dense-bottom/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-dense-bottom/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-foreground-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-foreground-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-foreground-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-foreground/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-foreground/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-band/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-band/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-band/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-centre-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-centre-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-conifers-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-conifers-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-conifers-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-fronds-bottom-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-fronds-bottom-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-fronds-bottom-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-great-tree-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-great-tree-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-great-tree-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-grove-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-grove-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-grove-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-grove-left-upper/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-grove-left-upper/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-grove-left-upper/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-grove-lower-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-grove-lower-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-maple-orange/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-maple-orange/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-maple-rust-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-maple-rust-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-centre/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-right-t015/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-right-t015/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-right-t015/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-top-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-top-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-dark-top-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-left-spread/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-left-spread/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-left-spread/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-top-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-top-centre/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-top-roots/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-top-roots/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-pine-top-roots/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-thicket-bottom/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-thicket-bottom/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-thicket-bottom/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre-t002/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre-t002/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre-t002/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre-t005/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre-t005/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-centre/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t003/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t003/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t003/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t005/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t005/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t005/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t013/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t013/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-brick-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-brick-centre/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-colour-lower-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-colour-lower-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-colour-lower-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-great-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-great-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-great-centre/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-left-edge/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-lower-round/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-lower-round/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-lower-round/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-mid-round/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-mid-round/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-mid-round/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-right-edge/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-right-edge/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-right-edge/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-round-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-round-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-round-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-above-ge-hong/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-above-ge-hong/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-above-ge-hong/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-bottom-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-bottom-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-bottom-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-centre-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-centre-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-mid-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-mid-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-mid-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-upper-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-upper-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-weeping-upper-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-weeping-upper-right/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-tree-weeping-upper-right/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-willow-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-willow-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/cat-willow-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-gorge-foreground/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-clifftop-pine/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-left-pines-z2/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/exclude/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-pine-over-bridge/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z3w/living-work/s-right-rust-tree/mask/layers.json
+ M jobs/wang-meng/journey/z3w/living/built.json
+ M jobs/wang-meng/journey/z4w/living-masks/index.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-broadleaf-great-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-broadleaf-great-right/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-broadleaf-great-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-broadleaf-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-broadleaf-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-broadleaf-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-broadleaf-top-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-broadleaf-top-right/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-broadleaf-top-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-foreground-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-foreground-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-foreground-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-foreground/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-foreground/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-top-band/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-top-band/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-top-band/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-top-centre-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-top-centre-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-canopy-top-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-conifers-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-conifers-right/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-conifers-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-great-tree-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-great-tree-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-great-tree-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-grove-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-grove-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-grove-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-grove-left-upper/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-grove-left-upper/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-grove-left-upper/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-grove-lower-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-grove-lower-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-maple-orange/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-maple-orange/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-centre/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-left-spread/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-left-spread/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-left-spread/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-needle-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-needle-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-needle-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-top-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-top-centre/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-pine-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-centre-t002/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-centre-t002/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-centre-t002/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-centre-t005/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-centre-t005/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-centre/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-right-t003/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-right-t003/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-right-t003/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-right-t005/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-right-t005/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-right-t005/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-brick-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-brick-centre/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-lower-round/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-lower-round/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-lower-round/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-mid-round/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-mid-round/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-mid-round/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-right-edge/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-right-edge/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-right-edge/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-above-ge-hong/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-above-ge-hong/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-above-ge-hong/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-bottom-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-bottom-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-bottom-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-centre-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-centre-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-upper-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-upper-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-upper-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-weeping-upper-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-weeping-upper-right/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-tree-weeping-upper-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-willow-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-willow-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/cat-willow-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/s-gorge-big-canopy/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/s-gorge-big-canopy/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/s-gorge-big-canopy/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/s-gorge-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/s-gorge-foreground/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/s-gorge-foreground/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/s-left-clifftop-pine/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/s-left-clifftop-pine/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/s-left-clifftop-pine/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/s-left-pines-z2/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/s-left-pines-z2/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/s-right-rust-tree/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-big-tree-canopy-near-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-big-tree-canopy-near-right/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-big-tree-canopy-near-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-blue-green-tree-lower/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-blue-green-tree-lower/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-blue-green-tree-lower/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-cliff-trees-left-edge/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-cliff-trees-left-edge/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-cliff-trees-left-edge/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-dark-pines-centre-lower/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-dark-pines-centre-lower/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-dark-pines-centre-lower/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-firs-behind-pavilion/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-firs-left-of-pavilion/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-grove-ledge-lower-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-grove-ledge-lower-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-grove-village-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-grove-village-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-grove-village-centre/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-grove-village-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-grove-village-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-grove-village-right/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-grove-village-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-pines-bottom-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-pines-bottom-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-slope-trees-upper-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-slope-trees-upper-left/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-slope-trees-upper-left/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-sparse-trees-bottom-centre-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-tree-crown-bottom-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-tree-stand-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-tree-stand-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z4w/living-work/sum-tree-stand-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z4w/living/built.json
+ M jobs/wang-meng/journey/z5w/living-masks/index.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-canopy-top-band/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-canopy-top-band/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-canopy-top-band/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-canopy-top-centre-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-canopy-top-centre-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-canopy-top-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-conifers-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-conifers-right/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-conifers-right/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-grove-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-grove-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-grove-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-grove-left-upper/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-grove-left-upper/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-grove-left-upper/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-grove-lower-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-grove-lower-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-centre/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-left-spread/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-left-spread/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-left-spread/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-top-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-top-centre/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-pine-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-bottom-centre-t002/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-bottom-centre-t002/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-bottom-centre-t002/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-bottom-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-bottom-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-bottom-centre/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-bottom-right-t003/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-bottom-right-t003/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-bottom-right-t003/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-brick-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-brick-centre/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-mid-round/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-mid-round/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-mid-round/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-right-edge/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-right-edge/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-right-edge/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-above-ge-hong/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-above-ge-hong/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-above-ge-hong/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-bottom-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-bottom-left/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-bottom-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-centre-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-centre-right/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-upper-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-upper-left/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-upper-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-weeping-upper-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-weeping-upper-right/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-tree-weeping-upper-right/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-willow-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-willow-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/cat-willow-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/s-gorge-foreground/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/s-gorge-foreground/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/s-gorge-foreground/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/s-right-rust-tree/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-big-tree-canopy-near-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-big-tree-canopy-near-right/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-big-tree-canopy-near-right/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-blue-green-tree-lower/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-blue-green-tree-lower/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-blue-green-tree-lower/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-cliff-trees-left-edge/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-cliff-trees-left-edge/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-cliff-trees-left-edge/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-dark-pines-centre-lower/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-dark-pines-centre-lower/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-dark-pines-centre-lower/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-firs-behind-pavilion/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-firs-left-of-pavilion/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-forest-col-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-forest-col-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-forest-col-centre/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-grove-ledge-lower-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-grove-ledge-lower-right/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-grove-village-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-grove-village-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-grove-village-centre/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-grove-village-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-grove-village-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-grove-village-right/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-grove-village-right/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-pines-bottom-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-pines-bottom-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-slope-trees-upper-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-slope-trees-upper-left/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-slope-trees-upper-left/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-sparse-trees-bottom-centre-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-tree-crown-bottom-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-tree-stand-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-tree-stand-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-tree-stand-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-treeline-lower-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-wooded-flank-right-edge/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-wooded-flank-right-edge/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-wooded-flank-right-edge/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-wooded-knoll-left-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-wooded-knoll-left-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z5w/living-work/sum-wooded-knoll-left-centre/mask/layers.json
+ M jobs/wang-meng/journey/z5w/living/built.json
+ M jobs/wang-meng/journey/z6w/living-masks/index.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-canopy-top-band/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-canopy-top-band/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-canopy-top-band/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-canopy-top-centre-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-canopy-top-centre-left/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-canopy-top-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-conifers-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-conifers-right/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-conifers-right/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-grove-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-grove-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-grove-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-grove-left-upper/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-grove-left-upper/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-grove-left-upper/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-grove-lower-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-grove-lower-left/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-pine-top-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-pine-top-centre/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-bottom-centre-t002/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-bottom-centre-t002/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-bottom-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-bottom-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-bottom-centre/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-bottom-right-t003/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-bottom-right-t003/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-bottom-right-t003/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-brick-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-brick-centre/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-above-ge-hong/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-above-ge-hong/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-above-ge-hong/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-bottom-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-bottom-left/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-centre-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-centre-right/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-upper-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-upper-left/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-upper-left/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-top-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-top-left/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-top-left/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-weeping-upper-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-weeping-upper-right/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/cat-tree-weeping-upper-right/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/s-right-rust-tree/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/s-right-rust-tree/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-big-tree-canopy-near-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-big-tree-canopy-near-right/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-big-tree-canopy-near-right/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-blue-green-tree-lower/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-blue-green-tree-lower/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-blue-green-tree-lower/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-cliff-trees-left-edge/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-cliff-trees-left-edge/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-cliff-trees-left-edge/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-dark-pines-centre-lower/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-dark-pines-centre-lower/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-dark-pines-centre-lower/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-firs-behind-pavilion/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-firs-left-of-pavilion/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-forest-col-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-forest-col-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-forest-col-centre/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-grove-ledge-lower-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-grove-ledge-lower-right/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-grove-village-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-grove-village-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-grove-village-centre/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-grove-village-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-grove-village-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-grove-village-right/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-grove-village-right/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-pine-crown-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-pine-crown-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-pine-crown-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-pine-row-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-pine-row-left/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-pine-row-left/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-pine-row-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-pines-bottom-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-pines-bottom-left/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-slope-trees-upper-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-slope-trees-upper-left/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-slope-trees-upper-left/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-sparse-trees-bottom-centre-left/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-tree-crown-bottom-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-tree-stand-bottom-right/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-tree-stand-bottom-right/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-tree-stand-bottom-right/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-treeline-lower-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-wooded-flank-right-edge/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-wooded-flank-right-edge/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-wooded-flank-right-edge/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-wooded-knoll-left-centre/drawings/cycle.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-wooded-knoll-left-centre/exclude/layers.json
+ M jobs/wang-meng/journey/z6w/living-work/sum-wooded-knoll-left-centre/mask/layers.json
+ M jobs/wang-meng/journey/z6w/living/built.json
+ M jobs/wang-meng/living/evidence-masks-z3w.png
+ M jobs/wang-meng/living/evidence-masks-z4w.png
+ M jobs/wang-meng/living/evidence-masks-z5w.png
+ M jobs/wang-meng/living/evidence-masks-z6w.png
+ M jobs/wang-meng/living/living-z3w.json
+ M jobs/wang-meng/living/living-z4w.json
+ M jobs/wang-meng/living/living-z5w.json
+ M jobs/wang-meng/living/living-z6w.json
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-brick-centre/
+?? jobs/wang-meng/journey/z3w/living-work/cat-canopy-top-centre-left/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/cat-foliage-right-wall/
+?? jobs/wang-meng/journey/z3w/living-work/cat-grove-lower-left/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-bottom-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-orange/drawings/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-red/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-rust-left/drawings/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-top-left-t006/
+?? jobs/wang-meng/journey/z3w/living-work/cat-maple-top-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-needle-left-t009/
+?? jobs/wang-meng/journey/z3w/living-work/cat-pine-right-edge/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t004/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-bottom-right-t013/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-brick-centre/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-ochre-bottom/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-ochre-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-pink-by-hall/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-right-teal/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-rust-top-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-centre-right/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-left/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-teal-upper-left/exclude/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-top-right/
+?? jobs/wang-meng/journey/z3w/living-work/cat-tree-upper-teal/
+?? jobs/wang-meng/journey/z3w/living-work/cat-willow-ochre-upper-left/
+?? jobs/wang-meng/journey/z3w/living-work/cat-willow-top-centre/
+?? jobs/wang-meng/journey/z3w/living-work/g-ge-fan/
+?? jobs/wang-meng/journey/z4w/living-work/cat-canopy-top-centre-left/exclude/
+?? jobs/wang-meng/journey/z4w/living-work/cat-grove-lower-left/exclude/
+?? jobs/wang-meng/journey/z4w/living-work/cat-maple-bottom-left/
+?? jobs/wang-meng/journey/z4w/living-work/cat-maple-left/
+?? jobs/wang-meng/journey/z4w/living-work/cat-maple-orange/drawings/
+?? jobs/wang-meng/journey/z4w/living-work/cat-maple-red/
+?? jobs/wang-meng/journey/z4w/living-work/cat-maple-rust-left/
+?? jobs/wang-meng/journey/z4w/living-work/cat-maple-top-left-t006/
+?? jobs/wang-meng/journey/z4w/living-work/cat-maple-top-left/
+?? jobs/wang-meng/journey/z4w/living-work/cat-pine-right-edge/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-bottom-right-t004/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-brick-centre/exclude/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-ochre-bottom/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-ochre-left/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-pink-by-hall/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-right-teal/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-centre-right/exclude/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-teal-left/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-top-right/
+?? jobs/wang-meng/journey/z4w/living-work/cat-tree-upper-teal/
+?? jobs/wang-meng/journey/z4w/living-work/cat-willow-ochre-upper-left/
+?? jobs/wang-meng/journey/z4w/living-work/cat-willow-top-centre/
+?? jobs/wang-meng/journey/z4w/living-work/sum-autumn-tree-crown/
+?? jobs/wang-meng/journey/z4w/living-work/sum-autumn-tree-lower-mass/
+?? jobs/wang-meng/journey/z4w/living-work/sum-autumn-tree-orange-red/
+?? jobs/wang-meng/journey/z4w/living-work/sum-autumn-tree-tan-right/
+?? jobs/wang-meng/journey/z4w/living-work/sum-blue-green-mass-bottom-centre/
+?? jobs/wang-meng/journey/z4w/living-work/sum-blue-green-tree-bottom-right/
+?? jobs/wang-meng/journey/z4w/living-work/sum-blue-green-tree-lower-mass/
+?? jobs/wang-meng/journey/z4w/living-work/sum-grove-village-behind-hall/
+?? jobs/wang-meng/journey/z4w/living-work/sum-ridge-grove-bottom-right/
+?? jobs/wang-meng/journey/z4w/living-work/sum-slope-trees-lower-centre/
+?? jobs/wang-meng/journey/z4w/living-work/sum-tree-group-left-lower-isolated/
+?? jobs/wang-meng/journey/z4w/living-work/w-compound-fall/
+?? jobs/wang-meng/journey/z4w/living-work/w-gorge-fall/
+?? jobs/wang-meng/journey/z5w/living-work/cat-canopy-top-centre-left/exclude/
+?? jobs/wang-meng/journey/z5w/living-work/cat-grove-lower-left/exclude/
+?? jobs/wang-meng/journey/z5w/living-work/cat-maple-bottom-left/
+?? jobs/wang-meng/journey/z5w/living-work/cat-maple-left/
+?? jobs/wang-meng/journey/z5w/living-work/cat-maple-orange/
+?? jobs/wang-meng/journey/z5w/living-work/cat-maple-red/
+?? jobs/wang-meng/journey/z5w/living-work/cat-maple-top-left-t006/
+?? jobs/wang-meng/journey/z5w/living-work/cat-maple-top-left/
+?? jobs/wang-meng/journey/z5w/living-work/cat-pine-right-edge/
+?? jobs/wang-meng/journey/z5w/living-work/cat-tree-brick-centre/exclude/
+?? jobs/wang-meng/journey/z5w/living-work/cat-tree-ochre-bottom/
+?? jobs/wang-meng/journey/z5w/living-work/cat-tree-pink-by-hall/
+?? jobs/wang-meng/journey/z5w/living-work/cat-tree-right-teal/
+?? jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-centre-right/exclude/
+?? jobs/wang-meng/journey/z5w/living-work/cat-tree-teal-left/exclude/
+?? jobs/wang-meng/journey/z5w/living-work/cat-tree-top-right/
+?? jobs/wang-meng/journey/z5w/living-work/cat-tree-upper-teal/
+?? jobs/wang-meng/journey/z5w/living-work/cat-willow-ochre-upper-left/
+?? jobs/wang-meng/journey/z5w/living-work/cat-willow-top-centre/
+?? jobs/wang-meng/journey/z5w/living-work/sum-autumn-tree-crown/
+?? jobs/wang-meng/journey/z5w/living-work/sum-autumn-tree-lower-mass/
+?? jobs/wang-meng/journey/z5w/living-work/sum-autumn-tree-orange-red/
+?? jobs/wang-meng/journey/z5w/living-work/sum-autumn-tree-tan-right/
+?? jobs/wang-meng/journey/z5w/living-work/sum-blue-green-mass-bottom-centre/
+?? jobs/wang-meng/journey/z5w/living-work/sum-blue-green-tree-bottom-right/
+?? jobs/wang-meng/journey/z5w/living-work/sum-blue-green-tree-lower-mass/
+?? jobs/wang-meng/journey/z5w/living-work/sum-grove-village-behind-hall/
+?? jobs/wang-meng/journey/z5w/living-work/sum-ridge-grove-bottom-right/
+?? jobs/wang-meng/journey/z5w/living-work/sum-slope-trees-lower-centre/
+?? jobs/wang-meng/journey/z5w/living-work/sum-tree-crowns-peak-right/
+?? jobs/wang-meng/journey/z5w/living-work/sum-tree-group-left-lower-isolated/
+?? jobs/wang-meng/journey/z5w/living-work/sum-tree-stand-bluff-centre-right/
+?? jobs/wang-meng/journey/z5w/living-work/sum-tree-stand-left-lower/
+?? jobs/wang-meng/journey/z5w/living-work/sum-tree-stand-ridge-right-of-col/
+?? jobs/wang-meng/journey/z5w/living-work/w-compound-fall/
+?? jobs/wang-meng/journey/z6w/living-work/cat-canopy-top-centre-left/exclude/
+?? jobs/wang-meng/journey/z6w/living-work/cat-grove-lower-left/exclude/
+?? jobs/wang-meng/journey/z6w/living-work/cat-maple-bottom-left/
+?? jobs/wang-meng/journey/z6w/living-work/cat-maple-left/
+?? jobs/wang-meng/journey/z6w/living-work/cat-maple-top-left/
+?? jobs/wang-meng/journey/z6w/living-work/cat-pine-right-edge/
+?? jobs/wang-meng/journey/z6w/living-work/cat-tree-bottom-centre-t002/exclude/
+?? jobs/wang-meng/journey/z6w/living-work/cat-tree-brick-centre/exclude/
+?? jobs/wang-meng/journey/z6w/living-work/cat-tree-pink-by-hall/
+?? jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-bottom-left/exclude/
+?? jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-centre-right/exclude/
+?? jobs/wang-meng/journey/z6w/living-work/cat-tree-teal-left/
+?? jobs/wang-meng/journey/z6w/living-work/cat-trees-bottom-centre/
+?? jobs/wang-meng/journey/z6w/living-work/cat-willow-ochre-upper-left/
+?? jobs/wang-meng/journey/z6w/living-work/cat-willow-top-centre/
+?? jobs/wang-meng/journey/z6w/living-work/sum-autumn-tree-crown/
+?? jobs/wang-meng/journey/z6w/living-work/sum-autumn-tree-lower-mass/
+?? jobs/wang-meng/journey/z6w/living-work/sum-autumn-tree-orange-red/
+?? jobs/wang-meng/journey/z6w/living-work/sum-autumn-tree-tan-right/
+?? jobs/wang-meng/journey/z6w/living-work/sum-blue-green-mass-bottom-centre/
+?? jobs/wang-meng/journey/z6w/living-work/sum-blue-green-tree-bottom-right/
+?? jobs/wang-meng/journey/z6w/living-work/sum-blue-green-tree-lower-mass/
+?? jobs/wang-meng/journey/z6w/living-work/sum-grove-village-behind-hall/
+?? jobs/wang-meng/journey/z6w/living-work/sum-ridge-grove-bottom-right/
+?? jobs/wang-meng/journey/z6w/living-work/sum-slope-trees-lower-centre/
+?? jobs/wang-meng/journey/z6w/living-work/sum-tree-branch-fan-bottom-left/
+?? jobs/wang-meng/journey/z6w/living-work/sum-tree-crowns-peak-right/
+?? jobs/wang-meng/journey/z6w/living-work/sum-tree-group-left-lower-isolated/
+?? jobs/wang-meng/journey/z6w/living-work/sum-tree-stand-bluff-centre-right/
+?? jobs/wang-meng/journey/z6w/living-work/sum-tree-stand-left-lower/
+?? jobs/wang-meng/journey/z6w/living-work/sum-tree-stand-ridge-right-of-col/
+?? jobs/wang-meng/journey/z6w/living-work/w-compound-fall/
+```
+
+*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
