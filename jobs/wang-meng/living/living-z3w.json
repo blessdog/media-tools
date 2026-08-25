@@ -65,15 +65,6 @@
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-pine-over-bridge",
-    "box": [
-     745,
-     2896
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy",
     "box": [
      1120,
@@ -756,6 +747,15 @@
     ],
     "n": 96,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-pine-over-bridge",
+    "box": [
+     745,
+     2896
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
@@ -864,15 +864,6 @@
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__s-pine-over-bridge",
-    "box": [
-     0,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__g-ge-fan",
     "box": [
      0,
@@ -892,6 +883,15 @@
    },
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__cat-tree-bottom-right",
+    "box": [
+     0,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__s-pine-over-bridge",
     "box": [
      0,
      0

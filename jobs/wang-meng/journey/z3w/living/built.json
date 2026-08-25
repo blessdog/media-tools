@@ -721,42 +721,6 @@
  },
  {
   "plane": "left-cliff-wall",
-  "region": "s-pine-over-bridge",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-pine-over-bridge",
-  "box": [
-   745,
-   2896
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 3112,
-  "movedPx": 824,
-  "crop": [
-   637,
-   2881
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "pine-over-bridge",
-  "region": "s-pine-over-bridge",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__s-pine-over-bridge",
-  "box": [
-   0,
-   0
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 75690,
-  "movedPx": 56013,
-  "crop": [
-   637,
-   2881
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "left-cliff-wall",
   "region": "s-gorge-big-canopy",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-gorge-big-canopy",
   "box": [
@@ -2264,6 +2228,42 @@
   "crop": [
    1809,
    1779
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "left-cliff-wall",
+  "region": "s-pine-over-bridge",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/left-cliff-wall__s-pine-over-bridge",
+  "box": [
+   745,
+   2896
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3112,
+  "movedPx": 824,
+  "crop": [
+   637,
+   2881
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "pine-over-bridge",
+  "region": "s-pine-over-bridge",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living/pine-over-bridge__s-pine-over-bridge",
+  "box": [
+   0,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 75690,
+  "movedPx": 56013,
+  "crop": [
+   637,
+   2881
   ],
   "class": "foliage"
  }
