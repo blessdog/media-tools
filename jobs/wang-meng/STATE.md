@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 09:57 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 10:35 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -18,6 +18,8 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 ? museum-edition-curator-directed-emphasis-a-narra   (2026-08-21)
     MUSEUM EDITION: curator-directed emphasis. A narrator points at part of the painting and the film responds -- 
     why: Raised 2026-08-21 while the first full assembly was being built. He said 'for now yes, continue what you
+? rise5-is-the-current-plan   (2026-08-25)
+    READ `docs/plans/2026-08-25-rise5-plan.md` BEFORE DOING ANYTHING ON THE FILM
 ? verify-remote-resolves   (2026-08-20)
     verify the remote RESOLVES, not just that it exists
     why: having an origin is not the same as being backed up. Measured 2026-08-20: 8 repos had a remote pointing
@@ -28,7 +30,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 57 live claims: 57 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 59 live claims: 59 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -71,6 +73,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · depth-018-is-a-ceiling-the-fill-cannot-exceed camZ on the 葛稚川移居圖 plane stacks at --z-step 0.30, all zones. A ceiling on the PEAK only; i
   · depth-is-authored      Whole-painting depth on 葛稚川移居圖 and, by the same mechanism, any painting built on 散点透視 rath
   · disocclusion-is-solved-the-boundary-tone-is-not jobs/wang-meng/journey/z1's 12-plane stack, inpainted at --behind 100, under the ab-ge-cor
+  · frame-by-plane-importers-are-gui-only Frame By Plane 7.1.18 (macos_arm64) on Blender 5.2.1 LTS, measured in `--background` mode.
   · frame-zero-is-not-byte-exact-under-plane-fit render-parallax --plane-fit over a stack that has been through inpaint-planes --behind N. 
   · gates-must-survive-a-clone Any repo whose correctness depends on hooks, checkers or generated files. Measured on medi
   · hinge-at-the-attachment Cut-out foliage cards in ink painting, where leaves are drawn as separate sprays hanging o
@@ -96,6 +99,7 @@ OPEN — plans, NOT specs. proven: false. Do not build against these.
   ? merge-the-two-region-catalogues-into-one Why it matters: regions.json and living-polys.json BOTH carry a class per region, and only
   ? mist-card              A translucent band drifting on its own plane -- the multiplane technique from
   ? museum-edition-curator-directed-emphasis-a-narra Why it matters: Raised 2026-08-21 while the first full assembly was being built. He said '
+  ? rise5-is-the-current-plan RISE 4 was rejected in full on 2026-08-25 and the shot list retired at tag
   ? verify-remote-resolves Why it matters: having an origin is not the same as being backed up. Measured 2026-08-20:
 ```
 
@@ -147,6 +151,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  aadf435  open claim: RISE 5 plan is the entry point, findable after a compaction
+2026-08-25  1bbcc78  RISE 5 locked plan: the cut, the motion, what moves, the waterfall, the shots
+2026-08-25  7851e41  measured: Frame By Plane registers 63 of 353 operators headless, and zero importers
+2026-08-25  633676e  blender-multiplane: the camera moves into Blender, and the parallax is real
+2026-08-25  7f4709d  card sheets built for the three compared trees; STATE regenerated
 2026-08-25  7684ced  research: an authoring surface for cutout rigs, and the SAM on disk is two generations old
 2026-08-25  1a0c4f6  the other trees are SHREDDED, not badly swung: 113 of 147 cards hinge on nothing
 2026-08-25  1271663  RISE 5 design: one unbroken rise, fov ceiling 2.2, ridge pines held
@@ -154,11 +163,6 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  6b8c58e  restore the approved pine to carrier 1; RISE 5 spec picture
 2026-08-25  01f315f  STATE regenerated: the carrier fix and the RISE 5 pivot land in the status
 2026-08-25  4a2d991  the animatronic wave: the branch clock and the gust clock were the same clock
-2026-08-25  b6b2183  STATE regenerated: film timestamp after the 08-25 rebuild
-2026-08-25  4f7422c  STATE regenerated: journal entry and the 08-25 film land in the status
-2026-08-25  e91ca89  journal: the density rule was eating the leaves, and swing was never the problem
-2026-08-25  64faeb8  STATE regenerated: the 680-line uncommitted block is gone, the rebuild is in
-2026-08-24  a0be4d0  the whole scroll rebuilt on the catalogue: moving leaf 19.4% -> 67.9%
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
@@ -167,9 +171,6 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 
 ```
  M jobs/wang-meng/STATE.md
- M jobs/wang-meng/journey/z3w/living-work/s-gorge-big-canopy/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living-work/s-great-trees-upper/drawings/cycle.json
- M jobs/wang-meng/journey/z3w/living/built.json
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
