@@ -1,3 +1,14 @@
+> **COMPLETED AND ARCHIVED 2026-08-25 — LAW #0.6, not deleted.** Tasks 1–6
+> (crop-region --rect, world.json, the Z1 plate + click pass, the Z1 stack,
+> map-path.py, the Z1 flythrough) all shipped; `journey/z1/` and
+> `film/stations.json` are their output.
+>
+> **Why it is kept:** it carries the WORKED SCRIPTS for the stack build
+> (segment → seal → pin → fill, with a control at every step). When z2/z4/z5/z6
+> need rebuilding, this is the recipe, and re-deriving it would cost a day.
+>
+> Superseded as a PLAN by `jobs/wang-meng/PLAN.md`.
+
 # Wang Meng Journey — Phase 1 (World + Z1) Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.

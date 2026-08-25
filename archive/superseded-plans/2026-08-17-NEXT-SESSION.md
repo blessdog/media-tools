@@ -1,3 +1,18 @@
+> **ARCHIVED 2026-08-25, NOT DELETED — LAW #0.6.** A third document competing
+> with `STATE.md` (generated) and `PLAN.md` (the SSOT) to say what is current.
+> Its own header already said *"the section below is history"*.
+>
+> **What is dead in it:** the MASKED MOTION technique and its "working recipe
+> (four runs to find it)". Masked displacement was superseded by cut-out cards —
+> see `knowledge/foliage-motion.md` and the refuted
+> `evidence-warp-blurs-lift-does-not.png`: warping blurs the brushwork, lifting
+> a rigid card does not.
+>
+> **Why it is kept:** the 2026-08-17 depth-dot handoff records Ryan's approvals
+> on `pick.html` (zero typing, click order = depth order) which are still the
+> live design of the picker, and the measurement-discipline section is a clean
+> statement of bible §4.7 applied to this job.
+
 # Wang Meng — next session
 
 > **READ `STATE.md` FIRST.** It is the always-current record of the whole

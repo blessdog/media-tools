@@ -18,7 +18,7 @@ it renders photographic water over your painting and the style collapses.
 
 The working recipe: **camera-only positive**, cfg 2–3, 73 frames. A masked crop
 MAY name the substance, because the mask confines the damage to a region that is
-already that substance. Full recipe in `jobs/wang-meng/NEXT-SESSION.md`.
+already that substance. Full recipe in `archive/superseded-plans/2026-08-17-NEXT-SESSION.md`.
 
 This is a statement about the model's PRIOR, not about prompt wording, which is
 why it transfers: any word whose training distribution is dominated by

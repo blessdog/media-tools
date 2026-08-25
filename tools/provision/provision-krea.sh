@@ -9,7 +9,7 @@
 # Why its own script: provision-ltx.sh pulls LTX's 29GB checkpoint before
 # anything else and provision-wan.sh pulls ~63GB — both are dead weight here,
 # and on a job whose whole stack is 18GB the download would cost more than the
-# render. STATUS.md has been asking for a lean path since 2026-08-12.
+# render. docs/journal/2026-08-18-media-tools-status-log.md has been asking for a lean path since 2026-08-12.
 #
 # Same hard-won structure as its siblings (official PyTorch base, supervisord
 # babysitter, idempotent everything, honest markers):
