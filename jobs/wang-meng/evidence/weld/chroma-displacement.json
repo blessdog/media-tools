@@ -1,0 +1,1362 @@
+[
+ {
+  "n": 0,
+  "id": "cat-bamboo-clump-lower-left",
+  "da": -1.24,
+  "db": -3.77,
+  "disp": 3.97,
+  "label": null
+ },
+ {
+  "n": 1,
+  "id": "cat-orchid-tuft-right-bank",
+  "da": -2.14,
+  "db": -4.7,
+  "disp": 5.17,
+  "label": null
+ },
+ {
+  "n": 2,
+  "id": "s-great-trees-lower",
+  "da": -1.33,
+  "db": -5.6,
+  "disp": 5.76,
+  "label": null
+ },
+ {
+  "n": 3,
+  "id": "cat-orchid-tuft-midright",
+  "da": -1.81,
+  "db": -2.86,
+  "disp": 3.39,
+  "label": null
+ },
+ {
+  "n": 4,
+  "id": "cat-orchid-tuft-left-edge",
+  "da": -1.05,
+  "db": 0.02,
+  "disp": 1.05,
+  "label": null
+ },
+ {
+  "n": 5,
+  "id": "cat-veil-foliage-centre-lower",
+  "da": -1.04,
+  "db": -2.63,
+  "disp": 2.83,
+  "label": null
+ },
+ {
+  "n": 6,
+  "id": "cat-canopy-right",
+  "da": -3.23,
+  "db": -7.92,
+  "disp": 8.55,
+  "label": null
+ },
+ {
+  "n": 7,
+  "id": "cat-pinnate-leaves-lower-right",
+  "da": -2.16,
+  "db": -8.57,
+  "disp": 8.84,
+  "label": null
+ },
+ {
+  "n": 8,
+  "id": "cat-canopy-lower-centre",
+  "da": -0.39,
+  "db": -4.02,
+  "disp": 4.04,
+  "label": null
+ },
+ {
+  "n": 9,
+  "id": "cat-canopy-centre",
+  "da": -4.87,
+  "db": -11.8,
+  "disp": 12.77,
+  "label": null
+ },
+ {
+  "n": 10,
+  "id": "cat-dark-leaf-cluster-right",
+  "da": -1.98,
+  "db": -6.37,
+  "disp": 6.67,
+  "label": null
+ },
+ {
+  "n": 11,
+  "id": "cat-dark-needle-shrub-far-right",
+  "da": -0.42,
+  "db": -6.64,
+  "disp": 6.65,
+  "label": null
+ },
+ {
+  "n": 12,
+  "id": "cat-veil-foliage-left-lower",
+  "da": -1.28,
+  "db": -2.12,
+  "disp": 2.47,
+  "label": null
+ },
+ {
+  "n": 13,
+  "id": "cat-vine-curtain-leaves",
+  "da": -2.09,
+  "db": -3.27,
+  "disp": 3.88,
+  "label": null
+ },
+ {
+  "n": 14,
+  "id": "cat-shrub-on-rock-lower-right",
+  "da": -0.79,
+  "db": -2.53,
+  "disp": 2.65,
+  "label": null
+ },
+ {
+  "n": 15,
+  "id": "cat-weeds-bank-thicket-left",
+  "da": -1.24,
+  "db": -0.9,
+  "disp": 1.54,
+  "label": null
+ },
+ {
+  "n": 16,
+  "id": "cat-pinnate-leaves-top-right",
+  "da": 3.55,
+  "db": -1.54,
+  "disp": 3.87,
+  "label": null
+ },
+ {
+  "n": 17,
+  "id": "cat-far-bank-sprigs",
+  "da": -1.45,
+  "db": -2.69,
+  "disp": 3.05,
+  "label": null
+ },
+ {
+  "n": 18,
+  "id": "cat-weeds-bank-right-edge-upper",
+  "da": -2.27,
+  "db": -2.98,
+  "disp": 3.74,
+  "label": null
+ },
+ {
+  "n": 19,
+  "id": "cat-weeds-bank-thicket-centre",
+  "da": -1.77,
+  "db": -2.71,
+  "disp": 3.24,
+  "label": null
+ },
+ {
+  "n": 20,
+  "id": "cat-canopy-centre-below-branch",
+  "da": -1.9,
+  "db": -6.4,
+  "disp": 6.67,
+  "label": null
+ },
+ {
+  "n": 21,
+  "id": "cat-canopy-upper-left",
+  "da": -1.11,
+  "db": -4.27,
+  "disp": 4.41,
+  "label": null
+ },
+ {
+  "n": 22,
+  "id": "cat-canopy-bough-left-main",
+  "da": -1.25,
+  "db": -5.19,
+  "disp": 5.34,
+  "label": null
+ },
+ {
+  "n": 23,
+  "id": "cat-canopy-far-right",
+  "da": 0.61,
+  "db": -2.74,
+  "disp": 2.81,
+  "label": null
+ },
+ {
+  "n": 24,
+  "id": "cat-canopy-right-upper",
+  "da": -2.24,
+  "db": -6.92,
+  "disp": 7.28,
+  "label": null
+ },
+ {
+  "n": 25,
+  "id": "cat-veil-foliage-left-mid",
+  "da": -2.87,
+  "db": -4.5,
+  "disp": 5.34,
+  "label": null
+ },
+ {
+  "n": 26,
+  "id": "cat-vine-curtain-left",
+  "da": -1.55,
+  "db": -1.78,
+  "disp": 2.36,
+  "label": null
+ },
+ {
+  "n": 27,
+  "id": "cat-canopy-crown-mid-right",
+  "da": 0.66,
+  "db": -1.49,
+  "disp": 1.63,
+  "label": null
+ },
+ {
+  "n": 28,
+  "id": "cat-canopy-left-shoulder",
+  "da": -1.71,
+  "db": -5.84,
+  "disp": 6.09,
+  "label": null
+ },
+ {
+  "n": 29,
+  "id": "cat-canopy-bough-left-tip",
+  "da": -2.51,
+  "db": -6.49,
+  "disp": 6.95,
+  "label": null
+ },
+ {
+  "n": 30,
+  "id": "cat-vine-curtain-mid",
+  "da": -0.86,
+  "db": -1.37,
+  "disp": 1.62,
+  "label": null
+ },
+ {
+  "n": 31,
+  "id": "cat-vine-tangle-right",
+  "da": -0.77,
+  "db": -1.26,
+  "disp": 1.47,
+  "label": null
+ },
+ {
+  "n": 32,
+  "id": "cat-veil-foliage-upper-left",
+  "da": -0.47,
+  "db": -1.76,
+  "disp": 1.82,
+  "label": null
+ },
+ {
+  "n": 33,
+  "id": "cat-veil-foliage-upper-centre",
+  "da": -0.83,
+  "db": -2.32,
+  "disp": 2.47,
+  "label": null
+ },
+ {
+  "n": 34,
+  "id": "cat-canopy-crown-upper-right",
+  "da": 0.35,
+  "db": -2.33,
+  "disp": 2.35,
+  "label": null
+ },
+ {
+  "n": 35,
+  "id": "cat-canopy-dense-bottom-right",
+  "da": -0.59,
+  "db": -3.46,
+  "disp": 3.51,
+  "label": null
+ },
+ {
+  "n": 36,
+  "id": "cat-canopy-dense-bottom",
+  "da": -0.86,
+  "db": -4.21,
+  "disp": 4.3,
+  "label": null
+ },
+ {
+  "n": 37,
+  "id": "cat-fronds-bottom-left",
+  "da": -2.16,
+  "db": -6.69,
+  "disp": 7.03,
+  "label": null
+ },
+ {
+  "n": 38,
+  "id": "cat-tree-bottom-right",
+  "da": -1.95,
+  "db": -3.0,
+  "disp": 3.58,
+  "label": null
+ },
+ {
+  "n": 39,
+  "id": "cat-tree-bottom-right-t013",
+  "da": -2.54,
+  "db": -3.53,
+  "disp": 4.35,
+  "label": null
+ },
+ {
+  "n": 40,
+  "id": "cat-canopy-bottom-left",
+  "da": -2.48,
+  "db": -4.06,
+  "disp": 4.76,
+  "label": null
+ },
+ {
+  "n": 41,
+  "id": "s-great-trees-upper",
+  "da": -1.0,
+  "db": -3.84,
+  "disp": 3.97,
+  "label": null
+ },
+ {
+  "n": 42,
+  "id": "cat-tree-colour-lower-left",
+  "da": -2.06,
+  "db": -3.21,
+  "disp": 3.82,
+  "label": null
+ },
+ {
+  "n": 43,
+  "id": "s-pine-over-bridge",
+  "da": -2.05,
+  "db": -3.06,
+  "disp": 3.68,
+  "label": null
+ },
+ {
+  "n": 44,
+  "id": "cat-foliage-right-wall",
+  "da": -1.91,
+  "db": -2.3,
+  "disp": 2.99,
+  "label": null
+ },
+ {
+  "n": 45,
+  "id": "cat-pine-dark-right",
+  "da": -1.1,
+  "db": -4.64,
+  "disp": 4.77,
+  "label": null
+ },
+ {
+  "n": 46,
+  "id": "cat-tree-great-centre",
+  "da": -2.07,
+  "db": -5.4,
+  "disp": 5.78,
+  "label": null
+ },
+ {
+  "n": 47,
+  "id": "cat-tree-teal-mid-left",
+  "da": -3.79,
+  "db": -6.24,
+  "disp": 7.3,
+  "label": null
+ },
+ {
+  "n": 48,
+  "id": "cat-canopy-brick-centre",
+  "da": -0.47,
+  "db": -1.3,
+  "disp": 1.39,
+  "label": null
+ },
+ {
+  "n": 49,
+  "id": "cat-pine-dark-right-t015",
+  "da": -3.53,
+  "db": -9.06,
+  "disp": 9.72,
+  "label": null
+ },
+ {
+  "n": 50,
+  "id": "cat-canopy-brick-top",
+  "da": -1.91,
+  "db": -3.85,
+  "disp": 4.3,
+  "label": null
+ },
+ {
+  "n": 51,
+  "id": "cat-tree-round-top-left",
+  "da": -2.08,
+  "db": -4.02,
+  "disp": 4.53,
+  "label": null
+ },
+ {
+  "n": 52,
+  "id": "cat-pine-dark-top-right",
+  "da": -2.51,
+  "db": -6.65,
+  "disp": 7.11,
+  "label": null
+ },
+ {
+  "n": 53,
+  "id": "cat-pine-top-roots",
+  "da": -1.59,
+  "db": -1.95,
+  "disp": 2.52,
+  "label": null
+ },
+ {
+  "n": 54,
+  "id": "cat-broadleaf-great-right",
+  "da": -2.83,
+  "db": -3.75,
+  "disp": 4.69,
+  "label": null
+ },
+ {
+  "n": 55,
+  "id": "cat-pine-needle-bottom-right",
+  "da": -3.71,
+  "db": -8.25,
+  "disp": 9.05,
+  "label": null
+ },
+ {
+  "n": 56,
+  "id": "cat-thicket-bottom",
+  "da": -1.73,
+  "db": -2.59,
+  "disp": 3.11,
+  "label": null
+ },
+ {
+  "n": 57,
+  "id": "cat-pine-bottom-right",
+  "da": -3.03,
+  "db": -6.78,
+  "disp": 7.43,
+  "label": null
+ },
+ {
+  "n": 58,
+  "id": "cat-pine-needle-right",
+  "da": -3.38,
+  "db": -4.86,
+  "disp": 5.92,
+  "label": null
+ },
+ {
+  "n": 59,
+  "id": "s-left-pines-z2",
+  "da": -2.52,
+  "db": -3.58,
+  "disp": 4.38,
+  "label": null
+ },
+ {
+  "n": 60,
+  "id": "cat-pine-needle-left-t009",
+  "da": -3.24,
+  "db": -5.1,
+  "disp": 6.04,
+  "label": null
+ },
+ {
+  "n": 61,
+  "id": "cat-tree-left-edge",
+  "da": -0.42,
+  "db": -1.53,
+  "disp": 1.59,
+  "label": null
+ },
+ {
+  "n": 62,
+  "id": "cat-maple-rust-left",
+  "da": 0.03,
+  "db": -0.82,
+  "disp": 0.82,
+  "label": null
+ },
+ {
+  "n": 63,
+  "id": "cat-tree-rust-top-right",
+  "da": -2.94,
+  "db": -4.13,
+  "disp": 5.07,
+  "label": null
+ },
+ {
+  "n": 64,
+  "id": "cat-great-tree-top-left",
+  "da": -2.4,
+  "db": -3.21,
+  "disp": 4.01,
+  "label": null
+ },
+ {
+  "n": 65,
+  "id": "s-gorge-big-canopy",
+  "da": -2.28,
+  "db": -2.9,
+  "disp": 3.69,
+  "label": null
+ },
+ {
+  "n": 66,
+  "id": "cat-broadleaf-top-right",
+  "da": -3.73,
+  "db": -4.47,
+  "disp": 5.82,
+  "label": null
+ },
+ {
+  "n": 67,
+  "id": "cat-tree-ochre-left",
+  "da": 0.49,
+  "db": 1.08,
+  "disp": 1.19,
+  "label": null
+ },
+ {
+  "n": 68,
+  "id": "cat-broadleaf-top-left",
+  "da": -3.14,
+  "db": -3.83,
+  "disp": 4.95,
+  "label": null
+ },
+ {
+  "n": 69,
+  "id": "cat-canopy-top-left",
+  "da": -4.32,
+  "db": -5.31,
+  "disp": 6.85,
+  "label": null
+ },
+ {
+  "n": 70,
+  "id": "s-left-clifftop-pine",
+  "da": -1.62,
+  "db": -2.9,
+  "disp": 3.32,
+  "label": null
+ },
+ {
+  "n": 71,
+  "id": "cat-canopy-foreground-left",
+  "da": -4.38,
+  "db": -4.73,
+  "disp": 6.44,
+  "label": null
+ },
+ {
+  "n": 72,
+  "id": "cat-canopy-foreground",
+  "da": -1.94,
+  "db": -3.06,
+  "disp": 3.63,
+  "label": null
+ },
+ {
+  "n": 73,
+  "id": "cat-tree-bottom-right-t005",
+  "da": -4.95,
+  "db": -5.18,
+  "disp": 7.16,
+  "label": null
+ },
+ {
+  "n": 74,
+  "id": "cat-tree-bottom-centre-t005",
+  "da": -2.06,
+  "db": -2.26,
+  "disp": 3.06,
+  "label": null
+ },
+ {
+  "n": 75,
+  "id": "cat-tree-bottom-right-t004",
+  "da": -0.43,
+  "db": -0.59,
+  "disp": 0.73,
+  "label": null
+ },
+ {
+  "n": 76,
+  "id": "cat-tree-lower-round",
+  "da": -3.12,
+  "db": -3.91,
+  "disp": 5.0,
+  "label": null
+ },
+ {
+  "n": 77,
+  "id": "cat-pine-needle-left",
+  "da": -2.92,
+  "db": -5.01,
+  "disp": 5.8,
+  "label": null
+ },
+ {
+  "n": 78,
+  "id": "cat-maple-ochre",
+  "da": -0.29,
+  "db": 0.01,
+  "disp": 0.29,
+  "label": null
+ },
+ {
+  "n": 79,
+  "id": "s-gorge-foreground",
+  "da": -1.38,
+  "db": -2.53,
+  "disp": 2.88,
+  "label": null
+ },
+ {
+  "n": 80,
+  "id": "cat-maple-orange",
+  "da": 1.36,
+  "db": -0.7,
+  "disp": 1.53,
+  "label": null
+ },
+ {
+  "n": 81,
+  "id": "cat-pine-left-spread",
+  "da": -3.17,
+  "db": -3.78,
+  "disp": 4.93,
+  "label": null
+ },
+ {
+  "n": 82,
+  "id": "cat-pine-centre",
+  "da": -2.71,
+  "db": -4.03,
+  "disp": 4.86,
+  "label": null
+ },
+ {
+  "n": 83,
+  "id": "cat-tree-right-teal",
+  "da": -0.51,
+  "db": -1.97,
+  "disp": 2.04,
+  "label": null
+ },
+ {
+  "n": 84,
+  "id": "cat-maple-red",
+  "da": 1.63,
+  "db": 0.35,
+  "disp": 1.67,
+  "label": null
+ },
+ {
+  "n": 85,
+  "id": "cat-tree-mid-round",
+  "da": -3.1,
+  "db": -2.82,
+  "disp": 4.19,
+  "label": null
+ },
+ {
+  "n": 86,
+  "id": "cat-tree-upper-teal",
+  "da": -1.49,
+  "db": -1.09,
+  "disp": 1.85,
+  "label": null
+ },
+ {
+  "n": 87,
+  "id": "s-right-rust-tree",
+  "da": 1.54,
+  "db": 2.05,
+  "disp": 2.57,
+  "label": null
+ },
+ {
+  "n": 88,
+  "id": "cat-willow-top-centre",
+  "da": 2.6,
+  "db": 2.41,
+  "disp": 3.54,
+  "label": null
+ },
+ {
+  "n": 89,
+  "id": "cat-tree-right-edge",
+  "da": -2.08,
+  "db": -3.31,
+  "disp": 3.91,
+  "label": null
+ },
+ {
+  "n": 90,
+  "id": "cat-pine-top-left",
+  "da": -1.73,
+  "db": -3.52,
+  "disp": 3.92,
+  "label": null
+ },
+ {
+  "n": 91,
+  "id": "cat-tree-top-left",
+  "da": -2.24,
+  "db": -2.45,
+  "disp": 3.32,
+  "label": null
+ },
+ {
+  "n": 92,
+  "id": "cat-tree-top-right",
+  "da": 4.13,
+  "db": 1.5,
+  "disp": 4.4,
+  "label": null
+ },
+ {
+  "n": 93,
+  "id": "cat-willow-top-left",
+  "da": 0.81,
+  "db": 0.17,
+  "disp": 0.83,
+  "label": null
+ },
+ {
+  "n": 94,
+  "id": "cat-grove-bottom-right",
+  "da": -0.06,
+  "db": -1.42,
+  "disp": 1.42,
+  "label": null
+ },
+ {
+  "n": 95,
+  "id": "cat-tree-bottom-centre",
+  "da": -1.94,
+  "db": -1.83,
+  "disp": 2.67,
+  "label": null
+ },
+ {
+  "n": 96,
+  "id": "cat-maple-bottom-left",
+  "da": 5.19,
+  "db": 1.54,
+  "disp": 5.42,
+  "label": "free"
+ },
+ {
+  "n": 97,
+  "id": "cat-trees-bottom-centre",
+  "da": 1.48,
+  "db": 2.52,
+  "disp": 2.93,
+  "label": null
+ },
+ {
+  "n": 98,
+  "id": "cat-tree-bottom-centre-t002",
+  "da": -1.54,
+  "db": -2.59,
+  "disp": 3.01,
+  "label": "free"
+ },
+ {
+  "n": 99,
+  "id": "cat-tree-bottom-right-t003",
+  "da": -3.44,
+  "db": -4.33,
+  "disp": 5.53,
+  "label": null
+ },
+ {
+  "n": 100,
+  "id": "cat-tree-ochre-bottom",
+  "da": 1.61,
+  "db": 2.36,
+  "disp": 2.85,
+  "label": "free"
+ },
+ {
+  "n": 101,
+  "id": "cat-maple-top-left-t006",
+  "da": 3.79,
+  "db": 1.19,
+  "disp": 3.97,
+  "label": "free"
+ },
+ {
+  "n": 102,
+  "id": "cat-tree-teal-bottom-left",
+  "da": -2.45,
+  "db": -3.2,
+  "disp": 4.03,
+  "label": "free"
+ },
+ {
+  "n": 103,
+  "id": "cat-grove-lower-left",
+  "da": 0.27,
+  "db": -1.24,
+  "disp": 1.27,
+  "label": "free"
+ },
+ {
+  "n": 104,
+  "id": "cat-tree-teal-above-ge-hong",
+  "da": -4.18,
+  "db": -6.28,
+  "disp": 7.54,
+  "label": "free"
+ },
+ {
+  "n": 105,
+  "id": "cat-conifers-right",
+  "da": -2.37,
+  "db": -4.75,
+  "disp": 5.31,
+  "label": "weld"
+ },
+ {
+  "n": 106,
+  "id": "cat-maple-left",
+  "da": 2.42,
+  "db": 0.52,
+  "disp": 2.48,
+  "label": "free"
+ },
+ {
+  "n": 107,
+  "id": "cat-tree-teal-centre-right",
+  "da": -2.67,
+  "db": -3.44,
+  "disp": 4.36,
+  "label": "free"
+ },
+ {
+  "n": 108,
+  "id": "cat-tree-brick-centre",
+  "da": 0.94,
+  "db": -0.1,
+  "disp": 0.94,
+  "label": "free"
+ },
+ {
+  "n": 109,
+  "id": "cat-grove-left-upper",
+  "da": -2.69,
+  "db": -3.7,
+  "disp": 4.57,
+  "label": "weld"
+ },
+ {
+  "n": 110,
+  "id": "cat-tree-teal-left",
+  "da": -2.68,
+  "db": -3.52,
+  "disp": 4.43,
+  "label": "free"
+ },
+ {
+  "n": 111,
+  "id": "cat-tree-weeping-upper-right",
+  "da": -1.98,
+  "db": -3.94,
+  "disp": 4.41,
+  "label": "free"
+ },
+ {
+  "n": 112,
+  "id": "cat-pine-right-edge",
+  "da": -1.13,
+  "db": -2.82,
+  "disp": 3.04,
+  "label": "weld"
+ },
+ {
+  "n": 113,
+  "id": "cat-willow-ochre-upper-left",
+  "da": 2.14,
+  "db": 0.72,
+  "disp": 2.26,
+  "label": "free"
+ },
+ {
+  "n": 114,
+  "id": "cat-tree-pink-by-hall",
+  "da": 2.15,
+  "db": 0.6,
+  "disp": 2.23,
+  "label": "free"
+ },
+ {
+  "n": 115,
+  "id": "cat-tree-teal-upper-left",
+  "da": -3.09,
+  "db": -3.2,
+  "disp": 4.45,
+  "label": "free"
+ },
+ {
+  "n": 116,
+  "id": "cat-canopy-top-band",
+  "da": -2.22,
+  "db": -3.78,
+  "disp": 4.38,
+  "label": "free"
+ },
+ {
+  "n": 117,
+  "id": "cat-maple-top-left",
+  "da": 2.13,
+  "db": 1.0,
+  "disp": 2.36,
+  "label": "free"
+ },
+ {
+  "n": 118,
+  "id": "cat-tree-rust-by-pavilion",
+  "da": 1.91,
+  "db": -1.51,
+  "disp": 2.44,
+  "label": "free"
+ },
+ {
+  "n": 119,
+  "id": "cat-pine-top-centre",
+  "da": -2.69,
+  "db": -3.34,
+  "disp": 4.29,
+  "label": "weld"
+ },
+ {
+  "n": 120,
+  "id": "cat-canopy-top-right",
+  "da": -2.51,
+  "db": -4.0,
+  "disp": 4.72,
+  "label": "free"
+ },
+ {
+  "n": 121,
+  "id": "cat-canopy-top-centre-left",
+  "da": -1.54,
+  "db": -1.63,
+  "disp": 2.24,
+  "label": "free"
+ },
+ {
+  "n": 122,
+  "id": "sum-pines-bottom-left",
+  "da": -1.7,
+  "db": -3.14,
+  "disp": 3.57,
+  "label": "weld"
+ },
+ {
+  "n": 123,
+  "id": "sum-grove-village-right",
+  "da": -1.18,
+  "db": -1.15,
+  "disp": 1.65,
+  "label": "weld"
+ },
+ {
+  "n": 124,
+  "id": "sum-grove-village-left",
+  "da": -1.95,
+  "db": -2.91,
+  "disp": 3.51,
+  "label": "weld"
+ },
+ {
+  "n": 125,
+  "id": "sum-grove-village-centre",
+  "da": -1.61,
+  "db": -3.89,
+  "disp": 4.21,
+  "label": "weld"
+ },
+ {
+  "n": 126,
+  "id": "sum-blue-green-tree-bottom-right",
+  "da": -2.39,
+  "db": -3.04,
+  "disp": 3.87,
+  "label": "free"
+ },
+ {
+  "n": 127,
+  "id": "sum-autumn-tree-bottom-centre",
+  "da": 2.64,
+  "db": 2.27,
+  "disp": 3.48,
+  "label": "free"
+ },
+ {
+  "n": 128,
+  "id": "sum-blue-green-mass-bottom-centre",
+  "da": -1.52,
+  "db": -2.47,
+  "disp": 2.9,
+  "label": "free"
+ },
+ {
+  "n": 129,
+  "id": "sum-autumn-tree-orange-red",
+  "da": 3.72,
+  "db": 1.47,
+  "disp": 4.0,
+  "label": "free"
+ },
+ {
+  "n": 130,
+  "id": "sum-blue-green-mass-right-edge",
+  "da": -1.94,
+  "db": -4.25,
+  "disp": 4.68,
+  "label": "free"
+ },
+ {
+  "n": 131,
+  "id": "sum-dark-pines-bottom-centre",
+  "da": -1.94,
+  "db": -4.22,
+  "disp": 4.65,
+  "label": "weld"
+ },
+ {
+  "n": 132,
+  "id": "sum-ridge-grove-bottom-right",
+  "da": -2.38,
+  "db": -3.75,
+  "disp": 4.44,
+  "label": "weld"
+ },
+ {
+  "n": 133,
+  "id": "sum-dark-pines-centre-lower",
+  "da": -0.85,
+  "db": -2.84,
+  "disp": 2.96,
+  "label": "weld"
+ },
+ {
+  "n": 134,
+  "id": "sum-slope-trees-lower-centre",
+  "da": -2.72,
+  "db": -5.39,
+  "disp": 6.04,
+  "label": "weld"
+ },
+ {
+  "n": 135,
+  "id": "sum-autumn-tree-lower-mass",
+  "da": 2.31,
+  "db": 1.19,
+  "disp": 2.6,
+  "label": "free"
+ },
+ {
+  "n": 136,
+  "id": "sum-autumn-tree-tan-right",
+  "da": 1.25,
+  "db": 0.06,
+  "disp": 1.25,
+  "label": "free"
+ },
+ {
+  "n": 137,
+  "id": "sum-autumn-tree-yellow",
+  "da": 0.66,
+  "db": 1.9,
+  "disp": 2.01,
+  "label": "free"
+ },
+ {
+  "n": 138,
+  "id": "sum-slope-trees-right",
+  "da": -1.69,
+  "db": -3.27,
+  "disp": 3.68,
+  "label": "weld"
+ },
+ {
+  "n": 139,
+  "id": "sum-slope-trees-upper-left",
+  "da": -2.53,
+  "db": -5.47,
+  "disp": 6.03,
+  "label": "weld"
+ },
+ {
+  "n": 140,
+  "id": "sum-firs-behind-pavilion",
+  "da": 0.07,
+  "db": -1.13,
+  "disp": 1.13,
+  "label": "weld"
+ },
+ {
+  "n": 141,
+  "id": "sum-dark-pines-centre",
+  "da": -4.06,
+  "db": -7.2,
+  "disp": 8.26,
+  "label": "weld"
+ },
+ {
+  "n": 142,
+  "id": "sum-firs-left-of-pavilion",
+  "da": -1.69,
+  "db": -1.73,
+  "disp": 2.42,
+  "label": "weld"
+ },
+ {
+  "n": 143,
+  "id": "sum-blue-green-tree-lower",
+  "da": -1.53,
+  "db": -1.95,
+  "disp": 2.48,
+  "label": "free"
+ },
+ {
+  "n": 144,
+  "id": "sum-autumn-tree-crown",
+  "da": 4.93,
+  "db": 2.32,
+  "disp": 5.44,
+  "label": "free"
+ },
+ {
+  "n": 145,
+  "id": "sum-tree-crown-bottom-centre",
+  "da": -0.65,
+  "db": -1.4,
+  "disp": 1.54,
+  "label": "free"
+ },
+ {
+  "n": 146,
+  "id": "sum-tree-stand-bottom-right",
+  "da": -1.9,
+  "db": -3.32,
+  "disp": 3.82,
+  "label": "weld"
+ },
+ {
+  "n": 147,
+  "id": "sum-foliage-bottom-left-of-house",
+  "da": -0.46,
+  "db": -0.97,
+  "disp": 1.07,
+  "label": "weld"
+ },
+ {
+  "n": 148,
+  "id": "sum-sparse-trees-bottom-centre-left",
+  "da": -1.29,
+  "db": -1.96,
+  "disp": 2.35,
+  "label": "weld"
+ },
+ {
+  "n": 149,
+  "id": "sum-big-tree-canopy-near-right",
+  "da": -3.08,
+  "db": -4.33,
+  "disp": 5.31,
+  "label": "free"
+ },
+ {
+  "n": 150,
+  "id": "sum-blue-green-tree-lower-mass",
+  "da": -1.35,
+  "db": -2.18,
+  "disp": 2.56,
+  "label": "free"
+ },
+ {
+  "n": 151,
+  "id": "sum-cliff-trees-left-edge",
+  "da": -2.21,
+  "db": -4.35,
+  "disp": 4.88,
+  "label": "weld"
+ },
+ {
+  "n": 152,
+  "id": "sum-grove-village-behind-hall",
+  "da": -0.5,
+  "db": -0.6,
+  "disp": 0.78,
+  "label": "weld"
+ },
+ {
+  "n": 153,
+  "id": "sum-grove-ledge-lower-right",
+  "da": -0.79,
+  "db": -2.45,
+  "disp": 2.58,
+  "label": "weld"
+ },
+ {
+  "n": 154,
+  "id": "sum-tree-group-left-lower-isolated",
+  "da": -1.47,
+  "db": -2.3,
+  "disp": 2.73,
+  "label": "weld"
+ },
+ {
+  "n": 155,
+  "id": "sum-tree-stand-bluff-centre-right",
+  "da": -1.49,
+  "db": -2.72,
+  "disp": 3.1,
+  "label": "weld"
+ },
+ {
+  "n": 156,
+  "id": "sum-treeline-lower-ridge-centre",
+  "da": -1.2,
+  "db": -1.77,
+  "disp": 2.14,
+  "label": "weld"
+ },
+ {
+  "n": 157,
+  "id": "sum-treeline-diagonal-left-lower",
+  "da": -1.06,
+  "db": -3.14,
+  "disp": 3.32,
+  "label": "weld"
+ },
+ {
+  "n": 158,
+  "id": "sum-tree-crowns-peak-right",
+  "da": -2.11,
+  "db": -3.0,
+  "disp": 3.67,
+  "label": "weld"
+ },
+ {
+  "n": 159,
+  "id": "sum-wooded-knoll-left-centre",
+  "da": -1.74,
+  "db": -3.03,
+  "disp": 3.5,
+  "label": "weld"
+ },
+ {
+  "n": 160,
+  "id": "sum-treeline-lower-centre",
+  "da": -1.48,
+  "db": -3.26,
+  "disp": 3.58,
+  "label": "weld"
+ },
+ {
+  "n": 161,
+  "id": "sum-forest-col-centre",
+  "da": -2.01,
+  "db": -4.61,
+  "disp": 5.03,
+  "label": "weld"
+ },
+ {
+  "n": 162,
+  "id": "sum-tree-stand-left-lower",
+  "da": -1.04,
+  "db": -1.97,
+  "disp": 2.23,
+  "label": "weld"
+ },
+ {
+  "n": 163,
+  "id": "sum-wooded-flank-right-edge",
+  "da": -1.78,
+  "db": -3.58,
+  "disp": 4.0,
+  "label": "weld"
+ },
+ {
+  "n": 164,
+  "id": "sum-tree-stand-ridge-right-of-col",
+  "da": -2.37,
+  "db": -4.07,
+  "disp": 4.71,
+  "label": "weld"
+ },
+ {
+  "n": 165,
+  "id": "sum-pine-row-left",
+  "da": -1.83,
+  "db": -5.52,
+  "disp": 5.82,
+  "label": "weld"
+ },
+ {
+  "n": 166,
+  "id": "sum-pine-row-right",
+  "da": -2.06,
+  "db": -6.13,
+  "disp": 6.47,
+  "label": "weld"
+ },
+ {
+  "n": 167,
+  "id": "sum-tree-branch-fan-bottom-left",
+  "da": -1.71,
+  "db": -3.92,
+  "disp": 4.28,
+  "label": "weld"
+ },
+ {
+  "n": 168,
+  "id": "sum-pine-crown-bottom-right",
+  "da": -2.17,
+  "db": -5.0,
+  "disp": 5.45,
+  "label": "weld"
+ },
+ {
+  "n": 169,
+  "id": "sum-pine-grove-crest",
+  "da": -1.34,
+  "db": -4.91,
+  "disp": 5.09,
+  "label": "weld"
+ }
+]

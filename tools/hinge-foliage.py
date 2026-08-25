@@ -130,6 +130,18 @@ p.add_argument('--carrier', type=int, default=1,
                     'one frequency, just not the gust\'s. Must be an integer or '
                     'the loop will not close.')
 
+p.add_argument('--card-sheet', default=None,
+               help='write a diagnostic PNG outlining the SILHOUETTE of every '
+                    'card -- the actual cut-out shape that moves, not its '
+                    'bounding box. WHY: Ryan, 2026-08-25, looking at a box '
+                    'overlay -- "you\'re drawing square boxes like in the middle '
+                    'of a plant bushel instead of identifying the individual '
+                    'bushels... that\'s what you should be doing with these '
+                    'bushels of plants". The boxes were the diagnostic, never '
+                    'the card, but a box overlay cannot show that. Outlined, '
+                    'never filled, per the universal law '
+                    'an-overlay-must-not-hide-the-thing-it-measures.')
+
 p.add_argument('--feather', type=int, default=2)
 p.add_argument('--min-px', type=int, default=80, help='smallest card worth hinging')
 p.add_argument('--branch-radius', default='auto',
@@ -458,6 +470,23 @@ for pl in meta['planeList']:
         })
 if not cards:
     sys.exit(f'no card in {a.cards} reached --min-px {a.min_px}')
+
+if a.card_sheet:
+    # src is RGB (PIL); cv2.imwrite expects BGR or the painting comes out blue
+    sheet = cv2.cvtColor(src.astype(np.uint8), cv2.COLOR_RGB2BGR)
+    rng = np.random.default_rng(11)
+    for c in cards:
+        x0, y0, x1, y1 = c['box']
+        sol = (np.squeeze(c['solid']) > 0.5).astype(np.uint8)
+        cnts, _ = cv2.findContours(sol, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        col = tuple(int(v) for v in rng.integers(60, 255, 3))
+        for k in cnts:
+            cv2.drawContours(sheet[y0:y1, x0:x1], [k], -1, col, 2, cv2.LINE_AA)
+        px, py = c['pivot']
+        cv2.circle(sheet, (int(x0 + px), int(y0 + py)), 5,
+                   (0, 200, 0) if c['attached'] else (0, 0, 220), -1, cv2.LINE_AA)
+    cv2.imwrite(a.card_sheet, sheet)
+    print(f'card sheet: {len(cards)} silhouettes -> {a.card_sheet}', file=sys.stderr)
 
 
 def split_marks(solid, min_mark):
