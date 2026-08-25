@@ -1,0 +1,428 @@
+<title>The Pen and the Bushel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+:root{
+  --bg:#f7f8fa; --panel:#ffffff; --panel-2:#eef1f5;
+  --ink:#1b2430; --ink-2:#3d4c5c; --muted:#6b7c8d; --line:#d8dee6;
+  --teal:#1f7a6f; --teal-soft:#e2f0ed;
+  --clay:#a84a26; --clay-soft:#fbe9e1;
+  --amber:#8a6a12; --amber-soft:#f7efd8;
+  --steel:#4a5c70;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --disp:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1319; --panel:#161c24; --panel-2:#1c242e;
+    --ink:#e6ecf2; --ink-2:#b9c6d3; --muted:#8296a8; --line:#28323e;
+    --teal:#5cc2b2; --teal-soft:#12312d;
+    --clay:#e08a5f; --clay-soft:#33190f;
+    --amber:#d9b559; --amber-soft:#2b2413;
+    --steel:#93a7bb;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1319; --panel:#161c24; --panel-2:#1c242e;
+  --ink:#e6ecf2; --ink-2:#b9c6d3; --muted:#8296a8; --line:#28323e;
+  --teal:#5cc2b2; --teal-soft:#12312d;
+  --clay:#e08a5f; --clay-soft:#33190f;
+  --amber:#d9b559; --amber-soft:#2b2413;
+  --steel:#93a7bb;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--serif); font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1060px; margin:0 auto; padding:0 28px 96px}
+.col{max-width:70ch}
+
+header{border-bottom:1px solid var(--line); margin-bottom:52px; padding:64px 0 34px}
+.eyebrow{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--muted); margin:0 0 18px;
+}
+h1{
+  font-family:var(--disp); font-weight:700; font-size:clamp(34px,5.4vw,54px);
+  line-height:1.04; letter-spacing:-.022em; margin:0 0 20px; text-wrap:balance;
+}
+.standfirst{font-size:19px; color:var(--ink-2); margin:0; max-width:62ch}
+.meta{
+  display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:26px;
+  font-family:var(--mono); font-size:12px; color:var(--muted);
+}
+.meta b{color:var(--ink-2); font-weight:500}
+
+section{margin:0 0 66px}
+h2{
+  font-family:var(--disp); font-weight:600; font-size:13px; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--steel); margin:0 0 6px;
+}
+h2 + .rule{height:2px; background:var(--ink); width:44px; margin-bottom:26px}
+h3{
+  font-family:var(--disp); font-weight:600; font-size:25px; letter-spacing:-.012em;
+  margin:0 0 14px; text-wrap:balance; line-height:1.2;
+}
+h4{
+  font-family:var(--disp); font-weight:600; font-size:17px; margin:30px 0 10px;
+  letter-spacing:-.006em;
+}
+p{margin:0 0 17px}
+strong{font-weight:600}
+a{color:var(--teal)}
+code{font-family:var(--mono); font-size:.87em; background:var(--panel-2); padding:1px 5px; border-radius:4px}
+
+.scroll{overflow-x:auto; margin:0 0 26px; border:1px solid var(--line); border-radius:7px; background:var(--panel)}
+table{border-collapse:collapse; width:100%; font-family:var(--mono); font-size:13px}
+th{
+  text-align:left; font-weight:600; color:var(--muted); font-size:11px;
+  letter-spacing:.1em; text-transform:uppercase; padding:12px 16px;
+  border-bottom:1px solid var(--line); white-space:nowrap; background:var(--panel-2);
+}
+td{padding:11px 16px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2)}
+tr:last-child td{border-bottom:0}
+td b{color:var(--ink); font-weight:600}
+
+.tag{
+  display:inline-block; font-family:var(--mono); font-size:10px; font-weight:600;
+  letter-spacing:.09em; text-transform:uppercase; padding:3px 8px; border-radius:4px;
+  white-space:nowrap;
+}
+.t-ver{background:var(--teal-soft); color:var(--teal)}
+.t-rep{background:var(--amber-soft); color:var(--amber)}
+.t-kill{background:var(--clay-soft); color:var(--clay)}
+
+.lede{
+  border-left:3px solid var(--teal); background:var(--panel); padding:20px 24px;
+  margin:0 0 26px; border-radius:0 7px 7px 0;
+}
+.lede p:last-child{margin-bottom:0}
+.warn{border-left-color:var(--clay)}
+.note{border-left-color:var(--amber)}
+
+blockquote{
+  margin:0 0 22px; padding:0 0 0 20px; border-left:2px solid var(--line);
+  color:var(--ink-2); font-style:italic;
+}
+blockquote p:last-child{margin-bottom:0}
+
+ul,ol{margin:0 0 20px; padding-left:22px}
+li{margin-bottom:9px}
+
+.loop{
+  display:grid; gap:1px; background:var(--line); border:1px solid var(--line);
+  border-radius:7px; overflow:hidden; margin:0 0 26px;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+}
+.step{background:var(--panel); padding:20px}
+.step .n{
+  font-family:var(--mono); font-size:11px; color:var(--teal); font-weight:600;
+  letter-spacing:.1em; margin-bottom:9px;
+}
+.step h5{font-family:var(--disp); font-size:15px; font-weight:600; margin:0 0 7px}
+.step p{font-size:14.5px; color:var(--ink-2); margin:0; line-height:1.5}
+
+footer{border-top:1px solid var(--line); padding-top:26px; color:var(--muted); font-size:14px}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">media-tools · report before build · 2026-08-25</p>
+  <h1>The pen and the bushel</h1>
+  <p class="standfirst">A drawing tablet arrives tomorrow morning. It is not an accessory — it is the
+  input device for the one judgement this project has proven, three separate times, cannot be computed.</p>
+  <div class="meta">
+    <span><b>Hardware</b> XP-Pen Deco (model TBC)</span>
+    <span><b>Machine</b> Apple M1 Pro · macOS 26.6.1 · 102 GB free</span>
+    <span><b>Blender</b> 5.2.1 LTS</span>
+    <span><b>Status</b> nothing built</span>
+  </div>
+</header>
+
+<section>
+  <h2>The answer</h2><div class="rule"></div>
+  <div class="col">
+  <h3>Yes — and it lands exactly on the blocker</h3>
+
+  <div class="lede">
+  <p>This project's store already contains the finding that makes the tablet load-bearing rather than
+  convenient. From <code>no-whole-tree-to-segment</code>:</p>
+  <blockquote><p>A whole-tree mask can only be <strong>AUTHORED</strong> — a lasso is a human judgement
+  about which marks are one tree, and that judgement is not in the pixels.</p></blockquote>
+  </div>
+
+  <p>Wang Meng draws a tree as separate marks over bare silk — leaf sprays, twigs, a trunk — with no
+  enclosing contour and no filled silhouette. Every automatic method therefore answers a different
+  question than the one asked. That conclusion has now been reached from four directions:</p>
+
+  <div class="scroll"><table>
+    <tr><th>attempt</th><th>result</th></tr>
+    <tr><td>SAM 1 point prompts</td><td>returns individual leaf <b>sprays</b> — real objects, never the tree</td></tr>
+    <tr><td>tone threshold + connected components</td><td>bleeds where tree ink touches rock ink; swallows <b>47–64%</b> of the crop</td></tr>
+    <tr><td>density + compactness canopy detector</td><td>returns a vertical band including rock, misses the tree's entire left half</td></tr>
+    <tr><td>chroma classifier (2026-08-25)</td><td><b>73.6%</b></td></tr>
+    <tr><td>hue-displacement classifier (2026-08-25)</td><td><b>54.2%</b> — worse than guessing</td></tr>
+  </table></div>
+
+  <p>Against that, your own estimate of the manual path:</p>
+  <blockquote><p>"my eyes can easily define these bushels… I could tell you exactly what trees and where
+  the pivot points are, what parts of the bushel. That would fix everything and it would take five minutes."</p></blockquote>
+
+  <p><strong>So the tablet is not a productivity upgrade — it closes an open architectural question.</strong>
+  Phase 0 of the plan is "the cut", and its own work list already ends with
+  <em>"let a click define the bushel and skip the automatic cut entirely."</em> The hardware to do that
+  arrives tomorrow.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What the device changes</h2><div class="rule"></div>
+  <div class="col">
+  <h3>A Deco is not an iPad, and that is good news</h3>
+
+  <p>The existing research doc (<code>docs/2026-08-25-authoring-surface-research.md</code>) left one
+  question open: <em>"What pen surface exists today?"</em> It had assumed the answer would be an iPad,
+  and designed around it — a web page served off this Mac, opened in iPad Safari, Apple Pencil reaching
+  the page through Pointer Events.</p>
+
+  <p>An XP-Pen Deco is a different class of device: a <strong>screenless pen tablet that drives the Mac's
+  cursor directly</strong>. Every consequence of that is in our favour.</p>
+  </div>
+
+  <div class="scroll"><table>
+    <tr><th></th><th>iPad + Pencil (assumed)</th><th>XP-Pen Deco (actual)</th></tr>
+    <tr><td><b>Reaches Blender?</b></td><td>No — needs a web layer, or sidecar</td><td><b>Yes, natively.</b> It is a system pointer</td></tr>
+    <tr><td><b>Software fork</b></td><td>Page must run in Safari <em>and</em> on Mac</td><td><b>None.</b> One surface, on the Mac</td></tr>
+    <tr><td><b>Input plumbing</b></td><td>Pointer Events, coarse <code>pointermove</code> sampling on Safari</td><td>Driver-level. Nothing to write</td></tr>
+    <tr><td><b>Hand–eye</b></td><td>Direct (draw on the picture)</td><td><b>Indirect</b> — hand on pad, eyes on screen</td></tr>
+    <tr><td><b>Screen real estate</b></td><td>Second screen gained</td><td>None gained — main display only</td></tr>
+  </table></div>
+
+  <div class="col">
+  <div class="lede note">
+  <p><strong>The one real risk, and why it is small.</strong> XP-Pen + Blender + macOS has a documented
+  history of pressure-sensitivity failures — three separate Blender bug reports
+  (<code>T77306</code>, <code>#58030</code>, <code>T62185</code>). One report notes pressure works in
+  Grease Pencil even where it fails in sculpt mode.</p>
+  <p>It barely matters here. <strong>We need position and click, not pressure.</strong> Circling a bushel
+  and dropping a pivot are pointer gestures; nothing in this workflow varies line weight by how hard you
+  press. If pressure never works, the workflow is unaffected.</p>
+  </div>
+
+  <p>The trade that <em>is</em> real is indirect hand–eye. Drawing a portrait that way takes practice.
+  Circling a region and tapping a pivot does not — it is closer to using a trackpad than to drawing, and
+  it is precise enough at the scale we mark at.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Prior art</h2><div class="rule"></div>
+  <div class="col">
+  <h3>Searched before proposing anything — LAW #0</h3>
+  <p>This is the law that this exact directive was born from: Blender was named in this repo's own design
+  doc on day one, and 2,208 lines of multiplane camera, cutout rigging and layer plumbing were hand-rolled
+  anyway, re-implementing a free add-on. So: what already does this?</p>
+  </div>
+
+  <div class="scroll"><table>
+    <tr><th>tool</th><th>what it does</th><th>fit</th><th>status</th></tr>
+    <tr>
+      <td><b>COA Tools 2</b></td>
+      <td>2D cutout rigging and animation suite <em>inside Blender</em>. Automatic mesh generation; sprite extraction from Photoshop / GIMP / Krita</td>
+      <td><b>The rigging half.</b> Tested on Blender 5.1, supports 3.4+</td>
+      <td><span class="tag t-rep">reported</span> single maintainer; untested here</td>
+    </tr>
+    <tr>
+      <td><b>Frame By Plane</b></td>
+      <td>Multiplane camera, parallax, cut-out animation, per-layer masking and styling</td>
+      <td>Already in use here</td>
+      <td><span class="tag t-ver">verified</span> importers are <b>GUI-only</b> — 63 of 353 operators register headless, zero importers</td>
+    </tr>
+    <tr>
+      <td><b>SAM 3 (MLX port)</b></td>
+      <td><code>mlx-community/sam3-image</code> — native Apple Silicon segmentation</td>
+      <td><b>The segmentation half</b></td>
+      <td><span class="tag t-ver">verified</span> <b>Apache 2.0, NOT gated</b>, 3.4 GB, 0.8B params</td>
+    </tr>
+    <tr>
+      <td><b>Spine</b> (schema only)</td>
+      <td>Public, documented JSON: bones, slots, skins, mesh attachments with per-vertex weights</td>
+      <td>"bushel bound to a hinge", already specified</td>
+      <td><span class="tag t-rep">reported</span> adopt the schema, not the tool</td>
+    </tr>
+    <tr>
+      <td>Roboflow / V7 / Label&nbsp;Studio</td>
+      <td>Browser SAM annotation, shipping and solved</td>
+      <td><b>No concept of a pivot.</b> Cloud dataset labellers</td>
+      <td><span class="tag t-kill">wrong shape</span></td>
+    </tr>
+    <tr>
+      <td>Rive</td>
+      <td>Modern 2D animation editor</td>
+      <td>Proprietary binary <code>.riv</code>, <b>no JSON export</b></td>
+      <td><span class="tag t-kill">rejected</span></td>
+    </tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Corrections</h2><div class="rule"></div>
+  <div class="col">
+  <h3>Two findings in the existing research doc are now wrong</h3>
+
+  <h4>1 · SAM 3 is not gated after all</h4>
+  <p>Finding #3 said the weights are <em>"gated — Meta must approve the account"</em>, and treated that as
+  a blocker needing a real download attempt. That is true of <code>facebook/sam3</code>. It is
+  <strong>not</strong> true of the MLX community port: <code>mlx-community/sam3-image</code> is
+  <strong>Apache 2.0 and freely downloadable</strong>, 3.4 GB, built for M-series. There is no approval to
+  wait on and no gate to negotiate.</p>
+
+  <div class="lede note">
+  <p><strong>But note what it accepts.</strong> The MLX port documents <strong>text prompts and box
+  prompts</strong> — it does not document point or exemplar prompts. For us this is close to irrelevant
+  and arguably better: a <em>box drawn with a pen</em> is the natural gesture, and open-vocabulary text
+  ("tree") is precisely what this painting defeats. Human box, machine refine.</p>
+  </div>
+
+  <h4>2 · The authoring path is Blender, not Procreate</h4>
+  <p>The plan's open question — <em>"whether an iPad exists, which decides whether the Procreate → Frame
+  By Plane authoring path is real or theoretical"</em> — is now answered: <strong>no iPad, so that path is
+  theoretical and should be dropped.</strong> The Deco makes the Blender viewport itself the authoring
+  surface, which is a shorter route and satisfies the standing directive at the same time.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The trap</h2><div class="rule"></div>
+  <div class="col">
+  <h3>Annotations and Grease Pencil are not the same thing</h3>
+
+  <div class="lede warn">
+  <p>The obvious design — <em>"he scribbles with the Annotate tool, I read the strokes in Python"</em> —
+  hits a known regression. Blender issue <code>#147732</code>: <strong>creating Annotation strokes and
+  points via the Python API is unavailable in Blender 4.3 and up.</strong> This Blender is 5.2.1.</p>
+  </div>
+
+  <p>The fix is precise and costs nothing if known in advance: <strong>use a Grease Pencil object, not the
+  Annotate tool.</strong> Grease Pencil stroke data is fully reachable —
+  <code>GreasePencilDrawing.attributes</code> is the documented performance API for point coordinates,
+  with <code>drawing.strokes[n]</code> as the compatibility path.</p>
+
+  <p>They look identical while you are drawing. Only one of them can be read back. This is the kind of
+  detail that quietly eats a session, which is why it is in this report rather than discovered on
+  Wednesday.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The real prize</h2><div class="rule"></div>
+  <div class="col">
+  <h3>Your marks stop being descriptions and start being data</h3>
+
+  <p>You framed this as "another surface to communicate through", and that is the part worth designing
+  carefully — more than the cutting itself.</p>
+
+  <p>Today, pointing at something costs you a paragraph and costs me a guess. <em>"The big tree on the
+  left, above the bridge, not the pine — the one with the reddish tips"</em> becomes my interpretation of
+  your sentence, and the failure is invisible until a render comes back wrong. That round trip has been
+  the dominant cost in this project: <code>an-absence-is-invisible-in-the-output</code> exists because
+  eleven days of renders were all missing something nobody could see.</p>
+
+  <div class="lede">
+  <p><strong>A drawn mark has no interpretation step.</strong> It is a polygon in master coordinates. The
+  ambiguity does not get resolved — it never exists.</p>
+  </div>
+
+  <h4>The loop, once it is wired</h4>
+  </div>
+
+  <div class="loop">
+    <div class="step">
+      <div class="n">01</div>
+      <h5>You circle</h5>
+      <p>A rough loop around one bushel on the painting, in the Blender viewport. Seconds, not precision.</p>
+    </div>
+    <div class="step">
+      <div class="n">02</div>
+      <h5>SAM tightens</h5>
+      <p>Your loop becomes a box prompt; SAM 3 snaps it to the actual ink inside it.</p>
+    </div>
+    <div class="step">
+      <div class="n">03</div>
+      <h5>You tap the hinge</h5>
+      <p>One dot where the spray joins the branch. That is the pivot — the thing no algorithm can find.</p>
+    </div>
+    <div class="step">
+      <div class="n">04</div>
+      <h5>It becomes a card</h5>
+      <p>Written where the pipeline already reads. <code>hinge-foliage</code> stops guessing and starts obeying.</p>
+    </div>
+  </div>
+
+  <div class="col">
+  <p>And the same channel runs backwards, which is the half that makes it feel good: when a render is
+  wrong, you mark <strong>on the frame</strong> what is wrong. Not a description of the tree that
+  wobbled — the tree that wobbled, circled. That is a shared coordinate system, and this project has
+  never had one.</p>
+
+  <p><strong>Where the joy actually comes from</strong> is latency. SAM 3's image encoder runs once per
+  tile; each prompt then decodes in milliseconds. Done right this feels like the iPhone lift-subject
+  gesture — tap, it pops. Done wrong it is a progress bar per click, and you will stop using it by the
+  third tree. <em>Interactive-speed decode is the acceptance criterion, not a nice-to-have.</em></p>
+  </div>
+</section>
+
+<section>
+  <h2>Tomorrow</h2><div class="rule"></div>
+  <div class="col">
+  <h3>The first hour, in order</h3>
+  <p>Deliberately small and verifiable, because every step below can fail for boring reasons and each one
+  should fail loudly and early rather than at the end.</p>
+
+  <ol>
+    <li><strong>Driver first.</strong> XP-Pen's own macOS driver is mandatory — without it, pressure, tilt,
+    express keys and screen mapping are all unreliable. macOS will also demand Accessibility and
+    Input Monitoring permissions; expect a reboot.</li>
+    <li><strong>Prove the pointer in Blender</strong> before anything else. Draw one Grease Pencil stroke in
+    the viewport. If the cursor tracks and a stroke appears, the hard dependency is satisfied — pressure
+    can stay broken.</li>
+    <li><strong>Read that stroke back in Python.</strong> One script, printing point coordinates from
+    <code>drawing.attributes</code>. This is the whole bridge; everything else is built on it.</li>
+    <li><strong>Map one stroke to master coordinates</strong> on a real zone plate, and open the overlay so
+    you can see your own loop drawn back onto the painting. That is the moment the channel exists.</li>
+    <li><strong>Only then</strong> pull SAM 3 MLX (3.4 GB) and put the refine step behind the loop.</li>
+  </ol>
+
+  <div class="lede">
+  <p><strong>Steps 1–4 need no downloads, no model, and no network.</strong> They are worth doing the
+  morning it arrives, before any decision about SAM.</p>
+  </div>
+
+  <h4>What I need from you</h4>
+  <ul>
+    <li><strong>Which Deco model</strong> — the range spans Deco Fun to Deco Pro; it changes active area
+    and whether there are express keys worth binding.</li>
+    <li><strong>The catalogue fork, still open.</strong> <code>regions.json</code> and
+    <code>living-polys.json</code> both carry a class per region and only one is executed. It cost a day
+    once already, when the summit revert landed in one file and not the other. Phase 0 re-cuts every
+    foliage card — going in with the class list forked is how that bug happens again at 510 regions
+    instead of 13.</li>
+  </ul>
+  </div>
+</section>
+
+<footer>
+  <p>Nothing in this report is built. Local facts (Blender 5.2.1, M1 Pro, macOS 26.6.1, 102 GB free,
+  Frame By Plane's headless operator count) are <span class="tag t-ver">verified</span> on this machine.
+  Everything about COA Tools, SAM 3 and the XP-Pen driver is <span class="tag t-rep">reported</span> from
+  vendor and project documentation and has not been run here.</p>
+  <p>Source: <code>docs/reports/2026-08-25-the-pen-and-the-bushel.html</code> ·
+  companion to <code>docs/2026-08-25-authoring-surface-research.md</code></p>
+</footer>
+</div>
