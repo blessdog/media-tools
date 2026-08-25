@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-24 21:46 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-24 21:49 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -146,6 +146,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-24  cfec3f6  STATE regenerated: living layer 260 -> 510 patches after the catalogue rebuild
 2026-08-24  2904d99  write the claim hinge-foliage.py has been citing since it was reverted
 2026-08-24  850bd67  delete the dead dark-accent rule; a missing catalogue is now a hard error
 2026-08-24  83d42a8  grow the polygon before the catalogue intersect: z1 card coverage 56.9% -> 99.1%
@@ -157,12 +158,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  4eb8921  OPEN: why only ~40% of the leaf inside a region moves, four dead ends closed
 2026-08-24  8531032  the Ge Hong tree's cycle back to the approved single sine after the spectrum test
 2026-08-24  712a321  STATE regenerated: 39 far-ridge regions retired, camZ ceiling recorded
-2026-08-24  90fb682  0.18 camZ is a ceiling: 0.45 tore the canvas, and I showed it before checking
 ```
 
 ### ⚠ UNPUSHED
 
-**42 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**43 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
@@ -171,7 +171,6 @@ git push origin main
 ### Uncommitted
 
 ```
- M jobs/wang-meng/STATE.md
  M jobs/wang-meng/journey/z3w/living-masks/index.json
  M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-great-right/drawings/cycle.json
  M jobs/wang-meng/journey/z3w/living-work/cat-broadleaf-great-right/exclude/layers.json

@@ -45,475 +45,475 @@
  },
  "s-great-trees-upper": {
   "class": "foliage",
-  "px": 155223,
-  "pctOfPlate": 1.637,
+  "px": 839661,
+  "pctOfPlate": 8.856,
   "plateBox": [
-   1850,
-   2329,
+   1716,
+   2330,
    2815,
-   3346
+   3368
   ]
  },
  "s-pine-over-bridge": {
   "class": "foliage",
-  "px": 72564,
-  "pctOfPlate": 0.765,
+  "px": 78802,
+  "pctOfPlate": 0.831,
   "plateBox": [
-   700,
-   2866,
-   1039,
+   701,
+   2945,
+   1040,
    3368
   ]
  },
  "s-gorge-big-canopy": {
   "class": "foliage",
-  "px": 144410,
-  "pctOfPlate": 1.523,
+  "px": 187735,
+  "pctOfPlate": 1.98,
   "plateBox": [
-   1180,
-   1490,
-   1984,
-   2103
+   1184,
+   1515,
+   1996,
+   2104
   ]
  },
  "s-left-pines-z2": {
   "class": "foliage",
-  "px": 94529,
-  "pctOfPlate": 0.997,
+  "px": 127140,
+  "pctOfPlate": 1.341,
   "plateBox": [
-   516,
-   1781,
-   1041,
-   2444
+   519,
+   1964,
+   1169,
+   2437
   ]
  },
  "s-left-clifftop-pine": {
   "class": "foliage",
-  "px": 44728,
-  "pctOfPlate": 0.472,
+  "px": 136323,
+  "pctOfPlate": 1.438,
   "plateBox": [
-   21,
-   1354,
-   355,
-   1788
+   8,
+   1327,
+   485,
+   1890
   ]
  },
  "s-gorge-foreground": {
   "class": "foliage",
-  "px": 147292,
-  "pctOfPlate": 1.554,
+  "px": 207616,
+  "pctOfPlate": 2.19,
   "plateBox": [
-   346,
-   1115,
-   1441,
-   1590
+   393,
+   1057,
+   1510,
+   1535
   ]
  },
  "s-right-rust-tree": {
   "class": "foliage",
-  "px": 14555,
-  "pctOfPlate": 0.154,
+  "px": 125239,
+  "pctOfPlate": 1.321,
   "plateBox": [
-   2718,
-   743,
+   2264,
+   746,
    2815,
-   1066
+   1127
   ]
  },
  "cat-broadleaf-great-right": {
   "class": "foliage",
-  "px": 224244,
-  "pctOfPlate": 2.365,
+  "px": 315985,
+  "pctOfPlate": 3.333,
   "plateBox": [
-   1138,
-   1685,
-   1888,
-   2651
+   1134,
+   1684,
+   1889,
+   2631
   ]
  },
  "cat-canopy-dense-bottom-right": {
   "class": "foliage",
-  "px": 10159,
-  "pctOfPlate": 0.107,
+  "px": 365794,
+  "pctOfPlate": 3.858,
   "plateBox": [
-   2441,
-   2795,
+   2120,
+   2720,
    2815,
-   2910
+   3368
   ]
  },
  "cat-canopy-brick-top": {
   "class": "foliage",
-  "px": 67538,
-  "pctOfPlate": 0.712,
+  "px": 361122,
+  "pctOfPlate": 3.809,
   "plateBox": [
-   1842,
-   2366,
-   2621,
-   2691
+   1655,
+   2339,
+   2622,
+   2888
   ]
  },
  "cat-canopy-dense-bottom": {
   "class": "foliage",
-  "px": 3600,
-  "pctOfPlate": 0.038,
+  "px": 293441,
+  "pctOfPlate": 3.095,
   "plateBox": [
-   2030,
-   3086,
-   2135,
-   3235
+   1900,
+   2899,
+   2716,
+   3368
   ]
  },
  "cat-great-tree-top-left": {
   "class": "foliage",
-  "px": 13690,
-  "pctOfPlate": 0.144,
+  "px": 137491,
+  "pctOfPlate": 1.45,
   "plateBox": [
-   78,
-   1694,
-   339,
-   1816
+   75,
+   1533,
+   613,
+   1975
   ]
  },
  "cat-grove-bottom-right": {
   "class": "foliage",
-  "px": 51122,
-  "pctOfPlate": 0.539,
+  "px": 229230,
+  "pctOfPlate": 2.418,
   "plateBox": [
-   1228,
-   636,
-   1633,
-   968
+   1091,
+   490,
+   1889,
+   1059
   ]
  },
  "cat-pine-needle-right": {
   "class": "foliage",
-  "px": 101641,
-  "pctOfPlate": 1.072,
+  "px": 115605,
+  "pctOfPlate": 1.219,
   "plateBox": [
-   470,
-   1901,
-   964,
-   2546
+   519,
+   1964,
+   1062,
+   2437
   ]
  },
  "cat-fronds-bottom-left": {
   "class": "foliage",
-  "px": 24659,
-  "pctOfPlate": 0.26,
+  "px": 175317,
+  "pctOfPlate": 1.849,
   "plateBox": [
-   1906,
-   3071,
-   2216,
-   3248
+   1767,
+   2971,
+   2419,
+   3368
   ]
  },
  "cat-pine-needle-bottom-right": {
   "class": "foliage",
-  "px": 114763,
-  "pctOfPlate": 1.21,
+  "px": 173900,
+  "pctOfPlate": 1.834,
   "plateBox": [
-   2276,
-   2301,
+   2195,
+   2330,
    2815,
-   2715
+   2716
   ]
  },
  "cat-thicket-bottom": {
   "class": "foliage",
-  "px": 19018,
-  "pctOfPlate": 0.201,
+  "px": 199210,
+  "pctOfPlate": 2.101,
   "plateBox": [
-   1860,
-   2390,
-   2226,
-   2561
+   1834,
+   2339,
+   2528,
+   2716
   ]
  },
  "cat-pine-left-spread": {
   "class": "foliage",
-  "px": 56383,
-  "pctOfPlate": 0.595,
+  "px": 73875,
+  "pctOfPlate": 0.779,
   "plateBox": [
-   811,
-   1114,
-   1165,
-   1540
+   706,
+   1115,
+   1166,
+   1388
   ]
  },
  "cat-tree-colour-lower-left": {
   "class": "foliage",
-  "px": 59661,
-  "pctOfPlate": 0.629,
+  "px": 97486,
+  "pctOfPlate": 1.028,
   "plateBox": [
-   803,
-   2943,
-   1175,
+   706,
+   2945,
+   1174,
    3368
   ]
  },
  "cat-canopy-top-band": {
   "class": "foliage",
-  "px": 24789,
-  "pctOfPlate": 0.261,
+  "px": 55170,
+  "pctOfPlate": 0.582,
   "plateBox": [
-   2170,
+   2161,
    0,
-   2539,
-   258
+   2526,
+   237
   ]
  },
  "cat-tree-great-centre": {
   "class": "foliage",
-  "px": 10071,
-  "pctOfPlate": 0.106,
+  "px": 211637,
+  "pctOfPlate": 2.232,
   "plateBox": [
-   1876,
-   2783,
-   2260,
-   2983
+   1731,
+   2645,
+   2481,
+   3095
   ]
  },
  "cat-pine-centre": {
   "class": "foliage",
-  "px": 42997,
-  "pctOfPlate": 0.454,
+  "px": 112298,
+  "pctOfPlate": 1.184,
   "plateBox": [
-   1138,
-   1115,
-   1441,
-   1418
+   1140,
+   1057,
+   1580,
+   1532
   ]
  },
  "cat-maple-orange": {
   "class": "foliage",
-  "px": 28327,
-  "pctOfPlate": 0.299,
+  "px": 65735,
+  "pctOfPlate": 0.693,
   "plateBox": [
-   588,
-   1342,
-   906,
-   1587
+   562,
+   1115,
+   1005,
+   1452
   ]
  },
  "cat-pine-needle-left": {
   "class": "foliage",
-  "px": 33201,
-  "pctOfPlate": 0.35,
+  "px": 85328,
+  "pctOfPlate": 0.9,
   "plateBox": [
-   22,
-   1354,
-   355,
-   1581
+   8,
+   1327,
+   467,
+   1739
   ]
  },
  "cat-tree-bottom-right": {
   "class": "foliage",
-  "px": 76979,
-  "pctOfPlate": 0.812,
+  "px": 82965,
+  "pctOfPlate": 0.875,
   "plateBox": [
-   700,
-   2872,
-   1061,
+   701,
+   2945,
+   1062,
    3368
   ]
  },
  "cat-pine-dark-top-right": {
   "class": "foliage",
-  "px": 106783,
-  "pctOfPlate": 1.126,
+  "px": 193072,
+  "pctOfPlate": 2.036,
   "plateBox": [
-   2333,
-   2328,
+   2204,
+   2330,
    2815,
-   2774
+   2775
   ]
  },
  "cat-grove-lower-left": {
   "class": "foliage",
-  "px": 11130,
-  "pctOfPlate": 0.117,
+  "px": 50347,
+  "pctOfPlate": 0.531,
   "plateBox": [
-   94,
-   635,
-   269,
-   788
+   14,
+   537,
+   352,
+   822
   ]
  },
  "cat-canopy-foreground-left": {
   "class": "foliage",
-  "px": 84049,
-  "pctOfPlate": 0.887,
+  "px": 92398,
+  "pctOfPlate": 0.975,
   "plateBox": [
-   1543,
-   1513,
-   1990,
-   1888
+   1542,
+   1515,
+   1996,
+   1889
   ]
  },
  "cat-maple-rust-left": {
   "class": "foliage",
-  "px": 1762,
-  "pctOfPlate": 0.019,
+  "px": 83684,
+  "pctOfPlate": 0.883,
   "plateBox": [
-   1102,
-   2065,
-   1178,
-   2102
+   725,
+   1964,
+   1218,
+   2274
   ]
  },
  "cat-canopy-foreground": {
   "class": "foliage",
-  "px": 17349,
-  "pctOfPlate": 0.183,
+  "px": 138787,
+  "pctOfPlate": 1.464,
   "plateBox": [
-   80,
-   1568,
-   445,
-   1775
+   8,
+   1467,
+   609,
+   1889
   ]
  },
  "cat-pine-top-roots": {
   "class": "foliage",
-  "px": 2271,
-  "pctOfPlate": 0.024,
+  "px": 99748,
+  "pctOfPlate": 1.052,
   "plateBox": [
-   1307,
-   2442,
-   1374,
-   2506
+   1152,
+   2307,
+   1671,
+   2631
   ]
  },
  "cat-pine-top-left": {
   "class": "foliage",
-  "px": 20596,
-  "pctOfPlate": 0.217,
+  "px": 109344,
+  "pctOfPlate": 1.153,
   "plateBox": [
-   1870,
-   933,
-   2173,
-   1114
+   1753,
+   753,
+   2190,
+   1107
   ]
  },
  "cat-broadleaf-top-left": {
   "class": "foliage",
-  "px": 95740,
-  "pctOfPlate": 1.01,
+  "px": 105965,
+  "pctOfPlate": 1.118,
   "plateBox": [
-   1534,
-   1534,
-   1987,
-   1973
+   1533,
+   1533,
+   1996,
+   1974
   ]
  },
  "cat-broadleaf-top-right": {
   "class": "foliage",
-  "px": 95129,
-  "pctOfPlate": 1.003,
+  "px": 127957,
+  "pctOfPlate": 1.35,
   "plateBox": [
-   1465,
-   1534,
-   1888,
-   2057
+   1429,
+   1533,
+   1889,
+   2058
   ]
  },
  "cat-tree-round-top-left": {
   "class": "foliage",
-  "px": 3305,
-  "pctOfPlate": 0.035,
+  "px": 189445,
+  "pctOfPlate": 1.998,
   "plateBox": [
-   1844,
-   2561,
-   1919,
-   2679
+   1697,
+   2438,
+   2312,
+   2851
   ]
  },
  "cat-tree-bottom-right-t005": {
   "class": "foliage",
-  "px": 76587,
-  "pctOfPlate": 0.808,
+  "px": 89731,
+  "pctOfPlate": 0.946,
   "plateBox": [
-   1462,
-   1514,
-   1888,
-   1888
+   1470,
+   1515,
+   1889,
+   1889
   ]
  },
  "cat-tree-bottom-right-t013": {
   "class": "foliage",
-  "px": 11293,
-  "pctOfPlate": 0.119,
+  "px": 34353,
+  "pctOfPlate": 0.362,
   "plateBox": [
-   1571,
-   3135,
-   1737,
-   3260
+   1566,
+   3130,
+   1769,
+   3368
   ]
  },
  "cat-pine-dark-right": {
   "class": "foliage",
-  "px": 13818,
-  "pctOfPlate": 0.146,
+  "px": 174282,
+  "pctOfPlate": 1.838,
   "plateBox": [
-   2408,
-   2793,
-   2609,
-   3089
+   2285,
+   2636,
+   2716,
+   3189
   ]
  },
  "cat-tree-lower-round": {
   "class": "foliage",
-  "px": 5110,
-  "pctOfPlate": 0.054,
+  "px": 109789,
+  "pctOfPlate": 1.158,
   "plateBox": [
-   259,
-   1516,
-   424,
-   1688
+   104,
+   1336,
+   585,
+   1804
   ]
  },
  "cat-pine-bottom-right": {
   "class": "foliage",
-  "px": 72569,
-  "pctOfPlate": 0.765,
+  "px": 138723,
+  "pctOfPlate": 1.463,
   "plateBox": [
-   2328,
-   2304,
-   2715,
-   2661
+   2229,
+   2334,
+   2716,
+   2716
   ]
  },
  "cat-tree-brick-centre": {
   "class": "foliage",
-  "px": 15372,
-  "pctOfPlate": 0.162,
+  "px": 45571,
+  "pctOfPlate": 0.481,
   "plateBox": [
-   1338,
-   369,
-   1609,
-   479
+   1281,
+   289,
+   1610,
+   492
   ]
  },
  "cat-tree-bottom-centre": {
   "class": "foliage",
-  "px": 6541,
-  "pctOfPlate": 0.069,
+  "px": 71169,
+  "pctOfPlate": 0.751,
   "plateBox": [
-   1091,
-   850,
-   1383,
-   920
+   993,
+   687,
+   1447,
+   1024
   ]
  },
  "cat-tree-top-left": {
   "class": "foliage",
-  "px": 23711,
-  "pctOfPlate": 0.25,
+  "px": 34964,
+  "pctOfPlate": 0.369,
   "plateBox": [
-   1020,
-   843,
-   1280,
-   1069
+   993,
+   828,
+   1306,
+   1024
   ]
  },
  "cat-maple-ochre": {
@@ -529,24 +529,24 @@
  },
  "cat-conifers-right": {
   "class": "foliage",
-  "px": 9532,
-  "pctOfPlate": 0.101,
+  "px": 37616,
+  "pctOfPlate": 0.397,
   "plateBox": [
-   667,
-   287,
-   802,
-   506
+   585,
+   189,
+   819,
+   600
   ]
  },
  "cat-tree-teal-centre-right": {
   "class": "foliage",
-  "px": 15372,
-  "pctOfPlate": 0.162,
+  "px": 45571,
+  "pctOfPlate": 0.481,
   "plateBox": [
-   1338,
-   369,
-   1609,
-   479
+   1281,
+   289,
+   1610,
+   492
   ]
  },
  "cat-tree-left-edge": {
@@ -562,189 +562,409 @@
  },
  "cat-tree-bottom-centre-t005": {
   "class": "foliage",
-  "px": 18873,
-  "pctOfPlate": 0.199,
+  "px": 23543,
+  "pctOfPlate": 0.248,
   "plateBox": [
-   1189,
-   1640,
-   1374,
-   1871
+   1184,
+   1646,
+   1378,
+   1842
   ]
  },
  "cat-tree-bottom-centre-t002": {
   "class": "foliage",
-  "px": 25561,
-  "pctOfPlate": 0.27,
+  "px": 121666,
+  "pctOfPlate": 1.283,
   "plateBox": [
-   1733,
-   729,
-   2056,
-   999
+   1731,
+   666,
+   2162,
+   1062
   ]
  },
  "cat-tree-teal-upper-left": {
   "class": "foliage",
-  "px": 13966,
-  "pctOfPlate": 0.147,
+  "px": 16275,
+  "pctOfPlate": 0.172,
   "plateBox": [
-   129,
-   102,
+   131,
+   99,
    317,
    232
   ]
  },
  "cat-willow-top-left": {
   "class": "foliage",
-  "px": 29850,
-  "pctOfPlate": 0.315,
+  "px": 107029,
+  "pctOfPlate": 1.129,
   "plateBox": [
-   1782,
-   730,
-   2057,
-   976
+   1781,
+   706,
+   2190,
+   1071
   ]
  },
  "cat-canopy-top-right": {
   "class": "foliage",
-  "px": 14257,
-  "pctOfPlate": 0.15,
+  "px": 24644,
+  "pctOfPlate": 0.26,
   "plateBox": [
-   2561,
+   2541,
    0,
-   2778,
-   106
+   2815,
+   109
   ]
  },
  "cat-tree-teal-mid-left": {
   "class": "foliage",
-  "px": 18811,
-  "pctOfPlate": 0.198,
+  "px": 91035,
+  "pctOfPlate": 0.96,
   "plateBox": [
-   1642,
-   2712,
-   1888,
-   2843
+   1533,
+   2589,
+   2002,
+   2973
   ]
  },
  "cat-tree-teal-above-ge-hong": {
   "class": "foliage",
-  "px": 10021,
-  "pctOfPlate": 0.106,
+  "px": 50347,
+  "pctOfPlate": 0.531,
   "plateBox": [
-   94,
-   636,
-   262,
-   785
+   14,
+   537,
+   352,
+   822
   ]
  },
  "cat-tree-weeping-upper-right": {
   "class": "foliage",
-  "px": 19977,
-  "pctOfPlate": 0.211,
+  "px": 38316,
+  "pctOfPlate": 0.404,
   "plateBox": [
-   540,
-   124,
-   766,
-   416
+   573,
+   92,
+   806,
+   432
   ]
  },
  "cat-pine-dark-right-t015": {
   "class": "foliage",
-  "px": 19802,
-  "pctOfPlate": 0.209,
+  "px": 74480,
+  "pctOfPlate": 0.786,
   "plateBox": [
-   2634,
-   2632,
+   2524,
+   2504,
    2815,
-   2853
+   2926
   ]
  },
  "cat-pine-top-centre": {
   "class": "foliage",
-  "px": 14522,
-  "pctOfPlate": 0.153,
+  "px": 18596,
+  "pctOfPlate": 0.196,
   "plateBox": [
-   1289,
-   12,
-   1470,
-   210
+   1276,
+   0,
+   1481,
+   169
   ]
  },
  "cat-grove-left-upper": {
   "class": "foliage",
-  "px": 13385,
-  "pctOfPlate": 0.141,
+  "px": 18692,
+  "pctOfPlate": 0.197,
   "plateBox": [
-   859,
-   310,
-   1028,
-   497
+   852,
+   296,
+   1027,
+   446
   ]
  },
  "cat-tree-teal-bottom-left": {
   "class": "foliage",
-  "px": 28179,
-  "pctOfPlate": 0.297,
+  "px": 92973,
+  "pctOfPlate": 0.981,
   "plateBox": [
-   1774,
-   729,
-   2056,
-   975
+   1753,
+   646,
+   2156,
+   996
   ]
  },
  "cat-tree-right-edge": {
   "class": "foliage",
-  "px": 15417,
-  "pctOfPlate": 0.163,
+  "px": 20832,
+  "pctOfPlate": 0.22,
   "plateBox": [
-   2715,
-   743,
+   2698,
+   746,
    2815,
-   1067
+   1091
   ]
  },
  "cat-tree-teal-left": {
   "class": "foliage",
-  "px": 4600,
-  "pctOfPlate": 0.049,
+  "px": 36968,
+  "pctOfPlate": 0.39,
   "plateBox": [
-   1710,
-   258,
-   1820,
-   353
+   1625,
+   123,
+   1845,
+   387
   ]
  },
  "cat-tree-bottom-right-t003": {
   "class": "foliage",
-  "px": 15596,
-  "pctOfPlate": 0.164,
+  "px": 19170,
+  "pctOfPlate": 0.202,
   "plateBox": [
-   2715,
-   743,
+   2698,
+   746,
    2815,
-   1061
+   1062
   ]
  },
  "cat-tree-mid-round": {
   "class": "foliage",
-  "px": 10695,
-  "pctOfPlate": 0.113,
+  "px": 14697,
+  "pctOfPlate": 0.155,
   "plateBox": [
-   416,
-   1156,
-   561,
-   1310
+   393,
+   1149,
+   560,
+   1280
   ]
  },
  "cat-canopy-top-centre-left": {
   "class": "foliage",
-  "px": 3547,
-  "pctOfPlate": 0.037,
+  "px": 30964,
+  "pctOfPlate": 0.327,
   "plateBox": [
-   1807,
+   1684,
    0,
-   1905,
-   142
+   1948,
+   220
+  ]
+ },
+ "g-ge-fan": {
+  "class": "figure",
+  "px": 7760,
+  "pctOfPlate": 0.082,
+  "plateBox": [
+   643,
+   3202,
+   740,
+   3282
+  ]
+ },
+ "cat-willow-top-centre": {
+  "class": "foliage",
+  "px": 104407,
+  "pctOfPlate": 1.101,
+  "plateBox": [
+   2264,
+   795,
+   2738,
+   1127
+  ]
+ },
+ "cat-foliage-right-wall": {
+  "class": "foliage",
+  "px": 72416,
+  "pctOfPlate": 0.764,
+  "plateBox": [
+   1518,
+   2631,
+   1889,
+   3134
+  ]
+ },
+ "cat-maple-red": {
+  "class": "foliage",
+  "px": 104338,
+  "pctOfPlate": 1.101,
+  "plateBox": [
+   1195,
+   1057,
+   1580,
+   1475
+  ]
+ },
+ "cat-canopy-brick-centre": {
+  "class": "foliage",
+  "px": 212777,
+  "pctOfPlate": 2.244,
+  "plateBox": [
+   2073,
+   2504,
+   2673,
+   2963
+  ]
+ },
+ "cat-maple-left": {
+  "class": "foliage",
+  "px": 43147,
+  "pctOfPlate": 0.455,
+  "plateBox": [
+   0,
+   263,
+   262,
+   511
+  ]
+ },
+ "cat-maple-bottom-left": {
+  "class": "foliage",
+  "px": 143067,
+  "pctOfPlate": 1.509,
+  "plateBox": [
+   1533,
+   621,
+   1983,
+   1062
+  ]
+ },
+ "cat-maple-top-left": {
+  "class": "foliage",
+  "px": 54100,
+  "pctOfPlate": 0.571,
+  "plateBox": [
+   1625,
+   0,
+   1948,
+   347
+  ]
+ },
+ "cat-willow-ochre-upper-left": {
+  "class": "foliage",
+  "px": 17773,
+  "pctOfPlate": 0.187,
+  "plateBox": [
+   2016,
+   94,
+   2201,
+   275
+  ]
+ },
+ "cat-tree-right-teal": {
+  "class": "foliage",
+  "px": 69917,
+  "pctOfPlate": 0.737,
+  "plateBox": [
+   640,
+   1115,
+   1062,
+   1388
+  ]
+ },
+ "cat-pine-needle-left-t009": {
+  "class": "foliage",
+  "px": 91570,
+  "pctOfPlate": 0.966,
+  "plateBox": [
+   706,
+   1964,
+   1080,
+   2416
+  ]
+ },
+ "cat-tree-top-right": {
+  "class": "foliage",
+  "px": 112423,
+  "pctOfPlate": 1.186,
+  "plateBox": [
+   1439,
+   706,
+   1889,
+   1076
+  ]
+ },
+ "cat-tree-ochre-bottom": {
+  "class": "foliage",
+  "px": 65328,
+  "pctOfPlate": 0.689,
+  "plateBox": [
+   1909,
+   698,
+   2190,
+   1062
+  ]
+ },
+ "cat-tree-upper-teal": {
+  "class": "foliage",
+  "px": 16649,
+  "pctOfPlate": 0.176,
+  "plateBox": [
+   207,
+   1074,
+   405,
+   1224
+  ]
+ },
+ "cat-tree-pink-by-hall": {
+  "class": "foliage",
+  "px": 15153,
+  "pctOfPlate": 0.16,
+  "plateBox": [
+   920,
+   131,
+   1065,
+   299
+  ]
+ },
+ "cat-maple-top-left-t006": {
+  "class": "foliage",
+  "px": 105436,
+  "pctOfPlate": 1.112,
+  "plateBox": [
+   1533,
+   706,
+   1936,
+   1062
+  ]
+ },
+ "cat-tree-rust-top-right": {
+  "class": "foliage",
+  "px": 70564,
+  "pctOfPlate": 0.744,
+  "plateBox": [
+   706,
+   1964,
+   1062,
+   2265
+  ]
+ },
+ "cat-tree-bottom-right-t004": {
+  "class": "foliage",
+  "px": 60828,
+  "pctOfPlate": 0.642,
+  "plateBox": [
+   330,
+   1561,
+   613,
+   1889
+  ]
+ },
+ "cat-pine-right-edge": {
+  "class": "foliage",
+  "px": 9810,
+  "pctOfPlate": 0.103,
+  "plateBox": [
+   2700,
+   190,
+   2815,
+   298
+  ]
+ },
+ "cat-tree-ochre-left": {
+  "class": "foliage",
+  "px": 5124,
+  "pctOfPlate": 0.054,
+  "plateBox": [
+   1873,
+   1843,
+   1966,
+   1928
   ]
  }
 }

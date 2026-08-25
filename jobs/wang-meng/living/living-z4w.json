@@ -1,269 +1,4 @@
 {
- "gorge-cliff-nose": {
-  "patches": [
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-left-pines-z2",
-    "box": [
-     548,
-     2171
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-gorge-big-canopy",
-    "box": [
-     969,
-     1721
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-left-clifftop-pine",
-    "box": [
-     0,
-     1744
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-gorge-foreground",
-    "box": [
-     329,
-     1505
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-broadleaf-great-right",
-    "box": [
-     1402,
-     2074
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-great-tree-top-left",
-    "box": [
-     14,
-     2084
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-pine-left-spread",
-    "box": [
-     867,
-     1723
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-pine-centre",
-    "box": [
-     1075,
-     1505
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-pine-needle-left",
-    "box": [
-     0,
-     1744
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-canopy-foreground-left",
-    "box": [
-     1479,
-     1903
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-canopy-foreground",
-    "box": [
-     16,
-     1958
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-pine-top-left",
-    "box": [
-     1942,
-     1323
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-broadleaf-top-left",
-    "box": [
-     1470,
-     1924
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-broadleaf-top-right",
-    "box": [
-     1400,
-     1924
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-bottom-right-t005",
-    "box": [
-     1398,
-     1903
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-lower-round",
-    "box": [
-     195,
-     1905
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-bottom-centre-t005",
-    "box": [
-     1125,
-     2031
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-bottom-centre-t002",
-    "box": [
-     1803,
-     1177
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-willow-top-left",
-    "box": [
-     1797,
-     1177
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-teal-bottom-left",
-    "box": [
-     1797,
-     1177
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-mid-round",
-    "box": [
-     377,
-     1546
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-tree-crown-bottom-centre",
-    "box": [
-     2011,
-     65
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-big-tree-canopy-near-right",
-    "box": [
-     1230,
-     160
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-grove-ledge-lower-right",
-    "box": [
-     2612,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-blue-green-tree-lower",
-    "box": [
-     2184,
-     127
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-tree-stand-bottom-right",
-    "box": [
-     1575,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-dark-pines-centre-lower",
-    "box": [
-     2129,
-     194
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-slope-trees-upper-left",
-    "box": [
-     1215,
-     160
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-cliff-trees-left-edge",
-    "box": [
-     1575,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   }
-  ]
- },
  "right-gorge-wall-high": {
   "patches": [
    {
@@ -271,96 +6,6 @@
     "box": [
      405,
      1559
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-gorge-foreground",
-    "box": [
-     0,
-     1283
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-right-rust-tree",
-    "box": [
-     2090,
-     911
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-grove-bottom-right",
-    "box": [
-     601,
-     804
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-pine-left-spread",
-    "box": [
-     182,
-     1282
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-canopy-top-band",
-    "box": [
-     1543,
-     143
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-pine-top-left",
-    "box": [
-     1379,
-     1154
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-brick-centre",
-    "box": [
-     710,
-     536
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-bottom-centre",
-    "box": [
-     462,
-     1018
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-top-left",
-    "box": [
-     391,
-     1011
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-teal-centre-right",
-    "box": [
-     710,
-     536
     ],
     "n": 96,
     "on": 2
@@ -375,10 +20,181 @@
     "on": 2
    },
    {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-grove-left-upper",
+    "box": [
+     232,
+     549
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-big-tree-canopy-near-right",
+    "box": [
+     779,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__w-compound-fall",
+    "box": [
+     1206,
+     337
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-gorge-foreground",
+    "box": [
+     0,
+     1278
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__s-right-rust-tree",
+    "box": [
+     1636,
+     914
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-grove-bottom-right",
+    "box": [
+     463,
+     657
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-willow-top-centre",
+    "box": [
+     1636,
+     963
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-pine-left-spread",
+    "box": [
+     78,
+     1283
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-canopy-top-band",
+    "box": [
+     1533,
+     46
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-maple-orange",
+    "box": [
+     0,
+     1283
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-pine-top-left",
+    "box": [
+     1125,
+     921
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-brick-centre",
+    "box": [
+     653,
+     457
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-bottom-centre",
+    "box": [
+     366,
+     855
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-maple-bottom-left",
+    "box": [
+     905,
+     789
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-top-left",
+    "box": [
+     366,
+     996
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-teal-centre-right",
+    "box": [
+     653,
+     457
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-maple-top-left",
+    "box": [
+     997,
+     65
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-bottom-centre-t002",
     "box": [
-     1105,
-     897
+     1103,
+     833
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-willow-ochre-upper-left",
+    "box": [
+     1388,
+     262
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-right-teal",
+    "box": [
+     12,
+     1283
     ],
     "n": 96,
     "on": 2
@@ -386,8 +202,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-willow-top-left",
     "box": [
-     1154,
-     897
+     1153,
+     874
     ],
     "n": 96,
     "on": 2
@@ -404,17 +220,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-pine-top-centre",
     "box": [
-     663,
-     181
+     648,
+     167
     ],
     "n": 96,
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-grove-left-upper",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-top-right",
     "box": [
-     232,
-     549
+     811,
+     874
     ],
     "n": 96,
     "on": 2
@@ -422,8 +238,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-teal-bottom-left",
     "box": [
-     1146,
-     898
+     1125,
+     814
     ],
     "n": 96,
     "on": 2
@@ -431,8 +247,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-right-edge",
     "box": [
-     2088,
-     911
+     2070,
+     914
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-teal-left",
+    "box": [
+     997,
+     291
     ],
     "n": 96,
     "on": 2
@@ -440,8 +265,26 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-bottom-right-t003",
     "box": [
-     2085,
-     911
+     2070,
+     914
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-tree-ochre-bottom",
+    "box": [
+     1281,
+     866
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-maple-top-left-t006",
+    "box": [
+     905,
+     874
     ],
     "n": 96,
     "on": 2
@@ -449,16 +292,70 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-canopy-top-centre-left",
     "box": [
-     1178,
-     161
+     1056,
+     46
     ],
     "n": 96,
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-big-tree-canopy-near-right",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__cat-pine-right-edge",
     "box": [
-     779,
+     2072,
+     358
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-blue-green-tree-bottom-right",
+    "box": [
+     1880,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-autumn-tree-lower-mass",
+    "box": [
+     447,
+     130
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-blue-green-tree-lower",
+    "box": [
+     1391,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-blue-green-mass-bottom-centre",
+    "box": [
+     1183,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-autumn-tree-orange-red",
+    "box": [
+     1087,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-slope-trees-lower-centre",
+    "box": [
+     759,
      0
     ],
     "n": 96,
@@ -467,7 +364,7 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-dark-pines-centre-lower",
     "box": [
-     1542,
+     1514,
      0
     ],
     "n": 96,
@@ -476,8 +373,408 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-slope-trees-upper-left",
     "box": [
-     754,
+     759,
      0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-autumn-tree-tan-right",
+    "box": [
+     1391,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/right-gorge-wall-high__sum-ridge-grove-bottom-right",
+    "box": [
+     1014,
+     54
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "gorge-cliff-nose": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-pine-left-spread",
+    "box": [
+     867,
+     1723
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-big-tree-canopy-near-right",
+    "box": [
+     1230,
+     160
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__w-gorge-fall",
+    "box": [
+     533,
+     2132
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-gorge-big-canopy",
+    "box": [
+     1120,
+     1905
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-left-pines-z2",
+    "box": [
+     854,
+     2354
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-left-clifftop-pine",
+    "box": [
+     0,
+     1732
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__s-gorge-foreground",
+    "box": [
+     329,
+     1447
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-broadleaf-great-right",
+    "box": [
+     1361,
+     2073
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-great-tree-top-left",
+    "box": [
+     11,
+     1923
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-pine-centre",
+    "box": [
+     1076,
+     1447
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-pine-needle-left",
+    "box": [
+     0,
+     1732
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-canopy-foreground-left",
+    "box": [
+     1478,
+     1905
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-maple-rust-left",
+    "box": [
+     854,
+     2354
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-canopy-foreground",
+    "box": [
+     0,
+     1857
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-maple-red",
+    "box": [
+     1131,
+     1447
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-pine-top-left",
+    "box": [
+     1797,
+     1177
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-broadleaf-top-left",
+    "box": [
+     1469,
+     1923
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-broadleaf-top-right",
+    "box": [
+     1366,
+     1923
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-bottom-right-t005",
+    "box": [
+     1406,
+     1905
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-lower-round",
+    "box": [
+     40,
+     1732
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-maple-bottom-left",
+    "box": [
+     1535,
+     1018
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-bottom-centre-t005",
+    "box": [
+     1120,
+     2037
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-bottom-centre-t002",
+    "box": [
+     1667,
+     1085
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-willow-top-left",
+    "box": [
+     1768,
+     1106
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-teal-bottom-left",
+    "box": [
+     1768,
+     1085
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-ochre-bottom",
+    "box": [
+     1845,
+     1177
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-mid-round",
+    "box": [
+     329,
+     1542
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-maple-top-left-t006",
+    "box": [
+     1572,
+     1106
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-bottom-right-t004",
+    "box": [
+     266,
+     1951
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__cat-tree-ochre-left",
+    "box": [
+     1809,
+     2233
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-tree-crown-bottom-centre",
+    "box": [
+     2011,
+     65
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-autumn-tree-lower-mass",
+    "box": [
+     1014,
+     163
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-autumn-tree-crown",
+    "box": [
+     1090,
+     163
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-grove-ledge-lower-right",
+    "box": [
+     2586,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-blue-green-tree-lower",
+    "box": [
+     1998,
+     61
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-tree-stand-bottom-right",
+    "box": [
+     1563,
+     11
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-slope-trees-lower-centre",
+    "box": [
+     1271,
+     160
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-dark-pines-centre-lower",
+    "box": [
+     2121,
+     209
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-slope-trees-upper-left",
+    "box": [
+     1271,
+     160
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-autumn-tree-tan-right",
+    "box": [
+     1998,
+     70
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-ridge-grove-bottom-right",
+    "box": [
+     1584,
+     323
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gorge-cliff-nose__sum-cliff-trees-left-edge",
+    "box": [
+     1563,
+     11
     ],
     "n": 96,
     "on": 2
@@ -487,10 +784,28 @@
  "compound-approach-path": {
   "patches": [
    {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__sum-pines-bottom-left",
+    "box": [
+     0,
+     495
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__cat-grove-lower-left",
     "box": [
-     31,
-     1025
+     0,
+     927
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__cat-maple-left",
+    "box": [
+     0,
+     653
     ],
     "n": 96,
     "on": 2
@@ -498,8 +813,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__cat-conifers-right",
     "box": [
-     607,
-     677
+     521,
+     579
     ],
     "n": 96,
     "on": 2
@@ -507,8 +822,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__cat-tree-teal-upper-left",
     "box": [
-     66,
-     493
+     67,
+     489
     ],
     "n": 96,
     "on": 2
@@ -516,8 +831,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__cat-tree-teal-above-ge-hong",
     "box": [
-     31,
-     1026
+     0,
+     927
     ],
     "n": 96,
     "on": 2
@@ -525,8 +840,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__cat-tree-weeping-upper-right",
     "box": [
-     476,
-     514
+     509,
+     482
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__cat-tree-upper-teal",
+    "box": [
+     143,
+     1464
     ],
     "n": 96,
     "on": 2
@@ -534,17 +858,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__cat-tree-mid-round",
     "box": [
-     352,
-     1646
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-approach-path__sum-pines-bottom-left",
-    "box": [
-     0,
-     495
+     329,
+     1539
     ],
     "n": 96,
     "on": 2
@@ -554,10 +869,37 @@
  "gully-footbridge": {
   "patches": [
    {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__cat-grove-lower-left",
+    "box": [
+     0,
+     869
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__cat-conifers-right",
+    "box": [
+     548,
+     506
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__cat-tree-teal-above-ge-hong",
+    "box": [
+     0,
+     869
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__cat-tree-weeping-upper-right",
     "box": [
-     554,
-     450
+     516,
+     433
     ],
     "n": 96,
     "on": 2
@@ -565,8 +907,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__cat-grove-left-upper",
     "box": [
-     795,
-     626
+     788,
+     615
     ],
     "n": 96,
     "on": 2
@@ -574,8 +916,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__sum-grove-village-right",
     "box": [
-     698,
-     34
+     604,
+     16
     ],
     "n": 96,
     "on": 2
@@ -592,8 +934,35 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__sum-grove-village-centre",
     "box": [
-     500,
-     93
+     490,
+     3
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__sum-autumn-tree-lower-mass",
+    "box": [
+     962,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__sum-autumn-tree-crown",
+    "box": [
+     962,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/gully-footbridge__sum-grove-village-behind-hall",
+    "box": [
+     560,
+     0
     ],
     "n": 96,
     "on": 2
@@ -627,13 +996,35 @@
    }
   ]
  },
+ "compound-fence-autumn-trees": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-fence-autumn-trees__cat-tree-pink-by-hall",
+    "box": [
+     36,
+     123
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
  "mist-slope-above": {
   "patches": [
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-pines-bottom-left",
     "box": [
      0,
-     158
+     153
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-autumn-tree-lower-mass",
+    "box": [
+     967,
+     42
     ],
     "n": 96,
     "on": 2
@@ -641,7 +1032,25 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-big-tree-canopy-near-right",
     "box": [
-     1227,
+     1326,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-autumn-tree-crown",
+    "box": [
+     967,
+     42
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-grove-village-behind-hall",
+    "box": [
+     558,
      0
     ],
     "n": 96,
@@ -650,8 +1059,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-tree-stand-bottom-right",
     "box": [
-     1549,
-     0
+     1548,
+     7
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-slope-trees-lower-centre",
+    "box": [
+     1273,
+     127
     ],
     "n": 96,
     "on": 2
@@ -659,8 +1077,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-slope-trees-upper-left",
     "box": [
-     1228,
-     1
+     1273,
+     127
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-blue-green-tree-lower-mass",
+    "box": [
+     1326,
+     0
     ],
     "n": 96,
     "on": 2
@@ -668,8 +1095,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/mist-slope-above__sum-cliff-trees-left-edge",
     "box": [
-     1549,
-     0
+     1548,
+     7
     ],
     "n": 96,
     "on": 2
@@ -681,8 +1108,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-rear-pines__sum-grove-village-right",
     "box": [
-     170,
-     27
+     157,
+     58
     ],
     "n": 96,
     "on": 2
@@ -699,8 +1126,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-rear-pines__sum-grove-village-centre",
     "box": [
-     39,
-     121
+     44,
+     34
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-rear-pines__sum-grove-village-behind-hall",
+    "box": [
+     116,
+     0
     ],
     "n": 96,
     "on": 2
@@ -710,6 +1146,68 @@
     "box": [
      215,
      27
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "compound-main-hall": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-main-hall__sum-grove-village-right",
+    "box": [
+     50,
+     65
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-main-hall__sum-grove-village-centre",
+    "box": [
+     50,
+     73
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-main-hall__sum-autumn-tree-lower-mass",
+    "box": [
+     206,
+     32
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-main-hall__sum-autumn-tree-crown",
+    "box": [
+     206,
+     32
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "compound-lower-hall": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-lower-hall__sum-grove-village-right",
+    "box": [
+     88,
+     44
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z4w/living/compound-lower-hall__sum-grove-village-centre",
+    "box": [
+     88,
+     46
     ],
     "n": 96,
     "on": 2

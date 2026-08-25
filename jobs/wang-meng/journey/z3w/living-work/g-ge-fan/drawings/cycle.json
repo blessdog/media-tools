@@ -1,0 +1,30 @@
+{
+ "tool": "swing-card",
+ "source": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living-work/g-ge-fan/plate.png",
+ "masks": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living-work/g-ge-fan/cards",
+ "cards": [
+  {
+   "name": "fan",
+   "box": [
+    64,
+    64,
+    162,
+    143
+   ],
+   "lengthPx": 80.9,
+   "pivot": [
+    16.0,
+    61.7
+   ]
+  }
+ ],
+ "swingDeg": 5.0,
+ "gust": "0.10,0.08,0.22",
+ "gustRest": 0.15,
+ "drawings": 48,
+ "on": 2,
+ "plate": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/living-work/g-ge-fan/clean.png",
+ "loopSeamLevels": 0.0,
+ "movedPctAtPeak": 3.65,
+ "peakDrawing": 5
+}

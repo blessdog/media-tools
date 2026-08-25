@@ -42,9 +42,20 @@ fig.patch.set_facecolor(SURFACE); ax.set_facecolor(SURFACE)
 ax.barh(names, [100] * len(names), color=LEAF, height=0.66, label="painted leaf in the zone")
 ax.barh(names, carded, color=CARDED, height=0.66, label="has a card over it")
 ax.barh(names, moves, color=MOVES, height=0.42, label="visibly moves")
-ax.axvline(ceil, color=CEIL, lw=2, ls=(0, (5, 3)))
-ax.text(ceil + 1.2, len(names) - 0.35, f"ceiling {ceil:.0f}%\na rigid 1px shift\nof the whole plate\nscores this",
-        color=CEIL, fontsize=9, va="top")
+prev = {"z6w": 16.7, "z5w": 15.5, "z4w": 18.5, "z3w": 21.5, "z1": 26.2}
+for i, nm in enumerate(names):
+    if nm in prev:
+        ax.plot([prev[nm]], [i], marker="|", ms=22, mew=2.5, color="#e8e6e1", zorder=5)
+# THE CONTROL IS A LADDER, NOT ONE LINE. A rigid translation of the whole plate
+# scores 63.1% at 1px, 80.1% at 2px, 84.4% at 3px under the same >6-level rule,
+# because ink sliding inside a dense mass looks identical to itself. So a bar
+# between the rungs is not "past the ceiling" -- it reads off how far the leaves
+# actually travel.
+for px, pct in ((1, 63.1), (2, 80.1), (3, 84.4)):
+    ax.axvline(pct, color=CEIL, lw=1.4, ls=(0, (5, 3)), alpha=0.85 if px == 1 else 0.45)
+    ax.text(pct, len(names) - 0.38, f" {px}px", color=CEIL, fontsize=8.5, va="top")
+ax.text(63.1, -0.95, "rigid-shift control: a whole-plate translation of this many px\nscores this much under the same rule",
+        color=CEIL, fontsize=8.5, va="top", ha="center")
 
 for i, (c, m) in enumerate(zip(carded, moves)):
     ax.text(c + 1.0, i + 0.20, f"{c:.0f}% cut", color=CARDED, fontsize=9, va="center")
@@ -52,7 +63,7 @@ for i, (c, m) in enumerate(zip(carded, moves)):
 
 s = d["scroll"]
 ax.set_title(
-    "the leaves are not under-swung — they are un-cut\n"
+    "the leaves were never under-swung — they were un-cut\n"
     f"whole scroll: {100*s['leafInkUnderACardPx']/s['leafInkPx']:.0f}% of the painted leaf has a card on it, "
     f"and {100*s['leafInkThatMovesPx']/s['leafInkUnderACardPx']:.0f}% of THAT moves",
     color=INK, fontsize=13, loc="left", pad=14)

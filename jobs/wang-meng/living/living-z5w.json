@@ -1,35 +1,4 @@
 {
- "compound-approach-path": {
-  "patches": [
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-gorge-foreground",
-    "box": [
-     215,
-     1670
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__cat-tree-weeping-upper-right",
-    "box": [
-     415,
-     671
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__cat-tree-mid-round",
-    "box": [
-     288,
-     1671
-    ],
-    "n": 96,
-    "on": 2
-   }
-  ]
- },
  "gully-footbridge": {
   "patches": [
    {
@@ -37,33 +6,6 @@
     "box": [
      355,
      2081
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-grove-lower-left",
-    "box": [
-     30,
-     1456
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-teal-upper-left",
-    "box": [
-     64,
-     923
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-teal-above-ge-hong",
-    "box": [
-     30,
-     1457
     ],
     "n": 96,
     "on": 2
@@ -78,10 +20,82 @@
     "on": 2
    },
    {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__w-compound-fall",
+    "box": [
+     1771,
+     1143
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-canopy-top-band",
+    "box": [
+     2336,
+     837
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-grove-lower-left",
+    "box": [
+     0,
+     1358
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-maple-left",
+    "box": [
+     0,
+     1084
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-conifers-right",
+    "box": [
+     575,
+     1011
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-maple-top-left",
+    "box": [
+     1563,
+     718
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-teal-upper-left",
+    "box": [
+     67,
+     920
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-tree-teal-above-ge-hong",
+    "box": [
+     0,
+     1358
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__cat-canopy-top-centre-left",
     "box": [
-     1741,
-     817
+     1739,
+     700
     ],
     "n": 96,
     "on": 2
@@ -90,7 +104,7 @@
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-pines-bottom-left",
     "box": [
      0,
-     589
+     584
     ],
     "n": 96,
     "on": 2
@@ -98,8 +112,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-grove-village-right",
     "box": [
-     691,
-     570
+     604,
+     520
     ],
     "n": 96,
     "on": 2
@@ -116,17 +130,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-grove-village-centre",
     "box": [
-     487,
-     597
+     490,
+     507
     ],
     "n": 96,
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-ridge-trees-crest-diagonal",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-autumn-tree-lower-mass",
     "box": [
-     92,
-     0
+     962,
+     476
     ],
     "n": 96,
     "on": 2
@@ -134,8 +148,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-big-tree-canopy-near-right",
     "box": [
-     1372,
-     398
+     1326,
+     395
     ],
     "n": 96,
     "on": 2
@@ -143,17 +157,44 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-forest-col-centre",
     "box": [
-     132,
+     123,
      0
     ],
     "n": 96,
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-ridge-trees-right-lower",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-autumn-tree-crown",
     "box": [
-     2191,
-     0
+     962,
+     476
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-grove-village-behind-hall",
+    "box": [
+     558,
+     432
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-blue-green-tree-lower",
+    "box": [
+     1955,
+     497
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-blue-green-mass-bottom-centre",
+    "box": [
+     1747,
+     592
     ],
     "n": 96,
     "on": 2
@@ -162,7 +203,16 @@
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-tree-stand-bottom-right",
     "box": [
      1548,
-     427
+     438
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-autumn-tree-orange-red",
+    "box": [
+     1739,
+     592
     ],
     "n": 96,
     "on": 2
@@ -177,6 +227,15 @@
     "on": 2
    },
    {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-slope-trees-lower-centre",
+    "box": [
+     1271,
+     558
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-firs-left-of-pavilion",
     "box": [
      820,
@@ -186,10 +245,37 @@
     "on": 2
    },
    {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-tree-stand-left-lower",
+    "box": [
+     0,
+     12
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-slope-trees-upper-left",
     "box": [
-     1215,
-     489
+     1271,
+     558
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-blue-green-tree-lower-mass",
+    "box": [
+     1326,
+     395
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-tree-stand-ridge-right-of-col",
+    "box": [
+     425,
+     0
     ],
     "n": 96,
     "on": 2
@@ -199,6 +285,42 @@
     "box": [
      135,
      0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-autumn-tree-tan-right",
+    "box": [
+     1955,
+     502
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-ridge-grove-bottom-right",
+    "box": [
+     1578,
+     707
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-tree-crowns-peak-right",
+    "box": [
+     1475,
+     172
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-tree-group-left-lower-isolated",
+    "box": [
+     147,
+     288
     ],
     "n": 96,
     "on": 2
@@ -216,7 +338,47 @@
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/gully-footbridge__sum-cliff-trees-left-edge",
     "box": [
      1548,
-     427
+     438
+    ],
+    "n": 96,
+    "on": 2
+   }
+  ]
+ },
+ "compound-approach-path": {
+  "patches": [
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__cat-tree-weeping-upper-right",
+    "box": [
+     415,
+     671
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__s-gorge-foreground",
+    "box": [
+     265,
+     1665
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__cat-tree-upper-teal",
+    "box": [
+     79,
+     1589
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-approach-path__cat-tree-mid-round",
+    "box": [
+     265,
+     1665
     ],
     "n": 96,
     "on": 2
@@ -226,10 +388,19 @@
  "right-gorge-wall-high": {
   "patches": [
    {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__w-compound-fall",
+    "box": [
+     1201,
+     991
+    ],
+    "n": 36,
+    "on": 2
+   },
+   {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-gorge-foreground",
     "box": [
-     178,
-     1930
+     0,
+     1878
     ],
     "n": 96,
     "on": 2
@@ -237,8 +408,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__s-right-rust-tree",
     "box": [
-     2086,
-     1565
+     1631,
+     1567
     ],
     "n": 96,
     "on": 2
@@ -246,8 +417,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-grove-bottom-right",
     "box": [
-     597,
-     1457
+     458,
+     1311
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-willow-top-centre",
+    "box": [
+     1631,
+     1616
     ],
     "n": 96,
     "on": 2
@@ -255,7 +435,7 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-pine-left-spread",
     "box": [
-     175,
+     73,
      1936
     ],
     "n": 96,
@@ -264,8 +444,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-canopy-top-band",
     "box": [
-     1537,
-     797
+     1528,
+     700
     ],
     "n": 96,
     "on": 2
@@ -273,8 +453,26 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-pine-centre",
     "box": [
-     569,
-     1931
+     515,
+     1878
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-maple-orange",
+    "box": [
+     0,
+     1936
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-maple-red",
+    "box": [
+     566,
+     1878
     ],
     "n": 96,
     "on": 2
@@ -282,8 +480,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-pine-top-left",
     "box": [
-     1374,
-     1754
+     1120,
+     1574
     ],
     "n": 96,
     "on": 2
@@ -291,8 +489,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-brick-centre",
     "box": [
-     705,
-     1190
+     648,
+     1110
     ],
     "n": 96,
     "on": 2
@@ -300,8 +498,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-bottom-centre",
     "box": [
-     458,
-     1672
+     360,
+     1508
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-maple-bottom-left",
+    "box": [
+     900,
+     1442
     ],
     "n": 96,
     "on": 2
@@ -309,8 +516,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-top-left",
     "box": [
-     385,
-     1665
+     360,
+     1649
     ],
     "n": 96,
     "on": 2
@@ -318,8 +525,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-teal-centre-right",
     "box": [
-     705,
-     1190
+     648,
+     1110
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-maple-top-left",
+    "box": [
+     992,
+     860
     ],
     "n": 96,
     "on": 2
@@ -327,8 +543,26 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-bottom-centre-t002",
     "box": [
-     1100,
-     1551
+     1098,
+     1487
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-willow-ochre-upper-left",
+    "box": [
+     1383,
+     915
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-right-teal",
+    "box": [
+     7,
+     1936
     ],
     "n": 96,
     "on": 2
@@ -336,8 +570,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-willow-top-left",
     "box": [
-     1149,
-     1550
+     1148,
+     1527
     ],
     "n": 96,
     "on": 2
@@ -354,8 +588,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-pine-top-centre",
     "box": [
-     657,
-     836
+     643,
+     820
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-top-right",
+    "box": [
+     806,
+     1527
     ],
     "n": 96,
     "on": 2
@@ -363,8 +606,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-teal-bottom-left",
     "box": [
-     1141,
-     1551
+     1120,
+     1467
     ],
     "n": 96,
     "on": 2
@@ -372,8 +615,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-right-edge",
     "box": [
-     2084,
-     1564
+     2065,
+     1567
     ],
     "n": 96,
     "on": 2
@@ -381,8 +624,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-teal-left",
     "box": [
-     1077,
-     1080
+     992,
+     944
     ],
     "n": 96,
     "on": 2
@@ -390,8 +633,44 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-bottom-right-t003",
     "box": [
-     2083,
-     1564
+     2065,
+     1567
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-tree-ochre-bottom",
+    "box": [
+     1276,
+     1519
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-maple-top-left-t006",
+    "box": [
+     900,
+     1527
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-canopy-top-centre-left",
+    "box": [
+     1051,
+     820
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__cat-pine-right-edge",
+    "box": [
+     2067,
+     1012
     ],
     "n": 96,
     "on": 2
@@ -406,10 +685,19 @@
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-ridge-trees-right-lower",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-blue-green-tree-bottom-right",
     "box": [
-     1628,
-     0
+     1875,
+     629
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-autumn-tree-lower-mass",
+    "box": [
+     448,
+     795
     ],
     "n": 96,
     "on": 2
@@ -417,8 +705,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-grove-ledge-lower-right",
     "box": [
-     2041,
-     324
+     2017,
+     308
     ],
     "n": 96,
     "on": 2
@@ -426,8 +714,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-blue-green-tree-lower",
     "box": [
-     1615,
-     559
+     1430,
+     492
     ],
     "n": 96,
     "on": 2
@@ -435,8 +723,26 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-tree-stand-bottom-right",
     "box": [
-     1011,
-     419
+     997,
+     442
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-autumn-tree-orange-red",
+    "box": [
+     1082,
+     804
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-slope-trees-lower-centre",
+    "box": [
+     763,
+     710
     ],
     "n": 96,
     "on": 2
@@ -444,8 +750,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-dark-pines-centre-lower",
     "box": [
-     1538,
-     626
+     1509,
+     640
     ],
     "n": 96,
     "on": 2
@@ -453,8 +759,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-slope-trees-upper-left",
     "box": [
-     760,
-     653
+     763,
+     710
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-autumn-tree-tan-right",
+    "box": [
+     1430,
+     504
     ],
     "n": 96,
     "on": 2
@@ -462,8 +777,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/right-gorge-wall-high__sum-cliff-trees-left-edge",
     "box": [
-     1011,
-     419
+     997,
+     442
     ],
     "n": 96,
     "on": 2
@@ -475,8 +790,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-fence-autumn-trees__cat-conifers-right",
     "box": [
-     151,
-     569
+     65,
+     470
     ],
     "n": 96,
     "on": 2
@@ -484,8 +799,8 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-fence-autumn-trees__cat-tree-weeping-upper-right",
     "box": [
-     65,
-     405
+     51,
+     373
     ],
     "n": 96,
     "on": 2
@@ -493,8 +808,44 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-fence-autumn-trees__cat-grove-left-upper",
     "box": [
-     337,
-     591
+     328,
+     577
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-fence-autumn-trees__cat-tree-pink-by-hall",
+    "box": [
+     396,
+     413
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-fence-autumn-trees__sum-grove-village-right",
+    "box": [
+     211,
+     94
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-fence-autumn-trees__sum-grove-village-centre",
+    "box": [
+     211,
+     97
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-fence-autumn-trees__sum-autumn-tree-lower-mass",
+    "box": [
+     540,
+     163
     ],
     "n": 96,
     "on": 2
@@ -506,25 +857,7 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-wooded-knoll-left-centre",
     "box": [
-     699,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-ridge-trees-upper-right",
-    "box": [
-     634,
-     0
-    ],
-    "n": 96,
-    "on": 2
-   },
-   {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-ridge-trees-crest-diagonal",
-    "box": [
-     116,
+     698,
      0
     ],
     "n": 96,
@@ -533,17 +866,17 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-forest-col-centre",
     "box": [
-     135,
+     115,
      0
     ],
     "n": 96,
     "on": 2
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-spur-trees-right-mid",
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-tree-stand-bluff-centre-right",
     "box": [
-     473,
-     100
+     588,
+     261
     ],
     "n": 96,
     "on": 2
@@ -551,7 +884,25 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-wooded-flank-right-edge",
     "box": [
-     652,
+     651,
+     0
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-tree-stand-left-lower",
+    "box": [
+     0,
+     20
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-tree-stand-ridge-right-of-col",
+    "box": [
+     431,
      0
     ],
     "n": 96,
@@ -565,6 +916,15 @@
     ],
     "n": 96,
     "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/mist-slope-above__sum-tree-crowns-peak-right",
+    "box": [
+     1478,
+     176
+    ],
+    "n": 96,
+    "on": 2
    }
   ]
  },
@@ -573,8 +933,26 @@
    {
     "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-rear-pines__sum-grove-village-right",
     "box": [
-     163,
-     8
+     150,
+     39
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-rear-pines__sum-grove-village-centre",
+    "box": [
+     40,
+     26
+    ],
+    "n": 96,
+    "on": 2
+   },
+   {
+    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z5w/living/compound-rear-pines__sum-grove-village-behind-hall",
+    "box": [
+     116,
+     0
     ],
     "n": 96,
     "on": 2

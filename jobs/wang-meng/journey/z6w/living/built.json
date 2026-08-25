@@ -1,6 +1,78 @@
 [
  {
   "plane": "compound-approach-path",
+  "region": "s-right-rust-tree-01",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-right-rust-tree-01",
+  "box": [
+   2654,
+   1025
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 10333,
+  "movedPx": 4599,
+  "crop": [
+   2654,
+   2693
+  ],
+  "class": "gust"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "cat-tree-weeping-upper-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__cat-tree-weeping-upper-right",
+  "box": [
+   476,
+   2149
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 6832,
+  "movedPx": 0,
+  "crop": [
+   476,
+   2074
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "sum-grove-village-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-grove-village-right",
+  "box": [
+   657,
+   1632
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2055,
+  "movedPx": 0,
+  "crop": [
+   617,
+   1632
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "sum-slope-trees-upper-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-slope-trees-upper-left",
+  "box": [
+   1271,
+   1618
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 15710,
+  "movedPx": 1537,
+  "crop": [
+   1215,
+   1618
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
   "region": "w-compound-fall",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__w-compound-fall",
   "box": [
@@ -19,37 +91,19 @@
  },
  {
   "plane": "compound-approach-path",
-  "region": "s-right-rust-tree-01",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-right-rust-tree-01",
-  "box": [
-   2654,
-   1025
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 10333,
-  "movedPx": 4599,
-  "crop": [
-   2654,
-   2693
-  ],
-  "class": "gust"
- },
- {
-  "plane": "compound-approach-path",
   "region": "s-right-rust-tree",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__s-right-rust-tree",
   "box": [
-   2654,
-   1025
+   2303,
+   1027
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 10333,
-  "movedPx": 1828,
+  "ownPx": 30144,
+  "movedPx": 14249,
   "crop": [
-   2654,
-   2693
+   2303,
+   2695
   ],
   "class": "foliage"
  },
@@ -58,16 +112,34 @@
   "region": "cat-grove-bottom-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-grove-bottom-right",
   "box": [
-   1164,
-   917
+   1027,
+   771
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 49359,
-  "movedPx": 7130,
+  "ownPx": 175248,
+  "movedPx": 105472,
   "crop": [
-   1164,
-   2585
+   1027,
+   2439
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "cat-willow-top-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-willow-top-centre",
+  "box": [
+   2303,
+   1076
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 18713,
+  "movedPx": 5203,
+  "crop": [
+   2303,
+   2744
   ],
   "class": "foliage"
  },
@@ -76,16 +148,16 @@
   "region": "cat-canopy-top-band",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__cat-canopy-top-band",
   "box": [
-   2107,
-   1940
+   2097,
+   1828
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 24951,
-  "movedPx": 9231,
+  "ownPx": 71478,
+  "movedPx": 45136,
   "crop": [
-   2107,
-   1940
+   2097,
+   1828
   ],
   "class": "foliage"
  },
@@ -94,16 +166,34 @@
   "region": "cat-grove-lower-left",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/gully-footbridge__cat-grove-lower-left",
   "box": [
-   30,
-   1182
+   0,
+   1084
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 10986,
-  "movedPx": 544,
+  "ownPx": 49400,
+  "movedPx": 21452,
   "crop": [
-   30,
-   2585
+   0,
+   2487
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gully-footbridge",
+  "region": "cat-maple-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/gully-footbridge__cat-maple-left",
+  "box": [
+   0,
+   810
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 42776,
+  "movedPx": 23776,
+  "crop": [
+   0,
+   2213
   ],
   "class": "foliage"
  },
@@ -112,16 +202,16 @@
   "region": "cat-tree-brick-centre",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-brick-centre",
   "box": [
-   1274,
-   650
+   1217,
+   571
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 15487,
-  "movedPx": 6238,
+  "ownPx": 45563,
+  "movedPx": 26338,
   "crop": [
-   1274,
-   2318
+   1217,
+   2239
   ],
   "class": "foliage"
  },
@@ -130,16 +220,34 @@
   "region": "cat-tree-bottom-centre",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-bottom-centre",
   "box": [
-   1000,
-   1126
+   973,
+   969
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 6646,
-  "movedPx": 730,
+  "ownPx": 44009,
+  "movedPx": 12012,
   "crop": [
-   1000,
-   2794
+   973,
+   2637
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "cat-maple-bottom-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-maple-bottom-left",
+  "box": [
+   1469,
+   903
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 99089,
+  "movedPx": 68610,
+  "crop": [
+   1469,
+   2571
   ],
   "class": "foliage"
  },
@@ -148,16 +256,34 @@
   "region": "cat-tree-top-left",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-top-left",
   "box": [
-   999,
-   1124
+   973,
+   1109
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 4180,
-  "movedPx": 322,
+  "ownPx": 14231,
+  "movedPx": 1620,
   "crop": [
-   999,
-   2792
+   973,
+   2777
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "cat-conifers-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-conifers-right",
+  "box": [
+   523,
+   470
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 14132,
+  "movedPx": 5378,
+  "crop": [
+   521,
+   2138
   ],
   "class": "foliage"
  },
@@ -166,16 +292,16 @@
   "region": "cat-conifers-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/gully-footbridge__cat-conifers-right",
   "box": [
-   610,
-   834
+   603,
+   741
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 9552,
-  "movedPx": 4755,
+  "ownPx": 23634,
+  "movedPx": 19054,
   "crop": [
-   607,
-   2237
+   521,
+   2138
   ],
   "class": "foliage"
  },
@@ -184,16 +310,70 @@
   "region": "cat-tree-teal-centre-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-teal-centre-right",
   "box": [
-   1274,
-   650
+   1217,
+   571
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 15487,
-  "movedPx": 5987,
+  "ownPx": 45563,
+  "movedPx": 24783,
   "crop": [
-   1274,
-   2318
+   1217,
+   2239
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "cat-trees-bottom-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-trees-bottom-centre",
+  "box": [
+   2303,
+   1076
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 18713,
+  "movedPx": 5275,
+  "crop": [
+   2303,
+   2744
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "cat-maple-top-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__cat-maple-top-left",
+  "box": [
+   1647,
+   1847
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 23838,
+  "movedPx": 10567,
+  "crop": [
+   1562,
+   1847
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "cat-maple-top-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-maple-top-left",
+  "box": [
+   1562,
+   320
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 40303,
+  "movedPx": 10489,
+  "crop": [
+   1562,
+   1847
   ],
   "class": "foliage"
  },
@@ -202,16 +382,16 @@
   "region": "cat-tree-bottom-centre-t002",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-bottom-centre-t002",
   "box": [
-   1717,
-   1011
+   1667,
+   947
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 24065,
-  "movedPx": 4775,
+  "ownPx": 65412,
+  "movedPx": 39344,
   "crop": [
-   1717,
-   2679
+   1667,
+   2615
   ],
   "class": "foliage"
  },
@@ -225,11 +405,29 @@
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 14686,
-  "movedPx": 1028,
+  "ownPx": 16204,
+  "movedPx": 1275,
   "crop": [
-   65,
+   67,
    2049
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "cat-willow-ochre-upper-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__cat-willow-ochre-upper-left",
+  "box": [
+   1952,
+   2044
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 17644,
+  "movedPx": 6018,
+  "crop": [
+   1952,
+   2044
   ],
   "class": "foliage"
  },
@@ -256,34 +454,16 @@
   "region": "cat-tree-teal-above-ge-hong",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/gully-footbridge__cat-tree-teal-above-ge-hong",
   "box": [
-   30,
-   1183
+   0,
+   1084
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 9905,
-  "movedPx": 408,
+  "ownPx": 49400,
+  "movedPx": 22307,
   "crop": [
-   30,
-   2586
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "cat-tree-weeping-upper-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__cat-tree-weeping-upper-right",
-  "box": [
-   476,
-   2149
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 6832,
-  "movedPx": 0,
-  "crop": [
-   476,
-   2074
+   0,
+   2487
   ],
   "class": "foliage"
  },
@@ -292,16 +472,34 @@
   "region": "cat-tree-weeping-upper-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-weeping-upper-right",
   "box": [
-   507,
-   406
+   509,
+   374
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 12914,
-  "movedPx": 4097,
+  "ownPx": 27189,
+  "movedPx": 13775,
   "crop": [
-   476,
-   2074
+   509,
+   2042
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "gully-footbridge",
+  "region": "cat-tree-weeping-upper-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/gully-footbridge__cat-tree-weeping-upper-right",
+  "box": [
+   521,
+   675
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 11095,
+  "movedPx": 10003,
+  "crop": [
+   509,
+   2042
   ],
   "class": "foliage"
  },
@@ -310,16 +508,16 @@
   "region": "cat-pine-top-centre",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-pine-top-centre",
   "box": [
-   1227,
-   295
+   1212,
+   281
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 12195,
-  "movedPx": 5654,
+  "ownPx": 18617,
+  "movedPx": 11388,
   "crop": [
-   1227,
-   1963
+   1212,
+   1949
   ],
   "class": "foliage"
  },
@@ -328,16 +526,16 @@
   "region": "cat-grove-left-upper",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-grove-left-upper",
   "box": [
-   795,
-   591
+   788,
+   578
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 13208,
-  "movedPx": 2557,
+  "ownPx": 18660,
+  "movedPx": 11892,
   "crop": [
-   795,
-   2259
+   788,
+   2246
   ],
   "class": "foliage"
  },
@@ -346,16 +544,34 @@
   "region": "cat-tree-teal-bottom-left",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-teal-bottom-left",
   "box": [
-   1717,
-   1011
+   1689,
+   927
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 24065,
-  "movedPx": 4607,
+  "ownPx": 61133,
+  "movedPx": 35878,
   "crop": [
-   1717,
-   2679
+   1689,
+   2595
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "cat-tree-teal-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-teal-left",
+  "box": [
+   1562,
+   405
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 36887,
+  "movedPx": 13765,
+  "crop": [
+   1562,
+   2073
   ],
   "class": "foliage"
  },
@@ -364,16 +580,34 @@
   "region": "cat-tree-bottom-right-t003",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-bottom-right-t003",
   "box": [
-   2654,
-   1025
+   2634,
+   1027
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 10431,
-  "movedPx": 1778,
+  "ownPx": 11431,
+  "movedPx": 2105,
   "crop": [
-   2654,
-   2693
+   2634,
+   2695
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "cat-tree-pink-by-hall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-tree-pink-by-hall",
+  "box": [
+   856,
+   413
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 15127,
+  "movedPx": 1392,
+  "crop": [
+   856,
+   2081
   ],
   "class": "foliage"
  },
@@ -382,16 +616,52 @@
   "region": "cat-canopy-top-centre-left",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__cat-canopy-top-centre-left",
   "box": [
-   1741,
-   1942
+   1647,
+   1828
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 5680,
-  "movedPx": 807,
+  "ownPx": 37682,
+  "movedPx": 14563,
   "crop": [
-   1741,
-   1942
+   1620,
+   1828
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "cat-canopy-top-centre-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__cat-canopy-top-centre-left",
+  "box": [
+   1620,
+   320
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 17131,
+  "movedPx": 293,
+  "crop": [
+   1620,
+   1828
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "cat-pine-right-edge",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__cat-pine-right-edge",
+  "box": [
+   2636,
+   2140
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 9810,
+  "movedPx": 2309,
+  "crop": [
+   2636,
+   2140
   ],
   "class": "foliage"
  },
@@ -400,16 +670,16 @@
   "region": "sum-wooded-knoll-left-centre",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-wooded-knoll-left-centre",
   "box": [
-   699,
-   1066
+   698,
+   1065
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 42576,
-  "movedPx": 10773,
+  "ownPx": 69063,
+  "movedPx": 35757,
   "crop": [
-   699,
-   1066
+   698,
+   1065
   ],
   "class": "foliage"
  },
@@ -418,16 +688,16 @@
   "region": "sum-pines-bottom-left",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__sum-pines-bottom-left",
   "box": [
-   0,
-   191
+   16,
+   175
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 8294,
-  "movedPx": 744,
+  "ownPx": 1954,
+  "movedPx": 1612,
   "crop": [
    0,
-   1718
+   1712
   ],
   "class": "foliage"
  },
@@ -437,33 +707,15 @@
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/gully-footbridge__sum-pines-bottom-left",
   "box": [
    0,
-   315
+   311
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 22784,
-  "movedPx": 8757,
+  "ownPx": 26845,
+  "movedPx": 18273,
   "crop": [
    0,
-   1718
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-grove-village-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-grove-village-right",
-  "box": [
-   657,
-   1632
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 2055,
-  "movedPx": 0,
-  "crop": [
-   617,
-   1632
+   1712
   ],
   "class": "foliage"
  },
@@ -472,16 +724,16 @@
   "region": "sum-grove-village-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__sum-grove-village-right",
   "box": [
-   70,
-   11
+   57,
+   23
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 10409,
-  "movedPx": 1740,
+  "ownPx": 17381,
+  "movedPx": 8990,
   "crop": [
-   617,
-   1632
+   604,
+   1649
   ],
   "class": "foliage"
  },
@@ -490,16 +742,16 @@
   "region": "sum-grove-village-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-court__sum-grove-village-right",
   "box": [
-   159,
-   81
+   57,
+   69
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 4653,
-  "movedPx": 44,
+  "ownPx": 9745,
+  "movedPx": 6625,
   "crop": [
-   617,
-   1632
+   604,
+   1649
   ],
   "class": "foliage"
  },
@@ -508,16 +760,16 @@
   "region": "sum-grove-village-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__sum-grove-village-right",
   "box": [
-   691,
-   109
+   604,
+   94
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 4505,
-  "movedPx": 193,
+  "ownPx": 47705,
+  "movedPx": 19178,
   "crop": [
-   617,
-   1632
+   604,
+   1649
   ],
   "class": "foliage"
  },
@@ -558,20 +810,38 @@
   "class": "foliage"
  },
  {
+  "plane": "compound-rear-pines",
+  "region": "sum-grove-village-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__sum-grove-village-centre",
+  "box": [
+   0,
+   10
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 11726,
+  "movedPx": 4873,
+  "crop": [
+   490,
+   1636
+  ],
+  "class": "foliage"
+ },
+ {
   "plane": "compound-court",
   "region": "sum-grove-village-centre",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-court__sum-grove-village-centre",
   "box": [
    0,
-   99
+   13
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 3549,
-  "movedPx": 1048,
+  "ownPx": 21689,
+  "movedPx": 14398,
   "crop": [
-   485,
-   1725
+   490,
+   1636
   ],
   "class": "foliage"
  },
@@ -580,88 +850,16 @@
   "region": "sum-grove-village-centre",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__sum-grove-village-centre",
   "box": [
-   486,
-   109
+   490,
+   94
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 13618,
-  "movedPx": 5617,
+  "ownPx": 62882,
+  "movedPx": 30833,
   "crop": [
-   485,
-   1725
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-forest-mid-terrace",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-forest-mid-terrace",
-  "box": [
-   1019,
-   305
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 58343,
-  "movedPx": 11572,
-  "crop": [
-   1019,
-   305
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-wooded-slope-lower-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-wooded-slope-lower-left",
-  "box": [
-   1855,
-   615
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 79894,
-  "movedPx": 20239,
-  "crop": [
-   1855,
-   615
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-ridge-trees-right-upper",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-ridge-trees-right-upper",
-  "box": [
-   2438,
-   1014
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 3037,
-  "movedPx": 944,
-  "crop": [
-   2438,
-   1014
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-treeline-crest-top-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-treeline-crest-top-left",
-  "box": [
-   0,
-   807
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 20155,
-  "movedPx": 1501,
-  "crop": [
-   0,
-   807
+   490,
+   1636
   ],
   "class": "foliage"
  },
@@ -685,109 +883,91 @@
  },
  {
   "plane": "mist-slope-above",
-  "region": "sum-wooded-slope-top-right-corner",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-wooded-slope-top-right-corner",
+  "region": "sum-blue-green-tree-bottom-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-blue-green-tree-bottom-right",
   "box": [
-   658,
-   751
+   2444,
+   1758
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 31608,
-  "movedPx": 13557,
+  "ownPx": 57478,
+  "movedPx": 17273,
   "crop": [
-   658,
-   751
+   2444,
+   1758
   ],
   "class": "foliage"
  },
  {
   "plane": "mist-slope-above",
-  "region": "sum-treeline-left-flank",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-treeline-left-flank",
+  "region": "sum-autumn-tree-lower-mass",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-autumn-tree-lower-mass",
   "box": [
-   765,
-   188
+   967,
+   1602
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 64309,
-  "movedPx": 8739,
+  "ownPx": 6460,
+  "movedPx": 3268,
   "crop": [
-   765,
-   188
+   962,
+   1602
   ],
   "class": "foliage"
  },
  {
-  "plane": "mist-slope-above",
-  "region": "sum-wooded-slope-upper-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-wooded-slope-upper-left",
+  "plane": "compound-rear-pines",
+  "region": "sum-autumn-tree-lower-mass",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__sum-autumn-tree-lower-mass",
   "box": [
-   1765,
-   585
+   418,
+   16
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 65195,
-  "movedPx": 21861,
+  "ownPx": 3361,
+  "movedPx": 3027,
   "crop": [
-   1765,
-   585
+   962,
+   1602
   ],
   "class": "foliage"
  },
  {
-  "plane": "mist-slope-above",
-  "region": "sum-ridge-trees-upper-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-ridge-trees-upper-right",
+  "plane": "compound-main-hall",
+  "region": "sum-autumn-tree-lower-mass",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-main-hall__sum-autumn-tree-lower-mass",
   "box": [
-   634,
-   1065
+   165,
+   8
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 28941,
-  "movedPx": 5477,
+  "ownPx": 2658,
+  "movedPx": 1847,
   "crop": [
-   634,
-   1065
+   962,
+   1602
   ],
   "class": "foliage"
  },
  {
-  "plane": "mist-slope-above",
-  "region": "sum-treeline-summit-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-treeline-summit-right",
+  "plane": "compound-approach-path",
+  "region": "sum-autumn-tree-lower-mass",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__sum-autumn-tree-lower-mass",
   "box": [
-   1187,
-   217
+   998,
+   0
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 1825,
-  "movedPx": 522,
+  "ownPx": 48076,
+  "movedPx": 14967,
   "crop": [
-   1187,
-   217
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-ridge-trees-crest-diagonal",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-ridge-trees-crest-diagonal",
-  "box": [
-   16,
-   977
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 52842,
-  "movedPx": 9230,
-  "crop": [
-   16,
-   977
+   962,
+   1602
   ],
   "class": "foliage"
  },
@@ -796,16 +976,16 @@
   "region": "sum-big-tree-canopy-near-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-big-tree-canopy-near-right",
   "box": [
-   1372,
-   1527
+   1326,
+   1523
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 6788,
-  "movedPx": 1716,
+  "ownPx": 25364,
+  "movedPx": 13271,
   "crop": [
-   1372,
-   1527
+   1326,
+   1523
   ],
   "class": "foliage"
  },
@@ -814,52 +994,16 @@
   "region": "sum-forest-col-centre",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-forest-col-centre",
   "box": [
-   116,
-   990
+   115,
+   983
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 64750,
-  "movedPx": 9308,
+  "ownPx": 46066,
+  "movedPx": 24497,
   "crop": [
-   116,
-   990
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-ridge-trees-right-lower",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-ridge-trees-right-lower",
-  "box": [
-   2191,
-   1047
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 30019,
-  "movedPx": 7321,
-  "crop": [
-   2191,
-   1047
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-crest-trees-centre-upper",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-crest-trees-centre-upper",
-  "box": [
-   1929,
-   647
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 59222,
-  "movedPx": 14809,
-  "crop": [
-   1929,
-   647
+   115,
+   983
   ],
   "class": "foliage"
  },
@@ -868,16 +1012,142 @@
   "region": "sum-pine-row-left",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-pine-row-left",
   "box": [
-   698,
-   694
+   691,
+   698
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 43075,
-  "movedPx": 16391,
+  "ownPx": 48819,
+  "movedPx": 30892,
   "crop": [
-   698,
-   694
+   691,
+   698
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "sum-autumn-tree-crown",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-autumn-tree-crown",
+  "box": [
+   967,
+   1602
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 6510,
+  "movedPx": 3525,
+  "crop": [
+   962,
+   1602
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-rear-pines",
+  "region": "sum-autumn-tree-crown",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__sum-autumn-tree-crown",
+  "box": [
+   418,
+   16
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3361,
+  "movedPx": 3019,
+  "crop": [
+   962,
+   1602
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-main-hall",
+  "region": "sum-autumn-tree-crown",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-main-hall__sum-autumn-tree-crown",
+  "box": [
+   165,
+   8
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2658,
+  "movedPx": 1889,
+  "crop": [
+   962,
+   1602
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "sum-autumn-tree-crown",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__sum-autumn-tree-crown",
+  "box": [
+   998,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 39124,
+  "movedPx": 12850,
+  "crop": [
+   962,
+   1602
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "sum-grove-village-behind-hall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-grove-village-behind-hall",
+  "box": [
+   567,
+   1560
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 5047,
+  "movedPx": 223,
+  "crop": [
+   558,
+   1560
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-rear-pines",
+  "region": "sum-grove-village-behind-hall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__sum-grove-village-behind-hall",
+  "box": [
+   38,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2734,
+  "movedPx": 305,
+  "crop": [
+   558,
+   1560
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-court",
+  "region": "sum-grove-village-behind-hall",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-court__sum-grove-village-behind-hall",
+  "box": [
+   11,
+   0
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 2798,
+  "movedPx": 346,
+  "crop": [
+   558,
+   1560
   ],
   "class": "foliage"
  },
@@ -886,16 +1156,16 @@
   "region": "sum-grove-ledge-lower-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-grove-ledge-lower-right",
   "box": [
-   2610,
-   1452
+   2586,
+   1437
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 4117,
-  "movedPx": 843,
+  "ownPx": 19129,
+  "movedPx": 7172,
   "crop": [
-   2610,
-   1452
+   2586,
+   1437
   ],
   "class": "foliage"
  },
@@ -904,16 +1174,34 @@
   "region": "sum-blue-green-tree-lower",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-blue-green-tree-lower",
   "box": [
-   2184,
-   1687
+   1955,
+   1620
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 2857,
-  "movedPx": 16,
+  "ownPx": 35330,
+  "movedPx": 10672,
   "crop": [
-   2184,
-   1687
+   1955,
+   1620
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "sum-blue-green-mass-bottom-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-blue-green-mass-bottom-centre",
+  "box": [
+   1747,
+   1721
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 46842,
+  "movedPx": 15579,
+  "crop": [
+   1747,
+   1721
   ],
   "class": "foliage"
  },
@@ -937,37 +1225,73 @@
  },
  {
   "plane": "mist-slope-above",
-  "region": "sum-forest-lower-terrace",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-forest-lower-terrace",
+  "region": "sum-tree-stand-bottom-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-tree-stand-bottom-right",
   "box": [
-   1024,
-   533
+   1548,
+   1567
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 6724,
-  "movedPx": 752,
+  "ownPx": 16123,
+  "movedPx": 6984,
   "crop": [
-   1024,
-   533
+   1548,
+   1567
   ],
   "class": "foliage"
  },
  {
   "plane": "mist-slope-above",
-  "region": "sum-tree-stand-bottom-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-tree-stand-bottom-right",
+  "region": "sum-tree-branch-fan-bottom-left",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-tree-branch-fan-bottom-left",
   "box": [
-   1549,
-   1549
+   0,
+   707
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 6974,
-  "movedPx": 2899,
+  "ownPx": 46270,
+  "movedPx": 15790,
   "crop": [
-   1549,
-   1549
+   0,
+   707
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "sum-autumn-tree-orange-red",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-autumn-tree-orange-red",
+  "box": [
+   1664,
+   1721
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 48869,
+  "movedPx": 16984,
+  "crop": [
+   1651,
+   1721
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "sum-autumn-tree-orange-red",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__sum-autumn-tree-orange-red",
+  "box": [
+   1651,
+   324
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3093,
+  "movedPx": 8,
+  "crop": [
+   1651,
+   1721
   ],
   "class": "foliage"
  },
@@ -1008,92 +1332,56 @@
   "class": "foliage"
  },
  {
-  "plane": "mist-slope-above",
-  "region": "sum-treeline-left-lower",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-treeline-left-lower",
+  "plane": "compound-rear-pines",
+  "region": "sum-slope-trees-lower-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__sum-slope-trees-lower-centre",
   "box": [
-   643,
-   357
+   737,
+   61
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 45416,
-  "movedPx": 7656,
+  "ownPx": 990,
+  "movedPx": 249,
   "crop": [
-   643,
-   357
+   1271,
+   1687
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "compound-approach-path",
+  "region": "sum-slope-trees-lower-centre",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__sum-slope-trees-lower-centre",
+  "box": [
+   1271,
+   41
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 13623,
+  "movedPx": 4052,
+  "crop": [
+   1271,
+   1687
   ],
   "class": "foliage"
  },
  {
   "plane": "mist-slope-above",
-  "region": "sum-spur-trees-right-mid",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-spur-trees-right-mid",
+  "region": "sum-tree-stand-bluff-centre-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-tree-stand-bluff-centre-right",
   "box": [
-   473,
-   1228
+   588,
+   1390
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 23007,
-  "movedPx": 1193,
+  "ownPx": 7054,
+  "movedPx": 667,
   "crop": [
-   473,
-   1228
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-treeline-mid-left-ridge",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-treeline-mid-left-ridge",
-  "box": [
-   80,
-   955
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 10987,
-  "movedPx": 618,
-  "crop": [
-   80,
-   955
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-treeline-left-flank-upper",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-treeline-left-flank-upper",
-  "box": [
-   0,
-   820
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 11986,
-  "movedPx": 61,
-  "crop": [
-   0,
-   820
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-forest-slope-upper-centre",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-forest-slope-upper-centre",
-  "box": [
-   850,
-   746
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 49034,
-  "movedPx": 10577,
-  "crop": [
-   850,
-   746
+   588,
+   1390
   ],
   "class": "foliage"
  },
@@ -1102,15 +1390,15 @@
   "region": "sum-wooded-flank-right-edge",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-wooded-flank-right-edge",
   "box": [
-   653,
+   651,
    1065
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 25674,
-  "movedPx": 3410,
+  "ownPx": 40805,
+  "movedPx": 18374,
   "crop": [
-   653,
+   651,
    1065
   ],
   "class": "foliage"
@@ -1120,16 +1408,16 @@
   "region": "sum-dark-pines-centre-lower",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-dark-pines-centre-lower",
   "box": [
-   2106,
-   1754
+   2078,
+   1769
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 3607,
-  "movedPx": 874,
+  "ownPx": 4833,
+  "movedPx": 2377,
   "crop": [
-   2106,
-   1754
+   2078,
+   1769
   ],
   "class": "foliage"
  },
@@ -1207,19 +1495,19 @@
  },
  {
   "plane": "mist-slope-above",
-  "region": "sum-slope-trees-upper-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-slope-trees-upper-left",
+  "region": "sum-tree-stand-left-lower",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-tree-stand-left-lower",
   "box": [
-   1271,
-   1618
+   0,
+   1141
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 15710,
-  "movedPx": 1537,
+  "ownPx": 24157,
+  "movedPx": 3368,
   "crop": [
-   1215,
-   1618
+   0,
+   1141
   ],
   "class": "foliage"
  },
@@ -1228,16 +1516,16 @@
   "region": "sum-slope-trees-upper-left",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-rear-pines__sum-slope-trees-upper-left",
   "box": [
-   682,
-   16
+   737,
+   61
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 5493,
-  "movedPx": 2923,
+  "ownPx": 990,
+  "movedPx": 257,
   "crop": [
-   1215,
-   1618
+   1271,
+   1687
   ],
   "class": "foliage"
  },
@@ -1246,34 +1534,52 @@
   "region": "sum-slope-trees-upper-left",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/compound-approach-path__sum-slope-trees-upper-left",
   "box": [
-   1215,
+   1271,
    41
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 20926,
-  "movedPx": 9551,
+  "ownPx": 13623,
+  "movedPx": 4272,
   "crop": [
-   1215,
-   1618
+   1271,
+   1687
   ],
   "class": "foliage"
  },
  {
   "plane": "mist-slope-above",
-  "region": "sum-forest-ridge-upper-right-of-centre",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-forest-ridge-upper-right-of-centre",
+  "region": "sum-blue-green-tree-lower-mass",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-blue-green-tree-lower-mass",
   "box": [
-   831,
-   694
+   1326,
+   1523
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 54854,
-  "movedPx": 11761,
+  "ownPx": 25364,
+  "movedPx": 13748,
   "crop": [
-   831,
-   694
+   1326,
+   1523
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "sum-tree-stand-ridge-right-of-col",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-tree-stand-ridge-right-of-col",
+  "box": [
+   425,
+   1111
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 3681,
+  "movedPx": 899,
+  "crop": [
+   425,
+   1111
   ],
   "class": "foliage"
  },
@@ -1297,37 +1603,73 @@
  },
  {
   "plane": "mist-slope-above",
-  "region": "sum-grove-dark-shoulder",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-grove-dark-shoulder",
+  "region": "sum-autumn-tree-tan-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-autumn-tree-tan-right",
   "box": [
-   492,
-   371
+   1955,
+   1630
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 44658,
-  "movedPx": 5421,
+  "ownPx": 24442,
+  "movedPx": 10133,
   "crop": [
-   492,
-   371
+   1955,
+   1630
   ],
   "class": "foliage"
  },
  {
   "plane": "mist-slope-above",
-  "region": "sum-forest-crest-top-left",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-forest-crest-top-left",
+  "region": "sum-ridge-grove-bottom-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-ridge-grove-bottom-right",
   "box": [
-   696,
-   748
+   1578,
+   1836
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 31501,
-  "movedPx": 10752,
+  "ownPx": 4751,
+  "movedPx": 2135,
   "crop": [
-   696,
-   748
+   1578,
+   1836
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "sum-tree-crowns-peak-right",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-tree-crowns-peak-right",
+  "box": [
+   1475,
+   1300
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 6217,
+  "movedPx": 1411,
+  "crop": [
+   1475,
+   1300
+  ],
+  "class": "foliage"
+ },
+ {
+  "plane": "mist-slope-above",
+  "region": "sum-tree-group-left-lower-isolated",
+  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-tree-group-left-lower-isolated",
+  "box": [
+   147,
+   1417
+  ],
+  "n": 96,
+  "on": 2,
+  "ownPx": 4232,
+  "movedPx": 118,
+  "crop": [
+   147,
+   1417
   ],
   "class": "foliage"
  },
@@ -1372,34 +1714,16 @@
   "region": "sum-cliff-trees-left-edge",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-cliff-trees-left-edge",
   "box": [
-   1549,
-   1549
+   1548,
+   1567
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 6974,
-  "movedPx": 2870,
+  "ownPx": 16123,
+  "movedPx": 6946,
   "crop": [
-   1549,
-   1549
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-treeline-skyline-right",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-treeline-skyline-right",
-  "box": [
-   652,
-   414
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 37127,
-  "movedPx": 7044,
-  "crop": [
-   652,
-   414
+   1548,
+   1567
   ],
   "class": "foliage"
  },
@@ -1408,34 +1732,16 @@
   "region": "sum-pine-crown-bottom-right",
   "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-pine-crown-bottom-right",
   "box": [
-   696,
-   748
+   652,
+   750
   ],
   "n": 96,
   "on": 2,
-  "ownPx": 28859,
-  "movedPx": 10039,
+  "ownPx": 24995,
+  "movedPx": 12429,
   "crop": [
-   696,
-   748
-  ],
-  "class": "foliage"
- },
- {
-  "plane": "mist-slope-above",
-  "region": "sum-tree-cluster-lower-spur",
-  "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z6w/living/mist-slope-above__sum-tree-cluster-lower-spur",
-  "box": [
-   367,
-   506
-  ],
-  "n": 96,
-  "on": 2,
-  "ownPx": 2849,
-  "movedPx": 510,
-  "crop": [
-   367,
-   506
+   652,
+   750
   ],
   "class": "foliage"
  }
