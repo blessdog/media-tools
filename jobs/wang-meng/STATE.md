@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 07:58 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-25 08:02 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -146,6 +146,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  4f7422c  STATE regenerated: journal entry and the 08-25 film land in the status
 2026-08-25  e91ca89  journal: the density rule was eating the leaves, and swing was never the problem
 2026-08-25  64faeb8  STATE regenerated: the 680-line uncommitted block is gone, the rebuild is in
 2026-08-24  a0be4d0  the whole scroll rebuilt on the catalogue: moving leaf 19.4% -> 67.9%
@@ -157,12 +158,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-24  2c83e57  the foliage is UN-CUT, not under-swung: 38.5% of the leaf has a card on it
 2026-08-24  6fca38f  swing by DISPLACEMENT, not angle: distant foliage moves 4-8x, the near tree 7%
 2026-08-24  f660f09  STATE regenerated: rise paths re-authored with a cruising wide
-2026-08-24  6d75041  the traverse rests slightly IN, so the pull-out is a real move
 ```
 
 ### ⚠ UNPUSHED
 
-**46 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**47 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
