@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-25 12:22 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-26 09:32 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -160,6 +160,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-25  024e37f  mark the WHOLE scroll, not one band: the crop edge and the missing bottom trees were the same bug
 2026-08-25  66c214b  evidence: the authored foliage territory, shown instead of named
 2026-08-25  4e7d5b4  snap-mark-to-ink: the drawn loop SELECTS, the existing cut DEFINES the boundary
 2026-08-25  89ceb16  fix 'No Grease Pencil frame to draw on': a new layer has no frame, so the first stroke was refused
@@ -171,10 +172,17 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-25  b98f704  README: the front page is the post-mortem
 2026-08-25  91ae357  correct the living-cache cost: CPU not flux, and Phase 0 invalidates 98.5% of it
 2026-08-25  73be5d1  retire the cleanup handoff: the pass is done, with two corrections to its premises
-2026-08-25  cf685ef  type the ten inkwash probe jobs: six claims, and two dead routes annotated
 ```
 
 *Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+
+### Uncommitted
+
+```
+ M STATE.md
+```
+
+*Uncommitted is not learned. Commit at the moment of learning.*
 
 ---
 
