@@ -71,6 +71,10 @@ crop where relief acts hardest: *"Not really a meaningful difference as far as I
 can tell."* By [[a-comparison-must-be-able-to-show-the-thing]], invisible at 5x
 is a verdict and not a tuning problem, so the band was NOT dialed further.
 
+He added: *"Both fine, though."* That matters — the verdict is "no difference",
+NOT "both broken". FLAT CARDS ARE ACCEPTABLE ON THIS MATERIAL, which is what
+makes it safe to leave relief off rather than a compromise being swallowed.
+
 **Scope of that verdict:** z3w, a 0.78 dolly across a 1.20-unit stack, 1080x1920.
 Relief is a WITHIN-CARD effect and is therefore second-order to the between-plane
 parallax, which on this zone measures only 1.12x even with the whole plate in
