@@ -26,6 +26,22 @@ PRIOR ART (searched 2026-08-26, per LAW #0 -- do not delete this block):
     Rejected for now: the extra 40 tools are for domains this repo does not
     have (avatars, splats), and breadth is surface area to break on 5.2.
     Revisit if the VSE tools would replace an ffmpeg assembly step.
+  · RFingAdam/mcp-blender -- AGPL-3.0 (relicensed from MIT at v0.4.0), 218 tools,
+    13,193 lines of handlers, 39 commits, last touched 2026-08-22. Brought by Ryan
+    2026-08-26. MEASURED on 5.2.1: imports, registers and unregisters clean, and
+    its compat.py independently handles the same slotted-action break found here
+    -- so the 5.x work is real, not claimed. Genuinely deeper than the adopted
+    addon where bpy is hardest to drive blind: mesh_editing 2632 lines, armature
+    1253, measurement 966, baking 949, geonodes 807, sculpt 712, physics 490.
+    NOT ADOPTED, for three measured reasons: (a) it has NO human-edit tracking,
+    which is the whole point of the live lane -- reading back what Ryan did with
+    the pen; (b) its annotations handler calls scene.grease_pencil, which does
+    not exist in 5.2.1 (AttributeError), the register-but-do-not-work trap this
+    repo already paid for once with Frame By Plane; (c) AGPL means its code
+    cannot be copied into this repo without relicensing the repo. Same default
+    port 9876 AND the same module name, so it is a SWAP, never an addition.
+    Revisit as a second bridge on another port if rigging, physics or geometry
+    nodes ever become the bottleneck.
   · djeada/blender-mcp-server -- MIT, 22 tools / 6 namespaces. Same shape,
     smaller, less active. No reason to prefer it over the one above.
   · Writing our own socket addon -- rejected. It is the same 3,651 lines and
