@@ -66,12 +66,32 @@ p.add_argument('--dolly', type=float, default=0.0,
                     'shot. render-parallax measured THE-RISE at 5.5% of stack '
                     'depth, which is why it read as a zoom.')
 p.add_argument('--save', help='also write a .blend for opening in the GUI')
+p.add_argument('--relief', help='per-plane SURFACE SHAPE, the same relief.json '
+                                'render-parallax reads: {"plane": {"map": png, '
+                                '"band": f}}. Turns each flat card into REAL '
+                                'DISPLACED GEOMETRY instead of a per-pixel warp.')
+p.add_argument('--relief-band', type=float, default=0.05,
+               help='band for relief entries that do not set their own')
+p.add_argument('--relief-subdiv', type=int, default=192,
+               help='grid vertices per side for a relieved plane. A Displace '
+                    'modifier can only move vertices that EXIST -- a 4-vert '
+                    'plane displaces into a flat quad and nothing changes.')
+p.add_argument('--relief-scale', type=float, default=1.0,
+               help='multiplier on every band. relief.json was authored against '
+                    "render-parallax's z units and this tool's --z-step may not "
+                    'match them; this is the dial until that is measured.')
 a = p.parse_args(argv)
 
 LD = Path(a.layers)
 man = json.loads((LD / 'layers.json').read_text())
 W_SRC, H_SRC = man['size']
 geom = json.loads(Path(a.geometry).read_text()) if a.geometry else {}
+relief, relief_dir = {}, None
+if a.relief:
+    _rp = Path(a.relief)
+    relief = json.loads(_rp.read_text())
+    relief_dir = _rp.parent          # map paths resolve against the JSON's own dir
+    print(f'relief: {len(relief)} planes -> {sorted(relief)}', file=sys.stderr)
 
 # --- clean scene ------------------------------------------------------------
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -119,7 +139,16 @@ for f in files:
     pw, ph = img.size
     ox, oy = rec.get('offset', [0, 0])
 
-    bpy.ops.mesh.primitive_plane_add(size=1.0)
+    rspec = relief.get(name)
+    if rspec:
+        # A DISPLACE MODIFIER CAN ONLY MOVE VERTICES THAT EXIST. The default
+        # image plane has four, so displacing it produces a flat quad at a
+        # slight angle and looks like nothing happened.
+        bpy.ops.mesh.primitive_grid_add(size=1.0,
+                                        x_subdivisions=a.relief_subdiv,
+                                        y_subdivisions=a.relief_subdiv)
+    else:
+        bpy.ops.mesh.primitive_plane_add(size=1.0)
     ob = bpy.context.object
     ob.name = name
     ob.rotation_euler = (math.radians(90), 0, 0)      # face the camera down +Y
@@ -165,6 +194,33 @@ for f in files:
     nt.links.new(emit.outputs['Emission'], mix.inputs[2])
     nt.links.new(mix.outputs['Shader'], outn.inputs['Surface'])
     ob.data.materials.append(mat)
+
+    if rspec:
+        rmap = (relief_dir / rspec['map']).resolve()
+        rimg = bpy.data.images.load(str(rmap))
+        if tuple(rimg.size) != (pw, ph):
+            print(f'  relief map for {name} is {tuple(rimg.size)} but the plane '
+                  f'is {(pw, ph)} -- UV-stretched to fit', file=sys.stderr)
+        rtex = bpy.data.textures.new(f'{name}-relief', type='IMAGE')
+        rtex.image = rimg
+        rtex.extension = 'EXTEND'
+        band = float(rspec.get('band', a.relief_band)) * a.relief_scale
+        disp = ob.modifiers.new('relief', type='DISPLACE')
+        disp.texture = rtex
+        disp.texture_coords = 'UV'
+        # LOCAL Z is the plane normal, and after the 90-degree X rotation it
+        # points at the camera -- so BRIGHT moves toward the viewer, matching
+        # render-parallax's "128 sits ON the card, bright is toward the camera".
+        disp.direction = 'Z'
+        disp.mid_level = 128.0 / 255.0
+        # render-parallax: dz = (map-128)/127 * band/2. In Blender's units, where
+        # tex is 0..1 and disp = (tex - mid) * strength, that is strength =
+        # band * 255/127/2 = band * 1.0039.
+        disp.strength = band * (255.0 / 127.0 / 2.0)
+        # local Z scale stays 1.0, so strength is already in world units and
+        # comparable to --z-step directly.
+        ob.scale.z = 1.0
+
     built.append((name, d, ob.location.y, pw, ph))
 
 built.sort(key=lambda t: t[2])
