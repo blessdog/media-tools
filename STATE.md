@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-26 18:44 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-26 19:04 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -30,7 +30,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 70 live claims: 70 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 71 live claims: 71 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -58,6 +58,7 @@ PROCEDURES — the routes that are currently believed
   · flf2v-paints-one-image-into-another answers how-to-transition-between-two-stills-in-the-ink-medium   (sibling: style-is-solved-control-is-the-problem)
   · foliage-motion         answers how-to-move-foliage   (sibling: water-motion)
   · marks-are-authored-in-blender answers how-is-a-region-outline-and-pivot-authored   (sibling: no-whole-tree-to-segment)
+  · rendering-belongs-headless-not-in-the-live-session answers how-do-i-render-a-video-out-of-blender   (sibling: registering-is-not-working)
   · sam-click-trunks-not-canopies answers how-to-prompt-sam-on-this-painting   (sibling: no-whole-tree-to-segment)
   · sam-environment        answers how-to-run-a-torch-tool-in-this-repo   (sibling: no-whole-tree-to-segment)
   · shot-vocabulary        answers which-camera-move-for-a-station   (sibling: camera-light-parallax)
@@ -162,6 +163,8 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-26  0c8285f  render the donut bounce: use_sequencer was silently replacing the 3D render with an empty sequencer
+2026-08-26  f7eea5a  STATE regenerated: the blender-live lane and its two new claims enter the index
 2026-08-26  634aa60  visual feedback as architecture: every exec now checkpoints, diffs and screenshots itself
 2026-08-26  7398977  survey: which blender MCPs treat visual feedback as architecture, and the four ideas worth stealing
 2026-08-26  86be75d  sprinkles are cylinders, not cubes: Ryan called the batons 'a little bit cubicular'
@@ -172,13 +175,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-26  5cfd13d  blender-live: a socket into the RUNNING Blender, not another headless script
 2026-08-26  20fa2ad  STATE regenerated: 2026-08-26 status pass
 2026-08-26  0972e46  STATE regenerated: the whole-scroll marking commit enters the log window
-2026-08-25  024e37f  mark the WHOLE scroll, not one band: the crop edge and the missing bottom trees were the same bug
-2026-08-25  66c214b  evidence: the authored foliage territory, shown instead of named
 ```
 
 ### ⚠ UNPUSHED
 
-**8 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**10 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
