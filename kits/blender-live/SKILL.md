@@ -9,9 +9,40 @@ Headless batch work is not this kit — that is `tools/blender-multiplane.py` an
 
     tools/blender-live.py ping        # is anything listening on 9876
     tools/blender-live.py info        # what is in the scene right now
+    tools/blender-live.py selection   # what RYAN has SELECTED -- the pointing channel
+    tools/blender-live.py activity    # what RYAN changed by hand since last drained
     tools/blender-live.py exec --file kits/blender-live/recipes/<x>.py
     tools/blender-live.py shot --out jobs/<job>/evidence/<name>.png
-    tools/blender-live.py activity    # what RYAN just changed by hand
+    tools/blender-live.py checkpoints                 # list .blend snapshots
+    tools/blender-live.py restore --name before-183129
+
+## Every `exec` does four things, and NONE of them are optional by default
+
+Adopted from the survey in `docs/research/2026-08-26-blender-mcp-visual-feedback-
+survey.md`. The point is not that these are possible -- `shot` was always
+possible. The point is that they are no longer a thing anyone has to REMEMBER.
+
+| automatic | why | opt out |
+|---|---|---|
+| `.blend` checkpoint before the code runs | rollback when a script produces garbage | `--no-checkpoint` |
+| scene snapshot, diff after | catches what changed OFF CAMERA | `--no-diff` |
+| viewport screenshot after | catches what a diff cannot: how it LOOKS | `--no-shot` |
+| both reported as JSON | the next decision is made on evidence, not memory | — |
+
+A screenshot and a diff fail in opposite directions: the screenshot misses what
+is out of frame, the diff misses how the thing looks. That is why both run.
+
+**The diff tracks transforms, modifiers, materials, vert counts, LIGHT energy
+and colour, camera lens, and Principled BSDF base colour / roughness / metallic
+/ emission.** It gained the last two groups the moment it was caught reporting
+"nothing changed" for a run that halved the key light and repainted the glaze.
+A diff with a silent blind spot is worse than no diff, because it reads as a
+clean bill of health -- the same shape as
+`~/.claude/knowledge/store/null-before-the-metric.md`.
+
+Probe shots land in `jobs/blender-live/shots/` (gitignored, last 24 kept) and
+checkpoints in `jobs/blender-live/checkpoints/` (gitignored). Only a visual a
+claim CITES goes to `jobs/<job>/evidence/`, which is tracked.
 
 ## ⛔ ONE SOCKET, POSSIBLY SEVERAL BLENDERS
 

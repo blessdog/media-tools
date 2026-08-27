@@ -97,6 +97,133 @@ def unwrap(resp):
         raise SystemExit(1)
     return resp.get('result')
 
+# --- where things land ------------------------------------------------------
+# jobs/** is gitignored except evidence dirs, so `shots/` and `checkpoints/`
+# stay out of git by construction while `evidence/` is tracked. That is the
+# split CLAUDE.md asks for: probes are scaffolding, cited visuals are memory.
+REPO = Path(__file__).resolve().parent.parent
+SHOT_DIR = REPO / 'jobs' / 'blender-live' / 'shots'
+CKPT_DIR = REPO / 'jobs' / 'blender-live' / 'checkpoints'
+KEEP_SHOTS = 24
+
+SNAPSHOT_SRC = r"""
+import bpy, json
+dg = bpy.context.evaluated_depsgraph_get()
+out = {}
+for o in bpy.data.objects:
+    try:
+        verts = len(o.evaluated_get(dg).data.vertices)
+    except Exception:
+        verts = None
+    md = o.data
+    out[o.name] = {
+        'type': o.type,
+        'loc': [round(v, 5) for v in o.location],
+        'rot': [round(v, 5) for v in o.rotation_euler],
+        'scale': [round(v, 5) for v in o.scale],
+        'mods': [m.name for m in o.modifiers],
+        'mats': [m.name for m in md.materials] if getattr(md, 'materials', None) else [],
+        'verts': verts,
+        'parent': o.parent.name if o.parent else None,
+    }
+    # Lights and cameras carry their whole look in DATA, not in the transform.
+    # Found the hard way 2026-08-26: a diff over transforms/modifiers/materials
+    # reported "nothing changed" for a run that halved the key light and
+    # repainted the glaze. A diff with a silent blind spot is worse than none,
+    # because it reads as a clean bill of health.
+    if o.type == 'LIGHT':
+        out[o.name]['light'] = {'kind': md.type, 'energy': round(md.energy, 3),
+                                'color': [round(c, 4) for c in md.color]}
+    if o.type == 'CAMERA':
+        out[o.name]['camera'] = {'lens': round(md.lens, 3)}
+
+mats = {}
+for m in bpy.data.materials:
+    if not m.use_nodes:
+        continue
+    bsdf = m.node_tree.nodes.get('Principled BSDF')
+    if not bsdf:
+        continue
+    grab = {}
+    for key in ('Base Color', 'Roughness', 'Metallic', 'Emission Strength'):
+        if key in bsdf.inputs:
+            v = bsdf.inputs[key].default_value
+            grab[key] = round(v, 4) if isinstance(v, float) else [round(x, 4) for x in v]
+    mats[m.name] = grab
+out['__materials__'] = mats
+print(json.dumps(out))
+"""
+
+SELECTION_SRC = r"""
+import bpy, json
+act = bpy.context.active_object
+out = {
+    'mode': bpy.context.mode,
+    'active': act.name if act else None,
+    'selected': [o.name for o in bpy.context.selected_objects],
+}
+if act and act.mode == 'EDIT' and act.type == 'MESH':
+    import bmesh
+    bm = bmesh.from_edit_mesh(act.data)
+    sv = [v.index for v in bm.verts if v.select]
+    sf = [f.index for f in bm.faces if f.select]
+    se = [e.index for e in bm.edges if e.select]
+    out['edit'] = {
+        'verts_selected': len(sv), 'edges_selected': len(se), 'faces_selected': len(sf),
+        'verts_total': len(bm.verts), 'faces_total': len(bm.faces),
+        # capped: the point is WHICH THING Ryan means, not a mesh dump
+        'vert_indices': sv[:256], 'face_indices': sf[:256],
+    }
+print(json.dumps(out))
+"""
+
+
+def run_code(code, **net):
+    """execute_code returns whatever the script PRINTED, as a string."""
+    return unwrap(send('execute_code', {'code': code}, **net))
+
+
+def snapshot(**net):
+    res = run_code(SNAPSHOT_SRC, **net)
+    return json.loads(res['result'] if isinstance(res, dict) else res)
+
+
+def diff_scenes(before, after):
+    """What changed, including OFF CAMERA. A screenshot and a diff fail in
+    opposite directions -- the screenshot misses what is out of frame, the diff
+    misses how it looks -- which is the whole reason to have both."""
+    added = sorted(set(after) - set(before))
+    removed = sorted(set(before) - set(after))
+    changed = {}
+    for name in sorted(set(before) & set(after)):
+        b, a = before[name], after[name]
+        fields = {k: [b[k], a[k]] for k in b if b[k] != a[k]}
+        if fields:
+            changed[name] = fields
+    return {'added': added, 'removed': removed, 'changed': changed}
+
+
+def checkpoint(label, **net):
+    CKPT_DIR.mkdir(parents=True, exist_ok=True)
+    path = CKPT_DIR / f'{label}.blend'
+    # copy=True is load-bearing: without it Blender re-points the OPEN session at
+    # the checkpoint file, so the next manual Save silently overwrites a snapshot
+    # instead of the file the human thinks they are editing.
+    run_code(f'import bpy; bpy.ops.wm.save_as_mainfile('
+             f'filepath={str(path)!r}, copy=True, check_existing=False)', **net)
+    return path
+
+
+def auto_shot(tag, max_size, **net):
+    SHOT_DIR.mkdir(parents=True, exist_ok=True)
+    out = SHOT_DIR / f'{tag}.png'
+    unwrap(send('get_viewport_screenshot',
+                {'max_size': max_size, 'filepath': str(out), 'format': 'png'}, **net))
+    shots = sorted(SHOT_DIR.glob('*.png'))
+    for stale in shots[:-KEEP_SHOTS]:
+        stale.unlink(missing_ok=True)
+    return out
+
 
 def main():
     p = argparse.ArgumentParser(prog='blender-live.py', description=__doc__.split('\n')[0],
@@ -109,6 +236,8 @@ def main():
     sub.add_parser('ping', help='is a live Blender listening')
     sub.add_parser('info', help='scene name, object list, counts')
     sub.add_parser('activity', help='what the HUMAN changed since last drained')
+    sub.add_parser('selection', help='what the human has SELECTED right now')
+    sub.add_parser('checkpoints', help='list saved checkpoints')
 
     o = sub.add_parser('object', help='full detail on one object')
     o.add_argument('--name', required=True)
@@ -117,10 +246,17 @@ def main():
     g = e.add_mutually_exclusive_group(required=True)
     g.add_argument('--code', help='python source, inline')
     g.add_argument('--file', help='python source, from a file')
+    e.add_argument('--no-shot', action='store_true', help='skip the automatic screenshot')
+    e.add_argument('--no-checkpoint', action='store_true', help='skip the automatic .blend snapshot')
+    e.add_argument('--no-diff', action='store_true', help='skip the scene diff')
+    e.add_argument('--max-size', type=int, default=1600)
 
-    sh = sub.add_parser('shot', help='viewport screenshot to a PNG in the repo')
+    sh = sub.add_parser('shot', help='viewport screenshot to a PNG you name')
     sh.add_argument('--out', required=True)
-    sh.add_argument('--max-size', type=int, default=1400)
+    sh.add_argument('--max-size', type=int, default=1600)
+
+    r = sub.add_parser('restore', help='reopen a checkpoint (CLOSES the current file)')
+    r.add_argument('--name', required=True)
 
     a = p.parse_args()
     net = dict(host=a.host, port=a.port, timeout=a.timeout)
@@ -132,41 +268,66 @@ def main():
             print(f'no live Blender on {a.host}:{a.port} -- {exc}', file=sys.stderr)
             raise SystemExit(1)
         print('pong')
-        return
 
-    if a.cmd == 'info':
+    elif a.cmd == 'info':
         print(json.dumps(unwrap(send('get_scene_info', **net)), indent=2))
-        return
 
-    if a.cmd == 'activity':
+    elif a.cmd == 'activity':
         print(json.dumps(unwrap(send('drain_human_activity', **net)), indent=2))
-        return
 
-    if a.cmd == 'object':
+    elif a.cmd == 'selection':
+        print(json.dumps(json.loads(run_code(SELECTION_SRC, **net)['result']), indent=2))
+
+    elif a.cmd == 'object':
         print(json.dumps(unwrap(send('get_object_info', {'name': a.name}, **net)), indent=2))
-        return
 
-    if a.cmd == 'exec':
-        code = Path(a.file).read_text() if a.file else a.code
-        print(json.dumps(unwrap(send('execute_code', {'code': code}, **net)), indent=2))
-        return
+    elif a.cmd == 'checkpoints':
+        CKPT_DIR.mkdir(parents=True, exist_ok=True)
+        rows = [{'name': f.stem, 'mb': round(f.stat().st_size / 1e6, 1),
+                 'when': __import__('time').strftime('%H:%M:%S', __import__('time').localtime(f.stat().st_mtime))}
+                for f in sorted(CKPT_DIR.glob('*.blend'), key=lambda f: f.stat().st_mtime)]
+        print(json.dumps(rows, indent=2))
 
-    if a.cmd == 'shot':
+    elif a.cmd == 'restore':
+        path = CKPT_DIR / f'{a.name}.blend'
+        if not path.exists():
+            print(f'no checkpoint named {a.name!r} in {CKPT_DIR}', file=sys.stderr)
+            raise SystemExit(1)
+        run_code(f'import bpy; bpy.ops.wm.open_mainfile(filepath={str(path)!r})', **net)
+        print(json.dumps({'restored': str(path),
+                          'note': 'opening a file can drop the socket; run ping'}, indent=2))
+
+    elif a.cmd == 'shot':
         out = Path(a.out).resolve()
         out.parent.mkdir(parents=True, exist_ok=True)
         res = unwrap(send('get_viewport_screenshot',
                           {'max_size': a.max_size, 'filepath': str(out), 'format': 'png'}, **net))
-        # The addon writes the file itself and may also return it inline; prefer
-        # the file it wrote, and only decode base64 if no file landed. A silent
-        # "success" with nothing on disk is the failure this guards.
         if not out.exists():
             blob = res.get('image') or res.get('data') if isinstance(res, dict) else None
             if not blob:
                 print(f'no file at {out} and no inline image in {res}', file=sys.stderr)
                 raise SystemExit(1)
             out.write_bytes(base64.b64decode(blob))
-        print(json.dumps({'path': str(out), 'bytes': out.stat().st_size, 'addon': res}, indent=2))
-        return
+        print(json.dumps({'path': str(out), 'bytes': out.stat().st_size}, indent=2))
+
+    elif a.cmd == 'exec':
+        import time
+        tag = time.strftime('%H%M%S')
+        code = Path(a.file).read_text() if a.file else a.code
+        report = {}
+
+        if not a.no_checkpoint:
+            report['checkpoint'] = str(checkpoint(f'before-{tag}', **net))
+        before = None if a.no_diff else snapshot(**net)
+
+        report['result'] = run_code(code, **net)
+
+        if before is not None:
+            report['diff'] = diff_scenes(before, snapshot(**net))
+        if not a.no_shot:
+            report['shot'] = str(auto_shot(f'exec-{tag}', a.max_size, **net))
+
+        print(json.dumps(report, indent=2))
 
 
 if __name__ == '__main__':
