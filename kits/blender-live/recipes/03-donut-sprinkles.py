@@ -94,8 +94,14 @@ lift_scale.operation = 'SCALE'
 sock(lift_scale, 'Scale').default_value = 0.019
 setpos = n.new('GeometryNodeSetPosition'); setpos.location = (-40, -160)
 
-baton = n.new('GeometryNodeMeshCube'); baton.location = (-160, -420)
-sock(baton, 'Size').default_value = (0.017, 0.017, 0.055)
+# A cube reads as CONFETTI, not sprinkles -- Ryan, 2026-08-26: "they're a little
+# bit cubicular". A real sprinkle is an extruded cylinder with a round section,
+# so use one and shade it smooth; the silhouette is what sells it, not the size.
+baton = n.new('GeometryNodeMeshCylinder'); baton.location = (-160, -420)
+sock(baton, 'Vertices').default_value = 10
+sock(baton, 'Radius').default_value = 0.0085
+sock(baton, 'Depth').default_value = 0.055
+smooth = n.new('GeometryNodeSetShadeSmooth'); smooth.location = (-40, -420)
 
 inst = n.new('GeometryNodeInstanceOnPoints'); inst.location = (60, 0)
 
@@ -138,7 +144,8 @@ lk(dist.outputs['Normal'], sock(lift_scale, 'Vector'))
 lk(lift_scale.outputs['Vector'], sock(setpos, 'Offset'))
 lk(store.outputs['Geometry'], sock(setpos, 'Geometry'))
 lk(setpos.outputs['Geometry'], sock(inst, 'Points'))
-lk(baton.outputs['Mesh'], sock(inst, 'Instance'))
+lk(baton.outputs['Mesh'], sock(smooth, 'Geometry'))
+lk(smooth.outputs['Geometry'], sock(inst, 'Instance'))
 lk(inst.outputs['Instances'], sock(rot, 'Instances'))
 lk(rnd_rot.outputs['Value'], sock(rot, 'Rotation'))
 lk(rot.outputs['Instances'], sock(real, 'Geometry'))
@@ -149,5 +156,8 @@ mod = sprinkles.modifiers.new('sprinkle_graph', type='NODES')
 mod.node_group = ng
 
 dg = bpy.context.evaluated_depsgraph_get(); dg.update()
+# Report verts only. The old line divided by 8 (cube verts) to guess a sprinkle
+# count and silently became wrong the moment the baton became a 20-vert cylinder
+# -- a derived number with no check on it is worse than no number.
 count = len(sprinkles.evaluated_get(dg).data.vertices)
-print(f'sprinkles: {count} verts realized ({count // 8} batons)')
+print(f'sprinkles: {count} verts realized')
