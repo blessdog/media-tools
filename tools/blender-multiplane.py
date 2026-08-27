@@ -37,6 +37,13 @@ installed on the same disk and named in this project's own design document
 (docs/specs/2026-08-11-media-tools-design.md, day one). See
 knowledge/store/a-directive-is-a-decision-not-a-suggestion.md.
 
+--relief IS OFF BY DEFAULT AND SHOULD USUALLY STAY OFF. Ryan judged it against
+flat cards at 5x the authored band, in motion, on z3w: "not really a meaningful
+difference". It also breaks frame zero (24.7% of pixels move at rest) and makes
+card edges wavy, which is a seam risk between neighbouring planes. It is a
+WITHIN-CARD effect and cannot rescue a weak between-plane stack --
+knowledge/relief-in-blender-is-geometry-not-a-warp.md has the scope.
+
 WHAT THIS IS NOT FOR: the living layer. Card cutting and swinging stay in
 hinge-foliage.py, whose gust envelope and `--under hold` double-layer are
 MEASURED verdicts on this painting and are not reproduced by any generic tool.

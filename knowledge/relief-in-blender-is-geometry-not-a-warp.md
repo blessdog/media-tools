@@ -20,6 +20,8 @@ asked-as:
   - does the grayscale depth data help blender
   - the card edges are wavy
   - relief changes frame zero
+  - is relief worth enabling
+  - should I use the depth maps in blender
 ---
 
 ## The depth maps were being thrown away, and wiring them in is not free
@@ -62,7 +64,24 @@ nothing happened. The grid is the whole fix.
 bands (32.95 → 33.04). Its value is within-card shape, not parallax budget —
 so it does not rescue [[z3w-depth-sits-below-a-16x9-frame]].
 
-**Unit ambiguity, unresolved:** the bands (0.278) were authored against
+## RYAN'S VERDICT, 2026-08-26: not worth enabling on z3w
+
+Shown flat vs relief **at 5x the authored band**, in MOTION, side by side on the
+crop where relief acts hardest: *"Not really a meaningful difference as far as I
+can tell."* By [[a-comparison-must-be-able-to-show-the-thing]], invisible at 5x
+is a verdict and not a tuning problem, so the band was NOT dialed further.
+
+**Scope of that verdict:** z3w, a 0.78 dolly across a 1.20-unit stack, 1080x1920.
+Relief is a WITHIN-CARD effect and is therefore second-order to the between-plane
+parallax, which on this zone measures only 1.12x even with the whole plate in
+frame. A zone with a stronger differential may well show it. Do not read this as
+"relief never works" — read it as "relief cannot rescue a weak stack", which is
+the same shape as [[z3w-depth-sits-below-a-16x9-frame]].
+
+**The flag stays**, off by default, documented, with this verdict attached. It is
+an option with a measured no, not dead code.
+
+**Unit ambiguity, unresolved (and now moot until the verdict is revisited):** the bands (0.278) were authored against
 render-parallax's z units, whose default `--z-step` is 0.035 while this tool's is
 0.30. Whether 0.278 means the same distance in both is UNMEASURED; `--relief-scale`
 is the dial until someone measures it. Do not treat the current look as tuned.
