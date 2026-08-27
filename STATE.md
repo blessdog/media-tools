@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-26 19:04 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-26 19:37 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -30,10 +30,11 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 71 live claims: 71 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 75 live claims: 75 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
+  · a-comparison-must-be-able-to-show-the-thing: Ryan said "I honestly can't tell the difference" twice on 2026-08-26, about
   · a-tree-welded-to-rock-cannot-be-carded: That's not a pine. Pines have needles. Those are leaves. The pines are the
   · a-verdict-is-not-landed-until-the-builder-changes: Measured on 2026-08-22, from the commit log of a single night.
   · an-absence-is-invisible-in-the-output: Ryan, 2026-08-22, from memory, about eleven days of renders that had all been
@@ -89,6 +90,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · parallax-needs-differential-RATE-not-depth render-parallax.py with --plane-fit, on any plane stack, for any TRAVERSE (a camera move w
   · perception-needs-a-boundary-model-too CLIPSeg (CIDAS/clipseg-rd64-refined) as the SOLE decider of which ink is foliage on 葛稚川移居圖
   · plan-planes-at-shot-scale Planning a depth-plane stack for a camera that will be CLOSE to the surface. Measured on z
+  · relief-in-blender-is-geometry-not-a-warp tools/blender-multiplane.py --relief, measured on z3w's five relief maps at 1080x1920. The
   · style-is-solved-control-is-the-problem The ink-wash look on hosted i2v and image models as measured 2026-08-12 across jobs/inkwas
   · subtle-beats-continuous-for-this-painting foliage motion on 葛稚川移居圖 via hinge-foliage.py. About the SPECTRUM of the angle signal, not
   · the-2026-08-25-cleanup-pass-is-done The four-step cleanup the 2026-08-25 HANDOFF ordered, executed the same day. The SIZE figu
@@ -97,6 +99,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · the-pink-grid-is-splat-lattice probe-parallax.py --marks on any image+depth pair. The GRID is a property of forward splat
   · the-resolve-substrate-is-already-built Facts read off this machine on 2026-08-22. Applies to any plan that proposes building agen
   · uso-inkwash-is-the-approved-ink-renderer The ink-wash look Ryan has approved for this repo, as of 2026-08-12. The RECIPE is exact a
+  · z3w-depth-sits-below-a-16x9-frame jobs/wang-meng/journey/z3w/layers-filled, measured 2026-08-26 on both renderers. The MECHA
 
 REFUTED — already tried, do NOT retry
   ✗ a-percentile-cannot-reject-a-region A percentile is defined relative to its own input, so it ALWAYS returns something -- give it a blank
@@ -105,6 +108,7 @@ REFUTED — already tried, do NOT retry
   ✗ copied-real-ink-over-inks-worse-than-flux Patch synthesis chooses donors by TEXTURE MATCH, and a hole beside dense hatching matches dense hatc
   ✗ mist-as-ink            There is no mist ink in this painting. What reads as mist is 留白 -- bare ground, negative space, the 
   ✗ no-whole-tree-to-segment There is no whole-tree SHAPE in this painting to find. Wang Meng draws a tree as separate marks over
+  ✗ tilt-slopes-do-not-survive-becoming-rotations geometry.json's tiltX/tiltY are PER-PIXEL SLOPES, consumed by render-parallax as a 2D shear over the
   ✗ translation-parallax-is-refuted-on-a-cut-painting The planes are a decomposition of ONE continuous composition, not independent cels, so plane B's bru
 
 OPEN — plans, NOT specs. proven: false. Do not build against these.
@@ -163,23 +167,23 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-26  9c588c4  a comparison must be able to show the thing: three A/Bs today could not, and he called all three
+2026-08-26  192afc7  blender-multiplane --relief: the grayscale depth maps become real displaced geometry, not a per-pixel warp
+2026-08-26  9d0a3f8  link depth-below-frame to plan-planes-at-shot-scale: enough planes and planes in frame are different checks
+2026-08-26  5d0ac71  z3w has no parallax because depths 10-13 sit BELOW a 16:9 frame: 1.00x landscape vs 1.12x portrait
+2026-08-26  08a67cd  blender vs hand-rolled on z3w: they differ by mean 20 at FRAME ZERO, so framing not parallax dominates the comparison
+2026-08-26  126842e  z3w through the Blender multiplane lane: 72 frames, flat planes, 0.67s/frame
+2026-08-26  57b2b74  geometry.json tilts do not survive becoming 3D rotations: 34 degrees of lean, 5.47% black at frame zero
+2026-08-26  b2eb87f  STATE regenerated: the render-headless procedure joins the index at 71 live claims
 2026-08-26  0c8285f  render the donut bounce: use_sequencer was silently replacing the 3D render with an empty sequencer
 2026-08-26  f7eea5a  STATE regenerated: the blender-live lane and its two new claims enter the index
 2026-08-26  634aa60  visual feedback as architecture: every exec now checkpoints, diffs and screenshots itself
 2026-08-26  7398977  survey: which blender MCPs treat visual feedback as architecture, and the four ideas worth stealing
-2026-08-26  86be75d  sprinkles are cylinders, not cubes: Ryan called the batons 'a little bit cubicular'
-2026-08-26  5926cc3  sprinkles via geometry nodes: hue-only randomness beats random RGB, and lift the batons off the icing
-2026-08-26  b62a6b7  donut stages 1-2 live, plus the guard that stops a recipe wiping the wrong Blender
-2026-08-26  b3653ed  registering is not working: two addons passed register() and failed on first real call
-2026-08-26  ae6a83b  blender 5.x renames: slotted actions killed action.fcurves, EEVEE_NEXT is EEVEE again
-2026-08-26  5cfd13d  blender-live: a socket into the RUNNING Blender, not another headless script
-2026-08-26  20fa2ad  STATE regenerated: 2026-08-26 status pass
-2026-08-26  0972e46  STATE regenerated: the whole-scroll marking commit enters the log window
 ```
 
 ### ⚠ UNPUSHED
 
-**10 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**18 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
