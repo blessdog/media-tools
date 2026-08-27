@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-26 17:49 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-26 18:44 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -30,7 +30,7 @@ Every `kind: open` claim in the store. These are PLANS, not specs — `proven: f
 The full index. Query it before choosing any technique — `find-technique.py "<your situation>"` — rather than reading it. Every claim declares the questions that must find it, and `check-retrieval.py` asserts they do.
 
 ```
-KNOWLEDGE — 68 live claims: 68 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
+KNOWLEDGE — 70 live claims: 70 from this project (/Users/SSDrive/projects/media-tools/knowledge), 0 universal (~/.claude/knowledge/store)
 Query before choosing any technique:  python3 ~/.claude/knowledge/bin/find-technique.py "<your situation>"
 
 LAWS — absolute, no exceptions
@@ -45,6 +45,7 @@ LAWS — absolute, no exceptions
   · leaves-hold-under-leaves: The movement of these leaves and the background of the canvas should be the
   · naming-a-substance-requests-footage: Naming a physical substance in a motion prompt requests FOOTAGE of it. Write
   · perspective-falloff-is-hyperbolic-on-purpose: Space depth planes evenly in z. The uneven scale response that produces is
+  · registering-is-not-working: Blender's register() binds operator and panel classes. It does not call a
   · rigid-cards-preserve-the-brushwork: Ryan, 2026-08-21, having asked for per-leaf twinkle that morning and seen it by
   · share-your-ground: Every figure rides the depth of the surface that supports it. The party on
   · the-camera-moves-toward-motion: Ryan, 2026-08-21, on the station reel: "the way people investigate things, they
@@ -70,6 +71,7 @@ VERDICTS — measured, and SCOPED; check the scope before reusing
   · a-style-reference-transfers-subject-not-just-technique Reference-image style channels on hosted and local diffusion models, measured 2026-08-12 o
   · a-transform-cannot-change-an-expression Character animation on a painted or drawn source. The MEASUREMENTS are from 葛稚川移居圖's Ge Ho
   · band-02-was-already-animated-once The Ge Hong / deer / trestle-bridge scene, master box roughly [901, 10604, 2585, 13599]. F
+  · blender-5x-broke-actions-and-eevee Blender 5.2.1 LTS on this Mac. Applies to EVERY bpy script in this repo and to any recipe 
   · branch-radius-scales-with-the-tree hinge-foliage's branch/leaf split on 葛稚川移居圖, and by the same mechanism any painting where 
   · canopy-read-near       NEAR foliage only -- the compound canopies and the gorge, master y > ~3850. NOT valid on d
   · clean-plate-donor-scope Any clean-plate fill whose hole is SURROUNDED BY MATERIAL OF THE SAME KIND as the thing be
@@ -160,21 +162,27 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-26  634aa60  visual feedback as architecture: every exec now checkpoints, diffs and screenshots itself
+2026-08-26  7398977  survey: which blender MCPs treat visual feedback as architecture, and the four ideas worth stealing
+2026-08-26  86be75d  sprinkles are cylinders, not cubes: Ryan called the batons 'a little bit cubicular'
+2026-08-26  5926cc3  sprinkles via geometry nodes: hue-only randomness beats random RGB, and lift the batons off the icing
+2026-08-26  b62a6b7  donut stages 1-2 live, plus the guard that stops a recipe wiping the wrong Blender
+2026-08-26  b3653ed  registering is not working: two addons passed register() and failed on first real call
+2026-08-26  ae6a83b  blender 5.x renames: slotted actions killed action.fcurves, EEVEE_NEXT is EEVEE again
+2026-08-26  5cfd13d  blender-live: a socket into the RUNNING Blender, not another headless script
+2026-08-26  20fa2ad  STATE regenerated: 2026-08-26 status pass
 2026-08-26  0972e46  STATE regenerated: the whole-scroll marking commit enters the log window
 2026-08-25  024e37f  mark the WHOLE scroll, not one band: the crop edge and the missing bottom trees were the same bug
 2026-08-25  66c214b  evidence: the authored foliage territory, shown instead of named
-2026-08-25  4e7d5b4  snap-mark-to-ink: the drawn loop SELECTS, the existing cut DEFINES the boundary
-2026-08-25  89ceb16  fix 'No Grease Pencil frame to draw on': a new layer has no frame, so the first stroke was refused
-2026-08-25  a1fceb8  strip the marking scene to the painting and a pen: no seeded boxes, no camera, opens in Draw mode
-2026-08-25  e6034c5  correct the stale Blender-version notes in blender-multiplane.py
-2026-08-25  f16694a  author region outlines and pivots by hand in Blender: the mark round-trips at 0px error
-2026-08-25  7371b7f  report: the pen and the bushel — due diligence on the XP-Pen + Blender authoring surface
-2026-08-25  6ebe886  STATE regenerated: the unpushed warning clears, README and the cost correction land
-2026-08-25  b98f704  README: the front page is the post-mortem
-2026-08-25  91ae357  correct the living-cache cost: CPU not flux, and Phase 0 invalidates 98.5% of it
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**8 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
 
 ### Uncommitted
 
