@@ -17,7 +17,8 @@ asked-as:
   - why does my dolly look like a zoom
   - where did the parallax go
   - why do both renderers look the same
-  - is there any depth in z3w
+  - the near planes are off screen
+  - portrait plate in a landscape render
   - the multiplane has no depth
   - what aspect ratio should the render be
 ---
@@ -51,6 +52,11 @@ plane's scale and distance stay identical):
 |---|---|---|---|
 | 1920×1080 | *near plane is off-screen* | 1.2422× | ≈ **1.00×** (a zoom) |
 | 1080×1920 | **1.3913×** | 1.2422× | **1.1200×** |
+
+**Sibling, and check BOTH:** [[plan-planes-at-shot-scale]] asks whether enough
+planes exist with enough depth spread; this claim asks whether the ones that
+exist are IN FRAME. A stack can pass that check and still render as a zoom, which
+is what happened here — z3w has five distinct depth levels and shows one.
 
 **So the aspect ratio is not a delivery decision, it is the parallax dial.** This
 is the measured form of the canvas-aspect / 高遠 lever already suspected on this
