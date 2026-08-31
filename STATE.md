@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-27 07:15 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-08-31 13:55 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -167,6 +167,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-08-27  c9e3275  STATE regenerated: end of the blender-live session, bridge down and tree clean
 2026-08-26  d3d6f63  STATE regenerated: relief verdict and the comparison law join the index at 75 live claims
 2026-08-26  2c6a98e  flat cards are acceptable on their own: the relief verdict is 'no difference', not 'both broken'
 2026-08-26  d72d0c8  relief judged: invisible at 5x on z3w, so the flag stays off by default with the verdict attached
@@ -178,12 +179,11 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-26  126842e  z3w through the Blender multiplane lane: 72 frames, flat planes, 0.67s/frame
 2026-08-26  57b2b74  geometry.json tilts do not survive becoming 3D rotations: 34 degrees of lean, 5.47% black at frame zero
 2026-08-26  b2eb87f  STATE regenerated: the render-headless procedure joins the index at 71 live claims
-2026-08-26  0c8285f  render the donut bounce: use_sequencer was silently replacing the 3D render with an empty sequencer
 ```
 
 ### ⚠ UNPUSHED
 
-**21 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+**22 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
 
 ```
 git push origin main
