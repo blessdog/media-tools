@@ -2,10 +2,12 @@
 id: marks-are-authored-in-blender
 kind: procedure
 conflict-key: how-is-a-region-outline-and-pivot-authored
-status: live
+status: superseded
 supersedes: []
 sibling: no-whole-tree-to-segment
 verified-on: 2026-08-25
+retired-on: 2026-09-01
+retired-by: the-blender-scroll-lane-was-rolled-back
 applies-when: >
   deciding WHICH INK IS ONE THING on 葛稚川移居圖 -- one bushel, one tree, one
   fall -- and WHERE IT HINGES. Any time a mark has to be pointed at precisely:
@@ -43,6 +45,14 @@ asked-as:
   - the cut is confetti not bushels
   - how do I point at something in the painting
 ---
+
+**RETIRED 2026-09-01.** The Blender scroll lane was rolled back by Ryan; the
+artefacts are in `archive/blender-scroll-lane/`. The ROUTE below no longer
+exists in `tools/`. The finding it proved — a hand-drawn mark round-trips to a
+polygon in MASTER px at **0px error** — is still true and is the strongest
+result the detour produced. Nothing has replaced it, so
+`how-is-a-region-outline-and-pivot-authored` currently has NO live answer.
+See `the-blender-scroll-lane-was-rolled-back`.
 
 ## The judgement is not in the pixels, so it needs an input device — not a better classifier
 

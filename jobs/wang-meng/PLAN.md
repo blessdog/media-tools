@@ -8,7 +8,10 @@
 ## The end state
 
 A film of 葛稚川移居圖 in which **the mountain is alive and a camera explores it.**
-Under four minutes. Rendered through **Blender**, not the hand-rolled renderer.
+Under four minutes. Rendered through **`render-parallax.py` + ffmpeg** — the
+scripted pinhole renderer. *(Amended 2026-09-01: this line used to say Blender.
+Ryan rolled that lane back; see `knowledge/the-blender-scroll-lane-was-rolled-back.md`
+and `archive/blender-scroll-lane/`.)*
 
 Ryan's framing, 2026-08-25:
 
@@ -33,7 +36,7 @@ Three things must be simultaneously true, and none of them is true today:
 
 | settled | detail |
 |---|---|
-| **Renderer** | Blender 5.2.1 LTS. `tools/blender-multiplane.py` builds the scene headless; measured 0.75 s/frame, parallax differential **1.091×** at a 43.3% dolly vs THE-RISE's **1.009×** at 5.5%. |
+| **Renderer** | `tools/render-parallax.py --plane-fit` → frames → ffmpeg → `tools/stitch.mjs`. A real pinhole: each plane at its own z, screen scale `f/(z - camZ)`. Routing claim: `depth-comes-from-the-breath`, live throughout. **The Blender lane is ROLLED BACK (2026-09-01)** — its 1.091× vs 1.009× figure compared two different camera moves, not two renderers, and commit `08a67cd` found framing dominated the A/B. |
 | **Authoring surface** | Frame By Plane 7.1.18, in the GUI. Its importers do **not** register headless (63 of 353 operators register in `-b`, zero importers) — `knowledge/frame-by-plane-importers-are-gui-only.md`. |
 | **Ridge pines are HELD** | A tree whose ink is continuous with the rock has no card boundary. `knowledge/store/a-tree-welded-to-rock-cannot-be-carded.md`. This retires the summit-coverage goal — 52.3% was measuring the defect. |
 | **Swing math untouched** | Ryan approved the tree beside Ge at `carrier 1`, `swing 6`, `flutter 0.15`, `gust 0.10,0.08,0.22`, `gust-rest 0.15`, `under: hold`. That approval is for **that tree**, not the technique everywhere. |
@@ -55,7 +58,7 @@ Each phase ends in something Ryan looks at. Phases 0–2 are strictly ordered;
   2  WHAT MOVES       sparse; ridge pines held; never one lone mover
   2b THE FIGURES      not one figure moves — carried from the 08-21 plan
   3  THE WATERFALL    the one thing that visibly does not move
-  4  THE SHOTS        Blender camera work; the Blender depth ceiling is UNMEASURED
+  4  THE SHOTS        render-parallax camera work; plan planes IN FRAME (5d0ac71)
   4b THE CATALOGUE    y 0–4712 and 12594–15923 uncatalogued; runs alongside
   5  ASSEMBLE         cut, review, ship to the Desktop symlink
 ```
@@ -192,10 +195,13 @@ underutilised, not that it is missing.
 - **Real z travel.** `check-camera-plan.py` gates the plan before a frame
   renders. Target differential ≥ **1.05×** near-vs-far growth. THE-RISE was
   1.009×. *Chosen, not measured — revisit after the first three shots.*
-- **No recycling.** Every shot renders fresh through Blender.
+- **No recycling.** Every shot renders fresh through `render-parallax.py`.
+- **Plan the planes IN FRAME.** z3w read flat because depths 10-13 sat BELOW a
+  16:9 frame — 1.00x landscape vs 1.12x portrait (`5d0ac71`). That was the real
+  parallax bug, and it is a planning fix, not a renderer swap.
 - Under four minutes total.
 
-**Work.** `blender-multiplane.py` must gain: image-sequence textures per plane
+**Work.** `render-parallax.py` already takes `--living` image sequences per plane
 (so the living layer plays), and camera paths read from a shot JSON.
 
 **Done when:** every shot passes the camera gate, and a contact sheet of first
@@ -269,11 +275,13 @@ and disparity spacing are all REFUTED.
 - **render-parallax units:** peak camZ **0.18** at `--z-step 0.30` is a measured
   ceiling. 0.45 tore the canvas. AND the opposite failure is real — 13–31% of
   every leg sat at camZ < 0.02, which is a pan by construction.
-- **Blender units are NOT the same parameter.** Measured 2026-08-25: a dolly of
-  0.52 world units (43.3% of stack depth) on z3w returns `check-holes: intact,
-  0 holes, 0 cream bars` across 12 sampled frames. **The Blender ceiling has not
-  been found and must be measured before Phase 4 authors anything.** Do not
-  carry 0.18 across; it is a number from a different renderer's projection.
+- ~~**Blender units are NOT the same parameter.**~~ **MOOT 2026-09-01** — the
+  Blender lane is rolled back, so there is no second projection to reconcile and
+  **0.18 at `--z-step 0.30` is simply the ceiling again**. The measurement is kept
+  because it is real and would matter if the lane is ever re-run: a dolly of 0.52
+  world units (43.3% of stack depth) on z3w returned `check-holes: intact, 0
+  holes, 0 cream bars` across 12 sampled frames. Archived with the lane in
+  `archive/blender-scroll-lane/README.md`.
 
 ## The rule that governs all of it
 
