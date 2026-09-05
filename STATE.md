@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-08-31 13:55 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-09-05 11:03 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -58,7 +58,6 @@ PROCEDURES — the routes that are currently believed
   · figure-motion          answers how-to-move-a-figure   (sibling: foliage-motion)
   · flf2v-paints-one-image-into-another answers how-to-transition-between-two-stills-in-the-ink-medium   (sibling: style-is-solved-control-is-the-problem)
   · foliage-motion         answers how-to-move-foliage   (sibling: water-motion)
-  · marks-are-authored-in-blender answers how-is-a-region-outline-and-pivot-authored   (sibling: no-whole-tree-to-segment)
   · rendering-belongs-headless-not-in-the-live-session answers how-do-i-render-a-video-out-of-blender   (sibling: registering-is-not-working)
   · sam-click-trunks-not-canopies answers how-to-prompt-sam-on-this-painting   (sibling: no-whole-tree-to-segment)
   · sam-environment        answers how-to-run-a-torch-tool-in-this-repo   (sibling: no-whole-tree-to-segment)
@@ -108,6 +107,7 @@ REFUTED — already tried, do NOT retry
   ✗ copied-real-ink-over-inks-worse-than-flux Patch synthesis chooses donors by TEXTURE MATCH, and a hole beside dense hatching matches dense hatc
   ✗ mist-as-ink            There is no mist ink in this painting. What reads as mist is 留白 -- bare ground, negative space, the 
   ✗ no-whole-tree-to-segment There is no whole-tree SHAPE in this painting to find. Wang Meng draws a tree as separate marks over
+  ✗ the-blender-scroll-lane-was-rolled-back Blender was adopted for the scroll on 2026-08-25 as a directive and rolled back by Ryan on 2026-09-0
   ✗ tilt-slopes-do-not-survive-becoming-rotations geometry.json's tiltX/tiltY are PER-PIXEL SLOPES, consumed by render-parallax as a 2D shear over the
   ✗ translation-parallax-is-refuted-on-a-cut-painting The planes are a decomposition of ONE continuous composition, not independent cels, so plane B's bru
 
@@ -143,12 +143,12 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (181) · 0 violation(s)
 
 DELIVERABLES
+  jobs/wang-meng/film/ONESHOT-42-NOAUDIO.mp4
   jobs/wang-meng/film/THE-RISE.mp4
   jobs/wang-meng/film/RISE-z6w.mp4
   jobs/wang-meng/film/RISE-z5w.mp4
   jobs/wang-meng/film/RISE-z4w.mp4
   jobs/wang-meng/film/RISE-z3w.mp4
-  jobs/wang-meng/film/RISE-z1.mp4
   Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
 
 RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
@@ -167,6 +167,9 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-09-01  942d62c  ROLLBACK: the blender scroll lane is retired, render-parallax + ffmpeg is the route again
+2026-09-01  e6f4ba6  archive the stray Untitled.blend out of marks/: contents unverified, inference labelled as inference
+2026-08-31  4c9fb60  STATE regenerated: timestamp refresh after the blender asset-library diagnosis
 2026-08-27  c9e3275  STATE regenerated: end of the blender-live session, bridge down and tree clean
 2026-08-26  d3d6f63  STATE regenerated: relief verdict and the comparison law join the index at 75 live claims
 2026-08-26  2c6a98e  flat cards are acceptable on their own: the relief verdict is 'no difference', not 'both broken'
@@ -176,23 +179,15 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-26  9d0a3f8  link depth-below-frame to plan-planes-at-shot-scale: enough planes and planes in frame are different checks
 2026-08-26  5d0ac71  z3w has no parallax because depths 10-13 sit BELOW a 16:9 frame: 1.00x landscape vs 1.12x portrait
 2026-08-26  08a67cd  blender vs hand-rolled on z3w: they differ by mean 20 at FRAME ZERO, so framing not parallax dominates the comparison
-2026-08-26  126842e  z3w through the Blender multiplane lane: 72 frames, flat planes, 0.67s/frame
-2026-08-26  57b2b74  geometry.json tilts do not survive becoming 3D rotations: 34 degrees of lean, 5.47% black at frame zero
-2026-08-26  b2eb87f  STATE regenerated: the render-headless procedure joins the index at 71 live claims
 ```
 
-### ⚠ UNPUSHED
-
-**22 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
-
-```
-git push origin main
-```
+*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
 
 ### Uncommitted
 
 ```
  M STATE.md
+?? jobs/wang-meng/film/ONESHOT-42-NOAUDIO.mp4
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
