@@ -89,3 +89,8 @@ jobs/*/journey/*/measure-work/
 # name every card, its pivot and its phase -- so they stay tracked.
 jobs/wang-meng/journey/*/living-work/**/*.png
 jobs/wang-meng/journey/*/living-work/**/*.mp4
+
+# Finder metadata. Repeated last on purpose: the "!jobs/**/evidence*/**" and
+# "!jobs/wang-meng/journey/wild/**" negations above re-include the .DS_Store
+# ignored at the top, because the last matching rule wins.
+.DS_Store
