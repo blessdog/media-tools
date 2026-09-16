@@ -3,7 +3,7 @@
 
 # media-tools — STATE
 
-*Generated 2026-09-05 11:03 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
+*Generated 2026-09-16 15:06 from git, the knowledge store, and this project's own status script. Nothing here is typed by hand, so nothing here can be stale.*
 
 ## What is open
 
@@ -143,13 +143,13 @@ ROUTING — knowledge store vs config vs implementation
   regions.json: 6 classes, 4 routed · regions from regions.json (23), living-polys.json (181) · 0 violation(s)
 
 DELIVERABLES
-  jobs/wang-meng/film/ONESHOT-42-NOAUDIO.mp4
-  jobs/wang-meng/film/THE-RISE.mp4
-  jobs/wang-meng/film/RISE-z6w.mp4
-  jobs/wang-meng/film/RISE-z5w.mp4
-  jobs/wang-meng/film/RISE-z4w.mp4
-  jobs/wang-meng/film/RISE-z3w.mp4
-  Desktop symlink: /Users/SSDrive/projects/media-tools/jobs/wang-meng/film/THE-RISE.mp4
+  jobs/wang-meng/living/AB-PINEBRIDGE-foot-vs-attach.mp4
+  jobs/wang-meng/living/AB-LOOP-z1-water.mp4
+  jobs/wang-meng/living/AB-HOLD-waterandtrees.mp4
+  jobs/wang-meng/living/AB-HOLD-pinebridge.mp4
+  jobs/wang-meng/living/AB-HOLD-pinebridge-attach-r5.mp4
+  jobs/wang-meng/living/AB-HOLD-greattrees.mp4
+  Desktop symlink: (none)
 
 RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
   z1      6 of   6 eligible (12 planes)
@@ -167,6 +167,7 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 *From git. The full narrative lives in `docs/journal/`; commit subjects are written as search bait, so `git log --grep` is the index.*
 
 ```
+2026-09-05  c560c38  STATE regenerated: blender marks procedure retired, scroll-lane rollback joins the refuted list
 2026-09-01  942d62c  ROLLBACK: the blender scroll lane is retired, render-parallax + ffmpeg is the route again
 2026-09-01  e6f4ba6  archive the stray Untitled.blend out of marks/: contents unverified, inference labelled as inference
 2026-08-31  4c9fb60  STATE regenerated: timestamp refresh after the blender asset-library diagnosis
@@ -178,16 +179,32 @@ RELIEF — within-plane surface shape, per zone (the 2026-08-19 verdict)
 2026-08-26  192afc7  blender-multiplane --relief: the grayscale depth maps become real displaced geometry, not a per-pixel warp
 2026-08-26  9d0a3f8  link depth-below-frame to plan-planes-at-shot-scale: enough planes and planes in frame are different checks
 2026-08-26  5d0ac71  z3w has no parallax because depths 10-13 sit BELOW a 16:9 frame: 1.00x landscape vs 1.12x portrait
-2026-08-26  08a67cd  blender vs hand-rolled on z3w: they differ by mean 20 at FRAME ZERO, so framing not parallax dominates the comparison
 ```
 
-*Remote: `https://github.com/blessdog/media-tools.git` — `main` is pushed.*
+### ⚠ UNPUSHED
+
+**1 commit(s) ahead of `origin/main`.** Committed is not the same as safe — a commit that has not left this machine has the durability of the disk it is on.
+
+```
+git push origin main
+```
 
 ### Uncommitted
 
 ```
  M STATE.md
+?? jobs/blender-live/evidence/.DS_Store
+?? jobs/wang-meng/evidence/.DS_Store
+?? jobs/wang-meng/evidence/atlas-2026-08-18/.DS_Store
+?? jobs/wang-meng/evidence/weld/.DS_Store
 ?? jobs/wang-meng/film/ONESHOT-42-NOAUDIO.mp4
+?? jobs/wang-meng/film/evidence/.DS_Store
+?? jobs/wang-meng/journey/voyager-gate/checkpoint-b/.DS_Store
+?? jobs/wang-meng/journey/wild/.DS_Store
+?? jobs/wang-meng/journey/wild/S1/.DS_Store
+?? jobs/wang-meng/journey/wild/S1/checkpoint/.DS_Store
+?? jobs/wang-meng/journey/wild/S2/.DS_Store
+?? jobs/wang-meng/journey/wild/S3/.DS_Store
 ```
 
 *Uncommitted is not learned. Commit at the moment of learning.*
