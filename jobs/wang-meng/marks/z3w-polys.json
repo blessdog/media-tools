@@ -1,6 +1,6 @@
 {
  "note": "Authored by hand in Blender via tools/blender-mark-scene.py. One stroke = one region; layer name = class. Points are MASTER px and merge into living-polys.json.",
- "source": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/marks/z3w-marks.blend",
+ "source": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/marks/z3w-marks.blend",
  "transform": {
   "imageSize": [
    2815,
@@ -12,7 +12,7 @@
   ],
   "masterPxPerImagePx": 2.34,
   "blenderUnitsPerImagePx": 0.0059382422802850355,
-  "plate": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z3w/plate.json"
+  "plate": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z3w/plate.json"
  },
  "polys": [
   {

@@ -2,7 +2,7 @@
  "merged-1-gorge-left-upper": {
   "patches": [
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-gorge-fall",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-gorge-fall",
     "box": [
      551,
      19
@@ -12,7 +12,7 @@
     "fromPlane": "left-cliff-wall"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-midstream",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__w-midstream",
     "box": [
      228,
      283
@@ -22,7 +22,7 @@
     "fromPlane": "left-cliff-wall"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__s-left-pines-z2",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/left-cliff-wall__s-left-pines-z2",
     "box": [
      452,
      0
@@ -32,7 +32,7 @@
     "fromPlane": "left-cliff-wall"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__w-gorge-fall",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__w-gorge-fall",
     "box": [
      558,
      19
@@ -42,7 +42,7 @@
     "fromPlane": "gorge-wall-right"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__s-left-pines-z2",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/gorge-wall-right__s-left-pines-z2",
     "box": [
      517,
      0
@@ -52,7 +52,7 @@
     "fromPlane": "gorge-wall-right"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-midstream",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-midstream",
     "box": [
      242,
      495
@@ -62,7 +62,7 @@
     "fromPlane": "upper-stream-water"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-lower-pool",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__w-lower-pool",
     "box": [
      342,
      925
@@ -72,7 +72,7 @@
     "fromPlane": "upper-stream-water"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__g-ge-fan",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/upper-stream-water__g-ge-fan",
     "box": [
      607,
      1055
@@ -86,7 +86,7 @@
  "merged-3-bank-right-trestle-water": {
   "patches": [
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-midstream",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-midstream",
     "box": [
      308,
      485
@@ -96,7 +96,7 @@
     "fromPlane": "trestle-bridge-ge"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-lower-pool",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__w-lower-pool",
     "box": [
      347,
      696
@@ -106,7 +106,7 @@
     "fromPlane": "trestle-bridge-ge"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__s-pine-over-bridge",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__s-pine-over-bridge",
     "box": [
      637,
      571
@@ -116,7 +116,7 @@
     "fromPlane": "trestle-bridge-ge"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__g-ge-fan",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/trestle-bridge-ge__g-ge-fan",
     "box": [
      579,
      826
@@ -126,7 +126,7 @@
     "fromPlane": "trestle-bridge-ge"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-midstream",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-midstream",
     "box": [
      424,
      356
@@ -136,7 +136,7 @@
     "fromPlane": "right-hill-front-trees"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-lower-pool",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__w-lower-pool",
     "box": [
      412,
      701
@@ -146,7 +146,7 @@
     "fromPlane": "right-hill-front-trees"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-great-trees-upper",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-great-trees-upper",
     "box": [
      1721,
      36
@@ -156,7 +156,7 @@
     "fromPlane": "right-hill-front-trees"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-pine-over-bridge",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__s-pine-over-bridge",
     "box": [
      678,
      491
@@ -166,7 +166,7 @@
     "fromPlane": "right-hill-front-trees"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__g-ge-fan",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/right-hill-front-trees__g-ge-fan",
     "box": [
      606,
      826
@@ -176,7 +176,7 @@
     "fromPlane": "right-hill-front-trees"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/bank-path__s-pine-over-bridge",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/bank-path__s-pine-over-bridge",
     "box": [
      779,
      865
@@ -190,7 +190,7 @@
  "merged-2-left-pine-resting": {
   "patches": [
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/resting-ledge__w-lower-pool",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/resting-ledge__w-lower-pool",
     "box": [
      333,
      192
@@ -204,7 +204,7 @@
  "merged-4-foreground-great": {
   "patches": [
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-upper",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-upper",
     "box": [
      1117,
      170
@@ -214,7 +214,7 @@
     "fromPlane": "great-trees-knoll"
    },
    {
-    "dir": "/Users/SSDrive/projects/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-lower",
+    "dir": "/Users/SSDrive/projects/mediaStudio/media-tools/jobs/wang-meng/journey/z1/living/great-trees-knoll__s-great-trees-lower",
     "box": [
      1151,
      1472
