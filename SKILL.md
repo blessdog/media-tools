@@ -5,7 +5,7 @@ description: Use when creating, transcribing, describing, styling, animating, or
 
 # media-tools — the toolbox
 
-One repo of single-purpose media CLIs at `~/projects/media-tools/tools/`.
+One repo of single-purpose media CLIs at `~/projects/mediaStudio/media-tools/tools/`.
 Invoke by absolute path from any directory.
 
 **Rules.** Nothing runs implicitly — a tool that needs a transcript takes
@@ -158,7 +158,7 @@ character-drift test.
 
 Footage with no dialogue → a script you can direct from:
 
-    T=~/projects/media-tools/tools
+    T=~/projects/mediaStudio/media-tools/tools
     node $T/describe-video.mjs --video source.mp4 --out shots.json --threshold 0.15 --every 4
 
 Regenerate from that script (the description is the CONTENT channel; the style

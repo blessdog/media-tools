@@ -64,7 +64,7 @@ to review it.
 Verify it opened:
 
 ```
-node ~/projects/media-tools/tools/preflight-models.mjs --repo Lightricks/LTX-2.5 \
+node ~/projects/mediaStudio/media-tools/tools/preflight-models.mjs --repo Lightricks/LTX-2.5 \
   --path diffusion_models/ltx-2.5-22b-dev-transformer-bf16.safetensors \
   --path text_encoders/gemma4-12b-with-proj-ltx-2.5-bf16.safetensors \
   --path vae/ltx-2.5-video-vae-bf16.safetensors

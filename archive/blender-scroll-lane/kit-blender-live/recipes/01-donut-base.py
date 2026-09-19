@@ -11,7 +11,7 @@ sits above the mesh and does not fight manual edits.
 import bpy, math, sys, importlib
 
 # --- refuse to run in a scene that holds someone's work ---------------------
-sys.path.insert(0, '/Users/SSDrive/projects/media-tools/kits/blender-live/recipes')
+sys.path.insert(0, '/Users/SSDrive/projects/mediaStudio/media-tools/kits/blender-live/recipes')
 import _guard; importlib.reload(_guard)
 _guard.assert_scratch()
 

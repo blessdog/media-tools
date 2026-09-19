@@ -38,7 +38,7 @@ flags:
 limits: luma ≤30s/100MB · wan 2-10s · kling 3-10s · aleph <16MB, first 5s only
 
 example:
-  node ~/projects/media-tools/tools/restyle-video.mjs --video slice.mp4 \\
+  node ~/projects/mediaStudio/media-tools/tools/restyle-video.mjs --video slice.mp4 \\
     --style inkwash --mode flex_2 --first-frame anchor.png --out slice-inkwash.mp4`;
 
 const args = process.argv.slice(2);

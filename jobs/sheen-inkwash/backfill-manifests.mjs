@@ -9,9 +9,9 @@ import { execFileSync } from 'node:child_process';
 
 const SEEDS = { '00': 516905, '01': 117662, '02': 13302, '03': 646239, '04': 660730,
   '05': 7834, '06': 957447, '07': 862453, '08': 54934 };
-const SWATCH = '/Users/SSDrive/projects/media-tools/styles/inkwash/reference/LOCKED-inkwash-texture-1.png';
+const SWATCH = '/Users/SSDrive/projects/mediaStudio/media-tools/styles/inkwash/reference/LOCKED-inkwash-texture-1.png';
 const sha = (p) => createHash('sha256').update(readFileSync(p)).digest('hex').slice(0, 16);
-const STYLE_PREFIX = JSON.parse(readFileSync('/Users/SSDrive/projects/media-tools/styles/inkwash/style.json', 'utf8')).prompt;
+const STYLE_PREFIX = JSON.parse(readFileSync('/Users/SSDrive/projects/mediaStudio/media-tools/styles/inkwash/style.json', 'utf8')).prompt;
 
 for (const [n, seed] of Object.entries(SEEDS)) {
   const png = `renders/shot-${n}.png`;

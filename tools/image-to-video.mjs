@@ -89,7 +89,7 @@ Every render writes <out>.json beside the clip: model, sampler settings, seed,
 frame count, the motion prompt, and the sha256 of the source still.
 
 example:
-  node ~/projects/media-tools/tools/image-to-video.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/image-to-video.mjs \\
     --image stills/01.png --prompt "slow drift, mist rolls left" --out clips/01.mp4`;
 
 const args = process.argv.slice(2);

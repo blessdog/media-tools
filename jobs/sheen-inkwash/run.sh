@@ -11,7 +11,7 @@
 #   ... and when done:  node ../../tools/gpu-box.mjs down
 set -e
 cd "$(dirname "$0")"
-T=~/projects/media-tools/tools
+T="$(cd ../.. && pwd)/tools"
 
 # 1. footage → a written script (this clip has loud music and ZERO speech, so
 #    transcribe returns nothing; the script has to come from the pixels)

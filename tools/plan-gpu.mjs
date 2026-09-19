@@ -42,7 +42,7 @@ Prints a table sorted by ESTIMATED TOTAL COST for the whole job, with wall-clock
 beside it so you can pay a little more to finish sooner if you want to.
 
 example:
-  node ~/projects/media-tools/tools/plan-gpu.mjs --workload hunyuan-1.5-i2v-720p-fp16 --count 9`;
+  node ~/projects/mediaStudio/media-tools/tools/plan-gpu.mjs --workload hunyuan-1.5-i2v-720p-fp16 --count 9`;
 
 const args = process.argv.slice(2);
 if (args.includes('--help')) { console.log(HELP); process.exit(0); }

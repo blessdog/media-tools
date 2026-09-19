@@ -6,7 +6,7 @@
 # usage: ./run.sh
 set -u
 cd "${0:A:h}"
-T=/Users/SSDrive/projects/media-tools/tools/restyle-image.mjs
+T="$(cd ../.. && pwd)/tools/restyle-image.mjs"
 
 models=(
   black-forest-labs/flux-2-pro

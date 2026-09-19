@@ -75,7 +75,7 @@ Writes points.json: { image, points: [{ id, x, y, depth, window, name, pick }] }
   pick    whole | best | tight
 
 example:
-  node ~/projects/media-tools/tools/plan-planes.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/plan-planes.mjs \\
     --image corpus/grabs/wang-meng.png --out jobs/wang-meng/points.json`;
 
 const args = process.argv.slice(2);

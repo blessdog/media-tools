@@ -4,7 +4,7 @@
 
 ## Before anything: where you are
 
-This session must be opened **in `/Users/SSDrive/projects/media-tools`**, not in
+This session must be opened **in `/Users/SSDrive/projects/mediaStudio/media-tools`**, not in
 `~/projects`. If the SessionStart banner says *"THIS PROJECT HAS NO KNOWLEDGE
 STORE"*, you are in the wrong place — **stop and reopen.** That banner lied for
 an entire session on 2026-08-25 while this repo held 60 typed claims, and the

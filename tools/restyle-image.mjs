@@ -68,7 +68,7 @@ sha256 of every input — so a picture you like can be reproduced, and two
 pictures can be diffed to find what made one better.
 
 example:
-  node ~/projects/media-tools/tools/restyle-image.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/restyle-image.mjs \\
     --image photo.jpg --style inkwash --model black-forest-labs/flux-2-pro \\
     --out photo-inkwash.png`;
 

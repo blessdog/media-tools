@@ -29,7 +29,7 @@ they have none, then stream-copy concatenated — uniform codec/size/fps makes
 that safe.
 
 example:
-  node ~/projects/media-tools/tools/stitch.mjs --list shots.txt --music bed.mp3 --out cut.mp4`;
+  node ~/projects/mediaStudio/media-tools/tools/stitch.mjs --list shots.txt --music bed.mp3 --out cut.mp4`;
 
 const args = process.argv.slice(2);
 if (args.includes('--help') || args.length === 0) { console.log(HELP); process.exit(0); }

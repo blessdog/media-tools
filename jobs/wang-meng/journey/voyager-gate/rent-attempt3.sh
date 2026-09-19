@@ -4,8 +4,8 @@
 # so no gist/hosting is needed and the LTX default manifest never runs.
 # Dry run by default (gpu-box contract); pass --rent to actually rent.
 set -euo pipefail
-T="$HOME/projects/media-tools/tools"
-G="$HOME/projects/media-tools/jobs/wang-meng/journey/voyager-gate"
+T="$(cd "$(dirname "$0")/../../../.." && pwd)/tools"
+G="$(cd "$(dirname "$0")" && pwd)"
 B64=$(base64 -i "$G/provision-voyager-v3.sh" | tr -d '\n')
 exec node "$T/gpu-box.mjs" up \
   --gpu A100_SXM4 --min-vram 78 --max-price 1.40 --disk 120 \

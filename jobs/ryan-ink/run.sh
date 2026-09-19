@@ -8,7 +8,7 @@
 # usage: ./run.sh
 set -u
 cd "${0:A:h}"
-T=/Users/SSDrive/projects/media-tools/tools/restyle-image.mjs
+T="$(cd ../.. && pwd)/tools/restyle-image.mjs"
 
 typeset -A LOOKS
 LOOKS[01-mono-minimal]="Repaint this photograph as a monochrome ink painting on white paper. Black ink only, no colour. Large areas of the paper left completely unpainted. A few confident brush strokes describe the figure; everything else is bare white. Keep the same composition, pose and framing."

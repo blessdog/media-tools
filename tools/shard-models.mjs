@@ -66,7 +66,7 @@ gpu-box's search does the rest: cheapest first, reliability >=0.99, US, and
 inet_down >=500Mbps so a slow host doesn't turn the weight pull into 30 minutes.
 
 example:
-  node ~/projects/media-tools/tools/shard-models.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/shard-models.mjs \\
     --image jobs/ryan-portrait/source.png --models all \\
     --prompt "a man in round glasses talks to camera" \\
     --out jobs/ryan-portrait/bakeoff --plan`;

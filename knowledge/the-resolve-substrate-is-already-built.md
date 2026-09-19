@@ -12,9 +12,9 @@ scope: >
 verified-on: 2026-08-22
 evidence:
   - /Library/Application Support/Blackmagic Design/DaVinci Resolve/.license/.davinciresolvestudio_14.0.lic
-  - /Users/SSDrive/projects/mediaStudio/media-studio/.mcp.json
-  - /Users/SSDrive/projects/mediaStudio/media-studio/studio/comp.py
-  - /Users/SSDrive/projects/mediaStudio/media-studio/research-raw-claims.md
+  - /Users/SSDrive/projects/mediaStudio/resolve/.mcp.json
+  - /Users/SSDrive/projects/mediaStudio/resolve/studio/comp.py
+  - /Users/SSDrive/projects/mediaStudio/resolve/research-raw-claims.md
 asked-as:
   - can an agent drive davinci resolve
   - do we have resolve studio
@@ -32,7 +32,7 @@ Do not build any of this again. Measured 2026-08-22:
   11 Jul 2026. Resolve 21.0.4 installed, scripting API module present. This
   matters because **external scripting, and therefore ANY MCP, is Studio-only**;
   the free edition is console-only.
-- **The MCP is vendored and wired** — `mediaStudio/media-studio/.mcp.json` points
+- **The MCP is vendored and wired** — `mediaStudio/resolve/.mcp.json` points
   at `vendor/davinci-resolve-mcp` (samuelgursky): 34 compound / 341 granular
   tools, 336/336 API methods.
 - **Fusion IS scriptable.** The "Fusion can't be automated" folklore is verified

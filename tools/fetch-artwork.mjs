@@ -76,7 +76,7 @@ Downloads are throttled and identify themselves. Sidecars carry the rights
 string; if a record has no clear public-domain/CC0 marker it is SKIPPED.
 
 example:
-  node ~/projects/media-tools/tools/fetch-artwork.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/fetch-artwork.mjs \\
     --source cleveland --culture China --limit 400 --out corpus/inkwash/raw`;
 
 const args = process.argv.slice(2);

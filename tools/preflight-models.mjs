@@ -36,8 +36,8 @@ Exit 0 = everything is fetchable, safe to rent.
 Exit 3 = something is gated/missing. The report names the exact page to click.
 
 example:
-  node ~/projects/media-tools/tools/preflight-models.mjs \\
-    --file ~/projects/media-tools/tools/provision/pull-ltx25.sh`;
+  node ~/projects/mediaStudio/media-tools/tools/preflight-models.mjs \\
+    --file ~/projects/mediaStudio/media-tools/tools/provision/pull-ltx25.sh`;
 
 const args = process.argv.slice(2);
 if (args.includes('--help') || args.length === 0) { console.log(HELP); process.exit(0); }

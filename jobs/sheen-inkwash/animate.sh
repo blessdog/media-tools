@@ -4,7 +4,7 @@
 # usage: ./animate.sh [shot-number ...]   (no args = all)
 set -e
 cd "$(dirname "$0")"
-T=~/projects/media-tools/tools
+T="$(cd ../.. && pwd)/tools"
 mkdir -p clips
 
 shots=("$@")

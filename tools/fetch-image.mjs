@@ -66,7 +66,7 @@ Notes:
   clips. An identical hash already in --out is reported and NOT re-written.
 
 example:
-  node ~/projects/media-tools/tools/fetch-image.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/fetch-image.mjs \\
     --file ~/Downloads/wang-meng_ge-zhichuan-moving-to-the-mountains.webp \\
     --out corpus/inkwash/found \\
     --title "Ge Zhichuan Moving to the Mountains" \\

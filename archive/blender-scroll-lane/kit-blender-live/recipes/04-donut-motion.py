@@ -64,7 +64,7 @@ sc.render.ffmpeg.format = 'MPEG4'
 sc.render.ffmpeg.codec = 'H264'
 sc.render.ffmpeg.constant_rate_factor = 'HIGH'
 sc.render.ffmpeg.ffmpeg_preset = 'GOOD'
-sc.render.filepath = '/Users/SSDrive/projects/media-tools/jobs/blender-live/evidence/2026-08-26-donut-bounce.mp4'
+sc.render.filepath = '/Users/SSDrive/projects/mediaStudio/media-tools/jobs/blender-live/evidence/2026-08-26-donut-bounce.mp4'
 sc.render.engine = 'BLENDER_EEVEE'
 
 print(f'rendering {sc.frame_end} frames at {sc.render.resolution_x}x{sc.render.resolution_y} ...')

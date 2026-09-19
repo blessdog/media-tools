@@ -7,7 +7,7 @@
 # So A is re-run pinned harder. B/C/D go out at 0.8 in the same round, since a
 # looser guide is the right default for shots whose whole point is dissolution.
 set -e
-T=/Users/SSDrive/projects/media-tools/tools
+T="$(cd "$(dirname "$0")/../.." && pwd)/tools"
 F=frames
 C=clips
 mkdir -p $C

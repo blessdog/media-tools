@@ -27,7 +27,7 @@ output shape:
   { words: [{word,start,end,confidence,speaker}], utterances: [{start,end,text,speaker,confidence}] }
 
 example:
-  node ~/projects/media-tools/tools/transcribe.mjs interview.mp3 --out transcript.json`;
+  node ~/projects/mediaStudio/media-tools/tools/transcribe.mjs interview.mp3 --out transcript.json`;
 
 const args = process.argv.slice(2);
 if (args.includes('--help') || args.length === 0) { console.log(HELP); process.exit(0); }

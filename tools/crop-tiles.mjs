@@ -47,7 +47,7 @@ flags:
                    and write NOTHING
 
 example:
-  node ~/projects/media-tools/tools/crop-tiles.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/crop-tiles.mjs \\
     --in corpus/inkwash/raw --out corpus/inkwash/tiles --size 1024 --min-ink 0.055`;
 
 const args = process.argv.slice(2);

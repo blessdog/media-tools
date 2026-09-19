@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build `~/projects/media-tools/` — one repo of single-purpose media CLIs salvaged from cutwork/clipsmith — proven end-to-end on the Sheen ink-wash restyle.
+**Goal:** Build `~/projects/mediaStudio/media-tools/` — one repo of single-purpose media CLIs salvaged from cutwork/clipsmith — proven end-to-end on the Sheen ink-wash restyle.
 
 **Architecture:** Unix tools-first. Each capability is one CLI obeying the tool contract (spec §4). Vendor adapters are `_`-prefixed internals. Styles are data in `styles/`. Lanes compose tools via scripts; no tool calls another tool.
 
@@ -18,7 +18,7 @@
 - **Salvage, not rewrite:** moved files keep their logic; only imports, env resolution, and flags are normalized. Do not "improve" working code.
 - **No test framework.** Verification = `node --check` (syntax), `--help` exit-0 checks, deterministic local runs (ffmpeg-generated fixtures), and ONE live API smoke test only where a phase criterion demands it (costs cents; announce before running).
 - **Never print `.env` contents** to stdout/logs. Copy keys with `cp`/`grep -c` checks only.
-- **Small commits, search-bait subjects, one concern each.** Work happens in `/Users/SSDrive/projects/media-tools/` unless the task says otherwise.
+- **Small commits, search-bait subjects, one concern each.** Work happens in `/Users/SSDrive/projects/mediaStudio/media-tools/` unless the task says otherwise.
 - **cutwork must not regress:** any task touching `/Users/SSDrive/projects/mediaStudio/cutwork/` ends with `node --check` passing on every modified file.
 
 ---
@@ -37,7 +37,7 @@
 - [ ] **Step 1: Directories + env**
 
 ```bash
-cd /Users/SSDrive/projects/media-tools
+cd /Users/SSDrive/projects/mediaStudio/media-tools
 mkdir -p tools styles jobs && touch jobs/.gitkeep
 cp /Users/SSDrive/projects/mediaStudio/cutwork/.env .env
 grep -c "REPLICATE_API_TOKEN\|DEEPGRAM_API_KEY" .env   # expect ≥2; do NOT cat .env
@@ -194,7 +194,7 @@ const REPLICATE_API_BASE = 'https://api.replicate.com/v1';
 
 ```bash
 node --check tools/_env.mjs && node --check tools/_replicate.mjs
-node -e "import('./tools/_env.mjs').then(m=>console.log('root:',m.repoRoot()))"   # prints .../projects/media-tools
+node -e "import('./tools/_env.mjs').then(m=>console.log('root:',m.repoRoot()))"   # prints .../projects/mediaStudio/media-tools
 git add tools/_env.mjs tools/_replicate.mjs && git commit -m "tools: _env repo-rooted secrets + _replicate adapter salvaged from cutwork (config import inlined)"
 ```
 
@@ -236,7 +236,7 @@ flags:
   --model M       override model (default: style's image.model)
 
 example:
-  node ~/projects/media-tools/tools/generate-image.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/generate-image.mjs \\
     --style inkwash --prompt "a pet shop storefront at dusk" --out stills/01.png`;
 
 const args = process.argv.slice(2);
@@ -275,13 +275,13 @@ console.log(JSON.stringify({ out, bytes: bytes.length, model, style: raw ? null 
 ```bash
 node --check tools/generate-image.mjs
 node tools/generate-image.mjs --help          # exits 0, prints contract
-cd /tmp && node ~/projects/media-tools/tools/generate-image.mjs --help && cd -   # foreign cwd
+cd /tmp && node ~/projects/mediaStudio/media-tools/tools/generate-image.mjs --help && cd -   # foreign cwd
 ```
 
 - [ ] **Step 3: LIVE smoke test (phase-1 done criterion — costs cents, announce first)**
 
 ```bash
-cd /private/tmp && node ~/projects/media-tools/tools/generate-image.mjs \
+cd /private/tmp && node ~/projects/mediaStudio/media-tools/tools/generate-image.mjs \
   --style inkwash --prompt "a lone fisherman poling a flat skiff across still water at dawn" \
   --out /tmp/inkwash-smoke.png && open /tmp/inkwash-smoke.png
 ```
@@ -427,7 +427,7 @@ grep -rln "_replicate\|_comfy\|_fleet\|vast.mjs\|treatment.py" tools/ --include=
 - [ ] **Step 2: Re-point every hit to the toolbox**
 
 In each file from Step 1, change relative imports to the absolute toolbox path, e.g.
-`from './_replicate.mjs'` → `from '/Users/SSDrive/projects/media-tools/tools/_replicate.mjs'`.
+`from './_replicate.mjs'` → `from '/Users/SSDrive/projects/mediaStudio/media-tools/tools/_replicate.mjs'`.
 (Absolute path is deliberate: cutwork may move; the toolbox is the fixed point.)
 
 - [ ] **Step 3: Delete the moved copies, verify cutwork**
@@ -440,7 +440,7 @@ for f in tools/*.mjs; do node --check "$f" || echo "BROKEN: $f"; done   # expect
 - [ ] **Step 4: Commit (in cutwork)**
 
 ```bash
-git add -A && git commit -m "tools: burners moved to ~/projects/media-tools — imports re-pointed, copies deleted (see media-tools spec 2026-08-11)"
+git add -A && git commit -m "tools: burners moved to ~/projects/mediaStudio/media-tools — imports re-pointed, copies deleted (see media-tools spec 2026-08-11)"
 ```
 
 **Phase 2 complete when:** all tools run `--help` from a foreign cwd; cutwork `node --check` clean.
@@ -484,7 +484,7 @@ flags:
   --fps N        default 30
 
 example:
-  node ~/projects/media-tools/tools/stitch.mjs --list shots.txt --music vo.mp3 --out cut.mp4`;
+  node ~/projects/mediaStudio/media-tools/tools/stitch.mjs --list shots.txt --music vo.mp3 --out cut.mp4`;
 
 const args = process.argv.slice(2);
 if (args.includes('--help') || args.length === 0) { console.log(HELP); process.exit(0); }
@@ -541,7 +541,7 @@ cd /private/tmp && mkdir -p stitch-test && cd stitch-test
 ffmpeg -y -hide_banner -loglevel error -f lavfi -i testsrc=duration=1:size=640x360:rate=24 a.mp4
 ffmpeg -y -hide_banner -loglevel error -f lavfi -i testsrc=duration=1:size=1280x720:rate=30 b.mp4
 printf '# fixture\na.mp4\nb.mp4\n' > shots.txt
-node ~/projects/media-tools/tools/stitch.mjs --list shots.txt --out out.mp4
+node ~/projects/mediaStudio/media-tools/tools/stitch.mjs --list shots.txt --out out.mp4
 ffprobe -v error -select_streams v -show_entries stream=width,height,r_frame_rate -of csv out.mp4
 ```
 
@@ -550,7 +550,7 @@ Expected: stdout JSON `{"clips":2,...}`; ffprobe reports `1920,1080` and `30/1`;
 - [ ] **Step 3: Commit**
 
 ```bash
-cd /Users/SSDrive/projects/media-tools
+cd /Users/SSDrive/projects/mediaStudio/media-tools
 git add tools/stitch.mjs && git commit -m "tools: stitch — clip list → one video (clipsmith normalize/concat/duck salvage, timeline dropped)"
 ```
 
@@ -573,7 +573,7 @@ mv /Users/SSDrive/projects/mediaStudio/clipsmith /Users/SSDrive/projects/mediaSt
 - [ ] **Step 2: Update the workspace README**
 
 In `mediaStudio/README.md`, "Not repositories" section: change the `clipsmith/` bullet to
-`- **archive-clipsmith/** — dead 2026-06-13 experiment; stitch core + LTX workflow salvaged into ~/projects/media-tools (2026-08-11); kept for its outputs/`.
+`- **archive-clipsmith/** — dead 2026-06-13 experiment; stitch core + LTX workflow salvaged into ~/projects/mediaStudio/media-tools (2026-08-11); kept for its outputs/`.
 
 **Phase 3 complete when:** stitch fixture test passes; clipsmith gone from the active workspace listing.
 
@@ -585,7 +585,7 @@ In `mediaStudio/README.md`, "Not repositories" section: change the `clipsmith/` 
 
 **Files:**
 - Create: `SKILL.md` (repo root)
-- Create: symlink `~/.claude/skills/media-tools` → `/Users/SSDrive/projects/media-tools`
+- Create: symlink `~/.claude/skills/media-tools` → `/Users/SSDrive/projects/mediaStudio/media-tools`
 
 - [ ] **Step 1: Write `SKILL.md`**
 
@@ -597,7 +597,7 @@ description: Use when creating, transcribing, styling, animating, or assembling 
 
 # media-tools — the toolbox
 
-One repo of single-purpose media CLIs at `~/projects/media-tools/tools/`.
+One repo of single-purpose media CLIs at `~/projects/mediaStudio/media-tools/tools/`.
 Rules: nothing runs implicitly — a tool needing a transcript takes
 `--transcript`; styles resolve from `styles/<key>/style.json` via `--style`;
 every tool's `--help` is its authoritative contract (read it before calling).
@@ -623,7 +623,7 @@ lives at `~/projects/mediaStudio/rectum/`, invoked as its own CLI.
 ## Composition examples
 
 Ink-wash still → motion clip:
-    T=~/projects/media-tools/tools
+    T=~/projects/mediaStudio/media-tools/tools
     node $T/generate-image.mjs --style inkwash --prompt "storefront at dusk" --out stills/01.png
     node $T/image-to-video.mjs --image stills/01.png --prompt "gentle camera hold, mist drifts" --out clips/01.mp4
 
@@ -637,7 +637,7 @@ Assemble:
 - [ ] **Step 2: Symlink + verify + commit**
 
 ```bash
-mkdir -p ~/.claude/skills && ln -sfn /Users/SSDrive/projects/media-tools ~/.claude/skills/media-tools
+mkdir -p ~/.claude/skills && ln -sfn /Users/SSDrive/projects/mediaStudio/media-tools ~/.claude/skills/media-tools
 ls -la ~/.claude/skills/media-tools/SKILL.md    # resolves through the symlink
 git add SKILL.md && git commit -m "skill: media-tools catalog — progressive-disclosure index over the tool CLIs"
 ```
@@ -732,7 +732,7 @@ flags:
   --keep-audio        wan only: audio_setting=origin
 
 example:
-  node ~/projects/media-tools/tools/restyle-video.mjs --video slice.mp4 \\
+  node ~/projects/mediaStudio/media-tools/tools/restyle-video.mjs --video slice.mp4 \\
     --style inkwash --mode flex_2 --out slice-inkwash.mp4`;
 
 const args = process.argv.slice(2);
@@ -808,7 +808,7 @@ git add tools/restyle-video.mjs && git commit -m "tools: restyle-video — luma/
 #!/bin/zsh
 # sheen-inkwash — 10s slice, two roads compared: generative restyle vs Blender treatment
 set -euo pipefail
-T=~/projects/media-tools/tools
+T=~/projects/mediaStudio/media-tools/tools
 SRC="<the sheen clip path>"          # ← fill when clip is on disk
 cd "$(dirname "$0")"
 
@@ -825,7 +825,7 @@ Run the script (announce the luma call — real spend). `open` both. **Ryan's ey
 - [ ] **Step 3: Tag the milestone**
 
 ```bash
-cd /Users/SSDrive/projects/media-tools && git tag -a v0.1.0 -m "toolbox proven end-to-end: sheen ink-wash restyle approved"
+cd /Users/SSDrive/projects/mediaStudio/media-tools && git tag -a v0.1.0 -m "toolbox proven end-to-end: sheen ink-wash restyle approved"
 ```
 
 **Phase 5 complete when:** Ryan approves a restyled clip and v0.1.0 is tagged.

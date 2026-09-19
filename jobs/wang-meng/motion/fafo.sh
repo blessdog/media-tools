@@ -17,7 +17,7 @@
 #         it is that 73 frames of i2v cannot hold this image at all. That is
 #         the single most important number in the sweep, which is why it runs.
 set -uo pipefail
-cd /Users/SSDrive/projects/media-tools
+cd "$(dirname "$0")/../../.."   # the repo root, wherever it lives
 S=/private/tmp/claude-501/-Users-SSDrive-projects/97d5de3b-38f7-4ffa-8a43-dd56553f8732/scratchpad
 O=jobs/wang-meng/motion
 

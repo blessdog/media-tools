@@ -21,7 +21,7 @@ CASES = [
     # (command, expected basename or None, why)
     ("python3 tools/check-routing.py --config regions.json",
      "check-routing.py", "plain execution"),
-    ("cd /Users/SSDrive/projects/media-tools && python3 tools/animate-strokes.py --wobble 8",
+    ("cd /Users/SSDrive/projects/mediaStudio/media-tools && python3 tools/animate-strokes.py --wobble 8",
      "animate-strokes.py", "execution after cd"),
     ("./tools/hinge-foliage.py --swing 15",
      "hinge-foliage.py", "direct invocation"),

@@ -102,7 +102,7 @@ Update the docstring usage block to show both modes (keep the WHY prose; add one
 - [ ] **Step 2: Verify rect mode against a PIL reference crop**
 
 ```bash
-cd /Users/SSDrive/projects/media-tools
+cd /Users/SSDrive/projects/mediaStudio/media-tools
 python3 tools/crop-region.py --master "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png" \
   --rect 1000,2000,3340,4340 --k 2.34 --out /tmp/rect-test.png
 python3 - <<'PY'
@@ -243,7 +243,7 @@ print(json.dumps({"ids": a.ids, "rect": rect, "regionSize": size,
 - [ ] **Step 3: Run it for stations 1–4 and check the numbers**
 
 ```bash
-cd /Users/SSDrive/projects/media-tools
+cd /Users/SSDrive/projects/mediaStudio/media-tools
 python3 jobs/wang-meng/journey/zone-rect.py --world jobs/wang-meng/journey/world.json \
   --stations jobs/wang-meng/journey/stations.json --ids 1-4
 ```
@@ -304,7 +304,7 @@ Note: `jobs/` is gitignored except scripts — check `git status`; if `zone-rect
 - [ ] **Step 1: Cut the plate**
 
 ```bash
-cd /Users/SSDrive/projects/media-tools
+cd /Users/SSDrive/projects/mediaStudio/media-tools
 mkdir -p jobs/wang-meng/journey/z1
 python3 tools/crop-region.py \
   --master "corpus/grabs/wang-meng-王蒙_ge-zhichuan-moving-to-the-mountains-葛稚川移居圖.png" \

@@ -18,7 +18,7 @@ capability without inheriting any lane.
 ## 2. Decision
 
 **Unix philosophy, tools-first.** Every micro-capability is its own
-single-purpose CLI in ONE repo (`~/projects/media-tools/`). A "lane" is not an
+single-purpose CLI in ONE repo (`~/projects/mediaStudio/media-tools/`). A "lane" is not an
 owner of tools — it is a script that composes them. Nothing runs implicitly.
 
 This knowingly **reverses the 2026-07-03 deliberate fork** ("deliberately
@@ -30,7 +30,7 @@ job, hard edge.
 ## 3. End state
 
 ```
-~/projects/media-tools/
+~/projects/mediaStudio/media-tools/
   CLAUDE.md                 what this is; the tool contract; locked decisions
   SKILL.md                  agent-facing catalog (symlinked → ~/.claude/skills/media-tools/)
   .env                      all provider keys, one place, never committed
@@ -137,7 +137,7 @@ before any surgery near bongpot.
 in any directory hits the skill and drafts `jobs/petshop/run.sh`:
 
 ```zsh
-T=~/projects/media-tools/tools
+T=~/projects/mediaStudio/media-tools/tools
 for shot in storefront puppy-window kid-goldfish logo-card; do
   node $T/generate-image.mjs --style inkwash --prompt "$(cat prompts/$shot.txt)" --out stills/$shot.png
 done                                          # Ryan eyeballs stills; regen until right

@@ -64,7 +64,7 @@ sha256 of each reference image — plus the submitted ComfyUI graph. A frame you
 like months from now can still say what made it.
 
 example:
-  node ~/projects/media-tools/tools/generate-image.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/generate-image.mjs \\
     --style inkwash --prompt "a pet shop storefront at dusk" --out stills/01.png`;
 
 const args = process.argv.slice(2);

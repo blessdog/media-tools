@@ -40,7 +40,7 @@ Ranked best-first. A fragment match scores far above everything else; after
 that it is og:image, then anchor-linked full sizes, then plain <img>.
 
 example:
-  node ~/projects/media-tools/tools/find-page-image.mjs \\
+  node ~/projects/mediaStudio/media-tools/tools/find-page-image.mjs \\
     --url 'https://www.comuseum.com/painting/landscape-painting/#liu-haisu_clouds-in-the-yellow-mountains'`;
 
 const args = process.argv.slice(2);

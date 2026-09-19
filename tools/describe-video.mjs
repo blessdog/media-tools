@@ -37,7 +37,7 @@ output shape:
   { video, shots: [{ index, start, frame, description }] }
 
 example:
-  node ~/projects/media-tools/tools/describe-video.mjs --video clip.mp4 --out shots.json`;
+  node ~/projects/mediaStudio/media-tools/tools/describe-video.mjs --video clip.mp4 --out shots.json`;
 
 const args = process.argv.slice(2);
 if (args.includes('--help') || args.length === 0) { console.log(HELP); process.exit(0); }

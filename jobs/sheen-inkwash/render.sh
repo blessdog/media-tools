@@ -3,7 +3,7 @@
 # usage: ./render.sh [shot-number ...]   (no args = all)
 set -e
 cd "$(dirname "$0")"
-T=~/projects/media-tools/tools
+T="$(cd ../.. && pwd)/tools"
 mkdir -p renders
 
 # dephoto.sh drops the header AND the camera language — describe-video writes for

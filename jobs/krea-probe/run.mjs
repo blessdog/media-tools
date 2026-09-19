@@ -16,7 +16,7 @@ import { basename, join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
-const ROOT = '/Users/SSDrive/projects/media-tools';
+const ROOT = '/Users/SSDrive/projects/mediaStudio/media-tools';
 const KF = '/Users/SSDrive/projects/mediaStudio/bongpot/outputs/keyframes-v10';
 
 const env = Object.fromEntries(
